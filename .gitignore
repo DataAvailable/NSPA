@@ -1,0 +1,19 @@
+
+# Third-party source repositories
+SVF/
+open-source Soft/bash-master/
+open-source Soft/curl-master/
+open-source Soft/ffmpeg-master/
+open-source Soft/git-master/
+open-source Soft/openssl-master/
+open-source Soft/sqlite-master/
+
+# Large/generated IR files
+*.ll
+*.bc
+
+# Vim test outputs / test data
+open-source Soft/vim-master/src/testdir/
+
+# Test directories in third-party source trees
+**/testdir/

@@ -1,0 +1,933 @@
+Call graph node <<null function>><<0xa5f9290>>  #uses=0
+  CS<None> calls function 'get_cscope_name'
+  CS<None> calls function 'llvm.memcpy.p0i8.p0i8.i64'
+  CS<None> calls function 'vim_snprintf'
+  CS<None> calls function 'set_context_in_cscope_cmd'
+  CS<None> calls function 'skiptowhite'
+  CS<None> calls function 'skipwhite'
+  CS<None> calls function 'strncasecmp'
+  CS<None> calls function 'ex_cscope'
+  CS<None> calls function 'ex_scscope'
+  CS<None> calls function 'ex_cstag'
+  CS<None> calls function 'emsg'
+  CS<None> calls function 'gettext'
+  CS<None> calls function 'cs_free_tags'
+  CS<None> calls function 'msg_putchar'
+  CS<None> calls function 'do_tag'
+  CS<None> calls function 'cs_fgets'
+  CS<None> calls function 'vim_strncpy'
+  CS<None> calls function 'cs_print_tags'
+  CS<None> calls function 'cs_end'
+  CS<None> calls function 'vim_free'
+  CS<None> calls function 'f_cscope_connection'
+  CS<None> calls function 'in_vim9script'
+  CS<None> calls function 'check_for_opt_number_arg'
+  CS<None> calls function 'check_for_opt_string_arg'
+  CS<None> calls function 'tv_get_number'
+  CS<None> calls function 'tv_get_string'
+  CS<None> calls function 'tv_get_string_buf'
+  CS<None> calls function 'cs_add'
+  CS<None> calls function 'cs_find'
+  CS<None> calls function 'cs_help'
+  CS<None> calls function 'cs_kill'
+  CS<None> calls function 'cs_reset'
+  CS<None> calls function 'cs_show'
+  CS<None> calls function 'strtok'
+  CS<None> calls function 'semsg'
+  CS<None> calls function 'alloc'
+  CS<None> calls function 'expand_env'
+  CS<None> calls function 'modify_fname'
+  CS<None> calls function 'vim_strnsave'
+  CS<None> calls function 'stat'
+  CS<None> calls function 'strlen'
+  CS<None> calls function 'sprintf'
+  CS<None> calls function 'msg_clr_eos'
+  CS<None> calls function 'smsg_attr'
+  CS<None> calls function '__errno_location'
+  CS<None> calls function 'alloc_clear'
+  CS<None> calls function 'realloc'
+  CS<None> calls function 'pipe'
+  CS<None> calls function 'close'
+  CS<None> calls function 'fork'
+  CS<None> calls function 'dup2'
+  CS<None> calls function 'strerror'
+  CS<None> calls function 'exit'
+  CS<None> calls function 'strcat'
+  CS<None> calls function 'setsid'
+  CS<None> calls function 'build_argv_from_string'
+  CS<None> calls function 'execvp'
+  CS<None> calls function 'fdopen'
+  CS<None> calls function 'getc'
+  CS<None> calls function 'vim_isprintc'
+  CS<None> calls function 'strcmp'
+  CS<None> calls function 'putc'
+  CS<None> calls function 'fflush'
+  CS<None> calls function 'msg_puts'
+  CS<None> calls function 'vim_strsize'
+  CS<None> calls function 'smsg'
+  CS<None> calls function 'wait_return'
+  CS<None> calls function 'atoi'
+  CS<None> calls function 'strstr'
+  CS<None> calls function 'msg_puts_attr'
+  CS<None> calls function 'msg_attr'
+  CS<None> calls function 'check_restricted'
+  CS<None> calls function 'strncmp'
+  CS<None> calls function 'vim_strchr'
+  CS<None> calls function 'strchr'
+  CS<None> calls function 'apply_autocmds'
+  CS<None> calls function 'aborting'
+  CS<None> calls function 'fprintf'
+  CS<None> calls function 'vim_tempname'
+  CS<None> calls function 'fopen'
+  CS<None> calls function 'fclose'
+  CS<None> calls function 'qf_init'
+  CS<None> calls function 'win_split'
+  CS<None> calls function 'bt_quickfix'
+  CS<None> calls function 'qf_jump'
+  CS<None> calls function 'unlink'
+  CS<None> calls function 'fgets'
+  CS<None> calls function 'feof'
+  CS<None> calls function 'strcpy'
+  CS<None> calls function 'llvm.memset.p0i8.i64'
+  CS<None> calls function 'gettail'
+  CS<None> calls function 'concat_fnames'
+  CS<None> calls function '__assert_fail'
+  CS<None> calls function 'vim_strsave'
+  CS<None> calls function 'iemsg'
+  CS<None> calls function 'msg_advance'
+  CS<None> calls function 'msg_outtrans_long_attr'
+  CS<None> calls function 'ui_breakcheck'
+  CS<None> calls function 'fputs'
+  CS<None> calls function 'sigemptyset'
+  CS<None> calls function 'sig_handler'
+  CS<None> calls function 'sigaction'
+  CS<None> calls function 'alarm'
+  CS<None> calls function 'waitpid'
+  CS<None> calls function 'sleep'
+  CS<None> calls function 'kill'
+  CS<None> calls function 'mch_delay'
+
+Call graph node for function: '__assert_fail'<<0xa6e5130>>  #uses=5
+  CS<None> calls external node
+
+Call graph node for function: '__errno_location'<<0xa805150>>  #uses=11
+  CS<None> calls external node
+
+Call graph node for function: 'aborting'<<0xa5e5b00>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'alarm'<<0xa6e5ee0>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'alloc'<<0xa5e5c00>>  #uses=29
+  CS<None> calls external node
+
+Call graph node for function: 'alloc_clear'<<0xa6cecb0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'apply_autocmds'<<0xa5e5a80>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'atoi'<<0xa6cd470>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'bt_quickfix'<<0xa6e5620>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'build_argv_from_string'<<0xa6d0160>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'check_for_opt_number_arg'<<0xa805a10>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'check_for_opt_string_arg'<<0xa805a90>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'check_restricted'<<0xa5e1dc0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'clear_csinfo'<<0xa805860>>  #uses=2
+
+Call graph node for function: 'close'<<0xa6cee30>>  #uses=9
+  CS<None> calls external node
+
+Call graph node for function: 'concat_fnames'<<0xa6d2d50>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'cs_add'<<0xa806080>>  #uses=1
+  CS<0xa722d50> calls function 'strtok'
+  CS<0xa723080> calls function 'cs_usage_msg'
+  CS<0xa7232a0> calls function 'strtok'
+  CS<0xa7235f0> calls function 'strtok'
+  CS<0xa723a40> calls function 'cs_add_common'
+
+Call graph node for function: 'cs_add_common'<<0xa806200>>  #uses=2
+  CS<0xa707050> calls function 'alloc'
+  CS<0xa7075a0> calls function 'expand_env'
+  CS<0xa74dfe0> calls function 'modify_fname'
+  CS<0xa74e420> calls function 'vim_strnsave'
+  CS<0xa74e650> calls function 'vim_free'
+  CS<0xa74e7e0> calls function 'stat'
+  CS<0xa74efd0> calls function 'cs_stat_emsg'
+  CS<0xa74f560> calls function 'alloc'
+  CS<0xa74fab0> calls function 'expand_env'
+  CS<0xa74fc40> calls function 'stat'
+  CS<0xa750520> calls function 'strlen'
+  CS<0xa750770> calls function 'alloc'
+  CS<0xa750d90> calls function 'strlen'
+  CS<0xa751350> calls function 'strlen'
+  CS<0xa751fb0> calls function 'sprintf'
+  CS<0xa70f600> calls function 'sprintf'
+  CS<0xa70f800> calls function 'stat'
+  CS<0xa70fe50> calls function 'cs_stat_emsg'
+  CS<0xa710270> calls function 'cs_insert_filelist'
+  CS<0xa710da0> calls function 'cs_insert_filelist'
+  CS<0xa7111e0> calls function 'gettext'
+  CS<0xa711370> calls function 'semsg'
+  CS<0xa7118d0> calls function 'cs_create_connection'
+  CS<0xa711be0> calls function 'cs_read_prompt'
+  CS<0xa711f10> calls function 'cs_release_csp'
+  CS<0xa712270> calls function 'msg_clr_eos'
+  CS<0xa7123e0> calls function 'gettext'
+  CS<0xa7128a0> calls function 'smsg_attr'
+  CS<0xa712b50> calls function 'vim_free'
+  CS<0xa712cc0> calls function 'vim_free'
+  CS<0xa712e30> calls function 'vim_free'
+  CS<0xa7131d0> calls function 'vim_free'
+  CS<0xa70b380> calls function 'vim_free'
+  CS<0xa70b4f0> calls function 'vim_free'
+
+Call graph node for function: 'cs_check_for_connections'<<0xa801b80>>  #uses=4
+  CS<0xa6d32c0> calls function 'cs_cnt_connections'
+
+Call graph node for function: 'cs_check_for_tags'<<0xa801d80>>  #uses=3
+
+Call graph node for function: 'cs_cnt_connections'<<0xa802140>>  #uses=2
+
+Call graph node for function: 'cs_cnt_matches'<<0xa5e5e00>>  #uses=1
+  CS<0xa702b70> calls function 'alloc'
+  CS<0xa7aeab0> calls function 'fgets'
+  CS<0xa7af0a0> calls function 'feof'
+  CS<0xa7af2c0> calls function '__errno_location'
+  CS<0xa7af560> calls function 'cs_reading_emsg'
+  CS<0xa7af6d0> calls function 'vim_free'
+  CS<0xa7af990> calls function 'strstr'
+  CS<0xa7afd60> calls function 'strtok'
+  CS<0xa7b01f0> calls function 'strstr'
+  CS<0xa7b0520> calls function 'strtok'
+  CS<0xa7b0990> calls function 'atoi'
+  CS<0xa7b0ee0> calls function 'strtok'
+  CS<0xa7b1390> calls function 'strncmp'
+  CS<0xa7b17b0> calls function 'vim_free'
+
+Call graph node for function: 'cs_connection'<<0xa805c90>>  #uses=1
+  CS<0xa71b150> calls function 'strstr'
+  CS<0xa71b9d0> calls function 'strcmp'
+  CS<0xa71c280> calls function 'strstr'
+  CS<0xa71d790> calls function 'strstr'
+  CS<0xa71e010> calls function 'strcmp'
+  CS<0xa71f550> calls function 'strcmp'
+
+Call graph node for function: 'cs_create_cmd'<<0xa5e5b80>>  #uses=1
+  CS<0xa7a8770> calls function 'gettext'
+  CS<0xa7a8840> calls function 'emsg'
+  CS<0xa7a8910> calls function 'cs_usage_msg'
+  CS<0xa7a9c00> calls function 'strlen'
+  CS<0xa7a9d90> calls function 'alloc'
+  CS<0xa7aa4a0> calls function 'sprintf'
+
+Call graph node for function: 'cs_create_connection'<<0xa6e5ca0>>  #uses=1
+  CS<0xa77b800> calls function 'pipe'
+  CS<0xa77bb60> calls function 'pipe'
+  CS<0xa77bdd0> calls function 'gettext'
+  CS<0xa77bea0> calls function 'emsg'
+  CS<0xa77c570> calls function 'close'
+  CS<0xa77cb40> calls function 'close'
+  CS<0xa77d110> calls function 'close'
+  CS<0xa77d6e0> calls function 'close'
+  CS<0xa77d960> calls function 'fork'
+  CS<0xa77dfd0> calls function 'gettext'
+  CS<0xa77e0a0> calls function 'emsg'
+  CS<0xa77ece0> calls function 'dup2'
+  CS<0xa77ef30> calls function '__errno_location'
+  CS<0xa77f070> calls function 'strerror'
+  CS<0xa77f150> calls function 'semsg'
+  CS<0xa77f3e0> calls function 'dup2'
+  CS<0xa77f630> calls function '__errno_location'
+  CS<0xa77f770> calls function 'strerror'
+  CS<0xa77f850> calls function 'semsg'
+  CS<0xa77fae0> calls function 'dup2'
+  CS<0xa77fd30> calls function '__errno_location'
+  CS<0xa77fe70> calls function 'strerror'
+  CS<0xa77ff50> calls function 'semsg'
+  CS<0xa7801c0> calls function 'close'
+  CS<0xa7803f0> calls function 'close'
+  CS<0xa7804c0> calls function 'alloc'
+  CS<0xa7807f0> calls function 'exit'
+  CS<0xa780a40> calls function 'expand_env'
+  CS<0xa781020> calls function 'strlen'
+  CS<0xa7818f0> calls function 'alloc'
+  CS<0xa781cc0> calls function 'vim_free'
+  CS<0xa781d90> calls function 'exit'
+  CS<0xa782340> calls function 'expand_env'
+  CS<0xa782fe0> calls function 'strlen'
+  CS<0xa7834c0> calls function 'alloc'
+  CS<0xa783890> calls function 'vim_free'
+  CS<0xa783a00> calls function 'vim_free'
+  CS<0xa783ad0> calls function 'exit'
+  CS<0xa784270> calls function 'vim_snprintf'
+  CS<0xa784930> calls function 'strlen'
+  CS<0xa785430> calls function 'vim_snprintf'
+  CS<0xa785b90> calls function 'strlen'
+  CS<0xa786690> calls function 'vim_snprintf'
+  CS<0xa7868c0> calls function 'strcat'
+  CS<0xa786a00> calls function 'vim_free'
+  CS<0xa786b70> calls function 'vim_free'
+  CS<0xa786c20> calls function 'setsid'
+  CS<0xa786dd0> calls function 'build_argv_from_string'
+  CS<0xa787040> calls function 'exit'
+  CS<0xa7873d0> calls function 'execvp'
+  CS<0xa787640> calls function 'gettext'
+  CS<0xa7876f0> calls function '__errno_location'
+  CS<0xa787800> calls function 'strerror'
+  CS<0xa7878e0> calls function 'semsg'
+  CS<0xa7879f0> calls function 'exit'
+  CS<0xa787c90> calls function 'fdopen'
+  CS<0xa788300> calls function 'gettext'
+  CS<0xa7883b0> calls function '__errno_location'
+  CS<0xa7884c0> calls function 'strerror'
+  CS<0xa7885a0> calls function 'semsg'
+  CS<0xa788830> calls function 'fdopen'
+  CS<0xa788ea0> calls function 'gettext'
+  CS<0xa788f50> calls function '__errno_location'
+  CS<0xa789060> calls function 'strerror'
+  CS<0xa789140> calls function 'semsg'
+  CS<0xa7893b0> calls function 'close'
+  CS<0xa7895e0> calls function 'close'
+
+Call graph node for function: 'cs_end'<<0xa6e5360>>  #uses=1
+  CS<0xa6c17b0> calls function 'cs_release_csp'
+  CS<0xa6c1c60> calls function 'vim_free'
+
+Call graph node for function: 'cs_fgets'<<0xa6e5000>>  #uses=1
+  CS<0xa6f2350> calls function 'cs_manage_matches'
+  CS<0xa6f2b00> calls function 'vim_strncpy'
+
+Call graph node for function: 'cs_file_results'<<0xa6e5420>>  #uses=1
+  CS<0xa725990> calls function 'alloc'
+  CS<0xa7b6cd0> calls function 'cs_parse_results'
+  CS<0xa7b7140> calls function 'strlen'
+  CS<0xa7b72d0> calls function 'alloc'
+  CS<0xa7b7740> calls function 'vim_free'
+  CS<0xa7b7970> calls function 'strcmp'
+  CS<0xa7b7ca0> calls function 'strcpy'
+  CS<0xa7b7f60> calls function 'sprintf'
+  CS<0xa7b85e0> calls function 'fprintf'
+  CS<0xa7b8ae0> calls function 'fprintf'
+  CS<0xa7b8cc0> calls function 'vim_free'
+  CS<0xa7b8e30> calls function 'vim_free'
+  CS<0xa7b92a0> calls function 'cs_read_prompt'
+  CS<0xa7b9710> calls function 'vim_free'
+
+Call graph node for function: 'cs_fill_results'<<0xa6e57a0>>  #uses=1
+  CS<0xa7c01e0> calls function '__assert_fail'
+  CS<0xa7c0280> calls function 'alloc'
+  CS<0xa7c0890> calls function 'alloc'
+  CS<0xa7c0e40> calls function 'alloc'
+  CS<0xa7c2370> calls function 'cs_parse_results'
+  CS<0xa7c2a20> calls function 'cs_make_vim_style_matches'
+  CS<0xa7c2ea0> calls function 'vim_free'
+  CS<0xa7c3030> calls function 'strcmp'
+  CS<0xa7c36c0> calls function 'vim_strsave'
+  CS<0xa7c4570> calls function 'cs_read_prompt'
+  CS<0xa7c4ea0> calls function 'vim_free'
+  CS<0xa7c51f0> calls function 'vim_free'
+  CS<0xa7c5ad0> calls function 'vim_free'
+
+Call graph node for function: 'cs_find'<<0xa8063d0>>  #uses=1
+  CS<0xa725e60> calls function 'cs_check_for_connections'
+  CS<0xa7260d0> calls function 'gettext'
+  CS<0xa7261a0> calls function 'emsg'
+  CS<0xa7263c0> calls function 'strtok'
+  CS<0xa7266f0> calls function 'cs_usage_msg'
+  CS<0xa726a30> calls function 'strlen'
+  CS<0xa727380> calls function 'cs_usage_msg'
+  CS<0xa716df0> calls function 'cs_find_common'
+
+Call graph node for function: 'cs_find_common'<<0xa801c00>>  #uses=4
+  CS<0xa6dc000> calls function 'vim_strchr'
+  CS<0xa6dc770> calls function 'strchr'
+  CS<0xa6dc9e0> calls function 'gettext'
+  CS<0xa6dcf20> calls function 'semsg'
+  CS<0xa5e9eb0> calls function 'apply_autocmds'
+  CS<0xa6dd890> calls function 'aborting'
+  CS<0xa6ddea0> calls function 'cs_create_cmd'
+  CS<0xa6de540> calls function 'alloc'
+  CS<0xa6de9f0> calls function 'vim_free'
+  CS<0xa6e1a90> calls function 'fprintf'
+  CS<0xa6e1f10> calls function 'fflush'
+  CS<0xa6e2080> calls function 'cs_cnt_matches'
+  CS<0xa6e32e0> calls function 'cs_read_prompt'
+  CS<0xa6e37f0> calls function 'vim_free'
+  CS<0xa6e3d10> calls function 'gettext'
+  CS<0xa6e3f60> calls function 'semsg'
+  CS<0xa6e41e0> calls function 'vim_free'
+  CS<0xa6e4eb0> calls function 'vim_tempname'
+  CS<0xa6e5f90> calls function 'vim_free'
+  CS<0xa6e6250> calls function 'fopen'
+  CS<0xa6e65f0> calls function 'gettext'
+  CS<0xa6e6780> calls function 'semsg'
+  CS<0xa6e6a20> calls function 'cs_file_results'
+  CS<0xa6e6b90> calls function 'fclose'
+  CS<0xa6e75d0> calls function 'qf_init'
+  CS<0xa6e7f80> calls function 'win_split'
+  CS<0xa6e8b10> calls function 'apply_autocmds'
+  CS<0xa6e8ff0> calls function 'bt_quickfix'
+  CS<0xa6e9e60> calls function 'qf_jump'
+  CS<0xa6ea0e0> calls function 'unlink'
+  CS<0xa6ea220> calls function 'vim_free'
+  CS<0xa6ea400> calls function 'vim_free'
+  CS<0xa6eae80> calls function 'cs_fill_results'
+  CS<0xa6eb060> calls function 'vim_free'
+  CS<0xa6eb6e0> calls function 'cs_manage_matches'
+  CS<0xa6eba10> calls function 'do_tag'
+
+Call graph node for function: 'cs_free_tags'<<0xa801c80>>  #uses=4
+  CS<0xa6ed6e0> calls function 'cs_manage_matches'
+
+Call graph node for function: 'cs_help'<<0xa5e3e70>>  #uses=2
+  CS<0xa72b080> calls function 'gettext'
+  CS<0xa72b150> calls function 'msg_puts'
+  CS<0xa72b940> calls function 'gettext'
+  CS<0xa72bc80> calls function 'vim_strsize'
+  CS<0xa72c240> calls function 'gettext'
+  CS<0xa72c8f0> calls function 'smsg'
+  CS<0xa72cbe0> calls function 'strcmp'
+  CS<0xa72ce50> calls function 'gettext'
+  CS<0xa72cf20> calls function 'msg_puts'
+  CS<0xa72d2a0> calls function 'wait_return'
+
+Call graph node for function: 'cs_insert_filelist'<<0xa6e5c20>>  #uses=2
+  CS<0xa6fe970> calls function 'gettext'
+  CS<0xa6fea40> calls function 'emsg'
+  CS<0xa700010> calls function 'alloc_clear'
+  CS<0xa7009b0> calls function 'realloc'
+  CS<0xa700ed0> calls function 'vim_free'
+  CS<0xa701af0> calls function 'clear_csinfo'
+  CS<0xa76e430> calls function 'strlen'
+  CS<0xa76e5c0> calls function 'alloc'
+  CS<0xa76f250> calls function 'strlen'
+  CS<0xa76f360> calls function 'vim_strncpy'
+  CS<0xa76f710> calls function 'strlen'
+  CS<0xa76f8a0> calls function 'alloc'
+  CS<0xa770300> calls function 'vim_free'
+  CS<0xa770d70> calls function 'strlen'
+  CS<0xa770e80> calls function 'vim_strncpy'
+  CS<0xa771740> calls function 'strlen'
+  CS<0xa7718d0> calls function 'alloc'
+  CS<0xa772330> calls function 'vim_free'
+  CS<0xa772b70> calls function 'vim_free'
+  CS<0xa7735e0> calls function 'strlen'
+  CS<0xa7736f0> calls function 'vim_strncpy'
+
+Call graph node for function: 'cs_kill'<<0xa6cd3f0>>  #uses=1
+  CS<0xa72f770> calls function 'strtok'
+  CS<0xa72faa0> calls function 'cs_usage_msg'
+  CS<0xa72fd40> calls function 'strlen'
+  CS<0xa730470> calls function 'strlen'
+  CS<0xa730f60> calls function 'atoi'
+  CS<0xa731f60> calls function 'strstr'
+  CS<0xa733470> calls function 'gettext'
+  CS<0xa733600> calls function 'semsg'
+  CS<0xa7347f0> calls function 'cs_kill_execute'
+  CS<0xa734e30> calls function 'cs_kill_execute'
+
+Call graph node for function: 'cs_kill_execute'<<0xa6cd4f0>>  #uses=2
+  CS<0xa755d10> calls function 'msg_clr_eos'
+  CS<0xa755f40> calls function 'gettext'
+  CS<0xa79df70> calls function 'smsg_attr'
+  CS<0xa79e1a0> calls function 'cs_release_csp'
+
+Call graph node for function: 'cs_lookup_cmd'<<0xa5e0d50>>  #uses=1
+  CS<0xa7a1d50> calls function 'strlen'
+  CS<0xa7a2170> calls function 'strtok'
+  CS<0xa7a2670> calls function 'strlen'
+  CS<0xa7a3050> calls function 'strncmp'
+
+Call graph node for function: 'cs_make_vim_style_matches'<<0xa6cea10>>  #uses=1
+  CS<0xa7de550> calls function 'strlen'
+  CS<0xa7de6c0> calls function 'strlen'
+  CS<0xa7de8f0> calls function 'strlen'
+  CS<0xa7deb20> calls function 'strlen'
+  CS<0xa7defe0> calls function 'alloc'
+  CS<0xa7df800> calls function 'sprintf'
+  CS<0xa7dfa10> calls function 'strlen'
+  CS<0xa7dfb80> calls function 'strlen'
+  CS<0xa7dfdb0> calls function 'strlen'
+  CS<0xa7e0270> calls function 'alloc'
+  CS<0xa7ba150> calls function 'sprintf'
+
+Call graph node for function: 'cs_manage_matches'<<0xa6e4f50>>  #uses=5
+  CS<0xa6f5810> calls function '__assert_fail'
+  CS<0xa6f5be0> calls function '__assert_fail'
+  CS<0xa6f61b0> calls function 'cs_manage_matches'
+  CS<0xa6f7d40> calls function 'vim_free'
+  CS<0xa6f8310> calls function 'vim_free'
+  CS<0xa6f8640> calls function 'vim_free'
+  CS<0xa6f8820> calls function 'vim_free'
+  CS<0xa6f8f50> calls function 'cs_print_tags_priv'
+  CS<0xa6f90c0> calls function 'iemsg'
+
+Call graph node for function: 'cs_parse_results'<<0xa6ce560>>  #uses=2
+  CS<0xa7ca010> calls function 'fgets'
+  CS<0xa7ca630> calls function 'feof'
+  CS<0xa7ca850> calls function '__errno_location'
+  CS<0xa7caaf0> calls function 'cs_reading_emsg'
+  CS<0xa7cadb0> calls function 'strchr'
+  CS<0xa7cb500> calls function 'getc'
+  CS<0xa7cbf00> calls function 'strtok'
+  CS<0xa7cc380> calls function 'strtok'
+  CS<0xa7cc8a0> calls function 'strtok'
+  CS<0xa7cd020> calls function 'strlen'
+  CS<0xa7cd550> calls function 'strcmp'
+  CS<0xa7cdb20> calls function 'cs_resolve_file'
+
+Call graph node for function: 'cs_pathcomponents'<<0xa679620>>  #uses=1
+  CS<0xa75b3a0> calls function 'strlen'
+
+Call graph node for function: 'cs_print_tags'<<0xa6e52b0>>  #uses=1
+  CS<0xa6c02d0> calls function 'cs_manage_matches'
+
+Call graph node for function: 'cs_print_tags_priv'<<0xa6e51b0>>  #uses=1
+  CS<0xa7e6f50> calls function 'gettext'
+  CS<0xa7e7590> calls function '__assert_fail'
+  CS<0xa7e77e0> calls function 'strlen'
+  CS<0xa7e7970> calls function 'alloc'
+  CS<0xa7e7fb0> calls function 'strcpy'
+  CS<0xa7e8140> calls function 'strtok'
+  CS<0xa7e85b0> calls function 'vim_free'
+  CS<0xa7e87c0> calls function 'strlen'
+  CS<0xa7e8930> calls function 'strlen'
+  CS<0xa7e8d30> calls function 'alloc'
+  CS<0xa7e9480> calls function 'sprintf'
+  CS<0xa7e96b0> calls function 'msg_puts_attr'
+  CS<0xa7e98c0> calls function 'vim_free'
+  CS<0xa7e9990> calls function 'gettext'
+  CS<0xa7e9b20> calls function 'msg_puts_attr'
+  CS<0xa7e9d50> calls function 'msg_advance'
+  CS<0xa7e9e20> calls function 'gettext'
+  CS<0xa7e9fb0> calls function 'msg_puts_attr'
+  CS<0xa7ea970> calls function 'strlen'
+  CS<0xa7eab00> calls function 'alloc'
+  CS<0xa7eb250> calls function 'strcpy'
+  CS<0xa7eb3e0> calls function 'strtok'
+  CS<0xa7eb670> calls function 'strtok'
+  CS<0xa7eb9c0> calls function 'strtok'
+  CS<0xa7ebd90> calls function 'vim_free'
+  CS<0xa7ebf20> calls function 'strtok'
+  CS<0xa7ec1f0> calls function 'strlen'
+  CS<0xa7ec580> calls function 'strlen'
+  CS<0xa7ec7b0> calls function 'strlen'
+  CS<0xa799f40> calls function 'realloc'
+  CS<0xa79a440> calls function 'vim_free'
+  CS<0xa79ad40> calls function 'sprintf'
+  CS<0xa79af70> calls function 'msg_puts_attr'
+  CS<0xa79b180> calls function 'cs_pathcomponents'
+  CS<0xa79b310> calls function 'msg_outtrans_long_attr'
+  CS<0xa79bed0> calls function 'strlen'
+  CS<0xa79c040> calls function 'strlen'
+  CS<0xa79c910> calls function 'realloc'
+  CS<0xa79ce10> calls function 'vim_free'
+  CS<0xa79d650> calls function 'sprintf'
+  CS<0xa79d860> calls function 'strlen'
+  CS<0xa79dcd0> calls function 'msg_putchar'
+  CS<0xa79de10> calls function 'msg_advance'
+  CS<0xa756150> calls function 'msg_outtrans_long_attr'
+  CS<0xa756220> calls function 'msg_putchar'
+  CS<0xa7565d0> calls function 'msg_advance'
+  CS<0xa756760> calls function 'msg_outtrans_long_attr'
+  CS<0xa756970> calls function 'vim_free'
+  CS<0xa756c50> calls function 'msg_putchar'
+  CS<0xa756d70> calls function 'ui_breakcheck'
+  CS<0xa757710> calls function 'vim_free'
+
+Call graph node for function: 'cs_read_prompt'<<0xa5e5e80>>  #uses=4
+  CS<0xa790070> calls function 'strlen'
+  CS<0xa790550> calls function 'gettext'
+  CS<0xa790750> calls function 'strlen'
+  CS<0xa790f00> calls function 'getc'
+  CS<0xa791a90> calls function 'vim_isprintc'
+  CS<0xa792020> calls function 'alloc'
+  CS<0xa793430> calls function 'strcmp'
+  CS<0xa793c70> calls function 'semsg'
+  CS<0xa794110> calls function 'putc'
+  CS<0xa794590> calls function 'fflush'
+  CS<0xa7955e0> calls function 'getc'
+  CS<0xa7961b0> calls function 'semsg'
+  CS<0xa7965d0> calls function 'cs_reading_emsg'
+  CS<0xa796840> calls function 'cs_release_csp'
+  CS<0xa7969b0> calls function 'vim_free'
+  CS<0xa797950> calls function 'vim_free'
+
+Call graph node for function: 'cs_reading_emsg'<<0xa6d0460>>  #uses=3
+  CS<0xa754cd0> calls function 'gettext'
+  CS<0xa754e60> calls function 'semsg'
+
+Call graph node for function: 'cs_release_csp'<<0xa6e53e0>>  #uses=5
+  CS<0xa706210> calls function 'fputs'
+  CS<0xa706690> calls function 'fflush'
+  CS<0xa6da150> calls function 'sigemptyset'
+  CS<0xa707d00> calls function 'sigaction'
+  CS<0xa707dd0> calls function 'alarm'
+  CS<0xa708290> calls function 'waitpid'
+  CS<0xa708400> calls function '__errno_location'
+  CS<0xa708600> calls function 'alarm'
+  CS<0xa708710> calls function 'sigaction'
+  CS<0xa709520> calls function 'sleep'
+  CS<0xa709d30> calls function 'kill'
+  CS<0xa70a120> calls function 'mch_delay'
+  CS<0xa70ab70> calls function 'kill'
+  CS<0xa70b030> calls function 'waitpid'
+  CS<0xa6df860> calls function 'fclose'
+  CS<0xa6e02d0> calls function 'fclose'
+  CS<0xa6e0a00> calls function 'vim_free'
+  CS<0xa6e0e80> calls function 'vim_free'
+  CS<0xa618720> calls function 'vim_free'
+  CS<0xa618930> calls function 'clear_csinfo'
+
+Call graph node for function: 'cs_reset'<<0xa6cd800>>  #uses=1
+  CS<0xa738e60> calls function 'alloc'
+  CS<0xa7391d0> calls function 'alloc'
+  CS<0xa739540> calls function 'alloc'
+  CS<0xa739ee0> calls function 'vim_free'
+  CS<0xa73a0c0> calls function 'vim_free'
+  CS<0xa73a2a0> calls function 'vim_free'
+  CS<0xa73c300> calls function 'cs_release_csp'
+  CS<0xa73d830> calls function 'cs_add_common'
+  CS<0xa73dce0> calls function 'sprintf'
+  CS<0xa73df60> calls function 'msg_puts_attr'
+  CS<0xa73e430> calls function 'vim_free'
+  CS<0xa73e7c0> calls function 'vim_free'
+  CS<0xa73eb50> calls function 'vim_free'
+  CS<0xa73f030> calls function 'vim_free'
+  CS<0xa73f210> calls function 'vim_free'
+  CS<0xa73f3f0> calls function 'vim_free'
+  CS<0xa73f6d0> calls function 'gettext'
+  CS<0xa73f920> calls function 'msg_attr'
+
+Call graph node for function: 'cs_resolve_file'<<0xa6d2990>>  #uses=1
+  CS<0xa7d1430> calls function 'strlen'
+  CS<0xa7d20f0> calls function 'strlen'
+  CS<0xa7d2d50> calls function 'alloc'
+  CS<0xa7d3b90> calls function 'gettail'
+  CS<0xa7d41f0> calls function 'vim_strncpy'
+  CS<0xa7d4420> calls function 'strlen'
+  CS<0xa7d5660> calls function 'strncmp'
+  CS<0xa7d5da0> calls function 'alloc'
+  CS<0xa7d6620> calls function 'sprintf'
+  CS<0xa74c540> calls function 'concat_fnames'
+  CS<0xa74c8d0> calls function 'vim_strnsave'
+  CS<0xa74cca0> calls function 'vim_free'
+
+Call graph node for function: 'cs_show'<<0xa8064d0>>  #uses=1
+  CS<0xa7421d0> calls function 'cs_cnt_connections'
+  CS<0xa742440> calls function 'gettext'
+  CS<0xa742510> calls function 'msg_puts'
+  CS<0xa742650> calls function 'gettext'
+  CS<0xa7427e0> calls function 'msg_puts_attr'
+  CS<0xa72dd90> calls function 'smsg'
+  CS<0xa744e20> calls function 'smsg'
+  CS<0xa7452d0> calls function 'wait_return'
+
+Call graph node for function: 'cs_stat_emsg'<<0xa6e5ba0>>  #uses=2
+  CS<0xa70df70> calls function '__errno_location'
+  CS<0xa70e140> calls function 'gettext'
+  CS<0xa70e390> calls function 'semsg'
+
+Call graph node for function: 'cs_usage_msg'<<0xa806180>>  #uses=5
+  CS<0xa65bdb0> calls function 'gettext'
+  CS<0xa65c200> calls function 'semsg'
+
+Call graph node for function: 'do_cscope_general'<<0xa8042c0>>  #uses=2
+  CS<0xa60b420> calls function 'check_restricted'
+  CS<0xa6c4020> calls function 'cs_lookup_cmd'
+  CS<0xa6c43c0> calls function 'cs_help'
+  CS<0xa6c4ab0> calls function 'gettext'
+  CS<0xa6c4b80> calls function 'msg_puts'
+  CS<0xa6c53b0> calls external node
+
+Call graph node for function: 'do_tag'<<0xa801e00>>  #uses=5
+  CS<None> calls external node
+
+Call graph node for function: 'dup2'<<0xa6cef30>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'emsg'<<0xa801b00>>  #uses=8
+  CS<None> calls external node
+
+Call graph node for function: 'ex_cscope'<<0xa804240>>  #uses=1
+  CS<0xa60a050> calls function 'do_cscope_general'
+
+Call graph node for function: 'ex_cstag'<<0xa801a80>>  #uses=1
+  CS<0xa6c8400> calls function 'gettext'
+  CS<0xa6c84d0> calls function 'emsg'
+  CS<0xa6c86f0> calls function 'cs_check_for_connections'
+  CS<0xa6bc730> calls function 'cs_find_common'
+  CS<0xa6c9c30> calls function 'cs_free_tags'
+  CS<0xa6c9f10> calls function 'msg_putchar'
+  CS<0xa6ca030> calls function 'cs_check_for_tags'
+  CS<0xa5e9ca0> calls function 'do_tag'
+  CS<0xa6ca920> calls function 'cs_check_for_tags'
+  CS<0xa5e9b50> calls function 'do_tag'
+  CS<0xa6cb1e0> calls function 'cs_check_for_tags'
+  CS<0xa5e8780> calls function 'do_tag'
+  CS<0xa6cbd60> calls function 'msg_putchar'
+  CS<0xa6cbe80> calls function 'cs_check_for_connections'
+  CS<0xa6cc800> calls function 'cs_find_common'
+  CS<0xa6ccbb0> calls function 'cs_free_tags'
+  CS<0xa6cceb0> calls function 'cs_check_for_connections'
+  CS<0xa611030> calls function 'cs_find_common'
+  CS<0xa611c00> calls function 'cs_free_tags'
+  CS<0xa6121a0> calls function 'gettext'
+  CS<0xa612270> calls function 'emsg'
+
+Call graph node for function: 'ex_scscope'<<0xa5e4140>>  #uses=1
+  CS<0xa6c6260> calls function 'do_cscope_general'
+
+Call graph node for function: 'execvp'<<0xa6d01e0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'exit'<<0xa6d0570>>  #uses=6
+  CS<None> calls external node
+
+Call graph node for function: 'expand_env'<<0xa6e5850>>  #uses=5
+  CS<None> calls external node
+
+Call graph node for function: 'f_cscope_connection'<<0xa8058e0>>  #uses=1
+  CS<0xa61c380> calls function 'in_vim9script'
+  CS<0xa6c2070> calls function 'check_for_opt_number_arg'
+  CS<0xa713c20> calls function 'check_for_opt_string_arg'
+  CS<0xa714390> calls function 'check_for_opt_string_arg'
+  CS<0xa715060> calls function 'tv_get_number'
+  CS<0xa7153d0> calls function 'tv_get_string'
+  CS<0xa715bf0> calls function 'tv_get_string_buf'
+  CS<0xa7160e0> calls function 'cs_connection'
+
+Call graph node for function: 'fclose'<<0xa6e54a0>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'fdopen'<<0xa6d0260>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'feof'<<0xa6d0e80>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'fflush'<<0xa5e5d80>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'fgets'<<0xa6d0e00>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'fopen'<<0xa5e5f80>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'fork'<<0xa6ceeb0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'fprintf'<<0xa5e5d00>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'fputs'<<0xa6e5d60>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'get_cscope_name'<<0xa5e3140>>  #uses=1
+  CS<0xa6b7630> calls function 'vim_snprintf'
+
+Call graph node for function: 'getc'<<0xa6d02e0>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'gettail'<<0xa6d2a40>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'gettext'<<0xa5e3ef0>>  #uses=33
+  CS<None> calls external node
+
+Call graph node for function: 'iemsg'<<0xa6e5230>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'in_vim9script'<<0xa805960>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'kill'<<0xa805250>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'llvm.memcpy.p0i8.p0i8.i64'<<0xa5e52c0>>  #uses=1
+
+Call graph node for function: 'llvm.memset.p0i8.i64'<<0xa6d2dd0>>  #uses=1
+
+Call graph node for function: 'mch_delay'<<0xa8052d0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'modify_fname'<<0xa6e58d0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'msg_advance'<<0xa6795a0>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'msg_attr'<<0xa806450>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'msg_clr_eos'<<0xa6cf040>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'msg_outtrans_long_attr'<<0xa6796a0>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'msg_putchar'<<0xa801d00>>  #uses=6
+  CS<None> calls external node
+
+Call graph node for function: 'msg_puts'<<0xa5e3f70>>  #uses=5
+  CS<None> calls external node
+
+Call graph node for function: 'msg_puts_attr'<<0xa6cdb90>>  #uses=7
+  CS<None> calls external node
+
+Call graph node for function: 'pipe'<<0xa6cedb0>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'putc'<<0xa6d03e0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'qf_init'<<0xa6e5520>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'qf_jump'<<0xa6e56a0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'realloc'<<0xa6ced30>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'semsg'<<0xa5e5a00>>  #uses=17
+  CS<None> calls external node
+
+Call graph node for function: 'set_context_in_cscope_cmd'<<0xa5e5120>>  #uses=1
+  CS<0xa6bbf00> calls function 'skiptowhite'
+  CS<0xa6bcd30> calls function 'skipwhite'
+  CS<0xa6bd250> calls function 'skiptowhite'
+  CS<0xa6bdbc0> calls function 'strncasecmp'
+  CS<0xa6be3f0> calls function 'strncasecmp'
+  CS<0xa6beac0> calls function 'strncasecmp'
+
+Call graph node for function: 'setsid'<<0xa6d00e0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'sig_handler'<<0xa6798c0>>  #uses=1
+
+Call graph node for function: 'sigaction'<<0xa6e5e60>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'sigemptyset'<<0xa6e5de0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'skiptowhite'<<0xa5e7130>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'skipwhite'<<0xa5e71b0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'sleep'<<0xa8051d0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'smsg'<<0xa6cd2f0>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'smsg_attr'<<0xa6cf0c0>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'sprintf'<<0xa6cd880>>  #uses=12
+  CS<None> calls external node
+
+Call graph node for function: 'stat'<<0xa6e5b20>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'strcat'<<0xa6d0060>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'strchr'<<0xa5e5980>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'strcmp'<<0xa805eb0>>  #uses=9
+  CS<None> calls external node
+
+Call graph node for function: 'strcpy'<<0xa6ce5e0>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'strerror'<<0xa6cefb0>>  #uses=7
+  CS<None> calls external node
+
+Call graph node for function: 'strlen'<<0xa6cd0a0>>  #uses=45
+  CS<None> calls external node
+
+Call graph node for function: 'strncasecmp'<<0xa5e1d40>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'strncmp'<<0xa6d0bb0>>  #uses=4
+  CS<None> calls external node
+
+Call graph node for function: 'strstr'<<0xa805e00>>  #uses=7
+  CS<None> calls external node
+
+Call graph node for function: 'strtok'<<0xa806100>>  #uses=18
+  CS<None> calls external node
+
+Call graph node for function: 'tv_get_number'<<0xa805b10>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'tv_get_string'<<0xa805b90>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'tv_get_string_buf'<<0xa805c10>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'ui_breakcheck'<<0xa679720>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'unlink'<<0xa6e5720>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'vim_free'<<0xa5e5c80>>  #uses=61
+  CS<None> calls external node
+
+Call graph node for function: 'vim_isprintc'<<0xa6d0360>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'vim_snprintf'<<0xa5f78e0>>  #uses=5
+  CS<None> calls external node
+
+Call graph node for function: 'vim_strchr'<<0xa5e58d0>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'vim_strncpy'<<0xa6e50b0>>  #uses=6
+  CS<None> calls external node
+
+Call graph node for function: 'vim_strnsave'<<0xa6e5950>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'vim_strsave'<<0xa6cea90>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'vim_strsize'<<0xa6cd120>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'vim_tempname'<<0xa5e5f00>>  #uses=2
+  CS<None> calls external node
+
+Call graph node for function: 'wait_return'<<0xa6cd370>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'waitpid'<<0xa8050d0>>  #uses=3
+  CS<None> calls external node
+
+Call graph node for function: 'win_split'<<0xa6e55a0>>  #uses=2
+  CS<None> calls external node
+
