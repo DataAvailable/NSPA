@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 121, "cl": 6, "fl": "cmd-if-shell.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 104, "cl": 10, "fl": "cmd-if-shell.c" })
+		 conditional free path: 
+		  --> ({ "ln": 121, "cl": 6, "fl": "cmd-if-shell.c" }|True) 
+

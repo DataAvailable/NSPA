@@ -1,0 +1,522 @@
+===== CK_FREE Functions =====
+window_copy_stringify
+window_copy_copy_buffer
+window_clock_free
+window_client_free
+session_destroy
+server_client_free
+screen_write_free_list
+screen_free_titles
+popup_editor_close_cb
+paste_set
+options_value_free
+options_array_set
+options_array_free
+mode_tree_free
+load_cfg
+key_bindings_free
+input_free
+ibufq_free
+ibuf_free
+VOS_MemFree
+SSL_CTX_free
+systemd_move_to_new_cgroup
+free_all_mem
+tty_term_free_list
+format_choose
+session_free
+format_free
+safexfree
+cmd_free_argv
+paste_rename
+args_free
+window_buffer_free
+control_free_sub
+format_loop_sessions
+grid_free_line
+free
+format_loop_windows
+paste_add
+args_parse_flag_argument
+screen_free
+cmd_run_shell_free
+colour_palette_free
+job_free_job
+window_pane_destroy
+window_copy_free
+format_free_modifiers
+cmd_parse_free_argument
+format_free_range
+options_array_assign
+load_cfg_from_buffer
+format_cb_current_command
+cmdq_free
+XFree
+args_make_commands
+globfree
+vim_free
+style_ranges_free
+cfree
+format_window_name
+freeaddrinfo
+input_free_request
+gcry_mpi_release
+xfree
+av_frame_free
+hyperlinks_free
+nhfree
+gcry_sexp_release
+file_free
+safe_cfree
+safe_free
+safefree
+sm_free
+menu_free_cb
+grid_destroy
+SSL_free
+av_free
+av_freep
+paste_free
+av_buffer_create
+format_loop_clients
+status_free
+_ZdaPv
+_ZdlPv
+free_menu
+obstack_free
+format_loop_panes
+free_menu_string
+job_free
+FreeWild
+cmd_list_free
+args_free_value
+args_make_commands_free
+cmd_confirm_before_free
+client_main
+args_make_commands_now
+cmd_command_prompt_free
+cmd_free
+popup_free
+cmd_display_panes_free
+environ_free
+cmd_if_shell_free
+cmd_new_session_exec
+cmd_new_window_exec
+cmdq_free_state
+control_free_block
+control_read_callback
+format_job_get
+format_replace_expression
+=============================
+
+*********General Stats***************
+################ (program : cmd-parse.bc)###############
+AddrsNum            621
+BBWith2Succ         292
+BBWith3Succ         7
+CallsNum            215
+ConstArrayObj       0
+ConstStructObj      0
+ConstantObj         260
+CopysNum            473
+FIObjNum            314
+FSObjNum            308
+FunctionObjs        86
+GepsNum             1091
+GlobalObjs          65
+HeapObjs            25
+IndCallSites        0
+LoadsNum            1617
+MaxStructSize       14
+NonPtrObj           465
+ReturnsNum          67
+StackObjs           241
+StoresNum           1512
+TotalCallSite       332
+TotalFieldObjects   96
+TotalObjects        719
+TotalPTASVFStmts    3915
+TotalPointers       6824
+TotalSVFStmts       6826
+VarArrayObj         64
+VarStructObj        23
+----------------Time and memory stats--------------------
+LLVMIRTime          0.017
+SVFIRTime           0.023
+SymbolTableTime     0.002
+#######################################################
+
+*********PTACallGraph Stats (Andersen analysis)***************
+################ (program : cmd-parse.bc)###############
+----------------Numbers stats----------------------------
+CalRetPairInCycle   9
+MaxNodeInCycle      4
+NodeInCycle         8
+TotalCycle          3
+TotalEdge           334
+TotalNode           86
+#######################################################
+
+*********Andersen Pointer Analysis Stats***************
+################ (program : cmd-parse.bc)###############
+----------------Time and memory stats--------------------
+AvgIn/OutAddrEdge   0.150924
+AvgIn/OutCopyEdge   0.792606
+AvgIn/OutEdge       1.3454
+AvgIn/OutLoadEdge   0.300329
+AvgIn/OutStoreEdge  0.101545
+AvgPtsSetSize       1.53613
+AvgTopLvlPtsSize    3.32109
+CollapseTime        0
+CopyGepTime         0
+LoadStoreTime       0
+MemoryUsageVmrss    10656
+MemoryUsageVmsize   10188
+SCCDetectTime       0
+SCCMergeTime        0
+TotalTime           0.027
+UpdateCGTime        0
+----------------Numbers stats----------------------------
+AddrProcessed       621
+CopyProcessed       2921
+DummyFieldPtrs      74
+FieldObjs           96
+GepProcessed        1335
+IndCallSites        0
+IndEdgeSolved       0
+LoadProcessed       3168
+LocalVarInRecur     42
+MaxInAddrEdge       1
+MaxInCopyEdge       49
+MaxInLoadEdge       39
+MaxInStoreEdge      4
+MaxNodesInSCC       17
+MaxOutAddrEdge      1
+MaxOutCopyEdge      175
+MaxOutLoadEdge      173
+MaxOutStoreEdge     38
+MaxPtsSetSize       16
+MemObjects          719
+NodesInCycles       75
+NullPointer         19
+NumOfAddrs          596
+NumOfCGEdge         4717
+NumOfCGNode         4081
+NumOfCopys          2059
+NumOfFieldExpand    0
+NumOfGeps           1071
+NumOfLoads          1186
+NumOfSCCDetect      8
+NumOfSFRs           0
+NumOfStores         401
+NumOfValidNode      3949
+NumOfValidObjNode   643
+Pointers            6824
+PointsToBlkPtr      0
+PointsToConstPtr    0
+SolveIterations     8
+StoreProcessed      1786
+TotalCycleNum       8
+TotalObjects        719
+TotalPWCCycleNum    1
+TotalPointers       6824
+#######################################################
+
+****Persistent Points-To Cache Statistics: Andersen's analysis bitvector****
+################ (program : cmd-parse.bc)###############
+UniquePointsToSets       1271
+TotalUnions              9002
+PropertyUnions           4095
+UniqueUnions             379
+LookupUnions             3904
+PreemptiveUnions         624
+TotalComplements         36604
+PropertyComplements      31841
+UniqueComplements        303
+LookupComplements        4159
+PreemptiveComplements    301
+TotalIntersections       3707
+PropertyIntersections    3090
+UniqueIntersections      6
+LookupIntersections      4
+PreemptiveIntersections  607
+#######################################################
+
+*********Memory SSA Statistics***************
+################ (program : cmd-parse.bc)###############
+----------------Time and memory stats--------------------
+AverageRegSize      2.89953
+GenMUCHITime        0.003
+GenRegionTime       0.011
+InsertPHITime       0
+SSARenameTime       0.001
+TotalMSSATime       0.015
+----------------Numbers stats----------------------------
+BBHasMSSAPhi        158
+CSChiNode           854
+CSHasChi            162
+CSHasMu             171
+CSMuNode            1084
+FunEntryChi         579
+FunHasEntryChi      39
+FunHasRetMu         40
+FunRetMu            579
+LoadHasMu           1610
+LoadMuNode          1982
+MSSAPhi             1268
+MaxRegSize          55
+MemRegions          428
+StoreChiNode        1297
+StoreHasChi         777
+#######################################################
+
+*********SVFG Statistics***************
+################ (program : cmd-parse.bc)###############
+----------------Time and memory stats--------------------
+ATNodeTime          0.002
+AvgWeight           2.09871
+ConnDirEdgeTime     0
+ConnIndEdgeTime     0.005
+OptTime             0
+TLNodeTime          0
+TotalTime           0.01
+----------------Numbers stats----------------------------
+ActualIn            1084
+ActualOut           854
+ActualParam         588
+ActualRet           117
+Addr                621
+AvgInDegree         1
+AvgIndInDeg         1
+AvgIndOutDeg        2
+AvgOutDegree        1
+Copy                473
+DirectCallEdge      215
+DirectEdge          4290
+DirectRetEdge       67
+FormalIn            579
+FormalOut           579
+FormalParam         75
+FormalRet           27
+Gep                 1091
+IndCallEdge         1223
+IndRetEdge          948
+IndirectEdge        9371
+IndirectEdgeLabels  19667
+Load                1617
+MSSAPhi             1268
+MaxInDegree         516
+MaxIndInDeg         516
+MaxIndOutDeg        516
+MaxOutDegree        615
+PHI                 42
+Store               1512
+TotalEdge           13661
+TotalNode           11716
+#######################################################
+
+*********SVFG Statistics***************
+################ (program : cmd-parse.bc)###############
+----------------Time and memory stats--------------------
+ATNodeTime          0.002
+AvgWeight           2.09871
+ConnDirEdgeTime     0
+ConnIndEdgeTime     0.005
+OptTime             0
+TLNodeTime          0
+TotalTime           0.011
+----------------Numbers stats----------------------------
+ActualIn            1084
+ActualOut           854
+ActualParam         588
+ActualRet           117
+Addr                621
+AvgInDegree         1
+AvgIndInDeg         1
+AvgIndOutDeg        2
+AvgOutDegree        1
+Copy                473
+DirectCallEdge      215
+DirectEdge          4290
+DirectRetEdge       67
+FormalIn            579
+FormalOut           579
+FormalParam         75
+FormalRet           27
+Gep                 1091
+IndCallEdge         1223
+IndRetEdge          948
+IndirectEdge        9371
+IndirectEdgeLabels  19667
+Load                1617
+MSSAPhi             1268
+MaxInDegree         516
+MaxIndInDeg         516
+MaxIndOutDeg        516
+MaxOutDegree        615
+PHI                 42
+Store               1512
+TotalEdge           13661
+TotalNode           11716
+#######################################################
+===== Source Nodes (内存分配相关) =====
+Source Node ID: 486, Type: AddrVFGNode ID: 486 AddrStmt: [Var5232 <-- Var5233]	
+ValVar ID: 5232
+   %call = call ptr @xmalloc(i64 noundef 1), !dbg !1472 { "ln": 1408, "cl": 8, "fl": "cmd-parse.y" }
+Source Node ID: 500, Type: AddrVFGNode ID: 500 AddrStmt: [Var5391 <-- Var5392]	
+ValVar ID: 5391
+   %call = call ptr @xmalloc(i64 noundef 1), !dbg !1474 { "ln": 1647, "cl": 8, "fl": "cmd-parse.y" }
+Source Node ID: 382, Type: AddrVFGNode ID: 382 AddrStmt: [Var1884 <-- Var1885]	
+ValVar ID: 1884
+   %call = call noalias ptr @malloc(i64 noundef %add12) #9, !dbg !1546 { "ln": 1164, "cl": 11, "fl": "cmd-parse.c" }
+Source Node ID: 409, Type: AddrVFGNode ID: 409 AddrStmt: [Var2731 <-- Var2732]	
+ValVar ID: 2731
+   %call388 = call ptr @xmalloc(i64 noundef 24), !dbg !2041 { "ln": 299, "cl": 12, "fl": "cmd-parse.y" }
+Source Node ID: 408, Type: AddrVFGNode ID: 408 AddrStmt: [Var2703 <-- Var2704]	
+ValVar ID: 2703
+   %call378 = call ptr @xmalloc(i64 noundef 24), !dbg !2019 { "ln": 287, "cl": 12, "fl": "cmd-parse.y" }
+Source Node ID: 421, Type: AddrVFGNode ID: 421 AddrStmt: [Var4153 <-- Var4154]	
+ValVar ID: 4153
+   %call1174 = call ptr @xcalloc(i64 noundef 1, i64 noundef 48), !dbg !2735 { "ln": 570, "cl": 23, "fl": "cmd-parse.y" }
+Source Node ID: 418, Type: AddrVFGNode ID: 418 AddrStmt: [Var3530 <-- Var3531]	
+ValVar ID: 3530
+   %call820 = call ptr @xcalloc(i64 noundef 1, i64 noundef 40), !dbg !2448 { "ln": 463, "cl": 22, "fl": "cmd-parse.y" }
+Source Node ID: 492, Type: AddrVFGNode ID: 492 AddrStmt: [Var5330 <-- Var5331]	
+ValVar ID: 5330
+   %call = call ptr @xmalloc(i64 noundef 1), !dbg !1468 { "ln": 1248, "cl": 8, "fl": "cmd-parse.y" }
+Source Node ID: 419, Type: AddrVFGNode ID: 419 AddrStmt: [Var3640 <-- Var3641]	
+ValVar ID: 3640
+   %call879 = call ptr @xcalloc(i64 noundef 1, i64 noundef 48), !dbg !2473 { "ln": 470, "cl": 10, "fl": "cmd-parse.y" }
+Source Node ID: 422, Type: AddrVFGNode ID: 422 AddrStmt: [Var4171 <-- Var4172]	
+ValVar ID: 4171
+   %call1183 = call ptr @xcalloc(i64 noundef 1, i64 noundef 48), !dbg !2748 { "ln": 576, "cl": 23, "fl": "cmd-parse.y" }
+Source Node ID: 393, Type: AddrVFGNode ID: 393 AddrStmt: [Var2229 <-- Var2230]	
+ValVar ID: 2229
+   %call159 = call ptr @xmalloc(i64 noundef 16), !dbg !1725 { "ln": 157, "cl": 23, "fl": "cmd-parse.y" }
+Source Node ID: 406, Type: AddrVFGNode ID: 406 AddrStmt: [Var2611 <-- Var2612]	
+ValVar ID: 2611
+   %call329 = call ptr @xmalloc(i64 noundef 24), !dbg !1986 { "ln": 273, "cl": 12, "fl": "cmd-parse.y" }
+Source Node ID: 415, Type: AddrVFGNode ID: 415 AddrStmt: [Var3393 <-- Var3394]	
+ValVar ID: 3393
+   %call747 = call ptr @xcalloc(i64 noundef 1, i64 noundef 40), !dbg !2397 { "ln": 440, "cl": 22, "fl": "cmd-parse.y" }
+Source Node ID: 310, Type: AddrVFGNode ID: 310 AddrStmt: [Var1516 <-- Var1517]	
+ValVar ID: 1516
+   %call = call ptr @xmalloc(i64 noundef 16), !dbg !1465 { "ln": 667, "cl": 9, "fl": "cmd-parse.y" }
+Source Node ID: 423, Type: AddrVFGNode ID: 423 AddrStmt: [Var4189 <-- Var4190]	
+ValVar ID: 4189
+   %call1192 = call ptr @xcalloc(i64 noundef 1, i64 noundef 48), !dbg !2761 { "ln": 582, "cl": 23, "fl": "cmd-parse.y" }
+Source Node ID: 394, Type: AddrVFGNode ID: 394 AddrStmt: [Var2250 <-- Var2251]	
+ValVar ID: 2250
+   %call170 = call ptr @xmalloc(i64 noundef 16), !dbg !1733 { "ln": 162, "cl": 23, "fl": "cmd-parse.y" }
+Source Node ID: 420, Type: AddrVFGNode ID: 420 AddrStmt: [Var3993 <-- Var3994]	
+ValVar ID: 3993
+   %call1081 = call ptr @xcalloc(i64 noundef 1, i64 noundef 16), !dbg !2711 { "ln": 557, "cl": 24, "fl": "cmd-parse.y" }
+Source Node ID: 417, Type: AddrVFGNode ID: 417 AddrStmt: [Var3461 <-- Var3462]	
+ValVar ID: 3461
+   %call782 = call ptr @xcalloc(i64 noundef 1, i64 noundef 48), !dbg !2427 { "ln": 453, "cl": 10, "fl": "cmd-parse.y" }
+Source Node ID: 416, Type: AddrVFGNode ID: 416 AddrStmt: [Var3429 <-- Var3430]	
+ValVar ID: 3429
+   %call765 = call ptr @xcalloc(i64 noundef 1, i64 noundef 40), !dbg !2415 { "ln": 449, "cl": 22, "fl": "cmd-parse.y" }
+===== Sink Nodes (内存释放相关) =====
+Sink Node ID: 11715, Type: ActualParmVFGNode ID: 11715 CS[CallICFGNode: { "ln": 641, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 6541
+   %9 = bitcast ptr %8 to ptr, !dbg !1481 { "ln": 641, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11714, Type: ActualParmVFGNode ID: 11714 CS[CallICFGNode: { "ln": 632, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 6526
+   %3 = load ptr, ptr %string, align 8, !dbg !1470 { "ln": 632, "cl": 13, "fl": "cmd-parse.y" }
+Sink Node ID: 11713, Type: ActualParmVFGNode ID: 11713 CS[CallICFGNode: { "ln": 651, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 6504
+   %19 = load ptr, ptr %arg, align 8, !dbg !1480 { "ln": 651, "cl": 27, "fl": "cmd-parse.y" }
+Sink Node ID: 11712, Type: ActualParmVFGNode ID: 11712 CS[CallICFGNode: { "ln": 1020, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 1046
+   %9 = load ptr, ptr %error2, align 8, !dbg !1497 { "ln": 1020, "cl": 13, "fl": "cmd-parse.y" }
+Sink Node ID: 11711, Type: ActualParmVFGNode ID: 11711 CS[CallICFGNode: { "ln": 917, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 643
+   %30 = load ptr, ptr %result, align 8, !dbg !1553 { "ln": 917, "cl": 18, "fl": "cmd-parse.y" }
+Sink Node ID: 11710, Type: ActualParmVFGNode ID: 11710 CS[CallICFGNode: { "ln": 872, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 6943
+   %arrayidx51 = getelementptr inbounds %struct.args_value, ptr %74, i64 %idxprom50, !dbg !1612 { "ln": 872, "cl": 20, "fl": "cmd-parse.y" }
+Sink Node ID: 11708, Type: ActualParmVFGNode ID: 11708 CS[CallICFGNode: { "ln": 659, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 5065
+   %2 = bitcast ptr %1 to ptr, !dbg !1468 { "ln": 659, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11707, Type: ActualParmVFGNode ID: 11707 CS[CallICFGNode: { "ln": 1153, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 5043
+   %11 = load ptr, ptr %error, align 8, !dbg !1508 { "ln": 1153, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11706, Type: ActualParmVFGNode ID: 11706 CS[CallICFGNode: { "ln": 1375, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 4891
+   %59 = load ptr, ptr @yylval, align 8, !dbg !1692 { "ln": 1375, "cl": 16, "fl": "cmd-parse.y" }
+Sink Node ID: 11705, Type: ActualParmVFGNode ID: 11705 CS[CallICFGNode: { "ln": 1372, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 4885
+   %58 = load ptr, ptr @yylval, align 8, !dbg !1688 { "ln": 1372, "cl": 17, "fl": "cmd-parse.y" }
+Sink Node ID: 11704, Type: ActualParmVFGNode ID: 11704 CS[CallICFGNode: { "ln": 2099, "cl": 5, "fl": "cmd-parse.c" }]ValVar ID: 4591
+   %784 = load ptr, ptr %yyss, align 8, !dbg !2981 { "ln": 2099, "cl": 19, "fl": "cmd-parse.c" }
+Sink Node ID: 11703, Type: ActualParmVFGNode ID: 11703 CS[CallICFGNode: { "ln": 311, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2765
+   %268 = bitcast ptr %267 to ptr, !dbg !2065 { "ln": 311, "cl": 9, "fl": "cmd-parse.y" }
+Sink Node ID: 11702, Type: ActualParmVFGNode ID: 11702 CS[CallICFGNode: { "ln": 758, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 6626
+   %26 = load ptr, ptr %s, align 8, !dbg !1520 { "ln": 758, "cl": 10, "fl": "cmd-parse.y" }
+Sink Node ID: 11701, Type: ActualParmVFGNode ID: 11701 CS[CallICFGNode: { "ln": 1360, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 4855
+   %52 = load ptr, ptr @yylval, align 8, !dbg !1661 { "ln": 1360, "cl": 17, "fl": "cmd-parse.y" }
+Sink Node ID: 11700, Type: ActualParmVFGNode ID: 11700 CS[CallICFGNode: { "ln": 595, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 4293
+   %700 = bitcast ptr %699 to ptr, !dbg !2796 { "ln": 595, "cl": 10, "fl": "cmd-parse.y" }
+Sink Node ID: 11699, Type: ActualParmVFGNode ID: 11699 CS[CallICFGNode: { "ln": 1001, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 975
+   %16 = load ptr, ptr %cmdlist6, align 8, !dbg !1509 { "ln": 1001, "cl": 21, "fl": "cmd-parse.y" }
+Sink Node ID: 11698, Type: ActualParmVFGNode ID: 11698 CS[CallICFGNode: { "ln": 638, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 6537
+   %7 = load ptr, ptr %cmdlist, align 8, !dbg !1478 { "ln": 638, "cl": 22, "fl": "cmd-parse.y" }
+Sink Node ID: 11697, Type: ActualParmVFGNode ID: 11697 CS[CallICFGNode: { "ln": 243, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2519
+   %191 = load ptr, ptr %token277, align 8, !dbg !1918 { "ln": 243, "cl": 19, "fl": "cmd-parse.y" }
+Sink Node ID: 11696, Type: ActualParmVFGNode ID: 11696 CS[CallICFGNode: { "ln": 624, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 6712
+   %19 = load ptr, ptr %s, align 8, !dbg !1502 { "ln": 624, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11695, Type: ActualParmVFGNode ID: 11695 CS[CallICFGNode: { "ln": 415, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 3294
+   %421 = bitcast ptr %420 to ptr, !dbg !2351 { "ln": 415, "cl": 9, "fl": "cmd-parse.y" }
+Sink Node ID: 11694, Type: ActualParmVFGNode ID: 11694 CS[CallICFGNode: { "ln": 1130, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 1503
+   %99 = bitcast ptr %98 to ptr, !dbg !1635 { "ln": 1130, "cl": 8, "fl": "cmd-parse.y" }
+Sink Node ID: 11673, Type: ActualParmVFGNode ID: 11673 CS[CallICFGNode: { "ln": 794, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 7064
+   %22 = load ptr, ptr %alias, align 8, !dbg !1530 { "ln": 794, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11677, Type: ActualParmVFGNode ID: 11677 CS[CallICFGNode: { "ln": 301, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2748
+   %260 = load ptr, ptr %token395, align 8, !dbg !2052 { "ln": 301, "cl": 19, "fl": "cmd-parse.y" }
+Sink Node ID: 11675, Type: ActualParmVFGNode ID: 11675 CS[CallICFGNode: { "ln": 1356, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 4845
+   %50 = load ptr, ptr @yylval, align 8, !dbg !1652 { "ln": 1356, "cl": 17, "fl": "cmd-parse.y" }
+Sink Node ID: 11676, Type: ActualParmVFGNode ID: 11676 CS[CallICFGNode: { "ln": 932, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 689
+   %47 = load ptr, ptr %s, align 8, !dbg !1588 { "ln": 932, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11665, Type: ActualParmVFGNode ID: 11665 CS[CallICFGNode: { "ln": 809, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 7139
+   %48 = load ptr, ptr %first, align 8, !dbg !1565 { "ln": 809, "cl": 26, "fl": "cmd-parse.y" }
+Sink Node ID: 11674, Type: ActualParmVFGNode ID: 11674 CS[CallICFGNode: { "ln": 265, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2605
+   %217 = load ptr, ptr %token325, align 8, !dbg !1978 { "ln": 265, "cl": 19, "fl": "cmd-parse.y" }
+Sink Node ID: 11709, Type: ActualParmVFGNode ID: 11709 CS[CallICFGNode: { "ln": 1436, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 5311
+   %15 = load ptr, ptr %buf, align 8, !dbg !1547 { "ln": 1436, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11666, Type: ActualParmVFGNode ID: 11666 CS[CallICFGNode: { "ln": 873, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 6954
+   %78 = bitcast ptr %77 to ptr, !dbg !1619 { "ln": 873, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11682, Type: ActualParmVFGNode ID: 11682 CS[CallICFGNode: { "ln": 1758, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 5626
+   %49 = load ptr, ptr %buf, align 8, !dbg !1715 { "ln": 1758, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11678, Type: ActualParmVFGNode ID: 11678 CS[CallICFGNode: { "ln": 218, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2427
+   %165 = load ptr, ptr %token240, align 8, !dbg !1858 { "ln": 218, "cl": 19, "fl": "cmd-parse.y" }
+Sink Node ID: 11679, Type: ActualParmVFGNode ID: 11679 CS[CallICFGNode: { "ln": 753, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 6613
+   %19 = load ptr, ptr %s, align 8, !dbg !1508 { "ln": 753, "cl": 10, "fl": "cmd-parse.y" }
+Sink Node ID: 11680, Type: ActualParmVFGNode ID: 11680 CS[CallICFGNode: { "ln": 681, "cl": 2, "fl": "cmd-parse.y" }]ValVar ID: 784
+   %22 = bitcast ptr %21 to ptr, !dbg !1485 { "ln": 681, "cl": 7, "fl": "cmd-parse.y" }
+Sink Node ID: 11681, Type: ActualParmVFGNode ID: 11681 CS[CallICFGNode: { "ln": 290, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2721
+   %252 = bitcast ptr %251 to ptr, !dbg !2028 { "ln": 290, "cl": 9, "fl": "cmd-parse.y" }
+Sink Node ID: 11667, Type: ActualParmVFGNode ID: 11667 CS[CallICFGNode: { "ln": 863, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 6914
+   %66 = load ptr, ptr %cause, align 8, !dbg !1588 { "ln": 863, "cl": 8, "fl": "cmd-parse.y" }
+Sink Node ID: 11683, Type: ActualParmVFGNode ID: 11683 CS[CallICFGNode: { "ln": 922, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 657
+   %36 = load ptr, ptr %cmdlist23, align 8, !dbg !1564 { "ln": 922, "cl": 21, "fl": "cmd-parse.y" }
+Sink Node ID: 11668, Type: ActualParmVFGNode ID: 11668 CS[CallICFGNode: { "ln": 468, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 3638
+   %517 = bitcast ptr %516 to ptr, !dbg !2471 { "ln": 468, "cl": 9, "fl": "cmd-parse.y" }
+Sink Node ID: 11684, Type: ActualParmVFGNode ID: 11684 CS[CallICFGNode: { "ln": 918, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 645
+   %31 = load ptr, ptr %current, align 8, !dbg !1556 { "ln": 918, "cl": 18, "fl": "cmd-parse.y" }
+Sink Node ID: 11669, Type: ActualParmVFGNode ID: 11669 CS[CallICFGNode: { "ln": 303, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2753
+   %263 = bitcast ptr %262 to ptr, !dbg !2054 { "ln": 303, "cl": 9, "fl": "cmd-parse.y" }
+Sink Node ID: 11685, Type: ActualParmVFGNode ID: 11685 CS[CallICFGNode: { "ln": 996, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 955
+   %9 = load ptr, ptr %error2, align 8, !dbg !1497 { "ln": 996, "cl": 13, "fl": "cmd-parse.y" }
+Sink Node ID: 11670, Type: ActualParmVFGNode ID: 11670 CS[CallICFGNode: { "ln": 1025, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 1064
+   %16 = load ptr, ptr %cmdlist6, align 8, !dbg !1509 { "ln": 1025, "cl": 21, "fl": "cmd-parse.y" }
+Sink Node ID: 11686, Type: ActualParmVFGNode ID: 11686 CS[CallICFGNode: { "ln": 927, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 676
+   %44 = load ptr, ptr %current, align 8, !dbg !1580 { "ln": 927, "cl": 17, "fl": "cmd-parse.y" }
+Sink Node ID: 11671, Type: ActualParmVFGNode ID: 11671 CS[CallICFGNode: { "ln": 1172, "cl": 11, "fl": "cmd-parse.c" }]ValVar ID: 1948
+   %34 = load ptr, ptr %yyss1, align 8, !dbg !1564 { "ln": 1172, "cl": 25, "fl": "cmd-parse.c" }
+Sink Node ID: 11687, Type: ActualParmVFGNode ID: 11687 CS[CallICFGNode: { "ln": 152, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2226
+   %111 = bitcast ptr %110 to ptr, !dbg !1722 { "ln": 152, "cl": 9, "fl": "cmd-parse.y" }
+Sink Node ID: 11672, Type: ActualParmVFGNode ID: 11672 CS[CallICFGNode: { "ln": 1368, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 4875
+   %56 = load ptr, ptr @yylval, align 8, !dbg !1679 { "ln": 1368, "cl": 17, "fl": "cmd-parse.y" }
+Sink Node ID: 11688, Type: ActualParmVFGNode ID: 11688 CS[CallICFGNode: { "ln": 907, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 608
+   %20 = load ptr, ptr %current, align 8, !dbg !1525 { "ln": 907, "cl": 19, "fl": "cmd-parse.y" }
+Sink Node ID: 11689, Type: ActualParmVFGNode ID: 11689 CS[CallICFGNode: { "ln": 1111, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 1331
+   %46 = load ptr, ptr %copy, align 8, !dbg !1576 { "ln": 1111, "cl": 10, "fl": "cmd-parse.y" }
+Sink Node ID: 11690, Type: ActualParmVFGNode ID: 11690 CS[CallICFGNode: { "ln": 275, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2630
+   %223 = load ptr, ptr %token336, align 8, !dbg !1997 { "ln": 275, "cl": 19, "fl": "cmd-parse.y" }
+Sink Node ID: 11691, Type: ActualParmVFGNode ID: 11691 CS[CallICFGNode: { "ln": 697, "cl": 3, "fl": "cmd-parse.y" }]ValVar ID: 1654
+   %24 = bitcast ptr %23 to ptr, !dbg !1493 { "ln": 697, "cl": 8, "fl": "cmd-parse.y" }
+Sink Node ID: 11692, Type: ActualParmVFGNode ID: 11692 CS[CallICFGNode: { "ln": 217, "cl": 4, "fl": "cmd-parse.y" }]ValVar ID: 2420
+   %163 = load ptr, ptr %ft, align 8, !dbg !1855 { "ln": 217, "cl": 16, "fl": "cmd-parse.y" }
+Sink Node ID: 11693, Type: ActualParmVFGNode ID: 11693 CS[CallICFGNode: { "ln": 1364, "cl": 5, "fl": "cmd-parse.y" }]ValVar ID: 4865
+   %54 = load ptr, ptr @yylval, align 8, !dbg !1670 { "ln": 1364, "cl": 17, "fl": "cmd-parse.y" }

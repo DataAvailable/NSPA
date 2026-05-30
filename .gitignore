@@ -17,3 +17,4 @@ open-source Soft/vim-master/src/testdir/
 
 # Test directories in third-party source trees
 **/testdir/
+workspace/
