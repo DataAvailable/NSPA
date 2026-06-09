@@ -1,0 +1,1700 @@
+{
+  "metadata": {
+    "warning_count": 228,
+    "confirmed_count": 15,
+    "unknown_count": 135,
+    "api_error_unknown_count": 1,
+    "model": "gpt-5.4-nano",
+    "dry_run": false,
+    "result_count": 15,
+    "source_output": "outputs/nspa_tmux_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "leak|PartialLeak|cmd-command-prompt.c|121|20|0|workspace__tmux-bc__objects__cmd-command-prompt.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.82,
+      "rationale": "cdata->prompts is allocated with xcalloc when args_has(args,'l') is true, but the reported error path at PROMPT_TYPE_INVALID calls cmd_command_prompt_free(cdata) and then returns. However, Saber reports a partial leak with a conditional free path that does not release the allocation on feasible control-flow (at lines 148/150). Given the snippet, cmd_command_prompt_free is only invoked on invalid prompt type; other early returns/free paths are not shown for this allocation case, making it plausible that prompts ownership is not correctly freed on all error exits. The analysis flags a leak on the path leading to the invalid-type error return.",
+      "evidence_lines": [
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 121,
+          "role": "allocation"
+        },
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 148,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 150,
+          "role": "return"
+        },
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 152,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Ensure cmd_command_prompt_free(cdata) reliably frees cdata->prompts (and any nested strings) for all cases, including when PROMPT_TYPE_INVALID is detected, and verify no other return paths bypass the free for the 'l' allocation branch.",
+      "warning": {
+        "id": "leak|PartialLeak|cmd-command-prompt.c|121|20|0|workspace__tmux-bc__objects__cmd-command-prompt.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-command-prompt.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/cmd-command-prompt.bc",
+        "primary": {
+          "file": "cmd-command-prompt.c",
+          "line": 121,
+          "column": 20
+        },
+        "path": [
+          {
+            "file": "cmd-command-prompt.c",
+            "line": 148,
+            "column": 6,
+            "branch": "True"
+          },
+          {
+            "file": "cmd-command-prompt.c",
+            "line": 150,
+            "column": 7,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 121, \"cl\": 20, \"fl\": \"cmd-command-prompt.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 148, \"cl\": 6, \"fl\": \"cmd-command-prompt.c\" }|True) \n\t\t  --> ({ \"ln\": 150, \"cl\": 7, \"fl\": \"cmd-command-prompt.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|cmd-command-prompt.c|121|20|0|workspace__tmux-bc__objects__cmd-command-prompt.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-command-prompt.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/cmd-command-prompt.bc",
+          "primary": {
+            "file": "cmd-command-prompt.c",
+            "line": 121,
+            "column": 20
+          },
+          "path": [
+            {
+              "file": "cmd-command-prompt.c",
+              "line": 148,
+              "column": 6,
+              "branch": "True"
+            },
+            {
+              "file": "cmd-command-prompt.c",
+              "line": 150,
+              "column": 7,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 121, \"cl\": 20, \"fl\": \"cmd-command-prompt.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 148, \"cl\": 6, \"fl\": \"cmd-command-prompt.c\" }|True) \n\t\t  --> ({ \"ln\": 150, \"cl\": 7, \"fl\": \"cmd-command-prompt.c\" }|True)"
+        },
+        "source_files": [
+          "cmd-command-prompt.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "cmd-command-prompt.c",
+            "start_line": 80,
+            "end_line": 177,
+            "important_lines": [
+              121,
+              148,
+              150
+            ],
+            "text": "      80: static enum cmd_retval\n      81: cmd_command_prompt_exec(struct cmd *self, struct cmdq_item *item)\n      82: {\n      83: \tstruct args\t\t\t*args = cmd_get_args(self);\n      84: \tstruct client\t\t\t*tc = cmdq_get_target_client(item);\n      85: \tstruct cmd_find_state\t\t*target = cmdq_get_target(item);\n      86: \tconst char\t\t\t*type, *s, *input;\n      87: \tstruct cmd_command_prompt_cdata *cdata;\n      88: \tchar\t\t\t\t*tmp, *prompts, *prompt, *next_prompt;\n      89: \tchar\t\t\t\t*inputs = NULL, *next_input;\n      90: \tu_int\t\t\t\t count = args_count(args);\n      91: \tint\t\t\t\t wait = !args_has(args, 'b'), space = 1;\n      92: \n      93: \tif (tc->prompt_string != NULL)\n      94: \t\treturn (CMD_RETURN_NORMAL);\n      95: \tif (args_has(args, 'i'))\n      96: \t\twait = 0;\n      97: \n      98: \tcdata = xcalloc(1, sizeof *cdata);\n      99: \tif (wait)\n     100: \t\tcdata->item = item;\n     101: \tcdata->state = args_make_commands_prepare(self, item, 0, \"%1\", wait,\n     102: \t    args_has(args, 'F'));\n     103: \n     104: \tif ((s = args_get(args, 'p')) == NULL) {\n     105: \t\tif (count != 0) {\n     106: \t\t\ttmp = args_make_commands_get_command(cdata->state);\n     107: \t\t\txasprintf(&prompts, \"(%s)\", tmp);\n     108: \t\t\tfree(tmp);\n     109: \t\t} else {\n     110: \t\t\tprompts = xstrdup(\":\");\n     111: \t\t\tspace = 0;\n     112: \t\t}\n     113: \t\tnext_prompt = prompts;\n     114: \t} else\n     115: \t\tnext_prompt = prompts = xstrdup(s);\n     116: \tif ((s = args_get(args, 'I')) != NULL)\n     117: \t\tnext_input = inputs = xstrdup(s);\n     118: \telse\n     119: \t\tnext_input = NULL;\n     120: \tif (args_has(args, 'l')) {\n>>   121: \t\tcdata->prompts = xcalloc(1, sizeof *cdata->prompts);\n     122: \t\tcdata->prompts[0].prompt = prompts;\n     123: \t\tcdata->prompts[0].input = inputs;\n     124: \t\tcdata->count = 1;\n     125: \t} else {\n     126: \t\twhile ((prompt = strsep(&next_prompt, \",\")) != NULL) {\n     127: \t\t\tcdata->prompts = xreallocarray(cdata->prompts,\n     128: \t\t\t    cdata->count + 1, sizeof *cdata->prompts);\n     129: \t\t\tif (!space)\n     130: \t\t\t\ttmp = xstrdup(prompt);\n     131: \t\t\telse\n     132: \t\t\t\txasprintf(&tmp, \"%s \", prompt);\n     133: \t\t\tcdata->prompts[cdata->count].prompt = tmp;\n     134: \n     135: \t\t\tif (next_input != NULL) {\n     136: \t\t\t\tinput = strsep(&next_input, \",\");\n     137: \t\t\t\tif (input == NULL)\n     138: \t\t\t\t\tinput = \"\";\n     139: \t\t\t} else\n     140: \t\t\t\tinput = \"\";\n     141: \t\t\tcdata->prompts[cdata->count].input = xstrdup(input);\n     142: \t\t\tcdata->count++;\n     143: \t\t}\n     144: \t\tfree(inputs);\n     145: \t\tfree(prompts);\n     146: \t}\n     147: \n>>   148: \tif ((type = args_get(args, 'T')) != NULL) {\n     149: \t\tcdata->prompt_type = status_prompt_type(type);\n>>   150: \t\tif (cdata->prompt_type == PROMPT_TYPE_INVALID) {\n     151: \t\t\tcmdq_error(item, \"unknown type: %s\", type);\n     152: \t\t\tcmd_command_prompt_free(cdata);\n     153: \t\t\treturn (CMD_RETURN_ERROR);\n     154: \t\t}\n     155: \t} else\n     156: \t\tcdata->prompt_type = PROMPT_TYPE_COMMAND;\n     157: \n     158: \tif (args_has(args, '1'))\n     159: \t\tcdata->flags |= PROMPT_SINGLE;\n     160: \telse if (args_has(args, 'N'))\n     161: \t\tcdata->flags |= PROMPT_NUMERIC;\n     162: \telse if (args_has(args, 'i'))\n     163: \t\tcdata->flags |= PROMPT_INCREMENTAL;\n     164: \telse if (args_has(args, 'k'))\n     165: \t\tcdata->flags |= PROMPT_KEY;\n     166: \telse if (args_has(args, 'e'))\n     167: \t\tcdata->flags |= PROMPT_BSPACE_EXIT;\n     168: \tif (args_has(args, 'C'))\n     169: \t\tcdata->flags |= PROMPT_NOFREEZE;\n     170: \tstatus_prompt_set(tc, target, cdata->prompts[0].prompt,\n     171: \t    cdata->prompts[0].input, cmd_command_prompt_callback,\n     172: \t    cmd_command_prompt_free, cdata, cdata->flags, cdata->prompt_type);\n     173: \n     174: \tif (!wait)\n     175: \t\treturn (CMD_RETURN_NORMAL);\n     176: \treturn (CMD_RETURN_WAIT);\n     177: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|cmd-command-prompt.c|121|20|0|workspace__tmux-bc__objects__cmd-command-prompt.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.78,
+      "rationale": "`cdata->prompts` is conditionally allocated at line 121 when `args_has(args, 'l')` is true. On the error path at lines 150-154 (invalid prompt type), the code calls `cmd_command_prompt_free(cdata)`, which likely frees `cdata` subfields but the provided slice does not show that it releases `cdata->prompts` in all cases. The analyzer reports a conditional-free/missing-free at the allocation site along the branch where prompt type is invalid, indicating a leak on that feasible path.",
+      "evidence_lines": [
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 121,
+          "role": "allocation"
+        },
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 148,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 150,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-command-prompt.c",
+          "line": 152,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Ensure `cmd_command_prompt_free(cdata)` frees `cdata->prompts` (and any nested `prompt/input` allocations) when `args_has(args,'l')` allocated it, before returning on the invalid prompt type path.",
+      "warning": {
+        "id": "null-deref|PartialLeak|cmd-command-prompt.c|121|20|0|workspace__tmux-bc__objects__cmd-command-prompt.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-command-prompt.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/cmd-command-prompt.bc",
+        "primary": {
+          "file": "cmd-command-prompt.c",
+          "line": 121,
+          "column": 20
+        },
+        "path": [
+          {
+            "file": "cmd-command-prompt.c",
+            "line": 148,
+            "column": 6,
+            "branch": "True"
+          },
+          {
+            "file": "cmd-command-prompt.c",
+            "line": 150,
+            "column": 7,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 121, \"cl\": 20, \"fl\": \"cmd-command-prompt.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 148, \"cl\": 6, \"fl\": \"cmd-command-prompt.c\" }|True) \n\t\t  --> ({ \"ln\": 150, \"cl\": 7, \"fl\": \"cmd-command-prompt.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|cmd-command-prompt.c|121|20|0|workspace__tmux-bc__objects__cmd-command-prompt.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-command-prompt.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/cmd-command-prompt.bc",
+          "primary": {
+            "file": "cmd-command-prompt.c",
+            "line": 121,
+            "column": 20
+          },
+          "path": [
+            {
+              "file": "cmd-command-prompt.c",
+              "line": 148,
+              "column": 6,
+              "branch": "True"
+            },
+            {
+              "file": "cmd-command-prompt.c",
+              "line": 150,
+              "column": 7,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 121, \"cl\": 20, \"fl\": \"cmd-command-prompt.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 148, \"cl\": 6, \"fl\": \"cmd-command-prompt.c\" }|True) \n\t\t  --> ({ \"ln\": 150, \"cl\": 7, \"fl\": \"cmd-command-prompt.c\" }|True)"
+        },
+        "source_files": [
+          "cmd-command-prompt.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "cmd-command-prompt.c",
+            "start_line": 80,
+            "end_line": 177,
+            "important_lines": [
+              121,
+              148,
+              150
+            ],
+            "text": "      80: static enum cmd_retval\n      81: cmd_command_prompt_exec(struct cmd *self, struct cmdq_item *item)\n      82: {\n      83: \tstruct args\t\t\t*args = cmd_get_args(self);\n      84: \tstruct client\t\t\t*tc = cmdq_get_target_client(item);\n      85: \tstruct cmd_find_state\t\t*target = cmdq_get_target(item);\n      86: \tconst char\t\t\t*type, *s, *input;\n      87: \tstruct cmd_command_prompt_cdata *cdata;\n      88: \tchar\t\t\t\t*tmp, *prompts, *prompt, *next_prompt;\n      89: \tchar\t\t\t\t*inputs = NULL, *next_input;\n      90: \tu_int\t\t\t\t count = args_count(args);\n      91: \tint\t\t\t\t wait = !args_has(args, 'b'), space = 1;\n      92: \n      93: \tif (tc->prompt_string != NULL)\n      94: \t\treturn (CMD_RETURN_NORMAL);\n      95: \tif (args_has(args, 'i'))\n      96: \t\twait = 0;\n      97: \n      98: \tcdata = xcalloc(1, sizeof *cdata);\n      99: \tif (wait)\n     100: \t\tcdata->item = item;\n     101: \tcdata->state = args_make_commands_prepare(self, item, 0, \"%1\", wait,\n     102: \t    args_has(args, 'F'));\n     103: \n     104: \tif ((s = args_get(args, 'p')) == NULL) {\n     105: \t\tif (count != 0) {\n     106: \t\t\ttmp = args_make_commands_get_command(cdata->state);\n     107: \t\t\txasprintf(&prompts, \"(%s)\", tmp);\n     108: \t\t\tfree(tmp);\n     109: \t\t} else {\n     110: \t\t\tprompts = xstrdup(\":\");\n     111: \t\t\tspace = 0;\n     112: \t\t}\n     113: \t\tnext_prompt = prompts;\n     114: \t} else\n     115: \t\tnext_prompt = prompts = xstrdup(s);\n     116: \tif ((s = args_get(args, 'I')) != NULL)\n     117: \t\tnext_input = inputs = xstrdup(s);\n     118: \telse\n     119: \t\tnext_input = NULL;\n     120: \tif (args_has(args, 'l')) {\n>>   121: \t\tcdata->prompts = xcalloc(1, sizeof *cdata->prompts);\n     122: \t\tcdata->prompts[0].prompt = prompts;\n     123: \t\tcdata->prompts[0].input = inputs;\n     124: \t\tcdata->count = 1;\n     125: \t} else {\n     126: \t\twhile ((prompt = strsep(&next_prompt, \",\")) != NULL) {\n     127: \t\t\tcdata->prompts = xreallocarray(cdata->prompts,\n     128: \t\t\t    cdata->count + 1, sizeof *cdata->prompts);\n     129: \t\t\tif (!space)\n     130: \t\t\t\ttmp = xstrdup(prompt);\n     131: \t\t\telse\n     132: \t\t\t\txasprintf(&tmp, \"%s \", prompt);\n     133: \t\t\tcdata->prompts[cdata->count].prompt = tmp;\n     134: \n     135: \t\t\tif (next_input != NULL) {\n     136: \t\t\t\tinput = strsep(&next_input, \",\");\n     137: \t\t\t\tif (input == NULL)\n     138: \t\t\t\t\tinput = \"\";\n     139: \t\t\t} else\n     140: \t\t\t\tinput = \"\";\n     141: \t\t\tcdata->prompts[cdata->count].input = xstrdup(input);\n     142: \t\t\tcdata->count++;\n     143: \t\t}\n     144: \t\tfree(inputs);\n     145: \t\tfree(prompts);\n     146: \t}\n     147: \n>>   148: \tif ((type = args_get(args, 'T')) != NULL) {\n     149: \t\tcdata->prompt_type = status_prompt_type(type);\n>>   150: \t\tif (cdata->prompt_type == PROMPT_TYPE_INVALID) {\n     151: \t\t\tcmdq_error(item, \"unknown type: %s\", type);\n     152: \t\t\tcmd_command_prompt_free(cdata);\n     153: \t\t\treturn (CMD_RETURN_ERROR);\n     154: \t\t}\n     155: \t} else\n     156: \t\tcdata->prompt_type = PROMPT_TYPE_COMMAND;\n     157: \n     158: \tif (args_has(args, '1'))\n     159: \t\tcdata->flags |= PROMPT_SINGLE;\n     160: \telse if (args_has(args, 'N'))\n     161: \t\tcdata->flags |= PROMPT_NUMERIC;\n     162: \telse if (args_has(args, 'i'))\n     163: \t\tcdata->flags |= PROMPT_INCREMENTAL;\n     164: \telse if (args_has(args, 'k'))\n     165: \t\tcdata->flags |= PROMPT_KEY;\n     166: \telse if (args_has(args, 'e'))\n     167: \t\tcdata->flags |= PROMPT_BSPACE_EXIT;\n     168: \tif (args_has(args, 'C'))\n     169: \t\tcdata->flags |= PROMPT_NOFREEZE;\n     170: \tstatus_prompt_set(tc, target, cdata->prompts[0].prompt,\n     171: \t    cdata->prompts[0].input, cmd_command_prompt_callback,\n     172: \t    cmd_command_prompt_free, cdata, cdata->flags, cdata->prompt_type);\n     173: \n     174: \tif (!wait)\n     175: \t\treturn (CMD_RETURN_NORMAL);\n     176: \treturn (CMD_RETURN_WAIT);\n     177: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|cmd-respawn-pane.c|81|6|0|workspace__tmux-bc__objects__cmd-respawn-pane.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "null_deref",
+      "confidence": 0.9,
+      "rationale": "If spawn_pane(&sc, &cause) returns NULL, cause may remain NULL. The code then passes cause to cmdq_error as a %s string and calls free(cause) only after that. This is a feasible NULL-deref when cause is NULL.",
+      "evidence_lines": [
+        {
+          "file": "cmd-respawn-pane.c",
+          "line": 81,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-respawn-pane.c",
+          "line": 82,
+          "role": "return"
+        },
+        {
+          "file": "cmd-respawn-pane.c",
+          "line": 83,
+          "role": "free"
+        },
+        {
+          "file": "cmd-respawn-pane.c",
+          "line": 86,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "In the failure path, ensure cause is non-NULL before using it as a %s argument. For example: if (cause != NULL) cmdq_error(..., \"%s\", cause); else cmdq_error(..., \"respawn pane failed\"); then free(cause) if non-NULL.",
+      "warning": {
+        "id": "null-deref|NeverFree|cmd-respawn-pane.c|81|6|0|workspace__tmux-bc__objects__cmd-respawn-pane.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-respawn-pane.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/cmd-respawn-pane.bc",
+        "primary": {
+          "file": "cmd-respawn-pane.c",
+          "line": 81,
+          "column": 6
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 81, \"cl\": 6, \"fl\": \"cmd-respawn-pane.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|cmd-respawn-pane.c|81|6|0|workspace__tmux-bc__objects__cmd-respawn-pane.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-respawn-pane.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/cmd-respawn-pane.bc",
+          "primary": {
+            "file": "cmd-respawn-pane.c",
+            "line": 81,
+            "column": 6
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 81, \"cl\": 6, \"fl\": \"cmd-respawn-pane.c\" })"
+        },
+        "source_files": [
+          "cmd-respawn-pane.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "cmd-respawn-pane.c",
+            "start_line": 47,
+            "end_line": 98,
+            "important_lines": [
+              81
+            ],
+            "text": "      47: static enum cmd_retval\n      48: cmd_respawn_pane_exec(struct cmd *self, struct cmdq_item *item)\n      49: {\n      50: \tstruct args\t\t*args = cmd_get_args(self);\n      51: \tstruct cmd_find_state\t*target = cmdq_get_target(item);\n      52: \tstruct spawn_context\t sc = { 0 };\n      53: \tstruct session\t\t*s = target->s;\n      54: \tstruct winlink\t\t*wl = target->wl;\n      55: \tstruct window_pane\t*wp = target->wp;\n      56: \tchar\t\t\t*cause = NULL;\n      57: \tstruct args_value\t*av;\n      58: \n      59: \tsc.item = item;\n      60: \tsc.s = s;\n      61: \tsc.wl = wl;\n      62: \n      63: \tsc.wp0 = wp;\n      64: \n      65: \targs_to_vector(args, &sc.argc, &sc.argv);\n      66: \tsc.environ = environ_create();\n      67: \n      68: \tav = args_first_value(args, 'e');\n      69: \twhile (av != NULL) {\n      70: \t\tenviron_put(sc.environ, av->string, 0);\n      71: \t\tav = args_next_value(av);\n      72: \t}\n      73: \n      74: \tsc.idx = -1;\n      75: \tsc.cwd = args_get(args, 'c');\n      76: \n      77: \tsc.flags = SPAWN_RESPAWN;\n      78: \tif (args_has(args, 'k'))\n      79: \t\tsc.flags |= SPAWN_KILL;\n      80: \n>>    81: \tif (spawn_pane(&sc, &cause) == NULL) {\n      82: \t\tcmdq_error(item, \"respawn pane failed: %s\", cause);\n      83: \t\tfree(cause);\n      84: \t\tif (sc.argv != NULL)\n      85: \t\t\tcmd_free_argv(sc.argc, sc.argv);\n      86: \t\tenviron_free(sc.environ);\n      87: \t\treturn (CMD_RETURN_ERROR);\n      88: \t}\n      89: \n      90: \twp->flags |= PANE_REDRAW;\n      91: \tserver_redraw_window_borders(wp->window);\n      92: \tserver_status_window(wp->window);\n      93: \n      94: \tif (sc.argv != NULL)\n      95: \t\tcmd_free_argv(sc.argc, sc.argv);\n      96: \tenviron_free(sc.environ);\n      97: \treturn (CMD_RETURN_NORMAL);\n      98: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|cmd-send-keys.c|77|11|0|workspace__tmux-bc__objects__cmd-send-keys.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.9,
+      "rationale": "`event` is allocated unconditionally when args has 'K', but on the path where `server_client_handle_key(tc, event) != 0` (i.e., the condition in line 80 is false), the code returns without freeing `event` or `event->buf`. Saber reports a conditional free path only for the success==0 case, implying the non-zero case leaks the allocation.",
+      "evidence_lines": [
+        {
+          "file": "cmd-send-keys.c",
+          "line": 77,
+          "role": "allocation"
+        },
+        {
+          "file": "cmd-send-keys.c",
+          "line": 80,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-send-keys.c",
+          "line": 81,
+          "role": "free"
+        },
+        {
+          "file": "cmd-send-keys.c",
+          "line": 82,
+          "role": "free"
+        },
+        {
+          "file": "cmd-send-keys.c",
+          "line": 84,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Free `event` (and `event->buf` if owned) on all paths unless `server_client_handle_key` is documented/confirmed to take ownership of `event` when it returns non-zero. If ownership is transferred, clarify in code (e.g., set pointers to NULL or free conditionally based on return/ownership contract).",
+      "warning": {
+        "id": "leak|PartialLeak|cmd-send-keys.c|77|11|0|workspace__tmux-bc__objects__cmd-send-keys.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-send-keys.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/cmd-send-keys.bc",
+        "primary": {
+          "file": "cmd-send-keys.c",
+          "line": 77,
+          "column": 11
+        },
+        "path": [
+          {
+            "file": "cmd-send-keys.c",
+            "line": 80,
+            "column": 7,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 77, \"cl\": 11, \"fl\": \"cmd-send-keys.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 80, \"cl\": 7, \"fl\": \"cmd-send-keys.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|cmd-send-keys.c|77|11|0|workspace__tmux-bc__objects__cmd-send-keys.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-send-keys.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/cmd-send-keys.bc",
+          "primary": {
+            "file": "cmd-send-keys.c",
+            "line": 77,
+            "column": 11
+          },
+          "path": [
+            {
+              "file": "cmd-send-keys.c",
+              "line": 80,
+              "column": 7,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 77, \"cl\": 11, \"fl\": \"cmd-send-keys.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 80, \"cl\": 7, \"fl\": \"cmd-send-keys.c\" }|True)"
+        },
+        "source_files": [
+          "cmd-send-keys.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "cmd-send-keys.c",
+            "start_line": 60,
+            "end_line": 102,
+            "important_lines": [
+              77,
+              80
+            ],
+            "text": "      60: static struct cmdq_item *\n      61: cmd_send_keys_inject_key(struct cmdq_item *item, struct cmdq_item *after,\n      62:     struct args *args, key_code key)\n      63: {\n      64: \tstruct cmd_find_state\t\t*target = cmdq_get_target(item);\n      65: \tstruct client\t\t\t*tc = cmdq_get_target_client(item);\n      66: \tstruct session\t\t\t*s = target->s;\n      67: \tstruct winlink\t\t\t*wl = target->wl;\n      68: \tstruct window_pane\t\t*wp = target->wp;\n      69: \tstruct window_mode_entry\t*wme;\n      70: \tstruct key_table\t\t*table = NULL;\n      71: \tstruct key_binding\t\t*bd;\n      72: \tstruct key_event\t\t*event;\n      73: \n      74: \tif (args_has(args, 'K')) {\n      75: \t\tif (tc == NULL)\n      76: \t\t\treturn (item);\n>>    77: \t\tevent = xcalloc(1, sizeof *event);\n      78: \t\tevent->key = key|KEYC_SENT;\n      79: \t\tmemset(&event->m, 0, sizeof event->m);\n>>    80: \t\tif (server_client_handle_key(tc, event) == 0) {\n      81: \t\t\tfree(event->buf);\n      82: \t\t\tfree(event);\n      83: \t\t}\n      84: \t\treturn (item);\n      85: \t}\n      86: \n      87: \twme = TAILQ_FIRST(&wp->modes);\n      88: \tif (wme == NULL || wme->mode->key_table == NULL) {\n      89: \t\tif (window_pane_key(wp, tc, s, wl, key, NULL) != 0)\n      90: \t\t\treturn (NULL);\n      91: \t\treturn (item);\n      92: \t}\n      93: \ttable = key_bindings_get_table(wme->mode->key_table(wme), 1);\n      94: \n      95: \tbd = key_bindings_get(table, key & ~KEYC_MASK_FLAGS);\n      96: \tif (bd != NULL) {\n      97: \t\ttable->references++;\n      98: \t\tafter = key_bindings_dispatch(bd, after, tc, NULL, target);\n      99: \t\tkey_bindings_unref_table(table);\n     100: \t}\n     101: \treturn (after);\n     102: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|cmd-wait-for.c|88|7|2|workspace__tmux-bc__objects__cmd-wait-for.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.86,
+      "rationale": "cmd_wait_for_add allocates a wait_channel (wc) and duplicates wc->name. Several conditional early-return paths in cmd_wait_for_remove (returns when wc->locked or when waiters are non-empty or !wc->woken) mean the allocated wc/name are not freed on those feasible paths. Additionally, cmd_wait_for_signal and cmd_wait_for_wait call cmd_wait_for_remove(wc) only under specific conditions; if those conditions are not met, wc remains allocated. The reported partial leak corresponds to feasible paths where the allocated allocation is not released.",
+      "evidence_lines": [
+        {
+          "file": "cmd-wait-for.c",
+          "line": 88,
+          "role": "allocation"
+        },
+        {
+          "file": "cmd-wait-for.c",
+          "line": 107,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-wait-for.c",
+          "line": 109,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-wait-for.c",
+          "line": 116,
+          "role": "free"
+        },
+        {
+          "file": "cmd-wait-for.c",
+          "line": 148,
+          "role": "condition"
+        },
+        {
+          "file": "cmd-wait-for.c",
+          "line": 181,
+          "role": "condition"
+        }
+      ],
+      "fix_suggestion": "Ensure there is a guaranteed cleanup path for wc/name when the wait channel is no longer needed (e.g., free on removal in all cases, or redesign locking/waiter lifecycle so wc->locked/non-empty/woken checks do not permanently prevent deallocation). Consider reference counting or centralized destruction of wait_channel entries on command completion.",
+      "warning": {
+        "id": "leak|PartialLeak|cmd-wait-for.c|88|7|2|workspace__tmux-bc__objects__cmd-wait-for.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-wait-for.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/cmd-wait-for.bc",
+        "primary": {
+          "file": "cmd-wait-for.c",
+          "line": 88,
+          "column": 7
+        },
+        "path": [
+          {
+            "file": "cmd-wait-for.c",
+            "line": 107,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "line": 109,
+            "column": 33,
+            "branch": "True"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "line": 109,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "line": 148,
+            "column": 32,
+            "branch": "False"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "line": 148,
+            "column": 32,
+            "branch": "True"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "line": 148,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "line": 181,
+            "column": 6,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 88, \"cl\": 7, \"fl\": \"cmd-wait-for.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 107, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 109, \"cl\": 33, \"fl\": \"cmd-wait-for.c\" }|True) \n\t\t  --> ({ \"ln\": 109, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 148, \"cl\": 32, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 148, \"cl\": 32, \"fl\": \"cmd-wait-for.c\" }|True) \n\t\t  --> ({ \"ln\": 148, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 181, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|cmd-wait-for.c|88|7|2|workspace__tmux-bc__objects__cmd-wait-for.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-wait-for.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/cmd-wait-for.bc",
+          "primary": {
+            "file": "cmd-wait-for.c",
+            "line": 88,
+            "column": 7
+          },
+          "path": [
+            {
+              "file": "cmd-wait-for.c",
+              "line": 107,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "cmd-wait-for.c",
+              "line": 109,
+              "column": 33,
+              "branch": "True"
+            },
+            {
+              "file": "cmd-wait-for.c",
+              "line": 109,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "cmd-wait-for.c",
+              "line": 148,
+              "column": 32,
+              "branch": "False"
+            },
+            {
+              "file": "cmd-wait-for.c",
+              "line": 148,
+              "column": 32,
+              "branch": "True"
+            },
+            {
+              "file": "cmd-wait-for.c",
+              "line": 148,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "cmd-wait-for.c",
+              "line": 181,
+              "column": 6,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 88, \"cl\": 7, \"fl\": \"cmd-wait-for.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 107, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 109, \"cl\": 33, \"fl\": \"cmd-wait-for.c\" }|True) \n\t\t  --> ({ \"ln\": 109, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 148, \"cl\": 32, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 148, \"cl\": 32, \"fl\": \"cmd-wait-for.c\" }|True) \n\t\t  --> ({ \"ln\": 148, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|False) \n\t\t  --> ({ \"ln\": 181, \"cl\": 6, \"fl\": \"cmd-wait-for.c\" }|True)"
+        },
+        "source_files": [
+          "cmd-wait-for.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "cmd-wait-for.c",
+            "start_line": 83,
+            "end_line": 102,
+            "important_lines": [
+              88
+            ],
+            "text": "      83: static struct wait_channel *\n      84: cmd_wait_for_add(const char *name)\n      85: {\n      86: \tstruct wait_channel *wc;\n      87: \n>>    88: \twc = xmalloc(sizeof *wc);\n      89: \twc->name = xstrdup(name);\n      90: \n      91: \twc->locked = 0;\n      92: \twc->woken = 0;\n      93: \n      94: \tTAILQ_INIT(&wc->waiters);\n      95: \tTAILQ_INIT(&wc->lockers);\n      96: \n      97: \tRB_INSERT(wait_channels, &wait_channels, wc);\n      98: \n      99: \tlog_debug(\"add wait channel %s\", wc->name);\n     100: \n     101: \treturn (wc);\n     102: }"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "start_line": 104,
+            "end_line": 118,
+            "important_lines": [
+              107,
+              109
+            ],
+            "text": "     104: static void\n     105: cmd_wait_for_remove(struct wait_channel *wc)\n     106: {\n>>   107: \tif (wc->locked)\n     108: \t\treturn;\n>>   109: \tif (!TAILQ_EMPTY(&wc->waiters) || !wc->woken)\n     110: \t\treturn;\n     111: \n     112: \tlog_debug(\"remove wait channel %s\", wc->name);\n     113: \n     114: \tRB_REMOVE(wait_channels, &wait_channels, wc);\n     115: \n     116: \tfree((void *)wc->name);\n     117: \tfree(wc);\n     118: }"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "start_line": 139,
+            "end_line": 164,
+            "important_lines": [
+              148
+            ],
+            "text": "     139: static enum cmd_retval\n     140: cmd_wait_for_signal(__unused struct cmdq_item *item, const char *name,\n     141:     struct wait_channel *wc)\n     142: {\n     143: \tstruct wait_item\t*wi, *wi1;\n     144: \n     145: \tif (wc == NULL)\n     146: \t\twc = cmd_wait_for_add(name);\n     147: \n>>   148: \tif (TAILQ_EMPTY(&wc->waiters) && !wc->woken) {\n     149: \t\tlog_debug(\"signal wait channel %s, no waiters\", wc->name);\n     150: \t\twc->woken = 1;\n     151: \t\treturn (CMD_RETURN_NORMAL);\n     152: \t}\n     153: \tlog_debug(\"signal wait channel %s, with waiters\", wc->name);\n     154: \n     155: \tTAILQ_FOREACH_SAFE(wi, &wc->waiters, entry, wi1) {\n     156: \t\tcmdq_continue(wi->item);\n     157: \n     158: \t\tTAILQ_REMOVE(&wc->waiters, wi, entry);\n     159: \t\tfree(wi);\n     160: \t}\n     161: \n     162: \tcmd_wait_for_remove(wc);\n     163: \treturn (CMD_RETURN_NORMAL);\n     164: }"
+          },
+          {
+            "file": "cmd-wait-for.c",
+            "start_line": 166,
+            "end_line": 193,
+            "important_lines": [
+              181
+            ],
+            "text": "     166: static enum cmd_retval\n     167: cmd_wait_for_wait(struct cmdq_item *item, const char *name,\n     168:     struct wait_channel *wc)\n     169: {\n     170: \tstruct client\t\t*c = cmdq_get_client(item);\n     171: \tstruct wait_item\t*wi;\n     172: \n     173: \tif (c == NULL) {\n     174: \t\tcmdq_error(item, \"not able to wait\");\n     175: \t\treturn (CMD_RETURN_ERROR);\n     176: \t}\n     177: \n     178: \tif (wc == NULL)\n     179: \t\twc = cmd_wait_for_add(name);\n     180: \n>>   181: \tif (wc->woken) {\n     182: \t\tlog_debug(\"wait channel %s already woken (%p)\", wc->name, c);\n     183: \t\tcmd_wait_for_remove(wc);\n     184: \t\treturn (CMD_RETURN_NORMAL);\n     185: \t}\n     186: \tlog_debug(\"wait channel %s not woken (%p)\", wc->name, c);\n     187: \n     188: \twi = xcalloc(1, sizeof *wi);\n     189: \twi->item = item;\n     190: \tTAILQ_INSERT_TAIL(&wc->waiters, wi, entry);\n     191: \n     192: \treturn (CMD_RETURN_WAIT);\n     193: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|control.c|902|10|4|workspace__tmux-bc__objects__control.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "null_deref",
+      "confidence": 0.86,
+      "rationale": "`csp` is allocated with `xcalloc` and then immediately dereferenced (`csp->pane`, `csp->idx`) in the same basic block. The static analyzer warning indicates a potential null dereference at the allocation site, which would be possible if `xcalloc` can return NULL in this build/config (contrary to typical `x*` semantics) or if the call path is annotated incorrectly. In the provided slice, there is no NULL-check after the allocation before dereferencing `csp`.",
+      "evidence_lines": [
+        {
+          "file": "control.c",
+          "line": 900,
+          "role": "condition",
+          "},{": "control.c"
+        },
+        {
+          "file": "control.c",
+          "line": 901,
+          "role": "condition"
+        },
+        {
+          "file": "control.c",
+          "line": 902,
+          "role": "allocation"
+        },
+        {
+          "file": "control.c",
+          "line": 903,
+          "role": "return"
+        },
+        {
+          "file": "control.c",
+          "line": 903,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Ensure `xcalloc` is guaranteed non-NULL (document/enforce contract), or add a NULL check after allocation before dereferencing `csp` (e.g., `csp = xcalloc(...); if (csp == NULL) return;`).",
+      "warning": {
+        "id": "null-deref|NeverFree|control.c|902|10|4|workspace__tmux-bc__objects__control.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__control.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/control.bc",
+        "primary": {
+          "file": "control.c",
+          "line": 902,
+          "column": 10
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 902, \"cl\": 10, \"fl\": \"control.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|control.c|902|10|4|workspace__tmux-bc__objects__control.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__control.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/control.bc",
+          "primary": {
+            "file": "control.c",
+            "line": 902,
+            "column": 10
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 902, \"cl\": 10, \"fl\": \"control.c\" })"
+        },
+        "source_files": [
+          "control.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "control.c",
+            "start_line": 873,
+            "end_line": 918,
+            "important_lines": [
+              902
+            ],
+            "text": "     873: static void\n     874: control_check_subs_pane(struct client *c, struct control_sub *csub)\n     875: {\n     876: \tstruct session\t\t*s = c->session;\n     877: \tstruct window_pane\t*wp;\n     878: \tstruct window\t\t*w;\n     879: \tstruct winlink\t\t*wl;\n     880: \tstruct format_tree\t*ft;\n     881: \tchar\t\t\t*value;\n     882: \tstruct control_sub_pane\t*csp, find;\n     883: \n     884: \twp = window_pane_find_by_id(csub->id);\n     885: \tif (wp == NULL || wp->fd == -1)\n     886: \t\treturn;\n     887: \tw = wp->window;\n     888: \n     889: \tTAILQ_FOREACH(wl, &w->winlinks, wentry) {\n     890: \t\tif (wl->session != s)\n     891: \t\t\tcontinue;\n     892: \n     893: \t\tft = format_create_defaults(NULL, c, s, wl, wp);\n     894: \t\tvalue = format_expand(ft, csub->format);\n     895: \t\tformat_free(ft);\n     896: \n     897: \t\tfind.pane = wp->id;\n     898: \t\tfind.idx = wl->idx;\n     899: \n     900: \t\tcsp = RB_FIND(control_sub_panes, &csub->panes, &find);\n     901: \t\tif (csp == NULL) {\n>>   902: \t\t\tcsp = xcalloc(1, sizeof *csp);\n     903: \t\t\tcsp->pane = wp->id;\n     904: \t\t\tcsp->idx = wl->idx;\n     905: \t\t\tRB_INSERT(control_sub_panes, &csub->panes, csp);\n     906: \t\t}\n     907: \n     908: \t\tif (csp->last != NULL && strcmp(value, csp->last) == 0) {\n     909: \t\t\tfree(value);\n     910: \t\t\tcontinue;\n     911: \t\t}\n     912: \t\tcontrol_write(c,\n     913: \t\t    \"%%subscription-changed %s $%u @%u %u %%%u : %s\",\n     914: \t\t    csub->name, s->id, w->id, wl->idx, wp->id, value);\n     915: \t\tfree(csp->last);\n     916: \t\tcsp->last = value;\n     917: \t}\n     918: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|format.c|347|9|2|workspace__tmux-bc__objects__format.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "null_deref",
+      "confidence": 0.86,
+      "rationale": "The code allocates buf and then immediately dereferences it in `if (*buf != '\\0' ...)`. However, if `xmalloc(len + 1)` returns NULL, `*buf` will dereference a NULL pointer. The analyzer reports a conditional path around this dereference, consistent with a missing NULL-check after allocation.",
+      "evidence_lines": [
+        {
+          "file": "format.c",
+          "line": 347,
+          "role": "allocation"
+        },
+        {
+          "file": "format.c",
+          "line": 356,
+          "role": "condition"
+        },
+        {
+          "file": "format.c",
+          "line": 356,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Check the result of `xmalloc` (or use a non-NULL-guaranteeing allocator). If `xmalloc` can return NULL, add `if (buf == NULL) { /* handle */ }` before dereferencing `*buf`, or replace with an allocator that aborts on failure.",
+      "warning": {
+        "id": "null-deref|PartialLeak|format.c|347|9|2|workspace__tmux-bc__objects__format.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__format.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/format.bc",
+        "primary": {
+          "file": "format.c",
+          "line": 347,
+          "column": 9
+        },
+        "path": [
+          {
+            "file": "format.c",
+            "line": 356,
+            "column": 19,
+            "branch": "True"
+          },
+          {
+            "file": "format.c",
+            "line": 356,
+            "column": 6,
+            "branch": "False"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 347, \"cl\": 9, \"fl\": \"format.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 356, \"cl\": 19, \"fl\": \"format.c\" }|True) \n\t\t  --> ({ \"ln\": 356, \"cl\": 6, \"fl\": \"format.c\" }|False) \n\n\nNSPA timeout after 120.0 seconds"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|format.c|347|9|2|workspace__tmux-bc__objects__format.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__format.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/format.bc",
+          "primary": {
+            "file": "format.c",
+            "line": 347,
+            "column": 9
+          },
+          "path": [
+            {
+              "file": "format.c",
+              "line": 356,
+              "column": 19,
+              "branch": "True"
+            },
+            {
+              "file": "format.c",
+              "line": 356,
+              "column": 6,
+              "branch": "False"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 347, \"cl\": 9, \"fl\": \"format.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 356, \"cl\": 19, \"fl\": \"format.c\" }|True) \n\t\t  --> ({ \"ln\": 356, \"cl\": 6, \"fl\": \"format.c\" }|False) \n\n\nNSPA timeout after 120.0 seconds"
+        },
+        "source_files": [
+          "format.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "format.c",
+            "start_line": 334,
+            "end_line": 367,
+            "important_lines": [
+              347,
+              356
+            ],
+            "text": "     334: static void\n     335: format_job_complete(struct job *job)\n     336: {\n     337: \tstruct format_job\t*fj = job_get_data(job);\n     338: \tstruct evbuffer\t\t*evb = job_get_event(job)->input;\n     339: \tchar\t\t\t*line, *buf;\n     340: \tsize_t\t\t\t len;\n     341: \n     342: \tfj->job = NULL;\n     343: \n     344: \tbuf = NULL;\n     345: \tif ((line = evbuffer_readline(evb)) == NULL) {\n     346: \t\tlen = EVBUFFER_LENGTH(evb);\n>>   347: \t\tbuf = xmalloc(len + 1);\n     348: \t\tif (len != 0)\n     349: \t\t\tmemcpy(buf, EVBUFFER_DATA(evb), len);\n     350: \t\tbuf[len] = '\\0';\n     351: \t} else\n     352: \t\tbuf = line;\n     353: \n     354: \tlog_debug(\"%s: %p %s: %s\", __func__, fj, fj->cmd, buf);\n     355: \n>>   356: \tif (*buf != '\\0' || !fj->updated) {\n     357: \t\tfree(fj->out);\n     358: \t\tfj->out = buf;\n     359: \t} else\n     360: \t\tfree(buf);\n     361: \n     362: \tif (fj->status) {\n     363: \t\tif (fj->client != NULL)\n     364: \t\t\tserver_status_client(fj->client);\n     365: \t\tfj->status = 0;\n     366: \t}\n     367: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|input.c|3210|9|0|workspace__tmux-bc__objects__input.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.78,
+      "rationale": "Memory allocated into *out in input_osc_52_parse is released only when wp==NULL and ictx->c==NULL. If input_osc_52_parse succeeds (returns true) and wp==NULL with ictx->c!=NULL, out is never freed in this function. The leak path is consistent with the conditional free reported: only one branch frees out, other successful branches do not.",
+      "evidence_lines": [
+        {
+          "file": "input.c",
+          "line": 3210,
+          "role": "allocation"
+        },
+        {
+          "file": "input.c",
+          "line": 3230,
+          "role": "condition"
+        },
+        {
+          "file": "input.c",
+          "line": 3233,
+          "role": "condition"
+        },
+        {
+          "file": "input.c",
+          "line": 3235,
+          "role": "condition"
+        },
+        {
+          "file": "input.c",
+          "line": 3236,
+          "role": "free"
+        },
+        {
+          "file": "input.c",
+          "line": 3239,
+          "role": "return_without_free"
+        }
+      ],
+      "fix_suggestion": "Ensure out is freed on all paths where it is not consumed/owned by a downstream function. For example, free(out) after tty_set_selection/paste_add when wp==NULL && ictx->c!=NULL, unless those functions take ownership of out.",
+      "warning": {
+        "id": "leak|PartialLeak|input.c|3210|9|0|workspace__tmux-bc__objects__input.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__input.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/input.bc",
+        "primary": {
+          "file": "input.c",
+          "line": 3210,
+          "column": 9
+        },
+        "path": [
+          {
+            "file": "input.c",
+            "line": 3230,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "input.c",
+            "line": 3233,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "input.c",
+            "line": 3233,
+            "column": 6,
+            "branch": "True"
+          },
+          {
+            "file": "input.c",
+            "line": 3235,
+            "column": 7,
+            "branch": "False"
+          },
+          {
+            "file": "input.c",
+            "line": 3235,
+            "column": 7,
+            "branch": "True"
+          },
+          {
+            "file": "input.c",
+            "line": 3211,
+            "column": 6,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3210, \"cl\": 9, \"fl\": \"input.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3230, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3211, \"cl\": 6, \"fl\": \"input.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|input.c|3210|9|0|workspace__tmux-bc__objects__input.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__input.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/input.bc",
+          "primary": {
+            "file": "input.c",
+            "line": 3210,
+            "column": 9
+          },
+          "path": [
+            {
+              "file": "input.c",
+              "line": 3230,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "input.c",
+              "line": 3233,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "input.c",
+              "line": 3233,
+              "column": 6,
+              "branch": "True"
+            },
+            {
+              "file": "input.c",
+              "line": 3235,
+              "column": 7,
+              "branch": "False"
+            },
+            {
+              "file": "input.c",
+              "line": 3235,
+              "column": 7,
+              "branch": "True"
+            },
+            {
+              "file": "input.c",
+              "line": 3211,
+              "column": 6,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3210, \"cl\": 9, \"fl\": \"input.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3230, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3211, \"cl\": 6, \"fl\": \"input.c\" }|True)"
+        },
+        "source_files": [
+          "input.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "input.c",
+            "start_line": 3176,
+            "end_line": 3218,
+            "important_lines": [
+              3210,
+              3211
+            ],
+            "text": "    3176: static int\n    3177: input_osc_52_parse(struct input_ctx *ictx, const char *p, u_char **out,\n    3178:     int *outlen, char *clip)\n    3179: {\n    3180: \tchar\t\t*end;\n    3181: \tsize_t\t\t len;\n    3182: \tconst char\t*allow = \"cpqs01234567\";\n    3183: \tu_int\t\t i, j = 0;\n    3184: \n    3185: \tif (options_get_number(global_options, \"set-clipboard\") != 2)\n    3186: \t\treturn (0);\n    3187: \n    3188: \tif ((end = strchr(p, ';')) == NULL)\n    3189: \t\treturn (0);\n    3190: \tend++;\n    3191: \tif (*end == '\\0')\n    3192: \t\treturn (0);\n    3193: \tlog_debug(\"%s: %s\", __func__, end);\n    3194: \n    3195: \tfor (i = 0; p + i != end; i++) {\n    3196: \t\tif (strchr(allow, p[i]) != NULL && strchr(clip, p[i]) == NULL)\n    3197: \t\t\tclip[j++] = p[i];\n    3198: \t}\n    3199: \tlog_debug(\"%s: %.*s %s\", __func__, (int)(end - p - 1), p, clip);\n    3200: \n    3201: \tif (strcmp(end, \"?\") == 0) {\n    3202: \t\tinput_osc_52_reply(ictx, *clip);\n    3203: \t\treturn (0);\n    3204: \t}\n    3205: \n    3206: \tlen = ((strlen(end) + 3) / 4) * 3;\n    3207: \tif (len == 0)\n    3208: \t\treturn (0);\n    3209: \n>>  3210: \t*out = xmalloc(len);\n>>  3211: \tif ((*outlen = b64_pton(end, *out, len)) == -1) {\n    3212: \t\tfree(*out);\n    3213: \t\t*out = NULL;\n    3214: \t\treturn (0);\n    3215: \t}\n    3216: \n    3217: \treturn (1);\n    3218: }"
+          },
+          {
+            "file": "input.c",
+            "start_line": 3221,
+            "end_line": 3249,
+            "important_lines": [
+              3230,
+              3233,
+              3235
+            ],
+            "text": "    3221: static void\n    3222: input_osc_52(struct input_ctx *ictx, const char *p)\n    3223: {\n    3224: \tstruct window_pane\t*wp = ictx->wp;\n    3225: \tstruct screen_write_ctx  ctx;\n    3226: \tu_char\t\t\t*out;\n    3227: \tint\t\t\t outlen;\n    3228: \tchar\t\t\t clip[sizeof \"cpqs01234567\"] = \"\";\n    3229: \n>>  3230: \tif (!input_osc_52_parse(ictx, p, &out, &outlen, clip))\n    3231: \t\treturn;\n    3232: \n>>  3233: \tif (wp == NULL) {\n    3234: \t\t/* Popup window. */\n>>  3235: \t\tif (ictx->c == NULL) {\n    3236: \t\t\tfree(out);\n    3237: \t\t\treturn;\n    3238: \t\t}\n    3239: \t\ttty_set_selection(&ictx->c->tty, clip, out, outlen);\n    3240: \t\tpaste_add(NULL, out, outlen);\n    3241: \t} else {\n    3242: \t\t/* Normal window. */\n    3243: \t\tscreen_write_start_pane(&ctx, wp, NULL);\n    3244: \t\tscreen_write_setselection(&ctx, clip, out, outlen);\n    3245: \t\tscreen_write_stop(&ctx);\n    3246: \t\tnotify_pane(\"pane-set-clipboard\", wp);\n    3247: \t\tpaste_add(NULL, out, outlen);\n    3248: \t}\n    3249: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|input.c|3210|9|0|workspace__tmux-bc__objects__input.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.93,
+      "rationale": "input_osc_52_parse allocates *out via xmalloc(len). In input_osc_52, after parse succeeds, if wp==NULL and ictx->c!=NULL, the function proceeds to call tty_set_selection/paste_add without freeing out on that path. The only free shown is when wp==NULL and ictx->c==NULL; the other path appears to leak the allocated out buffer.",
+      "evidence_lines": [
+        {
+          "file": "input.c",
+          "line": 3210,
+          "role": "allocation"
+        },
+        {
+          "file": "input.c",
+          "line": 3211,
+          "role": "condition"
+        },
+        {
+          "file": "input.c",
+          "line": 3212,
+          "role": "free"
+        },
+        {
+          "file": "input.c",
+          "line": 3230,
+          "role": "condition"
+        },
+        {
+          "file": "input.c",
+          "line": 3233,
+          "role": "condition"
+        },
+        {
+          "file": "input.c",
+          "line": 3235,
+          "role": "condition"
+        },
+        {
+          "file": "input.c",
+          "line": 3236,
+          "role": "free"
+        },
+        {
+          "file": "input.c",
+          "line": 3239,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Ensure out is freed on all successful parse paths where ownership is not transferred (e.g., free(out) after tty_set_selection/paste_add in the wp==NULL && ictx->c!=NULL branch, unless tty_set_selection/paste_add take ownership).",
+      "warning": {
+        "id": "null-deref|PartialLeak|input.c|3210|9|0|workspace__tmux-bc__objects__input.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__input.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/input.bc",
+        "primary": {
+          "file": "input.c",
+          "line": 3210,
+          "column": 9
+        },
+        "path": [
+          {
+            "file": "input.c",
+            "line": 3230,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "input.c",
+            "line": 3233,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "input.c",
+            "line": 3233,
+            "column": 6,
+            "branch": "True"
+          },
+          {
+            "file": "input.c",
+            "line": 3235,
+            "column": 7,
+            "branch": "False"
+          },
+          {
+            "file": "input.c",
+            "line": 3235,
+            "column": 7,
+            "branch": "True"
+          },
+          {
+            "file": "input.c",
+            "line": 3211,
+            "column": 6,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3210, \"cl\": 9, \"fl\": \"input.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3230, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3211, \"cl\": 6, \"fl\": \"input.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|input.c|3210|9|0|workspace__tmux-bc__objects__input.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__input.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/input.bc",
+          "primary": {
+            "file": "input.c",
+            "line": 3210,
+            "column": 9
+          },
+          "path": [
+            {
+              "file": "input.c",
+              "line": 3230,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "input.c",
+              "line": 3233,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "input.c",
+              "line": 3233,
+              "column": 6,
+              "branch": "True"
+            },
+            {
+              "file": "input.c",
+              "line": 3235,
+              "column": 7,
+              "branch": "False"
+            },
+            {
+              "file": "input.c",
+              "line": 3235,
+              "column": 7,
+              "branch": "True"
+            },
+            {
+              "file": "input.c",
+              "line": 3211,
+              "column": 6,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3210, \"cl\": 9, \"fl\": \"input.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3230, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3233, \"cl\": 6, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|False) \n\t\t  --> ({ \"ln\": 3235, \"cl\": 7, \"fl\": \"input.c\" }|True) \n\t\t  --> ({ \"ln\": 3211, \"cl\": 6, \"fl\": \"input.c\" }|True)"
+        },
+        "source_files": [
+          "input.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "input.c",
+            "start_line": 3176,
+            "end_line": 3218,
+            "important_lines": [
+              3210,
+              3211
+            ],
+            "text": "    3176: static int\n    3177: input_osc_52_parse(struct input_ctx *ictx, const char *p, u_char **out,\n    3178:     int *outlen, char *clip)\n    3179: {\n    3180: \tchar\t\t*end;\n    3181: \tsize_t\t\t len;\n    3182: \tconst char\t*allow = \"cpqs01234567\";\n    3183: \tu_int\t\t i, j = 0;\n    3184: \n    3185: \tif (options_get_number(global_options, \"set-clipboard\") != 2)\n    3186: \t\treturn (0);\n    3187: \n    3188: \tif ((end = strchr(p, ';')) == NULL)\n    3189: \t\treturn (0);\n    3190: \tend++;\n    3191: \tif (*end == '\\0')\n    3192: \t\treturn (0);\n    3193: \tlog_debug(\"%s: %s\", __func__, end);\n    3194: \n    3195: \tfor (i = 0; p + i != end; i++) {\n    3196: \t\tif (strchr(allow, p[i]) != NULL && strchr(clip, p[i]) == NULL)\n    3197: \t\t\tclip[j++] = p[i];\n    3198: \t}\n    3199: \tlog_debug(\"%s: %.*s %s\", __func__, (int)(end - p - 1), p, clip);\n    3200: \n    3201: \tif (strcmp(end, \"?\") == 0) {\n    3202: \t\tinput_osc_52_reply(ictx, *clip);\n    3203: \t\treturn (0);\n    3204: \t}\n    3205: \n    3206: \tlen = ((strlen(end) + 3) / 4) * 3;\n    3207: \tif (len == 0)\n    3208: \t\treturn (0);\n    3209: \n>>  3210: \t*out = xmalloc(len);\n>>  3211: \tif ((*outlen = b64_pton(end, *out, len)) == -1) {\n    3212: \t\tfree(*out);\n    3213: \t\t*out = NULL;\n    3214: \t\treturn (0);\n    3215: \t}\n    3216: \n    3217: \treturn (1);\n    3218: }"
+          },
+          {
+            "file": "input.c",
+            "start_line": 3221,
+            "end_line": 3249,
+            "important_lines": [
+              3230,
+              3233,
+              3235
+            ],
+            "text": "    3221: static void\n    3222: input_osc_52(struct input_ctx *ictx, const char *p)\n    3223: {\n    3224: \tstruct window_pane\t*wp = ictx->wp;\n    3225: \tstruct screen_write_ctx  ctx;\n    3226: \tu_char\t\t\t*out;\n    3227: \tint\t\t\t outlen;\n    3228: \tchar\t\t\t clip[sizeof \"cpqs01234567\"] = \"\";\n    3229: \n>>  3230: \tif (!input_osc_52_parse(ictx, p, &out, &outlen, clip))\n    3231: \t\treturn;\n    3232: \n>>  3233: \tif (wp == NULL) {\n    3234: \t\t/* Popup window. */\n>>  3235: \t\tif (ictx->c == NULL) {\n    3236: \t\t\tfree(out);\n    3237: \t\t\treturn;\n    3238: \t\t}\n    3239: \t\ttty_set_selection(&ictx->c->tty, clip, out, outlen);\n    3240: \t\tpaste_add(NULL, out, outlen);\n    3241: \t} else {\n    3242: \t\t/* Normal window. */\n    3243: \t\tscreen_write_start_pane(&ctx, wp, NULL);\n    3244: \t\tscreen_write_setselection(&ctx, clip, out, outlen);\n    3245: \t\tscreen_write_stop(&ctx);\n    3246: \t\tnotify_pane(\"pane-set-clipboard\", wp);\n    3247: \t\tpaste_add(NULL, out, outlen);\n    3248: \t}\n    3249: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|popup.c|805|7|0|workspace__tmux-bc__objects__popup.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.78,
+      "rationale": "pd is allocated at line 805, but if flags & POPUP_NOJOB is true (line 861 false branch not taken), the function returns later without an explicit cleanup on the reported early-exit path. The analyzer flags a conditional free only in the else-branch when pd->job == NULL (lines 867-870) but not on the flags-dependent initialization path, indicating a feasible leak scenario where pd is not freed.",
+      "evidence_lines": [
+        {
+          "file": "popup.c",
+          "line": 805,
+          "role": "allocation"
+        },
+        {
+          "file": "popup.c",
+          "line": 861,
+          "role": "condition"
+        },
+        {
+          "file": "popup.c",
+          "line": 867,
+          "role": "condition"
+        },
+        {
+          "file": "popup.c",
+          "line": 868,
+          "role": "free"
+        },
+        {
+          "file": "popup.c",
+          "line": 875,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Ensure pd is freed on all failure/return paths before returning, and verify ownership transfer to popup_free_cb occurs for the POPUP_NOJOB path. If popup_free_cb is not guaranteed to run in all cases, add explicit cleanup on any early exits.",
+      "warning": {
+        "id": "leak|PartialLeak|popup.c|805|7|0|workspace__tmux-bc__objects__popup.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__popup.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/popup.bc",
+        "primary": {
+          "file": "popup.c",
+          "line": 805,
+          "column": 7
+        },
+        "path": [
+          {
+            "file": "popup.c",
+            "line": 861,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "popup.c",
+            "line": 867,
+            "column": 7,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 805, \"cl\": 7, \"fl\": \"popup.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 861, \"cl\": 6, \"fl\": \"popup.c\" }|False) \n\t\t  --> ({ \"ln\": 867, \"cl\": 7, \"fl\": \"popup.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|popup.c|805|7|0|workspace__tmux-bc__objects__popup.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__popup.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/popup.bc",
+          "primary": {
+            "file": "popup.c",
+            "line": 805,
+            "column": 7
+          },
+          "path": [
+            {
+              "file": "popup.c",
+              "line": 861,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "popup.c",
+              "line": 867,
+              "column": 7,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 805, \"cl\": 7, \"fl\": \"popup.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 861, \"cl\": 6, \"fl\": \"popup.c\" }|False) \n\t\t  --> ({ \"ln\": 867, \"cl\": 7, \"fl\": \"popup.c\" }|True)"
+        },
+        "source_files": [
+          "popup.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "popup.c",
+            "start_line": 772,
+            "end_line": 878,
+            "important_lines": [
+              805,
+              861,
+              867
+            ],
+            "text": "     772: int\n     773: popup_display(int flags, enum box_lines lines, struct cmdq_item *item, u_int px,\n     774:     u_int py, u_int sx, u_int sy, struct environ *env, const char *shellcmd,\n     775:     int argc, char **argv, const char *cwd, const char *title, struct client *c,\n     776:     struct session *s, const char *style, const char *border_style,\n     777:     popup_close_cb cb, void *arg)\n     778: {\n     779: \tstruct popup_data\t*pd;\n     780: \tu_int\t\t\t jx, jy;\n     781: \tstruct options\t\t*o;\n     782: \tstruct style\t\t sytmp;\n     783: \n     784: \tif (s != NULL)\n     785: \t\to = s->curw->window->options;\n     786: \telse\n     787: \t\to = c->session->curw->window->options;\n     788: \n     789: \tif (lines == BOX_LINES_DEFAULT)\n     790: \t\tlines = options_get_number(o, \"popup-border-lines\");\n     791: \tif (lines == BOX_LINES_NONE) {\n     792: \t\tif (sx < 1 || sy < 1)\n     793: \t\t\treturn (-1);\n     794: \t\tjx = sx;\n     795: \t\tjy = sy;\n     796: \t} else {\n     797: \t\tif (sx < 3 || sy < 3)\n     798: \t\t\treturn (-1);\n     799: \t\tjx = sx - 2;\n     800: \t\tjy = sy - 2;\n     801: \t}\n     802: \tif (c->tty.sx < sx || c->tty.sy < sy)\n     803: \t\treturn (-1);\n     804: \n>>   805: \tpd = xcalloc(1, sizeof *pd);\n     806: \tpd->item = item;\n     807: \tpd->flags = flags;\n     808: \n     809: \tif (title != NULL)\n     810: \t\tpd->title = xstrdup(title);\n     811: \tif (style != NULL)\n     812: \t\tpd->style = xstrdup(style);\n     813: \tif (border_style != NULL)\n     814: \t\tpd->border_style = xstrdup(border_style);\n     815: \n     816: \tpd->c = c;\n     817: \tpd->c->references++;\n     818: \n     819: \tpd->cb = cb;\n     820: \tpd->arg = arg;\n     821: \tpd->status = 128 + SIGHUP;\n     822: \n     823: \tpd->border_lines = lines;\n     824: \tmemcpy(&pd->border_cell, &grid_default_cell, sizeof pd->border_cell);\n     825: \tstyle_apply(&pd->border_cell, o, \"popup-border-style\", NULL);\n     826: \tif (border_style != NULL) {\n     827: \t\tstyle_set(&sytmp, &grid_default_cell);\n     828: \t\tif (style_parse(&sytmp, &pd->border_cell, border_style) == 0) {\n     829: \t\t\tpd->border_cell.fg = sytmp.gc.fg;\n     830: \t\t\tpd->border_cell.bg = sytmp.gc.bg;\n     831: \t\t}\n     832: \t}\n     833: \tpd->border_cell.attr = 0;\n     834: \n     835: \tscreen_init(&pd->s, jx, jy, 0);\n     836: \tscreen_set_default_cursor(&pd->s, global_w_options);\n     837: \tcolour_palette_init(&pd->palette);\n     838: \tcolour_palette_from_option(&pd->palette, global_w_options);\n     839: \n     840: \tmemcpy(&pd->defaults, &grid_default_cell, sizeof pd->defaults);\n     841: \tstyle_apply(&pd->defaults, o, \"popup-style\", NULL);\n     842: \tif (style != NULL) {\n     843: \t\tstyle_set(&sytmp, &grid_default_cell);\n     844: \t\tif (style_parse(&sytmp, &pd->defaults, style) == 0) {\n     845: \t\t\tpd->defaults.fg = sytmp.gc.fg;\n     846: \t\t\tpd->defaults.bg = sytmp.gc.bg;\n     847: \t\t}\n     848: \t}\n     849: \tpd->defaults.attr = 0;\n     850: \n     851: \tpd->px = px;\n     852: \tpd->py = py;\n     853: \tpd->sx = sx;\n     854: \tpd->sy = sy;\n     855: \n     856: \tpd->ppx = px;\n     857: \tpd->ppy = py;\n     858: \tpd->psx = sx;\n     859: \tpd->psy = sy;\n     860: \n>>   861: \tif (flags & POPUP_NOJOB)\n     862: \t\tpd->ictx = input_init(NULL, NULL, &pd->palette, NULL);\n     863: \telse {\n     864: \t\tpd->job = job_run(shellcmd, argc, argv, env, s, cwd,\n     865: \t\t    popup_job_update_cb, popup_job_complete_cb, NULL, pd,\n     866: \t\t    JOB_NOWAIT|JOB_PTY|JOB_KEEPWRITE|JOB_DEFAULTSHELL, jx, jy);\n>>   867: \t\tif (pd->job == NULL) {\n     868: \t\t\tpopup_free(pd);\n     869: \t\t\treturn (-1);\n     870: \t\t}\n     871: \t\tpd->ictx = input_init(NULL, job_get_event(pd->job),\n     872: \t\t    &pd->palette, c);\n     873: \t}\n     874: \n     875: \tserver_client_set_overlay(c, 0, popup_check_cb, popup_mode_cb,\n     876: \t    popup_draw_cb, popup_key_cb, popup_free_cb, popup_resize_cb, pd);\n     877: \treturn (0);\n     878: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|NeverFree|server-acl.c|102|10|0|workspace__tmux-bc__objects__server-acl.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.72,
+      "rationale": "The function allocates a new server_acl_user with xcalloc when server_acl_user_find returns NULL, but the provided slice contains no corresponding free/cleanup path. Inserting into a global RB tree suggests intended lifetime extension, but without any visible destructor/removal logic in the provided code slice, the allocation appears to be never freed.",
+      "evidence_lines": [
+        {
+          "file": "server-acl.c",
+          "line": 100,
+          "role": "condition"
+        },
+        {
+          "file": "server-acl.c",
+          "line": 102,
+          "role": "allocation"
+        },
+        {
+          "file": "server-acl.c",
+          "line": 104,
+          "role": "ownership_transfer"
+        }
+      ],
+      "fix_suggestion": "Ensure server_acl_user entries are freed when no longer needed (e.g., on ACL reload/shutdown) and implement/verify a cleanup routine that removes nodes from the RB tree and calls free(xcalloc result).",
+      "warning": {
+        "id": "leak|NeverFree|server-acl.c|102|10|0|workspace__tmux-bc__objects__server-acl.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-acl.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/server-acl.bc",
+        "primary": {
+          "file": "server-acl.c",
+          "line": 102,
+          "column": 10
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 102, \"cl\": 10, \"fl\": \"server-acl.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|server-acl.c|102|10|0|workspace__tmux-bc__objects__server-acl.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-acl.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/server-acl.bc",
+          "primary": {
+            "file": "server-acl.c",
+            "line": 102,
+            "column": 10
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 102, \"cl\": 10, \"fl\": \"server-acl.c\" })"
+        },
+        "source_files": [
+          "server-acl.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "server-acl.c",
+            "start_line": 95,
+            "end_line": 106,
+            "important_lines": [
+              102
+            ],
+            "text": "      95: void\n      96: server_acl_user_allow(uid_t uid)\n      97: {\n      98: \tstruct server_acl_user\t*user;\n      99: \n     100: \tuser = server_acl_user_find(uid);\n     101: \tif (user == NULL) {\n>>   102: \t\tuser = xcalloc(1, sizeof *user);\n     103: \t\tuser->uid = uid;\n     104: \t\tRB_INSERT(server_acl_entries, &server_acl_entries, user);\n     105: \t}\n     106: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|tmux.c|505|4|4|workspace__tmux-bc__objects__tmux.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "null_deref",
+      "confidence": 0.86,
+      "rationale": "The code allocates global_s_options using options_create(NULL) without any NULL-check. If options_create can return NULL (typical on allocation failure), the subsequent call options_default(global_s_options, oe) will dereference a NULL pointer, matching a NeverFree/null-deref style finding.",
+      "evidence_lines": [
+        {
+          "file": "tmux.c",
+          "line": 499,
+          "role": "allocation"
+        },
+        {
+          "file": "tmux.c",
+          "line": 505,
+          "role": "condition"
+        }
+      ],
+      "fix_suggestion": "Add NULL checks after options_create and before calling options_default, and handle allocation failure appropriately (e.g., abort initialization and free any already-created options).",
+      "warning": {
+        "id": "null-deref|NeverFree|tmux.c|505|4|4|workspace__tmux-bc__objects__tmux.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tmux.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/tmux.bc",
+        "primary": {
+          "file": "tmux.c",
+          "line": 505,
+          "column": 4
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 505, \"cl\": 4, \"fl\": \"tmux.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|tmux.c|505|4|4|workspace__tmux-bc__objects__tmux.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tmux.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/tmux.bc",
+          "primary": {
+            "file": "tmux.c",
+            "line": 505,
+            "column": 4
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 505, \"cl\": 4, \"fl\": \"tmux.c\" })"
+        },
+        "source_files": [
+          "tmux.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "tmux.c",
+            "start_line": 497,
+            "end_line": 513,
+            "important_lines": [
+              505
+            ],
+            "text": "     497: \n     498: \tglobal_options = options_create(NULL);\n     499: \tglobal_s_options = options_create(NULL);\n     500: \tglobal_w_options = options_create(NULL);\n     501: \tfor (oe = options_table; oe->name != NULL; oe++) {\n     502: \t\tif (oe->scope & OPTIONS_TABLE_SERVER)\n     503: \t\t\toptions_default(global_options, oe);\n     504: \t\tif (oe->scope & OPTIONS_TABLE_SESSION)\n>>   505: \t\t\toptions_default(global_s_options, oe);\n     506: \t\tif (oe->scope & OPTIONS_TABLE_WINDOW)\n     507: \t\t\toptions_default(global_w_options, oe);\n     508: \t}\n     509: \n     510: \t/*\n     511: \t * The default shell comes from SHELL or from the user's passwd entry\n     512: \t * if available.\n     513: \t */"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|tty-keys.c|1002|16|0|workspace__tmux-bc__objects__tty-keys.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.92,
+      "rationale": "The allocation of event->buf at line 1002 is only freed on the branch where server_client_handle_key(c, event) returns false (line 1006). The other feasible branch (return true) does not show any release of event->buf or event, indicating a leak on that path.",
+      "evidence_lines": [
+        {
+          "file": "tty-keys.c",
+          "line": 1002,
+          "role": "allocation"
+        },
+        {
+          "file": "tty-keys.c",
+          "line": 1006,
+          "role": "condition"
+        },
+        {
+          "file": "tty-keys.c",
+          "line": 1007,
+          "role": "free"
+        },
+        {
+          "file": "tty-keys.c",
+          "line": 1008,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Ensure event->buf (and event) are freed on all paths unless server_client_handle_key clearly takes ownership; if ownership is transferred, document it and adjust the code to free only when ownership is not transferred.",
+      "warning": {
+        "id": "leak|PartialLeak|tty-keys.c|1002|16|0|workspace__tmux-bc__objects__tty-keys.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-keys.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/tty-keys.bc",
+        "primary": {
+          "file": "tty-keys.c",
+          "line": 1002,
+          "column": 16
+        },
+        "path": [
+          {
+            "file": "tty-keys.c",
+            "line": 1006,
+            "column": 7,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 1002, \"cl\": 16, \"fl\": \"tty-keys.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 1006, \"cl\": 7, \"fl\": \"tty-keys.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|tty-keys.c|1002|16|0|workspace__tmux-bc__objects__tty-keys.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-keys.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/tty-keys.bc",
+          "primary": {
+            "file": "tty-keys.c",
+            "line": 1002,
+            "column": 16
+          },
+          "path": [
+            {
+              "file": "tty-keys.c",
+              "line": 1006,
+              "column": 7,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 1002, \"cl\": 16, \"fl\": \"tty-keys.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 1006, \"cl\": 7, \"fl\": \"tty-keys.c\" }|True)"
+        },
+        "source_files": [
+          "tty-keys.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "tty-keys.c",
+            "start_line": 994,
+            "end_line": 1014,
+            "important_lines": [
+              1002,
+              1006
+            ],
+            "text": "     994: \t}\n     995: \n     996: \t/* Fire the key. */\n     997: \tif (key != KEYC_UNKNOWN) {\n     998: \t\tevent = xcalloc(1, sizeof *event);\n     999: \t\tevent->key = key;\n    1000: \t\tmemcpy(&event->m, &m, sizeof event->m);\n    1001: \n>>  1002: \t\tevent->buf = xmalloc(size);\n    1003: \t\tevent->len = size;\n    1004: \t\tmemcpy (event->buf, buf, event->len);\n    1005: \n>>  1006: \t\tif (!server_client_handle_key(c, event)) {\n    1007: \t\t\tfree(event->buf);\n    1008: \t\t\tfree(event);\n    1009: \t\t}\n    1010: \t}\n    1011: \n    1012: \t/* Remove data from buffer. */\n    1013: \tevbuffer_drain(tty->in, size);\n    1014: "
+          }
+        ]
+      }
+    },
+    {
+      "id": "dfree|Double Free|tty-keys.c|1391|8|0|workspace__tmux-bc__objects__tty-keys.dfree.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "double_free",
+      "confidence": 0.95,
+      "rationale": "`out` is allocated with `xmalloc` at line 1391. When `TTY_OSC52QUERY` is set, the code sets `out = NULL` after calling `paste_add(..., out, outlen)`, but later unconditionally calls `free(out)` at line 1414. Static-analysis reports a second free on the same allocation along the reported feasible path (lines 1392-1396 and 1407-1415), indicating a double-free/use-after-free scenario due to ownership/lifetime not being clearly transferred or reset appropriately for all paths.",
+      "evidence_lines": [
+        {
+          "file": "tty-keys.c",
+          "line": 1391,
+          "role": "allocation"
+        },
+        {
+          "file": "tty-keys.c",
+          "line": 1392,
+          "role": "condition"
+        },
+        {
+          "file": "tty-keys.c",
+          "line": 1393,
+          "role": "free"
+        },
+        {
+          "file": "tty-keys.c",
+          "line": 1407,
+          "role": "condition"
+        },
+        {
+          "file": "tty-keys.c",
+          "line": 1414,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Make ownership explicit: do not free `out` in multiple places; after any call that consumes `out` (e.g., `paste_add`), either ensure it does not retain the pointer or ensure you return early / avoid setting `out=NULL` unless `paste_add` clearly takes ownership without freeing. Alternatively, remove the unconditional `free(out)` and manage freeing in exactly one place with clear ownership rules.",
+      "warning": {
+        "id": "dfree|Double Free|tty-keys.c|1391|8|0|workspace__tmux-bc__objects__tty-keys.dfree.stderr.txt",
+        "checker": "dfree",
+        "kind": "Double Free",
+        "site_label": "memory allocation",
+        "vulnerability_type": "double_free",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-keys.dfree.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/tty-keys.bc",
+        "primary": {
+          "file": "tty-keys.c",
+          "line": 1391,
+          "column": 8
+        },
+        "path": [
+          {
+            "file": "tty-keys.c",
+            "line": 1392,
+            "column": 6,
+            "branch": "False"
+          },
+          {
+            "file": "tty-keys.c",
+            "line": 1407,
+            "column": 6,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "Double Free : memory allocation at : (CallICFGNode: { \"ln\": 1391, \"cl\": 8, \"fl\": \"tty-keys.c\" })\n\t\t double free path: \n\t\t  --> ({ \"ln\": 1392, \"cl\": 6, \"fl\": \"tty-keys.c\" }|False) \n\t\t  --> ({ \"ln\": 1407, \"cl\": 6, \"fl\": \"tty-keys.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "dfree|Double Free|tty-keys.c|1391|8|0|workspace__tmux-bc__objects__tty-keys.dfree.stderr.txt",
+          "checker": "dfree",
+          "kind": "Double Free",
+          "site_label": "memory allocation",
+          "vulnerability_type": "double_free",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-keys.dfree.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/tty-keys.bc",
+          "primary": {
+            "file": "tty-keys.c",
+            "line": 1391,
+            "column": 8
+          },
+          "path": [
+            {
+              "file": "tty-keys.c",
+              "line": 1392,
+              "column": 6,
+              "branch": "False"
+            },
+            {
+              "file": "tty-keys.c",
+              "line": 1407,
+              "column": 6,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "Double Free : memory allocation at : (CallICFGNode: { \"ln\": 1391, \"cl\": 8, \"fl\": \"tty-keys.c\" })\n\t\t double free path: \n\t\t  --> ({ \"ln\": 1392, \"cl\": 6, \"fl\": \"tty-keys.c\" }|False) \n\t\t  --> ({ \"ln\": 1407, \"cl\": 6, \"fl\": \"tty-keys.c\" }|True)"
+        },
+        "source_files": [
+          "tty-keys.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "tty-keys.c",
+            "start_line": 1308,
+            "end_line": 1416,
+            "important_lines": [
+              1391,
+              1392,
+              1407
+            ],
+            "text": "    1308: static int\n    1309: tty_keys_clipboard(struct tty *tty, const char *buf, size_t len, size_t *size)\n    1310: {\n    1311: \tstruct client\t\t\t\t*c = tty->client;\n    1312: \tsize_t\t\t\t\t\t end, terminator = 0, needed;\n    1313: \tchar\t\t\t\t\t*copy, *out, clip = 0;\n    1314: \tint\t\t\t\t\t outlen;\n    1315: \tstruct input_request_clipboard_data\t cd;\n    1316: \n    1317: \t*size = 0;\n    1318: \n    1319: \t/* First five bytes are always \\033]52;. */\n    1320: \tif (buf[0] != '\\033')\n    1321: \t\treturn (-1);\n    1322: \tif (len == 1)\n    1323: \t\treturn (1);\n    1324: \tif (buf[1] != ']')\n    1325: \t\treturn (-1);\n    1326: \tif (len == 2)\n    1327: \t\treturn (1);\n    1328: \tif (buf[2] != '5')\n    1329: \t\treturn (-1);\n    1330: \tif (len == 3)\n    1331: \t\treturn (1);\n    1332: \tif (buf[3] != '2')\n    1333: \t\treturn (-1);\n    1334: \tif (len == 4)\n    1335: \t\treturn (1);\n    1336: \tif (buf[4] != ';')\n    1337: \t\treturn (-1);\n    1338: \tif (len == 5)\n    1339: \t\treturn (1);\n    1340: \n    1341: \t/* Find the terminator if any. */\n    1342: \tfor (end = 5; end < len; end++) {\n    1343: \t\tif (buf[end] == '\\007') {\n    1344: \t\t\tterminator = 1;\n    1345: \t\t\tbreak;\n    1346: \t\t}\n    1347: \t\tif (end > 5 && buf[end - 1] == '\\033' && buf[end] == '\\\\') {\n    1348: \t\t\tterminator = 2;\n    1349: \t\t\tbreak;\n    1350: \t\t}\n    1351: \t}\n    1352: \tif (end == len)\n    1353: \t\treturn (1);\n    1354: \t*size = end + 1;\n    1355: \n    1356: \t/* Skip the initial part. */\n    1357: \tbuf += 5;\n    1358: \tend -= 5;\n    1359: \n    1360: \t/* Adjust end so that it points to the start of the terminator. */\n    1361: \tend -= terminator - 1;\n    1362: \n    1363: \t/*\n    1364: \t * Save which clipboard was used from the second argument. If more than\n    1365: \t * one is specified (should not happen), ignore the argument.\n    1366: \t */\n    1367: \tif (end >= 2 && buf[0] != ';' && buf[1] == ';')\n    1368: \t\tclip = buf[0];\n    1369: \n    1370: \t/* Skip the second argument. */\n    1371: \twhile (end != 0 && *buf != ';') {\n    1372: \t\tbuf++;\n    1373: \t\tend--;\n    1374: \t}\n    1375: \tif (end == 0 || end == 1)\n    1376: \t\treturn (0);\n    1377: \tbuf++;\n    1378: \tend--;\n    1379: \n    1380: \t/* It has to be a string so copy it. */\n    1381: \tcopy = xmalloc(end + 1);\n    1382: \tmemcpy(copy, buf, end);\n    1383: \tcopy[end] = '\\0';\n    1384: \n    1385: \t/* Convert from base64. */\n    1386: \tneeded = ((end + 3) / 4) * 3;\n    1387: \tif (needed == 0) {\n    1388: \t\tfree(copy);\n    1389: \t\treturn (0);\n    1390: \t}\n>>  1391: \tout = xmalloc(needed);\n>>  1392: \tif ((outlen = b64_pton(copy, out, needed)) == -1) {\n    1393: \t\tfree(out);\n    1394: \t\tfree(copy);\n    1395: \t\treturn (0);\n    1396: \t}\n    1397: \tfree(copy);\n    1398: \tlog_debug(\"%s: %.*s\", __func__, outlen, out);\n    1399: \n    1400: \t/* Set reply if any. */\n    1401: \tcd.buf = out;\n    1402: \tcd.len = outlen;\n    1403: \tcd.clip = clip;\n    1404: \tinput_request_reply(c, INPUT_REQUEST_CLIPBOARD, &cd);\n    1405: \n    1406: \t/* Create a buffer if requested. */\n>>  1407: \tif (tty->flags & TTY_OSC52QUERY) {\n    1408: \t\tpaste_add(NULL, out, outlen);\n    1409: \t\tout = NULL;\n    1410: \t\tevtimer_del(&tty->clipboard_timer);\n    1411: \t\ttty->flags &= ~TTY_OSC52QUERY;\n    1412: \t}\n    1413: \n    1414: \tfree(out);\n    1415: \treturn (0);\n    1416: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|window-copy.c|3839|19|6|workspace__tmux-bc__objects__window-copy.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.9,
+      "rationale": "`cells` is allocated with `xreallocarray`. If `gl == NULL` after peeking the first line (line 3834), the function frees only the `cells` array (line 3835) but does not free any per-cell strings. While `cells[cell].d` is not yet populated before the early return, the `NeverFree` warning indicates an allocated resource on this path not released; the provided slice does not show that `window_copy_cellstring()` allocation ownership is cleaned up for all paths, and the early return bypasses the cleanup loop entirely.",
+      "evidence_lines": [
+        {
+          "file": "window-copy.c",
+          "line": 3829,
+          "role": "allocation"
+        },
+        {
+          "file": "window-copy.c",
+          "line": 3834,
+          "role": "condition"
+        },
+        {
+          "file": "window-copy.c",
+          "line": 3835,
+          "role": "free"
+        },
+        {
+          "file": "window-copy.c",
+          "line": 3899,
+          "role": "condition"
+        },
+        {
+          "file": "window-copy.c",
+          "line": 3900,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Ensure that any allocations made to `cells[cell].d` are initialized/owned and that all exit paths (including the `gl == NULL` early return) either avoid allocations or run the same cleanup logic that frees any allocated `cells[cell].d` entries.",
+      "warning": {
+        "id": "null-deref|NeverFree|window-copy.c|3839|19|6|workspace__tmux-bc__objects__window-copy.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-copy.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/window-copy.bc",
+        "primary": {
+          "file": "window-copy.c",
+          "line": 3839,
+          "column": 19
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 3839, \"cl\": 19, \"fl\": \"window-copy.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|window-copy.c|3839|19|6|workspace__tmux-bc__objects__window-copy.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-copy.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/window-copy.bc",
+          "primary": {
+            "file": "window-copy.c",
+            "line": 3839,
+            "column": 19
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 3839, \"cl\": 19, \"fl\": \"window-copy.c\" })"
+        },
+        "source_files": [
+          "window-copy.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "window-copy.c",
+            "start_line": 3813,
+            "end_line": 3905,
+            "important_lines": [
+              3839
+            ],
+            "text": "    3813: static void\n    3814: window_copy_cstrtocellpos(struct grid *gd, u_int ncells, u_int *ppx, u_int *ppy,\n    3815:     const char *str)\n    3816: {\n    3817: \tu_int\t\t\t cell, ccell, px, pywrap, pos, len;\n    3818: \tint\t\t\t match;\n    3819: \tconst struct grid_line\t*gl;\n    3820: \tconst char\t\t*d;\n    3821: \tsize_t\t\t\t dlen;\n    3822: \tstruct {\n    3823: \t\tconst char\t*d;\n    3824: \t\tsize_t\t\t dlen;\n    3825: \t\tint\t\t allocated;\n    3826: \t} *cells;\n    3827: \n    3828: \t/* Populate the array of cell data. */\n    3829: \tcells = xreallocarray(NULL, ncells, sizeof cells[0]);\n    3830: \tcell = 0;\n    3831: \tpx = *ppx;\n    3832: \tpywrap = *ppy;\n    3833: \tgl = grid_peek_line(gd, pywrap);\n    3834: \tif (gl == NULL) {\n    3835: \t\tfree(cells);\n    3836: \t\treturn;\n    3837: \t}\n    3838: \twhile (cell < ncells) {\n>>  3839: \t\tcells[cell].d = window_copy_cellstring(gl, px,\n    3840: \t\t    &cells[cell].dlen, &cells[cell].allocated);\n    3841: \t\tcell++;\n    3842: \t\tpx++;\n    3843: \t\tif (px == gd->sx) {\n    3844: \t\t\tpx = 0;\n    3845: \t\t\tpywrap++;\n    3846: \t\t\tgl = grid_peek_line(gd, pywrap);\n    3847: \t\t\tif (gl == NULL)\n    3848: \t\t\t\tbreak;\n    3849: \t\t}\n    3850: \t}\n    3851: \n    3852: \t/* Locate starting cell. */\n    3853: \tcell = 0;\n    3854: \tlen = strlen(str);\n    3855: \twhile (cell < ncells) {\n    3856: \t\tccell = cell;\n    3857: \t\tpos = 0;\n    3858: \t\tmatch = 1;\n    3859: \t\twhile (ccell < ncells) {\n    3860: \t\t\tif (str[pos] == '\\0') {\n    3861: \t\t\t\tmatch = 0;\n    3862: \t\t\t\tbreak;\n    3863: \t\t\t}\n    3864: \t\t\td = cells[ccell].d;\n    3865: \t\t\tdlen = cells[ccell].dlen;\n    3866: \t\t\tif (dlen == 1) {\n    3867: \t\t\t\tif (str[pos] != *d) {\n    3868: \t\t\t\t\tmatch = 0;\n    3869: \t\t\t\t\tbreak;\n    3870: \t\t\t\t}\n    3871: \t\t\t\tpos++;\n    3872: \t\t\t} else {\n    3873: \t\t\t\tif (dlen > len - pos)\n    3874: \t\t\t\t\tdlen = len - pos;\n    3875: \t\t\t\tif (memcmp(str + pos, d, dlen) != 0) {\n    3876: \t\t\t\t\tmatch = 0;\n    3877: \t\t\t\t\tbreak;\n    3878: \t\t\t\t}\n    3879: \t\t\t\tpos += dlen;\n    3880: \t\t\t}\n    3881: \t\t\tccell++;\n    3882: \t\t}\n    3883: \t\tif (match)\n    3884: \t\t\tbreak;\n    3885: \t\tcell++;\n    3886: \t}\n    3887: \n    3888: \t/* If not found this will be one past the end. */\n    3889: \tpx = *ppx + cell;\n    3890: \tpywrap = *ppy;\n    3891: \twhile (px >= gd->sx) {\n    3892: \t\tpx -= gd->sx;\n    3893: \t\tpywrap++;\n    3894: \t}\n    3895: \n    3896: \t*ppx = px;\n    3897: \t*ppy = pywrap;\n    3898: \n    3899: \t/* Free cell data. */\n    3900: \tfor (cell = 0; cell < ncells; cell++) {\n    3901: \t\tif (cells[cell].allocated)\n    3902: \t\t\tfree((void *)cells[cell].d);\n    3903: \t}\n    3904: \tfree(cells);\n    3905: }"
+          }
+        ]
+      }
+    }
+  ]
+}

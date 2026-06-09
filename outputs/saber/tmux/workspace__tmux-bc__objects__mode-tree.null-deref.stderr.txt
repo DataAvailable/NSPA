@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1141, "cl": 8, "fl": "mode-tree.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1151, "cl": 6, "fl": "mode-tree.c" }|True) 
+

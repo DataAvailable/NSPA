@@ -1,0 +1,10 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3210, "cl": 9, "fl": "input.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3230, "cl": 6, "fl": "input.c" }|False) 
+		  --> ({ "ln": 3233, "cl": 6, "fl": "input.c" }|False) 
+		  --> ({ "ln": 3233, "cl": 6, "fl": "input.c" }|True) 
+		  --> ({ "ln": 3235, "cl": 7, "fl": "input.c" }|False) 
+		  --> ({ "ln": 3235, "cl": 7, "fl": "input.c" }|True) 
+		  --> ({ "ln": 3211, "cl": 6, "fl": "input.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3360, "cl": 7, "fl": "input.c" })

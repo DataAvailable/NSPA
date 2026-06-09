@@ -1,0 +1,9 @@
+project,version,tlc,functions,ir_size_bytes,ir_files,path
+bash,5.1.16,120360,1084,0,0,/home/lxh/Projects/NSPA/open-source-soft/bash-master
+curl,8.21.0-DEV,197961,4344,21741448,418,/home/lxh/Projects/NSPA/open-source-soft/curl-master
+ffmpeg,8.0.git,1387740,27812,0,0,/home/lxh/Projects/NSPA/open-source-soft/ffmpeg-master
+git,2.54.0,313667,11468,0,0,/home/lxh/Projects/NSPA/open-source-soft/git-master
+openssl,4.1.0-dev,700132,17868,0,0,/home/lxh/Projects/NSPA/open-source-soft/openssl-master
+sqlite,3.54.0,300015,7965,0,0,/home/lxh/Projects/NSPA/open-source-soft/sqlite-master
+tmux,next-3.7,76133,2425,12340736,150,/home/lxh/Projects/NSPA/open-source-soft/tmux-master
+vim,9.2.286,443333,9353,0,0,/home/lxh/Projects/NSPA/open-source-soft/vim-master

@@ -112,56 +112,37 @@ python3 -m nspa.fine_grained_reachability \
 旧入口仍可使用：
 
 ```bash
-python3 compile_script/update_saber_source-sink.py \
+python3 scripts/update_saber_source-sink.py \
   outputs/nspa_curl_validated_memory_functions.json \
   SVF/svf/lib/SABER/SaberCheckerAPI.cpp
 ```
 
 ### 步骤2：编译目标项目 bitcode
 
-`compile_script/build_bc.sh` 现在是多项目 bitcode 构建脚本。默认编译 curl；也可以传入项目名自动选择源码目录和输出目录：
+* `scripts/build_bc.sh` 一键构建全部项目;
+* `build_common.sh`：公共 clang/clang++ bitcode wrapper、收集和 llvm-link 逻辑;
+* 单项目脚本：bash、curl、ffmpeg、git、openssl、sqlite、tmux、vim
 
 ```bash
-bash compile_script/build_bc.sh curl
-bash compile_script/build_bc.sh vim
-bash compile_script/build_bc.sh tmux
-bash compile_script/build_bc.sh sqlite
-bash compile_script/build_bc.sh ffmpeg
-bash compile_script/build_bc.sh all
+bash scripts/build_all_bc.sh
+# 或单独编译运行
+bash scripts/build_ffmpeg_bc.sh
 ```
 
-默认源码目录为`open-source-soft/<project>-master`，输出目录为`workspace/<project>-bc`。也可以显式指定：
+输出都放在 `NSPA/workspace/<project>-bc/`，每个项目目录包含：
 
-```bash
-bash compile_script/build_bc.sh tmux open-source-soft/tmux-master workspace/tmux-bc
-```
+* objects/：每个源代码对应的 .bc
+* project.bc：项目完整 LLVM bitcode
+* manifest.tsv：源文件/归档成员到 bitcode 的映射
+* logs/：构建日志
 
-兼容旧用法：
+脚本会用 clang wrapper 生成 LLVM bitcode object，递归收集`.o/.bc`中的 bitcode，并从 libtool `.libs/*.a` 静态库中提取 bitcode 成员。
 
-```bash
-bash compile_script/build_bc.sh /path/to/curl-master /path/to/curl-bc
-```
-
-脚本会用 clang wrapper 生成 LLVM bitcode object，递归收集`.o/.bc`中的 bitcode，并从 libtool `.libs/*.a` 静态库中提取 bitcode 成员。输出目录会包含`manifest.tsv`。
-
-tmux 需要系统可找到 libevent 2.x。若编译时报`libevent not found`，安装开发包后重试：
-
-```bash
-sudo apt-get update
-sudo apt-get install -y libevent-dev libncurses-dev pkg-config
-bash compile_script/build_bc.sh tmux
-```
-
-如果使用自编译 libevent：
-
-```bash
-LIBEVENT_PREFIX=/path/to/libevent-install bash compile_script/build_bc.sh tmux
-```
 
 ### 步骤3：重编译 SVF/Saber
 
 ```bash
-bash compile_script/rebuild_and_check_saber.sh \
+bash scripts/rebuild_and_check_saber.sh \
   /home/lxh/Projects/NSPA \
   /home/lxh/Projects/NSPA/SVF/Release-build \
   /home/lxh/Projects/NSPA/workspace/curl-bc \
@@ -175,7 +156,7 @@ python3 -m nspa.fine_grained_reachability \
   --validated-json outputs/nspa_curl_validated_memory_functions.json \
   --project curl \
   --saber-api-cpp SVF/svf/lib/SABER/SaberCheckerAPI.cpp \
-  --rebuild-script compile_script/rebuild_and_check_saber.sh \
+  --rebuild-script scripts/rebuild_and_check_saber.sh \
   --svf-build-dir SVF/Release-build \
   --bc-dir workspace/curl-bc \
   --skip-saber \

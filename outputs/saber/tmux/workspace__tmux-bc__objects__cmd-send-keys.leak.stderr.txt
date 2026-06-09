@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 77, "cl": 11, "fl": "cmd-send-keys.c" })
+		 conditional free path: 
+		  --> ({ "ln": 80, "cl": 7, "fl": "cmd-send-keys.c" }|True) 
+

@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 300, "cl": 16, "fl": "status.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1961, "cl": 8, "fl": "status.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1994, "cl": 6, "fl": "status.c" }|True) 
+

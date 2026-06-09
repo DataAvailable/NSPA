@@ -1,0 +1,4 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4011, "cl": 10, "fl": "window-copy.c" })
+		 double free path: 
+		  --> ({ "ln": 4016, "cl": 7, "fl": "window-copy.c" }|False) 
+

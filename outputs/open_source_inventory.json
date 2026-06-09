@@ -1,0 +1,74 @@
+[
+  {
+    "project": "bash",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/bash-master",
+    "version": "5.1.16",
+    "tlc": 120360,
+    "functions": 1084,
+    "ir_size_bytes": 0,
+    "ir_files": 0
+  },
+  {
+    "project": "curl",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/curl-master",
+    "version": "8.21.0-DEV",
+    "tlc": 197961,
+    "functions": 4344,
+    "ir_size_bytes": 21741448,
+    "ir_files": 418
+  },
+  {
+    "project": "ffmpeg",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/ffmpeg-master",
+    "version": "8.0.git",
+    "tlc": 1387740,
+    "functions": 27812,
+    "ir_size_bytes": 0,
+    "ir_files": 0
+  },
+  {
+    "project": "git",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/git-master",
+    "version": "2.54.0",
+    "tlc": 313667,
+    "functions": 11468,
+    "ir_size_bytes": 0,
+    "ir_files": 0
+  },
+  {
+    "project": "openssl",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/openssl-master",
+    "version": "4.1.0-dev",
+    "tlc": 700132,
+    "functions": 17868,
+    "ir_size_bytes": 0,
+    "ir_files": 0
+  },
+  {
+    "project": "sqlite",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/sqlite-master",
+    "version": "3.54.0",
+    "tlc": 300015,
+    "functions": 7965,
+    "ir_size_bytes": 0,
+    "ir_files": 0
+  },
+  {
+    "project": "tmux",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/tmux-master",
+    "version": "next-3.7",
+    "tlc": 76133,
+    "functions": 2425,
+    "ir_size_bytes": 12340736,
+    "ir_files": 150
+  },
+  {
+    "project": "vim",
+    "path": "/home/lxh/Projects/NSPA/open-source-soft/vim-master",
+    "version": "9.2.286",
+    "tlc": 443333,
+    "functions": 9353,
+    "ir_size_bytes": 0,
+    "ir_files": 0
+  }
+]

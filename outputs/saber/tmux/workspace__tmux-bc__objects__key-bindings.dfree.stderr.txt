@@ -1,0 +1,9 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 115, "cl": 10, "fl": "key-bindings.c" })
+		 double free path: 
+		  --> ({ "ln": 144, "cl": 6, "fl": "key-bindings.c" }|False) 
+		  --> ({ "ln": 241, "cl": 6, "fl": "key-bindings.c" }|False) 
+		  --> ({ "ln": 245, "cl": 6, "fl": "key-bindings.c" }|False) 
+		  --> ({ "ln": 254, "cl": 37, "fl": "key-bindings.c" }|True) 
+		  --> ({ "ln": 254, "cl": 6, "fl": "key-bindings.c" }|True) 
+		  --> ({ "ln": 300, "cl": 6, "fl": "key-bindings.c" }|True) 
+

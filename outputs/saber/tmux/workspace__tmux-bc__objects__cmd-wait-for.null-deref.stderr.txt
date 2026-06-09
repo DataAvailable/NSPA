@@ -1,0 +1,12 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 188, "cl": 7, "fl": "cmd-wait-for.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 210, "cl": 8, "fl": "cmd-wait-for.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 88, "cl": 7, "fl": "cmd-wait-for.c" })
+		 conditional free path: 
+		  --> ({ "ln": 107, "cl": 6, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 109, "cl": 33, "fl": "cmd-wait-for.c" }|True) 
+		  --> ({ "ln": 109, "cl": 6, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 148, "cl": 32, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 148, "cl": 32, "fl": "cmd-wait-for.c" }|True) 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 181, "cl": 6, "fl": "cmd-wait-for.c" }|True) 
+
