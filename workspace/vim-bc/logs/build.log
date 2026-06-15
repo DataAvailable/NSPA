@@ -1,0 +1,144 @@
+/bin/sh install-sh -c -d objects
+CC="/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -Iproto -DHAVE_CONFIG_H       " srcdir=. sh ./osdef.sh
+creating auto/pathdef.c
+touch objects/.dirstamp
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/alloc.o alloc.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/arabic.o arabic.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/arglist.o arglist.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/autocmd.o autocmd.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/beval.o beval.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/buffer.o buffer.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/change.o change.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/blob.o blob.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/blowfish.o blowfish.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/cindent.o cindent.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/clientserver.o clientserver.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/clipboard.o clipboard.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/cmdexpand.o cmdexpand.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/cmdhist.o cmdhist.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/crypt.o crypt.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/crypt_zip.o crypt_zip.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/debugger.o debugger.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/dict.o dict.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/diff.o diff.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/digraph.o digraph.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/drawline.o drawline.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/drawscreen.o drawscreen.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/edit.o edit.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/eval.o eval.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/evalbuffer.o evalbuffer.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/evalfunc.o evalfunc.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/evalvars.o evalvars.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/evalwindow.o evalwindow.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/ex_cmds.o ex_cmds.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/ex_cmds2.o ex_cmds2.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/ex_docmd.o ex_docmd.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/ex_eval.o ex_eval.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/ex_getln.o ex_getln.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/fileio.o fileio.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/filepath.o filepath.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/findfile.o findfile.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/float.o float.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/fold.o fold.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/fuzzy.o fuzzy.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/getchar.o getchar.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/gc.o gc.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/gui_xim.o gui_xim.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/hardcopy.o hardcopy.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/hashtab.o hashtab.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/help.o help.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/highlight.o highlight.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/if_cscope.o if_cscope.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/if_xcmdsrv.o if_xcmdsrv.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/indent.o indent.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/insexpand.o insexpand.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/linematch.o linematch.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/list.o list.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/locale.o locale.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/logfile.o logfile.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/map.o map.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/mark.o mark.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/match.o match.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/mbyte.o mbyte.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/memline.o memline.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/menu.o menu.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/misc1.o misc1.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/misc2.o misc2.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/mouse.o mouse.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/move.o move.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/normal.o normal.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/ops.o ops.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I.       -Iproto -DHAVE_CONFIG_H     -O0 -g              -o objects/option.o option.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I.       -Iproto -DHAVE_CONFIG_H     -O0 -g              -o objects/optionstr.o optionstr.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/os_unix.o os_unix.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/pathdef.o auto/pathdef.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/popupmenu.o popupmenu.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/popupwin.o popupwin.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/profiler.o profiler.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/pty.o pty.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/quickfix.o quickfix.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/regexp.o regexp.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/register.o register.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/screen.o screen.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/scriptfile.o scriptfile.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/search.o search.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/session.o session.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/sha256.o sha256.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/sign.o sign.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/sound.o sound.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/spell.o spell.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/spellfile.o spellfile.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/spellsuggest.o spellsuggest.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/strings.o strings.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/syntax.o syntax.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/tabpanel.o tabpanel.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/tag.o tag.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/term.o term.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/terminal.o terminal.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/testing.o testing.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/textformat.o textformat.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/textobject.o textobject.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/textprop.o textprop.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/time.o time.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/tuple.o tuple.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/typval.o typval.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/ui.o ui.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/undo.o undo.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/usercmd.o usercmd.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/userfunc.o userfunc.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/version.o version.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9class.o vim9class.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9cmds.o vim9cmds.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9compile.o vim9compile.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9execute.o vim9execute.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9expr.o vim9expr.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9generics.o vim9generics.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9instr.o vim9instr.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9script.o vim9script.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/vim9type.o vim9type.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/viminfo.o viminfo.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/window.o window.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/bufwrite.o bufwrite.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_encoding.o libvterm/src/encoding.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_keyboard.o libvterm/src/keyboard.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_mouse.o libvterm/src/mouse.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_parser.o libvterm/src/parser.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_pen.o libvterm/src/pen.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_screen.o libvterm/src/screen.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_state.o libvterm/src/state.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_unicode.o libvterm/src/unicode.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Ilibvterm/include -Iproto -DHAVE_CONFIG_H     -O0 -g        -DINLINE="" -DVSNPRINTF=vim_vsnprintf -DSNPRINTF=vim_snprintf -DIS_COMBINING_FUNCTION=utf_iscomposing_uint -DWCWIDTH_FUNCTION=utf_uint2cells -o objects/vterm_vterm.o libvterm/src/vterm.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/netbeans.o netbeans.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/job.o job.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/channel.o channel.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/xdiffi.o xdiff/xdiffi.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/xemit.o xdiff/xemit.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/xprepare.o xdiff/xprepare.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/xutils.o xdiff/xutils.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/xhistogram.o xdiff/xhistogram.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/xpatience.o xdiff/xpatience.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/charset.o charset.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/json.o json.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/main.o main.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/memfile.o memfile.c
+/home/lxh/Projects/NSPA/workspace/vim-bc/wrappers/clang-bc -c -I. -Iproto -DHAVE_CONFIG_H     -O0 -g        -o objects/message.o message.c

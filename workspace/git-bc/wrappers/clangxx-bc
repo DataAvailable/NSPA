@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+has_compile=0
+has_output=0
+source_file=""
+for arg in "$@"; do
+  if [ "$arg" = "-c" ]; then
+    has_compile=1
+  elif [ "$arg" = "-o" ]; then
+    has_output=1
+  elif [[ "$arg" == *.cc || "$arg" == *.cpp || "$arg" == *.cxx || "$arg" == *.C || "$arg" == *.mm ]]; then
+    source_file="$arg"
+  fi
+done
+if [ "$has_compile" = "1" ]; then
+  if [ "$has_output" = "0" ] && [ -n "$source_file" ]; then
+    output="${source_file##*/}"
+    output="${output%.*}.o"
+    exec "clang++" -emit-llvm -fno-discard-value-names "$@" -o "$output"
+  fi
+  exec "clang++" -emit-llvm -fno-discard-value-names "$@"
+fi
+exec "clang++" "$@"

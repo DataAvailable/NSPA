@@ -1,12 +1,14 @@
 
 # Third-party source repositories
-SVF/
+# SVF/
 open-source Soft/bash-master/
 open-source Soft/curl-master/
 open-source Soft/ffmpeg-master/
 open-source Soft/git-master/
 open-source Soft/openssl-master/
 open-source Soft/sqlite-master/
+open-source Soft/tmux-master/
+open-source Soft/vim-master/
 
 # Large/generated IR files
 *.ll
@@ -17,4 +19,4 @@ open-source Soft/vim-master/src/testdir/
 
 # Test directories in third-party source trees
 **/testdir/
-workspace/
+# workspace/
