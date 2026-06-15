@@ -1,4 +1,4 @@
-[English](https://github.com/DataAvailable/NSPA/README.md)|[中文简体](https://github.com/DataAvailable/NSPA/README-Zh.md)
+[English](https://github.com/DataAvailable/NSPA/README.md)|[中文简体](https://github.com/DataAvailable/NSPA/blob/main/README-Zh.md)
 
 
 # NSPA
