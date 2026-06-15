@@ -1,20 +1,42 @@
+[English](https://github.com/DataAvailable/NSPA/README.md)|[中文简体](https://github.com/DataAvailable/NSPA/README-Zh.md)
+
+
 # NSPA
-Neuro-Symbolic Augmented Fine-Grained Pointer Analysis
 
+**Neuro-Symbolic Augmented Fine-Grained Pointer Analysis**
 
-## 第一阶段：自定义内存函数候选检测
+NSPA is a neuro-symbolic static-analysis framework for improving fine-grained pointer and resource analysis in large-scale C/C++ projects. It combines lightweight static candidate extraction, LLM-based semantic validation, SVF/Saber integration, LLVM bitcode analysis, and LLM-assisted vulnerability verification.
 
-NSPA提供了一个C/C++项目扫描器，用于构建候选函数记录（CFR）、保守过滤潜在的自定义内存分配/释放/销毁函数，并输出可交给LLM语义验证的轻量级JSONL。
+The workflow consists of three stages:
 
-推荐安装依赖后运行以获得更精确的Tree-sitter解析：
+1. **Custom memory-function candidate detection**
+   Detect candidate allocation, release, and destruction interfaces from C/C++ projects.
+
+2. **Fine-grained reachability analysis**
+   Inject validated custom memory functions into SVF/Saber and run enhanced static checks on LLVM bitcode.
+
+3. **Vulnerability verification**
+   Extract source-level slices from Saber reports and use an LLM to verify whether warnings correspond to real vulnerabilities.
+
+---
+
+## Stage 1: Custom Memory-Function Candidate Detection
+
+NSPA provides a C/C++ project scanner that builds Candidate Function Records (CFRs), conservatively filters potential custom memory allocation/release/destruction functions, and exports compact JSONL records for LLM-based semantic validation.
+
+Install dependencies first for more accurate Tree-sitter parsing:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-如果当前Python环境缺少Tree-sitter依赖，扫描器会自动切换到无第三方依赖的`regex_fallback`模式继续运行，并在`--summary`和输出JSON的`metadata.parser_mode`中标明解析模式。
+If Tree-sitter dependencies are not available in the current Python environment, the scanner automatically falls back to the dependency-free `regex_fallback` mode. The selected parser mode is reported in `--summary` and in the output JSON field `metadata.parser_mode`.
 
-### 步骤1：CFR构建和过滤
+---
+
+### Step 1: Build and Filter CFRs
+
+Example command:
 
 ```bash
 python3 -m nspa.memory_function_detector \
@@ -28,22 +50,35 @@ python3 -m nspa.memory_function_detector \
   --exclude testdir
 ```
 
-输出JSON包含过滤后的CFR、证据列表、原始过滤分数`score`和归一化过滤分数`confidence`；JSONL文件每行是一个紧凑CFR，可作为LLM验证阶段的输入。
+The output JSON contains filtered CFRs, evidence lists, raw filtering scores (`score`), and normalized filtering confidence values (`confidence`). The JSONL file contains one compact CFR per line and can be used as the input to the LLM validation stage.
 
-过滤阈值有两种：
+Two filtering thresholds are supported:
 
-- `--min-score`：原始证据加权分，默认值为`2.0`。
-- `--min-confidence`：归一化后的过滤分数，范围为`0`到`1`。例如`--min-confidence 0.5`会保留`filter_confidence >= 0.5`的候选。
+* `--min-score`: the raw weighted evidence score. The default value is `2.0`.
+* `--min-confidence`: the normalized filtering confidence in the range `[0, 1]`. For example, `--min-confidence 0.5` keeps candidates with `filter_confidence >= 0.5`.
 
-`macro_value`只对函数式宏有意义，表示宏参数列表之后的宏体。例如`#define VIM_CLEAR(p) do { vim_free(p); (p) = NULL; } while (0)`中，`macro_value`就是`do { vim_free(p); (p) = NULL; } while (0)`；普通函数的`macro_value`为空字符串。
+The field `macro_value` is meaningful only for function-like macros. It represents the macro body after the macro parameter list. For example, in:
 
+```c
+#define VIM_CLEAR(p) do { vim_free(p); (p) = NULL; } while (0)
+```
 
-### 步骤2：CFR语义验证
+the `macro_value` is:
 
-步骤2读取步骤1生成的JSONL，调用OpenAI-compatible的LLM API进行语义验证，默认只保留最终识别为自定义分配/释放/销毁接口的函数。
+```c
+do { vim_free(p); (p) = NULL; } while (0)
+```
+
+For normal functions, `macro_value` is an empty string.
+
+---
+
+### Step 2: Semantic Validation of CFRs
+
+This step reads the JSONL file generated in Step 1 and calls an OpenAI-compatible LLM API for semantic validation. By default, it only keeps functions that are finally identified as custom allocation, release, or destruction interfaces.
 
 ```bash
-export OPENAI_API_KEY="你的API Key"
+export OPENAI_API_KEY="your_api_key"
 
 python3 -m nspa.llm_semantic_validator \
   --input ./outputs/nspa_vim_memory_candidates.jsonl \
@@ -57,14 +92,14 @@ python3 -m nspa.llm_semantic_validator \
   --summary
 ```
 
-如果使用其他OpenAI-compatible服务，可以指定：
+For other OpenAI-compatible services, specify `--base-url`, `--model`, and the API key environment variable:
 
 ```bash
 python3 -m nspa.llm_semantic_validator \
   --input ./outputs/nspa_vim_memory_candidates.jsonl \
   --output ./outputs/nspa_vim_validated_memory_functions.json \
-  --base-url https://你的服务地址/v1 \
-  --model 你的模型名 \
+  --base-url https://your-service-endpoint/v1 \
+  --model your-model-name \
   --api-key-env OPENAI_API_KEY \
   --batch-size 4 \
   --max-retries 6 \
@@ -73,32 +108,71 @@ python3 -m nspa.llm_semantic_validator \
   --summary
 ```
 
-默认请求地址为`{--base-url}/chat/completions`。例如`--base-url https://api.gpt.ge/v1`会请求`https://api.gpt.ge/v1/chat/completions`。如果服务商使用不同路径，可通过`--chat-path`覆盖。若返回404，优先检查`--base-url`、`--chat-path`和`--model`是否与服务商文档一致。
+By default, the request URL is:
 
+```text
+{--base-url}/chat/completions
+```
 
-验证器会自动创建`输出文件名.checkpoint.jsonl`作为断点续跑文件。若任务中断，重新运行同一命令会跳过已经完成验证的CFR。
+For example, `--base-url https://api.example.com/v1` sends requests to:
 
-长时间验证时，远端网关可能偶发断开连接。验证器会对`RemoteDisconnected`、超时、连接重置、429和5xx错误自动重试；如果一个批次反复失败，会自动拆成更小批次继续验证。若服务商不稳定，建议使用较小的`--batch-size`，提高`--max-retries`，并设置`--request-delay`。
+```text
+https://api.example.com/v1/chat/completions
+```
 
-输出类别包括：
+If your provider uses a different path, override it with `--chat-path`. If a `404` error occurs, first check whether `--base-url`, `--chat-path`, and `--model` are consistent with the service provider's documentation.
 
-- `allocator`：向调用者返回或传出新动态内存/拥有权对象。
-- `releaser`：释放调用者传入的内存、字段、引用或句柄。
-- `destroyer`：销毁整个对象/容器/资源生命周期，通常包含释放内部字段。
-- `non_memory`：不是自定义内存管理接口。
+The validator automatically creates a checkpoint file named:
 
-默认输出会过滤掉`non_memory`。如果需要审计所有LLM判断结果，添加`--include-non-memory`。
+```text
+<output_file>.checkpoint.jsonl
+```
 
+If validation is interrupted, re-running the same command skips already validated CFRs.
 
-## 第二阶段：细粒度可达性分析
+For long-running validation tasks, remote gateways may occasionally disconnect. The validator automatically retries `RemoteDisconnected`, timeout, connection reset, `429`, and `5xx` errors. If a batch repeatedly fails, it is automatically split into smaller batches. For unstable service providers, use a smaller `--batch-size`, increase `--max-retries`, and set a larger `--request-delay`.
 
-第二阶段把 LLM 验证得到的自定义内存管理函数接入 SVF/Saber，并在目标项目 bitcode 上运行细粒度检查。
+The output categories are:
 
-### 步骤1：注入自定义内存函数
+* `allocator`: returns or passes out newly allocated memory or ownership objects.
+* `releaser`: releases memory, fields, references, or handles passed by the caller.
+* `destroyer`: destroys an object, container, or resource lifecycle, usually including internal field release.
+* `non_memory`: not a custom memory-management interface.
 
-脚本会读取 `outputs/nspa_curl_validated_memory_functions.json`，过滤 `allocator/releaser/destroyer`，跳过函数式宏，并把结果插入 `SVF/svf/lib/SABER/SaberCheckerAPI.cpp` 的 `ei_pairs[]`。`allocator` 映射为 `CK_ALLOC`，`releaser/destroyer` 映射为 `CK_FREE`。插入位置会保持 Saber 要求的类型分组，避免触发 `ei_pairs not grouped by type`。
+By default, `non_memory` results are filtered out. To audit all LLM decisions, add:
 
-仅更新 Saber 源码，不编译、不运行：
+```bash
+--include-non-memory
+```
+
+---
+
+## Stage 2: Fine-Grained Reachability Analysis
+
+Stage 2 integrates LLM-validated custom memory-management functions into SVF/Saber and runs fine-grained static checks on target-project LLVM bitcode.
+
+---
+
+### Step 1: Inject Custom Memory Functions
+
+The script reads validated memory functions, filters `allocator`, `releaser`, and `destroyer` entries, skips function-like macros, and inserts the results into `ei_pairs[]` in:
+
+```text
+SVF/svf/lib/SABER/SaberCheckerAPI.cpp
+```
+
+The mapping is:
+
+* `allocator` -> `CK_ALLOC`
+* `releaser` / `destroyer` -> `CK_FREE`
+
+The insertion preserves Saber’s required type grouping to avoid the error:
+
+```text
+ei_pairs not grouped by type
+```
+
+To update the Saber source file only, without rebuilding or running Saber:
 
 ```bash
 python3 -m nspa.fine_grained_reachability \
@@ -110,31 +184,56 @@ python3 -m nspa.fine_grained_reachability \
   --summary
 ```
 
-### 步骤2：编译目标项目 bitcode
+---
 
-* `scripts/build_bc.sh` 一键构建全部项目;
-* `build_common.sh`：公共 clang/clang++ bitcode wrapper、收集和 llvm-link 逻辑;
-* 单项目脚本：bash、curl、ffmpeg、git、openssl、sqlite、tmux、vim
+### Step 2: Build LLVM Bitcode for Target Projects
+
+The repository provides scripts for building LLVM bitcode:
+
+* `scripts/build_all_bc.sh`: build all supported projects.
+* `build_common.sh`: common clang/clang++ bitcode wrapper, collection, and `llvm-link` logic.
+* Per-project scripts: `bash`, `curl`, `ffmpeg`, `git`, `openssl`, `sqlite`, `tmux`, and `vim`.
+
+Build all projects:
 
 ```bash
 bash scripts/build_all_bc.sh
-# 或单独编译运行
+```
+
+Or build a single project:
+
+```bash
 bash scripts/build_ffmpeg_bc.sh
 ```
 
-输出都放在 `NSPA/workspace/<project>-bc/`，每个项目目录包含：
+The output is stored under:
 
-* objects/：每个源代码对应的 .bc
-* project.bc：项目完整 LLVM bitcode
-* manifest.tsv：源文件/归档成员到 bitcode 的映射
-* logs/：构建日志
+```text
+NSPA/workspace/<project>-bc/
+```
 
-脚本会用 clang wrapper 生成 LLVM bitcode object，递归收集`.o/.bc`中的 bitcode，并从 libtool `.libs/*.a` 静态库中提取 bitcode 成员。
+Each project directory contains:
 
+```text
+objects/       Per-source LLVM bitcode files
+project.bc     Linked whole-project LLVM bitcode
+manifest.tsv   Mapping from source/archive members to bitcode files
+logs/          Build logs
+```
 
-### 步骤3：重编译 SVF/Saber
+The build scripts use clang wrappers to generate LLVM bitcode objects, recursively collect bitcode from `.o` and `.bc` files, and extract bitcode members from libtool `.libs/*.a` static archives.
 
-本项目基于SVF/Saber工具构建，在进行该步骤之前请先按照官方文档[安装SVF](https://github.com/SVF-tools/SVF)。
+---
+
+### Step 3: Rebuild SVF/Saber
+
+NSPA is built on top of SVF/Saber. Before this step, install SVF according to the official SVF documentation:
+
+```text
+https://github.com/SVF-tools/SVF
+```
+
+Rebuild and check Saber:
 
 ```bash
 bash scripts/rebuild_and_check_saber.sh \
@@ -144,10 +243,11 @@ bash scripts/rebuild_and_check_saber.sh \
   /NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
+---
 
-### 步骤4：运行 Saber 检测 bitcode
+### Step 4: Run Saber on LLVM Bitcode
 
-完整运行会对 `workspace/curl-bc` 下的每个 `.bc` 分别执行：
+A full run executes the following Saber checks for each `.bc` file under `workspace/curl-bc`:
 
 ```bash
 saber -leak       -extapi="$SVF_EXTAPI" file.bc
@@ -156,7 +256,7 @@ saber -fileck     -extapi="$SVF_EXTAPI" file.bc
 saber -null-deref -extapi="$SVF_EXTAPI" file.bc
 ```
 
-自动化命令：
+Automated command:
 
 ```bash
 python3 -m nspa.fine_grained_reachability \
@@ -171,16 +271,45 @@ python3 -m nspa.fine_grained_reachability \
   --summary
 ```
 
-运行过程中会在控制台打印每个 `.bc + checker` 的进度。默认输出采用稀疏保存策略：没有 stderr 内容且返回码为 0 的正常结果不保存 per-run 文件；有 stderr 内容或非 0 返回码的结果会保存 `stderr` 文件。`stdout` 默认丢弃，如需保存非空 stdout，添加 `--save-stdout`。如需关闭进度打印，添加 `--quiet`。
+During execution, the tool prints progress for each `.bc + checker` pair.
 
-第二阶段结束时会输出 `第二阶段：细粒度可达性分析运行时间`；使用 `--summary` 时，汇总 JSON 也会包含 `stage_elapsed_seconds` 和 `stage_elapsed`。
+By default, the output uses a sparse-saving strategy:
 
-输出目录会生成：
+* If `stderr` is empty and the return code is `0`, no per-run file is saved.
+* If `stderr` is non-empty or the return code is non-zero, the `stderr` file is saved.
+* `stdout` is discarded by default.
 
-- `manifest.json`：结构化运行结果。
-- `manifest.tsv`：便于表格查看的结果索引。
+To save non-empty stdout, add:
 
-批量统计增强后 SVF/Saber 在每个项目上的步骤4运行时间：
+```bash
+--save-stdout
+```
+
+To disable progress printing, add:
+
+```bash
+--quiet
+```
+
+At the end of Stage 2, the tool reports the elapsed time of the fine-grained reachability analysis. When `--summary` is enabled, the summary JSON also includes:
+
+```text
+stage_elapsed_seconds
+stage_elapsed
+```
+
+The output directory contains:
+
+```text
+manifest.json   Structured run results
+manifest.tsv    Tabular result index
+```
+
+---
+
+### Batch Timing for All Projects
+
+To measure the Step 4 runtime of the enhanced SVF/Saber analysis across multiple projects:
 
 ```bash
 python3 scripts/run_saber_timing_all_projects.py \
@@ -190,23 +319,63 @@ python3 scripts/run_saber_timing_all_projects.py \
   --timeout 120
 ```
 
-该脚本会对每个项目依次注入 `outputs/<project>/nspa_<project>_validated_memory_functions.json` 中的自定义内存分配/释放函数，重编译 `saber`，然后运行 Saber 检测 bitcode。汇总结果写入 `outputs/saber_timing_summary.json` 和 `outputs/saber_timing_summary.csv`；每个项目的步骤4耗时字段为 `saber_elapsed_seconds` / `saber_elapsed`。快速冒烟测试可添加 `--bc-limit 1 --checkers leak`。
+This script sequentially injects custom allocation/release functions from:
 
-## 第三阶段：漏洞验证
+```text
+outputs/<project>/nspa_<project>_validated_memory_functions.json
+```
 
-第三阶段读取第二阶段的 Saber 报告，根据告警中的 `memory allocation/file open` 位置和 `conditional free/double free/conditional file close` 路径行号，从原始源代码中抽取程序切片，然后调用 LLM 判断告警是否为真实漏洞。
+then rebuilds `saber` and runs Saber checks on the project bitcode.
 
-调用 OpenAI-compatible API 进行最终验证：
+The summary results are written to:
+
+```text
+outputs/saber_timing_summary.json
+outputs/saber_timing_summary.csv
+```
+
+The Step 4 runtime fields are:
+
+```text
+saber_elapsed_seconds
+saber_elapsed
+```
+
+For a quick smoke test, use:
 
 ```bash
-export OPENAI_API_KEY="你的API Key"
+--bc-limit 1 --checkers leak
+```
+
+---
+
+## Stage 3: Vulnerability Verification
+
+Stage 3 reads Saber reports from Stage 2, extracts source-level program slices according to warning locations, and uses an LLM to determine whether each warning corresponds to a real vulnerability.
+
+The verifier uses the following information from Saber reports:
+
+* `memory allocation` / `file open` locations
+* `conditional free`
+* `double free`
+* `conditional file close`
+* path line numbers
+
+It then extracts source slices from the original project and asks the LLM to classify each warning.
+
+---
+
+### Run LLM-Based Vulnerability Verification
+
+```bash
+export OPENAI_API_KEY="your_api_key"
 
 python3 -m nspa.vulnerability_verifier \
   --saber-output-dir outputs/saber/curl \
   --source-root open-source-soft/curl-master \
   --output outputs/nspa_curl_verified_vulnerabilities.json \
-  --base-url https://你的服务地址/v1 \
-  --model 你的模型名 \
+  --base-url https://your-service-endpoint/v1 \
+  --model your-model-name \
   --api-key-env OPENAI_API_KEY \
   --max-retries 8 \
   --request-delay 0.5 \
@@ -216,23 +385,93 @@ python3 -m nspa.vulnerability_verifier \
   --summary
 ```
 
-如果服务商不支持 JSON mode，可以添加：
+If the service provider does not support JSON mode, add:
 
 ```bash
 --no-json-mode
 ```
 
-第三阶段也会自动创建`输出文件名.checkpoint.jsonl`作为断点续跑文件。长时间验证时，如果远端网关在重试耗尽后仍然断开，默认`--api-error-policy unknown`会把该条告警记录为`unknown`并继续验证后续告警，避免整轮任务中止；如果希望遇到 API 错误立刻失败，设置`--api-error-policy stop`。之后若想重新验证这些 API 失败的`unknown`项，可删除对应 checkpoint 行或换一个新的`--checkpoint-jsonl`重新运行。
+Stage 3 also creates a checkpoint file:
 
-第三阶段会写出两个结果文件：
+```text
+<output_file>.checkpoint.jsonl
+```
 
-- `--output` 指定的全量文件，例如 `outputs/nspa_curl_verified_vulnerabilities.json`：`results`包含每条 Saber 告警的 LLM 验证结果、原始告警、源码切片；`confirmed_vulnerabilities`包含其中判定为`true_positive`的最终漏洞。
-- 自动生成的 TP-only 文件，例如 `outputs/nspa_curl_verified_vulnerabilities_TP.json`：`results`只包含判定结果为`true_positive`的验证结果。可通过`--tp-output`指定其他路径。
+If the remote gateway still disconnects after all retries, the default policy:
 
-LLM 判定类别：
+```bash
+--api-error-policy unknown
+```
 
-- `true_positive`：切片显示存在可行漏洞路径。
-- `false_positive`：切片显示资源已正确释放、所有权已转移或路径不可行。
-- `unknown`：切片不足以确认，需要人工审计。
+marks the corresponding warning as `unknown` and continues validating subsequent warnings. This prevents the entire run from being interrupted by a single API failure.
 
-程序切片会优先抽取包含告警行号的完整函数；如果函数过大或无法识别，则退化为告警行号附近的上下文窗口。重要行以 `>>` 标记。
+To fail immediately on API errors, use:
+
+```bash
+--api-error-policy stop
+```
+
+To re-validate `unknown` cases caused by API failures, delete the corresponding checkpoint lines or specify a new checkpoint file with:
+
+```bash
+--checkpoint-jsonl
+```
+
+---
+
+### Stage 3 Outputs
+
+Stage 3 writes two result files.
+
+The full output file specified by `--output`, for example:
+
+```text
+outputs/nspa_curl_verified_vulnerabilities.json
+```
+
+contains:
+
+```text
+results                     All Saber warnings with LLM verification results, raw warnings, and source slices
+confirmed_vulnerabilities   Warnings classified as true positives
+```
+
+A TP-only file is generated automatically, for example:
+
+```text
+outputs/nspa_curl_verified_vulnerabilities_TP.json
+```
+
+This file contains only results classified as:
+
+```text
+true_positive
+```
+
+A custom TP-only output path can be specified with:
+
+```bash
+--tp-output
+```
+
+The LLM classification labels are:
+
+* `true_positive`: the slice shows a feasible vulnerability path.
+* `false_positive`: the slice shows that the resource is properly released, ownership is transferred, or the path is infeasible.
+* `unknown`: the slice is insufficient for confirmation and requires manual auditing.
+
+Source slicing first tries to extract the complete function containing the warning line. If the function is too large or cannot be identified, the verifier falls back to a context window around the warning line. Important lines are marked with:
+
+```text
+>>
+```
+
+---
+
+## Notes
+
+* The framework is designed for C/C++ projects.
+* OpenAI-compatible APIs are supported in both semantic validation and vulnerability verification.
+* Checkpoint files are generated automatically for long-running LLM-based stages.
+* SVF/Saber must be installed and built before running the fine-grained analysis stage.
+* Large generated artifacts under `workspace/` may be expensive to store in Git. Consider using Git LFS or excluding unnecessary build artifacts when publishing the repository.
