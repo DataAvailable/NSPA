@@ -1,6 +1,7 @@
 # NSPA
 Neuro-Symbolic Augmented Fine-Grained Pointer Analysis
 
+
 ## 第一阶段：自定义内存函数候选检测
 
 NSPA提供了一个C/C++项目扫描器，用于构建候选函数记录（CFR）、保守过滤潜在的自定义内存分配/释放/销毁函数，并输出可交给LLM语义验证的轻量级JSONL。
@@ -109,14 +110,6 @@ python3 -m nspa.fine_grained_reachability \
   --summary
 ```
 
-旧入口仍可使用：
-
-```bash
-python3 scripts/update_saber_source-sink.py \
-  outputs/nspa_curl_validated_memory_functions.json \
-  SVF/svf/lib/SABER/SaberCheckerAPI.cpp
-```
-
 ### 步骤2：编译目标项目 bitcode
 
 * `scripts/build_bc.sh` 一键构建全部项目;
@@ -141,12 +134,14 @@ bash scripts/build_ffmpeg_bc.sh
 
 ### 步骤3：重编译 SVF/Saber
 
+本项目基于SVF/Saber工具构建，在进行该步骤之前请先按照官方文档[安装SVF](https://github.com/SVF-tools/SVF)。
+
 ```bash
 bash scripts/rebuild_and_check_saber.sh \
-  /home/lxh/Projects/NSPA \
-  /home/lxh/Projects/NSPA/SVF/Release-build \
-  /home/lxh/Projects/NSPA/workspace/curl-bc \
-  /home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
+  /NSPA \
+  /NSPA/SVF/Release-build \
+  /NSPA/workspace/curl-bc \
+  /NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
 
