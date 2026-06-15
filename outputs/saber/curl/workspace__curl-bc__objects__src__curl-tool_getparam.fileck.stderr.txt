@@ -1,0 +1,28 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 1255, "cl": 16, "fl": "tool_getparam.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 1264, "cl": 10, "fl": "tool_getparam.c" }|True) 
+
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 957, "cl": 14, "fl": "tool_getparam.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 964, "cl": 31, "fl": "tool_getparam.c" }|False) 
+		  --> ({ "ln": 964, "cl": 31, "fl": "tool_getparam.c" }|True) 
+		  --> ({ "ln": 964, "cl": 8, "fl": "tool_getparam.c" }|False) 
+		  --> ({ "ln": 964, "cl": 8, "fl": "tool_getparam.c" }|True) 
+		  --> ({ "ln": 974, "cl": 8, "fl": "tool_getparam.c" }|True) 
+
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 1297, "cl": 38, "fl": "tool_getparam.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 1317, "cl": 10, "fl": "tool_getparam.c" }|True) 
+
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 1144, "cl": 11, "fl": "tool_getparam.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 1153, "cl": 10, "fl": "tool_getparam.c" }|True) 
+
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 1595, "cl": 14, "fl": "tool_getparam.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 1603, "cl": 8, "fl": "tool_getparam.c" }|True) 
+
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 679, "cl": 14, "fl": "tool_getparam.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 688, "cl": 8, "fl": "tool_getparam.c" }|True) 
+

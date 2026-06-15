@@ -1,0 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 219, "cl": 9, "fl": "lib/readline/search.c" })
+		 conditional free path: 
+		  --> ({ "ln": 408, "cl": 7, "fl": "lib/readline/search.c" }|False) 
+		  --> ({ "ln": 417, "cl": 11, "fl": "lib/readline/search.c" }|False) 
+		  --> ({ "ln": 423, "cl": 11, "fl": "lib/readline/search.c" }|False) 
+		  --> ({ "ln": 423, "cl": 11, "fl": "lib/readline/search.c" }|True) 
+		  --> ({ "ln": 427, "cl": 11, "fl": "lib/readline/search.c" }|False) 
+		  --> ({ "ln": 429, "cl": 16, "fl": "lib/readline/search.c" }|True) 
+		  --> ({ "ln": 434, "cl": 11, "fl": "lib/readline/search.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 381, "cl": 30, "fl": "lib/readline/search.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 613, "cl": 36, "fl": "lib/readline/search.c" })

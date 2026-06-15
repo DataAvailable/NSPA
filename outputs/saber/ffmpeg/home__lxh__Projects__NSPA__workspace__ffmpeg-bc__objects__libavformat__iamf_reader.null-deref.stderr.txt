@@ -1,0 +1,18 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 80, "cl": 30, "fl": "libavformat/iamf_reader.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 185, "cl": 17, "fl": "libavformat/iamf_reader.c" })
+		 conditional free path: 
+		  --> ({ "ln": 198, "cl": 5, "fl": "libavformat/iamf_reader.c" }|True) 
+		  --> ({ "ln": 262, "cl": 5, "fl": "./libavutil/iamf.h" }|False) 
+		  --> ({ "ln": 202, "cl": 37, "fl": "libavformat/iamf_reader.c" }|False) 
+		  --> ({ "ln": 202, "cl": 37, "fl": "libavformat/iamf_reader.c" }|True) 
+		  --> ({ "ln": 202, "cl": 13, "fl": "libavformat/iamf_reader.c" }|False) 
+		  --> ({ "ln": 202, "cl": 13, "fl": "libavformat/iamf_reader.c" }|True) 
+		  --> ({ "ln": 204, "cl": 17, "fl": "libavformat/iamf_reader.c" }|False) 
+		  --> ({ "ln": 213, "cl": 9, "fl": "libavformat/iamf_reader.c" }|True) 
+		  --> ({ "ln": 213, "cl": 9, "fl": "libavformat/iamf_reader.c" }|True) 
+		  --> ({ "ln": 218, "cl": 17, "fl": "libavformat/iamf_reader.c" }|True) 
+		  --> ({ "ln": 301, "cl": 9, "fl": "libavformat/iamf_reader.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 73, "cl": 30, "fl": "libavformat/iamf_reader.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 86, "cl": 30, "fl": "libavformat/iamf_reader.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 92, "cl": 30, "fl": "libavformat/iamf_reader.c" })

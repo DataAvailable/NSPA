@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1615, "cl": 36, "fl": "autocmd.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2641, "cl": 11, "fl": "autocmd.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2737, "cl": 14, "fl": "autocmd.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 515, "cl": 23, "fl": "autocmd.c" })

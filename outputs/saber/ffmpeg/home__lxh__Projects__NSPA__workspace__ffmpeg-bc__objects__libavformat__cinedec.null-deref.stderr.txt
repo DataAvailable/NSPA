@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 278, "cl": 19, "fl": "libavformat/cinedec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "libavformat/cinedec.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 106, "cl": 10, "fl": "libavformat/cinedec.c" })

@@ -1,0 +1,11 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 110, "cl": 16, "fl": "libavcodec/vlc.c" })
+		 double free path: 
+		  --> ({ "ln": 234, "cl": 9, "fl": "libavcodec/vlc.c" }|False) 
+		  --> ({ "ln": 240, "cl": 13, "fl": "libavcodec/vlc.c" }|True) 
+		  --> ({ "ln": 527, "cl": 9, "fl": "libavcodec/vlc.c" }|False) 
+		  --> ({ "ln": 531, "cl": 9, "fl": "libavcodec/vlc.c" }|False) 
+		  --> ({ "ln": 531, "cl": 9, "fl": "libavcodec/vlc.c" }|True) 
+		  --> ({ "ln": 535, "cl": 5, "fl": "libavcodec/vlc.c" }|False) 
+		  --> ({ "ln": 562, "cl": 9, "fl": "libavcodec/vlc.c" }|True) 
+		  --> ({ "ln": 569, "cl": 9, "fl": "libavcodec/vlc.c" }|True) 
+

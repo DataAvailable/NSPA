@@ -1,0 +1,20 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1408, "cl": 9, "fl": "refs/packed-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1410, "cl": 6, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1417, "cl": 2, "fl": "refs/packed-backend.c" }|False) 
+		  --> ({ "ln": 1417, "cl": 2, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1421, "cl": 7, "fl": "refs/packed-backend.c" }|False) 
+		  --> ({ "ln": 1421, "cl": 7, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1516, "cl": 8, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1545, "cl": 6, "fl": "refs/packed-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1178, "cl": 2, "fl": "refs/packed-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1410, "cl": 6, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1417, "cl": 2, "fl": "refs/packed-backend.c" }|False) 
+		  --> ({ "ln": 1417, "cl": 2, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1421, "cl": 7, "fl": "refs/packed-backend.c" }|False) 
+		  --> ({ "ln": 1421, "cl": 7, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1516, "cl": 8, "fl": "refs/packed-backend.c" }|True) 
+		  --> ({ "ln": 1545, "cl": 6, "fl": "refs/packed-backend.c" }|True) 
+

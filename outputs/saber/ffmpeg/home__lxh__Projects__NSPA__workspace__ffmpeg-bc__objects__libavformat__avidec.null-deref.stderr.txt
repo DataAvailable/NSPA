@@ -1,0 +1,11 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 616, "cl": 34, "fl": "libavformat/avidec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1528, "cl": 19, "fl": "libavformat/avidec.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1717, "cl": 16, "fl": "libavformat/avidec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1761, "cl": 63, "fl": "libavformat/avidec.c" }|False) 
+		  --> ({ "ln": 1761, "cl": 63, "fl": "libavformat/avidec.c" }|True) 
+		  --> ({ "ln": 1761, "cl": 13, "fl": "libavformat/avidec.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 334, "cl": 13, "fl": "libavformat/avidec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1172, "cl": 30, "fl": "libavformat/avidec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1175, "cl": 30, "fl": "libavformat/avidec.c" })

@@ -1,0 +1,20 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 226, "cl": 25, "fl": "lib/readline/isearch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 854, "cl": 7, "fl": "lib/readline/isearch.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 248, "cl": 32, "fl": "lib/readline/isearch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 854, "cl": 7, "fl": "lib/readline/isearch.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 85, "cl": 27, "fl": "lib/readline/isearch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 854, "cl": 7, "fl": "lib/readline/isearch.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 235, "cl": 37, "fl": "lib/readline/isearch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 854, "cl": 7, "fl": "lib/readline/isearch.c" }|False) 
+		  --> ({ "ln": 400, "cl": 26, "fl": "lib/readline/isearch.c" }|True) 
+		  --> ({ "ln": 400, "cl": 11, "fl": "lib/readline/isearch.c" }|True) 
+		  --> ({ "ln": 402, "cl": 8, "fl": "lib/readline/isearch.c" }|False) 
+		  --> ({ "ln": 827, "cl": 7, "fl": "lib/readline/isearch.c" }|True) 
+

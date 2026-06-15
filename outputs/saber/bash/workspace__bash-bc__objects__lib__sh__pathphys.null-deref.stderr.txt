@@ -1,0 +1,34 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 100, "cl": 26, "fl": "lib/sh/pathphys.c" })
+		 conditional free path: 
+		  --> ({ "ln": 129, "cl": 3, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 150, "cl": 4, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 150, "cl": 4, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 152, "cl": 12, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 168, "cl": 8, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 168, "cl": 8, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 170, "cl": 12, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 193, "cl": 8, "fl": "lib/sh/pathphys.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 97, "cl": 16, "fl": "lib/sh/pathphys.c" })
+		 conditional free path: 
+		  --> ({ "ln": 129, "cl": 3, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 150, "cl": 4, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 150, "cl": 4, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 152, "cl": 12, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 168, "cl": 8, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 168, "cl": 8, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 170, "cl": 12, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 193, "cl": 8, "fl": "lib/sh/pathphys.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 92, "cl": 24, "fl": "lib/sh/pathphys.c" })
+		 conditional free path: 
+		  --> ({ "ln": 129, "cl": 3, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 150, "cl": 4, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 150, "cl": 4, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 152, "cl": 12, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 168, "cl": 8, "fl": "lib/sh/pathphys.c" }|False) 
+		  --> ({ "ln": 168, "cl": 8, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 170, "cl": 12, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 193, "cl": 8, "fl": "lib/sh/pathphys.c" }|True) 
+		  --> ({ "ln": 281, "cl": 7, "fl": "lib/sh/pathphys.c" }|False) 
+

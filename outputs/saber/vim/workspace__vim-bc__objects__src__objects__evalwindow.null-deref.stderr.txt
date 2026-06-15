@@ -1,0 +1,11 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 282, "cl": 12, "fl": "evalwindow.c" })
+		 conditional free path: 
+		  --> ({ "ln": 285, "cl": 6, "fl": "evalwindow.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 466, "cl": 9, "fl": "evalwindow.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 410, "cl": 12, "fl": "evalwindow.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 460, "cl": 12, "fl": "evalwindow.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 307, "cl": 13, "fl": "evalwindow.c" })
+		 conditional free path: 
+		  --> ({ "ln": 310, "cl": 6, "fl": "evalwindow.c" }|True) 
+

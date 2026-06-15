@@ -1,0 +1,22 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 37, "cl": 16, "fl": "reflog-walk.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 72, "cl": 17, "fl": "reflog-walk.c" })
+		 conditional free path: 
+		  --> ({ "ln": 196, "cl": 16, "fl": "reflog-walk.c" }|False) 
+		  --> ({ "ln": 196, "cl": 16, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 196, "cl": 7, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 200, "cl": 8, "fl": "reflog-walk.c" }|False) 
+		  --> ({ "ln": 202, "cl": 13, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 209, "cl": 16, "fl": "reflog-walk.c" }|False) 
+		  --> ({ "ln": 209, "cl": 16, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 209, "cl": 7, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 49, "cl": 6, "fl": "reflog-walk.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 71, "cl": 3, "fl": "reflog-walk.c" })
+		 conditional free path: 
+		  --> ({ "ln": 196, "cl": 7, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 200, "cl": 8, "fl": "reflog-walk.c" }|False) 
+		  --> ({ "ln": 202, "cl": 13, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 209, "cl": 7, "fl": "reflog-walk.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 33, "cl": 2, "fl": "reflog-walk.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 40, "cl": 18, "fl": "reflog-walk.c" })

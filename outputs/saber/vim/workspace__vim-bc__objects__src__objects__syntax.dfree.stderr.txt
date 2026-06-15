@@ -1,0 +1,18 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6067, "cl": 15, "fl": "syntax.c" })
+		 double free path: 
+		  --> ({ "ln": 5588, "cl": 10, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 5593, "cl": 10, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 5273, "cl": 9, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 6076, "cl": 16, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 6082, "cl": 9, "fl": "syntax.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5945, "cl": 13, "fl": "syntax.c" })
+		 double free path: 
+		  --> ({ "ln": 5953, "cl": 7, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 5954, "cl": 7, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 5955, "cl": 7, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 5952, "cl": 17, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 5979, "cl": 15, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 5991, "cl": 7, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 6001, "cl": 11, "fl": "syntax.c" }|True) 
+

@@ -1,0 +1,26 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 639, "cl": 9, "fl": "builtin/commit.c" })
+		 double free path: 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|True) 
+		  --> ({ "ln": 649, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 651, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 667, "cl": 6, "fl": "builtin/commit.c" }|True) 
+		  --> ({ "ln": 670, "cl": 7, "fl": "builtin/commit.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 640, "cl": 10, "fl": "builtin/commit.c" })
+		 double free path: 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|True) 
+		  --> ({ "ln": 649, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 651, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 667, "cl": 6, "fl": "builtin/commit.c" }|True) 
+		  --> ({ "ln": 670, "cl": 7, "fl": "builtin/commit.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 641, "cl": 9, "fl": "builtin/commit.c" })
+		 double free path: 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|True) 
+		  --> ({ "ln": 649, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 651, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 657, "cl": 7, "fl": "builtin/commit.c" }|True) 
+

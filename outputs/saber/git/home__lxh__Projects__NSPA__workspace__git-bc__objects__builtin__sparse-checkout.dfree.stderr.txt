@@ -1,0 +1,10 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 688, "cl": 28, "fl": "builtin/sparse-checkout.c" })
+		 double free path: 
+		  --> ({ "ln": 340, "cl": 6, "fl": "builtin/sparse-checkout.c" }|False) 
+		  --> ({ "ln": 346, "cl": 6, "fl": "builtin/sparse-checkout.c" }|False) 
+		  --> ({ "ln": 346, "cl": 6, "fl": "builtin/sparse-checkout.c" }|True) 
+		  --> ({ "ln": 353, "cl": 6, "fl": "builtin/sparse-checkout.c" }|False) 
+		  --> ({ "ln": 356, "cl": 6, "fl": "builtin/sparse-checkout.c" }|False) 
+		  --> ({ "ln": 356, "cl": 6, "fl": "builtin/sparse-checkout.c" }|True) 
+		  --> ({ "ln": 361, "cl": 6, "fl": "builtin/sparse-checkout.c" }|False) 
+

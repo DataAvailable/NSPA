@@ -1,0 +1,48 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1156, "cl": 24, "fl": "insexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 6303, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6299, "cl": 9, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6307, "cl": 27, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6307, "cl": 42, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6307, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6138, "cl": 9, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 6142, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6143, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6141, "cl": 9, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 1517, "cl": 9, "fl": "insexpand.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1492, "cl": 20, "fl": "insexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 1517, "cl": 9, "fl": "insexpand.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 937, "cl": 13, "fl": "insexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 6303, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6299, "cl": 9, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6307, "cl": 27, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6307, "cl": 42, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6307, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6138, "cl": 9, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 6142, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6143, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6141, "cl": 9, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 1517, "cl": 9, "fl": "insexpand.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6842, "cl": 28, "fl": "insexpand.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5415, "cl": 18, "fl": "insexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 3883, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6990, "cl": 9, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 7002, "cl": 6, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 7002, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6426, "cl": 40, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 6435, "cl": 6, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 6435, "cl": 6, "fl": "insexpand.c" }|True) 
+		  --> ({ "ln": 6439, "cl": 10, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 6449, "cl": 10, "fl": "insexpand.c" }|False) 
+		  --> ({ "ln": 6563, "cl": 9, "fl": "insexpand.c" }|True) 
+
+
+NSPA timeout after 120.0 seconds

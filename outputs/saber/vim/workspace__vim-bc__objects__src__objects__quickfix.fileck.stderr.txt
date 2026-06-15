@@ -1,0 +1,5 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 8755, "cl": 10, "fl": "quickfix.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 8760, "cl": 5, "fl": "quickfix.c" }|True) 
+		  --> ({ "ln": 8773, "cl": 6, "fl": "quickfix.c" }|True) 
+

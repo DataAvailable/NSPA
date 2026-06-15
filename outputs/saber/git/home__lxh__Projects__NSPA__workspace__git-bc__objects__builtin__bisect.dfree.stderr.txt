@@ -1,0 +1,18 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 765, "cl": 22, "fl": "builtin/bisect.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 757, "cl": 23, "fl": "builtin/bisect.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 91, "cl": 21, "fl": "builtin/bisect.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 770, "cl": 22, "fl": "builtin/bisect.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 93, "cl": 20, "fl": "builtin/bisect.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 752, "cl": 23, "fl": "builtin/bisect.c" })
+		 double free path: 
+

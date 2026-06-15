@@ -1,0 +1,17 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4105, "cl": 9, "fl": "highlight.c" })
+		 double free path: 
+		  --> ({ "ln": 4125, "cl": 5, "fl": "highlight.c" }|True) 
+		  --> ({ "ln": 4127, "cl": 6, "fl": "highlight.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1854, "cl": 12, "fl": "highlight.c" })
+		 double free path: 
+		  --> ({ "ln": 1784, "cl": 2, "fl": "highlight.c" }|True) 
+		  --> ({ "ln": 1787, "cl": 10, "fl": "highlight.c" }|False) 
+		  --> ({ "ln": 1802, "cl": 10, "fl": "highlight.c" }|False) 
+		  --> ({ "ln": 1809, "cl": 10, "fl": "highlight.c" }|False) 
+		  --> ({ "ln": 1821, "cl": 10, "fl": "highlight.c" }|False) 
+		  --> ({ "ln": 1831, "cl": 10, "fl": "highlight.c" }|False) 
+		  --> ({ "ln": 1831, "cl": 10, "fl": "highlight.c" }|True) 
+		  --> ({ "ln": 1835, "cl": 7, "fl": "highlight.c" }|False) 
+		  --> ({ "ln": 1847, "cl": 10, "fl": "highlight.c" }|False) 
+

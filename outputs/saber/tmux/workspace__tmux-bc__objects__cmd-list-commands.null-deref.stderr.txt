@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 86, "cl": 7, "fl": "cmd-list-commands.c" })
+		 conditional free path: 
+		  --> ({ "ln": 90, "cl": 6, "fl": "cmd-list-commands.c" }|False) 
+		  --> ({ "ln": 90, "cl": 6, "fl": "cmd-list-commands.c" }|True) 
+		  --> ({ "ln": 95, "cl": 7, "fl": "cmd-list-commands.c" }|False) 
+

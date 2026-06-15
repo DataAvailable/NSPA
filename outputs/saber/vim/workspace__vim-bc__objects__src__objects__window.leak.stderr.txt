@@ -1,0 +1,17 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1612, "cl": 23, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1610, "cl": 21, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1591, "cl": 18, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1324, "cl": 8, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5935, "cl": 22, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4744, "cl": 19, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6297, "cl": 19, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 8223, "cl": 12, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4846, "cl": 18, "fl": "window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1593, "cl": 18, "fl": "window.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3273, "cl": 18, "fl": "window.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3282, "cl": 10, "fl": "window.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4704, "cl": 20, "fl": "window.c" })
+
+NSPA timeout after 120.0 seconds

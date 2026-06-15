@@ -1,0 +1,9 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 466, "cl": 8, "fl": "mailinfo.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 214, "cl": 10, "fl": "mailinfo.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 258, "cl": 28, "fl": "mailinfo.c" })
+		 conditional free path: 
+		  --> ({ "ln": 264, "cl": 6, "fl": "mailinfo.c" }|False) 
+		  --> ({ "ln": 264, "cl": 6, "fl": "mailinfo.c" }|True) 
+		  --> ({ "ln": 266, "cl": 7, "fl": "mailinfo.c" }|False) 
+		  --> ({ "ln": 266, "cl": 7, "fl": "mailinfo.c" }|True) 
+

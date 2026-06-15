@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 42, "cl": 8, "fl": "builtin/fetch-pack.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 45, "cl": 2, "fl": "builtin/fetch-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 277, "cl": 6, "fl": "builtin/fetch-pack.c" }|True) 
+

@@ -1,0 +1,16 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 302, "cl": 3, "fl": "server-info.c" })
+		 double free path: 
+		  --> ({ "ln": 307, "cl": 15, "fl": "server-info.c" }|False) 
+		  --> ({ "ln": 307, "cl": 15, "fl": "server-info.c" }|True) 
+		  --> ({ "ln": 307, "cl": 6, "fl": "server-info.c" }|False) 
+		  --> ({ "ln": 307, "cl": 6, "fl": "server-info.c" }|True) 
+		  --> ({ "ln": 325, "cl": 2, "fl": "server-info.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 301, "cl": 3, "fl": "server-info.c" })
+		 double free path: 
+		  --> ({ "ln": 307, "cl": 15, "fl": "server-info.c" }|False) 
+		  --> ({ "ln": 307, "cl": 15, "fl": "server-info.c" }|True) 
+		  --> ({ "ln": 307, "cl": 6, "fl": "server-info.c" }|False) 
+		  --> ({ "ln": 307, "cl": 6, "fl": "server-info.c" }|True) 
+		  --> ({ "ln": 325, "cl": 2, "fl": "server-info.c" }|True) 
+

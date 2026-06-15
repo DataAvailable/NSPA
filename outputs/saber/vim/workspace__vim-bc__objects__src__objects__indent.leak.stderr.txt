@@ -1,0 +1,29 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 674, "cl": 12, "fl": "indent.c" })
+		 conditional free path: 
+		  --> ({ "ln": 786, "cl": 29, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 786, "cl": 9, "fl": "indent.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1336, "cl": 14, "fl": "indent.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1391, "cl": 9, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 1453, "cl": 9, "fl": "indent.c" }|False) 
+		  --> ({ "ln": 1453, "cl": 9, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 1506, "cl": 9, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 1515, "cl": 6, "fl": "indent.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 63, "cl": 14, "fl": "indent.c" })
+		 conditional free path: 
+		  --> ({ "ln": 69, "cl": 5, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 74, "cl": 13, "fl": "indent.c" }|False) 
+		  --> ({ "ln": 74, "cl": 13, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 74, "cl": 6, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 1741, "cl": 9, "fl": "indent.c" }|False) 
+		  --> ({ "ln": 1921, "cl": 9, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 1927, "cl": 37, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 1927, "cl": 6, "fl": "indent.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 698, "cl": 12, "fl": "indent.c" })
+		 conditional free path: 
+		  --> ({ "ln": 786, "cl": 29, "fl": "indent.c" }|True) 
+		  --> ({ "ln": 786, "cl": 9, "fl": "indent.c" }|False) 
+

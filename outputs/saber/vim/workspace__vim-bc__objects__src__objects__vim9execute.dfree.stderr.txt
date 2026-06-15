@@ -1,0 +1,20 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 858, "cl": 27, "fl": "vim9execute.c" })
+		 double free path: 
+		  --> ({ "ln": 7013, "cl": 5, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 871, "cl": 6, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 1302, "cl": 9, "fl": "vim9execute.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 716, "cl": 21, "fl": "vim9execute.c" })
+		 double free path: 
+		  --> ({ "ln": 4908, "cl": 11, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 1302, "cl": 9, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 1310, "cl": 5, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 720, "cl": 6, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 720, "cl": 6, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 729, "cl": 10, "fl": "vim9execute.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5037, "cl": 27, "fl": "vim9execute.c" })
+		 double free path: 
+		  --> ({ "ln": 5044, "cl": 11, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 5110, "cl": 11, "fl": "vim9execute.c" }|True) 
+

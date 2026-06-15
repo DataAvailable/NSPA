@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 334, "cl": 22, "fl": "lib/sh/strtrans.c" })
+		 conditional free path: 
+		  --> ({ "ln": 337, "cl": 3, "fl": "lib/sh/strtrans.c" }|False) 
+		  --> ({ "ln": 337, "cl": 3, "fl": "lib/sh/strtrans.c" }|True) 
+		  --> ({ "ln": 338, "cl": 9, "fl": "lib/sh/strtrans.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 72, "cl": 17, "fl": "lib/sh/strtrans.c" })

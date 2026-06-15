@@ -1,0 +1,83 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 107, "cl": 1, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 825, "cl": 6, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 107, "cl": 1, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 273, "cl": 8, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 677, "cl": 9, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2950, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 548, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 551, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 556, "cl": 7, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 72, "cl": 1, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 825, "cl": 6, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 107, "cl": 1, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2210, "cl": 25, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 2733, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2224, "cl": 6, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2229, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2245, "cl": 9, "fl": "commit-graph.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 506, "cl": 17, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 676, "cl": 8, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 677, "cl": 9, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2950, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 548, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 551, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 556, "cl": 7, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 72, "cl": 1, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 825, "cl": 6, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 107, "cl": 1, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 107, "cl": 1, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 825, "cl": 6, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 107, "cl": 1, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 411, "cl": 10, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 677, "cl": 9, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2950, "cl": 2, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2349, "cl": 42, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 2733, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2224, "cl": 6, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2229, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2245, "cl": 9, "fl": "commit-graph.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2356, "cl": 38, "fl": "commit-graph.c" })
+		 double free path: 
+		  --> ({ "ln": 2733, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2224, "cl": 6, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2229, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2245, "cl": 9, "fl": "commit-graph.c" }|False) 
+

@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 212, "cl": 9, "fl": "builtin/merge-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 291, "cl": 11, "fl": "builtin/merge-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 293, "cl": 11, "fl": "builtin/merge-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 295, "cl": 11, "fl": "builtin/merge-tree.c" })

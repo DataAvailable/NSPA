@@ -1,0 +1,18 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 459, "cl": 8, "fl": "testing.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 476, "cl": 7, "fl": "testing.c" }|False) 
+		  --> ({ "ln": 476, "cl": 7, "fl": "testing.c" }|True) 
+		  --> ({ "ln": 485, "cl": 12, "fl": "testing.c" }|False) 
+		  --> ({ "ln": 485, "cl": 12, "fl": "testing.c" }|True) 
+		  --> ({ "ln": 496, "cl": 11, "fl": "testing.c" }|True) 
+
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 451, "cl": 11, "fl": "testing.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 460, "cl": 6, "fl": "testing.c" }|False) 
+		  --> ({ "ln": 460, "cl": 6, "fl": "testing.c" }|True) 
+		  --> ({ "ln": 476, "cl": 7, "fl": "testing.c" }|False) 
+		  --> ({ "ln": 476, "cl": 7, "fl": "testing.c" }|True) 
+		  --> ({ "ln": 485, "cl": 12, "fl": "testing.c" }|False) 
+		  --> ({ "ln": 485, "cl": 12, "fl": "testing.c" }|True) 
+		  --> ({ "ln": 496, "cl": 11, "fl": "testing.c" }|True) 
+

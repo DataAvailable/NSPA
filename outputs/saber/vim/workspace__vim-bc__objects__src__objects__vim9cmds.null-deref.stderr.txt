@@ -1,0 +1,18 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2422, "cl": 17, "fl": "vim9cmds.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2358, "cl": 14, "fl": "vim9cmds.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2406, "cl": 18, "fl": "vim9cmds.c" }|False) 
+		  --> ({ "ln": 2406, "cl": 18, "fl": "vim9cmds.c" }|True) 
+		  --> ({ "ln": 2406, "cl": 9, "fl": "vim9cmds.c" }|False) 
+		  --> ({ "ln": 2406, "cl": 9, "fl": "vim9cmds.c" }|True) 
+		  --> ({ "ln": 2428, "cl": 10, "fl": "vim9cmds.c" }|False) 
+		  --> ({ "ln": 2433, "cl": 10, "fl": "vim9cmds.c" }|False) 
+		  --> ({ "ln": 2441, "cl": 10, "fl": "vim9cmds.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2033, "cl": 17, "fl": "vim9cmds.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 363, "cl": 29, "fl": "vim9cmds.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2216, "cl": 33, "fl": "vim9cmds.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 413, "cl": 22, "fl": "vim9cmds.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2445, "cl": 21, "fl": "vim9cmds.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2354, "cl": 9, "fl": "vim9cmds.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2383, "cl": 6, "fl": "vim9cmds.c" })

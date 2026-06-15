@@ -1,0 +1,55 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 840, "cl": 23, "fl": "undo.c" })
+		 double free path: 
+		  --> ({ "ln": 1815, "cl": 9, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1873, "cl": 3, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1873, "cl": 3, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1874, "cl": 3, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1874, "cl": 3, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1875, "cl": 3, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1875, "cl": 3, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1872, "cl": 6, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 2182, "cl": 9, "fl": "undo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1162, "cl": 20, "fl": "undo.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1439, "cl": 11, "fl": "undo.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 877, "cl": 20, "fl": "undo.c" })
+		 double free path: 
+		  --> ({ "ln": 1815, "cl": 9, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1873, "cl": 3, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1873, "cl": 3, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1874, "cl": 3, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1874, "cl": 3, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1875, "cl": 3, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1875, "cl": 3, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1872, "cl": 6, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 2182, "cl": 9, "fl": "undo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1381, "cl": 8, "fl": "undo.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1467, "cl": 13, "fl": "undo.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1206, "cl": 17, "fl": "undo.c" })
+		 double free path: 
+		  --> ({ "ln": 1212, "cl": 6, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1219, "cl": 6, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1222, "cl": 10, "fl": "undo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1323, "cl": 11, "fl": "undo.c" })
+		 double free path: 
+		  --> ({ "ln": 2166, "cl": 9, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 2168, "cl": 2, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1335, "cl": 9, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1355, "cl": 6, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1361, "cl": 6, "fl": "undo.c" }|True) 
+		  --> ({ "ln": 1378, "cl": 5, "fl": "undo.c" }|False) 
+		  --> ({ "ln": 1393, "cl": 9, "fl": "undo.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1453, "cl": 14, "fl": "undo.c" })
+		 double free path: 
+

@@ -1,0 +1,10 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 532, "cl": 6, "fl": "builtin/difftool.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 265, "cl": 3, "fl": "builtin/difftool.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 509, "cl": 4, "fl": "builtin/difftool.c" })
+		 conditional free path: 
+		  --> ({ "ln": 511, "cl": 8, "fl": "builtin/difftool.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 194, "cl": 2, "fl": "builtin/difftool.c" })
+		 conditional free path: 
+		  --> ({ "ln": 197, "cl": 6, "fl": "builtin/difftool.c" }|True) 
+

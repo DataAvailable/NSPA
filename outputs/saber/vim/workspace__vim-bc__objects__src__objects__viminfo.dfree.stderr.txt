@@ -1,0 +1,89 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1280, "cl": 26, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 1291, "cl": 24, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 44, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 7, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 1306, "cl": 12, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1310, "cl": 11, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 1326, "cl": 7, "fl": "viminfo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 561, "cl": 6, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 3005, "cl": 9, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 851, "cl": 9, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 853, "cl": 5, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 859, "cl": 6, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 864, "cl": 8, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 963, "cl": 2, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 964, "cl": 10, "fl": "viminfo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 269, "cl": 15, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 1291, "cl": 24, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 44, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 7, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 1306, "cl": 12, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1310, "cl": 11, "fl": "viminfo.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 523, "cl": 30, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 2950, "cl": 9, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 819, "cl": 5, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 821, "cl": 6, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 824, "cl": 6, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 824, "cl": 6, "fl": "viminfo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2600, "cl": 19, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 3005, "cl": 9, "fl": "viminfo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2348, "cl": 8, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 2366, "cl": 6, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 2388, "cl": 22, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 2388, "cl": 22, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 2388, "cl": 10, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 2392, "cl": 7, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 2397, "cl": 35, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 2397, "cl": 11, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 2400, "cl": 8, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 2435, "cl": 8, "fl": "viminfo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 574, "cl": 6, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 3005, "cl": 9, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 851, "cl": 9, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 853, "cl": 5, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 859, "cl": 6, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 864, "cl": 8, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 963, "cl": 2, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 964, "cl": 10, "fl": "viminfo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2599, "cl": 18, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 3005, "cl": 9, "fl": "viminfo.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 281, "cl": 11, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 1291, "cl": 24, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 44, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 7, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 1306, "cl": 12, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1310, "cl": 11, "fl": "viminfo.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 306, "cl": 6, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 1291, "cl": 24, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 44, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1291, "cl": 7, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 1306, "cl": 12, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 1310, "cl": 11, "fl": "viminfo.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 656, "cl": 6, "fl": "viminfo.c" })
+		 double free path: 
+		  --> ({ "ln": 3005, "cl": 9, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 853, "cl": 5, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 859, "cl": 6, "fl": "viminfo.c" }|False) 
+		  --> ({ "ln": 864, "cl": 8, "fl": "viminfo.c" }|True) 
+		  --> ({ "ln": 663, "cl": 6, "fl": "viminfo.c" }|True) 
+

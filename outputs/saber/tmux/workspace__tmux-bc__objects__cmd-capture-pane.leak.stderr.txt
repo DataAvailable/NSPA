@@ -1,0 +1,41 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 90, "cl": 8, "fl": "cmd-capture-pane.c" })
+		 conditional free path: 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 258, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 91, "cl": 6, "fl": "cmd-capture-pane.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 234, "cl": 9, "fl": "cmd-capture-pane.c" })
+		 conditional free path: 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 258, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 232, "cl": 9, "fl": "cmd-capture-pane.c" })
+		 conditional free path: 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 258, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 98, "cl": 10, "fl": "cmd-capture-pane.c" })
+		 conditional free path: 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 238, "cl": 6, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 241, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|False) 
+		  --> ({ "ln": 244, "cl": 8, "fl": "cmd-capture-pane.c" }|True) 
+		  --> ({ "ln": 258, "cl": 7, "fl": "cmd-capture-pane.c" }|True) 
+

@@ -1,7 +1,48 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 141, "cl": 41, "fl": "cmd-command-prompt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 244, "cl": 2, "fl": "cmd-command-prompt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 117, "cl": 25, "fl": "cmd-command-prompt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 120, "cl": 6, "fl": "cmd-command-prompt.c" }|False) 
+		  --> ({ "ln": 120, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 244, "cl": 2, "fl": "cmd-command-prompt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 115, "cl": 27, "fl": "cmd-command-prompt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 120, "cl": 6, "fl": "cmd-command-prompt.c" }|False) 
+		  --> ({ "ln": 120, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 244, "cl": 2, "fl": "cmd-command-prompt.c" }|True) 
+
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 121, "cl": 20, "fl": "cmd-command-prompt.c" })
 		 conditional free path: 
 		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
 		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 127, "cl": 21, "fl": "cmd-command-prompt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 110, "cl": 14, "fl": "cmd-command-prompt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 120, "cl": 6, "fl": "cmd-command-prompt.c" }|False) 
+		  --> ({ "ln": 120, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 244, "cl": 2, "fl": "cmd-command-prompt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 130, "cl": 11, "fl": "cmd-command-prompt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 244, "cl": 2, "fl": "cmd-command-prompt.c" }|True) 
 
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 98, "cl": 10, "fl": "cmd-command-prompt.c" })
 		 conditional free path: 
@@ -12,3 +53,14 @@
 		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
 		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
 
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 101, "cl": 17, "fl": "cmd-command-prompt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 104, "cl": 6, "fl": "cmd-command-prompt.c" }|False) 
+		  --> ({ "ln": 116, "cl": 6, "fl": "cmd-command-prompt.c" }|False) 
+		  --> ({ "ln": 116, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 120, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-command-prompt.c" }|True) 
+		  --> ({ "ln": 150, "cl": 7, "fl": "cmd-command-prompt.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 213, "cl": 17, "fl": "cmd-command-prompt.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 216, "cl": 12, "fl": "cmd-command-prompt.c" })

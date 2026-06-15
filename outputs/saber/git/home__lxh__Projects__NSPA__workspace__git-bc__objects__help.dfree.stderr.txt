@@ -1,0 +1,10 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 168, "cl": 2, "fl": "help.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 165, "cl": 2, "fl": "help.c" })
+		 double free path: 
+		  --> ({ "ln": 175, "cl": 2, "fl": "help.c" }|True) 
+		  --> ({ "ln": 212, "cl": 2, "fl": "help.c" }|True) 
+		  --> ({ "ln": 214, "cl": 7, "fl": "help.c" }|False) 
+		  --> ({ "ln": 216, "cl": 12, "fl": "help.c" }|True) 
+

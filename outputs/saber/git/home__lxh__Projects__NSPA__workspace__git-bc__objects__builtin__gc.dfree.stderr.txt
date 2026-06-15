@@ -1,0 +1,39 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2331, "cl": 11, "fl": "builtin/gc.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2358, "cl": 10, "fl": "builtin/gc.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2040, "cl": 25, "fl": "builtin/gc.c" })
+		 double free path: 
+		  --> ({ "ln": 211, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 2073, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2040, "cl": 25, "fl": "builtin/gc.c" })
+		 double free path: 
+		  --> ({ "ln": 201, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 2073, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2040, "cl": 25, "fl": "builtin/gc.c" })
+		 double free path: 
+		  --> ({ "ln": 206, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 2073, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3462, "cl": 25, "fl": "builtin/gc.c" })
+		 double free path: 
+		  --> ({ "ln": 206, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 3476, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3462, "cl": 25, "fl": "builtin/gc.c" })
+		 double free path: 
+		  --> ({ "ln": 201, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 3476, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3462, "cl": 25, "fl": "builtin/gc.c" })
+		 double free path: 
+		  --> ({ "ln": 211, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 3476, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2347, "cl": 12, "fl": "builtin/gc.c" })
+		 double free path: 
+

@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 607, "cl": 18, "fl": "libavfilter/vf_dctdnoiz.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 581, "cl": 25, "fl": "libavfilter/vf_dctdnoiz.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 579, "cl": 25, "fl": "libavfilter/vf_dctdnoiz.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 602, "cl": 24, "fl": "libavfilter/vf_dctdnoiz.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 580, "cl": 25, "fl": "libavfilter/vf_dctdnoiz.c" })

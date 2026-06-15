@@ -1,0 +1,12 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1733, "cl": 4, "fl": "pretty.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 782, "cl": 3, "fl": "pretty.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 756, "cl": 9, "fl": "pretty.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 745, "cl": 10, "fl": "pretty.c" })
+		 double free path: 
+

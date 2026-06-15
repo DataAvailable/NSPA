@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "project_count": 4,
+    "ok_count": 4,
+    "failed_count": 0,
+    "total_saber_elapsed_seconds": 6275.253,
+    "total_saber_elapsed": "1h 44m 35.253s"
+  },
+  "projects": [
+    {
+      "project": "bash",
+      "status": "ok",
+      "validated_json": "/home/lxh/Projects/NSPA/outputs/bash/nspa_bash_validated_memory_functions.json",
+      "bc_input": "/home/lxh/Projects/NSPA/workspace/bash-bc/objects",
+      "output_dir": "/home/lxh/Projects/NSPA/outputs/saber/bash",
+      "loaded_memory_functions": 129,
+      "injected_allocators": 42,
+      "injected_releasers": 85,
+      "rebuild_elapsed_seconds": 1.531,
+      "rebuild_elapsed": "1.531s",
+      "saber_elapsed_seconds": 2848.063,
+      "saber_elapsed": "47m 28.063s",
+      "saber_run_count": 652,
+      "saber_failed_count": 18,
+      "error": ""
+    },
+    {
+      "project": "curl",
+      "status": "ok",
+      "validated_json": "/home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json",
+      "bc_input": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects",
+      "output_dir": "/home/lxh/Projects/NSPA/outputs/saber/curl",
+      "loaded_memory_functions": 125,
+      "injected_allocators": 51,
+      "injected_releasers": 74,
+      "rebuild_elapsed_seconds": 1.217,
+      "rebuild_elapsed": "1.217s",
+      "saber_elapsed_seconds": 121.757,
+      "saber_elapsed": "2m 1.757s",
+      "saber_run_count": 1852,
+      "saber_failed_count": 0,
+      "error": ""
+    },
+    {
+      "project": "ffmpeg",
+      "status": "ok",
+      "validated_json": "/home/lxh/Projects/NSPA/outputs/ffmpeg/nspa_ffmpeg_validated_memory_functions.json",
+      "bc_input": "/home/lxh/Projects/NSPA/workspace/ffmpeg-bc/objects",
+      "output_dir": "/home/lxh/Projects/NSPA/outputs/saber/ffmpeg",
+      "loaded_memory_functions": 809,
+      "injected_allocators": 379,
+      "injected_releasers": 430,
+      "rebuild_elapsed_seconds": 1.244,
+      "rebuild_elapsed": "1.244s",
+      "saber_elapsed_seconds": 749.369,
+      "saber_elapsed": "12m 29.369s",
+      "saber_run_count": 8084,
+      "saber_failed_count": 0,
+      "error": ""
+    },
+    {
+      "project": "git",
+      "status": "ok",
+      "validated_json": "/home/lxh/Projects/NSPA/outputs/git/nspa_git_validated_memory_functions.json",
+      "bc_input": "/home/lxh/Projects/NSPA/workspace/git-bc/objects",
+      "output_dir": "/home/lxh/Projects/NSPA/outputs/saber/git",
+      "loaded_memory_functions": 778,
+      "injected_allocators": 359,
+      "injected_releasers": 415,
+      "rebuild_elapsed_seconds": 1.248,
+      "rebuild_elapsed": "1.248s",
+      "saber_elapsed_seconds": 2556.064,
+      "saber_elapsed": "42m 36.064s",
+      "saber_run_count": 1708,
+      "saber_failed_count": 9,
+      "error": ""
+    }
+  ]
+}

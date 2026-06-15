@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 41, "cl": 5, "fl": "tool_cfgable.c" })
+		 conditional free path: 
+		  --> ({ "ln": 335, "cl": 8, "fl": "tool_cfgable.c" }|False) 
+		  --> ({ "ln": 335, "cl": 8, "fl": "tool_cfgable.c" }|True) 
+		  --> ({ "ln": 339, "cl": 10, "fl": "tool_cfgable.c" }|True) 
+

@@ -1,0 +1,50 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 716, "cl": 7, "fl": "message.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 188, "cl": 11, "fl": "message.c" })
+		 double free path: 
+		  --> ({ "ln": 1555, "cl": 9, "fl": "message.c" }|True) 
+		  --> ({ "ln": 821, "cl": 9, "fl": "message.c" }|False) 
+		  --> ({ "ln": 824, "cl": 9, "fl": "message.c" }|False) 
+		  --> ({ "ln": 824, "cl": 9, "fl": "message.c" }|True) 
+		  --> ({ "ln": 3976, "cl": 9, "fl": "message.c" }|False) 
+		  --> ({ "ln": 3980, "cl": 25, "fl": "message.c" }|True) 
+		  --> ({ "ln": 3980, "cl": 9, "fl": "message.c" }|True) 
+		  --> ({ "ln": 4122, "cl": 28, "fl": "message.c" }|True) 
+		  --> ({ "ln": 4128, "cl": 6, "fl": "message.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1029, "cl": 9, "fl": "message.c" })
+		 double free path: 
+		  --> ({ "ln": 1616, "cl": 9, "fl": "message.c" }|True) 
+		  --> ({ "ln": 565, "cl": 31, "fl": "message.c" }|False) 
+		  --> ({ "ln": 565, "cl": 31, "fl": "message.c" }|True) 
+		  --> ({ "ln": 565, "cl": 9, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2356, "cl": 9, "fl": "message.c" }|False) 
+		  --> ({ "ln": 2385, "cl": 9, "fl": "message.c" }|False) 
+		  --> ({ "ln": 2410, "cl": 6, "fl": "message.c" }|False) 
+		  --> ({ "ln": 2419, "cl": 6, "fl": "message.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2937, "cl": 7, "fl": "message.c" })
+		 double free path: 
+		  --> ({ "ln": 565, "cl": 31, "fl": "message.c" }|False) 
+		  --> ({ "ln": 565, "cl": 31, "fl": "message.c" }|True) 
+		  --> ({ "ln": 565, "cl": 9, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2628, "cl": 17, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2628, "cl": 36, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2629, "cl": 10, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2629, "cl": 26, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2628, "cl": 10, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2410, "cl": 6, "fl": "message.c" }|False) 
+		  --> ({ "ln": 2419, "cl": 6, "fl": "message.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 569, "cl": 27, "fl": "message.c" })
+		 double free path: 
+		  --> ({ "ln": 2356, "cl": 9, "fl": "message.c" }|False) 
+		  --> ({ "ln": 2385, "cl": 9, "fl": "message.c" }|False) 
+		  --> ({ "ln": 4177, "cl": 55, "fl": "message.c" }|True) 
+		  --> ({ "ln": 4177, "cl": 14, "fl": "message.c" }|True) 
+		  --> ({ "ln": 2410, "cl": 6, "fl": "message.c" }|False) 
+		  --> ({ "ln": 2419, "cl": 6, "fl": "message.c" }|True) 
+
+
+NSPA timeout after 120.0 seconds

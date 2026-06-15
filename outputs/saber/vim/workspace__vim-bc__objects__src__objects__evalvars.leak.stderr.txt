@@ -1,0 +1,69 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1828, "cl": 6, "fl": "evalvars.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4324, "cl": 7, "fl": "evalvars.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4328, "cl": 6, "fl": "evalvars.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4106, "cl": 6, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3681, "cl": 24, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4000, "cl": 29, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3358, "cl": 32, "fl": "evalvars.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3672, "cl": 6, "fl": "evalvars.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3687, "cl": 9, "fl": "evalvars.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3345, "cl": 31, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1360, "cl": 24, "fl": "evalvars.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 871, "cl": 9, "fl": "evalvars.c" })
+		 conditional free path: 
+		  --> ({ "ln": 880, "cl": 6, "fl": "evalvars.c" }|False) 
+		  --> ({ "ln": 880, "cl": 6, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 887, "cl": 10, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 907, "cl": 10, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 983, "cl": 9, "fl": "evalvars.c" }|False) 
+		  --> ({ "ln": 983, "cl": 9, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 993, "cl": 9, "fl": "evalvars.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3262, "cl": 5, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2924, "cl": 24, "fl": "evalvars.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3517, "cl": 26, "fl": "evalvars.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3524, "cl": 7, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 3528, "cl": 11, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 3534, "cl": 7, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 4084, "cl": 10, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 4101, "cl": 6, "fl": "evalvars.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1655, "cl": 12, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1342, "cl": 7, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2922, "cl": 24, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2580, "cl": 15, "fl": "evalvars.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4833, "cl": 18, "fl": "evalvars.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4961, "cl": 9, "fl": "evalvars.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3191, "cl": 12, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3332, "cl": 31, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3268, "cl": 27, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4084, "cl": 10, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3255, "cl": 31, "fl": "evalvars.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2274, "cl": 14, "fl": "evalvars.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2281, "cl": 9, "fl": "evalvars.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 963, "cl": 9, "fl": "evalvars.c" })
+		 conditional free path: 
+		  --> ({ "ln": 973, "cl": 10, "fl": "evalvars.c" }|False) 
+		  --> ({ "ln": 973, "cl": 10, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 975, "cl": 7, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 979, "cl": 10, "fl": "evalvars.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3354, "cl": 26, "fl": "evalvars.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1726, "cl": 16, "fl": "evalvars.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3341, "cl": 25, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3328, "cl": 25, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3367, "cl": 25, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3157, "cl": 18, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3925, "cl": 9, "fl": "evalvars.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2319, "cl": 11, "fl": "evalvars.c" })

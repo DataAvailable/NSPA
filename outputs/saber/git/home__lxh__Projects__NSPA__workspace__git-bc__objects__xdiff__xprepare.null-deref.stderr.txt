@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 282, "cl": 7, "fl": "xdiff/xprepare.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 281, "cl": 7, "fl": "xdiff/xprepare.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 171, "cl": 7, "fl": "xdiff/xprepare.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 161, "cl": 8, "fl": "xdiff/xprepare.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 153, "cl": 7, "fl": "xdiff/xprepare.c" })

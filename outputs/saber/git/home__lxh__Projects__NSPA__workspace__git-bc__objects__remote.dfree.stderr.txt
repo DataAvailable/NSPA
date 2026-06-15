@@ -1,0 +1,64 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 149, "cl": 2, "fl": "remote.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2892, "cl": 15, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 2937, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 2938, "cl": 7, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 2876, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2882, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2887, "cl": 18, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 2887, "cl": 6, "fl": "remote.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1002, "cl": 23, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 959, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 1021, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2017, "cl": 8, "fl": "remote.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1320, "cl": 6, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 959, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 1021, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2017, "cl": 8, "fl": "remote.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1001, "cl": 16, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 959, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 1021, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2017, "cl": 8, "fl": "remote.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2439, "cl": 14, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 959, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 1021, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2017, "cl": 8, "fl": "remote.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 998, "cl": 8, "fl": "remote.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2015, "cl": 22, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 1021, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 1337, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 2005, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 2010, "cl": 7, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2013, "cl": 36, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 2012, "cl": 7, "fl": "remote.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 807, "cl": 8, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 85, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 95, "cl": 6, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 816, "cl": 17, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 816, "cl": 6, "fl": "remote.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2772, "cl": 22, "fl": "remote.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1003, "cl": 18, "fl": "remote.c" })
+		 double free path: 
+		  --> ({ "ln": 959, "cl": 2, "fl": "remote.c" }|True) 
+		  --> ({ "ln": 1021, "cl": 6, "fl": "remote.c" }|False) 
+		  --> ({ "ln": 2017, "cl": 8, "fl": "remote.c" }|True) 
+

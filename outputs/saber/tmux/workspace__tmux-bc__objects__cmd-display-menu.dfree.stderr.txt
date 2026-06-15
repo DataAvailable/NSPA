@@ -1,0 +1,28 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 463, "cl": 10, "fl": "cmd-display-menu.c" })
+		 double free path: 
+		  --> ({ "ln": 473, "cl": 6, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 475, "cl": 11, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 479, "cl": 7, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 507, "cl": 6, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 507, "cl": 6, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 511, "cl": 6, "fl": "cmd-display-menu.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 447, "cl": 10, "fl": "cmd-display-menu.c" })
+		 double free path: 
+		  --> ({ "ln": 473, "cl": 6, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 475, "cl": 11, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 479, "cl": 7, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 507, "cl": 6, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 507, "cl": 6, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 511, "cl": 6, "fl": "cmd-display-menu.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 324, "cl": 9, "fl": "cmd-display-menu.c" })
+		 double free path: 
+		  --> ({ "ln": 327, "cl": 2, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 350, "cl": 6, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 350, "cl": 6, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 352, "cl": 6, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 352, "cl": 6, "fl": "cmd-display-menu.c" }|True) 
+		  --> ({ "ln": 357, "cl": 6, "fl": "cmd-display-menu.c" }|False) 
+		  --> ({ "ln": 371, "cl": 6, "fl": "cmd-display-menu.c" }|True) 
+

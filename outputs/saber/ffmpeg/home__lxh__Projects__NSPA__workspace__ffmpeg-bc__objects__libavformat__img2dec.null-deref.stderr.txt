@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 287, "cl": 37, "fl": "libavformat/img2dec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 296, "cl": 17, "fl": "libavformat/img2dec.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 180, "cl": 10, "fl": "libavformat/img2dec.c" })

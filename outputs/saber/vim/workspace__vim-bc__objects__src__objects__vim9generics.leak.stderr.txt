@@ -1,0 +1,12 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 937, "cl": 25, "fl": "vim9generics.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 908, "cl": 27, "fl": "vim9generics.c" })
+		 conditional free path: 
+		  --> ({ "ln": 915, "cl": 9, "fl": "vim9generics.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 326, "cl": 25, "fl": "vim9generics.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1155, "cl": 9, "fl": "vim9generics.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 967, "cl": 23, "fl": "vim9generics.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 914, "cl": 23, "fl": "vim9generics.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 959, "cl": 28, "fl": "vim9generics.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 963, "cl": 24, "fl": "vim9generics.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 971, "cl": 25, "fl": "vim9generics.c" })

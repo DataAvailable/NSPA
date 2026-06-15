@@ -1,0 +1,32 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 903, "cl": 14, "fl": "builtin/fast-import.c" })
+		 conditional free path: 
+		  --> ({ "ln": 907, "cl": 7, "fl": "builtin/fast-import.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3433, "cl": 9, "fl": "builtin/fast-import.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3443, "cl": 2, "fl": "builtin/fast-import.c" }|False) 
+		  --> ({ "ln": 3443, "cl": 2, "fl": "builtin/fast-import.c" }|True) 
+		  --> ({ "ln": 3443, "cl": 2, "fl": "builtin/fast-import.c" }|True) 
+		  --> ({ "ln": 3443, "cl": 2, "fl": "builtin/fast-import.c" }|False) 
+		  --> ({ "ln": 3445, "cl": 40, "fl": "builtin/fast-import.c" }|True) 
+		  --> ({ "ln": 3445, "cl": 7, "fl": "builtin/fast-import.c" }|False) 
+		  --> ({ "ln": 3450, "cl": 38, "fl": "builtin/fast-import.c" }|True) 
+		  --> ({ "ln": 3450, "cl": 7, "fl": "builtin/fast-import.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1017, "cl": 21, "fl": "builtin/fast-import.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1023, "cl": 6, "fl": "builtin/fast-import.c" }|True) 
+		  --> ({ "ln": 1032, "cl": 7, "fl": "builtin/fast-import.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1918, "cl": 16, "fl": "builtin/fast-import.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1922, "cl": 8, "fl": "builtin/fast-import.c" }|False) 
+		  --> ({ "ln": 1925, "cl": 5, "fl": "builtin/fast-import.c" }|True) 
+		  --> ({ "ln": 1924, "cl": 8, "fl": "builtin/fast-import.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 798, "cl": 2, "fl": "builtin/fast-import.c" })
+		 conditional free path: 
+		  --> ({ "ln": 805, "cl": 6, "fl": "builtin/fast-import.c" }|False) 
+
+
+NSPA timeout after 120.0 seconds

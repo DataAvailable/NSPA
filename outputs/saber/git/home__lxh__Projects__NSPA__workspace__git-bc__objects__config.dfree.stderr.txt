@@ -1,0 +1,83 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1749, "cl": 2, "fl": "config.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2637, "cl": 4, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1741, "cl": 7, "fl": "config.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2659, "cl": 4, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2614, "cl": 2, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 2619, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2619, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 2622, "cl": 23, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2622, "cl": 23, "fl": "config.c" }|True) 
+		  --> ({ "ln": 2622, "cl": 7, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2622, "cl": 7, "fl": "config.c" }|True) 
+		  --> ({ "ln": 2625, "cl": 7, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2625, "cl": 7, "fl": "config.c" }|True) 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3065, "cl": 36, "fl": "config.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2077, "cl": 16, "fl": "config.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1743, "cl": 12, "fl": "config.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2073, "cl": 3, "fl": "config.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2670, "cl": 3, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3075, "cl": 3, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 1398, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1529, "cl": 24, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 1398, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 1401, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 1367, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 430, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 433, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 1540, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 1543, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 1543, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 1551, "cl": 26, "fl": "config.c" }|True) 
+		  --> ({ "ln": 1551, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 345, "cl": 21, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1507, "cl": 22, "fl": "config.c" })
+		 double free path: 
+		  --> ({ "ln": 1398, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 1401, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 1367, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 430, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 433, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 1564, "cl": 6, "fl": "config.c" }|True) 
+		  --> ({ "ln": 2282, "cl": 6, "fl": "config.c" }|False) 
+		  --> ({ "ln": 2007, "cl": 2, "fl": "config.c" }|True) 
+

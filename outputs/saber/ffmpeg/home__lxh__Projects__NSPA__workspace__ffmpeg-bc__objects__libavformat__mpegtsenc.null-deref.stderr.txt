@@ -1,0 +1,33 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2101, "cl": 20, "fl": "libavformat/mpegtsenc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2120, "cl": 13, "fl": "libavformat/mpegtsenc.c" }|False) 
+		  --> ({ "ln": 2216, "cl": 56, "fl": "libavformat/mpegtsenc.c" }|False) 
+		  --> ({ "ln": 2216, "cl": 56, "fl": "libavformat/mpegtsenc.c" }|True) 
+		  --> ({ "ln": 2216, "cl": 9, "fl": "libavformat/mpegtsenc.c" }|False) 
+		  --> ({ "ln": 2216, "cl": 9, "fl": "libavformat/mpegtsenc.c" }|True) 
+		  --> ({ "ln": 2217, "cl": 9, "fl": "libavformat/mpegtsenc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1959, "cl": 20, "fl": "libavformat/mpegtsenc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 151, "cl": 5, "fl": "./libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 151, "cl": 5, "fl": "./libavcodec/bytestream.h" }|False) 
+		  --> ({ "ln": 99, "cl": 1, "fl": "./libavcodec/bytestream.h" }|False) 
+		  --> ({ "ln": 99, "cl": 1, "fl": "./libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 99, "cl": 1, "fl": "./libavcodec/bytestream.h" }|False) 
+		  --> ({ "ln": 99, "cl": 1, "fl": "./libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 291, "cl": 9, "fl": "./libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 291, "cl": 9, "fl": "./libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 291, "cl": 9, "fl": "./libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 291, "cl": 9, "fl": "./libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 1968, "cl": 13, "fl": "libavformat/mpegtsenc.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1266, "cl": 25, "fl": "libavformat/mpegtsenc.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1256, "cl": 27, "fl": "libavformat/mpegtsenc.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1855, "cl": 21, "fl": "libavformat/mpegtsenc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2216, "cl": 56, "fl": "libavformat/mpegtsenc.c" }|False) 
+		  --> ({ "ln": 2216, "cl": 56, "fl": "libavformat/mpegtsenc.c" }|True) 
+		  --> ({ "ln": 2216, "cl": 9, "fl": "libavformat/mpegtsenc.c" }|False) 
+		  --> ({ "ln": 2216, "cl": 9, "fl": "libavformat/mpegtsenc.c" }|True) 
+		  --> ({ "ln": 2217, "cl": 9, "fl": "libavformat/mpegtsenc.c" }|False) 
+

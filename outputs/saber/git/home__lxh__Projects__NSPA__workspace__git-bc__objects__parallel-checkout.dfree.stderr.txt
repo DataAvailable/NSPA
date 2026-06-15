@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 466, "cl": 2, "fl": "parallel-checkout.c" })
+		 double free path: 
+		  --> ({ "ln": 468, "cl": 2, "fl": "parallel-checkout.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 294, "cl": 9, "fl": "parallel-checkout.c" })
+		 double free path: 
+		  --> ({ "ln": 308, "cl": 6, "fl": "parallel-checkout.c" }|True) 
+

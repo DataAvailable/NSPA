@@ -1,0 +1,8 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 5825, "cl": 10, "fl": "spellfile.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 5839, "cl": 9, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 5839, "cl": 9, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 5876, "cl": 5, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 5876, "cl": 5, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 5881, "cl": 6, "fl": "spellfile.c" }|True) 
+

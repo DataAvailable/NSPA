@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 480, "cl": 3, "fl": "builtin/rev-parse.c" })
+		 conditional free path: 
+		  --> ({ "ln": 472, "cl": 2, "fl": "builtin/rev-parse.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 487, "cl": 14, "fl": "builtin/rev-parse.c" })
+		 conditional free path: 
+		  --> ({ "ln": 472, "cl": 2, "fl": "builtin/rev-parse.c" }|False) 
+		  --> ({ "ln": 560, "cl": 2, "fl": "builtin/rev-parse.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 494, "cl": 13, "fl": "builtin/rev-parse.c" })
+		 conditional free path: 
+		  --> ({ "ln": 472, "cl": 2, "fl": "builtin/rev-parse.c" }|False) 
+		  --> ({ "ln": 560, "cl": 2, "fl": "builtin/rev-parse.c" }|True) 
+

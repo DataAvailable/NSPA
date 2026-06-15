@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 735, "cl": 27, "fl": "gpg-interface.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 610, "cl": 21, "fl": "gpg-interface.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 448, "cl": 15, "fl": "gpg-interface.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 447, "cl": 23, "fl": "gpg-interface.c" })

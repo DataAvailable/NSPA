@@ -1,0 +1,26 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1150, "cl": 18, "fl": "debugger.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 663, "cl": 17, "fl": "debugger.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 661, "cl": 17, "fl": "debugger.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 666, "cl": 17, "fl": "debugger.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1118, "cl": 22, "fl": "debugger.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1063, "cl": 9, "fl": "debugger.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1166, "cl": 9, "fl": "debugger.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1115, "cl": 22, "fl": "debugger.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1135, "cl": 19, "fl": "debugger.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1140, "cl": 19, "fl": "debugger.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 684, "cl": 21, "fl": "debugger.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1152, "cl": 18, "fl": "debugger.c" })
+		 conditional free path: 
+

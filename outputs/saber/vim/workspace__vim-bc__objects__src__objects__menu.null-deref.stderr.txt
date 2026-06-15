@@ -1,0 +1,15 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 768, "cl": 35, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 622, "cl": 20, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2944, "cl": 6, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 806, "cl": 26, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2861, "cl": 6, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 617, "cl": 20, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 621, "cl": 19, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1834, "cl": 16, "fl": "menu.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2790, "cl": 13, "fl": "menu.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2795, "cl": 5, "fl": "menu.c" }|False) 
+		  --> ({ "ln": 2795, "cl": 5, "fl": "menu.c" }|True) 
+		  --> ({ "ln": 2796, "cl": 6, "fl": "menu.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 615, "cl": 19, "fl": "menu.c" })

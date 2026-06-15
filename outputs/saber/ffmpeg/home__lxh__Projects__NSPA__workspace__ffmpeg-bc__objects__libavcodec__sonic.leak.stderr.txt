@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 582, "cl": 22, "fl": "libavcodec/sonic.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 590, "cl": 11, "fl": "libavcodec/sonic.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 596, "cl": 22, "fl": "libavcodec/sonic.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 575, "cl": 20, "fl": "libavcodec/sonic.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 584, "cl": 11, "fl": "libavcodec/sonic.c" })

@@ -1,0 +1,12 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 120, "cl": 3, "fl": "path-walk.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 378, "cl": 3, "fl": "path-walk.c" })
+		 conditional free path: 
+		  --> ({ "ln": 389, "cl": 2, "fl": "path-walk.c" }|False) 
+		  --> ({ "ln": 461, "cl": 7, "fl": "path-walk.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 108, "cl": 35, "fl": "path-walk.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 376, "cl": 3, "fl": "path-walk.c" })
+		 conditional free path: 
+		  --> ({ "ln": 389, "cl": 2, "fl": "path-walk.c" }|False) 
+		  --> ({ "ln": 473, "cl": 7, "fl": "path-walk.c" }|False) 
+

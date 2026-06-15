@@ -9,3 +9,12 @@
 		  --> ({ "ln": 90, "cl": 27, "fl": "cmd-confirm-before.c" }|True) 
 		  --> ({ "ln": 89, "cl": 7, "fl": "cmd-confirm-before.c" }|False) 
 
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 78, "cl": 19, "fl": "cmd-confirm-before.c" })
+		 conditional free path: 
+		  --> ({ "ln": 88, "cl": 6, "fl": "cmd-confirm-before.c" }|True) 
+		  --> ({ "ln": 89, "cl": 30, "fl": "cmd-confirm-before.c" }|False) 
+		  --> ({ "ln": 89, "cl": 30, "fl": "cmd-confirm-before.c" }|True) 
+		  --> ({ "ln": 90, "cl": 27, "fl": "cmd-confirm-before.c" }|False) 
+		  --> ({ "ln": 90, "cl": 27, "fl": "cmd-confirm-before.c" }|True) 
+		  --> ({ "ln": 89, "cl": 7, "fl": "cmd-confirm-before.c" }|False) 
+

@@ -1,7 +1,11 @@
 {
   "metadata": {
     "run_count": 600,
-    "failed_count": 6
+    "failed_count": 6,
+    "stage_elapsed_seconds": 1002.04,
+    "stage_elapsed": "16m 42.040s",
+    "saber_elapsed_seconds": 1002.034,
+    "saber_elapsed": "16m 42.034s"
   },
   "runs": [
     {
@@ -72,7 +76,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__arguments.leak.stderr.txt",
-      "elapsed_seconds": 8.185
+      "elapsed_seconds": 8.233
     },
     {
       "bc_file": "workspace/tmux-bc/objects/arguments.bc",
@@ -86,7 +90,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__arguments.dfree.stderr.txt",
-      "elapsed_seconds": 8.131
+      "elapsed_seconds": 8.435
     },
     {
       "bc_file": "workspace/tmux-bc/objects/arguments.bc",
@@ -114,7 +118,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__arguments.null-deref.stderr.txt",
-      "elapsed_seconds": 8.231
+      "elapsed_seconds": 8.337
     },
     {
       "bc_file": "workspace/tmux-bc/objects/attributes.bc",
@@ -170,7 +174,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.016
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cfg.bc",
@@ -183,7 +187,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cfg.leak.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -225,7 +229,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cfg.null-deref.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -394,7 +398,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-break-pane.bc",
@@ -407,7 +411,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-break-pane.leak.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -449,7 +453,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-break-pane.null-deref.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -463,8 +467,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-capture-pane.leak.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-capture-pane.bc",
@@ -478,7 +482,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-capture-pane.bc",
@@ -505,8 +509,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-capture-pane.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-choose-tree.bc",
@@ -576,7 +580,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-command-prompt.leak.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-command-prompt.bc",
@@ -590,7 +594,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-command-prompt.dfree.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.115
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-command-prompt.bc",
@@ -618,7 +622,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-command-prompt.null-deref.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-confirm-before.bc",
@@ -800,7 +804,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.115
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-display-menu.bc",
@@ -813,8 +817,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-display-menu.dfree.stderr.txt",
+      "elapsed_seconds": 0.116
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-display-menu.bc",
@@ -842,7 +846,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-display-message.bc",
@@ -869,7 +873,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-display-message.dfree.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -940,7 +944,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.033
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-display-panes.bc",
@@ -996,7 +1000,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-find-window.bc",
@@ -1010,7 +1014,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-find-window.null-deref.stderr.txt",
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.02
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-find.bc",
@@ -1038,7 +1042,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.115
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-find.bc",
@@ -1066,7 +1070,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.115
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-if-shell.bc",
@@ -1080,7 +1084,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-if-shell.leak.stderr.txt",
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.034
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-if-shell.bc",
@@ -1416,7 +1420,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-buffers.bc",
@@ -1430,7 +1434,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-buffers.bc",
@@ -1458,7 +1462,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-clients.bc",
@@ -1472,7 +1476,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-clients.bc",
@@ -1486,7 +1490,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-clients.bc",
@@ -1514,7 +1518,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-commands.bc",
@@ -1527,8 +1531,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-list-commands.leak.stderr.txt",
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-commands.bc",
@@ -1542,7 +1546,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-commands.bc",
@@ -1569,8 +1573,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-list-commands.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-keys.bc",
@@ -1583,7 +1587,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-list-keys.leak.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -1625,7 +1629,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-list-keys.null-deref.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -1696,7 +1700,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-sessions.bc",
@@ -1710,7 +1714,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-sessions.bc",
@@ -1738,7 +1742,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-windows.bc",
@@ -1752,7 +1756,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.033
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-windows.bc",
@@ -1766,7 +1770,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-list-windows.bc",
@@ -1794,7 +1798,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-load-buffer.bc",
@@ -1821,7 +1825,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-load-buffer.dfree.stderr.txt",
+      "stderr_file": null,
       "elapsed_seconds": 0.032
     },
     {
@@ -1976,7 +1980,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-new-session.leak.stderr.txt",
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.265
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-new-session.bc",
@@ -1989,8 +1993,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-new-session.dfree.stderr.txt",
+      "elapsed_seconds": 0.264
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-new-session.bc",
@@ -2018,7 +2022,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-new-session.null-deref.stderr.txt",
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.265
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-new-window.bc",
@@ -2045,7 +2049,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-new-window.dfree.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -2088,7 +2092,7 @@
       "returncode": 124,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-parse.leak.stderr.txt",
-      "elapsed_seconds": 120.002
+      "elapsed_seconds": 120.003
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-parse.bc",
@@ -2116,7 +2120,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.165
+      "elapsed_seconds": 0.164
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-parse.bc",
@@ -2130,7 +2134,7 @@
       "returncode": 124,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-parse.null-deref.stderr.txt",
-      "elapsed_seconds": 120.002
+      "elapsed_seconds": 120.008
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-paste-buffer.bc",
@@ -2256,7 +2260,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 2.52
+      "elapsed_seconds": 3.723
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-queue.bc",
@@ -2270,7 +2274,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-queue.dfree.stderr.txt",
-      "elapsed_seconds": 2.57
+      "elapsed_seconds": 3.733
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-queue.bc",
@@ -2298,7 +2302,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 2.52
+      "elapsed_seconds": 3.674
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-refresh-client.bc",
@@ -2367,8 +2371,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-rename-session.leak.stderr.txt",
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-rename-session.bc",
@@ -2382,7 +2386,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-rename-session.bc",
@@ -2409,8 +2413,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-rename-session.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-rename-window.bc",
@@ -2816,7 +2820,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-save-buffer.bc",
@@ -2830,7 +2834,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-save-buffer.bc",
@@ -2844,7 +2848,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-save-buffer.bc",
@@ -2858,7 +2862,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-select-layout.bc",
@@ -2872,7 +2876,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-select-layout.bc",
@@ -2886,7 +2890,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-select-layout.bc",
@@ -2927,7 +2931,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-select-pane.leak.stderr.txt",
+      "stderr_file": null,
       "elapsed_seconds": 0.032
     },
     {
@@ -2969,7 +2973,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-select-pane.null-deref.stderr.txt",
+      "stderr_file": null,
       "elapsed_seconds": 0.032
     },
     {
@@ -3040,7 +3044,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-send-keys.leak.stderr.txt",
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.033
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-send-keys.bc",
@@ -3095,7 +3099,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-server-access.leak.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -3137,8 +3141,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-server-access.null-deref.stderr.txt",
+      "elapsed_seconds": 0.034
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-set-buffer.bc",
@@ -3165,7 +3169,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-set-buffer.dfree.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -3180,7 +3184,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-set-buffer.bc",
@@ -3208,7 +3212,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-set-environment.bc",
@@ -3263,8 +3267,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-set-option.leak.stderr.txt",
-      "elapsed_seconds": 0.032
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-set-option.bc",
@@ -3277,8 +3281,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-set-option.dfree.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-set-option.bc",
@@ -3305,8 +3309,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-set-option.null-deref.stderr.txt",
-      "elapsed_seconds": 0.032
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-show-environment.bc",
@@ -3390,7 +3394,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-show-messages.bc",
@@ -3404,7 +3408,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-show-messages.bc",
@@ -3418,7 +3422,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-show-options.bc",
@@ -3445,7 +3449,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-show-options.dfree.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -3543,8 +3547,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-source-file.leak.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-source-file.bc",
@@ -3557,8 +3561,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-source-file.dfree.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-source-file.bc",
@@ -3572,7 +3576,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.023
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-source-file.bc",
@@ -3585,8 +3589,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-source-file.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-split-window.bc",
@@ -3600,7 +3604,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-split-window.leak.stderr.txt",
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-split-window.bc",
@@ -3613,8 +3617,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-split-window.dfree.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-split-window.bc",
@@ -3642,7 +3646,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-split-window.null-deref.stderr.txt",
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-swap-pane.bc",
@@ -3656,7 +3660,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.021
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-swap-pane.bc",
@@ -3712,7 +3716,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-swap-window.bc",
@@ -3880,7 +3884,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-wait-for.leak.stderr.txt",
-      "elapsed_seconds": 5.325
+      "elapsed_seconds": 5.276
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-wait-for.bc",
@@ -3893,8 +3897,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 5.375
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-wait-for.dfree.stderr.txt",
+      "elapsed_seconds": 5.278
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-wait-for.bc",
@@ -3908,7 +3912,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.068
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd-wait-for.bc",
@@ -3922,7 +3926,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__cmd-wait-for.null-deref.stderr.txt",
-      "elapsed_seconds": 5.476
+      "elapsed_seconds": 5.277
     },
     {
       "bc_file": "workspace/tmux-bc/objects/cmd.bc",
@@ -3992,7 +3996,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.115
     },
     {
       "bc_file": "workspace/tmux-bc/objects/colour.bc",
@@ -4035,1014 +4039,6 @@
       "stdout_file": null,
       "stderr_file": null,
       "elapsed_seconds": 0.114
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fdforkpty.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fdforkpty.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.017
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fdforkpty.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fdforkpty.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fdforkpty.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fdforkpty.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fdforkpty.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fdforkpty.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fgetln.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fgetln.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fgetln.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fgetln.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fgetln.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fgetln.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/fgetln.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/fgetln.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/freezero.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/freezero.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/freezero.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/freezero.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/freezero.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/freezero.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/freezero.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/freezero.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getdtablecount.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getdtablecount.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getdtablecount.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getdtablecount.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getdtablecount.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getdtablecount.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getdtablecount.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getdtablecount.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getopt_long.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getopt_long.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getopt_long.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getopt_long.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getopt_long.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getopt_long.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getopt_long.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getopt_long.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getpeereid.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getpeereid.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getpeereid.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getpeereid.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getpeereid.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getpeereid.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getpeereid.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getpeereid.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getprogname.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getprogname.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getprogname.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getprogname.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getprogname.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getprogname.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/getprogname.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/getprogname.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/htonll.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/htonll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/htonll.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/htonll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/htonll.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/htonll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/htonll.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/htonll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg-buffer.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg-buffer.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__compat__imsg-buffer.leak.stderr.txt",
-      "elapsed_seconds": 0.064
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg-buffer.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg-buffer.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.064
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg-buffer.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg-buffer.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.064
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg-buffer.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg-buffer.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__compat__imsg-buffer.null-deref.stderr.txt",
-      "elapsed_seconds": 0.064
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__compat__imsg.leak.stderr.txt",
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/imsg.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/imsg.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__compat__imsg.null-deref.stderr.txt",
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/ntohll.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/ntohll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/ntohll.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/ntohll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/ntohll.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/ntohll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/ntohll.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/ntohll.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/recallocarray.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/recallocarray.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/recallocarray.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/recallocarray.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/recallocarray.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/recallocarray.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/recallocarray.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/recallocarray.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/setproctitle.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/setproctitle.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/setproctitle.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/setproctitle.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/setproctitle.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/setproctitle.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/setproctitle.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/setproctitle.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcat.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcat.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcat.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcat.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcat.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcat.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcat.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcat.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcpy.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcpy.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcpy.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcpy.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcpy.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcpy.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strlcpy.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strlcpy.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strtonum.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strtonum.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strtonum.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strtonum.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strtonum.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strtonum.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/strtonum.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/strtonum.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/unvis.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/unvis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/unvis.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/unvis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/unvis.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/unvis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/unvis.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/unvis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/vis.bc",
-      "checker": "leak",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-leak",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/vis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/vis.bc",
-      "checker": "dfree",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-dfree",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/vis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/vis.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/vis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/compat/vis.bc",
-      "checker": "null-deref",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-null-deref",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/compat/vis.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/control-notify.bc",
@@ -5056,7 +4052,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.034
     },
     {
       "bc_file": "workspace/tmux-bc/objects/control-notify.bc",
@@ -5112,7 +4108,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__control.leak.stderr.txt",
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.215
     },
     {
       "bc_file": "workspace/tmux-bc/objects/control.bc",
@@ -5154,7 +4150,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__control.null-deref.stderr.txt",
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.215
     },
     {
       "bc_file": "workspace/tmux-bc/objects/environ.bc",
@@ -5213,6 +4209,118 @@
       "elapsed_seconds": 0.064
     },
     {
+      "bc_file": "workspace/tmux-bc/objects/fdforkpty.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fdforkpty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/fdforkpty.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fdforkpty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/fdforkpty.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fdforkpty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/fdforkpty.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fdforkpty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/fgetln.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fgetln.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/fgetln.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fgetln.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/fgetln.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fgetln.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/fgetln.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/fgetln.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
       "bc_file": "workspace/tmux-bc/objects/file.bc",
       "checker": "leak",
       "command": [
@@ -5266,7 +4374,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__file.null-deref.stderr.txt",
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.123
     },
     {
       "bc_file": "workspace/tmux-bc/objects/format-draw.bc",
@@ -5280,7 +4388,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.115
     },
     {
       "bc_file": "workspace/tmux-bc/objects/format-draw.bc",
@@ -5322,7 +4430,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.07
     },
     {
       "bc_file": "workspace/tmux-bc/objects/format.bc",
@@ -5336,7 +4444,7 @@
       "returncode": 124,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__format.leak.stderr.txt",
-      "elapsed_seconds": 120.004
+      "elapsed_seconds": 120.005
     },
     {
       "bc_file": "workspace/tmux-bc/objects/format.bc",
@@ -5350,7 +4458,7 @@
       "returncode": 124,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__format.dfree.stderr.txt",
-      "elapsed_seconds": 120.005
+      "elapsed_seconds": 120.004
     },
     {
       "bc_file": "workspace/tmux-bc/objects/format.bc",
@@ -5378,7 +4486,287 @@
       "returncode": 124,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__format.null-deref.stderr.txt",
-      "elapsed_seconds": 120.006
+      "elapsed_seconds": 120.002
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/freezero.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/freezero.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/freezero.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/freezero.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/freezero.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/freezero.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/freezero.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/freezero.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getdtablecount.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getdtablecount.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getdtablecount.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getdtablecount.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getdtablecount.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getdtablecount.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getdtablecount.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getdtablecount.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getopt_long.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getopt_long.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getopt_long.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getopt_long.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getopt_long.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getopt_long.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getopt_long.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getopt_long.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getpeereid.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getpeereid.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getpeereid.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getpeereid.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getpeereid.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getpeereid.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getpeereid.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getpeereid.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getprogname.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getprogname.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getprogname.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getprogname.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getprogname.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getprogname.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/getprogname.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/getprogname.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
     },
     {
       "bc_file": "workspace/tmux-bc/objects/grid-reader.bc",
@@ -5406,7 +4794,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.033
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/grid-reader.bc",
@@ -5504,7 +4892,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__grid.leak.stderr.txt",
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/grid.bc",
@@ -5549,6 +4937,62 @@
       "elapsed_seconds": 0.114
     },
     {
+      "bc_file": "workspace/tmux-bc/objects/htonll.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/htonll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/htonll.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/htonll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/htonll.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/htonll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/htonll.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/htonll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
       "bc_file": "workspace/tmux-bc/objects/hyperlinks.bc",
       "checker": "leak",
       "command": [
@@ -5605,6 +5049,118 @@
       "elapsed_seconds": 0.114
     },
     {
+      "bc_file": "workspace/tmux-bc/objects/imsg-buffer.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg-buffer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__imsg-buffer.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/imsg-buffer.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg-buffer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/imsg-buffer.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg-buffer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/imsg-buffer.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg-buffer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__imsg-buffer.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/imsg.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__imsg.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/imsg.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/imsg.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/imsg.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/imsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__imsg.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
       "bc_file": "workspace/tmux-bc/objects/input-keys.bc",
       "checker": "leak",
       "command": [
@@ -5658,7 +5214,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.065
     },
     {
       "bc_file": "workspace/tmux-bc/objects/input.bc",
@@ -5686,7 +5242,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__input.dfree.stderr.txt",
-      "elapsed_seconds": 0.171
+      "elapsed_seconds": 0.215
     },
     {
       "bc_file": "workspace/tmux-bc/objects/input.bc",
@@ -5700,7 +5256,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.165
+      "elapsed_seconds": 0.174
     },
     {
       "bc_file": "workspace/tmux-bc/objects/input.bc",
@@ -5714,7 +5270,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__input.null-deref.stderr.txt",
-      "elapsed_seconds": 0.165
+      "elapsed_seconds": 0.215
     },
     {
       "bc_file": "workspace/tmux-bc/objects/job.bc",
@@ -5784,7 +5340,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__key-bindings.leak.stderr.txt",
-      "elapsed_seconds": 6.23
+      "elapsed_seconds": 11.596
     },
     {
       "bc_file": "workspace/tmux-bc/objects/key-bindings.bc",
@@ -5798,7 +5354,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__key-bindings.dfree.stderr.txt",
-      "elapsed_seconds": 6.231
+      "elapsed_seconds": 11.749
     },
     {
       "bc_file": "workspace/tmux-bc/objects/key-bindings.bc",
@@ -5812,7 +5368,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.122
     },
     {
       "bc_file": "workspace/tmux-bc/objects/key-bindings.bc",
@@ -5826,7 +5382,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__key-bindings.null-deref.stderr.txt",
-      "elapsed_seconds": 6.23
+      "elapsed_seconds": 11.744
     },
     {
       "bc_file": "workspace/tmux-bc/objects/key-string.bc",
@@ -5840,7 +5396,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.215
+      "elapsed_seconds": 0.166
     },
     {
       "bc_file": "workspace/tmux-bc/objects/key-string.bc",
@@ -5854,7 +5410,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.165
     },
     {
       "bc_file": "workspace/tmux-bc/objects/key-string.bc",
@@ -5868,7 +5424,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.165
     },
     {
       "bc_file": "workspace/tmux-bc/objects/key-string.bc",
@@ -5882,7 +5438,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.164
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout-custom.bc",
@@ -5895,8 +5451,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.036
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__layout-custom.leak.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout-custom.bc",
@@ -5909,8 +5465,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__layout-custom.dfree.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout-custom.bc",
@@ -5937,8 +5493,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__layout-custom.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout-set.bc",
@@ -5951,7 +5507,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__layout-set.leak.stderr.txt",
       "elapsed_seconds": 0.064
     },
     {
@@ -5980,7 +5536,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.068
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout-set.bc",
@@ -5993,8 +5549,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__layout-set.null-deref.stderr.txt",
+      "elapsed_seconds": 0.073
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout.bc",
@@ -6008,7 +5564,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__layout.leak.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.069
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout.bc",
@@ -6036,7 +5592,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.065
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/layout.bc",
@@ -6162,7 +5718,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__menu.null-deref.stderr.txt",
-      "elapsed_seconds": 0.07
+      "elapsed_seconds": 0.072
     },
     {
       "bc_file": "workspace/tmux-bc/objects/mode-tree.bc",
@@ -6176,7 +5732,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__mode-tree.leak.stderr.txt",
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.164
     },
     {
       "bc_file": "workspace/tmux-bc/objects/mode-tree.bc",
@@ -6190,7 +5746,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.164
     },
     {
       "bc_file": "workspace/tmux-bc/objects/mode-tree.bc",
@@ -6218,7 +5774,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__mode-tree.null-deref.stderr.txt",
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.171
     },
     {
       "bc_file": "workspace/tmux-bc/objects/names.bc",
@@ -6333,6 +5889,62 @@
       "elapsed_seconds": 0.032
     },
     {
+      "bc_file": "workspace/tmux-bc/objects/ntohll.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/ntohll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/ntohll.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/ntohll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/ntohll.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/ntohll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/ntohll.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/ntohll.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
       "bc_file": "workspace/tmux-bc/objects/options-table.bc",
       "checker": "leak",
       "command": [
@@ -6344,7 +5956,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.065
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/options-table.bc",
@@ -6372,7 +5984,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.068
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/options-table.bc",
@@ -6400,7 +6012,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__options.leak.stderr.txt",
-      "elapsed_seconds": 11.993
+      "elapsed_seconds": 47.488
     },
     {
       "bc_file": "workspace/tmux-bc/objects/options.bc",
@@ -6414,7 +6026,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__options.dfree.stderr.txt",
-      "elapsed_seconds": 12.194
+      "elapsed_seconds": 47.935
     },
     {
       "bc_file": "workspace/tmux-bc/objects/options.bc",
@@ -6428,7 +6040,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.17
     },
     {
       "bc_file": "workspace/tmux-bc/objects/options.bc",
@@ -6442,7 +6054,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__options.null-deref.stderr.txt",
-      "elapsed_seconds": 12.094
+      "elapsed_seconds": 47.531
     },
     {
       "bc_file": "workspace/tmux-bc/objects/osdep-linux.bc",
@@ -6456,7 +6068,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "elapsed_seconds": 0.017
     },
     {
       "bc_file": "workspace/tmux-bc/objects/osdep-linux.bc",
@@ -6526,7 +6138,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.12
     },
     {
       "bc_file": "workspace/tmux-bc/objects/paste.bc",
@@ -6540,7 +6152,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.12
     },
     {
       "bc_file": "workspace/tmux-bc/objects/paste.bc",
@@ -6554,7 +6166,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__paste.null-deref.stderr.txt",
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.123
     },
     {
       "bc_file": "workspace/tmux-bc/objects/popup.bc",
@@ -6610,7 +6222,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__popup.null-deref.stderr.txt",
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.124
     },
     {
       "bc_file": "workspace/tmux-bc/objects/proc.bc",
@@ -6624,7 +6236,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.033
     },
     {
       "bc_file": "workspace/tmux-bc/objects/proc.bc",
@@ -6638,7 +6250,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.035
     },
     {
       "bc_file": "workspace/tmux-bc/objects/proc.bc",
@@ -6669,6 +6281,62 @@
       "elapsed_seconds": 0.032
     },
     {
+      "bc_file": "workspace/tmux-bc/objects/recallocarray.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/recallocarray.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/recallocarray.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/recallocarray.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/recallocarray.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/recallocarray.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/recallocarray.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/recallocarray.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
       "bc_file": "workspace/tmux-bc/objects/regsub.bc",
       "checker": "leak",
       "command": [
@@ -6679,7 +6347,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__regsub.leak.stderr.txt",
       "elapsed_seconds": 0.032
     },
     {
@@ -6688,6 +6356,20 @@
       "command": [
         "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
         "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/regsub.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/regsub.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
         "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
         "workspace/tmux-bc/objects/regsub.bc"
       ],
@@ -6698,20 +6380,6 @@
     },
     {
       "bc_file": "workspace/tmux-bc/objects/regsub.bc",
-      "checker": "fileck",
-      "command": [
-        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
-        "-fileck",
-        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
-        "workspace/tmux-bc/objects/regsub.bc"
-      ],
-      "returncode": 0,
-      "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
-    },
-    {
-      "bc_file": "workspace/tmux-bc/objects/regsub.bc",
       "checker": "null-deref",
       "command": [
         "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
@@ -6721,8 +6389,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.016
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__regsub.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/resize.bc",
@@ -6806,7 +6474,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.115
+      "elapsed_seconds": 0.122
     },
     {
       "bc_file": "workspace/tmux-bc/objects/screen-redraw.bc",
@@ -6820,7 +6488,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.116
     },
     {
       "bc_file": "workspace/tmux-bc/objects/screen-redraw.bc",
@@ -6834,7 +6502,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.12
     },
     {
       "bc_file": "workspace/tmux-bc/objects/screen-write.bc",
@@ -6876,7 +6544,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.165
     },
     {
       "bc_file": "workspace/tmux-bc/objects/screen-write.bc",
@@ -6890,7 +6558,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__screen-write.null-deref.stderr.txt",
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.172
     },
     {
       "bc_file": "workspace/tmux-bc/objects/screen.bc",
@@ -6918,7 +6586,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.065
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/screen.bc",
@@ -6974,7 +6642,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.07
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server-acl.bc",
@@ -6988,7 +6656,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.066
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server-acl.bc",
@@ -7002,7 +6670,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-acl.null-deref.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.068
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server-client.bc",
@@ -7016,7 +6684,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-client.leak.stderr.txt",
-      "elapsed_seconds": 0.315
+      "elapsed_seconds": 0.265
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server-client.bc",
@@ -7029,8 +6697,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.264
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-client.dfree.stderr.txt",
+      "elapsed_seconds": 0.267
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server-client.bc",
@@ -7044,7 +6712,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.264
+      "elapsed_seconds": 0.265
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server-client.bc",
@@ -7058,7 +6726,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-client.null-deref.stderr.txt",
-      "elapsed_seconds": 0.264
+      "elapsed_seconds": 0.265
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server-fn.bc",
@@ -7127,8 +6795,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server.leak.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server.bc",
@@ -7142,7 +6810,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server.bc",
@@ -7156,7 +6824,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.039
     },
     {
       "bc_file": "workspace/tmux-bc/objects/server.bc",
@@ -7169,8 +6837,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/session.bc",
@@ -7184,7 +6852,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/session.bc",
@@ -7212,7 +6880,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.123
     },
     {
       "bc_file": "workspace/tmux-bc/objects/session.bc",
@@ -7226,7 +6894,63 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.115
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/setproctitle.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/setproctitle.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/setproctitle.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/setproctitle.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/setproctitle.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/setproctitle.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/setproctitle.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/setproctitle.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
     },
     {
       "bc_file": "workspace/tmux-bc/objects/sort.bc",
@@ -7295,7 +7019,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__spawn.leak.stderr.txt",
       "elapsed_seconds": 0.064
     },
     {
@@ -7337,7 +7061,7 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__spawn.null-deref.stderr.txt",
       "elapsed_seconds": 0.064
     },
     {
@@ -7352,7 +7076,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__status.leak.stderr.txt",
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.215
     },
     {
       "bc_file": "workspace/tmux-bc/objects/status.bc",
@@ -7365,8 +7089,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.17
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__status.dfree.stderr.txt",
+      "elapsed_seconds": 0.215
     },
     {
       "bc_file": "workspace/tmux-bc/objects/status.bc",
@@ -7380,7 +7104,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/status.bc",
@@ -7394,7 +7118,175 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__status.null-deref.stderr.txt",
-      "elapsed_seconds": 0.164
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcat.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcat.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcat.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcat.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcat.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcat.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcat.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcat.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcpy.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcpy.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcpy.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strlcpy.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strtonum.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strtonum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strtonum.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strtonum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strtonum.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strtonum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/strtonum.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/strtonum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
     },
     {
       "bc_file": "workspace/tmux-bc/objects/style.bc",
@@ -7436,7 +7328,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.04
     },
     {
       "bc_file": "workspace/tmux-bc/objects/style.bc",
@@ -7464,7 +7356,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tmux.leak.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tmux.bc",
@@ -7478,7 +7370,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tmux.bc",
@@ -7506,7 +7398,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tmux.null-deref.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty-acs.bc",
@@ -7576,7 +7468,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.035
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty-draw.bc",
@@ -7701,8 +7593,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-keys.dfree.stderr.txt",
-      "elapsed_seconds": 0.114
+      "stderr_file": null,
+      "elapsed_seconds": 0.118
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty-keys.bc",
@@ -7743,8 +7635,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-term.leak.stderr.txt",
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty-term.bc",
@@ -7757,8 +7649,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-term.dfree.stderr.txt",
+      "elapsed_seconds": 0.115
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty-term.bc",
@@ -7772,7 +7664,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.065
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty-term.bc",
@@ -7785,8 +7677,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.064
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__tty-term.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty.bc",
@@ -7800,7 +7692,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.216
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty.bc",
@@ -7814,7 +7706,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.215
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty.bc",
@@ -7828,7 +7720,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.164
     },
     {
       "bc_file": "workspace/tmux-bc/objects/tty.bc",
@@ -7842,7 +7734,63 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.214
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/unvis.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/unvis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.033
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/unvis.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/unvis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/unvis.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/unvis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/unvis.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/unvis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
     },
     {
       "bc_file": "workspace/tmux-bc/objects/utf8-combined.bc",
@@ -7856,7 +7804,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.034
     },
     {
       "bc_file": "workspace/tmux-bc/objects/utf8-combined.bc",
@@ -7912,7 +7860,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__utf8.leak.stderr.txt",
-      "elapsed_seconds": 5.927
+      "elapsed_seconds": 5.829
     },
     {
       "bc_file": "workspace/tmux-bc/objects/utf8.bc",
@@ -7926,7 +7874,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 6.029
+      "elapsed_seconds": 5.878
     },
     {
       "bc_file": "workspace/tmux-bc/objects/utf8.bc",
@@ -7957,6 +7905,62 @@
       "elapsed_seconds": 5.879
     },
     {
+      "bc_file": "workspace/tmux-bc/objects/vis.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/vis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/vis.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/vis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/vis.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/vis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/tmux-bc/objects/vis.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/tmux-bc/objects/vis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
       "bc_file": "workspace/tmux-bc/objects/window-buffer.bc",
       "checker": "leak",
       "command": [
@@ -7981,8 +7985,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.066
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-buffer.dfree.stderr.txt",
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-buffer.bc",
@@ -7996,7 +8000,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.039
+      "elapsed_seconds": 0.064
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-buffer.bc",
@@ -8010,7 +8014,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-buffer.null-deref.stderr.txt",
-      "elapsed_seconds": 0.064
+      "elapsed_seconds": 0.075
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-client.bc",
@@ -8024,7 +8028,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-client.leak.stderr.txt",
-      "elapsed_seconds": 0.04
+      "elapsed_seconds": 0.036
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-client.bc",
@@ -8136,7 +8140,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-copy.leak.stderr.txt",
-      "elapsed_seconds": 0.415
+      "elapsed_seconds": 0.615
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-copy.bc",
@@ -8150,7 +8154,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-copy.dfree.stderr.txt",
-      "elapsed_seconds": 0.365
+      "elapsed_seconds": 0.57
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-copy.bc",
@@ -8164,7 +8168,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.365
+      "elapsed_seconds": 0.315
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-copy.bc",
@@ -8178,7 +8182,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-copy.null-deref.stderr.txt",
-      "elapsed_seconds": 0.415
+      "elapsed_seconds": 0.565
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-customize.bc",
@@ -8192,7 +8196,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-customize.leak.stderr.txt",
-      "elapsed_seconds": 0.115
+      "elapsed_seconds": 0.168
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-customize.bc",
@@ -8205,8 +8209,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-customize.dfree.stderr.txt",
+      "elapsed_seconds": 0.164
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-customize.bc",
@@ -8220,7 +8224,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.116
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-customize.bc",
@@ -8234,7 +8238,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-customize.null-deref.stderr.txt",
-      "elapsed_seconds": 0.114
+      "elapsed_seconds": 0.164
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-tree.bc",
@@ -8248,7 +8252,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-tree.leak.stderr.txt",
-      "elapsed_seconds": 0.115
+      "elapsed_seconds": 0.12
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-tree.bc",
@@ -8261,8 +8265,8 @@
       ],
       "returncode": 0,
       "stdout_file": null,
-      "stderr_file": null,
-      "elapsed_seconds": 0.114
+      "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window-tree.dfree.stderr.txt",
+      "elapsed_seconds": 0.122
     },
     {
       "bc_file": "workspace/tmux-bc/objects/window-tree.bc",
@@ -8346,7 +8350,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": "outputs/saber/tmux/workspace__tmux-bc__objects__window.null-deref.stderr.txt",
-      "elapsed_seconds": 0.265
+      "elapsed_seconds": 0.264
     },
     {
       "bc_file": "workspace/tmux-bc/objects/xmalloc.bc",
@@ -8388,7 +8392,7 @@
       "returncode": 0,
       "stdout_file": null,
       "stderr_file": null,
-      "elapsed_seconds": 0.032
+      "elapsed_seconds": 0.016
     },
     {
       "bc_file": "workspace/tmux-bc/objects/xmalloc.bc",

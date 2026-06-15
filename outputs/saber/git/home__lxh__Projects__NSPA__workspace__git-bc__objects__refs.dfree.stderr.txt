@@ -1,0 +1,27 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1340, "cl": 28, "fl": "refs.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1218, "cl": 2, "fl": "refs.c" })
+		 double free path: 
+		  --> ({ "ln": 1018, "cl": 32, "fl": "refs.c" }|False) 
+		  --> ({ "ln": 1018, "cl": 32, "fl": "refs.c" }|True) 
+		  --> ({ "ln": 1016, "cl": 6, "fl": "refs.c" }|False) 
+		  --> ({ "ln": 1016, "cl": 6, "fl": "refs.c" }|True) 
+		  --> ({ "ln": 1236, "cl": 2, "fl": "refs.c" }|True) 
+		  --> ({ "ln": 1236, "cl": 2, "fl": "refs.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1327, "cl": 2, "fl": "refs.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1334, "cl": 23, "fl": "refs.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1333, "cl": 23, "fl": "refs.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1448, "cl": 2, "fl": "refs.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1224, "cl": 3, "fl": "refs.c" })
+		 double free path: 
+

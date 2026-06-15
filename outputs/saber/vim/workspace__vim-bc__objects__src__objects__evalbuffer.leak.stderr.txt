@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 678, "cl": 15, "fl": "evalbuffer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 697, "cl": 18, "fl": "evalbuffer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 806, "cl": 3, "fl": "evalbuffer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 809, "cl": 29, "fl": "evalbuffer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 646, "cl": 12, "fl": "evalbuffer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 667, "cl": 15, "fl": "evalbuffer.c" })

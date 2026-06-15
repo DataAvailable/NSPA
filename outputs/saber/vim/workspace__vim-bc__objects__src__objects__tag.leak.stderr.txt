@@ -1,0 +1,62 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1576, "cl": 12, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1641, "cl": 6, "fl": "tag.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1269, "cl": 14, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1269, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 1271, "cl": 6, "fl": "tag.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3281, "cl": 25, "fl": "tag.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2662, "cl": 9, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2673, "cl": 12, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2624, "cl": 8, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1019, "cl": 6, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1027, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 1033, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 1033, "cl": 6, "fl": "tag.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2707, "cl": 8, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2751, "cl": 6, "fl": "tag.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1192, "cl": 6, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1201, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 1213, "cl": 10, "fl": "tag.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4661, "cl": 3, "fl": "tag.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3807, "cl": 17, "fl": "tag.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4652, "cl": 17, "fl": "tag.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1574, "cl": 12, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1641, "cl": 6, "fl": "tag.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3004, "cl": 12, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 697, "cl": 10, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 4415, "cl": 19, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 4415, "cl": 9, "fl": "tag.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1464, "cl": 14, "fl": "tag.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3380, "cl": 17, "fl": "tag.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3222, "cl": 6, "fl": "tag.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4521, "cl": 16, "fl": "tag.c" })

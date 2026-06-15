@@ -1,0 +1,23 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1465, "cl": 9, "fl": "mark.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1469, "cl": 9, "fl": "mark.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 556, "cl": 11, "fl": "mark.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1538, "cl": 13, "fl": "mark.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1546, "cl": 10, "fl": "mark.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 785, "cl": 13, "fl": "mark.c" })
+		 conditional free path: 
+		  --> ({ "ln": 813, "cl": 6, "fl": "mark.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1475, "cl": 12, "fl": "mark.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1485, "cl": 6, "fl": "mark.c" }|False) 
+		  --> ({ "ln": 1485, "cl": 6, "fl": "mark.c" }|True) 
+		  --> ({ "ln": 1486, "cl": 6, "fl": "mark.c" }|False) 
+		  --> ({ "ln": 1486, "cl": 6, "fl": "mark.c" }|True) 
+		  --> ({ "ln": 1486, "cl": 24, "fl": "mark.c" }|True) 
+		  --> ({ "ln": 1484, "cl": 9, "fl": "mark.c" }|True) 
+		  --> ({ "ln": 1488, "cl": 6, "fl": "mark.c" }|True) 
+

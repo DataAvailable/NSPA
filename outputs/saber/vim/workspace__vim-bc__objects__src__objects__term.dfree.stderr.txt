@@ -1,0 +1,16 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4671, "cl": 11, "fl": "term.c" })
+		 double free path: 
+		  --> ({ "ln": 4622, "cl": 24, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4622, "cl": 9, "fl": "term.c" }|False) 
+		  --> ({ "ln": 4638, "cl": 9, "fl": "term.c" }|False) 
+		  --> ({ "ln": 4672, "cl": 6, "fl": "term.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1652, "cl": 11, "fl": "term.c" })
+		 double free path: 
+		  --> ({ "ln": 2265, "cl": 21, "fl": "term.c" }|False) 
+		  --> ({ "ln": 2265, "cl": 21, "fl": "term.c" }|True) 
+		  --> ({ "ln": 2265, "cl": 39, "fl": "term.c" }|True) 
+		  --> ({ "ln": 2266, "cl": 24, "fl": "term.c" }|False) 
+		  --> ({ "ln": 2266, "cl": 24, "fl": "term.c" }|True) 
+		  --> ({ "ln": 2265, "cl": 6, "fl": "term.c" }|True) 
+

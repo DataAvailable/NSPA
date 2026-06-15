@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 79, "cl": 2, "fl": "hashmap.c" })
+		 conditional free path: 
+		  --> ({ "ln": 245, "cl": 6, "fl": "hashmap.c" }|True) 
+		  --> ({ "ln": 247, "cl": 7, "fl": "hashmap.c" }|True) 
+

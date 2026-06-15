@@ -1,0 +1,30 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3610, "cl": 16, "fl": "ex_cmds.c" })
+		 double free path: 
+		  --> ({ "ln": 3662, "cl": 19, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3662, "cl": 19, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3663, "cl": 3, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3663, "cl": 3, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3663, "cl": 17, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3662, "cl": 6, "fl": "ex_cmds.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3622, "cl": 16, "fl": "ex_cmds.c" })
+		 double free path: 
+		  --> ({ "ln": 3662, "cl": 19, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3662, "cl": 19, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3663, "cl": 3, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3663, "cl": 3, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3663, "cl": 17, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3662, "cl": 6, "fl": "ex_cmds.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3054, "cl": 14, "fl": "ex_cmds.c" })
+		 double free path: 
+		  --> ({ "ln": 3062, "cl": 10, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3062, "cl": 10, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3070, "cl": 10, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3077, "cl": 10, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3105, "cl": 18, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3105, "cl": 18, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3105, "cl": 7, "fl": "ex_cmds.c" }|False) 
+		  --> ({ "ln": 3113, "cl": 7, "fl": "ex_cmds.c" }|True) 
+		  --> ({ "ln": 3117, "cl": 11, "fl": "ex_cmds.c" }|False) 
+

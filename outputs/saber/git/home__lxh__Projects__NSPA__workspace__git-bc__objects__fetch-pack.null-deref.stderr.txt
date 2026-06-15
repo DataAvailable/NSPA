@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 764, "cl": 15, "fl": "fetch-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2202, "cl": 21, "fl": "fetch-pack.c" }|True) 
+		  --> ({ "ln": 2202, "cl": 6, "fl": "fetch-pack.c" }|True) 
+		  --> ({ "ln": 2208, "cl": 7, "fl": "fetch-pack.c" }|True) 
+		  --> ({ "ln": 709, "cl": 39, "fl": "fetch-pack.c" }|True) 
+		  --> ({ "ln": 709, "cl": 7, "fl": "fetch-pack.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 107, "cl": 2, "fl": "fetch-pack.c" })

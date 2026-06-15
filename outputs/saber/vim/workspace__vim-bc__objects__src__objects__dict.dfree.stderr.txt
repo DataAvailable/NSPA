@@ -1,0 +1,67 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1061, "cl": 13, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1066, "cl": 7, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 961, "cl": 6, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 164, "cl": 9, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 398, "cl": 12, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 403, "cl": 9, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 453, "cl": 12, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 465, "cl": 9, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 250, "cl": 10, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1206, "cl": 11, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 230, "cl": 10, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 340, "cl": 10, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 403, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 465, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 488, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 509, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 530, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 552, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 625, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1066, "cl": 7, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 32, "cl": 9, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 164, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1347, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1352, "cl": 6, "fl": "dict.c" }|False) 
+		  --> ({ "ln": 1361, "cl": 6, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1363, "cl": 10, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 305, "cl": 12, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 1347, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1352, "cl": 6, "fl": "dict.c" }|False) 
+		  --> ({ "ln": 1361, "cl": 6, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1363, "cl": 10, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 505, "cl": 12, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 509, "cl": 9, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 326, "cl": 11, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 340, "cl": 10, "fl": "dict.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1205, "cl": 13, "fl": "dict.c" })
+		 double free path: 
+		  --> ({ "ln": 284, "cl": 9, "fl": "dict.c" }|True) 
+		  --> ({ "ln": 1206, "cl": 11, "fl": "dict.c" }|True) 
+

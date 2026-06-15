@@ -1,0 +1,2 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 66, "cl": 10, "fl": "alloc.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 68, "cl": 3, "fl": "alloc.c" })

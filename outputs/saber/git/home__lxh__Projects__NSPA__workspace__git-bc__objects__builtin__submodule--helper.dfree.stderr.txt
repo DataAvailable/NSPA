@@ -1,0 +1,35 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 86, "cl": 9, "fl": "builtin/submodule--helper.c" })
+		 double free path: 
+		  --> ({ "ln": 89, "cl": 38, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 89, "cl": 38, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 89, "cl": 7, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 98, "cl": 6, "fl": "builtin/submodule--helper.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 613, "cl": 9, "fl": "builtin/submodule--helper.c" })
+		 double free path: 
+		  --> ({ "ln": 616, "cl": 38, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 616, "cl": 38, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 616, "cl": 7, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 624, "cl": 7, "fl": "builtin/submodule--helper.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 109, "cl": 20, "fl": "builtin/submodule--helper.c" })
+		 double free path: 
+		  --> ({ "ln": 2848, "cl": 7, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 2851, "cl": 7, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 2536, "cl": 7, "fl": "builtin/submodule--helper.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3699, "cl": 22, "fl": "builtin/submodule--helper.c" })
+		 double free path: 
+		  --> ({ "ln": 3701, "cl": 13, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 3701, "cl": 24, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 3701, "cl": 6, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 3708, "cl": 47, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 3708, "cl": 47, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 3708, "cl": 6, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 3710, "cl": 7, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 3731, "cl": 6, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 3744, "cl": 7, "fl": "builtin/submodule--helper.c" }|True) 
+		  --> ({ "ln": 3777, "cl": 6, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 3789, "cl": 6, "fl": "builtin/submodule--helper.c" }|False) 
+		  --> ({ "ln": 3789, "cl": 6, "fl": "builtin/submodule--helper.c" }|True) 
+

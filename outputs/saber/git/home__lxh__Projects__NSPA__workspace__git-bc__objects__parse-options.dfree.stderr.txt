@@ -1,0 +1,4 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 918, "cl": 2, "fl": "parse-options.c" })
+		 double free path: 
+		  --> ({ "ln": 923, "cl": 2, "fl": "parse-options.c" }|False) 
+

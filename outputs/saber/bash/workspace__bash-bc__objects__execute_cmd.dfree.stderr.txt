@@ -1,0 +1,31 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2277, "cl": 17, "fl": "execute_cmd.c" })
+		 double free path: 
+		  --> ({ "ln": 617, "cl": 36, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 617, "cl": 36, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 618, "cl": 65, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 636, "cl": 25, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 636, "cl": 59, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 637, "cl": 41, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 636, "cl": 11, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 2686, "cl": 11, "fl": "execute_cmd.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3753, "cl": 41, "fl": "execute_cmd.c" })
+		 double free path: 
+		  --> ({ "ln": 777, "cl": 7, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1069, "cl": 30, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1069, "cl": 30, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1069, "cl": 45, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1069, "cl": 45, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1069, "cl": 74, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1069, "cl": 74, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1069, "cl": 11, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 2686, "cl": 11, "fl": "execute_cmd.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3015, "cl": 38, "fl": "execute_cmd.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2260, "cl": 13, "fl": "execute_cmd.c" })
+		 double free path: 
+
+
+NSPA timeout after 120.0 seconds

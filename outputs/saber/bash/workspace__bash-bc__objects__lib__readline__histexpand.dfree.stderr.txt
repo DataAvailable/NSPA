@@ -1,0 +1,111 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 718, "cl": 16, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 558, "cl": 12, "fl": "lib/readline/histexpand.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 641, "cl": 12, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 595, "cl": 3, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 599, "cl": 20, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 599, "cl": 20, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 599, "cl": 11, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 664, "cl": 8, "fl": "lib/readline/histexpand.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 513, "cl": 20, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 558, "cl": 12, "fl": "lib/readline/histexpand.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 588, "cl": 22, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 595, "cl": 3, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 599, "cl": 20, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 599, "cl": 20, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 599, "cl": 11, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 664, "cl": 8, "fl": "lib/readline/histexpand.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1647, "cl": 32, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 558, "cl": 12, "fl": "lib/readline/histexpand.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 497, "cl": 17, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 558, "cl": 12, "fl": "lib/readline/histexpand.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 706, "cl": 7, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 558, "cl": 12, "fl": "lib/readline/histexpand.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 788, "cl": 27, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 595, "cl": 3, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 599, "cl": 20, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 599, "cl": 20, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 599, "cl": 11, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 612, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 664, "cl": 8, "fl": "lib/readline/histexpand.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1645, "cl": 20, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 1682, "cl": 18, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 1404, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 1424, "cl": 20, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 1424, "cl": 20, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 1424, "cl": 34, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 1616, "cl": 3, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 1616, "cl": 3, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 1621, "cl": 26, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 1621, "cl": 26, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 1621, "cl": 11, "fl": "lib/readline/histexpand.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 503, "cl": 20, "fl": "lib/readline/histexpand.c" })
+		 double free path: 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+		  --> ({ "ln": 549, "cl": 7, "fl": "lib/readline/histexpand.c" }|True) 
+		  --> ({ "ln": 558, "cl": 12, "fl": "lib/readline/histexpand.c" }|False) 
+
+
+NSPA timeout after 120.0 seconds

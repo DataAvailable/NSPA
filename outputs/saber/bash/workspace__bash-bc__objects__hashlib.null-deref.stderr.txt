@@ -1,0 +1,21 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 109, "cl": 40, "fl": "hashlib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 104, "cl": 43, "fl": "hashlib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 114, "cl": 59, "fl": "hashlib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 113, "cl": 16, "fl": "hashlib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 68, "cl": 29, "fl": "hashlib.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 280, "cl": 33, "fl": "hashlib.c" })
+		 conditional free path: 
+		  --> ({ "ln": 164, "cl": 7, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 349, "cl": 7, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 351, "cl": 11, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 132, "cl": 21, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 132, "cl": 7, "fl": "hashlib.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 139, "cl": 45, "fl": "hashlib.c" })
+		 conditional free path: 
+		  --> ({ "ln": 164, "cl": 7, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 349, "cl": 7, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 351, "cl": 11, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 132, "cl": 21, "fl": "hashlib.c" }|True) 
+		  --> ({ "ln": 132, "cl": 7, "fl": "hashlib.c" }|False) 
+

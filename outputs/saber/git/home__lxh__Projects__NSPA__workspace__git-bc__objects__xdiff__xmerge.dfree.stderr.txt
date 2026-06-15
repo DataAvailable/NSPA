@@ -1,0 +1,14 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 63, "cl": 7, "fl": "xdiff/xmerge.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 410, "cl": 20, "fl": "xdiff/xmerge.c" })
+		 double free path: 
+		  --> ({ "ln": 658, "cl": 56, "fl": "xdiff/xmerge.c" }|True) 
+		  --> ({ "ln": 478, "cl": 7, "fl": "xdiff/xmerge.c" }|False) 
+		  --> ({ "ln": 484, "cl": 20, "fl": "xdiff/xmerge.c" }|True) 
+		  --> ({ "ln": 484, "cl": 41, "fl": "xdiff/xmerge.c" }|True) 
+		  --> ({ "ln": 485, "cl": 24, "fl": "xdiff/xmerge.c" }|False) 
+		  --> ({ "ln": 485, "cl": 24, "fl": "xdiff/xmerge.c" }|True) 
+		  --> ({ "ln": 486, "cl": 31, "fl": "xdiff/xmerge.c" }|True) 
+		  --> ({ "ln": 484, "cl": 7, "fl": "xdiff/xmerge.c" }|False) 
+

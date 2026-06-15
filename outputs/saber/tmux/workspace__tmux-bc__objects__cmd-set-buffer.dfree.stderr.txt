@@ -1,0 +1,6 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 66, "cl": 13, "fl": "cmd-set-buffer.c" })
+		 double free path: 
+		  --> ({ "ln": 70, "cl": 6, "fl": "cmd-set-buffer.c" }|True) 
+		  --> ({ "ln": 71, "cl": 7, "fl": "cmd-set-buffer.c" }|False) 
+		  --> ({ "ln": 78, "cl": 7, "fl": "cmd-set-buffer.c" }|False) 
+

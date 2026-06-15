@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 164, "cl": 2, "fl": "worktree.c" })
+		 conditional free path: 
+		  --> ({ "ln": 20, "cl": 6, "fl": "worktree.c" }|False) 
+		  --> ({ "ln": 33, "cl": 2, "fl": "worktree.c" }|True) 
+		  --> ({ "ln": 204, "cl": 8, "fl": "worktree.c" }|True) 
+

@@ -1,4 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1137, "cl": 9, "fl": "mode-tree.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1151, "cl": 6, "fl": "mode-tree.c" }|True) 
+
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1141, "cl": 8, "fl": "mode-tree.c" })
 		 conditional free path: 
 		  --> ({ "ln": 1151, "cl": 6, "fl": "mode-tree.c" }|True) 
 
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 273, "cl": 18, "fl": "mode-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 247, "cl": 20, "fl": "mode-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1051, "cl": 16, "fl": "mode-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1078, "cl": 17, "fl": "mode-tree.c" })

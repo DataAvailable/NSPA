@@ -1,0 +1,56 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 954, "cl": 9, "fl": "commit-graph.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 273, "cl": 8, "fl": "commit-graph.c" })
+		 conditional free path: 
+		  --> ({ "ln": 677, "cl": 9, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2950, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 548, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 551, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 556, "cl": 7, "fl": "commit-graph.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 773, "cl": 30, "fl": "commit-graph.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2831, "cl": 33, "fl": "commit-graph.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 506, "cl": 17, "fl": "commit-graph.c" })
+		 conditional free path: 
+		  --> ({ "ln": 676, "cl": 8, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 677, "cl": 9, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2950, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 548, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 551, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 556, "cl": 76, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 557, "cl": 68, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 556, "cl": 7, "fl": "commit-graph.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 364, "cl": 29, "fl": "commit-graph.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2210, "cl": 25, "fl": "commit-graph.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2733, "cl": 2, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2224, "cl": 6, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2229, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2234, "cl": 7, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|False) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2245, "cl": 9, "fl": "commit-graph.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 975, "cl": 10, "fl": "commit-graph.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2831, "cl": 60, "fl": "commit-graph.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2633, "cl": 4, "fl": "commit-graph.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2656, "cl": 6, "fl": "commit-graph.c" }|True) 
+		  --> ({ "ln": 2658, "cl": 7, "fl": "commit-graph.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2258, "cl": 4, "fl": "commit-graph.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2733, "cl": 2, "fl": "commit-graph.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 75, "cl": 1, "fl": "commit-graph.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 75, "cl": 1, "fl": "commit-graph.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 960, "cl": 10, "fl": "commit-graph.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1667, "cl": 3, "fl": "commit-graph.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1680, "cl": 6, "fl": "commit-graph.c" })

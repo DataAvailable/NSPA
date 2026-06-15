@@ -1,0 +1,10 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 151, "cl": 7, "fl": "xdiff/xpatience.c" })
+		 conditional free path: 
+		  --> ({ "ln": 343, "cl": 6, "fl": "xdiff/xpatience.c" }|False) 
+		  --> ({ "ln": 348, "cl": 6, "fl": "xdiff/xpatience.c" }|False) 
+		  --> ({ "ln": 348, "cl": 6, "fl": "xdiff/xpatience.c" }|True) 
+		  --> ({ "ln": 358, "cl": 6, "fl": "xdiff/xpatience.c" }|False) 
+		  --> ({ "ln": 358, "cl": 6, "fl": "xdiff/xpatience.c" }|True) 
+		  --> ({ "ln": 360, "cl": 6, "fl": "xdiff/xpatience.c" }|False) 
+		  --> ({ "ln": 360, "cl": 6, "fl": "xdiff/xpatience.c" }|True) 
+

@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 409, "cl": 20, "fl": "tool_getparam.c" })
+		 conditional free path: 
+		  --> ({ "ln": 417, "cl": 3, "fl": "tool_getparam.c" }|False) 
+		  --> ({ "ln": 417, "cl": 3, "fl": "tool_getparam.c" }|True) 
+		  --> ({ "ln": 424, "cl": 5, "fl": "tool_getparam.c" }|True) 
+		  --> ({ "ln": 424, "cl": 5, "fl": "tool_getparam.c" }|False) 
+

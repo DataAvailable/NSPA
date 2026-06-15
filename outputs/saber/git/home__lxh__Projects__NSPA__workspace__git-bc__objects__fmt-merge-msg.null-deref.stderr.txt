@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 110, "cl": 2, "fl": "fmt-merge-msg.c" })
+		 conditional free path: 
+		  --> ({ "ln": 684, "cl": 2, "fl": "fmt-merge-msg.c" }|False) 
+		  --> ({ "ln": 703, "cl": 6, "fl": "fmt-merge-msg.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 631, "cl": 3, "fl": "fmt-merge-msg.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 171, "cl": 16, "fl": "fmt-merge-msg.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 146, "cl": 2, "fl": "fmt-merge-msg.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 626, "cl": 3, "fl": "fmt-merge-msg.c" })

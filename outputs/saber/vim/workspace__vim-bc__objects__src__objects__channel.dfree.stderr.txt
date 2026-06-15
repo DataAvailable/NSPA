@@ -1,0 +1,57 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1675, "cl": 15, "fl": "channel.c" })
+		 double free path: 
+		  --> ({ "ln": 1687, "cl": 9, "fl": "channel.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3446, "cl": 9, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3462, "cl": 12, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4288, "cl": 19, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 909, "cl": 15, "fl": "channel.c" })
+		 double free path: 
+		  --> ({ "ln": 930, "cl": 9, "fl": "channel.c" }|False) 
+		  --> ({ "ln": 930, "cl": 9, "fl": "channel.c" }|True) 
+		  --> ({ "ln": 952, "cl": 5, "fl": "channel.c" }|True) 
+		  --> ({ "ln": 964, "cl": 6, "fl": "channel.c" }|True) 
+		  --> ({ "ln": 997, "cl": 6, "fl": "channel.c" }|True) 
+		  --> ({ "ln": 1024, "cl": 6, "fl": "channel.c" }|True) 
+		  --> ({ "ln": 1068, "cl": 9, "fl": "channel.c" }|False) 
+		  --> ({ "ln": 1193, "cl": 9, "fl": "channel.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 841, "cl": 15, "fl": "channel.c" })
+		 double free path: 
+		  --> ({ "ln": 1185, "cl": 9, "fl": "channel.c" }|True) 
+		  --> ({ "ln": 1190, "cl": 9, "fl": "channel.c" }|True) 
+		  --> ({ "ln": 858, "cl": 9, "fl": "channel.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3453, "cl": 9, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3441, "cl": 9, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1526, "cl": 15, "fl": "channel.c" })
+		 double free path: 
+		  --> ({ "ln": 1547, "cl": 9, "fl": "channel.c" }|False) 
+		  --> ({ "ln": 1576, "cl": 9, "fl": "channel.c" }|False) 
+		  --> ({ "ln": 1589, "cl": 9, "fl": "channel.c" }|False) 
+		  --> ({ "ln": 1602, "cl": 9, "fl": "channel.c" }|False) 
+		  --> ({ "ln": 1612, "cl": 9, "fl": "channel.c" }|False) 
+		  --> ({ "ln": 1187, "cl": 9, "fl": "channel.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4267, "cl": 8, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 196, "cl": 26, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3605, "cl": 28, "fl": "channel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2226, "cl": 11, "fl": "channel.c" })
+		 double free path: 
+

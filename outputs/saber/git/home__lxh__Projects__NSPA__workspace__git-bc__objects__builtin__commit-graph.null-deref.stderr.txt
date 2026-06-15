@@ -1,0 +1,10 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 87, "cl": 27, "fl": "builtin/commit-graph.c" })
+		 conditional free path: 
+		  --> ({ "ln": 95, "cl": 6, "fl": "builtin/commit-graph.c" }|False) 
+		  --> ({ "ln": 108, "cl": 6, "fl": "builtin/commit-graph.c" }|False) 
+		  --> ({ "ln": 108, "cl": 6, "fl": "builtin/commit-graph.c" }|True) 
+		  --> ({ "ln": 110, "cl": 11, "fl": "builtin/commit-graph.c" }|False) 
+		  --> ({ "ln": 112, "cl": 11, "fl": "builtin/commit-graph.c" }|False) 
+		  --> ({ "ln": 112, "cl": 11, "fl": "builtin/commit-graph.c" }|True) 
+		  --> ({ "ln": 115, "cl": 11, "fl": "builtin/commit-graph.c" }|False) 
+

@@ -1,0 +1,15 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2857, "cl": 30, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2861, "cl": 29, "fl": "highlight.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5813, "cl": 11, "fl": "highlight.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6038, "cl": 6, "fl": "highlight.c" }|True) 
+		  --> ({ "ln": 5847, "cl": 9, "fl": "highlight.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5252, "cl": 14, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1441, "cl": 12, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1515, "cl": 12, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1596, "cl": 6, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5265, "cl": 14, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1358, "cl": 12, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4170, "cl": 7, "fl": "highlight.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5288, "cl": 14, "fl": "highlight.c" })

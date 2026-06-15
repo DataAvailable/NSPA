@@ -1,0 +1,66 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 10178, "cl": 11, "fl": "os_unix.c" })
+		 double free path: 
+		  --> ({ "ln": 10203, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10205, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10210, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10210, "cl": 6, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10214, "cl": 10, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10227, "cl": 7, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10231, "cl": 7, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10253, "cl": 10, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10270, "cl": 5, "fl": "os_unix.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 9627, "cl": 11, "fl": "os_unix.c" })
+		 double free path: 
+		  --> ({ "ln": 9969, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9978, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9989, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9999, "cl": 9, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9688, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9696, "cl": 28, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9696, "cl": 28, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9696, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9725, "cl": 23, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9725, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9742, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9773, "cl": 9, "fl": "os_unix.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 9961, "cl": 27, "fl": "os_unix.c" })
+		 double free path: 
+		  --> ({ "ln": 9969, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9978, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9989, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9999, "cl": 9, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9688, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9696, "cl": 28, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9696, "cl": 28, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9696, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9725, "cl": 23, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9725, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9742, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9773, "cl": 9, "fl": "os_unix.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 10464, "cl": 22, "fl": "os_unix.c" })
+		 double free path: 
+		  --> ({ "ln": 10446, "cl": 5, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10456, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10458, "cl": 11, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9780, "cl": 9, "fl": "os_unix.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 10113, "cl": 11, "fl": "os_unix.c" })
+		 double free path: 
+		  --> ({ "ln": 9725, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9933, "cl": 9, "fl": "os_unix.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 10557, "cl": 22, "fl": "os_unix.c" })
+		 double free path: 
+		  --> ({ "ln": 9575, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9578, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10446, "cl": 5, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10456, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10458, "cl": 11, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9780, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10657, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10659, "cl": 14, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10665, "cl": 9, "fl": "os_unix.c" }|True) 
+

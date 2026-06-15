@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "warning_count": 657,
+    "confirmed_count": 2,
+    "unknown_count": 50,
+    "api_error_unknown_count": 0,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 2,
+    "source_output": "outputs/bash/nspa_bash_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "leak|PartialLeak|lib/readline/search.c|219|9|0|workspace__bash-bc__objects__lib__readline__search.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.6,
+      "rationale": "cxt is allocated in _rl_nsearch_init (line 219) and returned to noninc_search. On the normal path the resource is freed via _rl_nsearch_cleanup at line 434 (and via _rl_nsearch_abort at 419). However the early return at line 428 (if r < 0 return 1) leaves the loop without calling cleanup or abort, leaking cxt. The line 409 callback return is an intentional ownership transfer to the global _rl_nscxt, but the 428 path has no such transfer.",
+      "evidence_lines": [
+        {
+          "file": "lib/readline/search.c",
+          "line": 219,
+          "role": "allocation"
+        },
+        {
+          "file": "lib/readline/search.c",
+          "line": 427,
+          "role": "condition"
+        },
+        {
+          "file": "lib/readline/search.c",
+          "line": 428,
+          "role": "return"
+        },
+        {
+          "file": "lib/readline/search.c",
+          "line": 434,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "At line 428, call _rl_nsearch_cleanup/_rl_nsearch_abort (or xfree cxt) before returning so cxt is released on the r<0 path.",
+      "warning": {
+        "id": "leak|PartialLeak|lib/readline/search.c|219|9|0|workspace__bash-bc__objects__lib__readline__search.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/bash/workspace__bash-bc__objects__lib__readline__search.leak.stderr.txt",
+        "bc_file": "workspace/bash-bc/objects/lib/readline/search.bc",
+        "primary": {
+          "file": "lib/readline/search.c",
+          "line": 219,
+          "column": 9
+        },
+        "path": [
+          {
+            "file": "lib/readline/search.c",
+            "line": 408,
+            "column": 7,
+            "branch": "False"
+          },
+          {
+            "file": "lib/readline/search.c",
+            "line": 417,
+            "column": 11,
+            "branch": "False"
+          },
+          {
+            "file": "lib/readline/search.c",
+            "line": 423,
+            "column": 11,
+            "branch": "False"
+          },
+          {
+            "file": "lib/readline/search.c",
+            "line": 423,
+            "column": 11,
+            "branch": "True"
+          },
+          {
+            "file": "lib/readline/search.c",
+            "line": 427,
+            "column": 11,
+            "branch": "False"
+          },
+          {
+            "file": "lib/readline/search.c",
+            "line": 429,
+            "column": 16,
+            "branch": "True"
+          },
+          {
+            "file": "lib/readline/search.c",
+            "line": 434,
+            "column": 11,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 219, \"cl\": 9, \"fl\": \"lib/readline/search.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 408, \"cl\": 7, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 417, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 423, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 423, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|True) \n\t\t  --> ({ \"ln\": 427, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 429, \"cl\": 16, \"fl\": \"lib/readline/search.c\" }|True) \n\t\t  --> ({ \"ln\": 434, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|lib/readline/search.c|219|9|0|workspace__bash-bc__objects__lib__readline__search.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/bash/workspace__bash-bc__objects__lib__readline__search.leak.stderr.txt",
+          "bc_file": "workspace/bash-bc/objects/lib/readline/search.bc",
+          "primary": {
+            "file": "lib/readline/search.c",
+            "line": 219,
+            "column": 9
+          },
+          "path": [
+            {
+              "file": "lib/readline/search.c",
+              "line": 408,
+              "column": 7,
+              "branch": "False"
+            },
+            {
+              "file": "lib/readline/search.c",
+              "line": 417,
+              "column": 11,
+              "branch": "False"
+            },
+            {
+              "file": "lib/readline/search.c",
+              "line": 423,
+              "column": 11,
+              "branch": "False"
+            },
+            {
+              "file": "lib/readline/search.c",
+              "line": 423,
+              "column": 11,
+              "branch": "True"
+            },
+            {
+              "file": "lib/readline/search.c",
+              "line": 427,
+              "column": 11,
+              "branch": "False"
+            },
+            {
+              "file": "lib/readline/search.c",
+              "line": 429,
+              "column": 16,
+              "branch": "True"
+            },
+            {
+              "file": "lib/readline/search.c",
+              "line": 434,
+              "column": 11,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 219, \"cl\": 9, \"fl\": \"lib/readline/search.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 408, \"cl\": 7, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 417, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 423, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 423, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|True) \n\t\t  --> ({ \"ln\": 427, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|False) \n\t\t  --> ({ \"ln\": 429, \"cl\": 16, \"fl\": \"lib/readline/search.c\" }|True) \n\t\t  --> ({ \"ln\": 434, \"cl\": 11, \"fl\": \"lib/readline/search.c\" }|True)"
+        },
+        "source_files": [
+          "lib/readline/search.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "lib/readline/search.c",
+            "start_line": 213,
+            "end_line": 250,
+            "important_lines": [
+              219
+            ],
+            "text": "     213: static _rl_search_cxt *\n     214: _rl_nsearch_init (int dir, int pchar)\n     215: {\n     216:   _rl_search_cxt *cxt;\n     217:   char *p;\n     218: \n>>   219:   cxt = _rl_scxt_alloc (RL_SEARCH_NSEARCH, 0);\n     220:   if (dir < 0)\n     221:     cxt->sflags |= SF_REVERSE;\t\t/* not strictly needed */\n     222: #if defined (VI_MODE)\n     223:   if (VI_COMMAND_MODE() && (pchar == '?' || pchar == '/'))\n     224:     cxt->sflags |= SF_PATTERN;\n     225: #endif\n     226: \n     227:   cxt->direction = dir;\n     228:   cxt->history_pos = cxt->save_line;\n     229: \n     230:   rl_maybe_save_line ();\n     231: \n     232:   /* Clear the undo list, since reading the search string should create its\n     233:      own undo list, and the whole list will end up being freed when we\n     234:      finish reading the search string. */\n     235:   rl_undo_list = 0;\n     236: \n     237:   /* Use the line buffer to read the search string. */\n     238:   rl_line_buffer[0] = 0;\n     239:   rl_end = rl_point = 0;\n     240: \n     241:   p = _rl_make_prompt_for_search (pchar ? pchar : ':');\n     242:   rl_message (\"%s\", p);\n     243:   xfree (p);\n     244: \n     245:   RL_SETSTATE(RL_STATE_NSEARCH);\n     246: \n     247:   _rl_nscxt = cxt;\n     248: \n     249:   return cxt;\n     250: }"
+          },
+          {
+            "file": "lib/readline/search.c",
+            "start_line": 400,
+            "end_line": 435,
+            "important_lines": [
+              408,
+              417,
+              423,
+              427,
+              429,
+              434
+            ],
+            "text": "     400: static int\n     401: noninc_search (int dir, int pchar)\n     402: {\n     403:   _rl_search_cxt *cxt;\n     404:   int c, r;\n     405: \n     406:   cxt = _rl_nsearch_init (dir, pchar);\n     407: \n>>   408:   if (RL_ISSTATE (RL_STATE_CALLBACK))\n     409:     return (0);\n     410: \n     411:   /* Read the search string. */\n     412:   r = 0;\n     413:   while (1)\n     414:     {\n     415:       c = _rl_search_getchar (cxt);\n     416: \n>>   417:       if (c < 0)\n     418: \t{\n     419: \t  _rl_nsearch_abort (cxt);\n     420: \t  return 1;\n     421: \t}\n     422: \t  \n>>   423:       if (c == 0)\n     424: \tbreak;\n     425: \n     426:       r = _rl_nsearch_dispatch (cxt, c);\n>>   427:       if (r < 0)\n     428:         return 1;\n>>   429:       else if (r == 0)\n     430: \tbreak;        \n     431:     }\n     432: \n     433:   r = _rl_nsearch_dosearch (cxt);\n>>   434:   return ((r >= 0) ? _rl_nsearch_cleanup (cxt, r) : (r != 1));\n     435: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|trap.c|964|22|4|workspace__bash-bc__objects__trap.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.7,
+      "rationale": "trap_command is allocated via savestring at line 964 but never freed on the return path at line 996. parse_and_execute does not take ownership of the string in bash; it parses a copy. Other trap-running functions in bash free this buffer, so the allocation leaks here on each invocation of the EXIT trap branch.",
+      "evidence_lines": [
+        {
+          "file": "trap.c",
+          "line": 964,
+          "role": "allocation"
+        },
+        {
+          "file": "trap.c",
+          "line": 980,
+          "role": "ownership"
+        },
+        {
+          "file": "trap.c",
+          "line": 996,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "free(trap_command) before the return at line 996 (after parse_and_execute and the array_dispose call).",
+      "warning": {
+        "id": "null-deref|NeverFree|trap.c|964|22|4|workspace__bash-bc__objects__trap.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/bash/workspace__bash-bc__objects__trap.null-deref.stderr.txt",
+        "bc_file": "workspace/bash-bc/objects/trap.bc",
+        "primary": {
+          "file": "trap.c",
+          "line": 964,
+          "column": 22
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 964, \"cl\": 22, \"fl\": \"trap.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|trap.c|964|22|4|workspace__bash-bc__objects__trap.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/bash/workspace__bash-bc__objects__trap.null-deref.stderr.txt",
+          "bc_file": "workspace/bash-bc/objects/trap.bc",
+          "primary": {
+            "file": "trap.c",
+            "line": 964,
+            "column": 22
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 964, \"cl\": 22, \"fl\": \"trap.c\" })"
+        },
+        "source_files": [
+          "trap.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "trap.c",
+            "start_line": 943,
+            "end_line": 1003,
+            "important_lines": [
+              964
+            ],
+            "text": "     943: int\n     944: run_exit_trap ()\n     945: {\n     946:   char *trap_command;\n     947:   int code, function_code, retval;\n     948: #if defined (ARRAY_VARS)\n     949:   ARRAY *ps;\n     950: #endif\n     951: \n     952:   trap_saved_exit_value = last_command_exit_value;\n     953: #if defined (ARRAY_VARS)\n     954:   ps = save_pipestatus_array ();\n     955: #endif\n     956:   function_code = 0;\n     957: \n     958:   /* Run the trap only if signal 0 is trapped and not ignored, and we are not\n     959:      currently running in the trap handler (call to exit in the list of\n     960:      commands given to trap 0). */\n     961:   if ((sigmodes[EXIT_TRAP] & SIG_TRAPPED) &&\n     962:       (sigmodes[EXIT_TRAP] & (SIG_IGNORED|SIG_INPROGRESS)) == 0)\n     963:     {\n>>   964:       trap_command = savestring (trap_list[EXIT_TRAP]);\n     965:       sigmodes[EXIT_TRAP] &= ~SIG_TRAPPED;\n     966:       sigmodes[EXIT_TRAP] |= SIG_INPROGRESS;\n     967: \n     968:       retval = trap_saved_exit_value;\n     969:       running_trap = 1;\n     970: \n     971:       code = setjmp_nosigs (top_level);\n     972: \n     973:       /* If we're in a function, make sure return longjmps come here, too. */\n     974:       if (return_catch_flag)\n     975: \tfunction_code = setjmp_nosigs (return_catch);\n     976: \n     977:       if (code == 0 && function_code == 0)\n     978: \t{\n     979: \t  reset_parser ();\n     980: \t  parse_and_execute (trap_command, \"exit trap\", SEVAL_NONINT|SEVAL_NOHIST|SEVAL_RESETLINE);\n     981: \t}\n     982:       else if (code == ERREXIT)\n     983: \tretval = last_command_exit_value;\n     984:       else if (code == EXITPROG)\n     985: \tretval = last_command_exit_value;\n     986:       else if (function_code != 0)\n     987:         retval = return_catch_value;\n     988:       else\n     989: \tretval = trap_saved_exit_value;\n     990: \n     991:       running_trap = 0;\n     992: #if defined (ARRAY_VARS)\n     993:       array_dispose (ps);\n     994: #endif\n     995: \n     996:       return retval;\n     997:     }\n     998: \n     999: #if defined (ARRAY_VARS)\n    1000:   restore_pipestatus_array (ps);\n    1001: #endif\n    1002:   return (trap_saved_exit_value);\n    1003: }"
+          }
+        ]
+      }
+    }
+  ]
+}

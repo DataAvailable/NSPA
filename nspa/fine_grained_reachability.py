@@ -395,13 +395,36 @@ def safe_result_stem(path: Path) -> str:
     return re.sub(r"[^A-Za-z0-9_.-]+", "__", text).removesuffix(".bc")
 
 
-def write_saber_manifest(results: Sequence[SaberRunResult], output_dir: Path) -> Path:
+def format_elapsed_seconds(seconds: float) -> str:
+    minutes, remainder = divmod(seconds, 60.0)
+    hours, minutes = divmod(int(minutes), 60)
+    if hours:
+        return f"{hours}h {minutes}m {remainder:.3f}s"
+    if minutes:
+        return f"{minutes}m {remainder:.3f}s"
+    return f"{remainder:.3f}s"
+
+
+def write_saber_manifest(
+    results: Sequence[SaberRunResult],
+    output_dir: Path,
+    *,
+    stage_elapsed_seconds: float | None = None,
+    saber_elapsed_seconds: float | None = None,
+) -> Path:
     manifest = output_dir / "manifest.json"
+    metadata = {
+        "run_count": len(results),
+        "failed_count": sum(1 for result in results if result.returncode != 0),
+    }
+    if stage_elapsed_seconds is not None:
+        metadata["stage_elapsed_seconds"] = round(stage_elapsed_seconds, 3)
+        metadata["stage_elapsed"] = format_elapsed_seconds(stage_elapsed_seconds)
+    if saber_elapsed_seconds is not None:
+        metadata["saber_elapsed_seconds"] = round(saber_elapsed_seconds, 3)
+        metadata["saber_elapsed"] = format_elapsed_seconds(saber_elapsed_seconds)
     payload = {
-        "metadata": {
-            "run_count": len(results),
-            "failed_count": sum(1 for result in results if result.returncode != 0),
-        },
+        "metadata": metadata,
         "runs": [result.to_dict() for result in results],
     }
     manifest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -469,6 +492,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
+    stage_start = time.perf_counter()
     functions = load_validated_memory_functions(
         args.validated_json,
         min_confidence=args.min_confidence,
@@ -491,10 +515,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
 
     results: list[SaberRunResult] = []
+    saber_elapsed_seconds = 0.0
     if not args.skip_saber:
         saber = find_saber_binary(args.svf_build_dir, args.saber)
         extapi = find_extapi_bc(args.svf_build_dir, args.extapi)
         bc_files = collect_bc_files(args.bc_dir, args.bc_limit)
+        saber_start = time.perf_counter()
         results = run_saber_on_bitcode(
             saber=saber,
             extapi=extapi,
@@ -506,7 +532,30 @@ def main(argv: Sequence[str] | None = None) -> int:
             save_stdout=args.save_stdout,
             progress=not args.quiet,
         )
-        write_saber_manifest(results, args.output_dir)
+        saber_elapsed_seconds = time.perf_counter() - saber_start
+
+    stage_elapsed_seconds = time.perf_counter() - stage_start
+    if not args.skip_saber:
+        write_saber_manifest(
+            results,
+            args.output_dir,
+            stage_elapsed_seconds=stage_elapsed_seconds,
+            saber_elapsed_seconds=saber_elapsed_seconds,
+        )
+
+    print(
+        "[+] 第二阶段：细粒度可达性分析运行时间: "
+        f"{format_elapsed_seconds(stage_elapsed_seconds)} ({stage_elapsed_seconds:.3f}s)",
+        file=sys.stderr,
+        flush=True,
+    )
+    if not args.skip_saber:
+        print(
+            "[+] 步骤4：运行 Saber 检测 bitcode 时间: "
+            f"{format_elapsed_seconds(saber_elapsed_seconds)} ({saber_elapsed_seconds:.3f}s)",
+            file=sys.stderr,
+            flush=True,
+        )
 
     if args.summary:
         print(
@@ -520,6 +569,10 @@ def main(argv: Sequence[str] | None = None) -> int:
                     "saber_run_count": len(results),
                     "saber_failed_count": sum(1 for result in results if result.returncode != 0),
                     "output_dir": str(args.output_dir),
+                    "stage_elapsed_seconds": round(stage_elapsed_seconds, 3),
+                    "stage_elapsed": format_elapsed_seconds(stage_elapsed_seconds),
+                    "saber_elapsed_seconds": round(saber_elapsed_seconds, 3),
+                    "saber_elapsed": format_elapsed_seconds(saber_elapsed_seconds),
                 },
                 ensure_ascii=False,
             )

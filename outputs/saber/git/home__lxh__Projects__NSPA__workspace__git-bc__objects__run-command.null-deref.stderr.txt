@@ -1,0 +1,1 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 294, "cl": 26, "fl": "run-command.c" })

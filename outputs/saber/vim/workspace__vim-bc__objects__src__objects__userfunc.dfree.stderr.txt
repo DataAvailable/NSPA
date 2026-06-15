@@ -1,0 +1,173 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1322, "cl": 25, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1400, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 1418, "cl": 6, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4601, "cl": 9, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 11, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5168, "cl": 25, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 2064, "cl": 30, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 48, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 9, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2067, "cl": 9, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5170, "cl": 10, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5781, "cl": 9, "fl": "userfunc.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4726, "cl": 12, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 11, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2955, "cl": 22, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 2557, "cl": 21, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 2557, "cl": 21, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2557, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 2557, "cl": 9, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2565, "cl": 21, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2565, "cl": 9, "fl": "userfunc.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1327, "cl": 20, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1400, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 1418, "cl": 6, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 723, "cl": 10, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1593, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1608, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1616, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1620, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 2762, "cl": 9, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1391, "cl": 17, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1400, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 1418, "cl": 6, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4534, "cl": 13, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 11, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3029, "cl": 10, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 4157, "cl": 27, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 4157, "cl": 27, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 4157, "cl": 7, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 3020, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 6705, "cl": 5, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 6709, "cl": 6, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4527, "cl": 13, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 11, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2277, "cl": 10, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 2064, "cl": 30, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 48, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 9, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 4063, "cl": 17, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 4063, "cl": 17, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 4063, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 4103, "cl": 26, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 4103, "cl": 26, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 4103, "cl": 40, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 4113, "cl": 15, "fl": "userfunc.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3991, "cl": 49, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 2064, "cl": 30, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 48, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 9, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2067, "cl": 9, "fl": "userfunc.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5601, "cl": 7, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 650, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5606, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5606, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5608, "cl": 10, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5608, "cl": 10, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5612, "cl": 7, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5617, "cl": 7, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1329, "cl": 20, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1400, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 1418, "cl": 6, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3991, "cl": 19, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 2064, "cl": 30, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 48, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2064, "cl": 9, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 2067, "cl": 9, "fl": "userfunc.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5142, "cl": 9, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5166, "cl": 16, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 17, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 5176, "cl": 31, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 5176, "cl": 11, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1291, "cl": 16, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1400, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 1418, "cl": 6, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1387, "cl": 26, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1400, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1403, "cl": 6, "fl": "userfunc.c" }|True) 
+		  --> ({ "ln": 1418, "cl": 6, "fl": "userfunc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1590, "cl": 13, "fl": "userfunc.c" })
+		 double free path: 
+		  --> ({ "ln": 1593, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1608, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1616, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 1620, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 2762, "cl": 9, "fl": "userfunc.c" }|False) 
+		  --> ({ "ln": 2727, "cl": 9, "fl": "userfunc.c" }|True) 
+

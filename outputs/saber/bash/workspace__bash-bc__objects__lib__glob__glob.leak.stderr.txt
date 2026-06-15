@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 921, "cl": 37, "fl": "lib/glob/glob.c" })
+		 conditional free path: 
+		  --> ({ "ln": 922, "cl": 11, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 922, "cl": 11, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 948, "cl": 7, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 948, "cl": 7, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 958, "cl": 8, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 986, "cl": 7, "fl": "lib/glob/glob.c" }|True) 
+

@@ -1,0 +1,10 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 374, "cl": 20, "fl": "archive-zip.c" })
+		 conditional free path: 
+		  --> ({ "ln": 426, "cl": 13, "fl": "archive-zip.c" }|False) 
+		  --> ({ "ln": 426, "cl": 13, "fl": "archive-zip.c" }|True) 
+		  --> ({ "ln": 442, "cl": 7, "fl": "archive-zip.c" }|False) 
+		  --> ({ "ln": 449, "cl": 20, "fl": "archive-zip.c" }|False) 
+		  --> ({ "ln": 449, "cl": 20, "fl": "archive-zip.c" }|True) 
+		  --> ({ "ln": 226, "cl": 6, "fl": "archive-zip.c" }|False) 
+		  --> ({ "ln": 226, "cl": 6, "fl": "archive-zip.c" }|True) 
+

@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3517, "cl": 26, "fl": "evalvars.c" })
+		 double free path: 
+		  --> ({ "ln": 3524, "cl": 7, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 3528, "cl": 11, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 3534, "cl": 7, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 4084, "cl": 10, "fl": "evalvars.c" }|True) 
+		  --> ({ "ln": 4101, "cl": 6, "fl": "evalvars.c" }|True) 
+

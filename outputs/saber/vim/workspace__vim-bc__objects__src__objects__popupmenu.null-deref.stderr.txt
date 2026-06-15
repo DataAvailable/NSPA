@@ -1,0 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2073, "cl": 13, "fl": "popupmenu.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2122, "cl": 15, "fl": "popupmenu.c" }|False) 
+		  --> ({ "ln": 2122, "cl": 15, "fl": "popupmenu.c" }|True) 
+		  --> ({ "ln": 2122, "cl": 30, "fl": "popupmenu.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 454, "cl": 13, "fl": "popupmenu.c" })
+		 conditional free path: 
+		  --> ({ "ln": 462, "cl": 9, "fl": "popupmenu.c" }|False) 
+		  --> ({ "ln": 462, "cl": 9, "fl": "popupmenu.c" }|True) 
+		  --> ({ "ln": 465, "cl": 6, "fl": "popupmenu.c" }|True) 
+

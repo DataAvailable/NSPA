@@ -1,0 +1,44 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 159, "cl": 14, "fl": "commit-reach.c" })
+		 conditional free path: 
+		  --> ({ "ln": 205, "cl": 8, "fl": "commit-reach.c" }|True) 
+		  --> ({ "ln": 446, "cl": 6, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 448, "cl": 2, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 452, "cl": 6, "fl": "commit-reach.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 880, "cl": 6, "fl": "commit-reach.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 818, "cl": 2, "fl": "commit-reach.c" })
+		 conditional free path: 
+		  --> ({ "ln": 820, "cl": 2, "fl": "commit-reach.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 70, "cl": 3, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 856, "cl": 3, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 639, "cl": 11, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 525, "cl": 3, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 477, "cl": 10, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 79, "cl": 1, "fl": "./commit-reach.h" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 377, "cl": 6, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 79, "cl": 1, "fl": "./commit-reach.h" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 234, "cl": 2, "fl": "commit-reach.c" })
+		 conditional free path: 
+		  --> ({ "ln": 240, "cl": 2, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 240, "cl": 2, "fl": "commit-reach.c" }|True) 
+		  --> ({ "ln": 244, "cl": 7, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 257, "cl": 7, "fl": "commit-reach.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 236, "cl": 2, "fl": "commit-reach.c" })
+		 conditional free path: 
+		  --> ({ "ln": 240, "cl": 2, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 240, "cl": 2, "fl": "commit-reach.c" }|True) 
+		  --> ({ "ln": 244, "cl": 7, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 257, "cl": 7, "fl": "commit-reach.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 235, "cl": 14, "fl": "commit-reach.c" })
+		 conditional free path: 
+		  --> ({ "ln": 240, "cl": 2, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 240, "cl": 2, "fl": "commit-reach.c" }|True) 
+		  --> ({ "ln": 244, "cl": 7, "fl": "commit-reach.c" }|False) 
+		  --> ({ "ln": 257, "cl": 7, "fl": "commit-reach.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 99, "cl": 12, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 347, "cl": 3, "fl": "commit-reach.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 185, "cl": 11, "fl": "commit-reach.c" })

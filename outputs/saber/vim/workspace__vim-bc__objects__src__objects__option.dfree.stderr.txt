@@ -1,0 +1,98 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1674, "cl": 25, "fl": "option.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 273, "cl": 11, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 571, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 4238, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5441, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5204, "cl": 9, "fl": "option.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1671, "cl": 25, "fl": "option.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 482, "cl": 24, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 4238, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5441, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5204, "cl": 9, "fl": "option.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2234, "cl": 11, "fl": "option.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1668, "cl": 25, "fl": "option.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4366, "cl": 28, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 1328, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 1332, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 5967, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6000, "cl": 18, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6000, "cl": 18, "fl": "option.c" }|True) 
+		  --> ({ "ln": 6000, "cl": 6, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6006, "cl": 6, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6010, "cl": 6, "fl": "option.c" }|True) 
+		  --> ({ "ln": 6031, "cl": 10, "fl": "option.c" }|False) 
+		  --> ({ "ln": 4238, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5441, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5204, "cl": 9, "fl": "option.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 893, "cl": 6, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 556, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 571, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 898, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 2938, "cl": 5, "fl": "option.c" }|True) 
+		  --> ({ "ln": 2940, "cl": 34, "fl": "option.c" }|True) 
+		  --> ({ "ln": 2940, "cl": 38, "fl": "option.c" }|True) 
+		  --> ({ "ln": 2941, "cl": 7, "fl": "option.c" }|True) 
+		  --> ({ "ln": 2940, "cl": 6, "fl": "option.c" }|True) 
+		  --> ({ "ln": 2946, "cl": 10, "fl": "option.c" }|True) 
+		  --> ({ "ln": 4238, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5441, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5204, "cl": 9, "fl": "option.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 554, "cl": 9, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 4238, "cl": 9, "fl": "option.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6516, "cl": 12, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 6524, "cl": 27, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6524, "cl": 27, "fl": "option.c" }|True) 
+		  --> ({ "ln": 6525, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6525, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 6524, "cl": 10, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6550, "cl": 10, "fl": "option.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2368, "cl": 14, "fl": "option.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 568, "cl": 10, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 4238, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5441, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5204, "cl": 9, "fl": "option.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4279, "cl": 11, "fl": "option.c" })
+		 double free path: 
+		  --> ({ "ln": 1328, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 1332, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 5967, "cl": 9, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6000, "cl": 18, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6000, "cl": 18, "fl": "option.c" }|True) 
+		  --> ({ "ln": 6000, "cl": 6, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6006, "cl": 6, "fl": "option.c" }|False) 
+		  --> ({ "ln": 6010, "cl": 6, "fl": "option.c" }|True) 
+		  --> ({ "ln": 6031, "cl": 10, "fl": "option.c" }|False) 
+		  --> ({ "ln": 4238, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5441, "cl": 9, "fl": "option.c" }|True) 
+		  --> ({ "ln": 5204, "cl": 9, "fl": "option.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1810, "cl": 14, "fl": "option.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1751, "cl": 14, "fl": "option.c" })
+		 double free path: 
+

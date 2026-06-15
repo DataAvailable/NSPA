@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 18, "cl": 36, "fl": "replace-object.c" })
+		 conditional free path: 
+		  --> ({ "ln": 20, "cl": 6, "fl": "replace-object.c" }|True) 
+

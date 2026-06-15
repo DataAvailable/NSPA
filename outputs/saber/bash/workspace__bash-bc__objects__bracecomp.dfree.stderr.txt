@@ -1,0 +1,30 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 107, "cl": 21, "fl": "bracecomp.c" })
+		 double free path: 
+		  --> ({ "ln": 86, "cl": 3, "fl": "bracecomp.c" }|True) 
+		  --> ({ "ln": 115, "cl": 11, "fl": "bracecomp.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 83, "cl": 20, "fl": "bracecomp.c" })
+		 double free path: 
+		  --> ({ "ln": 86, "cl": 3, "fl": "bracecomp.c" }|True) 
+		  --> ({ "ln": 115, "cl": 11, "fl": "bracecomp.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 117, "cl": 8, "fl": "bracecomp.c" })
+		 double free path: 
+		  --> ({ "ln": 86, "cl": 3, "fl": "bracecomp.c" }|True) 
+		  --> ({ "ln": 115, "cl": 11, "fl": "bracecomp.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 132, "cl": 21, "fl": "bracecomp.c" })
+		 double free path: 
+		  --> ({ "ln": 86, "cl": 3, "fl": "bracecomp.c" }|True) 
+		  --> ({ "ln": 115, "cl": 11, "fl": "bracecomp.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 126, "cl": 16, "fl": "bracecomp.c" })
+		 double free path: 
+		  --> ({ "ln": 86, "cl": 3, "fl": "bracecomp.c" }|True) 
+		  --> ({ "ln": 115, "cl": 11, "fl": "bracecomp.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 141, "cl": 24, "fl": "bracecomp.c" })
+		 double free path: 
+		  --> ({ "ln": 86, "cl": 3, "fl": "bracecomp.c" }|True) 
+		  --> ({ "ln": 115, "cl": 11, "fl": "bracecomp.c" }|False) 
+

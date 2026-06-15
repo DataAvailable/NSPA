@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 399, "cl": 18, "fl": "redir.c" })
+		 double free path: 
+		  --> ({ "ln": 452, "cl": 7, "fl": "redir.c" }|False) 
+		  --> ({ "ln": 466, "cl": 7, "fl": "redir.c" }|True) 
+		  --> ({ "ln": 468, "cl": 11, "fl": "redir.c" }|False) 
+		  --> ({ "ln": 478, "cl": 11, "fl": "redir.c" }|False) 
+		  --> ({ "ln": 483, "cl": 11, "fl": "redir.c" }|True) 
+

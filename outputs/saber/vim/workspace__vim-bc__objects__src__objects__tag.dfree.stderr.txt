@@ -1,0 +1,76 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3004, "cl": 12, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 697, "cl": 10, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 4415, "cl": 19, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 4415, "cl": 9, "fl": "tag.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1920, "cl": 41, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2821, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2823, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2837, "cl": 3, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2835, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 1902, "cl": 9, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 1908, "cl": 9, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 1916, "cl": 43, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 1921, "cl": 9, "fl": "tag.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1712, "cl": 18, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 3193, "cl": 40, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 3195, "cl": 5, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 3202, "cl": 7, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2889, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2891, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2893, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2905, "cl": 6, "fl": "tag.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1729, "cl": 16, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 3195, "cl": 5, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 3202, "cl": 7, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2821, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2823, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2828, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2522, "cl": 9, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2527, "cl": 9, "fl": "tag.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2868, "cl": 17, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2821, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2823, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2828, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2522, "cl": 9, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2527, "cl": 9, "fl": "tag.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4155, "cl": 11, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 1201, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 1213, "cl": 10, "fl": "tag.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2521, "cl": 17, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2817, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2821, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2823, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2828, "cl": 6, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2522, "cl": 9, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2527, "cl": 9, "fl": "tag.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1731, "cl": 16, "fl": "tag.c" })
+		 double free path: 
+		  --> ({ "ln": 3193, "cl": 40, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 3195, "cl": 5, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 3202, "cl": 7, "fl": "tag.c" }|True) 
+		  --> ({ "ln": 2889, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2891, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2893, "cl": 6, "fl": "tag.c" }|False) 
+		  --> ({ "ln": 2905, "cl": 6, "fl": "tag.c" }|True) 
+

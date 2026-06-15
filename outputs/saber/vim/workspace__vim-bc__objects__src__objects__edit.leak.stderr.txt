@@ -1,0 +1,11 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4232, "cl": 19, "fl": "edit.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5219, "cl": 14, "fl": "edit.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5122, "cl": 19, "fl": "edit.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5185, "cl": 6, "fl": "edit.c" }|False) 
+		  --> ({ "ln": 5185, "cl": 6, "fl": "edit.c" }|True) 
+		  --> ({ "ln": 5211, "cl": 10, "fl": "edit.c" }|False) 
+		  --> ({ "ln": 5211, "cl": 10, "fl": "edit.c" }|True) 
+		  --> ({ "ln": 5214, "cl": 7, "fl": "edit.c" }|False) 
+		  --> ({ "ln": 5272, "cl": 6, "fl": "edit.c" }|True) 
+

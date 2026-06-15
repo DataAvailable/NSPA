@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1059, "cl": 9, "fl": "bashhist.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1065, "cl": 11, "fl": "bashhist.c" }|True) 
+

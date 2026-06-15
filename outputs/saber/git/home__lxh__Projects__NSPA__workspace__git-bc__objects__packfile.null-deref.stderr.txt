@@ -1,0 +1,46 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1968, "cl": 11, "fl": "packfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1910, "cl": 2, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 1961, "cl": 7, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 1993, "cl": 7, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 1573, "cl": 6, "fl": "packfile.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1875, "cl": 4, "fl": "packfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2010, "cl": 6, "fl": "packfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2276, "cl": 3, "fl": "packfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1394, "cl": 4, "fl": "packfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1427, "cl": 6, "fl": "packfile.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1391, "cl": 4, "fl": "packfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1427, "cl": 6, "fl": "packfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2976, "cl": 2, "fl": "packfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1588, "cl": 8, "fl": "packfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1871, "cl": 4, "fl": "packfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2010, "cl": 6, "fl": "packfile.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 306, "cl": 25, "fl": "packfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 331, "cl": 6, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 841, "cl": 30, "fl": "packfile.c" }|False) 
+		  --> ({ "ln": 841, "cl": 30, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 841, "cl": 6, "fl": "packfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 112, "cl": 11, "fl": "packfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2272, "cl": 5, "fl": "packfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1617, "cl": 19, "fl": "packfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1002, "cl": 3, "fl": "packfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 744, "cl": 4, "fl": "packfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 96, "cl": 11, "fl": "packfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1897, "cl": 11, "fl": "packfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1910, "cl": 2, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 1961, "cl": 7, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 1993, "cl": 7, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 1573, "cl": 6, "fl": "packfile.c" }|True) 
+

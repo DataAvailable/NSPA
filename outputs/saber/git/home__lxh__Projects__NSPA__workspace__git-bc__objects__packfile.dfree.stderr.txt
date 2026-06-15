@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 306, "cl": 25, "fl": "packfile.c" })
+		 double free path: 
+		  --> ({ "ln": 331, "cl": 6, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 841, "cl": 30, "fl": "packfile.c" }|False) 
+		  --> ({ "ln": 841, "cl": 30, "fl": "packfile.c" }|True) 
+		  --> ({ "ln": 841, "cl": 6, "fl": "packfile.c" }|True) 
+

@@ -1,0 +1,13 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 102, "cl": 9, "fl": "cmd-show-options.c" })
+		 double free path: 
+		  --> ({ "ln": 114, "cl": 6, "fl": "cmd-show-options.c" }|False) 
+		  --> ({ "ln": 114, "cl": 6, "fl": "cmd-show-options.c" }|True) 
+		  --> ({ "ln": 115, "cl": 7, "fl": "cmd-show-options.c" }|False) 
+		  --> ({ "ln": 122, "cl": 26, "fl": "cmd-show-options.c" }|False) 
+		  --> ({ "ln": 122, "cl": 26, "fl": "cmd-show-options.c" }|True) 
+		  --> ({ "ln": 122, "cl": 6, "fl": "cmd-show-options.c" }|False) 
+		  --> ({ "ln": 122, "cl": 6, "fl": "cmd-show-options.c" }|True) 
+		  --> ({ "ln": 127, "cl": 6, "fl": "cmd-show-options.c" }|False) 
+		  --> ({ "ln": 129, "cl": 11, "fl": "cmd-show-options.c" }|True) 
+		  --> ({ "ln": 130, "cl": 7, "fl": "cmd-show-options.c" }|False) 
+

@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 392, "cl": 2, "fl": "sparse-index.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 262, "cl": 2, "fl": "sparse-index.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 315, "cl": 7, "fl": "sparse-index.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 89, "cl": 8, "fl": "sparse-index.c" })

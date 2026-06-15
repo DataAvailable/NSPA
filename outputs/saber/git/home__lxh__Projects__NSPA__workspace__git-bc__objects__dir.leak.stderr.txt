@@ -1,0 +1,78 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3077, "cl": 3, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2942, "cl": 31, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1561, "cl": 2, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2663, "cl": 4, "fl": "dir.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1087, "cl": 2, "fl": "dir.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1727, "cl": 7, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 1727, "cl": 7, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 1738, "cl": 8, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 1791, "cl": 7, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 1101, "cl": 2, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 1104, "cl": 2, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2582, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2584, "cl": 11, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2584, "cl": 11, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2588, "cl": 6, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 1130, "cl": 2, "fl": "dir.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1703, "cl": 3, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 981, "cl": 2, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 988, "cl": 2, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 908, "cl": 15, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2669, "cl": 3, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1296, "cl": 2, "fl": "dir.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 876, "cl": 16, "fl": "dir.c" })
+		 conditional free path: 
+		  --> ({ "ln": 882, "cl": 7, "fl": "dir.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 756, "cl": 17, "fl": "dir.c" })
+		 conditional free path: 
+		  --> ({ "ln": 882, "cl": 7, "fl": "dir.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 874, "cl": 15, "fl": "dir.c" })
+		 conditional free path: 
+		  --> ({ "ln": 882, "cl": 7, "fl": "dir.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2658, "cl": 4, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1857, "cl": 2, "fl": "dir.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2520, "cl": 40, "fl": "dir.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2721, "cl": 2, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2731, "cl": 7, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2436, "cl": 6, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2484, "cl": 15, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2484, "cl": 15, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2484, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2487, "cl": 2, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2487, "cl": 2, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2402, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2409, "cl": 6, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 1130, "cl": 2, "fl": "dir.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1868, "cl": 2, "fl": "dir.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1845, "cl": 2, "fl": "dir.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 350, "cl": 10, "fl": "dir.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1174, "cl": 7, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 1215, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 1215, "cl": 6, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 1274, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 1277, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 1277, "cl": 6, "fl": "dir.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2518, "cl": 2, "fl": "dir.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2721, "cl": 2, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2731, "cl": 7, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2436, "cl": 6, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2484, "cl": 15, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2484, "cl": 15, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2484, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2487, "cl": 2, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2487, "cl": 2, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 2402, "cl": 6, "fl": "dir.c" }|False) 
+		  --> ({ "ln": 2409, "cl": 6, "fl": "dir.c" }|True) 
+		  --> ({ "ln": 1130, "cl": 2, "fl": "dir.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 910, "cl": 24, "fl": "dir.c" })

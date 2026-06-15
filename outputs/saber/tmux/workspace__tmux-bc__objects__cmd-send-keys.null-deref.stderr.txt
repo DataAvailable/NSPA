@@ -2,3 +2,8 @@
 		 conditional free path: 
 		  --> ({ "ln": 80, "cl": 7, "fl": "cmd-send-keys.c" }|True) 
 
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 219, "cl": 3, "fl": "cmd-send-keys.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 233, "cl": 4, "fl": "cmd-send-keys.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 239, "cl": 12, "fl": "cmd-send-keys.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 128, "cl": 12, "fl": "cmd-send-keys.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 145, "cl": 12, "fl": "cmd-send-keys.c" })

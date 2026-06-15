@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 186, "cl": 28, "fl": "libavformat/ffmetadec.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 166, "cl": 19, "fl": "libavformat/ffmetadec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 164, "cl": 9, "fl": "libavformat/ffmetadec.c" }|False) 
+		  --> ({ "ln": 166, "cl": 9, "fl": "libavformat/ffmetadec.c" }|True) 
+

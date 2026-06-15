@@ -1,0 +1,22 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 234, "cl": 14, "fl": "libavformat/wtvdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 719, "cl": 14, "fl": "libavformat/wtvdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 709, "cl": 14, "fl": "libavformat/wtvdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 178, "cl": 23, "fl": "libavformat/wtvdec.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 477, "cl": 16, "fl": "libavformat/wtvdec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 481, "cl": 13, "fl": "libavformat/wtvdec.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1018, "cl": 14, "fl": "libavformat/wtvdec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1030, "cl": 17, "fl": "libavformat/wtvdec.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 683, "cl": 14, "fl": "libavformat/wtvdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 189, "cl": 23, "fl": "libavformat/wtvdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 991, "cl": 15, "fl": "libavformat/wtvdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 170, "cl": 23, "fl": "libavformat/wtvdec.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1007, "cl": 10, "fl": "libavformat/wtvdec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1016, "cl": 9, "fl": "libavformat/wtvdec.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 656, "cl": 14, "fl": "libavformat/wtvdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 605, "cl": 14, "fl": "libavformat/wtvdec.c" })

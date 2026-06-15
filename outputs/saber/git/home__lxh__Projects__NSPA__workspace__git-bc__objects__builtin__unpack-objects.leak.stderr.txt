@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 355, "cl": 14, "fl": "builtin/unpack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 275, "cl": 7, "fl": "builtin/unpack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 56, "cl": 2, "fl": "builtin/unpack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 319, "cl": 11, "fl": "builtin/unpack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 275, "cl": 7, "fl": "builtin/unpack-objects.c" }|False) 
+

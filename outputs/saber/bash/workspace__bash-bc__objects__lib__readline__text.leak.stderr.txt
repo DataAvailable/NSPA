@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 142, "cl": 10, "fl": "lib/readline/text.c" })
+		 conditional free path: 
+		  --> ({ "ln": 150, "cl": 7, "fl": "lib/readline/text.c" }|False) 
+

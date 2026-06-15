@@ -1,0 +1,49 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1554, "cl": 11, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1585, "cl": 21, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1585, "cl": 6, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1592, "cl": 3, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1627, "cl": 2, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1630, "cl": 3, "fl": "combine-diff.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1319, "cl": 2, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1627, "cl": 2, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1630, "cl": 3, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1351, "cl": 2, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1323, "cl": 2, "fl": "combine-diff.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 100, "cl": 24, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1627, "cl": 2, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1630, "cl": 3, "fl": "combine-diff.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1318, "cl": 2, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1354, "cl": 2, "fl": "combine-diff.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 63, "cl": 25, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1627, "cl": 2, "fl": "combine-diff.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1661, "cl": 6, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1627, "cl": 2, "fl": "combine-diff.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1559, "cl": 11, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1561, "cl": 7, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1585, "cl": 21, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1585, "cl": 6, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1592, "cl": 3, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1627, "cl": 2, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1630, "cl": 3, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1470, "cl": 7, "fl": "combine-diff.c" }|False) 
+		  --> ({ "ln": 1470, "cl": 7, "fl": "combine-diff.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1136, "cl": 10, "fl": "combine-diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1127, "cl": 6, "fl": "combine-diff.c" }|True) 
+		  --> ({ "ln": 1145, "cl": 6, "fl": "combine-diff.c" }|False) 
+		  --> ({ "ln": 449, "cl": 6, "fl": "combine-diff.c" }|False) 
+

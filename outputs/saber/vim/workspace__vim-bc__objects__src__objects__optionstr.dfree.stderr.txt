@@ -1,0 +1,5 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3759, "cl": 13, "fl": "optionstr.c" })
+		 double free path: 
+		  --> ({ "ln": 3772, "cl": 14, "fl": "optionstr.c" }|False) 
+		  --> ({ "ln": 3774, "cl": 14, "fl": "optionstr.c" }|False) 
+

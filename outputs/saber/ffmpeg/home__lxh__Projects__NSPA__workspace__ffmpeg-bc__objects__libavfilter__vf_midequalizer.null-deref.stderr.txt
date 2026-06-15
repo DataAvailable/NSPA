@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 259, "cl": 23, "fl": "libavfilter/vf_midequalizer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 260, "cl": 23, "fl": "libavfilter/vf_midequalizer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 261, "cl": 23, "fl": "libavfilter/vf_midequalizer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 97, "cl": 15, "fl": "libavfilter/vf_midequalizer.c" })

@@ -1,0 +1,28 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 157, "cl": 21, "fl": "braces.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 759, "cl": 21, "fl": "braces.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 152, "cl": 22, "fl": "braces.c" })
+		 double free path: 
+		  --> ({ "ln": 738, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 741, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 747, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 753, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 760, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 764, "cl": 3, "fl": "braces.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 244, "cl": 11, "fl": "braces.c" })
+		 double free path: 
+		  --> ({ "ln": 269, "cl": 17, "fl": "braces.c" }|True) 
+		  --> ({ "ln": 269, "cl": 7, "fl": "braces.c" }|True) 
+		  --> ({ "ln": 315, "cl": 11, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 325, "cl": 8, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 738, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 738, "cl": 7, "fl": "braces.c" }|True) 
+		  --> ({ "ln": 747, "cl": 15, "fl": "braces.c" }|True) 
+		  --> ({ "ln": 747, "cl": 34, "fl": "braces.c" }|True) 
+		  --> ({ "ln": 747, "cl": 7, "fl": "braces.c" }|True) 
+		  --> ({ "ln": 760, "cl": 7, "fl": "braces.c" }|False) 
+

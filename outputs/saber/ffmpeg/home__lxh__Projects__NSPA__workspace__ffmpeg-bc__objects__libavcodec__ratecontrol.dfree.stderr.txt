@@ -1,0 +1,12 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 376, "cl": 22, "fl": "libavcodec/ratecontrol.c" })
+		 double free path: 
+		  --> ({ "ln": 378, "cl": 9, "fl": "libavcodec/ratecontrol.c" }|False) 
+		  --> ({ "ln": 378, "cl": 9, "fl": "libavcodec/ratecontrol.c" }|True) 
+		  --> ({ "ln": 385, "cl": 5, "fl": "libavcodec/ratecontrol.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 377, "cl": 22, "fl": "libavcodec/ratecontrol.c" })
+		 double free path: 
+		  --> ({ "ln": 378, "cl": 17, "fl": "libavcodec/ratecontrol.c" }|False) 
+		  --> ({ "ln": 378, "cl": 17, "fl": "libavcodec/ratecontrol.c" }|True) 
+		  --> ({ "ln": 385, "cl": 5, "fl": "libavcodec/ratecontrol.c" }|False) 
+

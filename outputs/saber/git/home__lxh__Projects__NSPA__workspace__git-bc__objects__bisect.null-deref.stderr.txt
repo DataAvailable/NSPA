@@ -1,0 +1,13 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 437, "cl": 9, "fl": "bisect.c" })
+		 conditional free path: 
+		  --> ({ "ln": 439, "cl": 7, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 551, "cl": 6, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 551, "cl": 6, "fl": "bisect.c" }|True) 
+		  --> ({ "ln": 557, "cl": 7, "fl": "bisect.c" }|True) 
+		  --> ({ "ln": 663, "cl": 6, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 668, "cl": 6, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 647, "cl": 2, "fl": "bisect.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1014, "cl": 16, "fl": "bisect.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1016, "cl": 17, "fl": "bisect.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 461, "cl": 21, "fl": "bisect.c" })

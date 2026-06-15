@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 206, "cl": 26, "fl": "libavfilter/vaf_spectrumsynth.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 202, "cl": 25, "fl": "libavfilter/vaf_spectrumsynth.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 197, "cl": 18, "fl": "libavfilter/vaf_spectrumsynth.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 194, "cl": 17, "fl": "libavfilter/vaf_spectrumsynth.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 216, "cl": 26, "fl": "libavfilter/vaf_spectrumsynth.c" })

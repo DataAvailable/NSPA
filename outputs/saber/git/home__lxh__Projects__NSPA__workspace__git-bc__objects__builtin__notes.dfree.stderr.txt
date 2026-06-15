@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 312, "cl": 25, "fl": "builtin/notes.c" })
+		 double free path: 
+		  --> ({ "ln": 318, "cl": 2, "fl": "builtin/notes.c" }|False) 
+		  --> ({ "ln": 321, "cl": 6, "fl": "builtin/notes.c" }|False) 
+		  --> ({ "ln": 323, "cl": 6, "fl": "builtin/notes.c" }|False) 
+		  --> ({ "ln": 325, "cl": 6, "fl": "builtin/notes.c" }|True) 
+

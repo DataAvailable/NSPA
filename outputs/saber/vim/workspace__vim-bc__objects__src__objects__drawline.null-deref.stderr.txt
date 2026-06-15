@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 798, "cl": 10, "fl": "drawline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 813, "cl": 8, "fl": "drawline.c" }|True) 
+
+
+NSPA timeout after 120.0 seconds

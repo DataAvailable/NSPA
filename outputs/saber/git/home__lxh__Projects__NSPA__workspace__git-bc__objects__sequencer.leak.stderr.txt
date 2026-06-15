@@ -1,0 +1,92 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6528, "cl": 3, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6543, "cl": 6, "fl": "sequencer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6060, "cl": 17, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6520, "cl": 2, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6543, "cl": 6, "fl": "sequencer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4156, "cl": 11, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6798, "cl": 4, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5888, "cl": 2, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5936, "cl": 3, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3074, "cl": 10, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2459, "cl": 3, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6676, "cl": 1, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6716, "cl": 2, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6808, "cl": 6, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6676, "cl": 1, "fl": "sequencer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1575, "cl": 3, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6087, "cl": 4, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5940, "cl": 3, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6715, "cl": 2, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6716, "cl": 2, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6808, "cl": 6, "fl": "sequencer.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6028, "cl": 17, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2460, "cl": 3, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 940, "cl": 16, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6886, "cl": 3, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6888, "cl": 40, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6888, "cl": 7, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6896, "cl": 40, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6896, "cl": 7, "fl": "sequencer.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3383, "cl": 28, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6714, "cl": 2, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6716, "cl": 2, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6716, "cl": 2, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6725, "cl": 21, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6725, "cl": 7, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6730, "cl": 7, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6808, "cl": 6, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6808, "cl": 6, "fl": "sequencer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6298, "cl": 3, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2871, "cl": 10, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2235, "cl": 4, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 262, "cl": 2, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5892, "cl": 2, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4070, "cl": 7, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6676, "cl": 1, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6716, "cl": 2, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6808, "cl": 6, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6676, "cl": 1, "fl": "sequencer.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6713, "cl": 2, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6716, "cl": 2, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6716, "cl": 2, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6725, "cl": 21, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6725, "cl": 7, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6730, "cl": 7, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 6808, "cl": 6, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 6808, "cl": 6, "fl": "sequencer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6035, "cl": 3, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3209, "cl": 22, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6289, "cl": 3, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5985, "cl": 4, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 6474, "cl": 3, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 6543, "cl": 6, "fl": "sequencer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6282, "cl": 4, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5957, "cl": 11, "fl": "sequencer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 304, "cl": 44, "fl": "sequencer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2128, "cl": 18, "fl": "sequencer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2128, "cl": 6, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 2133, "cl": 29, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 2133, "cl": 29, "fl": "sequencer.c" }|True) 
+		  --> ({ "ln": 2133, "cl": 6, "fl": "sequencer.c" }|False) 
+		  --> ({ "ln": 2133, "cl": 6, "fl": "sequencer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6809, "cl": 3, "fl": "sequencer.c" })

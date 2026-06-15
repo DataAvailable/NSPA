@@ -1,0 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 328, "cl": 32, "fl": "libavformat/wavdec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 328, "cl": 13, "fl": "libavformat/wavdec.c" }|False) 
+		  --> ({ "ln": 331, "cl": 13, "fl": "libavformat/wavdec.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 903, "cl": 10, "fl": "libavformat/wavdec.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 421, "cl": 10, "fl": "libavformat/wavdec.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 974, "cl": 25, "fl": "libavformat/wavdec.c" })
+		 conditional free path: 
+		  --> ({ "ln": 979, "cl": 21, "fl": "libavformat/wavdec.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 501, "cl": 19, "fl": "libavformat/wavdec.c" })

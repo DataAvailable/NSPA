@@ -1,0 +1,22 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 434, "cl": 2, "fl": "bisect.c" })
+		 double free path: 
+		  --> ({ "ln": 81, "cl": 1, "fl": "bisect.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 81, "cl": 1, "fl": "bisect.c" })
+		 double free path: 
+		  --> ({ "ln": 81, "cl": 1, "fl": "bisect.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 81, "cl": 1, "fl": "bisect.c" })
+		 double free path: 
+		  --> ({ "ln": 81, "cl": 1, "fl": "bisect.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 437, "cl": 9, "fl": "bisect.c" })
+		 double free path: 
+		  --> ({ "ln": 439, "cl": 7, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 551, "cl": 6, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 551, "cl": 6, "fl": "bisect.c" }|True) 
+		  --> ({ "ln": 557, "cl": 7, "fl": "bisect.c" }|True) 
+		  --> ({ "ln": 663, "cl": 6, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 668, "cl": 6, "fl": "bisect.c" }|False) 
+		  --> ({ "ln": 647, "cl": 2, "fl": "bisect.c" }|True) 
+

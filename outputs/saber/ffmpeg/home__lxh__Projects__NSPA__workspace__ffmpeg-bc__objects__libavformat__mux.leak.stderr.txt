@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1207, "cl": 24, "fl": "libavformat/mux.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1393, "cl": 20, "fl": "libavformat/mux.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 845, "cl": 20, "fl": "libavformat/mux.c" })
+		 conditional free path: 
+		  --> ({ "ln": 850, "cl": 9, "fl": "libavformat/mux.c" }|True) 
+

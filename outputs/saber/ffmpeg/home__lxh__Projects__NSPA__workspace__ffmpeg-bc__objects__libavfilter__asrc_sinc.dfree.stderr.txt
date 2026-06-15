@@ -1,0 +1,19 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 101, "cl": 16, "fl": "libavfilter/asrc_sinc.c" })
+		 double free path: 
+		  --> ({ "ln": 107, "cl": 5, "fl": "libavfilter/asrc_sinc.c" }|True) 
+		  --> ({ "ln": 107, "cl": 5, "fl": "libavfilter/asrc_sinc.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 344, "cl": 12, "fl": "libavfilter/asrc_sinc.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 345, "cl": 12, "fl": "libavfilter/asrc_sinc.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 215, "cl": 12, "fl": "libavfilter/asrc_sinc.c" })
+		 double free path: 
+		  --> ({ "ln": 225, "cl": 9, "fl": "libavfilter/asrc_sinc.c" }|False) 
+		  --> ({ "ln": 228, "cl": 9, "fl": "libavfilter/asrc_sinc.c" }|False) 
+		  --> ({ "ln": 295, "cl": 9, "fl": "libavfilter/asrc_sinc.c" }|False) 
+		  --> ({ "ln": 297, "cl": 16, "fl": "libavfilter/asrc_sinc.c" }|False) 
+		  --> ({ "ln": 306, "cl": 13, "fl": "libavfilter/asrc_sinc.c" }|True) 
+

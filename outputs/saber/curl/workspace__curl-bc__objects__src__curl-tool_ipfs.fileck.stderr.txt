@@ -1,0 +1,6 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 68, "cl": 11, "fl": "tool_ipfs.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 78, "cl": 5, "fl": "tool_ipfs.c" }|False) 
+		  --> ({ "ln": 78, "cl": 5, "fl": "tool_ipfs.c" }|True) 
+		  --> ({ "ln": 80, "cl": 10, "fl": "tool_ipfs.c" }|True) 
+

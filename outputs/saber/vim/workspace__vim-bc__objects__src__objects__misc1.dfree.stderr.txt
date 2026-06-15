@@ -1,0 +1,16 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1967, "cl": 7, "fl": "misc1.c" })
+		 double free path: 
+		  --> ({ "ln": 1969, "cl": 10, "fl": "misc1.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 886, "cl": 12, "fl": "misc1.c" })
+		 double free path: 
+		  --> ({ "ln": 887, "cl": 11, "fl": "misc1.c" }|True) 
+		  --> ({ "ln": 895, "cl": 10, "fl": "misc1.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2474, "cl": 14, "fl": "misc1.c" })
+		 double free path: 
+		  --> ({ "ln": 2484, "cl": 9, "fl": "misc1.c" }|False) 
+		  --> ({ "ln": 2484, "cl": 9, "fl": "misc1.c" }|True) 
+		  --> ({ "ln": 2489, "cl": 14, "fl": "misc1.c" }|False) 
+		  --> ({ "ln": 2489, "cl": 14, "fl": "misc1.c" }|True) 
+

@@ -1,0 +1,31 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5041, "cl": 10, "fl": "mbyte.c" })
+		 double free path: 
+		  --> ({ "ln": 4432, "cl": 6, "fl": "mbyte.c" }|True) 
+		  --> ({ "ln": 4441, "cl": 2, "fl": "mbyte.c" }|False) 
+		  --> ({ "ln": 4466, "cl": 6, "fl": "mbyte.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5501, "cl": 15, "fl": "mbyte.c" })
+		 double free path: 
+		  --> ({ "ln": 4432, "cl": 6, "fl": "mbyte.c" }|True) 
+		  --> ({ "ln": 4441, "cl": 2, "fl": "mbyte.c" }|False) 
+		  --> ({ "ln": 4466, "cl": 6, "fl": "mbyte.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5522, "cl": 15, "fl": "mbyte.c" })
+		 double free path: 
+		  --> ({ "ln": 4432, "cl": 6, "fl": "mbyte.c" }|True) 
+		  --> ({ "ln": 4441, "cl": 2, "fl": "mbyte.c" }|False) 
+		  --> ({ "ln": 4466, "cl": 6, "fl": "mbyte.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4754, "cl": 9, "fl": "mbyte.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5549, "cl": 15, "fl": "mbyte.c" })
+		 double free path: 
+		  --> ({ "ln": 5553, "cl": 6, "fl": "mbyte.c" }|False) 
+		  --> ({ "ln": 5553, "cl": 6, "fl": "mbyte.c" }|True) 
+		  --> ({ "ln": 5556, "cl": 7, "fl": "mbyte.c" }|False) 
+		  --> ({ "ln": 5558, "cl": 12, "fl": "mbyte.c" }|True) 
+		  --> ({ "ln": 5562, "cl": 11, "fl": "mbyte.c" }|False) 
+		  --> ({ "ln": 5568, "cl": 30, "fl": "mbyte.c" }|True) 
+		  --> ({ "ln": 5568, "cl": 11, "fl": "mbyte.c" }|True) 
+

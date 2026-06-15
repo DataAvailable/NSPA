@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1098, "cl": 28, "fl": "charset.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1117, "cl": 7, "fl": "charset.c" }|True) 
+		  --> ({ "ln": 1173, "cl": 9, "fl": "charset.c" }|True) 
+		  --> ({ "ln": 874, "cl": 9, "fl": "charset.c" }|True) 
+		  --> ({ "ln": 888, "cl": 6, "fl": "charset.c" }|True) 
+

@@ -1,0 +1,122 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2105, "cl": 2, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2106, "cl": 16, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 4934, "cl": 12, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4934, "cl": 12, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4934, "cl": 6, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4945, "cl": 44, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4945, "cl": 44, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4945, "cl": 64, "fl": "apply.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2097, "cl": 10, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 2069, "cl": 7, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 2098, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 2108, "cl": 6, "fl": "apply.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 819, "cl": 11, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 5102, "cl": 2, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5102, "cl": 2, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 5107, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5107, "cl": 7, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 5109, "cl": 8, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5118, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5129, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5134, "cl": 6, "fl": "apply.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2164, "cl": 12, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2155, "cl": 12, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4893, "cl": 3, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 2256, "cl": 6, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 2193, "cl": 21, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 2193, "cl": 6, "fl": "apply.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1033, "cl": 20, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1043, "cl": 20, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 680, "cl": 23, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 4897, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4897, "cl": 7, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4907, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 259, "cl": 2, "fl": "apply.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1925, "cl": 3, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 318, "cl": 2, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 5102, "cl": 2, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5102, "cl": 2, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 5107, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5107, "cl": 7, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 5109, "cl": 8, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5118, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5129, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 5134, "cl": 6, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 259, "cl": 2, "fl": "apply.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4453, "cl": 7, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 4458, "cl": 6, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4458, "cl": 6, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4461, "cl": 13, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4461, "cl": 13, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4464, "cl": 51, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4464, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4470, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4479, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4486, "cl": 6, "fl": "apply.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1445, "cl": 21, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 1379, "cl": 2, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 1405, "cl": 12, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 1405, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 1407, "cl": 3, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 1411, "cl": 20, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 1411, "cl": 8, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 1601, "cl": 2, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 1605, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 1609, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 1617, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 1627, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 1634, "cl": 7, "fl": "apply.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 694, "cl": 24, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 4897, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4897, "cl": 7, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4907, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 259, "cl": 2, "fl": "apply.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1444, "cl": 21, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2963, "cl": 3, "fl": "apply.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 900, "cl": 22, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 2256, "cl": 6, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 2193, "cl": 21, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 2193, "cl": 6, "fl": "apply.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 683, "cl": 23, "fl": "apply.c" })
+		 double free path: 
+		  --> ({ "ln": 4897, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 4897, "cl": 7, "fl": "apply.c" }|True) 
+		  --> ({ "ln": 4907, "cl": 7, "fl": "apply.c" }|False) 
+		  --> ({ "ln": 259, "cl": 2, "fl": "apply.c" }|True) 
+

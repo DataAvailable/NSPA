@@ -1,0 +1,11 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1018, "cl": 14, "fl": "libavformat/wtvdec.c" })
+		 double free path: 
+		  --> ({ "ln": 1030, "cl": 17, "fl": "libavformat/wtvdec.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1031, "cl": 22, "fl": "libavformat/wtvdec.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1007, "cl": 10, "fl": "libavformat/wtvdec.c" })
+		 double free path: 
+		  --> ({ "ln": 1016, "cl": 9, "fl": "libavformat/wtvdec.c" }|False) 
+

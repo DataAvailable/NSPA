@@ -1,0 +1,6 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 99, "cl": 3, "fl": "builtin/checkout--worker.c" })
+		 double free path: 
+		  --> ({ "ln": 94, "cl": 7, "fl": "builtin/checkout--worker.c" }|False) 
+		  --> ({ "ln": 96, "cl": 12, "fl": "builtin/checkout--worker.c" }|True) 
+		  --> ({ "ln": 103, "cl": 2, "fl": "builtin/checkout--worker.c" }|True) 
+

@@ -1,0 +1,3 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 89, "cl": 2, "fl": "log-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1045, "cl": 25, "fl": "log-tree.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 998, "cl": 31, "fl": "log-tree.c" })

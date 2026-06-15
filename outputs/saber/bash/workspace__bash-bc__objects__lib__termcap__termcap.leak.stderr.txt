@@ -1,0 +1,13 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 240, "cl": 22, "fl": "lib/termcap/termcap.c" })
+		 conditional free path: 
+		  --> ({ "ln": 560, "cl": 11, "fl": "lib/termcap/termcap.c" }|False) 
+		  --> ({ "ln": 570, "cl": 11, "fl": "lib/termcap/termcap.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 742, "cl": 23, "fl": "lib/termcap/termcap.c" })
+		 conditional free path: 
+		  --> ({ "ln": 557, "cl": 3, "fl": "lib/termcap/termcap.c" }|False) 
+		  --> ({ "ln": 557, "cl": 3, "fl": "lib/termcap/termcap.c" }|True) 
+		  --> ({ "ln": 560, "cl": 11, "fl": "lib/termcap/termcap.c" }|False) 
+		  --> ({ "ln": 560, "cl": 11, "fl": "lib/termcap/termcap.c" }|True) 
+		  --> ({ "ln": 564, "cl": 8, "fl": "lib/termcap/termcap.c" }|True) 
+

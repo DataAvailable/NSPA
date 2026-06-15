@@ -1,0 +1,9 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1728, "cl": 20, "fl": "libavcodec/aac/aacdec_usac.c" })
+		 double free path: 
+		  --> ({ "ln": 1721, "cl": 5, "fl": "libavcodec/aac/aacdec_usac.c" }|False) 
+		  --> ({ "ln": 1742, "cl": 13, "fl": "libavcodec/aac/aacdec_usac.c" }|False) 
+		  --> ({ "ln": 1742, "cl": 13, "fl": "libavcodec/aac/aacdec_usac.c" }|True) 
+		  --> ({ "ln": 1746, "cl": 13, "fl": "libavcodec/aac/aacdec_usac.c" }|False) 
+		  --> ({ "ln": 1746, "cl": 13, "fl": "libavcodec/aac/aacdec_usac.c" }|True) 
+		  --> ({ "ln": 1750, "cl": 9, "fl": "libavcodec/aac/aacdec_usac.c" }|True) 
+

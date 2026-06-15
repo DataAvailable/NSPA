@@ -1,0 +1,33 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1236, "cl": 19, "fl": "refs/files-backend.c" })
+		 conditional free path: 
+		  --> ({ "ln": 651, "cl": 6, "fl": "refs/files-backend.c" }|True) 
+		  --> ({ "ln": 1241, "cl": 6, "fl": "refs/files-backend.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1332, "cl": 2, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 262, "cl": 17, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 443, "cl": 17, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2415, "cl": 2, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 346, "cl": 7, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3215, "cl": 5, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3222, "cl": 4, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2537, "cl": 15, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 935, "cl": 16, "fl": "refs/files-backend.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 735, "cl": 19, "fl": "refs/files-backend.c" })
+		 conditional free path: 
+		  --> ({ "ln": 651, "cl": 6, "fl": "refs/files-backend.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3209, "cl": 5, "fl": "refs/files-backend.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1504, "cl": 4, "fl": "refs/files-backend.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1482, "cl": 2, "fl": "refs/files-backend.c" }|False) 
+		  --> ({ "ln": 1510, "cl": 6, "fl": "refs/files-backend.c" }|False) 
+		  --> ({ "ln": 1513, "cl": 6, "fl": "refs/files-backend.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2476, "cl": 15, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 112, "cl": 33, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 303, "cl": 24, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2918, "cl": 2, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 457, "cl": 25, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3002, "cl": 4, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1065, "cl": 2, "fl": "refs/files-backend.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1059, "cl": 16, "fl": "refs/files-backend.c" })

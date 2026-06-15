@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2335, "cl": 12, "fl": "server-client.c" })
+		 double free path: 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|False) 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|True) 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|True) 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|False) 
+

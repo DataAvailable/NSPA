@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 541, "cl": 7, "fl": "builtin/sparse-checkout.c" })
+		 conditional free path: 
+		  --> ({ "ln": 547, "cl": 7, "fl": "builtin/sparse-checkout.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 524, "cl": 28, "fl": "builtin/sparse-checkout.c" })

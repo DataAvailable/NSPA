@@ -1,0 +1,1 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 76, "cl": 35, "fl": "trace2/tr2_sysenv.c" })

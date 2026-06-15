@@ -1,0 +1,15 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 444, "cl": 16, "fl": "builtin/unpack-objects.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 482, "cl": 16, "fl": "builtin/unpack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 499, "cl": 7, "fl": "builtin/unpack-objects.c" }|False) 
+		  --> ({ "ln": 511, "cl": 6, "fl": "builtin/unpack-objects.c" }|False) 
+		  --> ({ "ln": 516, "cl": 6, "fl": "builtin/unpack-objects.c" }|False) 
+		  --> ({ "ln": 322, "cl": 6, "fl": "builtin/unpack-objects.c" }|False) 
+		  --> ({ "ln": 424, "cl": 6, "fl": "builtin/unpack-objects.c" }|False) 
+		  --> ({ "ln": 427, "cl": 6, "fl": "builtin/unpack-objects.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 175, "cl": 28, "fl": "builtin/unpack-objects.c" })
+		 double free path: 
+

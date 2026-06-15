@@ -1,0 +1,14 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 386, "cl": 13, "fl": "builtin/last-modified.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 396, "cl": 29, "fl": "builtin/last-modified.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 294, "cl": 13, "fl": "builtin/last-modified.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 508, "cl": 2, "fl": "builtin/last-modified.c" })
+		 conditional free path: 
+		  --> ({ "ln": 550, "cl": 6, "fl": "builtin/last-modified.c" }|False) 
+		  --> ({ "ln": 553, "cl": 6, "fl": "builtin/last-modified.c" }|False) 
+		  --> ({ "ln": 553, "cl": 6, "fl": "builtin/last-modified.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 115, "cl": 3, "fl": "builtin/last-modified.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 362, "cl": 16, "fl": "builtin/last-modified.c" })
+		 conditional free path: 
+		  --> ({ "ln": 465, "cl": 6, "fl": "builtin/last-modified.c" }|False) 
+

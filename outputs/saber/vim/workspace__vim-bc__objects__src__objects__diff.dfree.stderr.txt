@@ -1,0 +1,14 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 817, "cl": 11, "fl": "diff.c" })
+		 double free path: 
+		  --> ({ "ln": 1041, "cl": 6, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1053, "cl": 2, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1056, "cl": 22, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1056, "cl": 22, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1056, "cl": 10, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1063, "cl": 10, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1063, "cl": 10, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1065, "cl": 10, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1065, "cl": 10, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 2419, "cl": 5, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 777, "cl": 9, "fl": "diff.c" }|True) 
+

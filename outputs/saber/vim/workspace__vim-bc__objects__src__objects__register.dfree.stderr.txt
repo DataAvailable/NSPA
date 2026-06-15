@@ -1,0 +1,20 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1556, "cl": 42, "fl": "register.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1509, "cl": 17, "fl": "register.c" })
+		 double free path: 
+		  --> ({ "ln": 1183, "cl": 9, "fl": "register.c" }|False) 
+		  --> ({ "ln": 1188, "cl": 5, "fl": "register.c" }|True) 
+		  --> ({ "ln": 1509, "cl": 9, "fl": "register.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1549, "cl": 26, "fl": "register.c" })
+		 double free path: 
+		  --> ({ "ln": 1436, "cl": 40, "fl": "register.c" }|False) 
+		  --> ({ "ln": 1436, "cl": 40, "fl": "register.c" }|True) 
+		  --> ({ "ln": 1436, "cl": 54, "fl": "register.c" }|True) 
+		  --> ({ "ln": 1437, "cl": 3, "fl": "register.c" }|True) 
+		  --> ({ "ln": 1436, "cl": 9, "fl": "register.c" }|True) 
+		  --> ({ "ln": 1439, "cl": 6, "fl": "register.c" }|True) 
+		  --> ({ "ln": 1554, "cl": 2, "fl": "register.c" }|True) 
+		  --> ({ "ln": 1556, "cl": 10, "fl": "register.c" }|True) 
+

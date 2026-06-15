@@ -1,0 +1,7 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 210, "cl": 6, "fl": "send-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 276, "cl": 26, "fl": "send-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 204, "cl": 6, "fl": "send-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 271, "cl": 27, "fl": "send-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 273, "cl": 27, "fl": "send-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 221, "cl": 24, "fl": "send-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 227, "cl": 23, "fl": "send-pack.c" })

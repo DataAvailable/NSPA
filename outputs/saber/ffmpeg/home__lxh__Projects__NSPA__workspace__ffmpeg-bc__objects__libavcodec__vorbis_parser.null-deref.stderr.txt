@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 103, "cl": 21, "fl": "libavcodec/vorbis_parser.c" })
+		 conditional free path: 
+		  --> ({ "ln": 103, "cl": 9, "fl": "libavcodec/vorbis_parser.c" }|False) 
+		  --> ({ "ln": 118, "cl": 9, "fl": "libavcodec/vorbis_parser.c" }|False) 
+		  --> ({ "ln": 145, "cl": 9, "fl": "libavcodec/vorbis_parser.c" }|False) 
+		  --> ({ "ln": 162, "cl": 9, "fl": "libavcodec/vorbis_parser.c" }|False) 
+

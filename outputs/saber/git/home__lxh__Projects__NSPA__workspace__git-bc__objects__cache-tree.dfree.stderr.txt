@@ -1,0 +1,25 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 637, "cl": 2, "fl": "cache-tree.c" })
+		 double free path: 
+		  --> ({ "ln": 37, "cl": 6, "fl": "cache-tree.c" }|False) 
+		  --> ({ "ln": 39, "cl": 2, "fl": "cache-tree.c" }|True) 
+		  --> ({ "ln": 638, "cl": 2, "fl": "cache-tree.c" }|False) 
+		  --> ({ "ln": 638, "cl": 2, "fl": "cache-tree.c" }|True) 
+		  --> ({ "ln": 645, "cl": 7, "fl": "cache-tree.c" }|False) 
+		  --> ({ "ln": 645, "cl": 7, "fl": "cache-tree.c" }|True) 
+		  --> ({ "ln": 650, "cl": 6, "fl": "cache-tree.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 96, "cl": 2, "fl": "cache-tree.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 93, "cl": 2, "fl": "cache-tree.c" })
+		 double free path: 
+		  --> ({ "ln": 37, "cl": 6, "fl": "cache-tree.c" }|False) 
+		  --> ({ "ln": 39, "cl": 2, "fl": "cache-tree.c" }|True) 
+		  --> ({ "ln": 638, "cl": 2, "fl": "cache-tree.c" }|False) 
+		  --> ({ "ln": 638, "cl": 2, "fl": "cache-tree.c" }|True) 
+		  --> ({ "ln": 645, "cl": 7, "fl": "cache-tree.c" }|True) 
+		  --> ({ "ln": 650, "cl": 6, "fl": "cache-tree.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 486, "cl": 24, "fl": "cache-tree.c" })
+		 double free path: 
+

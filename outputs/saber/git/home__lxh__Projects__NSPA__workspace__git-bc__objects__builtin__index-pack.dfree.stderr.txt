@@ -1,0 +1,43 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1197, "cl": 20, "fl": "builtin/index-pack.c" })
+		 double free path: 
+		  --> ({ "ln": 1182, "cl": 7, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 1183, "cl": 8, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 1185, "cl": 9, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 1207, "cl": 13, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 1068, "cl": 6, "fl": "builtin/index-pack.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1184, "cl": 13, "fl": "builtin/index-pack.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1065, "cl": 16, "fl": "builtin/index-pack.c" })
+		 double free path: 
+		  --> ({ "ln": 1185, "cl": 9, "fl": "builtin/index-pack.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1034, "cl": 27, "fl": "builtin/index-pack.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1388, "cl": 3, "fl": "builtin/index-pack.c" })
+		 double free path: 
+		  --> ({ "ln": 1182, "cl": 7, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 1183, "cl": 8, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 1185, "cl": 9, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 1068, "cl": 6, "fl": "builtin/index-pack.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 601, "cl": 10, "fl": "builtin/index-pack.c" })
+		 double free path: 
+		  --> ({ "ln": 611, "cl": 7, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 613, "cl": 7, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 622, "cl": 7, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 627, "cl": 9, "fl": "builtin/index-pack.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 778, "cl": 15, "fl": "builtin/index-pack.c" })
+		 double free path: 
+		  --> ({ "ln": 611, "cl": 7, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 613, "cl": 7, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 622, "cl": 7, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 627, "cl": 9, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 634, "cl": 4, "fl": "builtin/index-pack.c" }|False) 
+		  --> ({ "ln": 636, "cl": 2, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 776, "cl": 6, "fl": "builtin/index-pack.c" }|True) 
+		  --> ({ "ln": 782, "cl": 2, "fl": "builtin/index-pack.c" }|False) 
+

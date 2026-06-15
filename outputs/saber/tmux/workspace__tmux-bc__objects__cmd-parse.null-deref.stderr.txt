@@ -1,2 +1,19 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 804, "cl": 17, "fl": "cmd-parse.y" })
+		 conditional free path: 
+		  --> ({ "ln": 916, "cl": 7, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 991, "cl": 2, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 991, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 862, "cl": 15, "fl": "cmd-parse.y" })
+		 conditional free path: 
+		  --> ({ "ln": 991, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 991, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 993, "cl": 7, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 1017, "cl": 7, "fl": "cmd-parse.y" }|False) 
+
 
 NSPA timeout after 120.0 seconds

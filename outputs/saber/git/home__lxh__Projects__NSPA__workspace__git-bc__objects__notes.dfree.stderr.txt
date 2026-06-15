@@ -1,0 +1,51 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 803, "cl": 34, "fl": "notes.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1153, "cl": 27, "fl": "notes.c" })
+		 double free path: 
+		  --> ({ "ln": 264, "cl": 2, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 264, "cl": 2, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 273, "cl": 3, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 273, "cl": 3, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 275, "cl": 8, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 277, "cl": 9, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 284, "cl": 14, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 284, "cl": 9, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 683, "cl": 7, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 687, "cl": 7, "fl": "notes.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1033, "cl": 32, "fl": "notes.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1036, "cl": 11, "fl": "notes.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 462, "cl": 3, "fl": "notes.c" })
+		 double free path: 
+		  --> ({ "ln": 264, "cl": 2, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 264, "cl": 2, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 273, "cl": 3, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 273, "cl": 3, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 275, "cl": 8, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 277, "cl": 9, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 284, "cl": 14, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 284, "cl": 9, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 683, "cl": 7, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 687, "cl": 7, "fl": "notes.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 667, "cl": 3, "fl": "notes.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 356, "cl": 26, "fl": "notes.c" })
+		 double free path: 
+		  --> ({ "ln": 264, "cl": 2, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 264, "cl": 2, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 314, "cl": 2, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 314, "cl": 2, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 316, "cl": 6, "fl": "notes.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 320, "cl": 33, "fl": "notes.c" })
+		 double free path: 
+		  --> ({ "ln": 683, "cl": 7, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 687, "cl": 7, "fl": "notes.c" }|False) 
+

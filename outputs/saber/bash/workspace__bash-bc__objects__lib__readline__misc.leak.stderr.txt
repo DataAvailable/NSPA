@@ -1,0 +1,13 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 373, "cl": 50, "fl": "lib/readline/misc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 625, "cl": 7, "fl": "lib/readline/misc.c" }|True) 
+		  --> ({ "ln": 627, "cl": 11, "fl": "lib/readline/misc.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 374, "cl": 42, "fl": "lib/readline/misc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 321, "cl": 7, "fl": "lib/readline/misc.c" }|False) 
+		  --> ({ "ln": 385, "cl": 7, "fl": "lib/readline/misc.c" }|True) 
+		  --> ({ "ln": 625, "cl": 7, "fl": "lib/readline/misc.c" }|True) 
+		  --> ({ "ln": 627, "cl": 11, "fl": "lib/readline/misc.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 463, "cl": 18, "fl": "lib/readline/misc.c" })

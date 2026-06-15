@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 55, "cl": 12, "fl": "cmd-rename-session.c" })
+		 conditional free path: 
+		  --> ({ "ln": 62, "cl": 6, "fl": "cmd-rename-session.c" }|False) 
+		  --> ({ "ln": 62, "cl": 6, "fl": "cmd-rename-session.c" }|True) 
+		  --> ({ "ln": 66, "cl": 6, "fl": "cmd-rename-session.c" }|True) 
+

@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 71, "cl": 3, "fl": "reflog-walk.c" })
+		 double free path: 
+		  --> ({ "ln": 196, "cl": 7, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 200, "cl": 8, "fl": "reflog-walk.c" }|False) 
+		  --> ({ "ln": 202, "cl": 13, "fl": "reflog-walk.c" }|True) 
+		  --> ({ "ln": 209, "cl": 7, "fl": "reflog-walk.c" }|True) 
+

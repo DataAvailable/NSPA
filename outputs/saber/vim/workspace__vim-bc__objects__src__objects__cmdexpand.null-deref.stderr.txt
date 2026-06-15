@@ -1,0 +1,74 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3647, "cl": 12, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3659, "cl": 6, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1252, "cl": 18, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1256, "cl": 7, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4129, "cl": 6, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4133, "cl": 6, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3828, "cl": 11, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3855, "cl": 23, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 3856, "cl": 11, "fl": "cmdexpand.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5029, "cl": 11, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5031, "cl": 7, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5042, "cl": 2, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5044, "cl": 10, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1073, "cl": 7, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 322, "cl": 10, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 332, "cl": 7, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 1090, "cl": 9, "fl": "cmdexpand.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3054, "cl": 8, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3106, "cl": 9, "fl": "cmdexpand.c" }|False) 
+		  --> ({ "ln": 3106, "cl": 9, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 3114, "cl": 6, "fl": "cmdexpand.c" }|False) 
+		  --> ({ "ln": 3114, "cl": 6, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 3116, "cl": 11, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 3128, "cl": 9, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4055, "cl": 19, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4059, "cl": 10, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4871, "cl": 22, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5026, "cl": 10, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5031, "cl": 7, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5042, "cl": 2, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5044, "cl": 10, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3862, "cl": 13, "fl": "cmdexpand.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5020, "cl": 14, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5026, "cl": 10, "fl": "cmdexpand.c" }|False) 
+		  --> ({ "ln": 5026, "cl": 10, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5031, "cl": 21, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5031, "cl": 7, "fl": "cmdexpand.c" }|False) 
+		  --> ({ "ln": 5042, "cl": 2, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 5044, "cl": 10, "fl": "cmdexpand.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3822, "cl": 11, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3829, "cl": 9, "fl": "cmdexpand.c" }|False) 
+		  --> ({ "ln": 3829, "cl": 9, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 3855, "cl": 23, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 3856, "cl": 11, "fl": "cmdexpand.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1071, "cl": 7, "fl": "cmdexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 322, "cl": 10, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 332, "cl": 7, "fl": "cmdexpand.c" }|True) 
+		  --> ({ "ln": 1090, "cl": 9, "fl": "cmdexpand.c" }|False) 
+

@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 198, "cl": 22, "fl": "lib/sh/tmpfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 215, "cl": 14, "fl": "lib/sh/tmpfile.c" }|False) 
+		  --> ({ "ln": 215, "cl": 14, "fl": "lib/sh/tmpfile.c" }|True) 
+		  --> ({ "ln": 215, "cl": 7, "fl": "lib/sh/tmpfile.c" }|True) 
+

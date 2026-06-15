@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 189, "cl": 16, "fl": "hardcopy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 248, "cl": 9, "fl": "hardcopy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2226, "cl": 16, "fl": "hardcopy.c" })
+		 conditional free path: 
+

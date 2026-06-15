@@ -1,0 +1,15 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 525, "cl": 21, "fl": "array.c" })
+		 double free path: 
+		  --> ({ "ln": 120, "cl": 6, "fl": "array.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 523, "cl": 23, "fl": "array.c" })
+		 double free path: 
+		  --> ({ "ln": 103, "cl": 6, "fl": "array.c" }|False) 
+		  --> ({ "ln": 105, "cl": 2, "fl": "array.c" }|True) 
+		  --> ({ "ln": 120, "cl": 6, "fl": "array.c" }|False) 
+		  --> ({ "ln": 563, "cl": 6, "fl": "array.c" }|False) 
+		  --> ({ "ln": 807, "cl": 2, "fl": "array.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 163, "cl": 6, "fl": "array.c" })
+		 double free path: 
+

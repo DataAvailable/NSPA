@@ -1,0 +1,57 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 377, "cl": 7, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 383, "cl": 6, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 576, "cl": 9, "fl": "spellfile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1281, "cl": 11, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 1288, "cl": 9, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 1297, "cl": 9, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 1297, "cl": 9, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 1317, "cl": 5, "fl": "spellfile.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2271, "cl": 11, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 2258, "cl": 5, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 2264, "cl": 6, "fl": "spellfile.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6396, "cl": 18, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 6415, "cl": 5, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 6425, "cl": 6, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 6439, "cl": 7, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 6441, "cl": 11, "fl": "spellfile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4308, "cl": 11, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 6142, "cl": 2, "fl": "spellfile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6038, "cl": 21, "fl": "spellfile.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6037, "cl": 21, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 4470, "cl": 19, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 4470, "cl": 19, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 4470, "cl": 6, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 4470, "cl": 6, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 4474, "cl": 6, "fl": "spellfile.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3561, "cl": 11, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 3592, "cl": 21, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 3592, "cl": 21, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 3592, "cl": 6, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 3621, "cl": 6, "fl": "spellfile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6249, "cl": 13, "fl": "spellfile.c" })
+		 double free path: 
+		  --> ({ "ln": 6253, "cl": 2, "fl": "spellfile.c" }|False) 
+		  --> ({ "ln": 6253, "cl": 2, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 6256, "cl": 10, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 6270, "cl": 18, "fl": "spellfile.c" }|True) 
+		  --> ({ "ln": 6270, "cl": 6, "fl": "spellfile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4138, "cl": 11, "fl": "spellfile.c" })
+		 double free path: 
+

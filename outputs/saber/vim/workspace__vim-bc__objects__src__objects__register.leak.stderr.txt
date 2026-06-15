@@ -1,0 +1,44 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3097, "cl": 10, "fl": "register.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3150, "cl": 10, "fl": "register.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2232, "cl": 14, "fl": "register.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1745, "cl": 12, "fl": "register.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1755, "cl": 12, "fl": "register.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3002, "cl": 10, "fl": "register.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1706, "cl": 13, "fl": "register.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2387, "cl": 9, "fl": "register.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2721, "cl": 17, "fl": "register.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2725, "cl": 10, "fl": "register.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 998, "cl": 20, "fl": "register.c" })
+		 conditional free path: 
+		  --> ({ "ln": 877, "cl": 14, "fl": "register.c" }|True) 
+		  --> ({ "ln": 882, "cl": 6, "fl": "register.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3112, "cl": 24, "fl": "register.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2149, "cl": 14, "fl": "register.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 977, "cl": 14, "fl": "register.c" })
+		 conditional free path: 
+		  --> ({ "ln": 877, "cl": 14, "fl": "register.c" }|True) 
+		  --> ({ "ln": 882, "cl": 6, "fl": "register.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 959, "cl": 14, "fl": "register.c" })
+		 conditional free path: 
+		  --> ({ "ln": 877, "cl": 14, "fl": "register.c" }|True) 
+		  --> ({ "ln": 882, "cl": 6, "fl": "register.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1981, "cl": 13, "fl": "register.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2997, "cl": 6, "fl": "register.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3000, "cl": 18, "fl": "register.c" }|True) 
+		  --> ({ "ln": 3000, "cl": 6, "fl": "register.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1094, "cl": 12, "fl": "register.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 513, "cl": 28, "fl": "register.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 497, "cl": 8, "fl": "register.c" })

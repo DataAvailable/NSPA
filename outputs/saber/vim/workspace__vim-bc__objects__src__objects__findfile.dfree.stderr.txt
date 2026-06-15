@@ -1,0 +1,25 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1964, "cl": 14, "fl": "findfile.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1554, "cl": 11, "fl": "findfile.c" })
+		 double free path: 
+		  --> ({ "ln": 1583, "cl": 42, "fl": "findfile.c" }|False) 
+		  --> ({ "ln": 1583, "cl": 42, "fl": "findfile.c" }|True) 
+		  --> ({ "ln": 1583, "cl": 9, "fl": "findfile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 586, "cl": 16, "fl": "findfile.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 337, "cl": 28, "fl": "findfile.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 306, "cl": 15, "fl": "findfile.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 774, "cl": 29, "fl": "findfile.c" })
+		 double free path: 
+		  --> ({ "ln": 2267, "cl": 2, "fl": "findfile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1815, "cl": 18, "fl": "findfile.c" })
+		 double free path: 
+

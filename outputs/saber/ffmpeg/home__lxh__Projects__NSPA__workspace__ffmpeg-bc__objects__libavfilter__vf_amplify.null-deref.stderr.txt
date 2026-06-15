@@ -1,0 +1,2 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 232, "cl": 15, "fl": "libavfilter/vf_amplify.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 86, "cl": 17, "fl": "libavfilter/vf_amplify.c" })

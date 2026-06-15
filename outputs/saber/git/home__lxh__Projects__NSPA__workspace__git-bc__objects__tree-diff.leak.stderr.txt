@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 444, "cl": 2, "fl": "tree-diff.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 443, "cl": 2, "fl": "tree-diff.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 302, "cl": 3, "fl": "tree-diff.c" })
+		 conditional free path: 
+

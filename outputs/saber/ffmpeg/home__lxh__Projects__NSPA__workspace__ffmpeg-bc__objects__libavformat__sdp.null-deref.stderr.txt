@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 439, "cl": 22, "fl": "libavformat/sdp.c" })
+		 conditional free path: 
+		  --> ({ "ln": 698, "cl": 13, "fl": "libavformat/sdp.c" }|False) 
+		  --> ({ "ln": 729, "cl": 13, "fl": "libavformat/sdp.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 528, "cl": 14, "fl": "libavformat/sdp.c" })
+		 conditional free path: 
+		  --> ({ "ln": 629, "cl": 17, "fl": "libavformat/sdp.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 384, "cl": 14, "fl": "libavformat/sdp.c" })
+		 conditional free path: 
+		  --> ({ "ln": 617, "cl": 17, "fl": "libavformat/sdp.c" }|False) 
+		  --> ({ "ln": 638, "cl": 21, "fl": "libavformat/sdp.c" }|False) 
+

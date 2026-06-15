@@ -1,0 +1,22 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5812, "cl": 14, "fl": "./regexp_nfa.c" })
+		 double free path: 
+		  --> ({ "ln": 5846, "cl": 9, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5846, "cl": 9, "fl": "./regexp_nfa.c" }|True) 
+		  --> ({ "ln": 5848, "cl": 6, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5848, "cl": 6, "fl": "./regexp_nfa.c" }|True) 
+		  --> ({ "ln": 7304, "cl": 34, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5018, "cl": 9, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5022, "cl": 9, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5027, "cl": 9, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5029, "cl": 9, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5034, "cl": 14, "fl": "./regexp_nfa.c" }|True) 
+		  --> ({ "ln": 5036, "cl": 6, "fl": "./regexp_nfa.c" }|True) 
+		  --> ({ "ln": 5044, "cl": 10, "fl": "./regexp_nfa.c" }|False) 
+		  --> ({ "ln": 5050, "cl": 10, "fl": "./regexp_nfa.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5049, "cl": 13, "fl": "./regexp_nfa.c" })
+		 double free path: 
+		  --> ({ "ln": 7304, "cl": 34, "fl": "./regexp_nfa.c" }|False) 
+
+
+NSPA timeout after 120.0 seconds

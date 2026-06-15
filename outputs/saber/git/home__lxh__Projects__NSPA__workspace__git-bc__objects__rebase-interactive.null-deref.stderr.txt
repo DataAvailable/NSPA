@@ -1,0 +1,3 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 192, "cl": 5, "fl": "rebase-interactive.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 199, "cl": 19, "fl": "rebase-interactive.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 204, "cl": 5, "fl": "rebase-interactive.c" })

@@ -1,0 +1,22 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1996, "cl": 35, "fl": "convert.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1042, "cl": 3, "fl": "convert.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1822, "cl": 12, "fl": "convert.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 414, "cl": 8, "fl": "convert.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1993, "cl": 12, "fl": "convert.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 821, "cl": 11, "fl": "convert.c" })
+		 conditional free path: 
+		  --> ({ "ln": 824, "cl": 7, "fl": "convert.c" }|False) 
+		  --> ({ "ln": 824, "cl": 7, "fl": "convert.c" }|True) 
+		  --> ({ "ln": 831, "cl": 6, "fl": "convert.c" }|False) 
+		  --> ({ "ln": 834, "cl": 6, "fl": "convert.c" }|True) 
+		  --> ({ "ln": 845, "cl": 6, "fl": "convert.c" }|False) 
+		  --> ({ "ln": 845, "cl": 6, "fl": "convert.c" }|True) 
+		  --> ({ "ln": 849, "cl": 6, "fl": "convert.c" }|True) 
+		  --> ({ "ln": 927, "cl": 6, "fl": "convert.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 491, "cl": 8, "fl": "convert.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 456, "cl": 12, "fl": "convert.c" })
+		 conditional free path: 
+		  --> ({ "ln": 464, "cl": 40, "fl": "convert.c" }|True) 
+		  --> ({ "ln": 464, "cl": 7, "fl": "convert.c" }|False) 
+

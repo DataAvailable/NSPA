@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 815, "cl": 24, "fl": "tsrc/select.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6707, "cl": 18, "fl": "tsrc/select.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 8211, "cl": 16, "fl": "tsrc/select.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 8260, "cl": 31, "fl": "tsrc/select.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 8492, "cl": 18, "fl": "tsrc/select.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6679, "cl": 29, "fl": "tsrc/select.c" })

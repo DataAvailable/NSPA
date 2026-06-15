@@ -1,0 +1,73 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1593, "cl": 25, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 402, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 405, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 410, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 484, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 498, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 522, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 372, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 607, "cl": 5, "fl": "netbeans.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 851, "cl": 19, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 2946, "cl": 6, "fl": "netbeans.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3296, "cl": 29, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 402, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 405, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 410, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 484, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 498, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 522, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 372, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 607, "cl": 5, "fl": "netbeans.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3274, "cl": 19, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 402, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 405, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 410, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 484, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 498, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 522, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 372, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 607, "cl": 5, "fl": "netbeans.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 304, "cl": 22, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 164, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 175, "cl": 10, "fl": "netbeans.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 309, "cl": 22, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 164, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 175, "cl": 10, "fl": "netbeans.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1686, "cl": 25, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 402, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 405, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 410, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 425, "cl": 6, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 484, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 498, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 522, "cl": 9, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 372, "cl": 5, "fl": "netbeans.c" }|True) 
+		  --> ({ "ln": 607, "cl": 5, "fl": "netbeans.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 314, "cl": 22, "fl": "netbeans.c" })
+		 double free path: 
+		  --> ({ "ln": 164, "cl": 6, "fl": "netbeans.c" }|False) 
+		  --> ({ "ln": 175, "cl": 10, "fl": "netbeans.c" }|False) 
+
+
+NSPA timeout after 120.0 seconds

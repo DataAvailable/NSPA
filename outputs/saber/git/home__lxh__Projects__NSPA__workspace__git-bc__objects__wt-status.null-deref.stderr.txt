@@ -1,0 +1,8 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 563, "cl": 4, "fl": "wt-status.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 586, "cl": 23, "fl": "wt-status.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 729, "cl": 3, "fl": "wt-status.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 782, "cl": 4, "fl": "wt-status.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1733, "cl": 26, "fl": "wt-status.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 479, "cl": 4, "fl": "wt-status.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 507, "cl": 23, "fl": "wt-status.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1736, "cl": 4, "fl": "wt-status.c" })

@@ -1,0 +1,6 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 742, "cl": 23, "fl": "lib/termcap/termcap.c" })
+		 double free path: 
+		  --> ({ "ln": 557, "cl": 3, "fl": "lib/termcap/termcap.c" }|True) 
+		  --> ({ "ln": 560, "cl": 11, "fl": "lib/termcap/termcap.c" }|True) 
+		  --> ({ "ln": 564, "cl": 8, "fl": "lib/termcap/termcap.c" }|True) 
+

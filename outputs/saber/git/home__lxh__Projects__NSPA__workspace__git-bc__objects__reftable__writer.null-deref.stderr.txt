@@ -1,0 +1,7 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 265, "cl": 3, "fl": "reftable/writer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 253, "cl": 9, "fl": "reftable/writer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 261, "cl": 7, "fl": "reftable/writer.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 274, "cl": 2, "fl": "reftable/writer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 856, "cl": 2, "fl": "reftable/writer.c" })

@@ -1,0 +1,36 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 517, "cl": 8, "fl": "terminal.c" })
+		 double free path: 
+		  --> ({ "ln": 519, "cl": 6, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 728, "cl": 9, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 742, "cl": 6, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 742, "cl": 6, "fl": "terminal.c" }|True) 
+		  --> ({ "ln": 743, "cl": 6, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 750, "cl": 9, "fl": "terminal.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6050, "cl": 13, "fl": "terminal.c" })
+		 double free path: 
+		  --> ({ "ln": 6059, "cl": 6, "fl": "terminal.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6043, "cl": 13, "fl": "terminal.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 477, "cl": 12, "fl": "terminal.c" })
+		 double free path: 
+		  --> ({ "ln": 493, "cl": 9, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 511, "cl": 29, "fl": "terminal.c" }|True) 
+		  --> ({ "ln": 511, "cl": 14, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 558, "cl": 6, "fl": "terminal.c" }|True) 
+		  --> ({ "ln": 728, "cl": 9, "fl": "terminal.c" }|True) 
+		  --> ({ "ln": 731, "cl": 6, "fl": "terminal.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5889, "cl": 16, "fl": "terminal.c" })
+		 double free path: 
+		  --> ({ "ln": 6059, "cl": 6, "fl": "terminal.c" }|True) 
+		  --> ({ "ln": 5894, "cl": 9, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 5894, "cl": 9, "fl": "terminal.c" }|True) 
+		  --> ({ "ln": 5897, "cl": 10, "fl": "terminal.c" }|False) 
+		  --> ({ "ln": 5897, "cl": 10, "fl": "terminal.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5715, "cl": 22, "fl": "terminal.c" })
+		 double free path: 
+

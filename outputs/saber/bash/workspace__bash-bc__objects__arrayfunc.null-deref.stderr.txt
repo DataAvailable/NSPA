@@ -1,0 +1,14 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 175, "cl": 28, "fl": "arrayfunc.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 779, "cl": 22, "fl": "arrayfunc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 795, "cl": 11, "fl": "arrayfunc.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 373, "cl": 9, "fl": "arrayfunc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 375, "cl": 11, "fl": "arrayfunc.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 84, "cl": 11, "fl": "arrayfunc.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 901, "cl": 11, "fl": "arrayfunc.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 172, "cl": 18, "fl": "arrayfunc.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 849, "cl": 22, "fl": "arrayfunc.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 166, "cl": 22, "fl": "arrayfunc.c" })

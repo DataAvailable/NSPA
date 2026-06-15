@@ -1,0 +1,9 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1014, "cl": 23, "fl": "libavformat/hls.c" })
+		 double free path: 
+		  --> ({ "ln": 1027, "cl": 21, "fl": "libavformat/hls.c" }|False) 
+		  --> ({ "ln": 1027, "cl": 21, "fl": "libavformat/hls.c" }|True) 
+		  --> ({ "ln": 1029, "cl": 25, "fl": "libavformat/hls.c" }|False) 
+		  --> ({ "ln": 1035, "cl": 25, "fl": "libavformat/hls.c" }|False) 
+		  --> ({ "ln": 1045, "cl": 21, "fl": "libavformat/hls.c" }|False) 
+		  --> ({ "ln": 1053, "cl": 21, "fl": "libavformat/hls.c" }|True) 
+

@@ -1,0 +1,10 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 88, "cl": 7, "fl": "cmd-wait-for.c" })
+		 double free path: 
+		  --> ({ "ln": 107, "cl": 6, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 109, "cl": 33, "fl": "cmd-wait-for.c" }|True) 
+		  --> ({ "ln": 109, "cl": 6, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 148, "cl": 32, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 148, "cl": 32, "fl": "cmd-wait-for.c" }|True) 
+		  --> ({ "ln": 148, "cl": 6, "fl": "cmd-wait-for.c" }|False) 
+		  --> ({ "ln": 181, "cl": 6, "fl": "cmd-wait-for.c" }|True) 
+

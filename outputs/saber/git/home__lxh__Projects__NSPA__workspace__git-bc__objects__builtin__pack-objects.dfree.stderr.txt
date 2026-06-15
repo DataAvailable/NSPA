@@ -1,0 +1,58 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2045, "cl": 11, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 2003, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2138, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 4346, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 4347, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2154, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2161, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1984, "cl": 10, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 4346, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 4347, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2161, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 1996, "cl": 6, "fl": "builtin/pack-objects.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2126, "cl": 9, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 4346, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 4347, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2154, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2161, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2162, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 2131, "cl": 2, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 551, "cl": 9, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 557, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 559, "cl": 11, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 614, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2082, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 4346, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 4347, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2154, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2161, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2878, "cl": 16, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 2970, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 3062, "cl": 20, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 3062, "cl": 20, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 3062, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 3062, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 3070, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 3090, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2962, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 double free path: 
+		  --> ({ "ln": 2970, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+

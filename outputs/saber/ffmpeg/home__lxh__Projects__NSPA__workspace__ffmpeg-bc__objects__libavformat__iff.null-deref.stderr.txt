@@ -1,0 +1,12 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 433, "cl": 19, "fl": "libavformat/iff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 499, "cl": 18, "fl": "libavformat/iff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 485, "cl": 18, "fl": "libavformat/iff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 580, "cl": 18, "fl": "libavformat/iff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 709, "cl": 22, "fl": "libavformat/iff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 666, "cl": 18, "fl": "libavformat/iff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 636, "cl": 18, "fl": "libavformat/iff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 649, "cl": 18, "fl": "libavformat/iff.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 138, "cl": 52, "fl": "libavformat/iff.c" })
+		 conditional free path: 
+		  --> ({ "ln": 144, "cl": 9, "fl": "libavformat/iff.c" }|True) 
+

@@ -1,0 +1,41 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 429, "cl": 11, "fl": "textprop.c" })
+		 double free path: 
+		  --> ({ "ln": 37, "cl": 9, "fl": "textprop.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 418, "cl": 8, "fl": "textprop.c" })
+		 double free path: 
+		  --> ({ "ln": 37, "cl": 9, "fl": "textprop.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 115, "cl": 17, "fl": "textprop.c" })
+		 double free path: 
+		  --> ({ "ln": 37, "cl": 9, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 165, "cl": 22, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 165, "cl": 9, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 169, "cl": 9, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 176, "cl": 5, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 178, "cl": 6, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 182, "cl": 10, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 333, "cl": 9, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 336, "cl": 5, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 340, "cl": 24, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 340, "cl": 49, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 340, "cl": 6, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 342, "cl": 29, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 1607, "cl": 9, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 3170, "cl": 9, "fl": "textprop.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1106, "cl": 9, "fl": "textprop.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 168, "cl": 15, "fl": "textprop.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 180, "cl": 21, "fl": "textprop.c" })
+		 double free path: 
+		  --> ({ "ln": 1609, "cl": 9, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 1609, "cl": 9, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 1616, "cl": 9, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 1620, "cl": 6, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 26, "cl": 5, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 27, "cl": 6, "fl": "textprop.c" }|True) 
+

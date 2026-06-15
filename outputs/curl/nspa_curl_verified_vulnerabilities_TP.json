@@ -1,0 +1,1065 @@
+{
+  "metadata": {
+    "warning_count": 82,
+    "confirmed_count": 10,
+    "unknown_count": 5,
+    "api_error_unknown_count": 3,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 10,
+    "source_output": "outputs/curl/nspa_curl_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "fileck|PartialFileClose|cookie.c|1105|12|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-cookie.fileck.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "file_leak",
+      "confidence": 0.95,
+      "rationale": "File opened at line 1105 is leaked when fstat fails or stat.st_mode is not a directory. When fstat succeeds and the path is NOT a directory, fp is assigned to handle (line 1117), but when fstat fails (line 1110 returns -1) or S_ISDIR is false on the outer condition, fp remains non-null but handle stays NULL. At line 1122, the code enters the block because fp is non-null, but at line 1152-1153 only handle is closed. Since handle is NULL in the leak path, fp is never closed.",
+      "evidence_lines": [
+        {
+          "file": "cookie.c",
+          "line": 1105,
+          "role": "allocation"
+        },
+        {
+          "file": "cookie.c",
+          "line": 1110,
+          "role": "condition"
+        },
+        {
+          "file": "cookie.c",
+          "line": 1117,
+          "role": "ownership"
+        },
+        {
+          "file": "cookie.c",
+          "line": 1122,
+          "role": "condition"
+        },
+        {
+          "file": "cookie.c",
+          "line": 1152,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Close fp directly at line 1152-1153 instead of handle, or ensure handle is always set to fp when fp is successfully opened and not a directory, or close fp in an else branch when fstat fails.",
+      "warning": {
+        "id": "fileck|PartialFileClose|cookie.c|1105|12|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-cookie.fileck.stderr.txt",
+        "checker": "fileck",
+        "kind": "PartialFileClose",
+        "site_label": "file open",
+        "vulnerability_type": "file_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-cookie.fileck.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-cookie.bc",
+        "primary": {
+          "file": "cookie.c",
+          "line": 1105,
+          "column": 12
+        },
+        "path": [
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 51,
+            "branch": "False"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 51,
+            "branch": "True"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 12,
+            "branch": "False"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 12,
+            "branch": "True"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1122,
+            "column": 6,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 1105, \"cl\": 12, \"fl\": \"cookie.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1122, \"cl\": 6, \"fl\": \"cookie.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "fileck|PartialFileClose|cookie.c|1105|12|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-cookie.fileck.stderr.txt",
+          "checker": "fileck",
+          "kind": "PartialFileClose",
+          "site_label": "file open",
+          "vulnerability_type": "file_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-cookie.fileck.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-cookie.bc",
+          "primary": {
+            "file": "cookie.c",
+            "line": 1105,
+            "column": 12
+          },
+          "path": [
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 51,
+              "branch": "False"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 51,
+              "branch": "True"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 12,
+              "branch": "False"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 12,
+              "branch": "True"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1122,
+              "column": 6,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 1105, \"cl\": 12, \"fl\": \"cookie.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1122, \"cl\": 6, \"fl\": \"cookie.c\" }|True)"
+        },
+        "source_files": [
+          "lib/cookie.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "lib/cookie.c",
+            "start_line": 1088,
+            "end_line": 1159,
+            "important_lines": [
+              1105,
+              1110,
+              1122
+            ],
+            "text": "    1088: static CURLcode cookie_load(struct Curl_easy *data, const char *file,\n    1089:                             struct CookieInfo *ci, bool newsession)\n    1090: {\n    1091:   FILE *handle = NULL;\n    1092:   CURLcode result = CURLE_OK;\n    1093:   FILE *fp = NULL;\n    1094:   DEBUGASSERT(ci);\n    1095:   DEBUGASSERT(data);\n    1096:   DEBUGASSERT(file);\n    1097: \n    1098:   ci->newsession = newsession; /* new session? */\n    1099:   ci->running = FALSE; /* this is not running, this is init */\n    1100: \n    1101:   if(file && *file) {\n    1102:     if(!strcmp(file, \"-\"))\n    1103:       fp = stdin;\n    1104:     else {\n>>  1105:       fp = curlx_fopen(file, \"rb\");\n    1106:       if(!fp)\n    1107:         infof(data, \"WARNING: failed to open cookie file \\\"%s\\\"\", file);\n    1108:       else {\n    1109:         curlx_struct_stat stat;\n>>  1110:         if((curlx_fstat(fileno(fp), &stat) != -1) && S_ISDIR(stat.st_mode)) {\n    1111:           curlx_fclose(fp);\n    1112:           fp = NULL;\n    1113:           infof(data, \"WARNING: cookie filename points to a directory: \\\"%s\\\"\",\n    1114:                 file);\n    1115:         }\n    1116:         else\n    1117:           handle = fp;\n    1118:       }\n    1119:     }\n    1120:   }\n    1121: \n>>  1122:   if(fp) {\n    1123:     struct dynbuf buf;\n    1124:     bool eof = FALSE;\n    1125:     curlx_dyn_init(&buf, MAX_COOKIE_LINE);\n    1126:     do {\n    1127:       result = Curl_get_line(&buf, fp, &eof);\n    1128:       if(!result) {\n    1129:         const char *lineptr = curlx_dyn_ptr(&buf);\n    1130:         bool headerline = FALSE;\n    1131:         if(checkprefix(\"Set-Cookie:\", lineptr)) {\n    1132:           /* This is a cookie line, get it! */\n    1133:           lineptr += 11;\n    1134:           headerline = TRUE;\n    1135:           curlx_str_passblanks(&lineptr);\n    1136:         }\n    1137: \n    1138:         result = Curl_cookie_add(data, ci, headerline, TRUE, lineptr, NULL,\n    1139:                                  NULL, TRUE);\n    1140:         /* File reading cookie failures are not propagated back to the\n    1141:            caller because there is no way to do that */\n    1142:       }\n    1143:     } while(!result && !eof);\n    1144:     curlx_dyn_free(&buf); /* free the line buffer */\n    1145: \n    1146:     /*\n    1147:      * Remove expired cookies from the hash. We must make sure to run this\n    1148:      * after reading the file, and not on every cookie.\n    1149:      */\n    1150:     remove_expired(ci);\n    1151: \n    1152:     if(handle)\n    1153:       curlx_fclose(handle);\n    1154:   }\n    1155:   data->state.cookie_engine = TRUE;\n    1156:   ci->running = TRUE;          /* now, we are running */\n    1157: \n    1158:   return result;\n    1159: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|NeverFree|easy.c|922|26|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.95,
+      "rationale": "Memory allocated at line 922 for dst->set.mimepostp is not freed on the error path at line 929. If Curl_mime_duppart fails, the function returns immediately without cleaning up the previously allocated mimepostp structure, causing a memory leak.",
+      "evidence_lines": [
+        {
+          "file": "easy.c",
+          "line": 922,
+          "role": "allocation"
+        },
+        {
+          "file": "easy.c",
+          "line": 927,
+          "role": "condition"
+        },
+        {
+          "file": "easy.c",
+          "line": 928,
+          "role": "condition"
+        },
+        {
+          "file": "easy.c",
+          "line": 929,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Before returning at line 929, add: free(dst->set.mimepostp); dst->set.mimepostp = NULL;",
+      "warning": {
+        "id": "leak|NeverFree|easy.c|922|26|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.leak.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-easy.bc",
+        "primary": {
+          "file": "easy.c",
+          "line": 922,
+          "column": 26
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 922, \"cl\": 26, \"fl\": \"easy.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|easy.c|922|26|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.leak.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-easy.bc",
+          "primary": {
+            "file": "easy.c",
+            "line": 922,
+            "column": 26
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 922, \"cl\": 26, \"fl\": \"easy.c\" })"
+        },
+        "source_files": [
+          "lib/easy.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "lib/easy.c",
+            "start_line": 873,
+            "end_line": 937,
+            "important_lines": [
+              922
+            ],
+            "text": "     873: static CURLcode dupset(struct Curl_easy *dst, struct Curl_easy *src)\n     874: {\n     875:   CURLcode result = CURLE_OK;\n     876:   enum dupstring i;\n     877:   enum dupblob j;\n     878: \n     879:   /* Copy src->set into dst->set first, then deal with the strings\n     880:      afterwards */\n     881:   dst->set = src->set;\n     882: #if !defined(CURL_DISABLE_MIME) || !defined(CURL_DISABLE_FORM_API)\n     883:   dst->set.mimepostp = NULL;\n     884: #endif\n     885:   /* clear all dest string and blob pointers first, in case we error out\n     886:      mid-function */\n     887:   memset(dst->set.str, 0, STRING_LAST * sizeof(char *));\n     888:   memset(dst->set.blobs, 0, BLOB_LAST * sizeof(struct curl_blob *));\n     889: \n     890:   /* duplicate all strings */\n     891:   for(i = (enum dupstring)0; i < STRING_LASTZEROTERMINATED; i++) {\n     892:     result = Curl_setstropt(&dst->set.str[i], src->set.str[i]);\n     893:     if(result)\n     894:       return result;\n     895:   }\n     896: \n     897:   /* duplicate all blobs */\n     898:   for(j = (enum dupblob)0; j < BLOB_LAST; j++) {\n     899:     result = Curl_setblobopt(&dst->set.blobs[j], src->set.blobs[j]);\n     900:     if(result)\n     901:       return result;\n     902:   }\n     903: \n     904:   /* duplicate memory areas pointed to */\n     905:   i = STRING_COPYPOSTFIELDS;\n     906:   if(src->set.str[i]) {\n     907:     if(src->set.postfieldsize == -1)\n     908:       dst->set.str[i] = curlx_strdup(src->set.str[i]);\n     909:     else\n     910:       /* postfieldsize is curl_off_t, curlx_memdup() takes a size_t ... */\n     911:       dst->set.str[i] = curlx_memdup(src->set.str[i],\n     912:                                      curlx_sotouz(src->set.postfieldsize));\n     913:     if(!dst->set.str[i])\n     914:       return CURLE_OUT_OF_MEMORY;\n     915:     /* point to the new copy */\n     916:     dst->set.postfields = dst->set.str[i];\n     917:   }\n     918: \n     919: #if !defined(CURL_DISABLE_MIME) || !defined(CURL_DISABLE_FORM_API)\n     920:   if(src->set.mimepostp) {\n     921:     /* Duplicate mime data. Get a mimepost struct for the clone as well */\n>>   922:     dst->set.mimepostp = curlx_malloc(sizeof(*dst->set.mimepostp));\n     923:     if(!dst->set.mimepostp)\n     924:       return CURLE_OUT_OF_MEMORY;\n     925: \n     926:     Curl_mime_initpart(dst->set.mimepostp);\n     927:     result = Curl_mime_duppart(dst, dst->set.mimepostp, src->set.mimepostp);\n     928:     if(result)\n     929:       return result;\n     930:   }\n     931: #endif\n     932: \n     933:   if(src->set.resolve)\n     934:     dst->state.resolve = dst->set.resolve;\n     935: \n     936:   return result;\n     937: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|easy.c|922|26|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.95,
+      "rationale": "Memory allocated at line 922 (curlx_malloc) is stored in dst->set.mimepostp but is never freed on the error path at line 929. If Curl_mime_duppart fails, the function returns immediately without freeing the allocated mimepostp structure, causing a memory leak.",
+      "evidence_lines": [
+        {
+          "file": "easy.c",
+          "line": 922,
+          "role": "allocation"
+        },
+        {
+          "file": "easy.c",
+          "line": 923,
+          "role": "condition"
+        },
+        {
+          "file": "easy.c",
+          "line": 927,
+          "role": "condition"
+        },
+        {
+          "file": "easy.c",
+          "line": 929,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Add cleanup before line 929: if(result) { free(dst->set.mimepostp); dst->set.mimepostp = NULL; return result; }",
+      "warning": {
+        "id": "null-deref|NeverFree|easy.c|922|26|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.null-deref.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-easy.bc",
+        "primary": {
+          "file": "easy.c",
+          "line": 922,
+          "column": 26
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 922, \"cl\": 26, \"fl\": \"easy.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|easy.c|922|26|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-easy.null-deref.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-easy.bc",
+          "primary": {
+            "file": "easy.c",
+            "line": 922,
+            "column": 26
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 922, \"cl\": 26, \"fl\": \"easy.c\" })"
+        },
+        "source_files": [
+          "lib/easy.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "lib/easy.c",
+            "start_line": 873,
+            "end_line": 937,
+            "important_lines": [
+              922
+            ],
+            "text": "     873: static CURLcode dupset(struct Curl_easy *dst, struct Curl_easy *src)\n     874: {\n     875:   CURLcode result = CURLE_OK;\n     876:   enum dupstring i;\n     877:   enum dupblob j;\n     878: \n     879:   /* Copy src->set into dst->set first, then deal with the strings\n     880:      afterwards */\n     881:   dst->set = src->set;\n     882: #if !defined(CURL_DISABLE_MIME) || !defined(CURL_DISABLE_FORM_API)\n     883:   dst->set.mimepostp = NULL;\n     884: #endif\n     885:   /* clear all dest string and blob pointers first, in case we error out\n     886:      mid-function */\n     887:   memset(dst->set.str, 0, STRING_LAST * sizeof(char *));\n     888:   memset(dst->set.blobs, 0, BLOB_LAST * sizeof(struct curl_blob *));\n     889: \n     890:   /* duplicate all strings */\n     891:   for(i = (enum dupstring)0; i < STRING_LASTZEROTERMINATED; i++) {\n     892:     result = Curl_setstropt(&dst->set.str[i], src->set.str[i]);\n     893:     if(result)\n     894:       return result;\n     895:   }\n     896: \n     897:   /* duplicate all blobs */\n     898:   for(j = (enum dupblob)0; j < BLOB_LAST; j++) {\n     899:     result = Curl_setblobopt(&dst->set.blobs[j], src->set.blobs[j]);\n     900:     if(result)\n     901:       return result;\n     902:   }\n     903: \n     904:   /* duplicate memory areas pointed to */\n     905:   i = STRING_COPYPOSTFIELDS;\n     906:   if(src->set.str[i]) {\n     907:     if(src->set.postfieldsize == -1)\n     908:       dst->set.str[i] = curlx_strdup(src->set.str[i]);\n     909:     else\n     910:       /* postfieldsize is curl_off_t, curlx_memdup() takes a size_t ... */\n     911:       dst->set.str[i] = curlx_memdup(src->set.str[i],\n     912:                                      curlx_sotouz(src->set.postfieldsize));\n     913:     if(!dst->set.str[i])\n     914:       return CURLE_OUT_OF_MEMORY;\n     915:     /* point to the new copy */\n     916:     dst->set.postfields = dst->set.str[i];\n     917:   }\n     918: \n     919: #if !defined(CURL_DISABLE_MIME) || !defined(CURL_DISABLE_FORM_API)\n     920:   if(src->set.mimepostp) {\n     921:     /* Duplicate mime data. Get a mimepost struct for the clone as well */\n>>   922:     dst->set.mimepostp = curlx_malloc(sizeof(*dst->set.mimepostp));\n     923:     if(!dst->set.mimepostp)\n     924:       return CURLE_OUT_OF_MEMORY;\n     925: \n     926:     Curl_mime_initpart(dst->set.mimepostp);\n     927:     result = Curl_mime_duppart(dst, dst->set.mimepostp, src->set.mimepostp);\n     928:     if(result)\n     929:       return result;\n     930:   }\n     931: #endif\n     932: \n     933:   if(src->set.resolve)\n     934:     dst->state.resolve = dst->set.resolve;\n     935: \n     936:   return result;\n     937: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fileck|FileNeverClose|file.c|576|22|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-file.fileck.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "file_leak",
+      "confidence": 0.95,
+      "rationale": "The DIR* resource opened at line 568 via opendir() is never closed with closedir(). The readdir loop at line 576 can break early on error (lines 580-581, 583-584), and even on normal completion, no closedir() call appears in the provided snippet. The 'goto out' at line 573 also skips any cleanup that might follow.",
+      "evidence_lines": [
+        {
+          "file": "lib/file.c",
+          "line": 568,
+          "role": "allocation"
+        },
+        {
+          "file": "lib/file.c",
+          "line": 576,
+          "role": "condition"
+        },
+        {
+          "file": "lib/file.c",
+          "line": 580,
+          "role": "return"
+        },
+        {
+          "file": "lib/file.c",
+          "line": 583,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Call closedir(dir) before all return/break paths and at the 'out' label or after the loop completes normally.",
+      "warning": {
+        "id": "fileck|FileNeverClose|file.c|576|22|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-file.fileck.stderr.txt",
+        "checker": "fileck",
+        "kind": "FileNeverClose",
+        "site_label": "file open",
+        "vulnerability_type": "file_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-file.fileck.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-file.bc",
+        "primary": {
+          "file": "file.c",
+          "line": 576,
+          "column": 22
+        },
+        "path": [],
+        "raw_text": "FileNeverClose : file open location at : (CallICFGNode: { \"ln\": 576, \"cl\": 22, \"fl\": \"file.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "fileck|FileNeverClose|file.c|576|22|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-file.fileck.stderr.txt",
+          "checker": "fileck",
+          "kind": "FileNeverClose",
+          "site_label": "file open",
+          "vulnerability_type": "file_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurl_la-file.fileck.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurl_la-file.bc",
+          "primary": {
+            "file": "file.c",
+            "line": 576,
+            "column": 22
+          },
+          "path": [],
+          "raw_text": "FileNeverClose : file open location at : (CallICFGNode: { \"ln\": 576, \"cl\": 22, \"fl\": \"file.c\" })"
+        },
+        "source_files": [
+          "lib/file.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "lib/file.c",
+            "start_line": 568,
+            "end_line": 584,
+            "important_lines": [
+              576
+            ],
+            "text": "     568:     DIR *dir = opendir(file->path);\n     569:     struct dirent *entry;\n     570: \n     571:     if(!dir) {\n     572:       result = CURLE_READ_ERROR;\n     573:       goto out;\n     574:     }\n     575:     else {\n>>   576:       while((entry = readdir(dir))) {\n     577:         if(entry->d_name[0] != '.') {\n     578:           result = Curl_client_write(data, CLIENTWRITE_BODY,\n     579:                    entry->d_name, strlen(entry->d_name));\n     580:           if(result)\n     581:             break;\n     582:           result = Curl_client_write(data, CLIENTWRITE_BODY, \"\\n\", 1);\n     583:           if(result)\n     584:             break;"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fileck|PartialFileClose|cookie.c|1105|12|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-cookie.fileck.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "file_leak",
+      "confidence": 0.95,
+      "rationale": "File opened at line 1105 is leaked when fstat succeeds but S_ISDIR returns false. In that case, fp is assigned to handle (line 1117), but if the subsequent condition at line 1122 (if(fp)) evaluates to false due to fp being reassigned or cleared elsewhere, handle is never closed. However, the actual bug is simpler: when fstat fails (line 1110 condition is false), execution jumps to line 1122. At that point fp is non-NULL (it was successfully opened), but handle is still NULL (line 1117 is skipped), so the close at line 1152-1153 does not execute, leaking fp.",
+      "evidence_lines": [
+        {
+          "file": "lib/cookie.c",
+          "line": 1105,
+          "role": "allocation"
+        },
+        {
+          "file": "lib/cookie.c",
+          "line": 1110,
+          "role": "condition"
+        },
+        {
+          "file": "lib/cookie.c",
+          "line": 1117,
+          "role": "ownership"
+        },
+        {
+          "file": "lib/cookie.c",
+          "line": 1122,
+          "role": "condition"
+        },
+        {
+          "file": "lib/cookie.c",
+          "line": 1152,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Close fp in the else branch at line 1116-1117 when fstat fails, or ensure handle is set to fp unconditionally after fstat check, or add cleanup at line 1154 to close fp if handle is NULL.",
+      "warning": {
+        "id": "fileck|PartialFileClose|cookie.c|1105|12|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-cookie.fileck.stderr.txt",
+        "checker": "fileck",
+        "kind": "PartialFileClose",
+        "site_label": "file open",
+        "vulnerability_type": "file_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-cookie.fileck.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurlu_la-cookie.bc",
+        "primary": {
+          "file": "cookie.c",
+          "line": 1105,
+          "column": 12
+        },
+        "path": [
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 51,
+            "branch": "False"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 51,
+            "branch": "True"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 12,
+            "branch": "False"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1110,
+            "column": 12,
+            "branch": "True"
+          },
+          {
+            "file": "cookie.c",
+            "line": 1122,
+            "column": 6,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 1105, \"cl\": 12, \"fl\": \"cookie.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1122, \"cl\": 6, \"fl\": \"cookie.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "fileck|PartialFileClose|cookie.c|1105|12|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-cookie.fileck.stderr.txt",
+          "checker": "fileck",
+          "kind": "PartialFileClose",
+          "site_label": "file open",
+          "vulnerability_type": "file_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-cookie.fileck.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurlu_la-cookie.bc",
+          "primary": {
+            "file": "cookie.c",
+            "line": 1105,
+            "column": 12
+          },
+          "path": [
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 51,
+              "branch": "False"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 51,
+              "branch": "True"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 12,
+              "branch": "False"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1110,
+              "column": 12,
+              "branch": "True"
+            },
+            {
+              "file": "cookie.c",
+              "line": 1122,
+              "column": 6,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 1105, \"cl\": 12, \"fl\": \"cookie.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 51, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|False) \n\t\t  --> ({ \"ln\": 1110, \"cl\": 12, \"fl\": \"cookie.c\" }|True) \n\t\t  --> ({ \"ln\": 1122, \"cl\": 6, \"fl\": \"cookie.c\" }|True)"
+        },
+        "source_files": [
+          "lib/cookie.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "lib/cookie.c",
+            "start_line": 1088,
+            "end_line": 1159,
+            "important_lines": [
+              1105,
+              1110,
+              1122
+            ],
+            "text": "    1088: static CURLcode cookie_load(struct Curl_easy *data, const char *file,\n    1089:                             struct CookieInfo *ci, bool newsession)\n    1090: {\n    1091:   FILE *handle = NULL;\n    1092:   CURLcode result = CURLE_OK;\n    1093:   FILE *fp = NULL;\n    1094:   DEBUGASSERT(ci);\n    1095:   DEBUGASSERT(data);\n    1096:   DEBUGASSERT(file);\n    1097: \n    1098:   ci->newsession = newsession; /* new session? */\n    1099:   ci->running = FALSE; /* this is not running, this is init */\n    1100: \n    1101:   if(file && *file) {\n    1102:     if(!strcmp(file, \"-\"))\n    1103:       fp = stdin;\n    1104:     else {\n>>  1105:       fp = curlx_fopen(file, \"rb\");\n    1106:       if(!fp)\n    1107:         infof(data, \"WARNING: failed to open cookie file \\\"%s\\\"\", file);\n    1108:       else {\n    1109:         curlx_struct_stat stat;\n>>  1110:         if((curlx_fstat(fileno(fp), &stat) != -1) && S_ISDIR(stat.st_mode)) {\n    1111:           curlx_fclose(fp);\n    1112:           fp = NULL;\n    1113:           infof(data, \"WARNING: cookie filename points to a directory: \\\"%s\\\"\",\n    1114:                 file);\n    1115:         }\n    1116:         else\n    1117:           handle = fp;\n    1118:       }\n    1119:     }\n    1120:   }\n    1121: \n>>  1122:   if(fp) {\n    1123:     struct dynbuf buf;\n    1124:     bool eof = FALSE;\n    1125:     curlx_dyn_init(&buf, MAX_COOKIE_LINE);\n    1126:     do {\n    1127:       result = Curl_get_line(&buf, fp, &eof);\n    1128:       if(!result) {\n    1129:         const char *lineptr = curlx_dyn_ptr(&buf);\n    1130:         bool headerline = FALSE;\n    1131:         if(checkprefix(\"Set-Cookie:\", lineptr)) {\n    1132:           /* This is a cookie line, get it! */\n    1133:           lineptr += 11;\n    1134:           headerline = TRUE;\n    1135:           curlx_str_passblanks(&lineptr);\n    1136:         }\n    1137: \n    1138:         result = Curl_cookie_add(data, ci, headerline, TRUE, lineptr, NULL,\n    1139:                                  NULL, TRUE);\n    1140:         /* File reading cookie failures are not propagated back to the\n    1141:            caller because there is no way to do that */\n    1142:       }\n    1143:     } while(!result && !eof);\n    1144:     curlx_dyn_free(&buf); /* free the line buffer */\n    1145: \n    1146:     /*\n    1147:      * Remove expired cookies from the hash. We must make sure to run this\n    1148:      * after reading the file, and not on every cookie.\n    1149:      */\n    1150:     remove_expired(ci);\n    1151: \n    1152:     if(handle)\n    1153:       curlx_fclose(handle);\n    1154:   }\n    1155:   data->state.cookie_engine = TRUE;\n    1156:   ci->running = TRUE;          /* now, we are running */\n    1157: \n    1158:   return result;\n    1159: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fileck|FileNeverClose|file.c|576|22|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-file.fileck.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "file_leak",
+      "confidence": 0.95,
+      "rationale": "DIR* opened at line 568 with opendir() is never closed with closedir(). The loop at line 576 can break early (lines 580-581, 583-584) without cleanup, and even on normal exit the 'dir' handle leaks. No closedir() call is visible in the provided snippet.",
+      "evidence_lines": [
+        {
+          "file": "lib/file.c",
+          "line": 568,
+          "role": "allocation"
+        },
+        {
+          "file": "lib/file.c",
+          "line": 580,
+          "role": "return"
+        },
+        {
+          "file": "lib/file.c",
+          "line": 583,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Add closedir(dir) before 'goto out' on error paths and after the loop completes.",
+      "warning": {
+        "id": "fileck|FileNeverClose|file.c|576|22|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-file.fileck.stderr.txt",
+        "checker": "fileck",
+        "kind": "FileNeverClose",
+        "site_label": "file open",
+        "vulnerability_type": "file_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-file.fileck.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurlu_la-file.bc",
+        "primary": {
+          "file": "file.c",
+          "line": 576,
+          "column": 22
+        },
+        "path": [],
+        "raw_text": "FileNeverClose : file open location at : (CallICFGNode: { \"ln\": 576, \"cl\": 22, \"fl\": \"file.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "fileck|FileNeverClose|file.c|576|22|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-file.fileck.stderr.txt",
+          "checker": "fileck",
+          "kind": "FileNeverClose",
+          "site_label": "file open",
+          "vulnerability_type": "file_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__lib__libcurlu_la-file.fileck.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/lib/libcurlu_la-file.bc",
+          "primary": {
+            "file": "file.c",
+            "line": 576,
+            "column": 22
+          },
+          "path": [],
+          "raw_text": "FileNeverClose : file open location at : (CallICFGNode: { \"ln\": 576, \"cl\": 22, \"fl\": \"file.c\" })"
+        },
+        "source_files": [
+          "lib/file.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "lib/file.c",
+            "start_line": 568,
+            "end_line": 584,
+            "important_lines": [
+              576
+            ],
+            "text": "     568:     DIR *dir = opendir(file->path);\n     569:     struct dirent *entry;\n     570: \n     571:     if(!dir) {\n     572:       result = CURLE_READ_ERROR;\n     573:       goto out;\n     574:     }\n     575:     else {\n>>   576:       while((entry = readdir(dir))) {\n     577:         if(entry->d_name[0] != '.') {\n     578:           result = Curl_client_write(data, CLIENTWRITE_BODY,\n     579:                    entry->d_name, strlen(entry->d_name));\n     580:           if(result)\n     581:             break;\n     582:           result = Curl_client_write(data, CLIENTWRITE_BODY, \"\\n\", 1);\n     583:           if(result)\n     584:             break;"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fileck|PartialFileClose|tool_ipfs.c|68|11|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-tool_ipfs.fileck.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "file_leak",
+      "confidence": 0.95,
+      "rationale": "The file opened at line 68 is not closed when curlx_dyn_addn fails at line 80. The failure path jumps to 'fail' label (line 92), but gfile is only closed there if non-null. However, when curlx_dyn_addn fails inside the while loop, execution goes to fail without closing gfile first, leaking the file descriptor.",
+      "evidence_lines": [
+        {
+          "file": "tool_ipfs.c",
+          "line": 68,
+          "role": "allocation"
+        },
+        {
+          "file": "tool_ipfs.c",
+          "line": 78,
+          "role": "condition"
+        },
+        {
+          "file": "tool_ipfs.c",
+          "line": 80,
+          "role": "condition"
+        },
+        {
+          "file": "tool_ipfs.c",
+          "line": 81,
+          "role": "return"
+        },
+        {
+          "file": "tool_ipfs.c",
+          "line": 88,
+          "role": "free"
+        },
+        {
+          "file": "tool_ipfs.c",
+          "line": 93,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "At line 80-81, when curlx_dyn_addn fails, close gfile before jumping to fail. Change line 80-81 to: if(curlx_dyn_addn(&dyn, &c_char, 1)) { curlx_fclose(gfile); goto fail; }",
+      "warning": {
+        "id": "fileck|PartialFileClose|tool_ipfs.c|68|11|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-tool_ipfs.fileck.stderr.txt",
+        "checker": "fileck",
+        "kind": "PartialFileClose",
+        "site_label": "file open",
+        "vulnerability_type": "file_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-tool_ipfs.fileck.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/curl-tool_ipfs.bc",
+        "primary": {
+          "file": "tool_ipfs.c",
+          "line": 68,
+          "column": 11
+        },
+        "path": [
+          {
+            "file": "tool_ipfs.c",
+            "line": 78,
+            "column": 5,
+            "branch": "False"
+          },
+          {
+            "file": "tool_ipfs.c",
+            "line": 78,
+            "column": 5,
+            "branch": "True"
+          },
+          {
+            "file": "tool_ipfs.c",
+            "line": 80,
+            "column": 10,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 68, \"cl\": 11, \"fl\": \"tool_ipfs.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 78, \"cl\": 5, \"fl\": \"tool_ipfs.c\" }|False) \n\t\t  --> ({ \"ln\": 78, \"cl\": 5, \"fl\": \"tool_ipfs.c\" }|True) \n\t\t  --> ({ \"ln\": 80, \"cl\": 10, \"fl\": \"tool_ipfs.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "fileck|PartialFileClose|tool_ipfs.c|68|11|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-tool_ipfs.fileck.stderr.txt",
+          "checker": "fileck",
+          "kind": "PartialFileClose",
+          "site_label": "file open",
+          "vulnerability_type": "file_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-tool_ipfs.fileck.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/curl-tool_ipfs.bc",
+          "primary": {
+            "file": "tool_ipfs.c",
+            "line": 68,
+            "column": 11
+          },
+          "path": [
+            {
+              "file": "tool_ipfs.c",
+              "line": 78,
+              "column": 5,
+              "branch": "False"
+            },
+            {
+              "file": "tool_ipfs.c",
+              "line": 78,
+              "column": 5,
+              "branch": "True"
+            },
+            {
+              "file": "tool_ipfs.c",
+              "line": 80,
+              "column": 10,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 68, \"cl\": 11, \"fl\": \"tool_ipfs.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 78, \"cl\": 5, \"fl\": \"tool_ipfs.c\" }|False) \n\t\t  --> ({ \"ln\": 78, \"cl\": 5, \"fl\": \"tool_ipfs.c\" }|True) \n\t\t  --> ({ \"ln\": 80, \"cl\": 10, \"fl\": \"tool_ipfs.c\" }|True)"
+        },
+        "source_files": [
+          "src/tool_ipfs.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/tool_ipfs.c",
+            "start_line": 39,
+            "end_line": 97,
+            "important_lines": [
+              68,
+              78,
+              80
+            ],
+            "text": "      39: static char *ipfs_gateway(void)\n      40: {\n      41:   char *ipfs_path_c = NULL;\n      42:   char *gateway_composed_c = NULL;\n      43:   FILE *gfile = NULL;\n      44:   char *gateway_env = getenv(\"IPFS_GATEWAY\");\n      45: \n      46:   if(gateway_env)\n      47:     return curlx_strdup(gateway_env);\n      48: \n      49:   /* Try to find the gateway in the IPFS data folder. */\n      50:   ipfs_path_c = curl_getenv(\"IPFS_PATH\");\n      51: \n      52:   if(!ipfs_path_c) {\n      53:     char *home = getenv(\"HOME\");\n      54:     /* fallback to \"~/.ipfs\", as that is the default location. */\n      55:     if(home && *home)\n      56:       ipfs_path_c = curl_maprintf(\"%s/.ipfs/\", home);\n      57:     if(!ipfs_path_c)\n      58:       goto fail;\n      59:   }\n      60: \n      61:   gateway_composed_c =\n      62:     curl_maprintf(\"%s%sgateway\", ipfs_path_c,\n      63:                   has_trailing_slash(ipfs_path_c) ? \"\" : \"/\");\n      64: \n      65:   if(!gateway_composed_c)\n      66:     goto fail;\n      67: \n>>    68:   gfile = curlx_fopen(gateway_composed_c, FOPEN_READTEXT);\n      69:   curl_free(gateway_composed_c);\n      70: \n      71:   if(gfile) {\n      72:     int c;\n      73:     struct dynbuf dyn;\n      74:     char *gateway = NULL;\n      75:     curlx_dyn_init(&dyn, MAX_GATEWAY_URL_LEN);\n      76: \n      77:     /* get the first line of the gateway file, ignore the rest */\n>>    78:     while((c = getc(gfile)) != EOF && c != '\\n' && c != '\\r') {\n      79:       char c_char = (char)c;\n>>    80:       if(curlx_dyn_addn(&dyn, &c_char, 1))\n      81:         goto fail;\n      82:     }\n      83: \n      84:     if(curlx_dyn_len(&dyn))\n      85:       gateway = curlx_dyn_ptr(&dyn);\n      86: \n      87:     curl_free(ipfs_path_c);\n      88:     curlx_fclose(gfile);\n      89: \n      90:     return gateway;\n      91:   }\n      92: fail:\n      93:   if(gfile)\n      94:     curlx_fclose(gfile);\n      95:   curl_free(ipfs_path_c);\n      96:   return NULL;\n      97: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|var.c|355|7|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.95,
+      "rationale": "Memory allocated at line 355 (curlx_calloc) is leaked when the condition at line 361 evaluates to false. If p->content assignment fails (contalloc is false and curlx_memdup0 returns NULL, or contalloc is true but content is NULL), the function returns PARAM_NO_MEM without freeing p. The curlx_free(p) at line 368 is only reached when p->content is truthy.",
+      "evidence_lines": [
+        {
+          "file": "src/var.c",
+          "line": 355,
+          "role": "allocation"
+        },
+        {
+          "file": "src/var.c",
+          "line": 361,
+          "role": "condition"
+        },
+        {
+          "file": "src/var.c",
+          "line": 368,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Move curlx_free(p) outside the if(p->content) block so it executes on both the success path (after line 366) and the failure path (before line 370 return).",
+      "warning": {
+        "id": "leak|PartialLeak|var.c|355|7|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.leak.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/curl-var.bc",
+        "primary": {
+          "file": "var.c",
+          "line": 355,
+          "column": 7
+        },
+        "path": [
+          {
+            "file": "var.c",
+            "line": 361,
+            "column": 8,
+            "branch": "False"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 355, \"cl\": 7, \"fl\": \"var.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 361, \"cl\": 8, \"fl\": \"var.c\" }|False)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|var.c|355|7|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.leak.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/curl-var.bc",
+          "primary": {
+            "file": "var.c",
+            "line": 355,
+            "column": 7
+          },
+          "path": [
+            {
+              "file": "var.c",
+              "line": 361,
+              "column": 8,
+              "branch": "False"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 355, \"cl\": 7, \"fl\": \"var.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 361, \"cl\": 8, \"fl\": \"var.c\" }|False)"
+        },
+        "source_files": [
+          "src/var.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/var.c",
+            "start_line": 343,
+            "end_line": 371,
+            "important_lines": [
+              355,
+              361
+            ],
+            "text": "     343: static ParameterError addvariable(const char *name,\n     344:                                   size_t nlen,\n     345:                                   const char *content,\n     346:                                   size_t clen,\n     347:                                   bool contalloc)\n     348: {\n     349:   struct tool_var *p;\n     350:   const struct tool_var *check = varcontent(name, nlen);\n     351:   DEBUGASSERT(nlen);\n     352:   if(check)\n     353:     notef(\"Overwriting variable '%s'\", check->name);\n     354: \n>>   355:   p = curlx_calloc(1, sizeof(struct tool_var) + nlen);\n     356:   if(p) {\n     357:     memcpy(p->name, name, nlen);\n     358:     /* the null-termination byte is already present from above */\n     359: \n     360:     p->content = contalloc ? content : curlx_memdup0(content, clen);\n>>   361:     if(p->content) {\n     362:       p->clen = clen;\n     363: \n     364:       p->next = global->variables;\n     365:       global->variables = p;\n     366:       return PARAM_OK;\n     367:     }\n     368:     curlx_free(p);\n     369:   }\n     370:   return PARAM_NO_MEM;\n     371: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|var.c|355|7|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.95,
+      "rationale": "Memory allocated at line 355 (curlx_calloc for struct tool_var) is leaked when p->content assignment/allocation fails at line 360. The conditional at line 361 checks if p->content is valid; if false, the function returns PARAM_NO_MEM at line 370 without freeing p. The free at line 368 only executes inside the true branch of line 361, leaving the allocated p unreleased on the failure path.",
+      "evidence_lines": [
+        {
+          "file": "src/var.c",
+          "line": 355,
+          "role": "allocation"
+        },
+        {
+          "file": "src/var.c",
+          "line": 360,
+          "role": "allocation"
+        },
+        {
+          "file": "src/var.c",
+          "line": 361,
+          "role": "condition"
+        },
+        {
+          "file": "src/var.c",
+          "line": 368,
+          "role": "free"
+        },
+        {
+          "file": "src/var.c",
+          "line": 370,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Move curlx_free(p) outside the if(p->content) block so it executes on both success and failure paths, or add curlx_free(p) before line 370 return.",
+      "warning": {
+        "id": "null-deref|PartialLeak|var.c|355|7|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.null-deref.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/curl-var.bc",
+        "primary": {
+          "file": "var.c",
+          "line": 355,
+          "column": 7
+        },
+        "path": [
+          {
+            "file": "var.c",
+            "line": 361,
+            "column": 8,
+            "branch": "False"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 355, \"cl\": 7, \"fl\": \"var.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 361, \"cl\": 8, \"fl\": \"var.c\" }|False)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|var.c|355|7|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__curl-var.null-deref.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/curl-var.bc",
+          "primary": {
+            "file": "var.c",
+            "line": 355,
+            "column": 7
+          },
+          "path": [
+            {
+              "file": "var.c",
+              "line": 361,
+              "column": 8,
+              "branch": "False"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 355, \"cl\": 7, \"fl\": \"var.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 361, \"cl\": 8, \"fl\": \"var.c\" }|False)"
+        },
+        "source_files": [
+          "src/var.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/var.c",
+            "start_line": 343,
+            "end_line": 371,
+            "important_lines": [
+              355,
+              361
+            ],
+            "text": "     343: static ParameterError addvariable(const char *name,\n     344:                                   size_t nlen,\n     345:                                   const char *content,\n     346:                                   size_t clen,\n     347:                                   bool contalloc)\n     348: {\n     349:   struct tool_var *p;\n     350:   const struct tool_var *check = varcontent(name, nlen);\n     351:   DEBUGASSERT(nlen);\n     352:   if(check)\n     353:     notef(\"Overwriting variable '%s'\", check->name);\n     354: \n>>   355:   p = curlx_calloc(1, sizeof(struct tool_var) + nlen);\n     356:   if(p) {\n     357:     memcpy(p->name, name, nlen);\n     358:     /* the null-termination byte is already present from above */\n     359: \n     360:     p->content = contalloc ? content : curlx_memdup0(content, clen);\n>>   361:     if(p->content) {\n     362:       p->clen = clen;\n     363: \n     364:       p->next = global->variables;\n     365:       global->variables = p;\n     366:       return PARAM_OK;\n     367:     }\n     368:     curlx_free(p);\n     369:   }\n     370:   return PARAM_NO_MEM;\n     371: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|tool_cfgable.c|41|5|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__libcurltool_la-tool_cfgable.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.95,
+      "rationale": "The allocation at line 41 creates an OperationConfig structure. The conditional free path shows that when curl_global_init succeeds (line 335 condition is False, meaning result==0) AND get_libcurl_info fails (line 339 condition is True, meaning result!=0), the code frees global->first at line 341 but does NOT free the originally allocated 'config' structure from line 41. This is a clear memory leak on the error path.",
+      "evidence_lines": [
+        {
+          "file": "tool_cfgable.c",
+          "line": 41,
+          "role": "allocation"
+        },
+        {
+          "file": "tool_cfgable.c",
+          "line": 335,
+          "role": "condition"
+        },
+        {
+          "file": "tool_cfgable.c",
+          "line": 339,
+          "role": "condition"
+        },
+        {
+          "file": "tool_cfgable.c",
+          "line": 341,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "On the error path at line 341, after freeing global->first, also free the 'config' pointer allocated at line 41 (assuming it's reachable in that scope, likely as global->first or similar). Ensure proper cleanup of all allocated resources before returning on error.",
+      "warning": {
+        "id": "leak|PartialLeak|tool_cfgable.c|41|5|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__libcurltool_la-tool_cfgable.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__libcurltool_la-tool_cfgable.leak.stderr.txt",
+        "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/libcurltool_la-tool_cfgable.bc",
+        "primary": {
+          "file": "tool_cfgable.c",
+          "line": 41,
+          "column": 5
+        },
+        "path": [
+          {
+            "file": "tool_cfgable.c",
+            "line": 335,
+            "column": 8,
+            "branch": "False"
+          },
+          {
+            "file": "tool_cfgable.c",
+            "line": 335,
+            "column": 8,
+            "branch": "True"
+          },
+          {
+            "file": "tool_cfgable.c",
+            "line": 339,
+            "column": 10,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 41, \"cl\": 5, \"fl\": \"tool_cfgable.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 335, \"cl\": 8, \"fl\": \"tool_cfgable.c\" }|False) \n\t\t  --> ({ \"ln\": 335, \"cl\": 8, \"fl\": \"tool_cfgable.c\" }|True) \n\t\t  --> ({ \"ln\": 339, \"cl\": 10, \"fl\": \"tool_cfgable.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|tool_cfgable.c|41|5|0|home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__libcurltool_la-tool_cfgable.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "/home/lxh/Projects/NSPA/outputs/saber/curl/home__lxh__Projects__NSPA__workspace__curl-bc__objects__src__libcurltool_la-tool_cfgable.leak.stderr.txt",
+          "bc_file": "/home/lxh/Projects/NSPA/workspace/curl-bc/objects/src/libcurltool_la-tool_cfgable.bc",
+          "primary": {
+            "file": "tool_cfgable.c",
+            "line": 41,
+            "column": 5
+          },
+          "path": [
+            {
+              "file": "tool_cfgable.c",
+              "line": 335,
+              "column": 8,
+              "branch": "False"
+            },
+            {
+              "file": "tool_cfgable.c",
+              "line": 335,
+              "column": 8,
+              "branch": "True"
+            },
+            {
+              "file": "tool_cfgable.c",
+              "line": 339,
+              "column": 10,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 41, \"cl\": 5, \"fl\": \"tool_cfgable.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 335, \"cl\": 8, \"fl\": \"tool_cfgable.c\" }|False) \n\t\t  --> ({ \"ln\": 335, \"cl\": 8, \"fl\": \"tool_cfgable.c\" }|True) \n\t\t  --> ({ \"ln\": 339, \"cl\": 10, \"fl\": \"tool_cfgable.c\" }|True)"
+        },
+        "source_files": [
+          "src/tool_cfgable.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/tool_cfgable.c",
+            "start_line": 38,
+            "end_line": 59,
+            "important_lines": [
+              41
+            ],
+            "text": "      38: struct OperationConfig *config_alloc(void)\n      39: {\n      40:   struct OperationConfig *config =\n>>    41:     curlx_calloc(1, sizeof(struct OperationConfig));\n      42:   if(!config)\n      43:     return NULL;\n      44: \n      45:   config->use_httpget = FALSE;\n      46:   config->create_dirs = FALSE;\n      47:   config->maxredirs = DEFAULT_MAXREDIRS;\n      48:   config->proto_present = FALSE;\n      49:   config->proto_redir_present = FALSE;\n      50:   config->proto_default = NULL;\n      51:   config->tcp_nodelay = TRUE; /* enabled by default */\n      52:   config->happy_eyeballs_timeout_ms = CURL_HET_DEFAULT;\n      53:   config->http09_allowed = FALSE;\n      54:   config->ftp_skip_ip = TRUE;\n      55:   config->file_clobber_mode = CLOBBER_DEFAULT;\n      56:   config->upload_flags = CURLULFLAG_SEEN;\n      57:   curlx_dyn_init(&config->postdata, MAX_FILE2MEMORY);\n      58:   return config;\n      59: }"
+          },
+          {
+            "file": "src/tool_cfgable.c",
+            "start_line": 327,
+            "end_line": 347,
+            "important_lines": [
+              335,
+              339
+            ],
+            "text": "     327:     /* Perform the libcurl initialization */\n     328: #ifdef CURL_DEBUG_GLOBAL_MEM\n     329:     result = curl_global_init_mem(CURL_GLOBAL_ALL, custom_malloc, custom_free,\n     330:                                   custom_realloc, custom_strdup,\n     331:                                   custom_calloc);\n     332: #else\n     333:     result = curl_global_init(CURL_GLOBAL_DEFAULT);\n     334: #endif\n>>   335:     if(!result) {\n     336:       /* Get information about libcurl */\n     337:       result = get_libcurl_info();\n     338: \n>>   339:       if(result) {\n     340:         errorf(\"error retrieving curl library information\");\n     341:         curlx_free(global->first);\n     342:       }\n     343:     }\n     344:     else {\n     345:       errorf(\"error initializing curl library\");\n     346:       curlx_free(global->first);\n     347:     }"
+          }
+        ]
+      }
+    }
+  ]
+}

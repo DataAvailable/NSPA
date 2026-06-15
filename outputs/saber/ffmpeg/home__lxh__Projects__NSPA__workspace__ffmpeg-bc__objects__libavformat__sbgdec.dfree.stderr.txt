@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 172, "cl": 18, "fl": "libavformat/sbgdec.c" })
+		 double free path: 
+		  --> ({ "ln": 1455, "cl": 40, "fl": "libavformat/sbgdec.c" }|False) 
+		  --> ({ "ln": 1455, "cl": 40, "fl": "libavformat/sbgdec.c" }|True) 
+		  --> ({ "ln": 1456, "cl": 26, "fl": "libavformat/sbgdec.c" }|True) 
+		  --> ({ "ln": 1455, "cl": 9, "fl": "libavformat/sbgdec.c" }|False) 
+		  --> ({ "ln": 1463, "cl": 9, "fl": "libavformat/sbgdec.c" }|False) 
+

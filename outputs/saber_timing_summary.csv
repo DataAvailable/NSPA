@@ -1,0 +1,5 @@
+project,status,validated_json,bc_input,output_dir,loaded_memory_functions,injected_allocators,injected_releasers,rebuild_elapsed_seconds,rebuild_elapsed,saber_elapsed_seconds,saber_elapsed,saber_run_count,saber_failed_count,error
+bash,ok,/home/lxh/Projects/NSPA/outputs/bash/nspa_bash_validated_memory_functions.json,/home/lxh/Projects/NSPA/workspace/bash-bc/objects,/home/lxh/Projects/NSPA/outputs/saber/bash,129,42,85,1.531,1.531s,2848.063,47m 28.063s,652,18,
+curl,ok,/home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json,/home/lxh/Projects/NSPA/workspace/curl-bc/objects,/home/lxh/Projects/NSPA/outputs/saber/curl,125,51,74,1.217,1.217s,121.757,2m 1.757s,1852,0,
+ffmpeg,ok,/home/lxh/Projects/NSPA/outputs/ffmpeg/nspa_ffmpeg_validated_memory_functions.json,/home/lxh/Projects/NSPA/workspace/ffmpeg-bc/objects,/home/lxh/Projects/NSPA/outputs/saber/ffmpeg,809,379,430,1.244,1.244s,749.369,12m 29.369s,8084,0,
+git,ok,/home/lxh/Projects/NSPA/outputs/git/nspa_git_validated_memory_functions.json,/home/lxh/Projects/NSPA/workspace/git-bc/objects,/home/lxh/Projects/NSPA/outputs/saber/git,778,359,415,1.248,1.248s,2556.064,42m 36.064s,1708,9,

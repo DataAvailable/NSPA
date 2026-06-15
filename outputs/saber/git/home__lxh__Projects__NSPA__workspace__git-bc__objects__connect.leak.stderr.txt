@@ -1,0 +1,34 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 464, "cl": 13, "fl": "connect.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 230, "cl": 17, "fl": "connect.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1020, "cl": 10, "fl": "connect.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1237, "cl": 17, "fl": "connect.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1240, "cl": 32, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 1240, "cl": 6, "fl": "connect.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 6, "fl": "connect.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 6, "fl": "connect.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 302, "cl": 21, "fl": "connect.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1235, "cl": 17, "fl": "connect.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1240, "cl": 32, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 1240, "cl": 6, "fl": "connect.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 6, "fl": "connect.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 6, "fl": "connect.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 429, "cl": 28, "fl": "connect.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 442, "cl": 8, "fl": "connect.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 245, "cl": 27, "fl": "connect.c" })
+		 conditional free path: 
+		  --> ({ "ln": 352, "cl": 3, "fl": "connect.c" }|False) 
+		  --> ({ "ln": 352, "cl": 3, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 352, "cl": 3, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 352, "cl": 3, "fl": "connect.c" }|False) 
+		  --> ({ "ln": 352, "cl": 3, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 352, "cl": 3, "fl": "connect.c" }|False) 
+		  --> ({ "ln": 366, "cl": 3, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 366, "cl": 3, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 366, "cl": 3, "fl": "connect.c" }|True) 
+		  --> ({ "ln": 241, "cl": 6, "fl": "connect.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 451, "cl": 18, "fl": "connect.c" })

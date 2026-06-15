@@ -1,0 +1,12 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 334, "cl": 1, "fl": "./khash.h" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 334, "cl": 1, "fl": "./khash.h" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 53, "cl": 13, "fl": "fsck.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 334, "cl": 1, "fl": "./khash.h" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 145, "cl": 3, "fl": "fsck.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 64, "cl": 7, "fl": "fsck.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 334, "cl": 1, "fl": "./khash.h" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 185, "cl": 14, "fl": "fsck.c" })
+		 conditional free path: 
+		  --> ({ "ln": 188, "cl": 2, "fl": "fsck.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 334, "cl": 1, "fl": "./khash.h" })

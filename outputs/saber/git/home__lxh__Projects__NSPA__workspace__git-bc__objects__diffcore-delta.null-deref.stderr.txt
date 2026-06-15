@@ -1,0 +1,26 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 157, "cl": 10, "fl": "diffcore-delta.c" })
+		 conditional free path: 
+		  --> ({ "ln": 229, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 231, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 92, "cl": 7, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 96, "cl": 8, "fl": "diffcore-delta.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 163, "cl": 10, "fl": "diffcore-delta.c" })
+		 conditional free path: 
+		  --> ({ "ln": 229, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 231, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 134, "cl": 9, "fl": "diffcore-delta.c" })
+		 conditional free path: 
+		  --> ({ "ln": 229, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 231, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 92, "cl": 7, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 96, "cl": 8, "fl": "diffcore-delta.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 55, "cl": 17, "fl": "diffcore-delta.c" })
+		 conditional free path: 
+		  --> ({ "ln": 229, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 231, "cl": 6, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 92, "cl": 7, "fl": "diffcore-delta.c" }|True) 
+		  --> ({ "ln": 96, "cl": 8, "fl": "diffcore-delta.c" }|True) 
+

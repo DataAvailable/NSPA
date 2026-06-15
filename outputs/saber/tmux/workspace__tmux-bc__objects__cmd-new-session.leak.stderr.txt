@@ -1,6 +1,9 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 269, "cl": 3, "fl": "cmd-new-session.c" })
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 279, "cl": 6, "fl": "cmd-new-session.c" })
 		 conditional free path: 
 		  --> ({ "ln": 295, "cl": 6, "fl": "cmd-new-session.c" }|True) 
 
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 263, "cl": 7, "fl": "cmd-new-session.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 271, "cl": 8, "fl": "cmd-new-session.c" })
 [1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 295, "cl": 6, "fl": "cmd-new-session.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 309, "cl": 10, "fl": "cmd-new-session.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 312, "cl": 10, "fl": "cmd-new-session.c" })

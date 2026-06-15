@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 69, "cl": 7, "fl": "xdiff/xprepare.c" })
+		 double free path: 
+		  --> ({ "ln": 69, "cl": 6, "fl": "xdiff/xprepare.c" }|False) 
+		  --> ({ "ln": 76, "cl": 7, "fl": "xdiff/xprepare.c" }|False) 
+		  --> ({ "ln": 76, "cl": 7, "fl": "xdiff/xprepare.c" }|True) 
+		  --> ({ "ln": 76, "cl": 6, "fl": "xdiff/xprepare.c" }|True) 
+

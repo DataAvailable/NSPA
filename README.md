@@ -146,22 +146,9 @@ bash scripts/rebuild_and_check_saber.sh \
   /home/lxh/Projects/NSPA \
   /home/lxh/Projects/NSPA/SVF/Release-build \
   /home/lxh/Projects/NSPA/workspace/curl-bc \
-  /home/lxh/Projects/NSPA/outputs/nspa_curl_validated_memory_functions.json
+  /home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
-也可以让第二阶段脚本自动调用该重编译脚本：
-
-```bash
-python3 -m nspa.fine_grained_reachability \
-  --validated-json outputs/nspa_curl_validated_memory_functions.json \
-  --project curl \
-  --saber-api-cpp SVF/svf/lib/SABER/SaberCheckerAPI.cpp \
-  --rebuild-script scripts/rebuild_and_check_saber.sh \
-  --svf-build-dir SVF/Release-build \
-  --bc-dir workspace/curl-bc \
-  --skip-saber \
-  --summary
-```
 
 ### 步骤4：运行 Saber 检测 bitcode
 
@@ -178,11 +165,11 @@ saber -null-deref -extapi="$SVF_EXTAPI" file.bc
 
 ```bash
 python3 -m nspa.fine_grained_reachability \
-  --validated-json outputs/nspa_curl_validated_memory_functions.json \
+  --validated-json outputs/curl/nspa_curl_validated_memory_functions.json \
   --project curl \
   --saber-api-cpp SVF/svf/lib/SABER/SaberCheckerAPI.cpp \
   --svf-build-dir SVF/Release-build \
-  --bc-dir workspace/curl-bc \
+  --bc-dir workspace/curl-bc/src \
   --output-dir outputs/saber/curl \
   --skip-rebuild \
   --timeout 120 \
@@ -191,10 +178,24 @@ python3 -m nspa.fine_grained_reachability \
 
 运行过程中会在控制台打印每个 `.bc + checker` 的进度。默认输出采用稀疏保存策略：没有 stderr 内容且返回码为 0 的正常结果不保存 per-run 文件；有 stderr 内容或非 0 返回码的结果会保存 `stderr` 文件。`stdout` 默认丢弃，如需保存非空 stdout，添加 `--save-stdout`。如需关闭进度打印，添加 `--quiet`。
 
+第二阶段结束时会输出 `第二阶段：细粒度可达性分析运行时间`；使用 `--summary` 时，汇总 JSON 也会包含 `stage_elapsed_seconds` 和 `stage_elapsed`。
+
 输出目录会生成：
 
 - `manifest.json`：结构化运行结果。
 - `manifest.tsv`：便于表格查看的结果索引。
+
+批量统计增强后 SVF/Saber 在每个项目上的步骤4运行时间：
+
+```bash
+python3 scripts/run_saber_timing_all_projects.py \
+  --projects bash,curl,ffmpeg,git,openssl,sqlite,tmux,vim \
+  --svf-build-dir SVF/Release-build \
+  --bc-scope objects \
+  --timeout 120
+```
+
+该脚本会对每个项目依次注入 `outputs/<project>/nspa_<project>_validated_memory_functions.json` 中的自定义内存分配/释放函数，重编译 `saber`，然后运行 Saber 检测 bitcode。汇总结果写入 `outputs/saber_timing_summary.json` 和 `outputs/saber_timing_summary.csv`；每个项目的步骤4耗时字段为 `saber_elapsed_seconds` / `saber_elapsed`。快速冒烟测试可添加 `--bc-limit 1 --checkers leak`。
 
 ## 第三阶段：漏洞验证
 

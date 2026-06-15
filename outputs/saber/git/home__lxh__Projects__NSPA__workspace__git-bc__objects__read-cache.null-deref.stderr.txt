@@ -1,0 +1,36 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2057, "cl": 24, "fl": "read-cache.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2150, "cl": 20, "fl": "read-cache.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2132, "cl": 2, "fl": "read-cache.c" }|False) 
+		  --> ({ "ln": 2160, "cl": 7, "fl": "read-cache.c" }|False) 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "read-cache.c" }|True) 
+		  --> ({ "ln": 2173, "cl": 7, "fl": "read-cache.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2128, "cl": 2, "fl": "read-cache.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2132, "cl": 2, "fl": "read-cache.c" }|False) 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "read-cache.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2122, "cl": 24, "fl": "read-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1747, "cl": 23, "fl": "read-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3754, "cl": 7, "fl": "read-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2248, "cl": 2, "fl": "read-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1841, "cl": 7, "fl": "read-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 125, "cl": 15, "fl": "read-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1432, "cl": 12, "fl": "read-cache.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 697, "cl": 14, "fl": "read-cache.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3523, "cl": 6, "fl": "read-cache.c" }|False) 
+		  --> ({ "ln": 799, "cl": 6, "fl": "read-cache.c" }|False) 
+		  --> ({ "ln": 799, "cl": 6, "fl": "read-cache.c" }|True) 
+		  --> ({ "ln": 801, "cl": 11, "fl": "read-cache.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 790, "cl": 8, "fl": "read-cache.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3523, "cl": 6, "fl": "read-cache.c" }|False) 
+		  --> ({ "ln": 799, "cl": 6, "fl": "read-cache.c" }|False) 
+		  --> ({ "ln": 799, "cl": 6, "fl": "read-cache.c" }|True) 
+		  --> ({ "ln": 801, "cl": 11, "fl": "read-cache.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1316, "cl": 2, "fl": "read-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2041, "cl": 8, "fl": "read-cache.c" })

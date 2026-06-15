@@ -1,0 +1,15 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 254, "cl": 13, "fl": "evalbuffer.c" })
+		 double free path: 
+		  --> ({ "ln": 248, "cl": 6, "fl": "evalbuffer.c" }|True) 
+		  --> ({ "ln": 251, "cl": 10, "fl": "evalbuffer.c" }|False) 
+		  --> ({ "ln": 259, "cl": 6, "fl": "evalbuffer.c" }|False) 
+		  --> ({ "ln": 283, "cl": 21, "fl": "evalbuffer.c" }|False) 
+		  --> ({ "ln": 283, "cl": 21, "fl": "evalbuffer.c" }|True) 
+		  --> ({ "ln": 283, "cl": 11, "fl": "evalbuffer.c" }|True) 
+		  --> ({ "ln": 291, "cl": 6, "fl": "evalbuffer.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 243, "cl": 9, "fl": "evalbuffer.c" })
+		 double free path: 
+		  --> ({ "ln": 248, "cl": 6, "fl": "evalbuffer.c" }|True) 
+		  --> ({ "ln": 251, "cl": 10, "fl": "evalbuffer.c" }|False) 
+

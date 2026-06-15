@@ -1,0 +1,82 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1496, "cl": 5, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1527, "cl": 8, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 1534, "cl": 9, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 1534, "cl": 9, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 1535, "cl": 10, "fl": "refs/reftable-backend.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1845, "cl": 4, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2598, "cl": 3, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 2663, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1033, "cl": 2, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1383, "cl": 6, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 937, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 939, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1861, "cl": 2, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1898, "cl": 3, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1932, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1312, "cl": 12, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1319, "cl": 2, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 1383, "cl": 6, "fl": "refs/reftable-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1907, "cl": 4, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1932, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1822, "cl": 3, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 191, "cl": 2, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1383, "cl": 6, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 969, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 980, "cl": 6, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 985, "cl": 7, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 937, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1530, "cl": 5, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1534, "cl": 9, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 1534, "cl": 9, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 1535, "cl": 10, "fl": "refs/reftable-backend.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2234, "cl": 3, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 2246, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1331, "cl": 3, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1347, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 1352, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 1356, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 1383, "cl": 6, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 937, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 939, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 838, "cl": 14, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 846, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 2735, "cl": 7, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 2735, "cl": 7, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 2737, "cl": 7, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 804, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 808, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 812, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 991, "cl": 3, "fl": "refs/reftable-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1383, "cl": 6, "fl": "refs/reftable-backend.c" }|True) 
+		  --> ({ "ln": 937, "cl": 6, "fl": "refs/reftable-backend.c" }|False) 
+		  --> ({ "ln": 939, "cl": 2, "fl": "refs/reftable-backend.c" }|True) 
+

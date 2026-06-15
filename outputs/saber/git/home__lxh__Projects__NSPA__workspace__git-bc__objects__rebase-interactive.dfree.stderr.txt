@@ -1,0 +1,4 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 169, "cl": 1, "fl": "rebase-interactive.c" })
+		 double free path: 
+		  --> ({ "ln": 169, "cl": 1, "fl": "rebase-interactive.c" }|True) 
+

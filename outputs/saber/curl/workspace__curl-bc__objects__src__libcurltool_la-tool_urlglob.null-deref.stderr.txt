@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 415, "cl": 12, "fl": "tool_urlglob.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 46, "cl": 21, "fl": "tool_urlglob.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 158, "cl": 20, "fl": "tool_urlglob.c" })
+		 conditional free path: 
+		  --> ({ "ln": 216, "cl": 5, "fl": "tool_urlglob.c" }|True) 
+

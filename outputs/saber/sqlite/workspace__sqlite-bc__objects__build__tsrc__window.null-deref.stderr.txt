@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2065, "cl": 25, "fl": "tsrc/window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 236, "cl": 19, "fl": "tsrc/window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 271, "cl": 17, "fl": "tsrc/window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 498, "cl": 15, "fl": "tsrc/window.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1870, "cl": 18, "fl": "tsrc/window.c" })

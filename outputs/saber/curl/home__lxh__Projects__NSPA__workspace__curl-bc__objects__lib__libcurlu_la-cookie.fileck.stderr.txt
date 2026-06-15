@@ -1,0 +1,8 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 1105, "cl": 12, "fl": "cookie.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 1110, "cl": 51, "fl": "cookie.c" }|False) 
+		  --> ({ "ln": 1110, "cl": 51, "fl": "cookie.c" }|True) 
+		  --> ({ "ln": 1110, "cl": 12, "fl": "cookie.c" }|False) 
+		  --> ({ "ln": 1110, "cl": 12, "fl": "cookie.c" }|True) 
+		  --> ({ "ln": 1122, "cl": 6, "fl": "cookie.c" }|True) 
+

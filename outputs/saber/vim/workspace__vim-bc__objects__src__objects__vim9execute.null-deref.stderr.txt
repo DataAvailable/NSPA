@@ -1,0 +1,88 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3572, "cl": 6, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 7993, "cl": 13, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 7994, "cl": 11, "fl": "vim9execute.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 728, "cl": 22, "fl": "vim9execute.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 311, "cl": 13, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 313, "cl": 10, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 322, "cl": 10, "fl": "vim9execute.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 660, "cl": 9, "fl": "vim9execute.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1095, "cl": 9, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1101, "cl": 9, "fl": "vim9execute.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 215, "cl": 9, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 222, "cl": 9, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 224, "cl": 14, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 224, "cl": 14, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 224, "cl": 14, "fl": "vim9execute.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1700, "cl": 10, "fl": "vim9execute.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 869, "cl": 10, "fl": "vim9execute.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3124, "cl": 16, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3131, "cl": 9, "fl": "vim9execute.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5154, "cl": 7, "fl": "vim9execute.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2338, "cl": 9, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2347, "cl": 9, "fl": "vim9execute.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6229, "cl": 6, "fl": "vim9execute.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3281, "cl": 23, "fl": "vim9execute.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3982, "cl": 14, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3965, "cl": 7, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 3983, "cl": 12, "fl": "vim9execute.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3129, "cl": 13, "fl": "vim9execute.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4449, "cl": 8, "fl": "vim9execute.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1829, "cl": 11, "fl": "vim9execute.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5294, "cl": 23, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2980, "cl": 26, "fl": "vim9execute.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5876, "cl": 10, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4768, "cl": 24, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4751, "cl": 18, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 254, "cl": 10, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 261, "cl": 9, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 263, "cl": 14, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 263, "cl": 14, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 263, "cl": 14, "fl": "vim9execute.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3756, "cl": 7, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3840, "cl": 26, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5882, "cl": 10, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4726, "cl": 11, "fl": "vim9execute.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 154, "cl": 23, "fl": "vim9execute.c" })
+		 conditional free path: 
+		  --> ({ "ln": 175, "cl": 9, "fl": "vim9execute.c" }|False) 
+		  --> ({ "ln": 175, "cl": 9, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 177, "cl": 6, "fl": "vim9execute.c" }|True) 
+		  --> ({ "ln": 195, "cl": 9, "fl": "vim9execute.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3501, "cl": 6, "fl": "vim9execute.c" })
+		 conditional free path: 
+

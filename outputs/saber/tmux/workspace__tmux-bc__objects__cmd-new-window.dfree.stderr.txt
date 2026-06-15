@@ -1,0 +1,4 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 113, "cl": 15, "fl": "cmd-new-window.c" })
+		 double free path: 
+		  --> ({ "ln": 130, "cl": 6, "fl": "cmd-new-window.c" }|True) 
+

@@ -1,0 +1,31 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 304, "cl": 2, "fl": "line-log.c" })
+		 double free path: 
+		  --> ({ "ln": 968, "cl": 2, "fl": "line-log.c" }|True) 
+		  --> ({ "ln": 904, "cl": 2, "fl": "line-log.c" }|True) 
+		  --> ({ "ln": 906, "cl": 7, "fl": "line-log.c" }|False) 
+		  --> ({ "ln": 913, "cl": 6, "fl": "line-log.c" }|False) 
+		  --> ({ "ln": 921, "cl": 6, "fl": "line-log.c" }|False) 
+		  --> ({ "ln": 921, "cl": 6, "fl": "line-log.c" }|True) 
+		  --> ({ "ln": 931, "cl": 6, "fl": "line-log.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 936, "cl": 13, "fl": "line-log.c" })
+		 double free path: 
+		  --> ({ "ln": 261, "cl": 2, "fl": "line-log.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 463, "cl": 32, "fl": "line-log.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 640, "cl": 14, "fl": "line-log.c" })
+		 double free path: 
+		  --> ({ "ln": 261, "cl": 2, "fl": "line-log.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 25, "cl": 2, "fl": "line-log.c" })
+		 double free path: 
+		  --> ({ "ln": 261, "cl": 2, "fl": "line-log.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 655, "cl": 9, "fl": "line-log.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 966, "cl": 15, "fl": "line-log.c" })
+		 double free path: 
+

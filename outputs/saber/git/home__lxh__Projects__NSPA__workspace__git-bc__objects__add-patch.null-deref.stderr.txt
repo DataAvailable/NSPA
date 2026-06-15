@@ -1,0 +1,15 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 693, "cl": 4, "fl": "add-patch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 413, "cl": 2, "fl": "add-patch.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 657, "cl": 4, "fl": "add-patch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 413, "cl": 2, "fl": "add-patch.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1075, "cl": 2, "fl": "add-patch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 413, "cl": 2, "fl": "add-patch.c" }|True) 
+		  --> ({ "ln": 1095, "cl": 2, "fl": "add-patch.c" }|False) 
+		  --> ({ "ln": 1196, "cl": 6, "fl": "add-patch.c" }|False) 
+		  --> ({ "ln": 1199, "cl": 6, "fl": "add-patch.c" }|False) 
+

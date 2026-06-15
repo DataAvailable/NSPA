@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4272, "cl": 9, "fl": "ex_getln.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 301, "cl": 11, "fl": "ex_getln.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2746, "cl": 22, "fl": "ex_getln.c" })
+
+NSPA timeout after 120.0 seconds

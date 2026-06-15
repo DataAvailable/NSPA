@@ -1,0 +1,17 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 420, "cl": 4, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 514, "cl": 21, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 421, "cl": 21, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 216, "cl": 5, "fl": "hook.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 487, "cl": 25, "fl": "hook.c" })
+		 conditional free path: 
+		  --> ({ "ln": 527, "cl": 9, "fl": "hook.c" }|False) 
+		  --> ({ "ln": 527, "cl": 9, "fl": "hook.c" }|True) 
+		  --> ({ "ln": 527, "cl": 6, "fl": "hook.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 97, "cl": 2, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 498, "cl": 3, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 393, "cl": 3, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 464, "cl": 4, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 512, "cl": 38, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 117, "cl": 26, "fl": "hook.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 240, "cl": 12, "fl": "hook.c" })

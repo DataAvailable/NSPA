@@ -1,0 +1,11 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1570, "cl": 18, "fl": "tsrc/func.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1551, "cl": 3, "fl": "tsrc/func.c" }|True) 
+		  --> ({ "ln": 1552, "cl": 30, "fl": "tsrc/func.c" }|True) 
+		  --> ({ "ln": 1552, "cl": 9, "fl": "tsrc/func.c" }|False) 
+		  --> ({ "ln": 1555, "cl": 11, "fl": "tsrc/func.c" }|True) 
+		  --> ({ "ln": 1559, "cl": 13, "fl": "tsrc/func.c" }|False) 
+		  --> ({ "ln": 1559, "cl": 13, "fl": "tsrc/func.c" }|True) 
+		  --> ({ "ln": 1565, "cl": 13, "fl": "tsrc/func.c" }|True) 
+		  --> ({ "ln": 1571, "cl": 15, "fl": "tsrc/func.c" }|True) 
+

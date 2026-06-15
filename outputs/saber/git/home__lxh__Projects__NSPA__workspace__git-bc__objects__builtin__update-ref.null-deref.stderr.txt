@@ -1,0 +1,50 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 569, "cl": 12, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 581, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 585, "cl": 8, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 585, "cl": 8, "fl": "builtin/update-ref.c" }|True) 
+		  --> ({ "ln": 584, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 538, "cl": 12, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 546, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 549, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 511, "cl": 12, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 517, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 520, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 443, "cl": 12, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 448, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 451, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 411, "cl": 12, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 415, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 418, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 421, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 475, "cl": 12, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 479, "cl": 6, "fl": "builtin/update-ref.c" }|True) 
+		  --> ({ "ln": 488, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 492, "cl": 8, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 492, "cl": 8, "fl": "builtin/update-ref.c" }|True) 
+		  --> ({ "ln": 491, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 447, "cl": 15, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 451, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 515, "cl": 15, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 517, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 520, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 577, "cl": 15, "fl": "builtin/update-ref.c" })
+		 conditional free path: 
+		  --> ({ "ln": 581, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+		  --> ({ "ln": 584, "cl": 6, "fl": "builtin/update-ref.c" }|False) 
+

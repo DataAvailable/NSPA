@@ -1,0 +1,35 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4967, "cl": 21, "fl": "diff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2054, "cl": 11, "fl": "diff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 382, "cl": 14, "fl": "diff.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4785, "cl": 21, "fl": "diff.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4790, "cl": 9, "fl": "diff.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 606, "cl": 12, "fl": "diff.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5032, "cl": 12, "fl": "diff.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5038, "cl": 6, "fl": "diff.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 817, "cl": 11, "fl": "diff.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1041, "cl": 6, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1053, "cl": 2, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1056, "cl": 22, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1056, "cl": 22, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1056, "cl": 10, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1063, "cl": 10, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1063, "cl": 10, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 1065, "cl": 10, "fl": "diff.c" }|False) 
+		  --> ({ "ln": 1065, "cl": 10, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 2419, "cl": 5, "fl": "diff.c" }|True) 
+		  --> ({ "ln": 777, "cl": 9, "fl": "diff.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1871, "cl": 9, "fl": "diff.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2084, "cl": 9, "fl": "diff.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 915, "cl": 19, "fl": "diff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1715, "cl": 21, "fl": "diff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4980, "cl": 27, "fl": "diff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5054, "cl": 17, "fl": "diff.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2349, "cl": 13, "fl": "diff.c" })

@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 504, "cl": 11, "fl": "window-customize.c" })
+		 double free path: 
+		  --> ({ "ln": 467, "cl": 2, "fl": "window-customize.c" }|True) 
+		  --> ({ "ln": 471, "cl": 7, "fl": "window-customize.c" }|False) 
+		  --> ({ "ln": 471, "cl": 7, "fl": "window-customize.c" }|True) 
+		  --> ({ "ln": 473, "cl": 8, "fl": "window-customize.c" }|False) 
+

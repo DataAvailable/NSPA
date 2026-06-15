@@ -1,0 +1,113 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 170, "cl": 4, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3623, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3638, "cl": 16, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 3638, "cl": 16, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 3638, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 3638, "cl": 6, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 3648, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3501, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3526, "cl": 2, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1840, "cl": 10, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1337, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1395, "cl": 14, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 1429, "cl": 8, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 1429, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 1496, "cl": 2, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1057, "cl": 2, "fl": "builtin/pack-objects.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2729, "cl": 3, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1338, "cl": 16, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1395, "cl": 14, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 1429, "cl": 8, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 1429, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 1496, "cl": 2, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 1027, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3758, "cl": 23, "fl": "builtin/pack-objects.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1902, "cl": 2, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 525, "cl": 13, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 522, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 522, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 534, "cl": 8, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2915, "cl": 27, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2138, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4346, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 4347, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2154, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2161, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2162, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3200, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3231, "cl": 2, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 348, "cl": 3, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 551, "cl": 9, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 557, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 559, "cl": 11, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 614, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1361, "cl": 8, "fl": "builtin/pack-objects.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3748, "cl": 8, "fl": "builtin/pack-objects.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3760, "cl": 13, "fl": "builtin/pack-objects.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3991, "cl": 4, "fl": "builtin/pack-objects.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1882, "cl": 2, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2126, "cl": 9, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4346, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 4347, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2154, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2161, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2162, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 2131, "cl": 2, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 2131, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2132, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 394, "cl": 8, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 571, "cl": 6, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 591, "cl": 13, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 614, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 346, "cl": 3, "fl": "./pack-objects.h" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2888, "cl": 14, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2892, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 2892, "cl": 6, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2894, "cl": 43, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 2894, "cl": 43, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2894, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+		  --> ({ "ln": 2894, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2912, "cl": 6, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4159, "cl": 11, "fl": "builtin/pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2082, "cl": 2, "fl": "builtin/pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4346, "cl": 7, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 4347, "cl": 8, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2154, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2161, "cl": 2, "fl": "builtin/pack-objects.c" }|True) 
+		  --> ({ "ln": 2162, "cl": 7, "fl": "builtin/pack-objects.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3812, "cl": 2, "fl": "builtin/pack-objects.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4753, "cl": 2, "fl": "builtin/pack-objects.c" })

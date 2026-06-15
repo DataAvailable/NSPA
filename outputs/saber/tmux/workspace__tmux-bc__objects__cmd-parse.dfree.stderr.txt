@@ -1,17 +1,37 @@
-[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1408, "cl": 8, "fl": "cmd-parse.y" })
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1152, "cl": 14, "fl": "cmd-parse.y" })
 		 double free path: 
-		  --> ({ "ln": 991, "cl": 2, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 953, "cl": 6, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 902, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 1052, "cl": 6, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 630, "cl": 2, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 630, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 776, "cl": 6, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 795, "cl": 6, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 802, "cl": 6, "fl": "cmd-parse.y" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 862, "cl": 15, "fl": "cmd-parse.y" })
+		 double free path: 
 		  --> ({ "ln": 991, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 991, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 993, "cl": 7, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 1017, "cl": 7, "fl": "cmd-parse.y" }|False) 
 
-[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1647, "cl": 8, "fl": "cmd-parse.y" })
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1382, "cl": 11, "fl": "cmd-parse.y" })
 		 double free path: 
-		  --> ({ "ln": 677, "cl": 2, "fl": "cmd-parse.y" }|True) 
-		  --> ({ "ln": 678, "cl": 3, "fl": "cmd-parse.y" }|False) 
-		  --> ({ "ln": 678, "cl": 3, "fl": "cmd-parse.y" }|True) 
-
-[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1164, "cl": 11, "fl": "cmd-parse.c" })
-		 double free path: 
-		  --> ({ "ln": 2098, "cl": 7, "fl": "cmd-parse.c" }|True) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|False) 
+		  --> ({ "ln": 1015, "cl": 2, "fl": "cmd-parse.y" }|True) 
+		  --> ({ "ln": 1242, "cl": 15, "fl": "cmd-parse.c" }|True) 
+		  --> ({ "ln": 1242, "cl": 31, "fl": "cmd-parse.c" }|True) 
+		  --> ({ "ln": 1242, "cl": 7, "fl": "cmd-parse.c" }|False) 
+		  --> ({ "ln": 1245, "cl": 7, "fl": "cmd-parse.c" }|False) 
+		  --> ({ "ln": 1940, "cl": 25, "fl": "cmd-parse.c" }|False) 
+		  --> ({ "ln": 1940, "cl": 25, "fl": "cmd-parse.c" }|True) 
+		  --> ({ "ln": 1940, "cl": 42, "fl": "cmd-parse.c" }|False) 
+		  --> ({ "ln": 1940, "cl": 42, "fl": "cmd-parse.c" }|True) 
+		  --> ({ "ln": 1940, "cl": 16, "fl": "cmd-parse.c" }|False) 
+		  --> ({ "ln": 1940, "cl": 16, "fl": "cmd-parse.c" }|True) 
 
 
 NSPA timeout after 120.0 seconds

@@ -1,0 +1,8 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 83, "cl": 19, "fl": "libvterm/src/vterm.c" })
+		 conditional free path: 
+		  --> ({ "ln": 89, "cl": 7, "fl": "libvterm/src/vterm.c" }|False) 
+		  --> ({ "ln": 89, "cl": 7, "fl": "libvterm/src/vterm.c" }|True) 
+		  --> ({ "ln": 90, "cl": 7, "fl": "libvterm/src/vterm.c" }|False) 
+		  --> ({ "ln": 90, "cl": 7, "fl": "libvterm/src/vterm.c" }|True) 
+		  --> ({ "ln": 88, "cl": 7, "fl": "libvterm/src/vterm.c" }|True) 
+

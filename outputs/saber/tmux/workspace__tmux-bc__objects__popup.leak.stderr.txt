@@ -1,14 +1,33 @@
-[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 805, "cl": 7, "fl": "popup.c" })
-		 conditional free path: 
-		  --> ({ "ln": 861, "cl": 6, "fl": "popup.c" }|False) 
-		  --> ({ "ln": 867, "cl": 7, "fl": "popup.c" }|True) 
-
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 924, "cl": 14, "fl": "popup.c" })
 		 conditional free path: 
 		  --> ({ "ln": 924, "cl": 35, "fl": "popup.c" }|False) 
 		  --> ({ "ln": 924, "cl": 35, "fl": "popup.c" }|True) 
 		  --> ({ "ln": 922, "cl": 7, "fl": "popup.c" }|True) 
 
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 810, "cl": 15, "fl": "popup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 861, "cl": 6, "fl": "popup.c" }|False) 
+		  --> ({ "ln": 867, "cl": 7, "fl": "popup.c" }|True) 
+
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 864, "cl": 13, "fl": "popup.c" })
 		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 649, "cl": 13, "fl": "popup.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 871, "cl": 14, "fl": "popup.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 805, "cl": 7, "fl": "popup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 861, "cl": 6, "fl": "popup.c" }|False) 
+		  --> ({ "ln": 867, "cl": 7, "fl": "popup.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 447, "cl": 18, "fl": "popup.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 812, "cl": 15, "fl": "popup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 861, "cl": 6, "fl": "popup.c" }|False) 
+		  --> ({ "ln": 867, "cl": 7, "fl": "popup.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 862, "cl": 14, "fl": "popup.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 814, "cl": 22, "fl": "popup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 861, "cl": 6, "fl": "popup.c" }|False) 
+		  --> ({ "ln": 867, "cl": 7, "fl": "popup.c" }|True) 
 

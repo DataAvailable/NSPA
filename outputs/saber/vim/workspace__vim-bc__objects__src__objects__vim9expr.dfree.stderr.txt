@@ -1,0 +1,65 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3365, "cl": 24, "fl": "vim9expr.c" })
+		 double free path: 
+		  --> ({ "ln": 3330, "cl": 7, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3330, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3330, "cl": 7, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3330, "cl": 34, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3330, "cl": 34, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3330, "cl": 34, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3336, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3366, "cl": 7, "fl": "vim9expr.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 772, "cl": 8, "fl": "vim9expr.c" })
+		 double free path: 
+		  --> ({ "ln": 3884, "cl": 9, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3340, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3344, "cl": 3, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3346, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3344, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3348, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3354, "cl": 10, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3356, "cl": 15, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3366, "cl": 7, "fl": "vim9expr.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1386, "cl": 9, "fl": "vim9expr.c" })
+		 double free path: 
+		  --> ({ "ln": 3340, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3344, "cl": 3, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3346, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3344, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3348, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3354, "cl": 10, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3356, "cl": 15, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3366, "cl": 7, "fl": "vim9expr.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 416, "cl": 13, "fl": "vim9expr.c" })
+		 double free path: 
+		  --> ({ "ln": 3884, "cl": 9, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3340, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3344, "cl": 3, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3346, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3344, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3348, "cl": 7, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3343, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 3354, "cl": 10, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3356, "cl": 15, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 3366, "cl": 7, "fl": "vim9expr.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 926, "cl": 13, "fl": "vim9expr.c" })
+		 double free path: 
+		  --> ({ "ln": 930, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 930, "cl": 6, "fl": "vim9expr.c" }|False) 
+		  --> ({ "ln": 930, "cl": 6, "fl": "vim9expr.c" }|True) 
+		  --> ({ "ln": 946, "cl": 17, "fl": "vim9expr.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1887, "cl": 17, "fl": "vim9expr.c" })
+		 double free path: 
+

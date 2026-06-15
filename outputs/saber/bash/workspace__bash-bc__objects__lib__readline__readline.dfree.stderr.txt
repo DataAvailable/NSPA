@@ -1,0 +1,18 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 852, "cl": 4, "fl": "lib/readline/readline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 881, "cl": 4, "fl": "lib/readline/readline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 970, "cl": 4, "fl": "lib/readline/readline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 730, "cl": 27, "fl": "lib/readline/readline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1246, "cl": 30, "fl": "lib/readline/readline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1293, "cl": 25, "fl": "lib/readline/readline.c" })
+		 double free path: 
+

@@ -1,0 +1,7 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 828, "cl": 33, "fl": "tool_operate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 837, "cl": 32, "fl": "tool_operate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2239, "cl": 24, "fl": "tool_operate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 819, "cl": 26, "fl": "tool_operate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2230, "cl": 24, "fl": "tool_operate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 811, "cl": 27, "fl": "tool_operate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2220, "cl": 22, "fl": "tool_operate.c" })

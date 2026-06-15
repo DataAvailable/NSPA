@@ -1,0 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 160, "cl": 24, "fl": "builtins/evalfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 172, "cl": 7, "fl": "builtins/evalfile.c" }|False) 
+		  --> ({ "ln": 172, "cl": 7, "fl": "builtins/evalfile.c" }|True) 
+		  --> ({ "ln": 178, "cl": 7, "fl": "builtins/evalfile.c" }|False) 
+		  --> ({ "ln": 178, "cl": 7, "fl": "builtins/evalfile.c" }|True) 
+		  --> ({ "ln": 184, "cl": 35, "fl": "builtins/evalfile.c" }|True) 
+		  --> ({ "ln": 185, "cl": 34, "fl": "builtins/evalfile.c" }|False) 
+		  --> ({ "ln": 185, "cl": 34, "fl": "builtins/evalfile.c" }|True) 
+		  --> ({ "ln": 184, "cl": 7, "fl": "builtins/evalfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 242, "cl": 35, "fl": "builtins/evalfile.c" })

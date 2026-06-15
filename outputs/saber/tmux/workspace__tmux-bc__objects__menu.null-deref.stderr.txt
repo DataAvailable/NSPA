@@ -1,1 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 575, "cl": 24, "fl": "menu.c" })
 [1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 567, "cl": 7, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 80, "cl": 16, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 573, "cl": 15, "fl": "menu.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 577, "cl": 22, "fl": "menu.c" })

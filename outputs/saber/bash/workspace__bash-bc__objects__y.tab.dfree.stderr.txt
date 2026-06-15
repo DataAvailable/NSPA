@@ -1,0 +1,11 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4358, "cl": 7, "fl": "/Users/chet/src/bash/src/parse.y" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4310, "cl": 5, "fl": "/Users/chet/src/bash/src/parse.y" })
+		 double free path: 
+		  --> ({ "ln": 5171, "cl": 12, "fl": "/Users/chet/src/bash/src/parse.y" }|True) 
+		  --> ({ "ln": 5181, "cl": 12, "fl": "/Users/chet/src/bash/src/parse.y" }|False) 
+		  --> ({ "ln": 5183, "cl": 12, "fl": "/Users/chet/src/bash/src/parse.y" }|True) 
+
+
+NSPA timeout after 120.0 seconds

@@ -1,0 +1,33 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3572, "cl": 22, "fl": "fileio.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4643, "cl": 16, "fl": "fileio.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5003, "cl": 13, "fl": "fileio.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2936, "cl": 6, "fl": "fileio.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5004, "cl": 13, "fl": "fileio.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3701, "cl": 11, "fl": "fileio.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 833, "cl": 9, "fl": "fileio.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5373, "cl": 19, "fl": "fileio.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2980, "cl": 9, "fl": "fileio.c" }|False) 
+		  --> ({ "ln": 2980, "cl": 9, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 2986, "cl": 29, "fl": "fileio.c" }|False) 
+		  --> ({ "ln": 2986, "cl": 29, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 4160, "cl": 2, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 4163, "cl": 10, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 4171, "cl": 13, "fl": "fileio.c" }|False) 
+		  --> ({ "ln": 4171, "cl": 13, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 4171, "cl": 7, "fl": "fileio.c" }|False) 
+		  --> ({ "ln": 4171, "cl": 7, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 4548, "cl": 9, "fl": "fileio.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3058, "cl": 14, "fl": "fileio.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2435, "cl": 9, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 3062, "cl": 7, "fl": "fileio.c" }|False) 
+		  --> ({ "ln": 3076, "cl": 10, "fl": "fileio.c" }|False) 
+		  --> ({ "ln": 3076, "cl": 10, "fl": "fileio.c" }|True) 
+		  --> ({ "ln": 3079, "cl": 7, "fl": "fileio.c" }|True) 
+

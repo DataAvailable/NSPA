@@ -1,0 +1,6555 @@
+{
+  "metadata": {
+    "raw_candidate_count": 6397,
+    "filtered_candidate_count": 201,
+    "parser_mode": "tree_sitter",
+    "min_score": 2.0,
+    "min_confidence": 0.5
+  },
+  "candidates": [
+    {
+      "project": "curl",
+      "file": "docs/examples/block_ip.c",
+      "name": "ip_list_append",
+      "entity_kind": "function_definition",
+      "signature": "static struct ip *ip_list_append(struct ip *list, const char *data)",
+      "return_type": "struct ip *",
+      "parameters": [
+        "struct ip *list",
+        "const char *data"
+      ],
+      "direct_calls": [
+        "AF_INET6",
+        "atoi",
+        "calloc",
+        "free",
+        "inet_pton",
+        "strchr",
+        "strdup"
+      ],
+      "start_line": 104,
+      "end_line": 168,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,strdup",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/block_ip.c",
+      "name": "ip_list_free_all",
+      "entity_kind": "function_definition",
+      "signature": "static void ip_list_free_all(struct ip *list)",
+      "return_type": "void",
+      "parameters": [
+        "struct ip *list"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 170,
+      "end_line": 179,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/block_ip.c",
+      "name": "free_connection_filter",
+      "entity_kind": "function_definition",
+      "signature": "static void free_connection_filter(struct connection_filter *filter)",
+      "return_type": "void",
+      "parameters": [
+        "struct connection_filter *filter"
+      ],
+      "direct_calls": [
+        "free",
+        "ip_list_free_all"
+      ],
+      "start_line": 181,
+      "end_line": 187,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ip_list_free_all"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/crawler.c",
+      "name": "make_handle",
+      "entity_kind": "function_definition",
+      "signature": "static CURL *make_handle(const char *url)",
+      "return_type": "CURL *",
+      "parameters": [
+        "const char *url"
+      ],
+      "direct_calls": [
+        "curl_easy_init",
+        "curl_easy_setopt",
+        "malloc"
+      ],
+      "start_line": 81,
+      "end_line": 121,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "weak_allocation_name",
+        "returns_pointer_or_reference"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/ephiperfifo.c",
+      "name": "check_multi_info",
+      "entity_kind": "function_definition",
+      "signature": "static void check_multi_info(struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curl_easy_getinfo",
+        "curl_multi_info_read",
+        "curl_multi_remove_handle",
+        "fprintf",
+        "free"
+      ],
+      "start_line": 143,
+      "end_line": 164,
+      "documentation": "Check for completed transfers, and remove their easy handles",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/ephiperfifo.c",
+      "name": "remsock",
+      "entity_kind": "function_definition",
+      "signature": "static void remsock(struct SockInfo *f, struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "struct SockInfo *f",
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "epoll_ctl",
+        "fprintf",
+        "free",
+        "strerror"
+      ],
+      "start_line": 253,
+      "end_line": 263,
+      "documentation": "Clean up the SockInfo structure",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/ephiperfifo.c",
+      "name": "new_conn",
+      "entity_kind": "function_definition",
+      "signature": "static void new_conn(const char *url, struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "const char *url",
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "calloc",
+        "curl_easy_init",
+        "curl_easy_setopt",
+        "curl_multi_add_handle",
+        "exit",
+        "fprintf",
+        "mcode_or_die",
+        "strdup"
+      ],
+      "start_line": 348,
+      "end_line": 383,
+      "documentation": "Create a new easy handle, and add it to the global curl_multi",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,strdup",
+        "allocation_name"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/evhiperfifo.c",
+      "name": "check_multi_info",
+      "entity_kind": "function_definition",
+      "signature": "static void check_multi_info(struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curl_easy_getinfo",
+        "curl_multi_info_read",
+        "curl_multi_remove_handle",
+        "fprintf",
+        "free"
+      ],
+      "start_line": 147,
+      "end_line": 168,
+      "documentation": "Check for completed transfers, and remove their easy handles",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/evhiperfifo.c",
+      "name": "remsock",
+      "entity_kind": "function_definition",
+      "signature": "static void remsock(struct SockInfo *f, struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "struct SockInfo *f",
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "ev_io_stop",
+        "free",
+        "printf"
+      ],
+      "start_line": 224,
+      "end_line": 232,
+      "documentation": "Clean up the SockInfo structure",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/evhiperfifo.c",
+      "name": "new_conn",
+      "entity_kind": "function_definition",
+      "signature": "static void new_conn(const char *url, struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "const char *url",
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "calloc",
+        "curl_easy_init",
+        "curl_easy_setopt",
+        "curl_multi_add_handle",
+        "exit",
+        "fprintf",
+        "mcode_or_die",
+        "strdup"
+      ],
+      "start_line": 319,
+      "end_line": 353,
+      "documentation": "Create a new easy handle, and add it to the global curl_multi",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,strdup",
+        "allocation_name"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/getinmemory.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(void)",
+      "return_type": "int",
+      "parameters": [],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curl_easy_init",
+        "curl_easy_perform",
+        "curl_easy_setopt",
+        "curl_easy_strerror",
+        "curl_global_cleanup",
+        "curl_global_init",
+        "fprintf",
+        "free",
+        "malloc",
+        "printf"
+      ],
+      "start_line": 60,
+      "end_line": 120,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/ghiper.c",
+      "name": "check_multi_info",
+      "entity_kind": "function_definition",
+      "signature": "static void check_multi_info(struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "MSG_OUT",
+        "curl_easy_cleanup",
+        "curl_easy_getinfo",
+        "curl_multi_info_read",
+        "curl_multi_remove_handle",
+        "free"
+      ],
+      "start_line": 132,
+      "end_line": 153,
+      "documentation": "Check for completed transfers, and remove their easy handles",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/hiperfifo.c",
+      "name": "check_multi_info",
+      "entity_kind": "function_definition",
+      "signature": "static void check_multi_info(struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curl_easy_getinfo",
+        "curl_multi_info_read",
+        "curl_multi_remove_handle",
+        "event_base_loopbreak",
+        "fprintf",
+        "free"
+      ],
+      "start_line": 169,
+      "end_line": 192,
+      "documentation": "Check for completed transfers, and remove their easy handles",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/hiperfifo.c",
+      "name": "remsock",
+      "entity_kind": "function_definition",
+      "signature": "static void remsock(struct SockInfo *f)",
+      "return_type": "void",
+      "parameters": [
+        "struct SockInfo *f"
+      ],
+      "direct_calls": [
+        "event_del",
+        "event_initialized",
+        "free"
+      ],
+      "start_line": 230,
+      "end_line": 238,
+      "documentation": "Clean up the SockInfo structure",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/hiperfifo.c",
+      "name": "new_conn",
+      "entity_kind": "function_definition",
+      "signature": "static void new_conn(const char *url, struct GlobalInfo *g)",
+      "return_type": "void",
+      "parameters": [
+        "const char *url",
+        "struct GlobalInfo *g"
+      ],
+      "direct_calls": [
+        "calloc",
+        "curl_easy_init",
+        "curl_easy_setopt",
+        "curl_multi_add_handle",
+        "exit",
+        "fprintf",
+        "mcode_or_die",
+        "strdup"
+      ],
+      "start_line": 316,
+      "end_line": 348,
+      "documentation": "Create a new easy handle, and add it to the global curl_multi",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,strdup",
+        "allocation_name"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/http2-download.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(int argc, const char **argv)",
+      "return_type": "int",
+      "parameters": [
+        "int argc",
+        "const char **argv"
+      ],
+      "direct_calls": [
+        "atoi",
+        "calloc",
+        "curl_easy_cleanup",
+        "curl_global_cleanup",
+        "curl_global_init",
+        "curl_multi_add_handle",
+        "curl_multi_cleanup",
+        "curl_multi_init",
+        "curl_multi_perform",
+        "curl_multi_poll",
+        "curl_multi_remove_handle",
+        "curl_multi_setopt",
+        "fclose",
+        "fprintf",
+        "free",
+        "setup"
+      ],
+      "start_line": 190,
+      "end_line": 264,
+      "documentation": "Download many transfers over HTTP/2, using the same connection!",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/http2-upload.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(int argc, const char **argv)",
+      "return_type": "int",
+      "parameters": [
+        "int argc",
+        "const char **argv"
+      ],
+      "direct_calls": [
+        "atoi",
+        "calloc",
+        "curl_easy_cleanup",
+        "curl_global_cleanup",
+        "curl_global_init",
+        "curl_multi_add_handle",
+        "curl_multi_cleanup",
+        "curl_multi_init",
+        "curl_multi_perform",
+        "curl_multi_poll",
+        "curl_multi_remove_handle",
+        "curl_multi_setopt",
+        "fclose",
+        "fprintf",
+        "free",
+        "setup"
+      ],
+      "start_line": 289,
+      "end_line": 373,
+      "documentation": "Upload all files over HTTP/2, using the same physical connection!",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/log_failed_transfers.c",
+      "name": "mem_reset",
+      "entity_kind": "function_definition",
+      "signature": "static void mem_reset(struct mem *mem)",
+      "return_type": "void",
+      "parameters": [
+        "struct mem *mem"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 72,
+      "end_line": 79,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/log_failed_transfers.c",
+      "name": "mem_need",
+      "entity_kind": "function_definition",
+      "signature": "static int mem_need(struct mem *mem, size_t needed)",
+      "return_type": "int",
+      "parameters": [
+        "struct mem *mem",
+        "size_t needed"
+      ],
+      "direct_calls": [
+        "realloc"
+      ],
+      "start_line": 82,
+      "end_line": 113,
+      "documentation": "expand free buffer space to needed size. return -1 or 'needed'.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:realloc",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/multi-event.c",
+      "name": "create_curl_context",
+      "entity_kind": "function_definition",
+      "signature": "static struct curl_context *create_curl_context(curl_socket_t sockfd)",
+      "return_type": "struct curl_context *",
+      "parameters": [
+        "curl_socket_t sockfd"
+      ],
+      "direct_calls": [
+        "event_new",
+        "malloc"
+      ],
+      "start_line": 100,
+      "end_line": 111,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "allocation_name",
+        "returns_pointer_or_reference"
+      ],
+      "score": 8.5,
+      "confidence": 0.85,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/multi-event.c",
+      "name": "destroy_curl_context",
+      "entity_kind": "function_definition",
+      "signature": "static void destroy_curl_context(struct curl_context *context)",
+      "return_type": "void",
+      "parameters": [
+        "struct curl_context *context"
+      ],
+      "direct_calls": [
+        "event_del",
+        "event_free",
+        "free"
+      ],
+      "start_line": 113,
+      "end_line": 118,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/multi-uv.c",
+      "name": "create_curl_context",
+      "entity_kind": "function_definition",
+      "signature": "static struct curl_context *create_curl_context(curl_socket_t sockfd, struct datauv *uv)",
+      "return_type": "struct curl_context *",
+      "parameters": [
+        "curl_socket_t sockfd",
+        "struct datauv *uv"
+      ],
+      "direct_calls": [
+        "malloc",
+        "uv_poll_init_socket"
+      ],
+      "start_line": 58,
+      "end_line": 72,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "allocation_name",
+        "returns_pointer_or_reference"
+      ],
+      "score": 8.5,
+      "confidence": 0.85,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/multi-uv.c",
+      "name": "curl_close_cb",
+      "entity_kind": "function_definition",
+      "signature": "static void curl_close_cb(uv_handle_t *handle)",
+      "return_type": "void",
+      "parameters": [
+        "uv_handle_t *handle"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 74,
+      "end_line": 78,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "weak_release_name",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/postinmemory.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(void)",
+      "return_type": "int",
+      "parameters": [],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curl_easy_init",
+        "curl_easy_perform",
+        "curl_easy_setopt",
+        "curl_easy_strerror",
+        "curl_global_cleanup",
+        "curl_global_init",
+        "fprintf",
+        "free",
+        "malloc",
+        "printf",
+        "strlen"
+      ],
+      "start_line": 59,
+      "end_line": 116,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "docs/examples/xmlstream.c",
+      "name": "startElement",
+      "entity_kind": "function_definition",
+      "signature": "static void startElement(void *userData, const XML_Char *name, const XML_Char **atts)",
+      "return_type": "void",
+      "parameters": [
+        "void *userData",
+        "const XML_Char *name",
+        "const XML_Char **atts"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 55,
+      "end_line": 69,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "include/curl/urlapi.h",
+      "name": "curl_url_dup",
+      "entity_kind": "function_declaration",
+      "signature": "CURL_EXTERN CURLU *curl_url_dup(const CURLU *in)",
+      "return_type": "CURL_EXTERN CURLU *",
+      "parameters": [
+        "const CURLU *in"
+      ],
+      "direct_calls": [],
+      "start_line": 126,
+      "end_line": 126,
+      "documentation": "curl_url_dup() duplicates a CURLU handle and returns a new copy. The new handle must also be freed with curl_url_cleanup().",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "memory_documentation"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/altsvc.c",
+      "name": "altsvc_create",
+      "entity_kind": "function_definition",
+      "signature": "static struct altsvc *altsvc_create(struct Curl_str *srchost, struct Curl_str *dsthost, struct Curl_str *srcalpn, struct Curl_str *dstalpn, size_t srcport, size_t dstport)",
+      "return_type": "struct altsvc *",
+      "parameters": [
+        "struct Curl_str *srchost",
+        "struct Curl_str *dsthost",
+        "struct Curl_str *srcalpn",
+        "struct Curl_str *dstalpn",
+        "size_t srcport",
+        "size_t dstport"
+      ],
+      "direct_calls": [
+        "Curl_str2alpnid",
+        "altsvc_createid",
+        "curlx_str",
+        "curlx_strlen"
+      ],
+      "start_line": 130,
+      "end_line": 145,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/altsvc.c",
+      "name": "Curl_altsvc_cleanup",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_altsvc_cleanup(struct altsvcinfo **asi)",
+      "return_type": "void",
+      "parameters": [
+        "struct altsvcinfo **asi"
+      ],
+      "direct_calls": [
+        "Curl_llist_head",
+        "Curl_node_elem",
+        "Curl_node_next",
+        "altsvc_free",
+        "curlx_free"
+      ],
+      "start_line": 368,
+      "end_line": 383,
+      "documentation": "Curl_altsvc_cleanup() frees an altsvc cache instance and all associated resources.",
+      "macro_value": "",
+      "evidence": [
+        "weak_release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/bufq.c",
+      "name": "chunk_list_free",
+      "entity_kind": "function_definition",
+      "signature": "static void chunk_list_free(struct buf_chunk **anchor)",
+      "return_type": "void",
+      "parameters": [
+        "struct buf_chunk **anchor"
+      ],
+      "direct_calls": [
+        "curlx_free"
+      ],
+      "start_line": 136,
+      "end_line": 144,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/bufq.c",
+      "name": "Curl_bufcp_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_bufcp_free(struct bufc_pool *pool)",
+      "return_type": "void",
+      "parameters": [
+        "struct bufc_pool *pool"
+      ],
+      "direct_calls": [
+        "chunk_list_free"
+      ],
+      "start_line": 200,
+      "end_line": 204,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:chunk_list_free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/bufq.c",
+      "name": "Curl_bufq_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_bufq_free(struct bufq *q)",
+      "return_type": "void",
+      "parameters": [
+        "struct bufq *q"
+      ],
+      "direct_calls": [
+        "chunk_list_free"
+      ],
+      "start_line": 235,
+      "end_line": 241,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:chunk_list_free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/bufref.c",
+      "name": "Curl_bufref_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_bufref_free(struct bufref *br)",
+      "return_type": "void",
+      "parameters": [
+        "struct bufref *br"
+      ],
+      "direct_calls": [
+        "CURL_UNCONST",
+        "DEBUGASSERT",
+        "dtor"
+      ],
+      "start_line": 54,
+      "end_line": 66,
+      "documentation": "Free the buffer and re-init the necessary fields. It does not touch the 'signature' field and thus this buffer reference can be reused.",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/bufref.c",
+      "name": "Curl_bufref_set",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_bufref_set(struct bufref *br, const void *ptr, size_t len, void (*dtor)(void *))",
+      "return_type": "void",
+      "parameters": [
+        "struct bufref *br",
+        "const void *ptr",
+        "size_t len",
+        "void (*dtor)(void *)"
+      ],
+      "direct_calls": [
+        "Curl_bufref_free",
+        "DEBUGASSERT"
+      ],
+      "start_line": 72,
+      "end_line": 82,
+      "documentation": "Set the buffer reference to new values. The previously referenced buffer is released before assignment.",
+      "macro_value": "",
+      "evidence": [
+        "has_output_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_free"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-capsule.c",
+      "name": "capsule_cf_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void capsule_cf_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "curlx_free",
+        "curlx_safefree"
+      ],
+      "start_line": 50,
+      "end_line": 60,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-h1-proxy.c",
+      "name": "tunnel_free",
+      "entity_kind": "function_definition",
+      "signature": "static void tunnel_free(struct h1_tunnel_state *ts, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct h1_tunnel_state *ts",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "Curl_httpchunk_free",
+        "Curl_peer_unlink",
+        "curlx_dyn_free",
+        "curlx_free"
+      ],
+      "start_line": 200,
+      "end_line": 210,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-h1-proxy.c",
+      "name": "cf_tunnel_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_tunnel_free(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "h1_tunnel_go_state",
+        "tunnel_free"
+      ],
+      "start_line": 212,
+      "end_line": 224,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:tunnel_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-h1-proxy.c",
+      "name": "cf_h1_proxy_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_h1_proxy_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "CURL_TRC_CF",
+        "cf_tunnel_free",
+        "curlx_safefree"
+      ],
+      "start_line": 900,
+      "end_line": 906,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_tunnel_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-h3-proxy.c",
+      "name": "h3_proxy_stream_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h3_proxy_stream_ctx_free(struct h3_proxy_stream_ctx *stream)",
+      "return_type": "void",
+      "parameters": [
+        "struct h3_proxy_stream_ctx *stream"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "curlx_free"
+      ],
+      "start_line": 294,
+      "end_line": 298,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-h3-proxy.c",
+      "name": "h3_proxy_stream_hash_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h3_proxy_stream_hash_free(unsigned int id, void *stream)",
+      "return_type": "void",
+      "parameters": [
+        "unsigned int id",
+        "void *stream"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT",
+        "h3_proxy_stream_ctx_free"
+      ],
+      "start_line": 300,
+      "end_line": 305,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:h3_proxy_stream_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-h3-proxy.c",
+      "name": "cf_ngtcp2_proxy_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_ngtcp2_proxy_ctx_free(struct cf_ngtcp2_proxy_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cf_ngtcp2_proxy_ctx *ctx"
+      ],
+      "direct_calls": [
+        "Curl_bufcp_free",
+        "Curl_ssl_peer_cleanup",
+        "Curl_uint32_hash_destroy",
+        "Curl_vquic_tls_cleanup",
+        "curlx_dyn_free",
+        "curlx_free",
+        "vquic_ctx_free"
+      ],
+      "start_line": 320,
+      "end_line": 331,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufcp_free,curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-h3-proxy.c",
+      "name": "cf_h3_proxy_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_h3_proxy_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "CURL_TRC_CF",
+        "cf_h3_proxy_ctx_free",
+        "cf_ngtcp2_proxy_close",
+        "cf_ngtcp2_proxy_ctx_free"
+      ],
+      "start_line": 3380,
+      "end_line": 3396,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_ngtcp2_proxy_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-haproxy.c",
+      "name": "cf_haproxy_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_haproxy_ctx_free(struct cf_haproxy_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cf_haproxy_ctx *ctx"
+      ],
+      "direct_calls": [
+        "curlx_dyn_free",
+        "curlx_free"
+      ],
+      "start_line": 55,
+      "end_line": 61,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-haproxy.c",
+      "name": "cf_haproxy_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_haproxy_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "CURL_TRC_CF",
+        "cf_haproxy_ctx_free"
+      ],
+      "start_line": 169,
+      "end_line": 174,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_haproxy_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cf-haproxy.c",
+      "name": "cf_haproxy_create",
+      "entity_kind": "function_definition",
+      "signature": "static CURLcode cf_haproxy_create(struct Curl_cfilter **pcf, struct Curl_easy *data)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_cfilter **pcf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "Curl_cf_create",
+        "cf_haproxy_ctx_free",
+        "curlx_calloc",
+        "curlx_dyn_init"
+      ],
+      "start_line": 217,
+      "end_line": 242,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_haproxy_ctx_free"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/curl_gssapi.c",
+      "name": "stub_gss_delete_sec_context",
+      "entity_kind": "function_definition",
+      "signature": "static OM_uint32 stub_gss_delete_sec_context( OM_uint32 *min, struct stub_gss_ctx_id_t_desc **context, gss_buffer_t output_token)",
+      "return_type": "OM_uint32",
+      "parameters": [
+        "OM_uint32 *min",
+        "struct stub_gss_ctx_id_t_desc **context",
+        "gss_buffer_t output_token"
+      ],
+      "direct_calls": [
+        "curlx_safefree"
+      ],
+      "start_line": 286,
+      "end_line": 309,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/curl_gssapi.c",
+      "name": "Curl_gss_delete_sec_context",
+      "entity_kind": "function_definition",
+      "signature": "OM_uint32 Curl_gss_delete_sec_context(OM_uint32 *min, gss_ctx_id_t *context, gss_buffer_t output_token)",
+      "return_type": "OM_uint32",
+      "parameters": [
+        "OM_uint32 *min",
+        "gss_ctx_id_t *context",
+        "gss_buffer_t output_token"
+      ],
+      "direct_calls": [
+        "getenv",
+        "gss_delete_sec_context",
+        "stub_gss_delete_sec_context"
+      ],
+      "start_line": 372,
+      "end_line": 384,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:stub_gss_delete_sec_context"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/curl_share.c",
+      "name": "share_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void share_destroy(struct Curl_share *share)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_share *share"
+      ],
+      "direct_calls": [
+        "Curl_close",
+        "Curl_cookie_cleanup",
+        "Curl_cpool_destroy",
+        "Curl_dnscache_destroy",
+        "Curl_hsts_cleanup",
+        "Curl_mutex_destroy",
+        "Curl_psl_destroy",
+        "Curl_ssl_scache_destroy",
+        "curlx_free"
+      ],
+      "start_line": 35,
+      "end_line": 66,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_close"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/curl_sspi.c",
+      "name": "Curl_sspi_free_identity",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_sspi_free_identity(SEC_WINNT_AUTH_IDENTITY *identity)",
+      "return_type": "void",
+      "parameters": [
+        "SEC_WINNT_AUTH_IDENTITY *identity"
+      ],
+      "direct_calls": [
+        "curlx_safefree"
+      ],
+      "start_line": 198,
+      "end_line": 205,
+      "documentation": "Curl_sspi_free_identity() This is used to free the contents of an SSPI identifier structure. Parameters: identity [in/out] - The identity structure.",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/curlx/dynbuf.c",
+      "name": "curlx_dyn_free",
+      "entity_kind": "function_definition",
+      "signature": "void curlx_dyn_free(struct dynbuf *s)",
+      "return_type": "void",
+      "parameters": [
+        "struct dynbuf *s"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT",
+        "curlx_safefree"
+      ],
+      "start_line": 56,
+      "end_line": 62,
+      "documentation": "free the buffer and re-init the necessary fields. It does not touch the 'init' field and thus this buffer can be reused to add data to again.",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/curlx/fopen.c",
+      "name": "CURLX_MALLOC",
+      "entity_kind": "function_like_macro",
+      "signature": "#define CURLX_MALLOC(x)",
+      "return_type": "macro",
+      "parameters": [
+        "x"
+      ],
+      "direct_calls": [
+        "malloc"
+      ],
+      "start_line": 53,
+      "end_line": 54,
+      "documentation": "Use system allocators to avoid infinite recursion when called by curl's memory tracker memdebug functions.",
+      "macro_value": "malloc(x)",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "allocation_name",
+        "memory_documentation",
+        "macro_wraps_memory_primitive"
+      ],
+      "score": 10.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/curlx/fopen.c",
+      "name": "CURLX_FREE",
+      "entity_kind": "function_like_macro",
+      "signature": "#define CURLX_FREE(x)",
+      "return_type": "macro",
+      "parameters": [
+        "x"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 54,
+      "end_line": 55,
+      "documentation": "",
+      "macro_value": "free(x)",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "macro_wraps_memory_primitive"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cw-out.c",
+      "name": "cw_out_buf_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cw_out_buf_free(struct cw_out_buf *cwbuf)",
+      "return_type": "void",
+      "parameters": [
+        "struct cw_out_buf *cwbuf"
+      ],
+      "direct_calls": [
+        "curlx_dyn_free",
+        "curlx_free"
+      ],
+      "start_line": 89,
+      "end_line": 95,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cw-out.c",
+      "name": "cw_out_bufs_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cw_out_bufs_free(struct cw_out_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cw_out_ctx *ctx"
+      ],
+      "direct_calls": [
+        "cw_out_buf_free"
+      ],
+      "start_line": 113,
+      "end_line": 120,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cw_out_buf_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cw-pause.c",
+      "name": "cw_pause_buf_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cw_pause_buf_free(struct cw_pause_buf *cwbuf)",
+      "return_type": "void",
+      "parameters": [
+        "struct cw_pause_buf *cwbuf"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "curlx_free"
+      ],
+      "start_line": 59,
+      "end_line": 65,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/cw-pause.c",
+      "name": "cw_pause_bufs_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cw_pause_bufs_free(struct cw_pause_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cw_pause_ctx *ctx"
+      ],
+      "direct_calls": [
+        "cw_pause_buf_free"
+      ],
+      "start_line": 82,
+      "end_line": 89,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cw_pause_buf_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/dnscache.c",
+      "name": "dnscache_entry_create",
+      "entity_kind": "function_definition",
+      "signature": "static struct Curl_dns_entry *dnscache_entry_create( struct Curl_easy *data, uint8_t dns_queries, struct Curl_addrinfo **paddr1, struct Curl_addrinfo **paddr2, const char *hostname, size_t hostlen, uint16_t port, bool permanent)",
+      "return_type": "struct Curl_dns_entry *",
+      "parameters": [
+        "struct Curl_easy *data",
+        "uint8_t dns_queries",
+        "struct Curl_addrinfo **paddr1",
+        "struct Curl_addrinfo **paddr2",
+        "const char *hostname",
+        "size_t hostlen",
+        "uint16_t port",
+        "bool permanent"
+      ],
+      "direct_calls": [
+        "Curl_freeaddrinfo",
+        "Curl_pgrs_now",
+        "curlx_calloc",
+        "dns_shuffle_addr",
+        "dnscache_ai_has_family",
+        "dnscache_entry_free",
+        "memcpy"
+      ],
+      "start_line": 410,
+      "end_line": 489,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/dnscache.c",
+      "name": "Curl_dnscache_mk_entry",
+      "entity_kind": "function_definition",
+      "signature": "struct Curl_dns_entry *Curl_dnscache_mk_entry(struct Curl_easy *data, uint8_t dns_queries, struct Curl_addrinfo **paddr, const char *hostname, uint16_t port)",
+      "return_type": "struct Curl_dns_entry *",
+      "parameters": [
+        "struct Curl_easy *data",
+        "uint8_t dns_queries",
+        "struct Curl_addrinfo **paddr",
+        "const char *hostname",
+        "uint16_t port"
+      ],
+      "direct_calls": [
+        "dnscache_entry_create",
+        "strlen"
+      ],
+      "start_line": 491,
+      "end_line": 500,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dnscache_entry_create"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/dnscache.c",
+      "name": "Curl_dnscache_mk_entry2",
+      "entity_kind": "function_definition",
+      "signature": "struct Curl_dns_entry *Curl_dnscache_mk_entry2(struct Curl_easy *data, uint8_t dns_queries, struct Curl_addrinfo **paddr1, struct Curl_addrinfo **paddr2, const char *hostname, uint16_t port)",
+      "return_type": "struct Curl_dns_entry *",
+      "parameters": [
+        "struct Curl_easy *data",
+        "uint8_t dns_queries",
+        "struct Curl_addrinfo **paddr1",
+        "struct Curl_addrinfo **paddr2",
+        "const char *hostname",
+        "uint16_t port"
+      ],
+      "direct_calls": [
+        "dnscache_entry_create",
+        "strlen"
+      ],
+      "start_line": 502,
+      "end_line": 512,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dnscache_entry_create"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/dnscache.c",
+      "name": "dnscache_add_addr",
+      "entity_kind": "function_definition",
+      "signature": "static struct Curl_dns_entry *dnscache_add_addr(struct Curl_easy *data, struct Curl_dnscache *dnscache, uint8_t dns_queries, struct Curl_addrinfo **paddr, const char *hostname, size_t hlen, uint16_t port, bool permanent)",
+      "return_type": "struct Curl_dns_entry *",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_dnscache *dnscache",
+        "uint8_t dns_queries",
+        "struct Curl_addrinfo **paddr",
+        "const char *hostname",
+        "size_t hlen",
+        "uint16_t port",
+        "bool permanent"
+      ],
+      "direct_calls": [
+        "Curl_hash_add",
+        "create_dnscache_id",
+        "dnscache_entry_create",
+        "dnscache_entry_free"
+      ],
+      "start_line": 531,
+      "end_line": 565,
+      "documentation": "#endif /* USE_HTTPSRR",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dnscache_entry_create"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/easy.c",
+      "name": "curl_easy_cleanup",
+      "entity_kind": "function_definition",
+      "signature": "void curl_easy_cleanup(CURL *curl)",
+      "return_type": "void",
+      "parameters": [
+        "CURL *curl"
+      ],
+      "direct_calls": [
+        "Curl_close",
+        "GOOD_EASY_HANDLE",
+        "sigpipe_ignore",
+        "sigpipe_restore"
+      ],
+      "start_line": 838,
+      "end_line": 847,
+      "documentation": "curl_easy_cleanup() is the external interface to cleaning/freeing the given easy handle.",
+      "macro_value": "",
+      "evidence": [
+        "weak_release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_close"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/escape.c",
+      "name": "curl_free",
+      "entity_kind": "function_definition",
+      "signature": "void curl_free(void *p)",
+      "return_type": "void",
+      "parameters": [
+        "void *p"
+      ],
+      "direct_calls": [
+        "curlx_free"
+      ],
+      "start_line": 190,
+      "end_line": 193,
+      "documentation": "the library's memory system",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/formdata.c",
+      "name": "AddHttpPost",
+      "entity_kind": "function_definition",
+      "signature": "static struct curl_httppost *AddHttpPost(struct FormInfo *src, struct curl_httppost *parent_post, struct curl_httppost **httppost, struct curl_httppost **last_post)",
+      "return_type": "struct curl_httppost *",
+      "parameters": [
+        "struct FormInfo *src",
+        "struct curl_httppost *parent_post",
+        "struct curl_httppost **httppost",
+        "struct curl_httppost **last_post"
+      ],
+      "direct_calls": [
+        "CURL_UNCONST",
+        "Curl_bufref_ptr",
+        "curlx_calloc",
+        "strlen"
+      ],
+      "start_line": 57,
+      "end_line": 103,
+      "documentation": "AddHttpPost() Adds an HttpPost structure to the list, if parent_post is given becomes a subpost of parent_post instead of a direct list element. Returns newly allocated HttpPost on success and NULL if malloc failed.",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "unknown"
+    },
+    {
+      "project": "curl",
+      "file": "lib/formdata.c",
+      "name": "free_formlist",
+      "entity_kind": "function_definition",
+      "signature": "static void free_formlist(struct FormInfo *ptr)",
+      "return_type": "void",
+      "parameters": [
+        "struct FormInfo *ptr"
+      ],
+      "direct_calls": [
+        "Curl_bufref_free"
+      ],
+      "start_line": 155,
+      "end_line": 163,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/ftplistparser.c",
+      "name": "Curl_ftp_parselist_data_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_ftp_parselist_data_free(struct ftp_parselist_data **parserp)",
+      "return_type": "void",
+      "parameters": [
+        "struct ftp_parselist_data **parserp"
+      ],
+      "direct_calls": [
+        "Curl_fileinfo_cleanup",
+        "curlx_free"
+      ],
+      "start_line": 214,
+      "end_line": 221,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http1.c",
+      "name": "Curl_h1_req_parse_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_h1_req_parse_free(struct h1_req_parser *parser)",
+      "return_type": "void",
+      "parameters": [
+        "struct h1_req_parser *parser"
+      ],
+      "direct_calls": [
+        "Curl_http_req_free",
+        "curlx_dyn_free"
+      ],
+      "start_line": 43,
+      "end_line": 51,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http2.c",
+      "name": "h2_stream_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h2_stream_ctx_free(struct h2_stream_ctx *stream)",
+      "return_type": "void",
+      "parameters": [
+        "struct h2_stream_ctx *stream"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "Curl_dynhds_free",
+        "Curl_h1_req_parse_free",
+        "curlx_free",
+        "free_push_headers"
+      ],
+      "start_line": 161,
+      "end_line": 168,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http2.c",
+      "name": "h2_stream_hash_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h2_stream_hash_free(unsigned int id, void *stream)",
+      "return_type": "void",
+      "parameters": [
+        "unsigned int id",
+        "void *stream"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT",
+        "h2_stream_ctx_free"
+      ],
+      "start_line": 170,
+      "end_line": 175,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:h2_stream_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http2.c",
+      "name": "cf_h2_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_h2_ctx_free(struct cf_h2_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cf_h2_ctx *ctx"
+      ],
+      "direct_calls": [
+        "Curl_bufcp_free",
+        "Curl_bufq_free",
+        "Curl_uint32_hash_destroy",
+        "curlx_dyn_free",
+        "curlx_free",
+        "memset"
+      ],
+      "start_line": 189,
+      "end_line": 200,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufcp_free,Curl_bufq_free,curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http2.c",
+      "name": "cf_h2_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_h2_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "cf_h2_ctx_free"
+      ],
+      "start_line": 2569,
+      "end_line": 2578,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_h2_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http2.c",
+      "name": "Curl_nghttp2_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_nghttp2_free(void *ptr, void *user_data)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr",
+        "void *user_data"
+      ],
+      "direct_calls": [
+        "Curl_cfree"
+      ],
+      "start_line": 2987,
+      "end_line": 2991,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http2.c",
+      "name": "Curl_nghttp2_realloc",
+      "entity_kind": "function_definition",
+      "signature": "void *Curl_nghttp2_realloc(void *ptr, size_t size, void *user_data)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr",
+        "size_t size",
+        "void *user_data"
+      ],
+      "direct_calls": [
+        "Curl_crealloc"
+      ],
+      "start_line": 2999,
+      "end_line": 3003,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http_aws_sigv4.c",
+      "name": "pair_array_free",
+      "entity_kind": "function_definition",
+      "signature": "static void pair_array_free(struct pair *pair_array, size_t num_elements)",
+      "return_type": "void",
+      "parameters": [
+        "struct pair *pair_array",
+        "size_t num_elements"
+      ],
+      "direct_calls": [
+        "curlx_dyn_free"
+      ],
+      "start_line": 121,
+      "end_line": 129,
+      "documentation": "Frees all allocated strings in a dynbuf pair array, and the dynbuf itself",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 8.5,
+      "confidence": 0.85,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http_aws_sigv4.c",
+      "name": "dyn_array_free",
+      "entity_kind": "function_definition",
+      "signature": "static void dyn_array_free(struct dynbuf *db, size_t num_elements)",
+      "return_type": "void",
+      "parameters": [
+        "struct dynbuf *db",
+        "size_t num_elements"
+      ],
+      "direct_calls": [
+        "curlx_dyn_free"
+      ],
+      "start_line": 134,
+      "end_line": 140,
+      "documentation": "Frees all allocated strings in a split dynbuf, and the dynbuf itself",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 8.5,
+      "confidence": 0.85,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/http_chunks.c",
+      "name": "Curl_httpchunk_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_httpchunk_free(struct Curl_easy *data, struct Curl_chunker *ch)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_chunker *ch"
+      ],
+      "direct_calls": [
+        "curlx_dyn_free"
+      ],
+      "start_line": 94,
+      "end_line": 98,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/idn.c",
+      "name": "Curl_free_idnconverted_hostname",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_free_idnconverted_hostname(struct hostname *host)",
+      "return_type": "void",
+      "parameters": [
+        "struct hostname *host"
+      ],
+      "direct_calls": [
+        "curlx_safefree"
+      ],
+      "start_line": 359,
+      "end_line": 362,
+      "documentation": "Frees data allocated by idnconvert_hostname()",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/memdebug.c",
+      "name": "curl_dbg_realloc",
+      "entity_kind": "function_definition",
+      "signature": "void *curl_dbg_realloc(void *ptr, size_t wantedsize, int line, const char *source)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr",
+        "size_t wantedsize",
+        "int line",
+        "const char *source"
+      ],
+      "direct_calls": [
+        "Curl_crealloc",
+        "DEBUGASSERT",
+        "countcheck",
+        "curl_dbg_lock",
+        "curl_dbg_log_locked",
+        "curl_dbg_unlock"
+      ],
+      "start_line": 319,
+      "end_line": 362,
+      "documentation": "We provide a realloc() that accepts a NULL as pointer, which then performs a malloc(). In order to work with ares.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/memdebug.c",
+      "name": "curl_dbg_free",
+      "entity_kind": "function_definition",
+      "signature": "void curl_dbg_free(void *ptr, int line, const char *source)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr",
+        "int line",
+        "const char *source"
+      ],
+      "direct_calls": [
+        "Curl_cfree",
+        "curl_dbg_log"
+      ],
+      "start_line": 364,
+      "end_line": 387,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/mime.c",
+      "name": "mime_mem_free",
+      "entity_kind": "function_definition",
+      "signature": "static void mime_mem_free(void *ptr)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "curlx_safefree"
+      ],
+      "start_line": 604,
+      "end_line": 607,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/mime.c",
+      "name": "mime_file_free",
+      "entity_kind": "function_definition",
+      "signature": "static void mime_file_free(void *ptr)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "curlx_fclose",
+        "curlx_safefree"
+      ],
+      "start_line": 649,
+      "end_line": 658,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/mime.c",
+      "name": "mime_subparts_free",
+      "entity_kind": "function_definition",
+      "signature": "static void mime_subparts_free(void *ptr)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "cleanup_part_content",
+        "curl_mime_free"
+      ],
+      "start_line": 1066,
+      "end_line": 1075,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_mime_free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/mime.c",
+      "name": "curl_mime_free",
+      "entity_kind": "function_definition",
+      "signature": "void curl_mime_free(curl_mime *mime)",
+      "return_type": "void",
+      "parameters": [
+        "curl_mime *mime"
+      ],
+      "direct_calls": [
+        "Curl_mime_cleanpart",
+        "curlx_free",
+        "mime_subparts_unbind"
+      ],
+      "start_line": 1104,
+      "end_line": 1118,
+      "documentation": "Recursively delete a mime handle and its parts.",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/multi.c",
+      "name": "Curl_multi_xfer_buf_release",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_multi_xfer_buf_release(struct Curl_easy *data, char *buf)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_easy *data",
+        "char *buf"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT"
+      ],
+      "start_line": 3999,
+      "end_line": 4006,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/multi.c",
+      "name": "Curl_multi_xfer_ulbuf_release",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_multi_xfer_ulbuf_release(struct Curl_easy *data, char *buf)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_easy *data",
+        "char *buf"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT"
+      ],
+      "start_line": 4052,
+      "end_line": 4059,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/multi.c",
+      "name": "Curl_multi_xfer_sockbuf_release",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_multi_xfer_sockbuf_release(struct Curl_easy *data, char *buf)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_easy *data",
+        "char *buf"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT"
+      ],
+      "start_line": 4096,
+      "end_line": 4103,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/request.c",
+      "name": "Curl_req_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_req_free(struct SingleRequest *req, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct SingleRequest *req",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "Curl_client_cleanup",
+        "curlx_safefree"
+      ],
+      "start_line": 175,
+      "end_line": 185,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/socks.c",
+      "name": "socks_proxy_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void socks_proxy_ctx_free(struct socks_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct socks_ctx *ctx"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "Curl_creds_unlink",
+        "Curl_peer_unlink",
+        "curlx_free"
+      ],
+      "start_line": 1184,
+      "end_line": 1192,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/socks.c",
+      "name": "socks_proxy_cf_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void socks_proxy_cf_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "socks_proxy_ctx_free"
+      ],
+      "start_line": 1304,
+      "end_line": 1310,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:socks_proxy_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/url.c",
+      "name": "up_free",
+      "entity_kind": "function_definition",
+      "signature": "static void up_free(struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "curl_url_cleanup",
+        "curlx_safefree"
+      ],
+      "start_line": 178,
+      "end_line": 191,
+      "documentation": "free the URL pieces",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/url.c",
+      "name": "Curl_close",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_close(struct Curl_easy **datap)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy **datap"
+      ],
+      "direct_calls": [
+        "Curl_altsvc_cleanup",
+        "Curl_altsvc_save",
+        "Curl_bufref_free",
+        "Curl_creds_unlink",
+        "Curl_detach_connection",
+        "Curl_expire_clear",
+        "Curl_flush_cookies",
+        "Curl_freeset",
+        "Curl_hash_destroy",
+        "Curl_headers_cleanup",
+        "Curl_hsts_cleanup",
+        "Curl_hsts_save",
+        "Curl_http_auth_cleanup_digest",
+        "Curl_mime_cleanpart",
+        "Curl_netrc_cleanup",
+        "Curl_peer_unlink",
+        "Curl_req_free",
+        "Curl_resolv_destroy_all",
+        "Curl_share_easy_unlink",
+        "Curl_ssl_close_all",
+        "Curl_ssl_free_certinfo",
+        "Curl_wildcard_dtor",
+        "DEBUGASSERT",
+        "curl_multi_cleanup",
+        "curl_multi_remove_handle",
+        "curl_slist_free_all",
+        "curlx_dyn_free",
+        "curlx_free",
+        "curlx_safefree",
+        "up_free"
+      ],
+      "start_line": 200,
+      "end_line": 306,
+      "documentation": "This is the internal function curl_easy_cleanup() calls. This should cleanup and free all resources associated with this sessionhandle. We ignore SIGPIPE when this is called from curl_easy_cleanup.",
+      "macro_value": "",
+      "evidence": [
+        "weak_release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_free,curlx_dyn_free,up_free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/cleartext.c",
+      "name": "Curl_auth_create_plain_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_plain_message(struct Curl_creds *creds, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_creds *creds",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_bufref_set",
+        "Curl_creds_passwd",
+        "Curl_creds_sasl_authzid",
+        "Curl_creds_user",
+        "curl_maprintf",
+        "strlen"
+      ],
+      "start_line": 49,
+      "end_line": 73,
+      "documentation": "Parameters: creds [in] - The credentials. passwd [in] - The password. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/cleartext.c",
+      "name": "Curl_auth_create_login_message",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_auth_create_login_message(const char *value, struct bufref *out)",
+      "return_type": "void",
+      "parameters": [
+        "const char *value",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_bufref_set",
+        "strlen"
+      ],
+      "start_line": 88,
+      "end_line": 91,
+      "documentation": "Parameters: value [in] - The username or user's password. out [out] - The result storage. Returns void.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/cleartext.c",
+      "name": "Curl_auth_create_external_message",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_auth_create_external_message(const char *user, struct bufref *out)",
+      "return_type": "void",
+      "parameters": [
+        "const char *user",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_auth_create_login_message"
+      ],
+      "start_line": 106,
+      "end_line": 110,
+      "documentation": "Parameters: user [in] - The username. out [out] - The result storage. Returns void.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_auth_create_login_message"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/cram.c",
+      "name": "Curl_auth_create_cram_md5_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_cram_md5_message(const struct bufref *chlg, struct Curl_creds *creds, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "const struct bufref *chlg",
+        "struct Curl_creds *creds",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_HMAC_final",
+        "Curl_HMAC_init",
+        "Curl_HMAC_update",
+        "Curl_bufref_len",
+        "Curl_bufref_set",
+        "Curl_bufref_uptr",
+        "Curl_creds_passwd",
+        "Curl_creds_user",
+        "curl_maprintf",
+        "curlx_uztoui",
+        "strlen"
+      ],
+      "start_line": 49,
+      "end_line": 85,
+      "documentation": "chlg [in] - The challenge. userp [in] - The username. passwdp [in] - The user's password. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/digest.c",
+      "name": "Curl_auth_create_digest_md5_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_digest_md5_message(struct Curl_easy *data, const struct bufref *chlg, struct Curl_creds *creds, const char *default_service, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "const struct bufref *chlg",
+        "struct Curl_creds *creds",
+        "const char *default_service",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_MD5_final",
+        "Curl_MD5_init",
+        "Curl_MD5_update",
+        "Curl_auth_build_spn",
+        "Curl_bufref_set",
+        "Curl_creds_has_sasl_service",
+        "Curl_creds_passwd",
+        "Curl_creds_sasl_service",
+        "Curl_creds_user",
+        "Curl_rand_hex",
+        "auth_decode_digest_md5_message",
+        "auth_digest_get_qop_values",
+        "auth_digest_string_quoted",
+        "curl_maprintf",
+        "curl_msnprintf",
+        "curlx_free",
+        "curlx_uztoui",
+        "strcmp",
+        "strlen"
+      ],
+      "start_line": 333,
+      "end_line": 499,
+      "documentation": "chlg [in] - The challenge message. userp [in] - The username. passwdp [in] - The user's password. service [in] - The service type such as http, smtp, pop or imap. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/digest.c",
+      "name": "auth_create_digest_http_message",
+      "entity_kind": "function_definition",
+      "signature": "static CURLcode auth_create_digest_http_message( struct Curl_easy *data, struct Curl_creds *creds, const unsigned char *request, const unsigned char *uripath, struct digestdata *digest, char **outptr, size_t *outlen, void (*convert_to_ascii)(const unsigned char *, unsigned char *), CURLcode (*hash)(unsigned char *, const unsigned char *, const size_t))",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_creds *creds",
+        "const unsigned char *request",
+        "const unsigned char *uripath",
+        "struct digestdata *digest",
+        "char **outptr",
+        "size_t *outlen",
+        "void (*convert_to_ascii)(const unsigned char *, unsigned char *)",
+        "CURLcode (*hash)(unsigned char *, const unsigned char *, const size_t)"
+      ],
+      "direct_calls": [
+        "Curl_creds_passwd",
+        "Curl_creds_user",
+        "Curl_rand_bytes",
+        "auth_digest_string_quoted",
+        "convert_to_ascii",
+        "curl_maprintf",
+        "curl_strequal",
+        "curlx_base64_encode",
+        "curlx_dyn_add",
+        "curlx_dyn_addf",
+        "curlx_dyn_free",
+        "curlx_dyn_init",
+        "curlx_dyn_len",
+        "curlx_dyn_ptr",
+        "curlx_free",
+        "curlx_malloc",
+        "hash",
+        "memset",
+        "strlen"
+      ],
+      "start_line": 682,
+      "end_line": 969,
+      "documentation": "uripath [in] - The path of the HTTP uri. digest [in/out] - The digest data struct being used and modified. outptr [in/out] - The address where a pointer to newly allocated memory holding the result is stored upon completion. outlen [out] - The length of the output message. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/digest.c",
+      "name": "Curl_auth_create_digest_http_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_digest_http_message(struct Curl_easy *data, struct Curl_creds *creds, const unsigned char *request, const unsigned char *uripath, struct digestdata *digest, char **outptr, size_t *outlen)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_creds *creds",
+        "const unsigned char *request",
+        "const unsigned char *uripath",
+        "struct digestdata *digest",
+        "char **outptr",
+        "size_t *outlen"
+      ],
+      "direct_calls": [
+        "auth_create_digest_http_message"
+      ],
+      "start_line": 991,
+      "end_line": 1022,
+      "documentation": "uripath [in] - The path of the HTTP uri. digest [in/out] - The digest data struct being used and modified. outptr [in/out] - The address where a pointer to newly allocated memory holding the result is stored upon completion. outlen [out] - The length of the output message. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:auth_create_digest_http_message"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/digest_sspi.c",
+      "name": "Curl_auth_create_digest_md5_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_digest_md5_message(struct Curl_easy *data, const struct bufref *chlg, struct Curl_creds *creds, const char *default_service, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "const struct bufref *chlg",
+        "struct Curl_creds *creds",
+        "const char *default_service",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "AcquireCredentialsHandle",
+        "CURL_UNCONST",
+        "CompleteAuthToken",
+        "Curl_auth_build_spn",
+        "Curl_bufref_len",
+        "Curl_bufref_ptr",
+        "Curl_bufref_set",
+        "Curl_create_sspi_identity",
+        "Curl_creds_has_sasl_service",
+        "Curl_creds_has_user",
+        "Curl_creds_sasl_service",
+        "Curl_sspi_free_identity",
+        "Curl_sspi_strerror",
+        "DeleteSecurityContext",
+        "FreeContextBuffer",
+        "FreeCredentialsHandle",
+        "InitializeSecurityContext",
+        "QuerySecurityPackageInfo",
+        "TEXT",
+        "curlx_free",
+        "curlx_malloc",
+        "curlx_uztoul",
+        "failf",
+        "infof"
+      ],
+      "start_line": 85,
+      "end_line": 229,
+      "documentation": "chlg [in] - The challenge message. userp [in] - The username in the format User or Domain\\User. passwdp [in] - The user's password. service [in] - The service type such as http, smtp, pop or imap. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "negative_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_sspi_free_identity"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/digest_sspi.c",
+      "name": "Curl_auth_create_digest_http_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_digest_http_message(struct Curl_easy *data, struct Curl_creds *creds, const unsigned char *request, const unsigned char *uripath, struct digestdata *digest, char **outptr, size_t *outlen)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_creds *creds",
+        "const unsigned char *request",
+        "const unsigned char *uripath",
+        "struct digestdata *digest",
+        "char **outptr",
+        "size_t *outlen"
+      ],
+      "direct_calls": [
+        "AcquireCredentialsHandle",
+        "CURL_UNCONST",
+        "CompleteAuthToken",
+        "Curl_create_sspi_identity",
+        "Curl_creds_has_user",
+        "Curl_creds_link",
+        "Curl_creds_same",
+        "Curl_creds_unlink",
+        "Curl_override_sspi_http_realm",
+        "Curl_sspi_free_identity",
+        "Curl_sspi_strerror",
+        "DeleteSecurityContext",
+        "FreeContextBuffer",
+        "FreeCredentialsHandle",
+        "InitializeSecurityContext",
+        "MakeSignature",
+        "QuerySecurityPackageInfo",
+        "TEXT",
+        "curlx_calloc",
+        "curlx_convert_UTF8_to_tchar",
+        "curlx_free",
+        "curlx_malloc",
+        "curlx_memdup0",
+        "curlx_safefree",
+        "curlx_uztoul",
+        "failf",
+        "infof",
+        "strlen"
+      ],
+      "start_line": 386,
+      "end_line": 605,
+      "documentation": "uripath [in] - The path of the HTTP uri. digest [in/out] - The digest data struct being used and modified. outptr [in/out] - The address where a pointer to newly allocated memory holding the result is stored upon completion. outlen [out] - The length of the output message. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_sspi_free_identity"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/krb5_gssapi.c",
+      "name": "Curl_auth_create_gssapi_user_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_gssapi_user_message(struct Curl_easy *data, struct Curl_creds *creds, const char *default_service, const char *host, const bool mutual_auth, const struct bufref *chlg, struct kerberos5data *krb5, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_creds *creds",
+        "const char *default_service",
+        "const char *host",
+        "const bool mutual_auth",
+        "const struct bufref *chlg",
+        "struct kerberos5data *krb5",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "CURL_UNCONST",
+        "Curl_auth_build_spn",
+        "Curl_bufref_len",
+        "Curl_bufref_memdup0",
+        "Curl_bufref_ptr",
+        "Curl_bufref_set",
+        "Curl_creds_has_sasl_service",
+        "Curl_creds_sasl_service",
+        "Curl_gss_init_sec_context",
+        "Curl_gss_log_error",
+        "GSS_ERROR",
+        "curlx_free",
+        "gss_import_name",
+        "gss_release_buffer",
+        "infof",
+        "strlen"
+      ],
+      "start_line": 76,
+      "end_line": 159,
+      "documentation": "mutual_auth [in] - Flag specifying whether or not mutual authentication is enabled. chlg [in] - Optional challenge message. krb5 [in/out] - The Kerberos 5 data struct being used and modified. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/krb5_sspi.c",
+      "name": "Curl_auth_create_gssapi_user_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_gssapi_user_message(struct Curl_easy *data, struct Curl_creds *creds, const char *default_service, const char *host, const bool mutual_auth, const struct bufref *chlg, struct kerberos5data *krb5, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_creds *creds",
+        "const char *default_service",
+        "const char *host",
+        "const bool mutual_auth",
+        "const struct bufref *chlg",
+        "struct kerberos5data *krb5",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "AcquireCredentialsHandle",
+        "CURL_UNCONST",
+        "Curl_auth_build_spn",
+        "Curl_bufref_len",
+        "Curl_bufref_memdup0",
+        "Curl_bufref_ptr",
+        "Curl_bufref_set",
+        "Curl_create_sspi_identity",
+        "Curl_creds_has_sasl_service",
+        "Curl_creds_has_user",
+        "Curl_creds_sasl_service",
+        "DeleteSecurityContext",
+        "FreeContextBuffer",
+        "InitializeSecurityContext",
+        "QuerySecurityPackageInfo",
+        "TEXT",
+        "curlx_calloc",
+        "curlx_malloc",
+        "curlx_safefree",
+        "curlx_uztoul",
+        "failf",
+        "infof",
+        "memcmp",
+        "memcpy"
+      ],
+      "start_line": 81,
+      "end_line": 223,
+      "documentation": "mutual_auth [in] - Flag specifying whether or not mutual authentication is enabled. chlg [in] - Optional challenge message. krb5 [in/out] - The Kerberos 5 data struct being used and modified. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/krb5_sspi.c",
+      "name": "Curl_auth_create_gssapi_security_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_gssapi_security_message(struct Curl_easy *data, const char *authzid, const struct bufref *chlg, struct kerberos5data *krb5, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "const char *authzid",
+        "const struct bufref *chlg",
+        "struct kerberos5data *krb5",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "CURL_UNCONST",
+        "Curl_bufref_len",
+        "Curl_bufref_ptr",
+        "Curl_bufref_set",
+        "DEBUGASSERT",
+        "DecryptMessage",
+        "EncryptMessage",
+        "FreeContextBuffer",
+        "QueryContextAttributes",
+        "curlx_free",
+        "curlx_malloc",
+        "curlx_uztoul",
+        "infof",
+        "memcpy",
+        "strlen"
+      ],
+      "start_line": 241,
+      "end_line": 418,
+      "documentation": "data [in] - The session handle. authzid [in] - The authorization identity if some. chlg [in] - The challenge message. krb5 [in/out] - The Kerberos 5 data struct being used and modified. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/ntlm.c",
+      "name": "Curl_auth_create_ntlm_type1_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_ntlm_type1_message(struct Curl_easy *data, struct Curl_creds *creds, const char *default_service, const char *host, struct ntlmdata *ntlm, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_creds *creds",
+        "const char *default_service",
+        "const char *host",
+        "struct ntlmdata *ntlm",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_auth_cleanup_ntlm",
+        "Curl_bufref_set",
+        "Curl_creds_has_sasl_service",
+        "Curl_creds_sasl_service",
+        "DEBUG_OUT",
+        "LONGQUARTET",
+        "SHORTPAIR",
+        "curl_maprintf",
+        "curl_mfprintf",
+        "ntlm_print_flags"
+      ],
+      "start_line": 423,
+      "end_line": 526,
+      "documentation": "passwdp [in] - The user's password. service [in] - The service type such as http, smtp, pop or imap. host [in] - The hostname. ntlm [in/out] - The NTLM data struct being used and modified. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/ntlm_sspi.c",
+      "name": "Curl_auth_create_ntlm_type1_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_ntlm_type1_message(struct Curl_easy *data, struct Curl_creds *creds, const char *default_service, const char *host, struct ntlmdata *ntlm, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_easy *data",
+        "struct Curl_creds *creds",
+        "const char *default_service",
+        "const char *host",
+        "struct ntlmdata *ntlm",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "AcquireCredentialsHandle",
+        "CURL_UNCONST",
+        "CompleteAuthToken",
+        "Curl_auth_build_spn",
+        "Curl_auth_cleanup_ntlm",
+        "Curl_bufref_set",
+        "Curl_create_sspi_identity",
+        "Curl_creds_has_sasl_service",
+        "Curl_creds_has_user",
+        "Curl_creds_sasl_service",
+        "FreeContextBuffer",
+        "InitializeSecurityContext",
+        "QuerySecurityPackageInfo",
+        "TEXT",
+        "curlx_calloc",
+        "curlx_malloc",
+        "curlx_safefree",
+        "curlx_uztoul",
+        "failf"
+      ],
+      "start_line": 78,
+      "end_line": 182,
+      "documentation": "passwdp [in] - The user's password. service [in] - The service type such as http, smtp, pop or imap. host [in] - The hostname. ntlm [in/out] - The NTLM data struct being used and modified. out [out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/oauth2.c",
+      "name": "Curl_auth_create_oauth_bearer_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_oauth_bearer_message(struct Curl_creds *creds, const char *host, const long port, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_creds *creds",
+        "const char *host",
+        "const long port",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_bufref_set",
+        "Curl_creds_oauth_bearer",
+        "Curl_creds_user",
+        "curl_maprintf",
+        "strlen"
+      ],
+      "start_line": 50,
+      "end_line": 71,
+      "documentation": "user[in] - The username. host[in] - The hostname. port[in] - The port(when not Port 80). bearer[in] - The bearer token. out[out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/oauth2.c",
+      "name": "Curl_auth_create_xoauth_bearer_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_xoauth_bearer_message(struct Curl_creds *creds, struct bufref *out)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_creds *creds",
+        "struct bufref *out"
+      ],
+      "direct_calls": [
+        "Curl_bufref_set",
+        "Curl_creds_oauth_bearer",
+        "Curl_creds_user",
+        "curl_maprintf",
+        "strlen"
+      ],
+      "start_line": 87,
+      "end_line": 99,
+      "documentation": "Parameters: user[in] - The username. bearer[in] - The bearer token. out[out] - The result storage. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufref_set"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/spnego_gssapi.c",
+      "name": "Curl_auth_create_spnego_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_spnego_message(struct negotiatedata *nego, char **outptr, size_t *outlen)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct negotiatedata *nego",
+        "char **outptr",
+        "size_t *outlen"
+      ],
+      "direct_calls": [
+        "curlx_base64_encode",
+        "gss_release_buffer"
+      ],
+      "start_line": 219,
+      "end_line": 247,
+      "documentation": "data [in] - The session handle. nego [in/out] - The Negotiate data struct being used and modified. outptr [in/out] - The address where a pointer to newly allocated memory holding the result is stored upon completion. outlen [out] - The length of the output message. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vauth/spnego_sspi.c",
+      "name": "Curl_auth_create_spnego_message",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_auth_create_spnego_message(struct negotiatedata *nego, char **outptr, size_t *outlen)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct negotiatedata *nego",
+        "char **outptr",
+        "size_t *outlen"
+      ],
+      "direct_calls": [
+        "curlx_base64_encode",
+        "curlx_free"
+      ],
+      "start_line": 295,
+      "end_line": 308,
+      "documentation": "data [in] - The session handle. nego [in/out] - The Negotiate data struct being used and modified. outptr [in/out] - The address where a pointer to newly allocated memory holding the result is stored upon completion. outlen [out] - The length of the output message. Returns CURLE_OK on success.",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_ngtcp2.c",
+      "name": "cf_ngtcp2_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_ngtcp2_ctx_free(struct cf_ngtcp2_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cf_ngtcp2_ctx *ctx"
+      ],
+      "direct_calls": [
+        "Curl_bufcp_free",
+        "Curl_ssl_peer_cleanup",
+        "Curl_uint32_hash_destroy",
+        "Curl_vquic_tls_cleanup",
+        "curlx_dyn_free",
+        "curlx_free",
+        "curlx_safefree",
+        "vquic_ctx_free"
+      ],
+      "start_line": 173,
+      "end_line": 186,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufcp_free,curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_ngtcp2.c",
+      "name": "h3_stream_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h3_stream_ctx_free(struct h3_stream_ctx *stream)",
+      "return_type": "void",
+      "parameters": [
+        "struct h3_stream_ctx *stream"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "Curl_h1_req_parse_free",
+        "curlx_free"
+      ],
+      "start_line": 255,
+      "end_line": 260,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_ngtcp2.c",
+      "name": "h3_stream_hash_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h3_stream_hash_free(unsigned int id, void *stream)",
+      "return_type": "void",
+      "parameters": [
+        "unsigned int id",
+        "void *stream"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT",
+        "h3_stream_ctx_free"
+      ],
+      "start_line": 262,
+      "end_line": 267,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:h3_stream_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_ngtcp2.c",
+      "name": "cf_ngtcp2_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_ngtcp2_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "CURL_TRC_CF",
+        "cf_ngtcp2_close",
+        "cf_ngtcp2_ctx_free"
+      ],
+      "start_line": 2411,
+      "end_line": 2419,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_ngtcp2_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_ngtcp2.c",
+      "name": "Curl_cf_ngtcp2_create",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_cf_ngtcp2_create(struct Curl_cfilter **pcf, struct Curl_easy *data, struct connectdata *conn, struct Curl_sockaddr_ex *addr)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_cfilter **pcf",
+        "struct Curl_easy *data",
+        "struct connectdata *conn",
+        "struct Curl_sockaddr_ex *addr"
+      ],
+      "direct_calls": [
+        "Curl_cf_create",
+        "Curl_cf_udp_create",
+        "Curl_conn_cf_discard_chain",
+        "cf_ngtcp2_ctx_free",
+        "cf_ngtcp2_ctx_init",
+        "curlx_calloc"
+      ],
+      "start_line": 3106,
+      "end_line": 3142,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_ngtcp2_ctx_free"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_quiche.c",
+      "name": "cf_quiche_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_quiche_ctx_free(struct cf_quiche_ctx *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cf_quiche_ctx *ctx"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "Curl_ssl_peer_cleanup",
+        "Curl_uint32_hash_destroy",
+        "Curl_vquic_tls_cleanup",
+        "curlx_dyn_free",
+        "curlx_free",
+        "vquic_ctx_free"
+      ],
+      "start_line": 126,
+      "end_line": 139,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free,curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_quiche.c",
+      "name": "h3_stream_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h3_stream_ctx_free(struct h3_stream_ctx *stream)",
+      "return_type": "void",
+      "parameters": [
+        "struct h3_stream_ctx *stream"
+      ],
+      "direct_calls": [
+        "Curl_h1_req_parse_free",
+        "curlx_free"
+      ],
+      "start_line": 183,
+      "end_line": 187,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_h1_req_parse_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_quiche.c",
+      "name": "h3_stream_hash_free",
+      "entity_kind": "function_definition",
+      "signature": "static void h3_stream_hash_free(unsigned int id, void *stream)",
+      "return_type": "void",
+      "parameters": [
+        "unsigned int id",
+        "void *stream"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT",
+        "h3_stream_ctx_free"
+      ],
+      "start_line": 189,
+      "end_line": 194,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:h3_stream_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_quiche.c",
+      "name": "cf_quiche_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_quiche_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "cf_quiche_ctx_close",
+        "cf_quiche_ctx_free"
+      ],
+      "start_line": 1512,
+      "end_line": 1520,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_quiche_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/curl_quiche.c",
+      "name": "Curl_cf_quiche_create",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_cf_quiche_create(struct Curl_cfilter **pcf, struct Curl_easy *data, struct connectdata *conn, struct Curl_sockaddr_ex *addr)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_cfilter **pcf",
+        "struct Curl_easy *data",
+        "struct connectdata *conn",
+        "struct Curl_sockaddr_ex *addr"
+      ],
+      "direct_calls": [
+        "Curl_cf_create",
+        "Curl_cf_udp_create",
+        "Curl_conn_cf_discard_chain",
+        "cf_quiche_ctx_free",
+        "cf_quiche_ctx_init",
+        "curlx_calloc"
+      ],
+      "start_line": 1641,
+      "end_line": 1678,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_quiche_ctx_free"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/vquic.c",
+      "name": "vquic_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "void vquic_ctx_free(struct cf_quic_ctx *qctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct cf_quic_ctx *qctx"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free"
+      ],
+      "start_line": 101,
+      "end_line": 104,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/vquic.c",
+      "name": "Curl_cf_quic_create",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode Curl_cf_quic_create(struct Curl_cfilter **pcf, struct Curl_easy *data, struct connectdata *conn, struct Curl_sockaddr_ex *addr, uint8_t transport)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_cfilter **pcf",
+        "struct Curl_easy *data",
+        "struct connectdata *conn",
+        "struct Curl_sockaddr_ex *addr",
+        "uint8_t transport"
+      ],
+      "direct_calls": [
+        "Curl_cf_ngtcp2_create",
+        "Curl_cf_quiche_create",
+        "DEBUGASSERT"
+      ],
+      "start_line": 765,
+      "end_line": 784,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_cf_ngtcp2_create,Curl_cf_quiche_create"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/vquic.c",
+      "name": "vquic_ngtcp2_free",
+      "entity_kind": "function_definition",
+      "signature": "static void vquic_ngtcp2_free(void *ptr, void *user_data)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr",
+        "void *user_data"
+      ],
+      "direct_calls": [
+        "Curl_cfree"
+      ],
+      "start_line": 866,
+      "end_line": 870,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vquic/vquic.c",
+      "name": "vquic_ngtcp2_realloc",
+      "entity_kind": "function_definition",
+      "signature": "static void *vquic_ngtcp2_realloc(void *ptr, size_t size, void *user_data)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr",
+        "size_t size",
+        "void *user_data"
+      ],
+      "direct_calls": [
+        "Curl_crealloc"
+      ],
+      "start_line": 878,
+      "end_line": 882,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/gtls.c",
+      "name": "Curl_gtls_shared_creds_free",
+      "entity_kind": "function_definition",
+      "signature": "void Curl_gtls_shared_creds_free(struct gtls_shared_creds **pcreds)",
+      "return_type": "void",
+      "parameters": [
+        "struct gtls_shared_creds **pcreds"
+      ],
+      "direct_calls": [
+        "curlx_free",
+        "gnutls_certificate_free_credentials"
+      ],
+      "start_line": 433,
+      "end_line": 445,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/gtls.c",
+      "name": "gtls_shared_creds_hash_free",
+      "entity_kind": "function_definition",
+      "signature": "static void gtls_shared_creds_hash_free(void *key, size_t key_len, void *p)",
+      "return_type": "void",
+      "parameters": [
+        "void *key",
+        "size_t key_len",
+        "void *p"
+      ],
+      "direct_calls": [
+        "Curl_gtls_shared_creds_free",
+        "DEBUGASSERT",
+        "memcmp"
+      ],
+      "start_line": 606,
+      "end_line": 614,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_gtls_shared_creds_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/vtls.c",
+      "name": "cf_ctx_free",
+      "entity_kind": "function_definition",
+      "signature": "static void cf_ctx_free(struct ssl_connect_data *ctx)",
+      "return_type": "void",
+      "parameters": [
+        "struct ssl_connect_data *ctx"
+      ],
+      "direct_calls": [
+        "Curl_bufq_free",
+        "curlx_free",
+        "curlx_safefree"
+      ],
+      "start_line": 536,
+      "end_line": 544,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_bufq_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/vtls.c",
+      "name": "ssl_cf_destroy",
+      "entity_kind": "function_definition",
+      "signature": "static void ssl_cf_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
+      "return_type": "void",
+      "parameters": [
+        "struct Curl_cfilter *cf",
+        "struct Curl_easy *data"
+      ],
+      "direct_calls": [
+        "CF_DATA_RESTORE",
+        "CF_DATA_SAVE",
+        "cf_close",
+        "cf_ctx_free"
+      ],
+      "start_line": 1295,
+      "end_line": 1304,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_ctx_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/vtls.c",
+      "name": "cf_ssl_create",
+      "entity_kind": "function_definition",
+      "signature": "static CURLcode cf_ssl_create(struct Curl_cfilter **pcf, struct Curl_easy *data, struct connectdata *conn)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_cfilter **pcf",
+        "struct Curl_easy *data",
+        "struct connectdata *conn"
+      ],
+      "direct_calls": [
+        "Curl_cf_create",
+        "DEBUGASSERT",
+        "alpn_get_spec",
+        "cf_ctx_free",
+        "cf_ctx_new"
+      ],
+      "start_line": 1713,
+      "end_line": 1746,
+      "documentation": "#endif /* !CURL_DISABLE_PROXY",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_ctx_free"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/vtls.c",
+      "name": "cf_ssl_proxy_create",
+      "entity_kind": "function_definition",
+      "signature": "static CURLcode cf_ssl_proxy_create(struct Curl_cfilter **pcf, struct Curl_easy *data, struct connectdata *conn)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct Curl_cfilter **pcf",
+        "struct Curl_easy *data",
+        "struct connectdata *conn"
+      ],
+      "direct_calls": [
+        "Curl_cf_create",
+        "alpn_get_spec",
+        "cf_ctx_free",
+        "cf_ctx_new"
+      ],
+      "start_line": 1775,
+      "end_line": 1806,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:cf_ctx_free"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/vtls_scache.c",
+      "name": "cf_ssl_peer_key_add_path",
+      "entity_kind": "function_definition",
+      "signature": "static CURLcode cf_ssl_peer_key_add_path(struct dynbuf *buf, const char *name, const char *path, bool *is_local)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct dynbuf *buf",
+        "const char *name",
+        "const char *path",
+        "bool *is_local"
+      ],
+      "direct_calls": [
+        "_fullpath",
+        "curlx_dyn_addf",
+        "free",
+        "realpath"
+      ],
+      "start_line": 71,
+      "end_line": 100,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "lib/vtls/vtls_scache.c",
+      "name": "cf_ssl_get_free_peer",
+      "entity_kind": "function_definition",
+      "signature": "static struct Curl_ssl_scache_peer * cf_ssl_get_free_peer(struct Curl_ssl_scache *scache)",
+      "return_type": "struct Curl_ssl_scache_peer *",
+      "parameters": [
+        "struct Curl_ssl_scache *scache"
+      ],
+      "direct_calls": [
+        "Curl_llist_count",
+        "DEBUGASSERT",
+        "cf_ssl_scache_clear_peer"
+      ],
+      "start_line": 761,
+      "end_line": 789,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "dynconvert",
+      "entity_kind": "function_definition",
+      "signature": "static char *dynconvert(int dccsid, const char *s, int slen, int sccsid, int *olen)",
+      "return_type": "char *",
+      "parameters": [
+        "int dccsid",
+        "const char *s",
+        "int slen",
+        "int sccsid",
+        "int *olen"
+      ],
+      "direct_calls": [
+        "convert",
+        "free",
+        "malloc",
+        "realloc",
+        "strlen"
+      ],
+      "start_line": 155,
+      "end_line": 205,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "slist_convert",
+      "entity_kind": "function_definition",
+      "signature": "static struct curl_slist *slist_convert(int dccsid, struct curl_slist *from, int sccsid)",
+      "return_type": "struct curl_slist *",
+      "parameters": [
+        "int dccsid",
+        "struct curl_slist *from",
+        "int sccsid"
+      ],
+      "direct_calls": [
+        "Curl_slist_append_nodup",
+        "curl_slist_free_all",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 207,
+      "end_line": 229,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_easy_escape_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "char *curl_easy_escape_ccsid(CURL *handle, const char *string, int length, unsigned int sccsid, unsigned int dccsid)",
+      "return_type": "char *",
+      "parameters": [
+        "CURL *handle",
+        "const char *string",
+        "int length",
+        "unsigned int sccsid",
+        "unsigned int dccsid"
+      ],
+      "direct_calls": [
+        "curl_easy_escape",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 271,
+      "end_line": 297,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_easy_unescape_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "char *curl_easy_unescape_ccsid(CURL *handle, const char *string, int length, int *outlength, unsigned int sccsid, unsigned int dccsid)",
+      "return_type": "char *",
+      "parameters": [
+        "CURL *handle",
+        "const char *string",
+        "int length",
+        "int *outlength",
+        "unsigned int sccsid",
+        "unsigned int dccsid"
+      ],
+      "direct_calls": [
+        "curl_easy_unescape",
+        "dynconvert",
+        "free",
+        "strlen"
+      ],
+      "start_line": 299,
+      "end_line": 330,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_slist_append_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "struct curl_slist *curl_slist_append_ccsid(struct curl_slist *list, const char *data, unsigned int ccsid)",
+      "return_type": "struct curl_slist *",
+      "parameters": [
+        "struct curl_slist *list",
+        "const char *data",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "curl_slist_append",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 332,
+      "end_line": 351,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_getdate_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "time_t curl_getdate_ccsid(const char *p, const time_t *unused, unsigned int ccsid)",
+      "return_type": "time_t",
+      "parameters": [
+        "const char *p",
+        "const time_t *unused",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "curl_getdate",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 353,
+      "end_line": 370,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_certinfo_free_all",
+      "entity_kind": "function_definition",
+      "signature": "void curl_certinfo_free_all(struct curl_certinfo *info)",
+      "return_type": "void",
+      "parameters": [
+        "struct curl_certinfo *info"
+      ],
+      "direct_calls": [
+        "curl_slist_free_all",
+        "free"
+      ],
+      "start_line": 521,
+      "end_line": 534,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "Curl_formadd_release_local",
+      "entity_kind": "function_definition",
+      "signature": "static void Curl_formadd_release_local(struct curl_forms *forms, int nargs, int skip)",
+      "return_type": "void",
+      "parameters": [
+        "struct curl_forms *forms",
+        "int nargs",
+        "int skip"
+      ],
+      "direct_calls": [
+        "Curl_is_formadd_string",
+        "free"
+      ],
+      "start_line": 651,
+      "end_line": 661,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "Curl_formadd_convert",
+      "entity_kind": "function_definition",
+      "signature": "static int Curl_formadd_convert(struct curl_forms *forms, int formx, int lengthx, unsigned int ccsid)",
+      "return_type": "int",
+      "parameters": [
+        "struct curl_forms *forms",
+        "int formx",
+        "int lengthx",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "convert",
+        "free",
+        "malloc",
+        "realloc",
+        "strlen"
+      ],
+      "start_line": 663,
+      "end_line": 702,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_formadd_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "CURLFORMcode curl_formadd_ccsid(struct curl_httppost **httppost, struct curl_httppost **last_post, ...)",
+      "return_type": "CURLFORMcode",
+      "parameters": [
+        "struct curl_httppost **httppost",
+        "struct curl_httppost **last_post",
+        "..."
+      ],
+      "direct_calls": [
+        "Curl_formadd_convert",
+        "Curl_formadd_release_local",
+        "Curl_is_formadd_string",
+        "curl_formadd",
+        "malloc",
+        "realloc",
+        "va_arg",
+        "va_end",
+        "va_start"
+      ],
+      "start_line": 704,
+      "end_line": 973,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_formadd_convert,Curl_formadd_release_local"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "Curl_formget_callback_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "static size_t Curl_formget_callback_ccsid(void *arg, const char *buf, size_t len)",
+      "return_type": "size_t",
+      "parameters": [
+        "void *arg",
+        "const char *buf",
+        "size_t len"
+      ],
+      "direct_calls": [
+        "convert",
+        "free",
+        "malloc"
+      ],
+      "start_line": 981,
+      "end_line": 1009,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_easy_setopt_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode curl_easy_setopt_ccsid(CURL *easy, CURLoption tag, ...)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "CURL *easy",
+        "CURLoption tag",
+        "..."
+      ],
+      "direct_calls": [
+        "Curl_vsetopt",
+        "FALLTHROUGH",
+        "convert",
+        "curl_easy_setopt",
+        "dynconvert",
+        "free",
+        "malloc",
+        "va_arg",
+        "va_end",
+        "va_start"
+      ],
+      "start_line": 1022,
+      "end_line": 1254,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_pushheader_byname_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "char *curl_pushheader_byname_ccsid(struct curl_pushheaders *h, const char *header, unsigned int ccsidin, unsigned int ccsidout)",
+      "return_type": "char *",
+      "parameters": [
+        "struct curl_pushheaders *h",
+        "const char *header",
+        "unsigned int ccsidin",
+        "unsigned int ccsidout"
+      ],
+      "direct_calls": [
+        "curl_pushheader_byname",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 1297,
+      "end_line": 1316,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "mime_string_call",
+      "entity_kind": "function_definition",
+      "signature": "static CURLcode mime_string_call(curl_mimepart *part, const char *string, unsigned int ccsid, CURLcode (*mimefunc)(curl_mimepart *part, const char *string))",
+      "return_type": "CURLcode",
+      "parameters": [
+        "curl_mimepart *part",
+        "const char *string",
+        "unsigned int ccsid",
+        "CURLcode (*mimefunc)(curl_mimepart *part, const char *string)"
+      ],
+      "direct_calls": [
+        "dynconvert",
+        "free",
+        "mimefunc"
+      ],
+      "start_line": 1318,
+      "end_line": 1334,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_mime_data_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode curl_mime_data_ccsid(curl_mimepart *part, const char *data, size_t datasize, unsigned int ccsid)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "curl_mimepart *part",
+        "const char *data",
+        "size_t datasize",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "curl_mime_data",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 1366,
+      "end_line": 1382,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_url_get_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "CURLUcode curl_url_get_ccsid(CURLU *handle, CURLUPart what, char **part, unsigned int flags, unsigned int ccsid)",
+      "return_type": "CURLUcode",
+      "parameters": [
+        "CURLU *handle",
+        "CURLUPart what",
+        "char **part",
+        "unsigned int flags",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "curl_url_get",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 1384,
+      "end_line": 1405,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_url_set_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "CURLUcode curl_url_set_ccsid(CURLU *handle, CURLUPart what, const char *part, unsigned int flags, unsigned int ccsid)",
+      "return_type": "CURLUcode",
+      "parameters": [
+        "CURLU *handle",
+        "CURLUPart what",
+        "const char *part",
+        "unsigned int flags",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "curl_url_set",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 1407,
+      "end_line": 1422,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_easy_option_by_name_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "const struct curl_easyoption * curl_easy_option_by_name_ccsid(const char *name, unsigned int ccsid)",
+      "return_type": "struct curl_easyoption *",
+      "parameters": [
+        "const char *name",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "curl_easy_option_by_name",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 1424,
+      "end_line": 1439,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/ccsidcurl.c",
+      "name": "curl_easy_header_ccsid",
+      "entity_kind": "function_definition",
+      "signature": "CURLHcode curl_easy_header_ccsid(CURL *easy, const char *name, size_t index, unsigned int origin, int request, struct curl_header **hout, unsigned int ccsid)",
+      "return_type": "CURLHcode",
+      "parameters": [
+        "CURL *easy",
+        "const char *name",
+        "size_t index",
+        "unsigned int origin",
+        "int request",
+        "struct curl_header **hout",
+        "unsigned int ccsid"
+      ],
+      "direct_calls": [
+        "curl_easy_header",
+        "dynconvert",
+        "free"
+      ],
+      "start_line": 1455,
+      "end_line": 1472,
+      "documentation": "Header API CCSID support.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:dynconvert"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/curlcl.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(int argsc, struct arguments *args)",
+      "return_type": "int",
+      "parameters": [
+        "int argsc",
+        "struct arguments *args"
+      ],
+      "direct_calls": [
+        "_CALLPGMV",
+        "_LUWRKA",
+        "fputs",
+        "free",
+        "malloc",
+        "parse_command_line",
+        "rslvsp"
+      ],
+      "start_line": 126,
+      "end_line": 173,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/curlmain.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(int argc, char **argv)",
+      "return_type": "int",
+      "parameters": [
+        "int argc",
+        "char **argv"
+      ],
+      "direct_calls": [
+        "QadrtFreeConversionTable",
+        "QadrtFreeEnviron",
+        "free",
+        "iconv",
+        "iconv_close",
+        "iconv_open",
+        "main_a",
+        "malloc",
+        "setlocale_a"
+      ],
+      "start_line": 51,
+      "end_line": 119,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "buffer_undef",
+      "entity_kind": "function_definition",
+      "signature": "static char *buffer_undef(localkey_t key, long size)",
+      "return_type": "char *",
+      "parameters": [
+        "localkey_t key",
+        "long size"
+      ],
+      "direct_calls": [
+        "Curl_thread_buffer",
+        "atexit",
+        "calloc",
+        "pthread_key_create",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock"
+      ],
+      "start_line": 200,
+      "end_line": 233,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "returns_pointer_or_reference"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "buffer_threaded",
+      "entity_kind": "function_definition",
+      "signature": "static char *buffer_threaded(localkey_t key, long size)",
+      "return_type": "char *",
+      "parameters": [
+        "localkey_t key",
+        "long size"
+      ],
+      "direct_calls": [
+        "calloc",
+        "free",
+        "get_buffer",
+        "pthread_getspecific",
+        "pthread_setspecific"
+      ],
+      "start_line": 171,
+      "end_line": 198,
+      "documentation": "Get buffer address for the given local key, taking care of concurrent threads. This is always called though `Curl_thread_buffer' and when threads are made available by the os.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "calls_project_memory_candidate",
+        "project_memory_calls:get_buffer"
+      ],
+      "score": 12.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "thdbufdestroy",
+      "entity_kind": "function_definition",
+      "signature": "static void thdbufdestroy(void *private)",
+      "return_type": "void",
+      "parameters": [
+        "void *private"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 85,
+      "end_line": 98,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "get_buffer",
+      "entity_kind": "function_definition",
+      "signature": "static char *get_buffer(struct buffer_t *buf, long size)",
+      "return_type": "char *",
+      "parameters": [
+        "struct buffer_t *buf",
+        "long size"
+      ],
+      "direct_calls": [
+        "malloc",
+        "realloc"
+      ],
+      "start_line": 116,
+      "end_line": 153,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_getnameinfo_a",
+      "entity_kind": "function_definition",
+      "signature": "int Curl_getnameinfo_a(const struct sockaddr *sa, socklen_t salen, char *nodename, socklen_t nodenamelen, char *servname, socklen_t servnamelen, int flags)",
+      "return_type": "int",
+      "parameters": [
+        "const struct sockaddr *sa",
+        "socklen_t salen",
+        "char *nodename",
+        "socklen_t nodenamelen",
+        "char *servname",
+        "socklen_t servnamelen",
+        "int flags"
+      ],
+      "direct_calls": [
+        "QadrtConvertE2A",
+        "free",
+        "getnameinfo",
+        "malloc",
+        "strlen"
+      ],
+      "start_line": 254,
+      "end_line": 298,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_getaddrinfo_a",
+      "entity_kind": "function_definition",
+      "signature": "int Curl_getaddrinfo_a(const char *nodename, const char *servname, const struct addrinfo *hints, struct addrinfo **res)",
+      "return_type": "int",
+      "parameters": [
+        "const char *nodename",
+        "const char *servname",
+        "const struct addrinfo *hints",
+        "struct addrinfo **res"
+      ],
+      "direct_calls": [
+        "QadrtConvertA2E",
+        "free",
+        "getaddrinfo",
+        "malloc",
+        "strlen"
+      ],
+      "start_line": 300,
+      "end_line": 340,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_gss_convert_in_place",
+      "entity_kind": "function_definition",
+      "signature": "static int Curl_gss_convert_in_place(OM_uint32 *minor_status, gss_buffer_t buf)",
+      "return_type": "int",
+      "parameters": [
+        "OM_uint32 *minor_status",
+        "gss_buffer_t buf"
+      ],
+      "direct_calls": [
+        "QadrtConvertE2A",
+        "free",
+        "gss_release_buffer",
+        "malloc",
+        "memcpy"
+      ],
+      "start_line": 346,
+      "end_line": 371,
+      "documentation": "ASCII wrappers for the GSSAPI procedures.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_gss_import_name_a",
+      "entity_kind": "function_definition",
+      "signature": "OM_uint32 Curl_gss_import_name_a(OM_uint32 *minor_status, gss_buffer_t in_name, gss_OID in_name_type, gss_name_t *out_name)",
+      "return_type": "OM_uint32",
+      "parameters": [
+        "OM_uint32 *minor_status",
+        "gss_buffer_t in_name",
+        "gss_OID in_name_type",
+        "gss_name_t *out_name"
+      ],
+      "direct_calls": [
+        "QadrtConvertA2E",
+        "free",
+        "gss_import_name",
+        "malloc",
+        "memcpy"
+      ],
+      "start_line": 373,
+      "end_line": 400,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_gss_init_sec_context_a",
+      "entity_kind": "function_definition",
+      "signature": "OM_uint32 Curl_gss_init_sec_context_a(OM_uint32 *minor_status, gss_cred_id_t cred_handle, gss_ctx_id_t *context_handle, gss_name_t target_name, gss_OID mech_type, gss_flags_t req_flags, OM_uint32 time_req, gss_channel_bindings_t input_chan_bindings, gss_buffer_t input_token, gss_OID *actual_mech_type, gss_buffer_t output_token, gss_flags_t *ret_flags, OM_uint32 *time_rec)",
+      "return_type": "OM_uint32",
+      "parameters": [
+        "OM_uint32 *minor_status",
+        "gss_cred_id_t cred_handle",
+        "gss_ctx_id_t *context_handle",
+        "gss_name_t target_name",
+        "gss_OID mech_type",
+        "gss_flags_t req_flags",
+        "OM_uint32 time_req",
+        "gss_channel_bindings_t input_chan_bindings",
+        "gss_buffer_t input_token",
+        "gss_OID *actual_mech_type",
+        "gss_buffer_t output_token",
+        "gss_flags_t *ret_flags",
+        "OM_uint32 *time_rec"
+      ],
+      "direct_calls": [
+        "Curl_gss_convert_in_place",
+        "QadrtConvertA2E",
+        "free",
+        "gss_init_sec_context",
+        "malloc"
+      ],
+      "start_line": 427,
+      "end_line": 484,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_gss_convert_in_place"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_gss_delete_sec_context_a",
+      "entity_kind": "function_definition",
+      "signature": "OM_uint32 Curl_gss_delete_sec_context_a(OM_uint32 *minor_status, gss_ctx_id_t *context_handle, gss_buffer_t output_token)",
+      "return_type": "OM_uint32",
+      "parameters": [
+        "OM_uint32 *minor_status",
+        "gss_ctx_id_t *context_handle",
+        "gss_buffer_t output_token"
+      ],
+      "direct_calls": [
+        "Curl_gss_convert_in_place",
+        "gss_delete_sec_context"
+      ],
+      "start_line": 486,
+      "end_line": 506,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Curl_gss_convert_in_place"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_ldap_init_a",
+      "entity_kind": "function_definition",
+      "signature": "void *Curl_ldap_init_a(char *host, int port)",
+      "return_type": "void *",
+      "parameters": [
+        "char *host",
+        "int port"
+      ],
+      "direct_calls": [
+        "QadrtConvertA2E",
+        "free",
+        "ldap_init",
+        "malloc",
+        "strlen"
+      ],
+      "start_line": 514,
+      "end_line": 534,
+      "documentation": "ASCII wrappers for the LDAP procedures.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_ldap_simple_bind_s_a",
+      "entity_kind": "function_definition",
+      "signature": "int Curl_ldap_simple_bind_s_a(void *ld, char *dn, char *passwd)",
+      "return_type": "int",
+      "parameters": [
+        "void *ld",
+        "char *dn",
+        "char *passwd"
+      ],
+      "direct_calls": [
+        "QadrtConvertA2E",
+        "free",
+        "ldap_simple_bind_s",
+        "malloc",
+        "strlen"
+      ],
+      "start_line": 536,
+      "end_line": 573,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_ldap_search_s_a",
+      "entity_kind": "function_definition",
+      "signature": "int Curl_ldap_search_s_a(void *ld, char *base, int scope, char *filter, char **attrs, int attrsonly, LDAPMessage **res)",
+      "return_type": "int",
+      "parameters": [
+        "void *ld",
+        "char *base",
+        "int scope",
+        "char *filter",
+        "char **attrs",
+        "int attrsonly",
+        "LDAPMessage **res"
+      ],
+      "direct_calls": [
+        "QadrtConvertA2E",
+        "calloc",
+        "free",
+        "ldap_search_s",
+        "malloc",
+        "strlen"
+      ],
+      "start_line": 575,
+      "end_line": 652,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_ldap_get_values_len_a",
+      "entity_kind": "function_definition",
+      "signature": "struct berval **Curl_ldap_get_values_len_a(void *ld, LDAPMessage *entry, const char *attr)",
+      "return_type": "struct berval **",
+      "parameters": [
+        "void *ld",
+        "LDAPMessage *entry",
+        "const char *attr"
+      ],
+      "direct_calls": [
+        "QadrtConvertA2E",
+        "free",
+        "ldap_err2string",
+        "ldap_get_values_len",
+        "ldap_set_lderrno",
+        "malloc",
+        "strlen"
+      ],
+      "start_line": 654,
+      "end_line": 683,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_ldap_get_dn_a",
+      "entity_kind": "function_definition",
+      "signature": "char *Curl_ldap_get_dn_a(void *ld, LDAPMessage *entry)",
+      "return_type": "char *",
+      "parameters": [
+        "void *ld",
+        "LDAPMessage *entry"
+      ],
+      "direct_calls": [
+        "QadrtConvertE2A",
+        "free",
+        "ldap_get_dn",
+        "malloc",
+        "memcpy",
+        "strlen"
+      ],
+      "start_line": 690,
+      "end_line": 718,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_ldap_first_attribute_a",
+      "entity_kind": "function_definition",
+      "signature": "char *Curl_ldap_first_attribute_a(void *ld, LDAPMessage *entry, BerElement **berptr)",
+      "return_type": "char *",
+      "parameters": [
+        "void *ld",
+        "LDAPMessage *entry",
+        "BerElement **berptr"
+      ],
+      "direct_calls": [
+        "QadrtConvertE2A",
+        "free",
+        "ldap_first_attribute",
+        "malloc",
+        "memcpy",
+        "strlen"
+      ],
+      "start_line": 720,
+      "end_line": 749,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 12.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "projects/OS400/os400sys.c",
+      "name": "Curl_ldap_next_attribute_a",
+      "entity_kind": "function_definition",
+      "signature": "char *Curl_ldap_next_attribute_a(void *ld, LDAPMessage *entry, BerElement *berptr)",
+      "return_type": "char *",
+      "parameters": [
+        "void *ld",
+        "LDAPMessage *entry",
+        "BerElement *berptr"
+      ],
+      "direct_calls": [
+        "QadrtConvertE2A",
+        "free",
+        "ldap_next_attribute",
+        "malloc",
+        "memcpy",
+        "strlen"
+      ],
+      "start_line": 751,
+      "end_line": 780,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_cfgable.c",
+      "name": "free_config_fields",
+      "entity_kind": "function_definition",
+      "signature": "static void free_config_fields(struct OperationConfig *config)",
+      "return_type": "void",
+      "parameters": [
+        "struct OperationConfig *config"
+      ],
+      "direct_calls": [
+        "curl_mime_free",
+        "curl_slist_free_all",
+        "curlx_dyn_free",
+        "curlx_safefree",
+        "tool_mime_free"
+      ],
+      "start_line": 61,
+      "end_line": 194,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_mime_free,curlx_dyn_free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_cfgable.c",
+      "name": "config_free",
+      "entity_kind": "function_definition",
+      "signature": "void config_free(struct OperationConfig *config)",
+      "return_type": "void",
+      "parameters": [
+        "struct OperationConfig *config"
+      ],
+      "direct_calls": [
+        "curlx_free",
+        "free_config_fields"
+      ],
+      "start_line": 196,
+      "end_line": 209,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:free_config_fields"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_cfgable.c",
+      "name": "custom_realloc",
+      "entity_kind": "function_definition",
+      "signature": "static void *custom_realloc(void *ptr, size_t size)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr",
+        "size_t size"
+      ],
+      "direct_calls": [
+        "curlx_realloc"
+      ],
+      "start_line": 280,
+      "end_line": 291,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_cfgable.c",
+      "name": "custom_free",
+      "entity_kind": "function_definition",
+      "signature": "static void custom_free(void *ptr)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "curlx_free"
+      ],
+      "start_line": 293,
+      "end_line": 300,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_cfgable.c",
+      "name": "globalconf_free",
+      "entity_kind": "function_definition",
+      "signature": "void globalconf_free(void)",
+      "return_type": "void",
+      "parameters": [],
+      "direct_calls": [
+        "config_free",
+        "curl_global_cleanup",
+        "free_globalconfig"
+      ],
+      "start_line": 376,
+      "end_line": 387,
+      "documentation": "This is the main global destructor for the app. Call this after _all_ libcurl usage is done.",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "calls_project_memory_candidate",
+        "project_memory_calls:config_free"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_dirhie.c",
+      "name": "create_dir_hierarchy",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode create_dir_hierarchy(const char *outfile)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "const char *outfile"
+      ],
+      "direct_calls": [
+        "curlx_dyn_addn",
+        "curlx_dyn_free",
+        "curlx_dyn_init",
+        "curlx_dyn_len",
+        "curlx_dyn_ptr",
+        "show_dir_errno",
+        "strcspn",
+        "strlen",
+        "strspn",
+        "toolx_mkdir"
+      ],
+      "start_line": 107,
+      "end_line": 154,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 7.0,
+      "confidence": 0.7,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_easysrc.c",
+      "name": "easysrc_free",
+      "entity_kind": "function_definition",
+      "signature": "static void easysrc_free(void)",
+      "return_type": "void",
+      "parameters": [],
+      "direct_calls": [
+        "slist_wc_free_all"
+      ],
+      "start_line": 76,
+      "end_line": 88,
+      "documentation": "Clean up all source code if we run out of memory",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "memory_documentation"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_operate.c",
+      "name": "del_per_transfer",
+      "entity_kind": "function_definition",
+      "signature": "static struct per_transfer *del_per_transfer(struct per_transfer *per)",
+      "return_type": "struct per_transfer *",
+      "parameters": [
+        "struct per_transfer *per"
+      ],
+      "direct_calls": [
+        "DEBUGASSERT",
+        "curl_easy_cleanup",
+        "curlx_free"
+      ],
+      "start_line": 217,
+      "end_line": 245,
+      "documentation": "Remove the specified transfer from the list (and free it), return the next in line",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_operate.c",
+      "name": "create_single",
+      "entity_kind": "function_definition",
+      "signature": "static CURLcode create_single(struct OperationConfig *config, CURLSH *share, struct State *state, bool *added, bool *skipped)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "struct OperationConfig *config",
+        "CURLSH *share",
+        "struct State *state",
+        "bool *added",
+        "bool *skipped"
+      ],
+      "direct_calls": [
+        "CURL_BINMODE",
+        "SetHTTPrequest",
+        "add_per_transfer",
+        "append2query",
+        "config2setopts",
+        "curl_easy_cleanup",
+        "curl_easy_init",
+        "curlx_fclose",
+        "curlx_now",
+        "curlx_safefree",
+        "curlx_strdup",
+        "fileno",
+        "glob_cleanup",
+        "isatty",
+        "output_expected",
+        "select_next_url",
+        "setup_etag_files",
+        "setup_header_cb",
+        "setup_headerfile",
+        "setup_input_file",
+        "setup_outfile",
+        "setup_transfer_upload",
+        "setup_url_pattern",
+        "strcmp",
+        "warnf"
+      ],
+      "start_line": 1341,
+      "end_line": 1489,
+      "documentation": "create a transfer",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_operhlp.c",
+      "name": "add_file_name_to_url",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode add_file_name_to_url(CURL *curl, char **inurlp, const char *filename)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "CURL *curl",
+        "char **inurlp",
+        "const char *filename"
+      ],
+      "direct_calls": [
+        "curl_easy_escape",
+        "curl_free",
+        "curl_maprintf",
+        "curl_url",
+        "curl_url_cleanup",
+        "curl_url_get",
+        "curl_url_set",
+        "curlx_free",
+        "curlx_strdup",
+        "strrchr",
+        "urlerr_cvt"
+      ],
+      "start_line": 84,
+      "end_line": 176,
+      "documentation": "Adds the filename to the URL if it does not already have one. URL is freed before return if the returned pointer is different",
+      "macro_value": "",
+      "evidence": [
+        "has_output_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_free"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_operhlp.c",
+      "name": "get_url_file_name",
+      "entity_kind": "function_definition",
+      "signature": "CURLcode get_url_file_name(char **filename, const char *url, SANITIZEcode *sc)",
+      "return_type": "CURLcode",
+      "parameters": [
+        "char **filename",
+        "const char *url",
+        "SANITIZEcode *sc"
+      ],
+      "direct_calls": [
+        "curl_free",
+        "curl_url",
+        "curl_url_cleanup",
+        "curl_url_get",
+        "curl_url_set",
+        "curlx_safefree",
+        "curlx_strdup",
+        "sanitize_file_name",
+        "strrchr",
+        "urlerr_cvt",
+        "warnf"
+      ],
+      "start_line": 182,
+      "end_line": 245,
+      "documentation": "Extracts the name portion of the URL. Returns a pointer to a heap-allocated string or NULL if no name part, at location indicated by first argument.",
+      "macro_value": "",
+      "evidence": [
+        "has_output_pointer_parameter",
+        "memory_documentation",
+        "weak_non_memory_name",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_free"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "src/tool_writeout.c",
+      "name": "outtime",
+      "entity_kind": "function_definition",
+      "signature": "static const char *outtime(const char *ptr, /* %time{ ... */ FILE *stream)",
+      "return_type": "char *",
+      "parameters": [
+        "const char *ptr",
+        "/* %time{ ... */ FILE *stream"
+      ],
+      "direct_calls": [
+        "curlx_dyn_addf",
+        "curlx_dyn_addn",
+        "curlx_dyn_free",
+        "curlx_dyn_init",
+        "curlx_dyn_len",
+        "curlx_dyn_ptr",
+        "curlx_gmtime",
+        "curlx_str_number",
+        "fputs",
+        "getenv",
+        "gettimeofday",
+        "strchr",
+        "strftime",
+        "time"
+      ],
+      "start_line": 523,
+      "end_line": 602,
+      "documentation": "return the position after %time{}",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curlx_dyn_free"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/first.c",
+      "name": "hexdump",
+      "entity_kind": "function_definition",
+      "signature": "char *hexdump(const unsigned char *buf, size_t len)",
+      "return_type": "char *",
+      "parameters": [
+        "const unsigned char *buf",
+        "size_t len"
+      ],
+      "direct_calls": [
+        "curl_msnprintf"
+      ],
+      "start_line": 153,
+      "end_line": 163,
+      "documentation": "returns a hexdump in a static memory area",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "unknown"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/lib1565.c",
+      "name": "t1565_run_thread",
+      "entity_kind": "function_definition",
+      "signature": "static void *t1565_run_thread(void *ptr)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curlx_wait_ms",
+        "easy_init",
+        "easy_setopt",
+        "pthread_mutex_lock",
+        "pthread_mutex_unlock",
+        "res_multi_wakeup"
+      ],
+      "start_line": 39,
+      "end_line": 83,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/lib506.c",
+      "name": "t506_test_fire",
+      "entity_kind": "function_definition",
+      "signature": "static void *t506_test_fire(void *ptr)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curl_easy_init",
+        "curl_easy_perform",
+        "curl_easy_setopt",
+        "curl_mfprintf",
+        "curl_mprintf",
+        "curl_slist_free_all",
+        "sethost"
+      ],
+      "start_line": 135,
+      "end_line": 169,
+      "documentation": "the dummy thread function",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/lib509.c",
+      "name": "custom_calloc",
+      "entity_kind": "function_definition",
+      "signature": "static void *custom_calloc(size_t nmemb, size_t size)",
+      "return_type": "void *",
+      "parameters": [
+        "size_t nmemb",
+        "size_t size"
+      ],
+      "direct_calls": [
+        "calloc"
+      ],
+      "start_line": 38,
+      "end_line": 43,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "allocation_name",
+        "returns_pointer_or_reference"
+      ],
+      "score": 8.5,
+      "confidence": 0.85,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/lib509.c",
+      "name": "custom_malloc",
+      "entity_kind": "function_definition",
+      "signature": "static void *custom_malloc(size_t size)",
+      "return_type": "void *",
+      "parameters": [
+        "size_t size"
+      ],
+      "direct_calls": [
+        "malloc"
+      ],
+      "start_line": 45,
+      "end_line": 50,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "allocation_name",
+        "returns_pointer_or_reference"
+      ],
+      "score": 8.5,
+      "confidence": 0.85,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/lib509.c",
+      "name": "custom_realloc",
+      "entity_kind": "function_definition",
+      "signature": "static void *custom_realloc(void *ptr, size_t size)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr",
+        "size_t size"
+      ],
+      "direct_calls": [
+        "realloc"
+      ],
+      "start_line": 58,
+      "end_line": 63,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:realloc",
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 10.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/lib509.c",
+      "name": "custom_free",
+      "entity_kind": "function_definition",
+      "signature": "static void custom_free(void *ptr)",
+      "return_type": "void",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 65,
+      "end_line": 70,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.5,
+      "confidence": 0.95,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/libtest/lib586.c",
+      "name": "t586_test_fire",
+      "entity_kind": "function_definition",
+      "signature": "static void *t586_test_fire(void *ptr)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr"
+      ],
+      "direct_calls": [
+        "curl_easy_cleanup",
+        "curl_easy_init",
+        "curl_easy_perform",
+        "curl_easy_setopt",
+        "curl_mfprintf",
+        "curl_mprintf"
+      ],
+      "start_line": 98,
+      "end_line": 128,
+      "documentation": "the dummy thread function",
+      "macro_value": "",
+      "evidence": [
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:curl_easy_cleanup"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/getpart.c",
+      "name": "readline",
+      "entity_kind": "function_definition",
+      "signature": "static int readline(char **buffer, size_t *bufsize, size_t *length, FILE *stream)",
+      "return_type": "int",
+      "parameters": [
+        "char **buffer",
+        "size_t *bufsize",
+        "size_t *length",
+        "FILE *stream"
+      ],
+      "direct_calls": [
+        "calloc",
+        "curlx_uztosi",
+        "fgets",
+        "line_length",
+        "memset",
+        "realloc"
+      ],
+      "start_line": 80,
+      "end_line": 117,
+      "documentation": "Calling function is responsible to free allocated buffer. This function may return: GPE_OUT_OF_MEMORY GPE_END_OF_FILE GPE_OK",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,realloc",
+        "has_output_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/getpart.c",
+      "name": "appenddata",
+      "entity_kind": "function_definition",
+      "signature": "static int appenddata(char **dst_buf, /* dest buffer */ size_t *dst_len, /* dest buffer data length */ size_t *dst_alloc, /* dest buffer allocated size */ const char *src_buf, /* source buffer */ size_t src_len, /* source buffer length */ int src_b64) /* != 0 if source is base64 encoded */",
+      "return_type": "int",
+      "parameters": [
+        "char **dst_buf",
+        "/* dest buffer */ size_t *dst_len",
+        "/* dest buffer data length */ size_t *dst_alloc",
+        "/* dest buffer allocated size */ const char *src_buf",
+        "/* source buffer */ size_t src_len",
+        "/* source buffer length */ int src_b64"
+      ],
+      "direct_calls": [
+        "memcpy",
+        "realloc"
+      ],
+      "start_line": 144,
+      "end_line": 184,
+      "documentation": "Calling function is responsible to provide preallocated destination buffer and also to deallocate it when no longer needed. This function may return: GPE_OUT_OF_MEMORY GPE_OK",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:realloc",
+        "has_output_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/getpart.c",
+      "name": "decodedata",
+      "entity_kind": "function_definition",
+      "signature": "static int decodedata(char **buf, /* dest buffer */ size_t *len) /* dest buffer data length */",
+      "return_type": "int",
+      "parameters": [
+        "char **buf",
+        "/* dest buffer */ size_t *len"
+      ],
+      "direct_calls": [
+        "curlx_base64_decode",
+        "free",
+        "memcpy"
+      ],
+      "start_line": 186,
+      "end_line": 221,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/getpart.c",
+      "name": "getpart",
+      "entity_kind": "function_definition",
+      "signature": "int getpart(char **outbuf, size_t *outlen, const char *main, const char *sub, FILE *stream)",
+      "return_type": "int",
+      "parameters": [
+        "char **outbuf",
+        "size_t *outlen",
+        "const char *main",
+        "const char *sub",
+        "FILE *stream"
+      ],
+      "direct_calls": [
+        "EAT_SPACE",
+        "EAT_WORD",
+        "appenddata",
+        "curlx_strcopy",
+        "decodedata",
+        "free",
+        "malloc",
+        "memcpy",
+        "readline",
+        "show",
+        "strcmp",
+        "strlen",
+        "strstr"
+      ],
+      "start_line": 244,
+      "end_line": 447,
+      "documentation": "Calling function is responsible to free returned buffer. This function may return: GPE_NO_BUFFER_SPACE GPE_OUT_OF_MEMORY GPE_OK",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:appenddata,decodedata,readline"
+      ],
+      "score": 15.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/mqttd.c",
+      "name": "publish",
+      "entity_kind": "function_definition",
+      "signature": "static int publish(FILE *dump, curl_socket_t fd, unsigned short packetid, char *topic, const char *payload, size_t payloadlen)",
+      "return_type": "int",
+      "parameters": [
+        "FILE *dump",
+        "curl_socket_t fd",
+        "unsigned short packetid",
+        "char *topic",
+        "const char *payload",
+        "size_t payloadlen"
+      ],
+      "direct_calls": [
+        "encode_length",
+        "free",
+        "loghex",
+        "logmsg",
+        "logprotocol",
+        "malloc",
+        "memcpy",
+        "strlen",
+        "swrite"
+      ],
+      "start_line": 353,
+      "end_line": 412,
+      "documentation": "return 0 on success",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/mqttd.c",
+      "name": "mqttit",
+      "entity_kind": "function_definition",
+      "signature": "static curl_socket_t mqttit(curl_socket_t fd)",
+      "return_type": "curl_socket_t",
+      "parameters": [
+        "curl_socket_t fd"
+      ],
+      "direct_calls": [
+        "connack",
+        "curlx_fclose",
+        "curlx_fopen",
+        "curlx_strerror",
+        "disconnect",
+        "fixedheader",
+        "free",
+        "getpart",
+        "loghex",
+        "logmsg",
+        "logprotocol",
+        "malloc",
+        "memcmp",
+        "memcpy",
+        "memset",
+        "mqttd_getconfig",
+        "puback",
+        "publish",
+        "realloc",
+        "snprintf",
+        "sread",
+        "strlen",
+        "suback",
+        "test2fopen"
+      ],
+      "start_line": 454,
+      "end_line": 686,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "calls_standard_free:free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/rtspd.c",
+      "name": "rtspd_ProcessRequest",
+      "entity_kind": "function_definition",
+      "signature": "static int rtspd_ProcessRequest(struct rtspd_httprequest *req)",
+      "return_type": "int",
+      "parameters": [
+        "struct rtspd_httprequest *req"
+      ],
+      "direct_calls": [
+        "CURL_STRNICMP",
+        "ISDIGIT",
+        "SET_RTP_PKT_CHN",
+        "SET_RTP_PKT_LEN",
+        "curlx_fclose",
+        "curlx_str_number",
+        "curlx_str_numblanks",
+        "curlx_strerror",
+        "free",
+        "getpart",
+        "logmsg",
+        "malloc",
+        "memcpy",
+        "realloc",
+        "sscanf",
+        "strchr",
+        "strcmp",
+        "strlen",
+        "strncmp",
+        "strrchr",
+        "strstr",
+        "test2fopen"
+      ],
+      "start_line": 144,
+      "end_line": 545,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:getpart"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/rtspd.c",
+      "name": "rtspd_send_doc",
+      "entity_kind": "function_definition",
+      "signature": "static int rtspd_send_doc(curl_socket_t sock, struct rtspd_httprequest *req)",
+      "return_type": "int",
+      "parameters": [
+        "curl_socket_t sock",
+        "struct rtspd_httprequest *req"
+      ],
+      "direct_calls": [
+        "curlx_fclose",
+        "curlx_fopen",
+        "curlx_strerror",
+        "curlx_wait_ms",
+        "free",
+        "fwrite",
+        "getpart",
+        "logmsg",
+        "our_getpid",
+        "snprintf",
+        "sscanf",
+        "strchr",
+        "strcmp",
+        "strlen",
+        "strstr",
+        "swrite",
+        "test2fopen"
+      ],
+      "start_line": 719,
+      "end_line": 1004,
+      "documentation": "returns -1 on failure",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:getpart"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/sockfilt.c",
+      "name": "select_ws_wait_thread",
+      "entity_kind": "function_definition",
+      "signature": "static DWORD WINAPI select_ws_wait_thread(void *lpParameter)",
+      "return_type": "DWORD WINAPI",
+      "parameters": [
+        "void *lpParameter"
+      ],
+      "direct_calls": [
+        "GetConsoleMode",
+        "GetFileSize",
+        "GetFileType",
+        "GetLastError",
+        "PeekConsoleInput",
+        "PeekNamedPipe",
+        "ReadConsoleInput",
+        "SetEvent",
+        "SetFilePointer",
+        "SleepEx",
+        "WaitForMultipleObjectsEx",
+        "curlx_winapi_strerror",
+        "free",
+        "logmsg"
+      ],
+      "start_line": 414,
+      "end_line": 559,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/sockfilt.c",
+      "name": "select_ws_wait",
+      "entity_kind": "function_definition",
+      "signature": "static HANDLE select_ws_wait(HANDLE handle, HANDLE signal, HANDLE abort)",
+      "return_type": "HANDLE",
+      "parameters": [
+        "HANDLE handle",
+        "HANDLE signal",
+        "HANDLE abort"
+      ],
+      "direct_calls": [
+        "CreateThread",
+        "free",
+        "malloc"
+      ],
+      "start_line": 561,
+      "end_line": 584,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/sockfilt.c",
+      "name": "select_ws",
+      "entity_kind": "function_definition",
+      "signature": "static int select_ws(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *tv)",
+      "return_type": "int",
+      "parameters": [
+        "int nfds",
+        "fd_set *readfds",
+        "fd_set *writefds",
+        "fd_set *exceptfds",
+        "struct timeval *tv"
+      ],
+      "direct_calls": [
+        "CloseHandle",
+        "CreateEvent",
+        "FD_CLR",
+        "FD_ISSET",
+        "FD_SET",
+        "FD_ZERO",
+        "GetStdHandle",
+        "SET_SOCKERRNO",
+        "SetEvent",
+        "SleepEx",
+        "WSACloseEvent",
+        "WSACreateEvent",
+        "WSAEnumNetworkEvents",
+        "WSAEventSelect",
+        "WSASetEvent",
+        "WaitForMultipleObjectsEx",
+        "WaitForSingleObjectEx",
+        "calloc",
+        "curlx_tvtoms",
+        "fileno",
+        "free",
+        "logmsg",
+        "select",
+        "select_ws_wait",
+        "swrite"
+      ],
+      "start_line": 595,
+      "end_line": 860,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:select_ws_wait"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/sws.c",
+      "name": "sws_parse_servercmd",
+      "entity_kind": "function_definition",
+      "signature": "static int sws_parse_servercmd(struct sws_httprequest *req)",
+      "return_type": "int",
+      "parameters": [
+        "struct sws_httprequest *req"
+      ],
+      "direct_calls": [
+        "curlx_fclose",
+        "curlx_strerror",
+        "free",
+        "getpart",
+        "logmsg",
+        "sscanf",
+        "strchr",
+        "strlen",
+        "strncmp",
+        "test2fopen"
+      ],
+      "start_line": 225,
+      "end_line": 329,
+      "documentation": "based on the testno, parse the correct server commands",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:getpart"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/sws.c",
+      "name": "sws_send_doc",
+      "entity_kind": "function_definition",
+      "signature": "static int sws_send_doc(curl_socket_t sock, struct sws_httprequest *req)",
+      "return_type": "int",
+      "parameters": [
+        "curl_socket_t sock",
+        "struct sws_httprequest *req"
+      ],
+      "direct_calls": [
+        "curlx_fclose",
+        "curlx_fopen",
+        "curlx_strerror",
+        "curlx_wait_ms",
+        "free",
+        "fwrite",
+        "getpart",
+        "logmsg",
+        "our_getpid",
+        "snprintf",
+        "sscanf",
+        "strchr",
+        "strcmp",
+        "strlen",
+        "strstr",
+        "swrite",
+        "test2fopen"
+      ],
+      "start_line": 801,
+      "end_line": 1077,
+      "documentation": "returns -1 on failure",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:getpart"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "curl",
+      "file": "tests/server/tftpd.c",
+      "name": "tftpd_parse_servercmd",
+      "entity_kind": "function_definition",
+      "signature": "static int tftpd_parse_servercmd(struct testcase *req)",
+      "return_type": "int",
+      "parameters": [
+        "struct testcase *req"
+      ],
+      "direct_calls": [
+        "curlx_fclose",
+        "curlx_strerror",
+        "free",
+        "getpart",
+        "logmsg",
+        "sscanf",
+        "strchr",
+        "test2fopen"
+      ],
+      "start_line": 535,
+      "end_line": 595,
+      "documentation": "Based on the testno, parse the correct server commands.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:getpart"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    }
+  ]
+}

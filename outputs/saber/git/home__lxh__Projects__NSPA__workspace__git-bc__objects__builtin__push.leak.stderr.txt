@@ -1,0 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 440, "cl": 4, "fl": "builtin/push.c" })
+		 conditional free path: 
+		  --> ({ "ln": 378, "cl": 6, "fl": "builtin/push.c" }|False) 
+		  --> ({ "ln": 378, "cl": 6, "fl": "builtin/push.c" }|True) 
+		  --> ({ "ln": 379, "cl": 7, "fl": "builtin/push.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 368, "cl": 19, "fl": "builtin/push.c" })
+		 conditional free path: 
+		  --> ({ "ln": 378, "cl": 6, "fl": "builtin/push.c" }|False) 
+		  --> ({ "ln": 378, "cl": 6, "fl": "builtin/push.c" }|True) 
+		  --> ({ "ln": 379, "cl": 7, "fl": "builtin/push.c" }|False) 
+

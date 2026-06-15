@@ -1,0 +1,15 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 417, "cl": 26, "fl": "tty-term.c" })
+		 conditional free path: 
+		  --> ({ "ln": 401, "cl": 3, "fl": "tty-term.c" }|True) 
+		  --> ({ "ln": 403, "cl": 8, "fl": "tty-term.c" }|False) 
+		  --> ({ "ln": 407, "cl": 8, "fl": "tty-term.c" }|False) 
+		  --> ({ "ln": 411, "cl": 4, "fl": "tty-term.c" }|False) 
+		  --> ({ "ln": 411, "cl": 4, "fl": "tty-term.c" }|True) 
+		  --> ({ "ln": 411, "cl": 4, "fl": "tty-term.c" }|True) 
+		  --> ({ "ln": 415, "cl": 9, "fl": "tty-term.c" }|True) 
+		  --> ({ "ln": 623, "cl": 6, "fl": "tty-term.c" }|False) 
+		  --> ({ "ln": 623, "cl": 6, "fl": "tty-term.c" }|True) 
+		  --> ({ "ln": 627, "cl": 6, "fl": "tty-term.c" }|True) 
+		  --> ({ "ln": 678, "cl": 2, "fl": "tty-term.c" }|True) 
+		  --> ({ "ln": 679, "cl": 7, "fl": "tty-term.c" }|True) 
+

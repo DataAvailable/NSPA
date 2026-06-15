@@ -1,0 +1,98 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1639, "cl": 26, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2569, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2570, "cl": 7, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2571, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 1949, "cl": 6, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 1949, "cl": 6, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 1964, "cl": 6, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 526, "cl": 2, "fl": "blame.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 75, "cl": 2, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 526, "cl": 2, "fl": "blame.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2297, "cl": 14, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2302, "cl": 8, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2305, "cl": 4, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2117, "cl": 6, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 1603, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2056, "cl": 6, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2058, "cl": 6, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 1552, "cl": 6, "fl": "blame.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1401, "cl": 14, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2436, "cl": 2, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2439, "cl": 3, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2463, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2471, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2477, "cl": 7, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2351, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2302, "cl": 8, "fl": "blame.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 27, "cl": 1, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2569, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 526, "cl": 2, "fl": "blame.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 416, "cl": 36, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2436, "cl": 2, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2439, "cl": 3, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2463, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2569, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2302, "cl": 8, "fl": "blame.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1012, "cl": 2, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2436, "cl": 2, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2439, "cl": 3, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2463, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2569, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2302, "cl": 8, "fl": "blame.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 27, "cl": 1, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2569, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 526, "cl": 2, "fl": "blame.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1375, "cl": 13, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2436, "cl": 2, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2439, "cl": 3, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2463, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2471, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2477, "cl": 7, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2351, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2302, "cl": 8, "fl": "blame.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1464, "cl": 26, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2569, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2570, "cl": 7, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2571, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 1949, "cl": 6, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 1949, "cl": 6, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 1964, "cl": 6, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 526, "cl": 2, "fl": "blame.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2449, "cl": 14, "fl": "blame.c" })
+		 double free path: 
+		  --> ({ "ln": 2436, "cl": 2, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2439, "cl": 3, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2452, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2463, "cl": 8, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2471, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2477, "cl": 7, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2351, "cl": 2, "fl": "blame.c" }|True) 
+		  --> ({ "ln": 2302, "cl": 8, "fl": "blame.c" }|False) 
+

@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5418, "cl": 21, "fl": "tsrc/sqlite3rbu.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 727, "cl": 10, "fl": "tsrc/sqlite3rbu.c" })
+		 conditional free path: 
+		  --> ({ "ln": 732, "cl": 9, "fl": "tsrc/sqlite3rbu.c" }|True) 
+

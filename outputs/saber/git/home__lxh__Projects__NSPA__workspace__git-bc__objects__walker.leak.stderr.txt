@@ -1,0 +1,1 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 168, "cl": 2, "fl": "walker.c" })

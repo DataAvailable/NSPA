@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 78, "cl": 45, "fl": "libavformat/data_uri.c" })
+		 conditional free path: 
+		  --> ({ "ln": 78, "cl": 13, "fl": "libavformat/data_uri.c" }|False) 
+		  --> ({ "ln": 80, "cl": 13, "fl": "libavformat/data_uri.c" }|True) 
+

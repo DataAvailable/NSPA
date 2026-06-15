@@ -1,0 +1,20 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 245, "cl": 28, "fl": "libswresample/resample.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 46, "cl": 19, "fl": "libswresample/resample.c" })
+		 conditional free path: 
+		  --> ({ "ln": 52, "cl": 9, "fl": "libswresample/resample.c" }|False) 
+		  --> ({ "ln": 52, "cl": 9, "fl": "libswresample/resample.c" }|True) 
+		  --> ({ "ln": 55, "cl": 5, "fl": "libswresample/resample.c" }|False) 
+		  --> ({ "ln": 55, "cl": 5, "fl": "libswresample/resample.c" }|True) 
+		  --> ({ "ln": 55, "cl": 5, "fl": "libswresample/resample.c" }|False) 
+		  --> ({ "ln": 65, "cl": 5, "fl": "libswresample/resample.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 292, "cl": 23, "fl": "libswresample/resample.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 47, "cl": 23, "fl": "libswresample/resample.c" })
+		 conditional free path: 
+		  --> ({ "ln": 52, "cl": 14, "fl": "libswresample/resample.c" }|False) 
+		  --> ({ "ln": 52, "cl": 14, "fl": "libswresample/resample.c" }|True) 
+		  --> ({ "ln": 55, "cl": 5, "fl": "libswresample/resample.c" }|False) 
+		  --> ({ "ln": 55, "cl": 5, "fl": "libswresample/resample.c" }|True) 
+		  --> ({ "ln": 55, "cl": 5, "fl": "libswresample/resample.c" }|False) 
+		  --> ({ "ln": 65, "cl": 5, "fl": "libswresample/resample.c" }|False) 
+

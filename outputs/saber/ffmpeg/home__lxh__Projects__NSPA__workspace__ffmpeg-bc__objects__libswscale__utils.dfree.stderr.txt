@@ -1,0 +1,11 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1998, "cl": 11, "fl": "libswscale/utils.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2002, "cl": 19, "fl": "libswscale/utils.c" })
+		 double free path: 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "libswscale/utils.c" }|False) 
+		  --> ({ "ln": 2126, "cl": 9, "fl": "libswscale/utils.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 78, "cl": 23, "fl": "libswscale/utils.c" })
+		 double free path: 
+

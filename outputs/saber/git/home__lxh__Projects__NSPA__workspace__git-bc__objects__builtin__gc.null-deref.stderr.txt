@@ -1,0 +1,47 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2210, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2213, "cl": 7, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2040, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 201, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 2073, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2141, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2144, "cl": 7, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3462, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 201, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 3476, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2040, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 206, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 2073, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3462, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 206, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 3476, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1132, "cl": 2, "fl": "builtin/gc.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2040, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 211, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 2073, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3462, "cl": 25, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 211, "cl": 6, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 3476, "cl": 6, "fl": "builtin/gc.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2325, "cl": 18, "fl": "builtin/gc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2339, "cl": 2, "fl": "builtin/gc.c" }|False) 
+		  --> ({ "ln": 2339, "cl": 2, "fl": "builtin/gc.c" }|True) 
+		  --> ({ "ln": 2342, "cl": 7, "fl": "builtin/gc.c" }|False) 
+		  --> ({ "ln": 2345, "cl": 7, "fl": "builtin/gc.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1153, "cl": 4, "fl": "builtin/gc.c" })

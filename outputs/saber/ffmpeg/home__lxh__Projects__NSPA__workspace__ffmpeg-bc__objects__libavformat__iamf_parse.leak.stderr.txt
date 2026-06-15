@@ -1,0 +1,27 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 584, "cl": 34, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 397, "cl": 29, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 131, "cl": 31, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 983, "cl": 11, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 828, "cl": 40, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1005, "cl": 40, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 725, "cl": 37, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 997, "cl": 35, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 840, "cl": 31, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 214, "cl": 11, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 858, "cl": 46, "fl": "libavformat/iamf_parse.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 177, "cl": 11, "fl": "libavformat/iamf_parse.c" })
+		 conditional free path: 
+		  --> ({ "ln": 182, "cl": 9, "fl": "libavformat/iamf_parse.c" }|False) 
+		  --> ({ "ln": 193, "cl": 5, "fl": "libavformat/iamf_parse.c" }|False) 
+		  --> ({ "ln": 193, "cl": 5, "fl": "libavformat/iamf_parse.c" }|True) 
+		  --> ({ "ln": 193, "cl": 5, "fl": "libavformat/iamf_parse.c" }|True) 
+		  --> ({ "ln": 193, "cl": 5, "fl": "libavformat/iamf_parse.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 44, "cl": 31, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 805, "cl": 11, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 821, "cl": 33, "fl": "libavformat/iamf_parse.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 96, "cl": 31, "fl": "libavformat/iamf_parse.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 963, "cl": 11, "fl": "libavformat/iamf_parse.c" })
+		 conditional free path: 
+		  --> ({ "ln": 968, "cl": 9, "fl": "libavformat/iamf_parse.c" }|False) 
+

@@ -1,0 +1,3 @@
+vcall gep idx not constantint
+vcall gep idx not constantint
+vcall gep idx not constantint

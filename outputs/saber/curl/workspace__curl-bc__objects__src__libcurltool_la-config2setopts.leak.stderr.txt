@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 214, "cl": 17, "fl": "config2setopts.c" })
+		 conditional free path: 
+		  --> ({ "ln": 222, "cl": 10, "fl": "config2setopts.c" }|True) 
+

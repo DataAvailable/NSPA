@@ -1,0 +1,35 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1570, "cl": 2, "fl": "run-command.c" })
+		 double free path: 
+		  --> ({ "ln": 1912, "cl": 3, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1925, "cl": 7, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1627, "cl": 6, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1639, "cl": 8, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1639, "cl": 8, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1642, "cl": 6, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1804, "cl": 2, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1808, "cl": 7, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1593, "cl": 2, "fl": "run-command.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 436, "cl": 19, "fl": "run-command.c" })
+		 double free path: 
+		  --> ({ "ln": 880, "cl": 6, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1925, "cl": 7, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1868, "cl": 6, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1804, "cl": 2, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1808, "cl": 7, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 117, "cl": 7, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1738, "cl": 2, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1739, "cl": 7, "fl": "run-command.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 97, "cl": 29, "fl": "run-command.c" })
+		 double free path: 
+		  --> ({ "ln": 1912, "cl": 3, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1925, "cl": 7, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1627, "cl": 6, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1639, "cl": 8, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1639, "cl": 8, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1642, "cl": 6, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1868, "cl": 6, "fl": "run-command.c" }|False) 
+		  --> ({ "ln": 1738, "cl": 2, "fl": "run-command.c" }|True) 
+		  --> ({ "ln": 1739, "cl": 7, "fl": "run-command.c" }|False) 
+

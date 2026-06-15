@@ -1,0 +1,121 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 920, "cl": 26, "fl": "lib/glob/glob.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 943, "cl": 31, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 948, "cl": 7, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1233, "cl": 16, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1238, "cl": 16, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1496, "cl": 11, "fl": "lib/glob/glob.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1141, "cl": 33, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 1523, "cl": 20, "fl": "lib/glob/glob.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1050, "cl": 28, "fl": "lib/glob/glob.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 708, "cl": 26, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 710, "cl": 11, "fl": "lib/glob/glob.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1303, "cl": 35, "fl": "lib/glob/glob.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1043, "cl": 22, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 1233, "cl": 16, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1238, "cl": 16, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 24, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1247, "cl": 46, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1247, "cl": 68, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1247, "cl": 11, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1376, "cl": 12, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1391, "cl": 12, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1047, "cl": 3, "fl": "lib/glob/glob.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 860, "cl": 28, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 861, "cl": 26, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 917, "cl": 7, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 922, "cl": 25, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 922, "cl": 25, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 922, "cl": 11, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 922, "cl": 11, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 933, "cl": 8, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 933, "cl": 8, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 958, "cl": 8, "fl": "lib/glob/glob.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1300, "cl": 33, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 1259, "cl": 7, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1283, "cl": 21, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1283, "cl": 8, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1293, "cl": 57, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1293, "cl": 12, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1295, "cl": 9, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1304, "cl": 13, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1321, "cl": 8, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1323, "cl": 13, "fl": "lib/glob/glob.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1108, "cl": 22, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 1233, "cl": 16, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1238, "cl": 16, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 24, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 24, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1247, "cl": 46, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1259, "cl": 7, "fl": "lib/glob/glob.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1449, "cl": 28, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 1231, "cl": 11, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1233, "cl": 16, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1247, "cl": 24, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1247, "cl": 46, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1247, "cl": 68, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1247, "cl": 11, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1283, "cl": 21, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1283, "cl": 21, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1283, "cl": 8, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1283, "cl": 8, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1293, "cl": 57, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1293, "cl": 57, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 1293, "cl": 12, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 1411, "cl": 7, "fl": "lib/glob/glob.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 895, "cl": 28, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 896, "cl": 26, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 917, "cl": 7, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 922, "cl": 25, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 922, "cl": 25, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 922, "cl": 11, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 922, "cl": 11, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 933, "cl": 8, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 933, "cl": 8, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 958, "cl": 8, "fl": "lib/glob/glob.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 890, "cl": 35, "fl": "lib/glob/glob.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 584, "cl": 30, "fl": "lib/glob/glob.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 709, "cl": 22, "fl": "lib/glob/glob.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 677, "cl": 27, "fl": "lib/glob/glob.c" })
+		 double free path: 
+		  --> ({ "ln": 691, "cl": 17, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 691, "cl": 17, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 691, "cl": 12, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 691, "cl": 12, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 699, "cl": 17, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 699, "cl": 59, "fl": "lib/glob/glob.c" }|False) 
+		  --> ({ "ln": 699, "cl": 59, "fl": "lib/glob/glob.c" }|True) 
+		  --> ({ "ln": 699, "cl": 7, "fl": "lib/glob/glob.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 856, "cl": 38, "fl": "lib/glob/glob.c" })
+		 double free path: 
+

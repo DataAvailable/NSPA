@@ -1,0 +1,18 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1221, "cl": 2, "fl": "refs/files-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 2014, "cl": 80, "fl": "refs/files-backend.c" }|False) 
+		  --> ({ "ln": 2014, "cl": 80, "fl": "refs/files-backend.c" }|True) 
+		  --> ({ "ln": 2015, "cl": 38, "fl": "refs/files-backend.c" }|False) 
+		  --> ({ "ln": 2015, "cl": 38, "fl": "refs/files-backend.c" }|True) 
+		  --> ({ "ln": 2016, "cl": 82, "fl": "refs/files-backend.c" }|False) 
+		  --> ({ "ln": 2016, "cl": 82, "fl": "refs/files-backend.c" }|True) 
+		  --> ({ "ln": 2014, "cl": 6, "fl": "refs/files-backend.c" }|True) 
+		  --> ({ "ln": 1746, "cl": 57, "fl": "refs/files-backend.c" }|True) 
+		  --> ({ "ln": 1764, "cl": 57, "fl": "refs/files-backend.c" }|True) 
+		  --> ({ "ln": 2040, "cl": 6, "fl": "refs/files-backend.c" }|False) 
+		  --> ({ "ln": 2081, "cl": 6, "fl": "refs/files-backend.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 733, "cl": 12, "fl": "refs/files-backend.c" })
+		 double free path: 
+		  --> ({ "ln": 651, "cl": 6, "fl": "refs/files-backend.c" }|True) 
+

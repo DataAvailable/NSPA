@@ -1,0 +1,20 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1392, "cl": 24, "fl": "job.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1177, "cl": 26, "fl": "job.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1172, "cl": 11, "fl": "job.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1199, "cl": 9, "fl": "job.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1308, "cl": 11, "fl": "job.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1199, "cl": 9, "fl": "job.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1866, "cl": 9, "fl": "job.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1388, "cl": 9, "fl": "job.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1478, "cl": 9, "fl": "job.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1197, "cl": 27, "fl": "job.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1837, "cl": 12, "fl": "job.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1844, "cl": 9, "fl": "job.c" }|True) 
+

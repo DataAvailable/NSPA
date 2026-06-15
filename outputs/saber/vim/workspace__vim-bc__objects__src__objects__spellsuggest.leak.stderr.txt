@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3623, "cl": 17, "fl": "spellsuggest.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2906, "cl": 23, "fl": "spellsuggest.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3705, "cl": 9, "fl": "spellsuggest.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3239, "cl": 8, "fl": "spellsuggest.c" })

@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 782, "cl": 16, "fl": "builtin/cat-file.c" })
+		 conditional free path: 
+		  --> ({ "ln": 716, "cl": 2, "fl": "builtin/cat-file.c" }|True) 
+

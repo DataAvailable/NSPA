@@ -1,0 +1,4 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 904, "cl": 17, "fl": "gpg-interface.c" })
+		 double free path: 
+		  --> ({ "ln": 905, "cl": 7, "fl": "gpg-interface.c" }|True) 
+

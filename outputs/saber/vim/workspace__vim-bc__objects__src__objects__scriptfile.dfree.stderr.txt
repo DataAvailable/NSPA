@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1933, "cl": 17, "fl": "scriptfile.c" })
+		 double free path: 
+		  --> ({ "ln": 1934, "cl": 53, "fl": "scriptfile.c" }|True) 
+		  --> ({ "ln": 1935, "cl": 10, "fl": "scriptfile.c" }|True) 
+		  --> ({ "ln": 1935, "cl": 34, "fl": "scriptfile.c" }|True) 
+		  --> ({ "ln": 1934, "cl": 9, "fl": "scriptfile.c" }|True) 
+		  --> ({ "ln": 1942, "cl": 6, "fl": "scriptfile.c" }|True) 
+

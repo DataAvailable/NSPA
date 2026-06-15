@@ -1,0 +1,30 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2096, "cl": 18, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2527, "cl": 13, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1090, "cl": 32, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1148, "cl": 18, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1482, "cl": 12, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1455, "cl": 12, "fl": "textprop.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2170, "cl": 16, "fl": "textprop.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2175, "cl": 5, "fl": "textprop.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2124, "cl": 18, "fl": "textprop.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2129, "cl": 5, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 2129, "cl": 5, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 2131, "cl": 6, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 2131, "cl": 6, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 2137, "cl": 6, "fl": "textprop.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 6, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 2141, "cl": 6, "fl": "textprop.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2509, "cl": 9, "fl": "textprop.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2525, "cl": 6, "fl": "textprop.c" }|True) 
+		  --> ({ "ln": 2528, "cl": 10, "fl": "textprop.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 834, "cl": 12, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1664, "cl": 11, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1114, "cl": 18, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1045, "cl": 17, "fl": "textprop.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2554, "cl": 18, "fl": "textprop.c" })

@@ -1,0 +1,4 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 780, "cl": 4, "fl": "builtin/cat-file.c" })
+		 double free path: 
+		  --> ({ "ln": 741, "cl": 2, "fl": "builtin/cat-file.c" }|False) 
+

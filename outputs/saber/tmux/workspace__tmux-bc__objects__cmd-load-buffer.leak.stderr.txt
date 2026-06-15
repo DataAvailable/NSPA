@@ -1,1 +1,7 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 109, "cl": 2, "fl": "cmd-load-buffer.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 102, "cl": 17, "fl": "cmd-load-buffer.c" })
 [1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 99, "cl": 10, "fl": "cmd-load-buffer.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 71, "cl": 10, "fl": "cmd-load-buffer.c" })
+		 conditional free path: 
+		  --> ({ "ln": 73, "cl": 7, "fl": "cmd-load-buffer.c" }|True) 
+

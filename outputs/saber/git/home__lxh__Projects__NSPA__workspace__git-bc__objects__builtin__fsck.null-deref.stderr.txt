@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 575, "cl": 2, "fl": "builtin/fsck.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 576, "cl": 32, "fl": "builtin/fsck.c" })
+		 conditional free path: 
+

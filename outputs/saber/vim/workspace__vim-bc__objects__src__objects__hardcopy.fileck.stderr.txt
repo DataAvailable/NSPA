@@ -1,0 +1,6 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 2669, "cl": 19, "fl": "hardcopy.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 2684, "cl": 6, "fl": "hardcopy.c" }|False) 
+		  --> ({ "ln": 2684, "cl": 6, "fl": "hardcopy.c" }|True) 
+		  --> ({ "ln": 2691, "cl": 6, "fl": "hardcopy.c" }|True) 
+

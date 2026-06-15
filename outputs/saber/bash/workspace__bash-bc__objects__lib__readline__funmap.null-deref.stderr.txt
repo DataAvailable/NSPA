@@ -1,0 +1,2 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 216, "cl": 27, "fl": "lib/readline/funmap.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 219, "cl": 36, "fl": "lib/readline/funmap.c" })

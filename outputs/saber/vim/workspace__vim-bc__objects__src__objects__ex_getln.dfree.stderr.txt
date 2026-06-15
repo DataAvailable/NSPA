@@ -1,0 +1,15 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3504, "cl": 22, "fl": "ex_getln.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1885, "cl": 21, "fl": "ex_getln.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4940, "cl": 20, "fl": "ex_getln.c" })
+		 double free path: 
+		  --> ({ "ln": 2081, "cl": 6, "fl": "ex_getln.c" }|True) 
+		  --> ({ "ln": 3518, "cl": 9, "fl": "ex_getln.c" }|False) 
+		  --> ({ "ln": 3527, "cl": 9, "fl": "ex_getln.c" }|False) 
+		  --> ({ "ln": 3747, "cl": 9, "fl": "ex_getln.c" }|True) 
+
+
+NSPA timeout after 120.0 seconds

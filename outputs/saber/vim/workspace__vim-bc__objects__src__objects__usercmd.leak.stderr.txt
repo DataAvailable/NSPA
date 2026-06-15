@@ -1,0 +1,8 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1497, "cl": 11, "fl": "usercmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2053, "cl": 6, "fl": "usercmd.c" }|False) 
+		  --> ({ "ln": 2053, "cl": 6, "fl": "usercmd.c" }|True) 
+		  --> ({ "ln": 2061, "cl": 6, "fl": "usercmd.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1100, "cl": 5, "fl": "usercmd.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1167, "cl": 11, "fl": "usercmd.c" })

@@ -1,0 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 233, "cl": 2, "fl": "pack-write.c" })
+		 conditional free path: 
+		  --> ({ "ln": 236, "cl": 2, "fl": "pack-write.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 269, "cl": 11, "fl": "pack-write.c" })
+		 conditional free path: 
+		  --> ({ "ln": 292, "cl": 6, "fl": "pack-write.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 282, "cl": 10, "fl": "pack-write.c" })
+		 conditional free path: 
+		  --> ({ "ln": 292, "cl": 6, "fl": "pack-write.c" }|False) 
+

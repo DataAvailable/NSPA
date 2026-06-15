@@ -1,0 +1,16 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4783, "cl": 19, "fl": "term.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4636, "cl": 6, "fl": "term.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4672, "cl": 6, "fl": "term.c" }|False) 
+		  --> ({ "ln": 4672, "cl": 6, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4689, "cl": 5, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4691, "cl": 6, "fl": "term.c" }|False) 
+		  --> ({ "ln": 4693, "cl": 6, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4695, "cl": 10, "fl": "term.c" }|False) 
+		  --> ({ "ln": 4700, "cl": 10, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4702, "cl": 30, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4702, "cl": 7, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4708, "cl": 8, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4709, "cl": 8, "fl": "term.c" }|True) 
+		  --> ({ "ln": 4707, "cl": 11, "fl": "term.c" }|True) 
+

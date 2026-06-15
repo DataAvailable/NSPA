@@ -1,0 +1,8 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 466, "cl": 2, "fl": "parallel-checkout.c" })
+		 conditional free path: 
+		  --> ({ "ln": 468, "cl": 2, "fl": "parallel-checkout.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 590, "cl": 2, "fl": "parallel-checkout.c" })
+		 conditional free path: 
+		  --> ({ "ln": 596, "cl": 2, "fl": "parallel-checkout.c" }|False) 
+

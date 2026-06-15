@@ -53,7 +53,6 @@ Classify each Candidate Function Record (CFR) into exactly one category:
 - destroyer: ends the lifetime of a whole object/container/resource and may release nested memory; use this when the function's interface is object destruction rather than a simple free wrapper.
 - non_memory: not a custom allocation/release/destroy interface. This includes functions that only allocate temporary memory internally and release it before returning.
 
-Use only the CFR fields. Be conservative: if ownership transfer or lifecycle termination is not supported by the signature, direct calls, macro body, documentation, or filter evidence, choose non_memory.
 Return JSON only, with this schema:
 {"results":[{"id":"...","category":"allocator|releaser|destroyer|non_memory","confidence":0.0-1.0,"reason":"short reason"}]}"""
 

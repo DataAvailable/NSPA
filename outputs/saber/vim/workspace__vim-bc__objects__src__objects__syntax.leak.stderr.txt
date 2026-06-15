@@ -1,0 +1,39 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1101, "cl": 9, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5157, "cl": 21, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3465, "cl": 24, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5406, "cl": 14, "fl": "syntax.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5149, "cl": 12, "fl": "syntax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5260, "cl": 5, "fl": "syntax.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5648, "cl": 27, "fl": "syntax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4956, "cl": 9, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 4956, "cl": 9, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 4962, "cl": 35, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 4962, "cl": 35, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 4962, "cl": 6, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 4962, "cl": 6, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 4965, "cl": 3, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 4965, "cl": 3, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 4964, "cl": 11, "fl": "syntax.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3254, "cl": 12, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4434, "cl": 21, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4414, "cl": 12, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4431, "cl": 30, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4423, "cl": 10, "fl": "syntax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5831, "cl": 8, "fl": "syntax.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4688, "cl": 24, "fl": "syntax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5317, "cl": 25, "fl": "syntax.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5473, "cl": 12, "fl": "syntax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5478, "cl": 9, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 5478, "cl": 9, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 5505, "cl": 9, "fl": "syntax.c" }|False) 
+		  --> ({ "ln": 5505, "cl": 9, "fl": "syntax.c" }|True) 
+		  --> ({ "ln": 5515, "cl": 9, "fl": "syntax.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 6106, "cl": 14, "fl": "syntax.c" })

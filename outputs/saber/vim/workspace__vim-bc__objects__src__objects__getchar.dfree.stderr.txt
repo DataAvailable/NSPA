@@ -1,0 +1,25 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1118, "cl": 7, "fl": "getchar.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1115, "cl": 7, "fl": "getchar.c" })
+		 double free path: 
+		  --> ({ "ln": 1119, "cl": 6, "fl": "getchar.c" }|False) 
+		  --> ({ "ln": 1145, "cl": 6, "fl": "getchar.c" }|True) 
+		  --> ({ "ln": 1962, "cl": 10, "fl": "getchar.c" }|True) 
+		  --> ({ "ln": 3496, "cl": 24, "fl": "getchar.c" }|False) 
+		  --> ({ "ln": 3496, "cl": 24, "fl": "getchar.c" }|True) 
+		  --> ({ "ln": 3496, "cl": 9, "fl": "getchar.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1489, "cl": 22, "fl": "getchar.c" })
+		 double free path: 
+		  --> ({ "ln": 401, "cl": 6, "fl": "getchar.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 268, "cl": 6, "fl": "getchar.c" })
+		 double free path: 
+		  --> ({ "ln": 1145, "cl": 6, "fl": "getchar.c" }|True) 
+		  --> ({ "ln": 3496, "cl": 24, "fl": "getchar.c" }|False) 
+		  --> ({ "ln": 3496, "cl": 24, "fl": "getchar.c" }|True) 
+		  --> ({ "ln": 3496, "cl": 9, "fl": "getchar.c" }|False) 
+
+
+NSPA timeout after 120.0 seconds

@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 341, "cl": 7, "fl": "xdiff/xdiffi.c" })
+		 conditional free path: 
+		  --> ({ "ln": 341, "cl": 6, "fl": "xdiff/xdiffi.c" }|False) 
+

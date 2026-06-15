@@ -19,5 +19,35 @@ if [ ! -f src/configure ]; then
 fi
 chmod +x configure src/configure src/auto/configure
 configure_autotools --disable-gui --without-x
-build_with_make
+
+obj_printer="$OUT_DIR/vim-print-objects.mk"
+cat > "$obj_printer" <<'MAKE_EOF'
+print-OBJ:
+	@printf '%s\n' $(OBJ)
+MAKE_EOF
+
+mapfile -t vim_objects < <("$MAKE_BIN" --no-print-directory -C src -f Makefile -f "$obj_printer" print-OBJ)
+if [ "${#vim_objects[@]}" -eq 0 ]; then
+  echo "[-] Failed to expand Vim object list from src/Makefile"
+  exit 1
+fi
+
+log_file="$LOG_DIR/build.log"
+set +e
+"$MAKE_BIN" --no-print-directory -C src -k -j"$JOBS" \
+  CC="$WRAPPER_CC" \
+  CXX="$WRAPPER_CXX" \
+  TMPDIR="$TMPDIR" \
+  CPPFLAGS="$BASE_CPPFLAGS" \
+  CFLAGS="$BASE_CFLAGS" \
+  CXXFLAGS="$BASE_CXXFLAGS" \
+  LDFLAGS="$BASE_LDFLAGS" \
+  "${vim_objects[@]}" \
+  2>&1 | tee "$log_file"
+make_ret=${PIPESTATUS[0]}
+set -e
+if [ "$make_ret" -ne 0 ]; then
+  echo "[!] make returned non-zero while building Vim objects."
+fi
+
 finish_build

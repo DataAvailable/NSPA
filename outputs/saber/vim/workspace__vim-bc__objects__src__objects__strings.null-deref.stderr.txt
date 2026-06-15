@@ -1,0 +1,71 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1224, "cl": 16, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1538, "cl": 7, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1617, "cl": 10, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1632, "cl": 6, "fl": "strings.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1215, "cl": 16, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1538, "cl": 7, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1617, "cl": 10, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1632, "cl": 6, "fl": "strings.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 456, "cl": 11, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 431, "cl": 2, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 435, "cl": 10, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 454, "cl": 7, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 457, "cl": 11, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 457, "cl": 11, "fl": "strings.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3915, "cl": 19, "fl": "strings.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4010, "cl": 28, "fl": "strings.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 389, "cl": 11, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 364, "cl": 2, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 368, "cl": 10, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 387, "cl": 7, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 390, "cl": 11, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 390, "cl": 11, "fl": "strings.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 428, "cl": 15, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 431, "cl": 2, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 435, "cl": 10, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 454, "cl": 7, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 457, "cl": 11, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 457, "cl": 11, "fl": "strings.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2624, "cl": 23, "fl": "strings.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1312, "cl": 33, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1471, "cl": 31, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 1471, "cl": 9, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 1482, "cl": 31, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 1482, "cl": 9, "fl": "strings.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1290, "cl": 16, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1527, "cl": 10, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1530, "cl": 10, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1530, "cl": 10, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 1538, "cl": 7, "fl": "strings.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2541, "cl": 23, "fl": "strings.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 361, "cl": 15, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 364, "cl": 2, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 368, "cl": 10, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 387, "cl": 7, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 390, "cl": 11, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 390, "cl": 11, "fl": "strings.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1295, "cl": 16, "fl": "strings.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1527, "cl": 10, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1530, "cl": 10, "fl": "strings.c" }|False) 
+		  --> ({ "ln": 1530, "cl": 10, "fl": "strings.c" }|True) 
+		  --> ({ "ln": 1538, "cl": 7, "fl": "strings.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 96, "cl": 22, "fl": "strings.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 930, "cl": 29, "fl": "strings.c" })

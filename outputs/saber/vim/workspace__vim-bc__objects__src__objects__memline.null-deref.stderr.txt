@@ -1,0 +1,48 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4837, "cl": 6, "fl": "memline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2939, "cl": 17, "fl": "memline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2929, "cl": 5, "fl": "memline.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4594, "cl": 13, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 793, "cl": 10, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3396, "cl": 12, "fl": "memline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4753, "cl": 11, "fl": "memline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4753, "cl": 6, "fl": "memline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5807, "cl": 27, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4830, "cl": 7, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 379, "cl": 15, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4814, "cl": 3, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 397, "cl": 15, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4823, "cl": 3, "fl": "memline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3667, "cl": 13, "fl": "memline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3692, "cl": 32, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 3696, "cl": 6, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 3703, "cl": 10, "fl": "memline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3207, "cl": 16, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3702, "cl": 16, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2199, "cl": 5, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2876, "cl": 14, "fl": "memline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2065, "cl": 15, "fl": "memline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2082, "cl": 11, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 2083, "cl": 11, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 2081, "cl": 6, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 2085, "cl": 6, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 2088, "cl": 7, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 2094, "cl": 11, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 2144, "cl": 11, "fl": "memline.c" }|False) 
+		  --> ({ "ln": 2165, "cl": 6, "fl": "memline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 812, "cl": 10, "fl": "memline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 329, "cl": 15, "fl": "memline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3664, "cl": 13, "fl": "memline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3692, "cl": 32, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 3696, "cl": 6, "fl": "memline.c" }|True) 
+		  --> ({ "ln": 3703, "cl": 10, "fl": "memline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2150, "cl": 3, "fl": "memline.c" })

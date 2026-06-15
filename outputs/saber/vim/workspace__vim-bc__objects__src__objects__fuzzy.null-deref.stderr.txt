@@ -1,0 +1,26 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 532, "cl": 6, "fl": "fuzzy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 535, "cl": 6, "fl": "fuzzy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 540, "cl": 6, "fl": "fuzzy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 543, "cl": 6, "fl": "fuzzy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 524, "cl": 6, "fl": "fuzzy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 527, "cl": 6, "fl": "fuzzy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 285, "cl": 18, "fl": "fuzzy.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 230, "cl": 13, "fl": "fuzzy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 353, "cl": 9, "fl": "fuzzy.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 256, "cl": 13, "fl": "fuzzy.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 299, "cl": 21, "fl": "fuzzy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 330, "cl": 7, "fl": "fuzzy.c" }|True) 
+

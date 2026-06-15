@@ -1,5 +1,16 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 121, "cl": 6, "fl": "cmd-if-shell.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 89, "cl": 14, "fl": "cmd-if-shell.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 91, "cl": 14, "fl": "cmd-if-shell.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 109, "cl": 21, "fl": "cmd-if-shell.c" })
+		 conditional free path: 
+		  --> ({ "ln": 121, "cl": 6, "fl": "cmd-if-shell.c" }|True) 
+
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 104, "cl": 10, "fl": "cmd-if-shell.c" })
 		 conditional free path: 
 		  --> ({ "ln": 121, "cl": 6, "fl": "cmd-if-shell.c" }|True) 
 
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 106, "cl": 18, "fl": "cmd-if-shell.c" })
+		 conditional free path: 
+		  --> ({ "ln": 121, "cl": 6, "fl": "cmd-if-shell.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 121, "cl": 6, "fl": "cmd-if-shell.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 156, "cl": 12, "fl": "cmd-if-shell.c" })

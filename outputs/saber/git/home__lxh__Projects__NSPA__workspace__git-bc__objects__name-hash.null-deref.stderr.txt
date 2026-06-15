@@ -1,0 +1,33 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 302, "cl": 3, "fl": "name-hash.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 242, "cl": 2, "fl": "name-hash.c" })
+		 conditional free path: 
+		  --> ({ "ln": 543, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 556, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 575, "cl": 6, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 581, "cl": 6, "fl": "name-hash.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 534, "cl": 2, "fl": "name-hash.c" })
+		 conditional free path: 
+		  --> ({ "ln": 543, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 556, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 575, "cl": 6, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 581, "cl": 6, "fl": "name-hash.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 535, "cl": 2, "fl": "name-hash.c" })
+		 conditional free path: 
+		  --> ({ "ln": 543, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 556, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 575, "cl": 6, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 581, "cl": 6, "fl": "name-hash.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 533, "cl": 2, "fl": "name-hash.c" })
+		 conditional free path: 
+		  --> ({ "ln": 543, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 556, "cl": 2, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 575, "cl": 6, "fl": "name-hash.c" }|False) 
+		  --> ({ "ln": 581, "cl": 6, "fl": "name-hash.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 84, "cl": 3, "fl": "name-hash.c" })
+		 conditional free path: 
+		  --> ({ "ln": 110, "cl": 2, "fl": "name-hash.c" }|True) 
+

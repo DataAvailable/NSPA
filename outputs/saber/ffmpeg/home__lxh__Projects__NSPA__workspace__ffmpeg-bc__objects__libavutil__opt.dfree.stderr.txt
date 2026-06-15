@@ -1,0 +1,23 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2125, "cl": 11, "fl": "libavutil/opt.c" })
+		 double free path: 
+		  --> ({ "ln": 130, "cl": 5, "fl": "libavutil/opt.c" }|False) 
+		  --> ({ "ln": 130, "cl": 5, "fl": "libavutil/opt.c" }|True) 
+		  --> ({ "ln": 2129, "cl": 5, "fl": "libavutil/opt.c" }|True) 
+		  --> ({ "ln": 2066, "cl": 9, "fl": "libavutil/opt.c" }|False) 
+		  --> ({ "ln": 2076, "cl": 16, "fl": "libavutil/opt.c" }|True) 
+		  --> ({ "ln": 2080, "cl": 13, "fl": "libavutil/opt.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 374, "cl": 17, "fl": "libavutil/opt.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1881, "cl": 17, "fl": "libavutil/opt.c" })
+		 double free path: 
+		  --> ({ "ln": 1881, "cl": 9, "fl": "libavutil/opt.c" }|False) 
+		  --> ({ "ln": 1909, "cl": 13, "fl": "libavutil/opt.c" }|False) 
+		  --> ({ "ln": 1919, "cl": 13, "fl": "libavutil/opt.c" }|False) 
+		  --> ({ "ln": 1919, "cl": 13, "fl": "libavutil/opt.c" }|True) 
+		  --> ({ "ln": 1928, "cl": 13, "fl": "libavutil/opt.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 788, "cl": 15, "fl": "libavutil/opt.c" })
+		 double free path: 
+

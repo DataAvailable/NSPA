@@ -1,0 +1,46 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3575, "cl": 15, "fl": "os_unix.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 7769, "cl": 13, "fl": "os_unix.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2413, "cl": 16, "fl": "os_unix.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 10072, "cl": 25, "fl": "os_unix.c" })
+		 conditional free path: 
+		  --> ({ "ln": 10093, "cl": 5, "fl": "os_unix.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3577, "cl": 15, "fl": "os_unix.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 10279, "cl": 22, "fl": "os_unix.c" })
+		 conditional free path: 
+		  --> ({ "ln": 9578, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10270, "cl": 5, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10093, "cl": 5, "fl": "os_unix.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 10464, "cl": 22, "fl": "os_unix.c" })
+		 conditional free path: 
+		  --> ({ "ln": 10446, "cl": 5, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10456, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10458, "cl": 11, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9780, "cl": 9, "fl": "os_unix.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 7774, "cl": 6, "fl": "os_unix.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2415, "cl": 16, "fl": "os_unix.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3589, "cl": 11, "fl": "os_unix.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3614, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 3614, "cl": 6, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 3626, "cl": 6, "fl": "os_unix.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3621, "cl": 15, "fl": "os_unix.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4808, "cl": 15, "fl": "os_unix.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 10557, "cl": 22, "fl": "os_unix.c" })
+		 conditional free path: 
+		  --> ({ "ln": 9575, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 9578, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10446, "cl": 5, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 10456, "cl": 6, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10458, "cl": 11, "fl": "os_unix.c" }|True) 
+		  --> ({ "ln": 9780, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10657, "cl": 9, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10659, "cl": 14, "fl": "os_unix.c" }|False) 
+		  --> ({ "ln": 10665, "cl": 9, "fl": "os_unix.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3619, "cl": 15, "fl": "os_unix.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 10399, "cl": 18, "fl": "os_unix.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4810, "cl": 15, "fl": "os_unix.c" })

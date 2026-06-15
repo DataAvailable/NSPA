@@ -4,12 +4,8 @@
 [1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 512, "cl": 10, "fl": "cmd-queue.c" })
 		 double free path: 
 
-[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 213, "cl": 10, "fl": "cmd-queue.c" })
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 270, "cl": 20, "fl": "cmd-queue.c" })
 		 double free path: 
-		  --> ({ "ln": 221, "cl": 22, "fl": "cmd-queue.c" }|False) 
-		  --> ({ "ln": 221, "cl": 22, "fl": "cmd-queue.c" }|True) 
-		  --> ({ "ln": 221, "cl": 6, "fl": "cmd-queue.c" }|False) 
-		  --> ({ "ln": 221, "cl": 6, "fl": "cmd-queue.c" }|True) 
 		  --> ({ "ln": 751, "cl": 7, "fl": "cmd-queue.c" }|False) 
 		  --> ({ "ln": 761, "cl": 7, "fl": "cmd-queue.c" }|False) 
 		  --> ({ "ln": 768, "cl": 7, "fl": "cmd-queue.c" }|True) 
@@ -19,14 +15,29 @@
 
 [1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 129, "cl": 10, "fl": "cmd-queue.c" })
 		 double free path: 
-		  --> ({ "ln": 250, "cl": 6, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 751, "cl": 7, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 761, "cl": 7, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 768, "cl": 7, "fl": "cmd-queue.c" }|True) 
+		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 303, "cl": 28, "fl": "cmd-queue.c" })
+		 double free path: 
 		  --> ({ "ln": 751, "cl": 7, "fl": "cmd-queue.c" }|False) 
 		  --> ({ "ln": 761, "cl": 7, "fl": "cmd-queue.c" }|False) 
 		  --> ({ "ln": 768, "cl": 7, "fl": "cmd-queue.c" }|True) 
 		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|False) 
 		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|True) 
 		  --> ({ "ln": 792, "cl": 8, "fl": "cmd-queue.c" }|False) 
-		  --> ({ "ln": 474, "cl": 6, "fl": "cmd-queue.c" }|False) 
-		  --> ({ "ln": 477, "cl": 2, "fl": "cmd-queue.c" }|True) 
-		  --> ({ "ln": 479, "cl": 7, "fl": "cmd-queue.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 694, "cl": 16, "fl": "cmd-queue.c" })
+		 double free path: 
+		  --> ({ "ln": 761, "cl": 7, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 768, "cl": 7, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 768, "cl": 7, "fl": "cmd-queue.c" }|True) 
+		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|True) 
+		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|True) 
+		  --> ({ "ln": 772, "cl": 4, "fl": "cmd-queue.c" }|False) 
+		  --> ({ "ln": 792, "cl": 8, "fl": "cmd-queue.c" }|False) 
 

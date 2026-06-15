@@ -1,0 +1,89 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1878, "cl": 7, "fl": "bashline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3518, "cl": 24, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 2220, "cl": 7, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 2233, "cl": 11, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3177, "cl": 35, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3177, "cl": 35, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3177, "cl": 7, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3182, "cl": 41, "fl": "bashline.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3175, "cl": 7, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 3177, "cl": 35, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3177, "cl": 35, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3177, "cl": 7, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3177, "cl": 7, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3182, "cl": 41, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3182, "cl": 12, "fl": "bashline.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3432, "cl": 43, "fl": "bashline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1963, "cl": 15, "fl": "bashline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2807, "cl": 14, "fl": "bashline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4029, "cl": 17, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 4030, "cl": 3, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 4030, "cl": 3, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 4033, "cl": 11, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 4044, "cl": 8, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3270, "cl": 12, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3270, "cl": 12, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3270, "cl": 12, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3270, "cl": 12, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3270, "cl": 12, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3270, "cl": 12, "fl": "bashline.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2181, "cl": 19, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 2184, "cl": 11, "fl": "bashline.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1753, "cl": 12, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 3336, "cl": 30, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3336, "cl": 58, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3336, "cl": 58, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3336, "cl": 7, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3346, "cl": 11, "fl": "bashline.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3052, "cl": 55, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 3336, "cl": 30, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3336, "cl": 58, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3336, "cl": 58, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3336, "cl": 7, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3346, "cl": 11, "fl": "bashline.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1967, "cl": 13, "fl": "bashline.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1986, "cl": 29, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 2173, "cl": 21, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2173, "cl": 46, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2173, "cl": 11, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 2196, "cl": 11, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2220, "cl": 7, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2224, "cl": 11, "fl": "bashline.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3448, "cl": 23, "fl": "bashline.c" })
+		 double free path: 
+		  --> ({ "ln": 2220, "cl": 7, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 2233, "cl": 11, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2242, "cl": 8, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3177, "cl": 35, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3177, "cl": 35, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 3177, "cl": 7, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 3182, "cl": 41, "fl": "bashline.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2008, "cl": 30, "fl": "bashline.c" })
+		 double free path: 
+

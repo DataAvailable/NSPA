@@ -1,0 +1,29 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1821, "cl": 21, "fl": "vim9compile.c" })
+		 double free path: 
+		  --> ({ "ln": 5103, "cl": 9, "fl": "vim9compile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1735, "cl": 21, "fl": "vim9compile.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 622, "cl": 13, "fl": "vim9compile.c" })
+		 double free path: 
+		  --> ({ "ln": 5103, "cl": 9, "fl": "vim9compile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2198, "cl": 21, "fl": "vim9compile.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1120, "cl": 13, "fl": "vim9compile.c" })
+		 double free path: 
+		  --> ({ "ln": 5103, "cl": 9, "fl": "vim9compile.c" }|True) 
+		  --> ({ "ln": 4007, "cl": 9, "fl": "vim9compile.c" }|True) 
+		  --> ({ "ln": 1130, "cl": 9, "fl": "vim9compile.c" }|False) 
+		  --> ({ "ln": 1155, "cl": 9, "fl": "vim9compile.c" }|True) 
+		  --> ({ "ln": 1182, "cl": 6, "fl": "vim9compile.c" }|False) 
+		  --> ({ "ln": 1182, "cl": 6, "fl": "vim9compile.c" }|True) 
+		  --> ({ "ln": 1181, "cl": 9, "fl": "vim9compile.c" }|False) 
+		  --> ({ "ln": 1194, "cl": 36, "fl": "vim9compile.c" }|True) 
+		  --> ({ "ln": 1194, "cl": 9, "fl": "vim9compile.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 71, "cl": 22, "fl": "vim9compile.c" })
+		 double free path: 
+

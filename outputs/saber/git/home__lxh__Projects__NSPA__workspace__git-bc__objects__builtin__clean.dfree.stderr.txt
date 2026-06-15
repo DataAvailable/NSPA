@@ -1,0 +1,6 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 863, "cl": 12, "fl": "builtin/clean.c" })
+		 double free path: 
+		  --> ({ "ln": 865, "cl": 7, "fl": "builtin/clean.c" }|False) 
+		  --> ({ "ln": 865, "cl": 7, "fl": "builtin/clean.c" }|True) 
+		  --> ({ "ln": 868, "cl": 8, "fl": "builtin/clean.c" }|False) 
+

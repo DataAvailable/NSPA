@@ -1,0 +1,13 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 628, "cl": 2, "fl": "help.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 165, "cl": 2, "fl": "help.c" })
+		 conditional free path: 
+		  --> ({ "ln": 175, "cl": 2, "fl": "help.c" }|True) 
+		  --> ({ "ln": 212, "cl": 2, "fl": "help.c" }|True) 
+		  --> ({ "ln": 214, "cl": 7, "fl": "help.c" }|False) 
+		  --> ({ "ln": 216, "cl": 12, "fl": "help.c" }|True) 
+		  --> ({ "ln": 193, "cl": 6, "fl": "help.c" }|False) 
+		  --> ({ "ln": 196, "cl": 2, "fl": "help.c" }|True) 
+		  --> ({ "ln": 197, "cl": 7, "fl": "help.c" }|True) 
+

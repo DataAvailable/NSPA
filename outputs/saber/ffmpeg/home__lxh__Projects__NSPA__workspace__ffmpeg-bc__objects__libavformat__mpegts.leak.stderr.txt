@@ -1,0 +1,26 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1236, "cl": 35, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2558, "cl": 19, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2726, "cl": 22, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2707, "cl": 27, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2851, "cl": 23, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3429, "cl": 14, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2904, "cl": 26, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3013, "cl": 42, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 974, "cl": 22, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2740, "cl": 22, "fl": "libavformat/mpegts.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 752, "cl": 21, "fl": "libavformat/mpegts.c" })
+		 conditional free path: 
+		  --> ({ "ln": 757, "cl": 13, "fl": "libavformat/mpegts.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2403, "cl": 20, "fl": "libavformat/mpegts.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2430, "cl": 17, "fl": "libavformat/mpegts.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1080, "cl": 10, "fl": "libavformat/mpegts.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3627, "cl": 11, "fl": "libavformat/mpegts.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1601, "cl": 41, "fl": "libavformat/mpegts.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1800, "cl": 5, "fl": "libavformat/mpegts.c" }|True) 
+		  --> ({ "ln": 2670, "cl": 9, "fl": "libavformat/mpegts.c" }|True) 
+		  --> ({ "ln": 2797, "cl": 5, "fl": "libavformat/mpegts.c" }|True) 
+

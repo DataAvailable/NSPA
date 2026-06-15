@@ -1,0 +1,54 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2470, "cl": 6, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 999, "cl": 31, "fl": "findfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2236, "cl": 14, "fl": "findfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2267, "cl": 2, "fl": "findfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1508, "cl": 10, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 324, "cl": 34, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1265, "cl": 13, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 357, "cl": 42, "fl": "findfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1381, "cl": 14, "fl": "findfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1387, "cl": 9, "fl": "findfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 397, "cl": 38, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1204, "cl": 8, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 559, "cl": 38, "fl": "findfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 644, "cl": 18, "fl": "findfile.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 461, "cl": 21, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 365, "cl": 42, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1175, "cl": 5, "fl": "findfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2408, "cl": 16, "fl": "findfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2408, "cl": 9, "fl": "findfile.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1386, "cl": 29, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 492, "cl": 37, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 666, "cl": 12, "fl": "findfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2252, "cl": 15, "fl": "findfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2267, "cl": 2, "fl": "findfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 421, "cl": 32, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1572, "cl": 32, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 328, "cl": 38, "fl": "findfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1554, "cl": 11, "fl": "findfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1583, "cl": 42, "fl": "findfile.c" }|False) 
+		  --> ({ "ln": 1583, "cl": 42, "fl": "findfile.c" }|True) 
+		  --> ({ "ln": 1583, "cl": 9, "fl": "findfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 453, "cl": 21, "fl": "findfile.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2270, "cl": 18, "fl": "findfile.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2267, "cl": 2, "fl": "findfile.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 540, "cl": 36, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1002, "cl": 7, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 548, "cl": 37, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1580, "cl": 31, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1530, "cl": 20, "fl": "findfile.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 679, "cl": 46, "fl": "findfile.c" })

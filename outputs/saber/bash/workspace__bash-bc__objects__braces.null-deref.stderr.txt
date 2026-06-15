@@ -1,0 +1,28 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 254, "cl": 16, "fl": "braces.c" })
+		 conditional free path: 
+		  --> ({ "ln": 738, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 741, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 747, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 753, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 760, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 764, "cl": 3, "fl": "braces.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 245, "cl": 14, "fl": "braces.c" })
+		 conditional free path: 
+		  --> ({ "ln": 738, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 741, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 747, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 753, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 760, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 764, "cl": 3, "fl": "braces.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 197, "cl": 19, "fl": "braces.c" })
+		 conditional free path: 
+		  --> ({ "ln": 738, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 741, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 747, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 753, "cl": 34, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 760, "cl": 7, "fl": "braces.c" }|False) 
+		  --> ({ "ln": 764, "cl": 3, "fl": "braces.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 435, "cl": 20, "fl": "braces.c" })

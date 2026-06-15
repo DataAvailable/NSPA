@@ -1,0 +1,9 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 134, "cl": 21, "fl": "lib/readline/kill.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 104, "cl": 6, "fl": "lib/readline/kill.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 122, "cl": 32, "fl": "lib/readline/kill.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 791, "cl": 14, "fl": "lib/readline/kill.c" })
+		 conditional free path: 
+		  --> ({ "ln": 792, "cl": 11, "fl": "lib/readline/kill.c" }|False) 
+		  --> ({ "ln": 792, "cl": 11, "fl": "lib/readline/kill.c" }|True) 
+		  --> ({ "ln": 798, "cl": 11, "fl": "lib/readline/kill.c" }|True) 
+

@@ -1,0 +1,80 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 560, "cl": 21, "fl": "if_cscope.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 708, "cl": 11, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 713, "cl": 6, "fl": "if_cscope.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1825, "cl": 21, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 1825, "cl": 9, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 1830, "cl": 9, "fl": "if_cscope.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2028, "cl": 14, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 2028, "cl": 6, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2033, "cl": 3, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2033, "cl": 3, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2034, "cl": 3, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2034, "cl": 3, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2032, "cl": 6, "fl": "if_cscope.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1189, "cl": 18, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 1220, "cl": 9, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 1230, "cl": 23, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 1230, "cl": 23, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 1230, "cl": 40, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 1230, "cl": 40, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 1230, "cl": 9, "fl": "if_cscope.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1479, "cl": 25, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 630, "cl": 9, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 633, "cl": 3, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 1460, "cl": 9, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 1465, "cl": 9, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 1467, "cl": 6, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2172, "cl": 2, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2176, "cl": 10, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2178, "cl": 19, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2178, "cl": 19, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2178, "cl": 7, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2178, "cl": 7, "fl": "if_cscope.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1467, "cl": 25, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 630, "cl": 9, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 633, "cl": 3, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 1460, "cl": 9, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 1465, "cl": 9, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 1467, "cl": 6, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2172, "cl": 2, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2176, "cl": 10, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2178, "cl": 19, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2178, "cl": 19, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2178, "cl": 7, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2178, "cl": 7, "fl": "if_cscope.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 577, "cl": 15, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 577, "cl": 6, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 582, "cl": 6, "fl": "if_cscope.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1460, "cl": 28, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 1477, "cl": 9, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 1479, "cl": 6, "fl": "if_cscope.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2006, "cl": 11, "fl": "if_cscope.c" })
+		 double free path: 
+		  --> ({ "ln": 2021, "cl": 5, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2028, "cl": 6, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2033, "cl": 3, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2034, "cl": 3, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2032, "cl": 6, "fl": "if_cscope.c" }|False) 
+		  --> ({ "ln": 2045, "cl": 6, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2049, "cl": 10, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2073, "cl": 6, "fl": "if_cscope.c" }|True) 
+		  --> ({ "ln": 2077, "cl": 10, "fl": "if_cscope.c" }|True) 
+

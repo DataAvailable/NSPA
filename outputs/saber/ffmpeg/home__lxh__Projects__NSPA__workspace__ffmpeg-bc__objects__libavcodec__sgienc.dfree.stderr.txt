@@ -1,0 +1,11 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 204, "cl": 28, "fl": "libavcodec/sgienc.c" })
+		 double free path: 
+		  --> ({ "ln": 204, "cl": 13, "fl": "libavcodec/sgienc.c" }|False) 
+		  --> ({ "ln": 207, "cl": 9, "fl": "libavcodec/sgienc.c" }|True) 
+		  --> ({ "ln": 210, "cl": 13, "fl": "libavcodec/sgienc.c" }|True) 
+		  --> ({ "ln": 96, "cl": 1, "fl": "libavcodec/bytestream.h" }|False) 
+		  --> ({ "ln": 96, "cl": 1, "fl": "libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 96, "cl": 1, "fl": "libavcodec/bytestream.h" }|False) 
+		  --> ({ "ln": 96, "cl": 1, "fl": "libavcodec/bytestream.h" }|True) 
+		  --> ({ "ln": 226, "cl": 21, "fl": "libavcodec/sgienc.c" }|True) 
+

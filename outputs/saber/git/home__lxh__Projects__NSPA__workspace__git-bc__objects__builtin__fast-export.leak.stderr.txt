@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 779, "cl": 16, "fl": "builtin/fast-export.c" })
+		 conditional free path: 
+		  --> ({ "ln": 799, "cl": 6, "fl": "builtin/fast-export.c" }|False) 
+		  --> ({ "ln": 799, "cl": 6, "fl": "builtin/fast-export.c" }|True) 
+		  --> ({ "ln": 800, "cl": 3, "fl": "builtin/fast-export.c" }|False) 
+		  --> ({ "ln": 800, "cl": 3, "fl": "builtin/fast-export.c" }|True) 
+		  --> ({ "ln": 800, "cl": 3, "fl": "builtin/fast-export.c" }|True) 
+		  --> ({ "ln": 800, "cl": 3, "fl": "builtin/fast-export.c" }|False) 
+		  --> ({ "ln": 800, "cl": 3, "fl": "builtin/fast-export.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1302, "cl": 9, "fl": "builtin/fast-export.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 197, "cl": 9, "fl": "builtin/fast-export.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 729, "cl": 28, "fl": "builtin/fast-export.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 731, "cl": 30, "fl": "builtin/fast-export.c" })

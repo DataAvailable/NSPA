@@ -1,4 +1,23 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2122, "cl": 13, "fl": "server-client.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2335, "cl": 12, "fl": "server-client.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|False) 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|True) 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|True) 
+		  --> ({ "ln": 2337, "cl": 3, "fl": "server-client.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2419, "cl": 18, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2421, "cl": 35, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2434, "cl": 13, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2438, "cl": 13, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2413, "cl": 18, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2099, "cl": 14, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2436, "cl": 13, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2480, "cl": 10, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2476, "cl": 18, "fl": "server-client.c" })
 [1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1836, "cl": 11, "fl": "server-client.c" })
 		 conditional free path: 
 		  --> ({ "ln": 1839, "cl": 7, "fl": "server-client.c" }|True) 
 
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2427, "cl": 16, "fl": "server-client.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 171, "cl": 14, "fl": "server-client.c" })

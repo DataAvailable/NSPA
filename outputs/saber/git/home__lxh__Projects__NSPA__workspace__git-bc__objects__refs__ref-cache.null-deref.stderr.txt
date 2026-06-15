@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 527, "cl": 5, "fl": "refs/ref-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 102, "cl": 2, "fl": "refs/ref-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 420, "cl": 4, "fl": "refs/ref-cache.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 461, "cl": 18, "fl": "refs/ref-cache.c" })

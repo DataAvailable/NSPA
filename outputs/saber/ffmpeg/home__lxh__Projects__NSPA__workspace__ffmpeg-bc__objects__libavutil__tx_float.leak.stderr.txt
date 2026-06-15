@@ -1,0 +1,8 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1463, "cl": 20, "fl": "libavutil/tx_template.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1052, "cl": 37, "fl": "libavutil/tx_template.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1035, "cl": 20, "fl": "libavutil/tx_template.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1250, "cl": 14, "fl": "libavutil/tx_template.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 757, "cl": 20, "fl": "libavutil/tx_template.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1853, "cl": 14, "fl": "libavutil/tx_template.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2115, "cl": 20, "fl": "libavutil/tx_template.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 855, "cl": 20, "fl": "libavutil/tx_template.c" })

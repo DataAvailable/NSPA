@@ -1,0 +1,10 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 459, "cl": 12, "fl": "builtin/grep.c" })
+		 double free path: 
+		  --> ({ "ln": 191, "cl": 2, "fl": "builtin/grep.c" }|True) 
+		  --> ({ "ln": 460, "cl": 6, "fl": "builtin/grep.c" }|False) 
+		  --> ({ "ln": 460, "cl": 6, "fl": "builtin/grep.c" }|True) 
+		  --> ({ "ln": 519, "cl": 6, "fl": "builtin/grep.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 246, "cl": 24, "fl": "builtin/grep.c" })
+		 double free path: 
+

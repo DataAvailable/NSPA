@@ -1,0 +1,9 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 341, "cl": 19, "fl": "spawn.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 245, "cl": 9, "fl": "spawn.c" })
+		 conditional free path: 
+		  --> ({ "ln": 254, "cl": 6, "fl": "spawn.c" }|True) 
+		  --> ({ "ln": 255, "cl": 25, "fl": "spawn.c" }|True) 
+		  --> ({ "ln": 255, "cl": 7, "fl": "spawn.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 313, "cl": 18, "fl": "spawn.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 459, "cl": 11, "fl": "spawn.c" })

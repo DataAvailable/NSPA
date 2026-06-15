@@ -1,4 +1,36 @@
-[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4011, "cl": 10, "fl": "window-copy.c" })
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4530, "cl": 10, "fl": "window-copy.c" })
 		 double free path: 
-		  --> ({ "ln": 4016, "cl": 7, "fl": "window-copy.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5212, "cl": 8, "fl": "window-copy.c" })
+		 double free path: 
+		  --> ({ "ln": 5155, "cl": 6, "fl": "window-copy.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3369, "cl": 15, "fl": "window-copy.c" })
+		 double free path: 
+		  --> ({ "ln": 1219, "cl": 6, "fl": "window-copy.c" }|True) 
+		  --> ({ "ln": 5213, "cl": 6, "fl": "window-copy.c" }|True) 
+		  --> ({ "ln": 1307, "cl": 6, "fl": "window-copy.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4536, "cl": 10, "fl": "window-copy.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5198, "cl": 8, "fl": "window-copy.c" })
+		 double free path: 
+		  --> ({ "ln": 5155, "cl": 6, "fl": "window-copy.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3782, "cl": 8, "fl": "window-copy.c" })
+		 double free path: 
+		  --> ({ "ln": 3785, "cl": 6, "fl": "window-copy.c" }|True) 
+		  --> ({ "ln": 3660, "cl": 6, "fl": "window-copy.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3795, "cl": 10, "fl": "window-copy.c" })
+		 double free path: 
+		  --> ({ "ln": 3601, "cl": 51, "fl": "window-copy.c" }|False) 
+		  --> ({ "ln": 3601, "cl": 51, "fl": "window-copy.c" }|True) 
+		  --> ({ "ln": 3601, "cl": 6, "fl": "window-copy.c" }|False) 
+		  --> ({ "ln": 3601, "cl": 6, "fl": "window-copy.c" }|True) 
+		  --> ({ "ln": 3607, "cl": 20, "fl": "window-copy.c" }|False) 
+		  --> ({ "ln": 3607, "cl": 20, "fl": "window-copy.c" }|True) 
+		  --> ({ "ln": 3607, "cl": 7, "fl": "window-copy.c" }|False) 
+		  --> ({ "ln": 3660, "cl": 6, "fl": "window-copy.c" }|False) 
 

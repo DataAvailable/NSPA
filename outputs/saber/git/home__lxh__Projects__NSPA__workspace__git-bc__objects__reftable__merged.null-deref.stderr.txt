@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 275, "cl": 2, "fl": "reftable/merged.c" })
+		 conditional free path: 
+		  --> ({ "ln": 289, "cl": 6, "fl": "reftable/merged.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 258, "cl": 3, "fl": "reftable/merged.c" })
+		 conditional free path: 
+		  --> ({ "ln": 289, "cl": 6, "fl": "reftable/merged.c" }|True) 
+		  --> ({ "ln": 290, "cl": 3, "fl": "reftable/merged.c" }|True) 
+

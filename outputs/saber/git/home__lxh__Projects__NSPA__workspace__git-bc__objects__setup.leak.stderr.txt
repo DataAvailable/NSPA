@@ -1,0 +1,28 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1649, "cl": 14, "fl": "setup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1658, "cl": 7, "fl": "setup.c" }|True) 
+		  --> ({ "ln": 1661, "cl": 5, "fl": "setup.c" }|False) 
+		  --> ({ "ln": 1661, "cl": 5, "fl": "setup.c" }|True) 
+		  --> ({ "ln": 1663, "cl": 8, "fl": "setup.c" }|False) 
+		  --> ({ "ln": 1663, "cl": 8, "fl": "setup.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1629, "cl": 20, "fl": "setup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1658, "cl": 7, "fl": "setup.c" }|True) 
+		  --> ({ "ln": 1663, "cl": 8, "fl": "setup.c" }|False) 
+		  --> ({ "ln": 1663, "cl": 8, "fl": "setup.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1065, "cl": 25, "fl": "setup.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2508, "cl": 5, "fl": "setup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2511, "cl": 7, "fl": "setup.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 627, "cl": 26, "fl": "setup.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 599, "cl": 21, "fl": "setup.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2231, "cl": 31, "fl": "setup.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1792, "cl": 3, "fl": "setup.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 648, "cl": 14, "fl": "setup.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2076, "cl": 7, "fl": "setup.c" }|False) 
+		  --> ({ "ln": 2786, "cl": 7, "fl": "setup.c" }|False) 
+

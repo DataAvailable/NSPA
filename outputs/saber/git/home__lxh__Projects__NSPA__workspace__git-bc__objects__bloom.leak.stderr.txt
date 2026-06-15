@@ -1,0 +1,8 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 16, "cl": 1, "fl": "bloom.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 16, "cl": 1, "fl": "bloom.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 346, "cl": 35, "fl": "bloom.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 517, "cl": 5, "fl": "bloom.c" })
+		 conditional free path: 
+		  --> ({ "ln": 520, "cl": 9, "fl": "bloom.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 547, "cl": 3, "fl": "bloom.c" })

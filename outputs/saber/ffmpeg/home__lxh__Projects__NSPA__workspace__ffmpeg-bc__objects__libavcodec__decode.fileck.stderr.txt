@@ -1,0 +1,8 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 870, "cl": 10, "fl": "libavcodec/decode.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 871, "cl": 5, "fl": "libavcodec/decode.c" }|False) 
+		  --> ({ "ln": 874, "cl": 9, "fl": "libavcodec/decode.c" }|False) 
+		  --> ({ "ln": 874, "cl": 9, "fl": "libavcodec/decode.c" }|True) 
+		  --> ({ "ln": 877, "cl": 9, "fl": "libavcodec/decode.c" }|True) 
+		  --> ({ "ln": 898, "cl": 9, "fl": "libavcodec/decode.c" }|True) 
+

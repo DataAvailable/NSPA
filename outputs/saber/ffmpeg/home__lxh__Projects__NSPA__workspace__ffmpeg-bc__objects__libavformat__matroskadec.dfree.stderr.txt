@@ -1,0 +1,43 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1342, "cl": 23, "fl": "libavformat/matroskadec.c" })
+		 double free path: 
+		  --> ({ "ln": 3336, "cl": 50, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 3336, "cl": 50, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 3336, "cl": 9, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 3336, "cl": 9, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 3359, "cl": 9, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 3359, "cl": 9, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 3361, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 3361, "cl": 13, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 1583, "cl": 5, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 1598, "cl": 17, "fl": "libavformat/matroskadec.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1719, "cl": 26, "fl": "libavformat/matroskadec.c" })
+		 double free path: 
+		  --> ({ "ln": 4274, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 4276, "cl": 17, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 4285, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 4293, "cl": 20, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 4298, "cl": 17, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 1727, "cl": 9, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 1728, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1707, "cl": 20, "fl": "libavformat/matroskadec.c" })
+		 double free path: 
+		  --> ({ "ln": 4274, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 4276, "cl": 17, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 4285, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 4293, "cl": 20, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 4298, "cl": 17, "fl": "libavformat/matroskadec.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1069, "cl": 21, "fl": "libavformat/matroskadec.c" })
+		 double free path: 
+		  --> ({ "ln": 1069, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 1071, "cl": 13, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 1093, "cl": 9, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 1100, "cl": 9, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 1583, "cl": 5, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 1585, "cl": 9, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 1585, "cl": 9, "fl": "libavformat/matroskadec.c" }|False) 
+		  --> ({ "ln": 1595, "cl": 17, "fl": "libavformat/matroskadec.c" }|True) 
+		  --> ({ "ln": 1598, "cl": 17, "fl": "libavformat/matroskadec.c" }|True) 
+

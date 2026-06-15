@@ -1,0 +1,31 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1084, "cl": 16, "fl": "builtin/log.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1839, "cl": 1, "fl": "builtin/log.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1872, "cl": 6, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1878, "cl": 2, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1881, "cl": 7, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1881, "cl": 7, "fl": "builtin/log.c" }|True) 
+		  --> ({ "ln": 1883, "cl": 7, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1839, "cl": 1, "fl": "builtin/log.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1885, "cl": 3, "fl": "builtin/log.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1898, "cl": 6, "fl": "builtin/log.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1203, "cl": 3, "fl": "builtin/log.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1082, "cl": 16, "fl": "builtin/log.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 343, "cl": 18, "fl": "builtin/log.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1675, "cl": 11, "fl": "builtin/log.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1691, "cl": 22, "fl": "builtin/log.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1021, "cl": 26, "fl": "builtin/log.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1673, "cl": 11, "fl": "builtin/log.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1026, "cl": 26, "fl": "builtin/log.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1839, "cl": 1, "fl": "builtin/log.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1872, "cl": 6, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1878, "cl": 2, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1881, "cl": 7, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1881, "cl": 7, "fl": "builtin/log.c" }|True) 
+		  --> ({ "ln": 1883, "cl": 7, "fl": "builtin/log.c" }|False) 
+		  --> ({ "ln": 1839, "cl": 1, "fl": "builtin/log.c" }|True) 
+

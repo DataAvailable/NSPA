@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 53, "cl": 2, "fl": "pack-objects.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 93, "cl": 2, "fl": "pack-objects.c" })
+		 conditional free path: 
+		  --> ({ "ln": 99, "cl": 2, "fl": "pack-objects.c" }|True) 
+		  --> ({ "ln": 100, "cl": 7, "fl": "pack-objects.c" }|True) 
+

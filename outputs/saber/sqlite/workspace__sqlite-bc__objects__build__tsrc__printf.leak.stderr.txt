@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 481, "cl": 27, "fl": "tsrc/printf.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1015, "cl": 28, "fl": "tsrc/printf.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 636, "cl": 21, "fl": "tsrc/printf.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1219, "cl": 14, "fl": "tsrc/printf.c" })

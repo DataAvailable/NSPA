@@ -1,0 +1,15 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 322, "cl": 14, "fl": "findcmd.c" })
+		 double free path: 
+		  --> ({ "ln": 535, "cl": 33, "fl": "findcmd.c" }|False) 
+		  --> ({ "ln": 535, "cl": 33, "fl": "findcmd.c" }|True) 
+		  --> ({ "ln": 535, "cl": 11, "fl": "findcmd.c" }|False) 
+		  --> ({ "ln": 546, "cl": 7, "fl": "findcmd.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 578, "cl": 23, "fl": "findcmd.c" })
+		 double free path: 
+		  --> ({ "ln": 651, "cl": 21, "fl": "findcmd.c" }|False) 
+		  --> ({ "ln": 651, "cl": 21, "fl": "findcmd.c" }|True) 
+		  --> ({ "ln": 651, "cl": 11, "fl": "findcmd.c" }|False) 
+		  --> ({ "ln": 651, "cl": 11, "fl": "findcmd.c" }|True) 
+		  --> ({ "ln": 657, "cl": 11, "fl": "findcmd.c" }|False) 
+

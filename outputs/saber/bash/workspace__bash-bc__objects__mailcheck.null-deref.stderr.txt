@@ -1,0 +1,3 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 218, "cl": 19, "fl": "mailcheck.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 191, "cl": 28, "fl": "mailcheck.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 216, "cl": 20, "fl": "mailcheck.c" })

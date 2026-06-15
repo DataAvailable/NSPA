@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 135, "cl": 17, "fl": "libavformat/cache.c" })
+		 conditional free path: 
+		  --> ({ "ln": 137, "cl": 13, "fl": "libavformat/cache.c" }|False) 
+		  --> ({ "ln": 137, "cl": 13, "fl": "libavformat/cache.c" }|True) 
+		  --> ({ "ln": 146, "cl": 23, "fl": "libavformat/cache.c" }|True) 
+		  --> ({ "ln": 146, "cl": 13, "fl": "libavformat/cache.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 136, "cl": 16, "fl": "libavformat/cache.c" })
+		 conditional free path: 
+		  --> ({ "ln": 137, "cl": 20, "fl": "libavformat/cache.c" }|False) 
+		  --> ({ "ln": 137, "cl": 20, "fl": "libavformat/cache.c" }|True) 
+		  --> ({ "ln": 146, "cl": 23, "fl": "libavformat/cache.c" }|True) 
+		  --> ({ "ln": 146, "cl": 13, "fl": "libavformat/cache.c" }|True) 
+

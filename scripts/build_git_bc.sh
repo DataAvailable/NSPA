@@ -24,7 +24,5 @@ build_with_make \
   NO_REGEX=NeedsStartEnd \
   NO_RUST=YesPlease \
   NO_TCLTK=YesPlease \
-  libgit.a
-LINK_ORIGIN=archive
-LINK_OBJECT_REGEX='^libgit[.]a:'
+  git
 finish_build

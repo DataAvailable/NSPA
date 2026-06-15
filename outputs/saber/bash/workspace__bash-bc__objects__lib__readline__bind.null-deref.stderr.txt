@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2163, "cl": 7, "fl": "lib/readline/bind.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2165, "cl": 19, "fl": "lib/readline/bind.c" }|False) 
+		  --> ({ "ln": 2165, "cl": 19, "fl": "lib/readline/bind.c" }|True) 
+		  --> ({ "ln": 2165, "cl": 7, "fl": "lib/readline/bind.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 397, "cl": 18, "fl": "lib/readline/bind.c" })
+		 conditional free path: 
+		  --> ({ "ln": 412, "cl": 3, "fl": "lib/readline/bind.c" }|False) 
+		  --> ({ "ln": 412, "cl": 3, "fl": "lib/readline/bind.c" }|True) 
+		  --> ({ "ln": 420, "cl": 18, "fl": "lib/readline/bind.c" }|False) 
+		  --> ({ "ln": 420, "cl": 18, "fl": "lib/readline/bind.c" }|True) 
+		  --> ({ "ln": 420, "cl": 11, "fl": "lib/readline/bind.c" }|True) 
+

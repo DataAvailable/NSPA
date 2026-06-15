@@ -1,0 +1,29 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 609, "cl": 13, "fl": "menu.c" })
+		 double free path: 
+		  --> ({ "ln": 849, "cl": 5, "fl": "menu.c" }|True) 
+		  --> ({ "ln": 851, "cl": 6, "fl": "menu.c" }|False) 
+		  --> ({ "ln": 851, "cl": 6, "fl": "menu.c" }|True) 
+		  --> ({ "ln": 855, "cl": 2, "fl": "menu.c" }|True) 
+		  --> ({ "ln": 857, "cl": 6, "fl": "menu.c" }|False) 
+		  --> ({ "ln": 1095, "cl": 5, "fl": "menu.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1838, "cl": 9, "fl": "menu.c" })
+		 double free path: 
+		  --> ({ "ln": 2730, "cl": 11, "fl": "menu.c" }|False) 
+		  --> ({ "ln": 2795, "cl": 5, "fl": "menu.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 513, "cl": 17, "fl": "menu.c" })
+		 double free path: 
+		  --> ({ "ln": 520, "cl": 5, "fl": "menu.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1835, "cl": 9, "fl": "menu.c" })
+		 double free path: 
+		  --> ({ "ln": 2730, "cl": 11, "fl": "menu.c" }|False) 
+		  --> ({ "ln": 2795, "cl": 5, "fl": "menu.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1765, "cl": 9, "fl": "menu.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 535, "cl": 10, "fl": "menu.c" })
+		 double free path: 
+

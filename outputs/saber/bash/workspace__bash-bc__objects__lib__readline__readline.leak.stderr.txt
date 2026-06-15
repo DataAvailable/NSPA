@@ -1,0 +1,2 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 342, "cl": 24, "fl": "lib/readline/readline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1047, "cl": 12, "fl": "lib/readline/readline.c" })

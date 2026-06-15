@@ -1,0 +1,6 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 243, "cl": 8, "fl": "altsvc.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 246, "cl": 47, "fl": "altsvc.c" }|False) 
+		  --> ({ "ln": 246, "cl": 47, "fl": "altsvc.c" }|True) 
+		  --> ({ "ln": 246, "cl": 8, "fl": "altsvc.c" }|True) 
+

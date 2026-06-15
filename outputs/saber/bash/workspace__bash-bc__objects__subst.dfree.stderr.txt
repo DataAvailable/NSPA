@@ -1,0 +1,9 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 7066, "cl": 7, "fl": "subst.c" })
+		 double free path: 
+		  --> ({ "ln": 9768, "cl": 40, "fl": "subst.c" }|False) 
+		  --> ({ "ln": 9768, "cl": 40, "fl": "subst.c" }|True) 
+		  --> ({ "ln": 9768, "cl": 11, "fl": "subst.c" }|False) 
+		  --> ({ "ln": 9768, "cl": 11, "fl": "subst.c" }|True) 
+
+
+NSPA timeout after 120.0 seconds

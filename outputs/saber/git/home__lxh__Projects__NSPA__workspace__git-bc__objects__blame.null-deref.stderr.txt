@@ -1,0 +1,11 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1313, "cl": 21, "fl": "blame.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 164, "cl": 10, "fl": "blame.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 301, "cl": 7, "fl": "blame.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 212, "cl": 16, "fl": "blame.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 207, "cl": 11, "fl": "blame.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2430, "cl": 3, "fl": "blame.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2436, "cl": 2, "fl": "blame.c" }|False) 
+		  --> ({ "ln": 2577, "cl": 6, "fl": "blame.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1310, "cl": 3, "fl": "blame.c" })

@@ -1,0 +1,22 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 455, "cl": 22, "fl": "builtin/commit.c" })
+		 conditional free path: 
+		  --> ({ "ln": 465, "cl": 7, "fl": "builtin/commit.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1434, "cl": 15, "fl": "builtin/commit.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1156, "cl": 17, "fl": "builtin/commit.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1359, "cl": 24, "fl": "builtin/commit.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1368, "cl": 27, "fl": "builtin/commit.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 408, "cl": 19, "fl": "builtin/commit.c" })
+		 conditional free path: 
+		  --> ({ "ln": 411, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 415, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 415, "cl": 7, "fl": "builtin/commit.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 641, "cl": 9, "fl": "builtin/commit.c" })
+		 conditional free path: 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 643, "cl": 6, "fl": "builtin/commit.c" }|True) 
+		  --> ({ "ln": 649, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 651, "cl": 7, "fl": "builtin/commit.c" }|False) 
+		  --> ({ "ln": 657, "cl": 7, "fl": "builtin/commit.c" }|True) 
+

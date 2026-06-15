@@ -1,0 +1,8 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 610, "cl": 9, "fl": "fts5_config.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 110, "cl": 29, "fl": "fts5parse.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 105, "cl": 34, "fl": "fts5parse.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 106, "cl": 34, "fl": "fts5parse.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 621, "cl": 11, "fl": "fts5_config.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 98, "cl": 36, "fl": "fts5parse.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 102, "cl": 29, "fl": "fts5parse.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 112, "cl": 29, "fl": "fts5parse.y" })

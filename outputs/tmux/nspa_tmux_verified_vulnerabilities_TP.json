@@ -1,0 +1,284 @@
+{
+  "metadata": {
+    "warning_count": 736,
+    "confirmed_count": 2,
+    "unknown_count": 10,
+    "api_error_unknown_count": 0,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 2,
+    "source_output": "outputs/tmux/nspa_tmux_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "leak|PartialLeak|server-client.c|2335|12|3|workspace__tmux-bc__objects__server-client.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "values is allocated by args_from_vector at line 2335. On CMD_PARSE_SUCCESS the code frees it via args_free_values/free at lines 2344-2345, but on CMD_PARSE_ERROR (line 2338) it jumps to the error label at 2360, which only frees argv and cause, never values. This leaks the values allocation on the error path.",
+      "evidence_lines": [
+        {
+          "file": "server-client.c",
+          "line": 2335,
+          "role": "allocation"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2337,
+          "role": "condition"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2340,
+          "role": "return"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2344,
+          "role": "free"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2360,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Call args_free_values(values, argc) and free(values) before goto error in the CMD_PARSE_ERROR case (or at the error label).",
+      "warning": {
+        "id": "leak|PartialLeak|server-client.c|2335|12|3|workspace__tmux-bc__objects__server-client.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-client.leak.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/server-client.bc",
+        "primary": {
+          "file": "server-client.c",
+          "line": 2335,
+          "column": 12
+        },
+        "path": [
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "False"
+          },
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "True"
+          },
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "True"
+          },
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "False"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 2335, \"cl\": 12, \"fl\": \"server-client.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|server-client.c|2335|12|3|workspace__tmux-bc__objects__server-client.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-client.leak.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/server-client.bc",
+          "primary": {
+            "file": "server-client.c",
+            "line": 2335,
+            "column": 12
+          },
+          "path": [
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "False"
+            },
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "True"
+            },
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "True"
+            },
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "False"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 2335, \"cl\": 12, \"fl\": \"server-client.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False)"
+        },
+        "source_files": [
+          "server-client.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "server-client.c",
+            "start_line": 2301,
+            "end_line": 2368,
+            "important_lines": [
+              2335,
+              2337
+            ],
+            "text": "    2301: static int\n    2302: server_client_dispatch_command(struct client *c, struct imsg *imsg)\n    2303: {\n    2304: \tstruct msg_command\t  data;\n    2305: \tchar\t\t\t *buf;\n    2306: \tsize_t\t\t\t  len;\n    2307: \tint\t\t\t  argc = 0;\n    2308: \tchar\t\t\t**argv, *cause;\n    2309: \tstruct cmd_parse_result\t *pr;\n    2310: \tstruct args_value\t *values;\n    2311: \tstruct cmdq_item\t *new_item;\n    2312: \n    2313: \tif (c->flags & CLIENT_EXIT)\n    2314: \t\treturn (0);\n    2315: \n    2316: \tif (imsg->hdr.len - IMSG_HEADER_SIZE < sizeof data)\n    2317: \t\treturn (-1);\n    2318: \tmemcpy(&data, imsg->data, sizeof data);\n    2319: \n    2320: \tbuf = (char *)imsg->data + sizeof data;\n    2321: \tlen = imsg->hdr.len - IMSG_HEADER_SIZE - sizeof data;\n    2322: \tif (len > 0 && buf[len - 1] != '\\0')\n    2323: \t\treturn (-1);\n    2324: \n    2325: \tif (cmd_unpack_argv(buf, len, data.argc, &argv) != 0) {\n    2326: \t\tcause = xstrdup(\"command too long\");\n    2327: \t\tgoto error;\n    2328: \t}\n    2329: \n    2330: \targc = data.argc;\n    2331: \tif (argc == 0) {\n    2332: \t\tnew_item = cmdq_get_callback(server_client_default_command,\n    2333: \t\t    NULL);\n    2334: \t} else {\n>>  2335: \t\tvalues = args_from_vector(argc, argv);\n    2336: \t\tpr = cmd_parse_from_arguments(values, argc, NULL);\n>>  2337: \t\tswitch (pr->status) {\n    2338: \t\tcase CMD_PARSE_ERROR:\n    2339: \t\t\tcause = pr->error;\n    2340: \t\t\tgoto error;\n    2341: \t\tcase CMD_PARSE_SUCCESS:\n    2342: \t\t\tbreak;\n    2343: \t\t}\n    2344: \t\targs_free_values(values, argc);\n    2345: \t\tfree(values);\n    2346: \t\tcmd_free_argv(argc, argv);\n    2347: \t\tif ((c->flags & CLIENT_READONLY) &&\n    2348: \t\t    !cmd_list_all_have(pr->cmdlist, CMD_READONLY)) {\n    2349: \t\t\tnew_item = cmdq_get_callback(server_client_read_only,\n    2350: \t\t\t    NULL);\n    2351: \t\t} else\n    2352: \t\t\tnew_item = cmdq_get_command(pr->cmdlist, NULL);\n    2353: \t\tcmd_list_free(pr->cmdlist);\n    2354: \t}\n    2355: \tcmdq_append(c, new_item);\n    2356: \tcmdq_append(c, cmdq_get_callback(server_client_command_done, NULL));\n    2357: \n    2358: \treturn (0);\n    2359: \n    2360: error:\n    2361: \tcmd_free_argv(argc, argv);\n    2362: \n    2363: \tcmdq_append(c, cmdq_get_error(cause));\n    2364: \tfree(cause);\n    2365: \n    2366: \tc->flags |= CLIENT_EXIT;\n    2367: \treturn (0);\n    2368: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|server-client.c|2335|12|1|workspace__tmux-bc__objects__server-client.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "`values` is allocated by args_from_vector at line 2335 and only freed in the CMD_PARSE_SUCCESS branch (args_free_values + free at 2344-2345). On the CMD_PARSE_ERROR branch the code does `goto error` (line 2340), and the error handler at 2360 only calls cmd_free_argv(argc, argv) without freeing `values`, leaking the allocation. This is a feasible partial-leak path.",
+      "evidence_lines": [
+        {
+          "file": "server-client.c",
+          "line": 2335,
+          "role": "allocation"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2337,
+          "role": "condition"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2340,
+          "role": "return"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2344,
+          "role": "free"
+        },
+        {
+          "file": "server-client.c",
+          "line": 2361,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "In the CMD_PARSE_ERROR case (or in the error label), call args_free_values(values, argc) and free(values) before goto/returning to release the allocation made at line 2335.",
+      "warning": {
+        "id": "null-deref|PartialLeak|server-client.c|2335|12|1|workspace__tmux-bc__objects__server-client.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-client.null-deref.stderr.txt",
+        "bc_file": "workspace/tmux-bc/objects/server-client.bc",
+        "primary": {
+          "file": "server-client.c",
+          "line": 2335,
+          "column": 12
+        },
+        "path": [
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "False"
+          },
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "True"
+          },
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "True"
+          },
+          {
+            "file": "server-client.c",
+            "line": 2337,
+            "column": 3,
+            "branch": "False"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 2335, \"cl\": 12, \"fl\": \"server-client.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|server-client.c|2335|12|1|workspace__tmux-bc__objects__server-client.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/tmux/workspace__tmux-bc__objects__server-client.null-deref.stderr.txt",
+          "bc_file": "workspace/tmux-bc/objects/server-client.bc",
+          "primary": {
+            "file": "server-client.c",
+            "line": 2335,
+            "column": 12
+          },
+          "path": [
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "False"
+            },
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "True"
+            },
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "True"
+            },
+            {
+              "file": "server-client.c",
+              "line": 2337,
+              "column": 3,
+              "branch": "False"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 2335, \"cl\": 12, \"fl\": \"server-client.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|True) \n\t\t  --> ({ \"ln\": 2337, \"cl\": 3, \"fl\": \"server-client.c\" }|False)"
+        },
+        "source_files": [
+          "server-client.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "server-client.c",
+            "start_line": 2301,
+            "end_line": 2368,
+            "important_lines": [
+              2335,
+              2337
+            ],
+            "text": "    2301: static int\n    2302: server_client_dispatch_command(struct client *c, struct imsg *imsg)\n    2303: {\n    2304: \tstruct msg_command\t  data;\n    2305: \tchar\t\t\t *buf;\n    2306: \tsize_t\t\t\t  len;\n    2307: \tint\t\t\t  argc = 0;\n    2308: \tchar\t\t\t**argv, *cause;\n    2309: \tstruct cmd_parse_result\t *pr;\n    2310: \tstruct args_value\t *values;\n    2311: \tstruct cmdq_item\t *new_item;\n    2312: \n    2313: \tif (c->flags & CLIENT_EXIT)\n    2314: \t\treturn (0);\n    2315: \n    2316: \tif (imsg->hdr.len - IMSG_HEADER_SIZE < sizeof data)\n    2317: \t\treturn (-1);\n    2318: \tmemcpy(&data, imsg->data, sizeof data);\n    2319: \n    2320: \tbuf = (char *)imsg->data + sizeof data;\n    2321: \tlen = imsg->hdr.len - IMSG_HEADER_SIZE - sizeof data;\n    2322: \tif (len > 0 && buf[len - 1] != '\\0')\n    2323: \t\treturn (-1);\n    2324: \n    2325: \tif (cmd_unpack_argv(buf, len, data.argc, &argv) != 0) {\n    2326: \t\tcause = xstrdup(\"command too long\");\n    2327: \t\tgoto error;\n    2328: \t}\n    2329: \n    2330: \targc = data.argc;\n    2331: \tif (argc == 0) {\n    2332: \t\tnew_item = cmdq_get_callback(server_client_default_command,\n    2333: \t\t    NULL);\n    2334: \t} else {\n>>  2335: \t\tvalues = args_from_vector(argc, argv);\n    2336: \t\tpr = cmd_parse_from_arguments(values, argc, NULL);\n>>  2337: \t\tswitch (pr->status) {\n    2338: \t\tcase CMD_PARSE_ERROR:\n    2339: \t\t\tcause = pr->error;\n    2340: \t\t\tgoto error;\n    2341: \t\tcase CMD_PARSE_SUCCESS:\n    2342: \t\t\tbreak;\n    2343: \t\t}\n    2344: \t\targs_free_values(values, argc);\n    2345: \t\tfree(values);\n    2346: \t\tcmd_free_argv(argc, argv);\n    2347: \t\tif ((c->flags & CLIENT_READONLY) &&\n    2348: \t\t    !cmd_list_all_have(pr->cmdlist, CMD_READONLY)) {\n    2349: \t\t\tnew_item = cmdq_get_callback(server_client_read_only,\n    2350: \t\t\t    NULL);\n    2351: \t\t} else\n    2352: \t\t\tnew_item = cmdq_get_command(pr->cmdlist, NULL);\n    2353: \t\tcmd_list_free(pr->cmdlist);\n    2354: \t}\n    2355: \tcmdq_append(c, new_item);\n    2356: \tcmdq_append(c, cmdq_get_callback(server_client_command_done, NULL));\n    2357: \n    2358: \treturn (0);\n    2359: \n    2360: error:\n    2361: \tcmd_free_argv(argc, argv);\n    2362: \n    2363: \tcmdq_append(c, cmdq_get_error(cause));\n    2364: \tfree(cause);\n    2365: \n    2366: \tc->flags |= CLIENT_EXIT;\n    2367: \treturn (0);\n    2368: }"
+          }
+        ]
+      }
+    }
+  ]
+}

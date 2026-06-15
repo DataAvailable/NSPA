@@ -1,0 +1,7 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 523, "cl": 27, "fl": "libavformat/id3v2.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 680, "cl": 17, "fl": "libavformat/id3v2.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1061, "cl": 32, "fl": "libavformat/id3v2.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1064, "cl": 25, "fl": "libavformat/id3v2.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 784, "cl": 18, "fl": "libavformat/id3v2.c" })

@@ -1,0 +1,16 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 196, "cl": 7, "fl": "tool_operate.c" })
+		 double free path: 
+		  --> ({ "ln": 2310, "cl": 3, "fl": "tool_operate.c" }|True) 
+		  --> ({ "ln": 2284, "cl": 24, "fl": "tool_operate.c" }|True) 
+		  --> ({ "ln": 2284, "cl": 6, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 2290, "cl": 8, "fl": "tool_operate.c" }|True) 
+		  --> ({ "ln": 1501, "cl": 6, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 1519, "cl": 6, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 1391, "cl": 8, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 1398, "cl": 8, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 1417, "cl": 8, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 1428, "cl": 8, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 1430, "cl": 8, "fl": "tool_operate.c" }|False) 
+		  --> ({ "ln": 1093, "cl": 25, "fl": "tool_operate.c" }|True) 
+		  --> ({ "ln": 1093, "cl": 6, "fl": "tool_operate.c" }|True) 
+

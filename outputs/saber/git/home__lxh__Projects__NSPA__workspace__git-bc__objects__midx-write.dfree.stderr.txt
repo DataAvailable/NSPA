@@ -1,0 +1,18 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 440, "cl": 4, "fl": "midx-write.c" })
+		 double free path: 
+		  --> ({ "ln": 1614, "cl": 6, "fl": "midx-write.c" }|False) 
+		  --> ({ "ln": 1625, "cl": 6, "fl": "midx-write.c" }|False) 
+		  --> ({ "ln": 1696, "cl": 6, "fl": "midx-write.c" }|True) 
+		  --> ({ "ln": 1700, "cl": 7, "fl": "midx-write.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 415, "cl": 2, "fl": "midx-write.c" })
+		 double free path: 
+		  --> ({ "ln": 1614, "cl": 6, "fl": "midx-write.c" }|False) 
+		  --> ({ "ln": 1625, "cl": 6, "fl": "midx-write.c" }|False) 
+		  --> ({ "ln": 1696, "cl": 6, "fl": "midx-write.c" }|True) 
+		  --> ({ "ln": 1700, "cl": 7, "fl": "midx-write.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 71, "cl": 20, "fl": "midx-write.c" })
+		 double free path: 
+		  --> ({ "ln": 1829, "cl": 2, "fl": "midx-write.c" }|True) 
+

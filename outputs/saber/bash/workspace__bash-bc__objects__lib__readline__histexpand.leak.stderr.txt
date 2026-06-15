@@ -1,0 +1,17 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1430, "cl": 24, "fl": "lib/readline/histexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 580, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 542, "cl": 20, "fl": "lib/readline/histexpand.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 859, "cl": 22, "fl": "lib/readline/histexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1238, "cl": 8, "fl": "lib/readline/histexpand.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 575, "cl": 15, "fl": "lib/readline/histexpand.c" })
+		 conditional free path: 
+		  --> ({ "ln": 580, "cl": 7, "fl": "lib/readline/histexpand.c" }|False) 
+
+
+NSPA timeout after 120.0 seconds

@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1045, "cl": 26, "fl": "drawscreen.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1294, "cl": 12, "fl": "drawscreen.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1334, "cl": 9, "fl": "drawscreen.c" }|True) 
+

@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 464, "cl": 22, "fl": "time.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 718, "cl": 20, "fl": "time.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 739, "cl": 10, "fl": "time.c" })
+		 conditional free path: 
+		  --> ({ "ln": 742, "cl": 6, "fl": "time.c" }|True) 
+

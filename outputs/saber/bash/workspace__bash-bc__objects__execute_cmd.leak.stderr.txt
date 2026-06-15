@@ -1,0 +1,79 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4747, "cl": 17, "fl": "execute_cmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4843, "cl": 7, "fl": "execute_cmd.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4999, "cl": 17, "fl": "execute_cmd.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1256, "cl": 4, "fl": "execute_cmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 21, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 11, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1253, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1259, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1289, "cl": 18, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1289, "cl": 8, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1291, "cl": 13, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1293, "cl": 13, "fl": "execute_cmd.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4987, "cl": 17, "fl": "execute_cmd.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1243, "cl": 17, "fl": "execute_cmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 21, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 11, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1253, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1259, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1289, "cl": 18, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1289, "cl": 8, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1291, "cl": 13, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1293, "cl": 13, "fl": "execute_cmd.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5012, "cl": 18, "fl": "execute_cmd.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1270, "cl": 4, "fl": "execute_cmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 21, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 11, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1253, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1259, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1289, "cl": 18, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1289, "cl": 8, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1291, "cl": 13, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1293, "cl": 13, "fl": "execute_cmd.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1301, "cl": 4, "fl": "execute_cmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 21, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 11, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1253, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1259, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1289, "cl": 18, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1289, "cl": 8, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1291, "cl": 13, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1293, "cl": 13, "fl": "execute_cmd.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2615, "cl": 27, "fl": "execute_cmd.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1250, "cl": 4, "fl": "execute_cmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1246, "cl": 3, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 21, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1248, "cl": 11, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1253, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1259, "cl": 16, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1289, "cl": 18, "fl": "execute_cmd.c" }|True) 
+		  --> ({ "ln": 1289, "cl": 8, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1291, "cl": 13, "fl": "execute_cmd.c" }|False) 
+		  --> ({ "ln": 1293, "cl": 13, "fl": "execute_cmd.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 5512, "cl": 29, "fl": "execute_cmd.c" })
+		 conditional free path: 
+		  --> ({ "ln": 5515, "cl": 7, "fl": "execute_cmd.c" }|True) 
+
+
+NSPA timeout after 120.0 seconds

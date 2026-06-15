@@ -1,0 +1,18 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 407, "cl": 8, "fl": "notes.c" })
+		 conditional free path: 
+		  --> ({ "ln": 413, "cl": 6, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 415, "cl": 6, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 418, "cl": 2, "fl": "notes.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1027, "cl": 25, "fl": "notes.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1042, "cl": 31, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 1042, "cl": 31, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 1042, "cl": 6, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 1042, "cl": 6, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 1045, "cl": 34, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 1045, "cl": 34, "fl": "notes.c" }|True) 
+		  --> ({ "ln": 1045, "cl": 6, "fl": "notes.c" }|False) 
+		  --> ({ "ln": 1047, "cl": 6, "fl": "notes.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1028, "cl": 40, "fl": "notes.c" })

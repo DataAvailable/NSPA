@@ -1,0 +1,33 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1088, "cl": 23, "fl": "builtin/receive-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "builtin/receive-pack.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1133, "cl": 53, "fl": "builtin/receive-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "builtin/receive-pack.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1068, "cl": 6, "fl": "builtin/receive-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "builtin/receive-pack.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2160, "cl": 2, "fl": "builtin/receive-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2694, "cl": 6, "fl": "builtin/receive-pack.c" }|True) 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "builtin/receive-pack.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1974, "cl": 51, "fl": "builtin/receive-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "builtin/receive-pack.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1085, "cl": 24, "fl": "builtin/receive-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "builtin/receive-pack.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2354, "cl": 15, "fl": "builtin/receive-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2463, "cl": 2, "fl": "builtin/receive-pack.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1074, "cl": 21, "fl": "builtin/receive-pack.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 2, "fl": "builtin/receive-pack.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 908, "cl": 2, "fl": "builtin/receive-pack.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 398, "cl": 2, "fl": "builtin/receive-pack.c" })

@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 33, "cl": 14, "fl": "builtin/archive.c" })
+		 conditional free path: 
+		  --> ({ "ln": 55, "cl": 6, "fl": "builtin/archive.c" }|False) 
+		  --> ({ "ln": 57, "cl": 6, "fl": "builtin/archive.c" }|False) 
+		  --> ({ "ln": 63, "cl": 6, "fl": "builtin/archive.c" }|False) 
+

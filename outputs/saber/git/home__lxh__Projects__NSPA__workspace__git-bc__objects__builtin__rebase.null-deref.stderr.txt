@@ -1,0 +1,26 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 812, "cl": 4, "fl": "builtin/rebase.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 576, "cl": 31, "fl": "builtin/rebase.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 201, "cl": 20, "fl": "builtin/rebase.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 750, "cl": 16, "fl": "builtin/rebase.c" })
+		 conditional free path: 
+		  --> ({ "ln": 761, "cl": 6, "fl": "builtin/rebase.c" }|False) 
+		  --> ({ "ln": 761, "cl": 6, "fl": "builtin/rebase.c" }|True) 
+		  --> ({ "ln": 763, "cl": 11, "fl": "builtin/rebase.c" }|False) 
+		  --> ({ "ln": 763, "cl": 11, "fl": "builtin/rebase.c" }|True) 
+		  --> ({ "ln": 765, "cl": 11, "fl": "builtin/rebase.c" }|False) 
+		  --> ({ "ln": 765, "cl": 11, "fl": "builtin/rebase.c" }|True) 
+		  --> ({ "ln": 768, "cl": 13, "fl": "builtin/rebase.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 204, "cl": 21, "fl": "builtin/rebase.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 177, "cl": 30, "fl": "builtin/rebase.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 202, "cl": 25, "fl": "builtin/rebase.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 266, "cl": 21, "fl": "builtin/rebase.c" })
+		 conditional free path: 
+		  --> ({ "ln": 310, "cl": 6, "fl": "builtin/rebase.c" }|False) 
+		  --> ({ "ln": 310, "cl": 6, "fl": "builtin/rebase.c" }|True) 
+		  --> ({ "ln": 316, "cl": 9, "fl": "builtin/rebase.c" }|False) 
+		  --> ({ "ln": 316, "cl": 9, "fl": "builtin/rebase.c" }|True) 
+		  --> ({ "ln": 315, "cl": 6, "fl": "builtin/rebase.c" }|False) 
+		  --> ({ "ln": 315, "cl": 6, "fl": "builtin/rebase.c" }|True) 
+		  --> ({ "ln": 325, "cl": 6, "fl": "builtin/rebase.c" }|False) 
+

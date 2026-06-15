@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 181, "cl": 14, "fl": "builtin/var.c" })
+		 conditional free path: 
+		  --> ({ "ln": 181, "cl": 7, "fl": "builtin/var.c" }|True) 
+		  --> ({ "ln": 182, "cl": 25, "fl": "builtin/var.c" }|True) 
+		  --> ({ "ln": 182, "cl": 8, "fl": "builtin/var.c" }|True) 
+

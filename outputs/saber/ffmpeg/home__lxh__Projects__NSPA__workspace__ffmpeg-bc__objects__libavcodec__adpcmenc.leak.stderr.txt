@@ -1,0 +1,17 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 120, "cl": 14, "fl": "libavcodec/adpcmenc.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 119, "cl": 14, "fl": "libavcodec/adpcmenc.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 805, "cl": 5, "fl": "libavcodec/adpcmenc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 805, "cl": 5, "fl": "libavcodec/adpcmenc.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 121, "cl": 14, "fl": "libavcodec/adpcmenc.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 756, "cl": 5, "fl": "libavcodec/adpcmenc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 756, "cl": 5, "fl": "libavcodec/adpcmenc.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 122, "cl": 14, "fl": "libavcodec/adpcmenc.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 609, "cl": 5, "fl": "libavcodec/adpcmenc.c" })
+		 conditional free path: 
+		  --> ({ "ln": 609, "cl": 5, "fl": "libavcodec/adpcmenc.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 143, "cl": 5, "fl": "libavcodec/adpcmenc.c" })

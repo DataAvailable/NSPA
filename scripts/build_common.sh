@@ -20,6 +20,7 @@ SRC_DIR="${SRC_DIR:?SRC_DIR must be set before sourcing build_common.sh}"
 OUT_DIR="${OUT_DIR:-$NSPA_ROOT/workspace/${PROJECT_NAME}-bc}"
 LOG_DIR="$OUT_DIR/logs"
 WRAPPER_DIR="$OUT_DIR/wrappers"
+BUILD_TMPDIR="$OUT_DIR/tmp"
 WRAPPER_CC="$WRAPPER_DIR/clang-bc"
 WRAPPER_CXX="$WRAPPER_DIR/clangxx-bc"
 MANIFEST="$OUT_DIR/manifest.tsv"
@@ -31,6 +32,7 @@ normalize_paths() {
   OUT_DIR="$(mkdir -p "$OUT_DIR" && cd "$OUT_DIR" && pwd)"
   LOG_DIR="$OUT_DIR/logs"
   WRAPPER_DIR="$OUT_DIR/wrappers"
+  BUILD_TMPDIR="$OUT_DIR/tmp"
   WRAPPER_CC="$WRAPPER_DIR/clang-bc"
   WRAPPER_CXX="$WRAPPER_DIR/clangxx-bc"
   MANIFEST="$OUT_DIR/manifest.tsv"
@@ -109,8 +111,8 @@ EOF
 }
 
 prepare_output_dir() {
-  rm -rf "$OUT_DIR/objects" "$OUT_DIR/archive-objects" "$OUT_DIR/link-work"
-  mkdir -p "$OUT_DIR/objects" "$OUT_DIR/archive-objects" "$OUT_DIR/link-work" "$LOG_DIR"
+  rm -rf "$OUT_DIR/objects" "$OUT_DIR/archive-objects" "$OUT_DIR/link-work" "$BUILD_TMPDIR"
+  mkdir -p "$OUT_DIR/objects" "$OUT_DIR/archive-objects" "$OUT_DIR/link-work" "$LOG_DIR" "$BUILD_TMPDIR"
   printf 'bc_file\tsource_or_member\torigin\n' > "$MANIFEST"
   rm -f "$FULL_BC"
   touch "$BUILD_MARKER"
@@ -124,6 +126,7 @@ print_context() {
   echo "[+] Manifest      : $MANIFEST"
   echo "[+] CC wrapper    : $WRAPPER_CC"
   echo "[+] CXX wrapper   : $WRAPPER_CXX"
+  echo "[+] TMPDIR        : $TMPDIR"
   echo "[+] Jobs          : $JOBS"
 }
 
@@ -157,6 +160,7 @@ configure_autotools() {
   env \
     CC="$CLANG_BIN" \
     CXX="$CLANGXX_BIN" \
+    TMPDIR="$TMPDIR" \
     CPPFLAGS="$BASE_CPPFLAGS" \
     CFLAGS="$BASE_CFLAGS" \
     CXXFLAGS="$BASE_CXXFLAGS" \
@@ -170,6 +174,7 @@ build_with_make() {
   "$MAKE_BIN" -k -j"$JOBS" \
     CC="$WRAPPER_CC" \
     CXX="$WRAPPER_CXX" \
+    TMPDIR="$TMPDIR" \
     CPPFLAGS="$BASE_CPPFLAGS" \
     CFLAGS="$BASE_CFLAGS" \
     CXXFLAGS="$BASE_CXXFLAGS" \
@@ -380,6 +385,7 @@ init_project_build() {
   normalize_paths
   check_required_tools
   prepare_output_dir
+  export TMPDIR="$BUILD_TMPDIR"
   create_clang_wrapper
   print_context
 }

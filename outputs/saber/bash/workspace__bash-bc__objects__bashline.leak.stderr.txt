@@ -1,0 +1,71 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4343, "cl": 26, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 778, "cl": 43, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3206, "cl": 12, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3862, "cl": 31, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 891, "cl": 16, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2836, "cl": 17, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1951, "cl": 25, "fl": "bashline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1953, "cl": 12, "fl": "bashline.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4391, "cl": 24, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2081, "cl": 14, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2929, "cl": 18, "fl": "bashline.c" })
+		 conditional free path: 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2047, "cl": 14, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 945, "cl": 25, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4396, "cl": 38, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1038, "cl": 15, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2243, "cl": 13, "fl": "bashline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2304, "cl": 8, "fl": "bashline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2157, "cl": 15, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2064, "cl": 16, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4400, "cl": 26, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2383, "cl": 23, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3614, "cl": 10, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 403, "cl": 39, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3856, "cl": 23, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 963, "cl": 17, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2137, "cl": 12, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2422, "cl": 17, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3118, "cl": 21, "fl": "bashline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2304, "cl": 8, "fl": "bashline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2339, "cl": 23, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2245, "cl": 13, "fl": "bashline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2304, "cl": 8, "fl": "bashline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4399, "cl": 24, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2079, "cl": 14, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3144, "cl": 17, "fl": "bashline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2304, "cl": 8, "fl": "bashline.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2099, "cl": 16, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4394, "cl": 44, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1986, "cl": 29, "fl": "bashline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2173, "cl": 21, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2173, "cl": 46, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2173, "cl": 11, "fl": "bashline.c" }|False) 
+		  --> ({ "ln": 2196, "cl": 11, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2220, "cl": 7, "fl": "bashline.c" }|True) 
+		  --> ({ "ln": 2224, "cl": 11, "fl": "bashline.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3894, "cl": 13, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2049, "cl": 14, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 413, "cl": 22, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3896, "cl": 13, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 401, "cl": 39, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3854, "cl": 15, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2439, "cl": 23, "fl": "bashline.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2488, "cl": 19, "fl": "bashline.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2260, "cl": 10, "fl": "bashline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2304, "cl": 8, "fl": "bashline.c" }|True) 
+

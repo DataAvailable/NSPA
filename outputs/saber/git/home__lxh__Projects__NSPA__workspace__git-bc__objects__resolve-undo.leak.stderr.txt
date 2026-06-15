@@ -1,0 +1,1 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 146, "cl": 8, "fl": "resolve-undo.c" })

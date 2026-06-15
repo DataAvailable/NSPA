@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 260, "cl": 30, "fl": "libavcodec/vorbisdec.c" })
+		 double free path: 
+		  --> ({ "ln": 261, "cl": 24, "fl": "libavcodec/vorbisdec.c" }|True) 
+		  --> ({ "ln": 262, "cl": 23, "fl": "libavcodec/vorbisdec.c" }|True) 
+		  --> ({ "ln": 262, "cl": 41, "fl": "libavcodec/vorbisdec.c" }|True) 
+		  --> ({ "ln": 267, "cl": 5, "fl": "libavcodec/vorbisdec.c" }|False) 
+		  --> ({ "ln": 458, "cl": 13, "fl": "libavcodec/vorbisdec.c" }|False) 
+
