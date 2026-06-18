@@ -1,0 +1,3 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 36, "cl": 33, "fl": "t/test_http_cgi.c" })
+		 conditional free path: 
+

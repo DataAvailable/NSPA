@@ -1,0 +1,48 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1330, "cl": 19, "fl": "rax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1186, "cl": 28, "fl": "rax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 276, "cl": 21, "fl": "rax.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 803, "cl": 28, "fl": "rax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 811, "cl": 13, "fl": "rax.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 166, "cl": 21, "fl": "rax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 277, "cl": 9, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 421, "cl": 9, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 732, "cl": 25, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 730, "cl": 13, "fl": "rax.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 808, "cl": 28, "fl": "rax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 811, "cl": 29, "fl": "rax.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 881, "cl": 29, "fl": "rax.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 537, "cl": 17, "fl": "rax.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 725, "cl": 23, "fl": "rax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 730, "cl": 31, "fl": "rax.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1025, "cl": 24, "fl": "rax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1092, "cl": 32, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 1092, "cl": 17, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 1150, "cl": 9, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 1181, "cl": 13, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 1189, "cl": 17, "fl": "rax.c" }|False) 
+		  --> ({ "ln": 1205, "cl": 13, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 1208, "cl": 32, "fl": "rax.c" }|False) 
+		  --> ({ "ln": 1208, "cl": 32, "fl": "rax.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 420, "cl": 21, "fl": "rax.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 718, "cl": 23, "fl": "rax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 730, "cl": 31, "fl": "rax.c" }|False) 
+		  --> ({ "ln": 730, "cl": 31, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 732, "cl": 25, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 730, "cl": 13, "fl": "rax.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 891, "cl": 21, "fl": "rax.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 195, "cl": 16, "fl": "rax.c" })
+		 conditional free path: 
+		  --> ({ "ln": 202, "cl": 9, "fl": "rax.c" }|True) 
+

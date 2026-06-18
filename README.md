@@ -237,10 +237,10 @@ Rebuild and check Saber:
 
 ```bash
 bash scripts/rebuild_and_check_saber.sh \
-  /NSPA \
-  /NSPA/SVF/Release-build \
-  /NSPA/workspace/curl-bc \
-  /NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
+  /home/lxh/Projects/NSPA \
+  /home/lxh/Projects/NSPA/SVF/Release-build \
+  /home/lxh/Projects/NSPA/workspace/curl-bc \
+  /home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
 ---

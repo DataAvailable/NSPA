@@ -1,0 +1,9 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 45, "cl": 16, "fl": "t/test_array.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 14, "cl": 16, "fl": "t/test_array.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 33, "cl": 16, "fl": "t/test_array.c" })
+		 double free path: 
+

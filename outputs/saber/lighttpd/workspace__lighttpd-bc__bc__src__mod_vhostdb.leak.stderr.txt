@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 54, "cl": 7, "fl": "mod_vhostdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 336, "cl": 10, "fl": "mod_vhostdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 147, "cl": 30, "fl": "mod_vhostdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 121, "cl": 19, "fl": "mod_vhostdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 85, "cl": 25, "fl": "mod_vhostdb.c" })

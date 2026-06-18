@@ -1,0 +1,17 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 578, "cl": 10, "fl": "sentinel.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1020, "cl": 26, "fl": "sentinel.c" })
+		 double free path: 
+		  --> ({ "ln": 1066, "cl": 5, "fl": "sentinel.c" }|True) 
+		  --> ({ "ln": 1068, "cl": 9, "fl": "sentinel.c" }|False) 
+		  --> ({ "ln": 1109, "cl": 5, "fl": "sentinel.c" }|True) 
+		  --> ({ "ln": 1113, "cl": 9, "fl": "sentinel.c" }|False) 
+		  --> ({ "ln": 1114, "cl": 9, "fl": "sentinel.c" }|False) 
+		  --> ({ "ln": 1117, "cl": 5, "fl": "sentinel.c" }|True) 
+		  --> ({ "ln": 1121, "cl": 13, "fl": "sentinel.c" }|False) 
+		  --> ({ "ln": 1124, "cl": 13, "fl": "sentinel.c" }|False) 
+		  --> ({ "ln": 1125, "cl": 13, "fl": "sentinel.c" }|False) 
+		  --> ({ "ln": 1963, "cl": 17, "fl": "sentinel.c" }|False) 
+		  --> ({ "ln": 2929, "cl": 17, "fl": "sentinel.c" }|True) 
+

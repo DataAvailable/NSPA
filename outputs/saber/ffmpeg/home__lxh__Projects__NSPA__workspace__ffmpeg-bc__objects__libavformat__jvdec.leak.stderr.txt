@@ -1,4 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 112, "cl": 27, "fl": "libavformat/jvdec.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 86, "cl": 11, "fl": "libavformat/jvdec.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 85, "cl": 11, "fl": "libavformat/jvdec.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 117, "cl": 18, "fl": "libavformat/jvdec.c" })

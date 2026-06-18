@@ -1,0 +1,11 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1857, "cl": 18, "fl": "db.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2063, "cl": 5, "fl": "db.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 817, "cl": 18, "fl": "db.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2966, "cl": 24, "fl": "db.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2755, "cl": 18, "fl": "db.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3205, "cl": 16, "fl": "db.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3356, "cl": 20, "fl": "db.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3426, "cl": 12, "fl": "db.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3509, "cl": 12, "fl": "db.c" })

@@ -1,0 +1,19 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4595, "cl": 16, "fl": "t_zset.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4598, "cl": 9, "fl": "t_zset.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 144, "cl": 25, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 181, "cl": 25, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1729, "cl": 21, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2734, "cl": 21, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2775, "cl": 25, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3041, "cl": 29, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1485, "cl": 20, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3086, "cl": 29, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1464, "cl": 14, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1495, "cl": 29, "fl": "t_zset.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 212, "cl": 11, "fl": "t_zset.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4597, "cl": 20, "fl": "t_zset.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4598, "cl": 9, "fl": "t_zset.c" }|True) 
+

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+has_compile=0
+
+for arg in "$@"; do
+    if [ "$arg" = "-c" ]; then
+        has_compile=1
+        break
+    fi
+done
+
+if [ "$has_compile" = "1" ]; then
+    exec "clang" -emit-llvm -fno-discard-value-names "$@"
+else
+    exec "clang" "$@"
+fi

@@ -1,0 +1,15 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 255, "cl": 17, "fl": "linux/LinuxProcessTable.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 756, "cl": 12, "fl": "linux/LinuxProcessTable.c" })
+		 conditional free path: 
+		  --> ({ "ln": 847, "cl": 8, "fl": "linux/LinuxProcessTable.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 249, "cl": 23, "fl": "linux/LinuxProcessTable.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 814, "cl": 23, "fl": "linux/LinuxProcessTable.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1739, "cl": 27, "fl": "linux/LinuxProcessTable.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 213, "cl": 14, "fl": "linux/LinuxProcessTable.c" })
+		 conditional free path: 
+		  --> ({ "ln": 218, "cl": 11, "fl": "linux/LinuxProcessTable.c" }|False) 
+		  --> ({ "ln": 226, "cl": 11, "fl": "linux/LinuxProcessTable.c" }|False) 
+		  --> ({ "ln": 226, "cl": 11, "fl": "linux/LinuxProcessTable.c" }|True) 
+		  --> ({ "ln": 231, "cl": 14, "fl": "linux/LinuxProcessTable.c" }|False) 
+

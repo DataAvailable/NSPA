@@ -1,0 +1,90 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4194, "cl": 24, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 7230, "cl": 26, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7230, "cl": 26, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7230, "cl": 41, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7230, "cl": 41, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7230, "cl": 17, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7312, "cl": 26, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7312, "cl": 26, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7312, "cl": 17, "fl": "redis-cli.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5319, "cl": 32, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 4925, "cl": 9, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 4925, "cl": 9, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 4930, "cl": 9, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 4930, "cl": 9, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 4932, "cl": 13, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 4932, "cl": 13, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 5396, "cl": 22, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 5396, "cl": 29, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 5396, "cl": 13, "fl": "redis-cli.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3535, "cl": 16, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 3589, "cl": 24, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 3594, "cl": 24, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 3595, "cl": 21, "fl": "redis-cli.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5436, "cl": 24, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 7230, "cl": 26, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7230, "cl": 26, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7230, "cl": 41, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7230, "cl": 41, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7230, "cl": 17, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7312, "cl": 26, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 7312, "cl": 26, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7312, "cl": 17, "fl": "redis-cli.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5613, "cl": 47, "fl": "redis-cli.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2504, "cl": 15, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 2510, "cl": 5, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 2510, "cl": 5, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 2513, "cl": 13, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 2530, "cl": 26, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 2540, "cl": 13, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 2540, "cl": 13, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 2550, "cl": 17, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 2555, "cl": 36, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 2555, "cl": 17, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 2578, "cl": 47, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 2578, "cl": 60, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 2578, "cl": 17, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 2630, "cl": 13, "fl": "redis-cli.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5599, "cl": 47, "fl": "redis-cli.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 5207, "cl": 24, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 4925, "cl": 9, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 4925, "cl": 9, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 4930, "cl": 9, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 4930, "cl": 9, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 4932, "cl": 13, "fl": "redis-cli.c" }|False) 
+		  --> ({ "ln": 4932, "cl": 13, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 5396, "cl": 22, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 5396, "cl": 29, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 5396, "cl": 13, "fl": "redis-cli.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 10998, "cl": 33, "fl": "redis-cli.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 11002, "cl": 52, "fl": "redis-cli.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4354, "cl": 20, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 7402, "cl": 9, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7431, "cl": 17, "fl": "redis-cli.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4933, "cl": 20, "fl": "redis-cli.c" })
+		 double free path: 
+		  --> ({ "ln": 7776, "cl": 13, "fl": "redis-cli.c" }|True) 
+		  --> ({ "ln": 7958, "cl": 25, "fl": "redis-cli.c" }|True) 
+

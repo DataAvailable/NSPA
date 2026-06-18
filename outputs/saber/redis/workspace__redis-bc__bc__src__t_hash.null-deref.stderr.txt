@@ -1,0 +1,13 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3263, "cl": 20, "fl": "t_hash.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3264, "cl": 9, "fl": "t_hash.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3261, "cl": 16, "fl": "t_hash.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3264, "cl": 9, "fl": "t_hash.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 779, "cl": 20, "fl": "t_hash.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1912, "cl": 21, "fl": "t_hash.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3482, "cl": 9, "fl": "t_hash.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1624, "cl": 27, "fl": "t_hash.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3483, "cl": 9, "fl": "t_hash.c" })

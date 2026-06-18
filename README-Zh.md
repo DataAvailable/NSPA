@@ -20,8 +20,8 @@ python3 -m pip install -r requirements.txt
 python3 -m nspa.memory_function_detector \
   --project-root ./open-source-soft/vim-master \
   --project-name vim \
-  --output ./outputs/nspa_vim_memory_candidates.json \
-  --llm-jsonl ./outputs/nspa_vim_memory_candidates.jsonl \
+  --output ./outputs/vim/nspa_vim_memory_candidates.json \
+  --llm-jsonl ./outputs/vim/nspa_vim_memory_candidates.jsonl \
   --summary \
   --min-confidence 0.5 \
   --exclude runtime \
@@ -61,8 +61,8 @@ python3 -m nspa.llm_semantic_validator \
 
 ```bash
 python3 -m nspa.llm_semantic_validator \
-  --input ./outputs/nspa_vim_memory_candidates.jsonl \
-  --output ./outputs/nspa_vim_validated_memory_functions.json \
+  --input ./outputs/vim/nspa_vim_memory_candidates.jsonl \
+  --output ./outputs/vim/nspa_vim_validated_memory_functions.json \
   --base-url https://你的服务地址/v1 \
   --model 你的模型名 \
   --api-key-env OPENAI_API_KEY \
@@ -102,7 +102,7 @@ python3 -m nspa.llm_semantic_validator \
 
 ```bash
 python3 -m nspa.fine_grained_reachability \
-  --validated-json outputs/nspa_curl_validated_memory_functions.json \
+  --validated-json outputs/curl/nspa_curl_validated_memory_functions.json \
   --project curl \
   --saber-api-cpp SVF/svf/lib/SABER/SaberCheckerAPI.cpp \
   --skip-rebuild \
@@ -138,10 +138,10 @@ bash scripts/build_ffmpeg_bc.sh
 
 ```bash
 bash scripts/rebuild_and_check_saber.sh \
-  /NSPA \
-  /NSPA/SVF/Release-build \
-  /NSPA/workspace/curl-bc \
-  /NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
+  /home/lxh/Projects/NSPA/ \
+  /home/lxh/Projects/NSPA/SVF/Release-build \
+  /home/lxh/Projects/NSPA/workspace/curl-bc \
+  /home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
 
@@ -201,18 +201,20 @@ python3 scripts/run_saber_timing_all_projects.py \
 ```bash
 export OPENAI_API_KEY="你的API Key"
 
-python3 -m nspa.vulnerability_verifier \
+python3 -m nspa.vulnerability_verifier_multi \
   --saber-output-dir outputs/saber/curl \
   --source-root open-source-soft/curl-master \
-  --output outputs/nspa_curl_verified_vulnerabilities.json \
-  --base-url https://你的服务地址/v1 \
+  --output outputs/curl/nspa_curl_verified_vulnerabilities.json \
+  --checkpoint-jsonl outputs/curl/nspa_curl_verified_vulnerabilities.json.checkpoint.json \
+  --workers 1 \
+  --parallel-backend thread \
   --model 你的模型名 \
+  --base-url https://你的服务地址/v1 \
   --api-key-env OPENAI_API_KEY \
-  --max-retries 8 \
-  --request-delay 0.5 \
-  --api-error-policy unknown \
-  --api-error-cooldown 10 \
-  --progress \
+  --timeout 120 \
+  --max-retries 3 \  
+  --api-error-policy unknown \ 
+  --progress \  
   --summary
 ```
 

@@ -1,0 +1,10 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 38, "cl": 12, "fl": "generic/uname.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 50, "cl": 4, "fl": "generic/uname.c" }|False) 
+		  --> ({ "ln": 50, "cl": 4, "fl": "generic/uname.c" }|True) 
+		  --> ({ "ln": 51, "cl": 11, "fl": "generic/uname.c" }|True) 
+		  --> ({ "ln": 54, "cl": 20, "fl": "generic/uname.c" }|True) 
+		  --> ({ "ln": 54, "cl": 14, "fl": "generic/uname.c" }|False) 
+		  --> ({ "ln": 56, "cl": 44, "fl": "generic/uname.c" }|False) 
+		  --> ({ "ln": 56, "cl": 44, "fl": "generic/uname.c" }|True) 
+

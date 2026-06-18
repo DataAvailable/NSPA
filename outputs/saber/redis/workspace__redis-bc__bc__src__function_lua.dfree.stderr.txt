@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 313, "cl": 25, "fl": "function_lua.c" })
+		 double free path: 
+		  --> ({ "ln": 412, "cl": 9, "fl": "function_lua.c" }|False) 
+		  --> ({ "ln": 417, "cl": 9, "fl": "function_lua.c" }|True) 
+		  --> ({ "ln": 289, "cl": 5, "fl": "function_lua.c" }|False) 
+		  --> ({ "ln": 333, "cl": 9, "fl": "function_lua.c" }|False) 
+

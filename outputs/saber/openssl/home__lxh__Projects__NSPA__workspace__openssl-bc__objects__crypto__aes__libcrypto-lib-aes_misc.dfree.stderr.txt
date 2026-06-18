@@ -1,2 +1,0 @@
-OCSP_BASICRESP_delete_ext
-saber: /home/lxh/Projects/NSPA/SVF/svf/lib/SABER/SaberCheckerAPI.cpp:1586: void SVF::SaberCheckerAPI::init(): Assertion `!"duplicate name in ei_pairs"' failed.

@@ -1,0 +1,11 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 20, "cl": 25, "fl": "./ae_epoll.c" })
+		 conditional free path: 
+		  --> ({ "ln": 24, "cl": 9, "fl": "./ae_epoll.c" }|False) 
+		  --> ({ "ln": 24, "cl": 9, "fl": "./ae_epoll.c" }|True) 
+		  --> ({ "ln": 29, "cl": 9, "fl": "./ae_epoll.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 23, "cl": 21, "fl": "./ae_epoll.c" })
+		 conditional free path: 
+		  --> ({ "ln": 29, "cl": 9, "fl": "./ae_epoll.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 42, "cl": 21, "fl": "./ae_epoll.c" })

@@ -1,0 +1,9 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 350, "cl": 12, "fl": "cluster_legacy.c" })
+		 double free path: 
+		  --> ({ "ln": 351, "cl": 5, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 647, "cl": 9, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 648, "cl": 9, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 649, "cl": 29, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 649, "cl": 29, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 649, "cl": 9, "fl": "cluster_legacy.c" }|False) 
+

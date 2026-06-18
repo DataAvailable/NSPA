@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2898, "cl": 11, "fl": "t_zset.c" })
+		 double free path: 
+		  --> ({ "ln": 2962, "cl": 39, "fl": "t_zset.c" }|False) 
+		  --> ({ "ln": 2962, "cl": 39, "fl": "t_zset.c" }|True) 
+		  --> ({ "ln": 2963, "cl": 32, "fl": "t_zset.c" }|False) 
+		  --> ({ "ln": 2963, "cl": 32, "fl": "t_zset.c" }|True) 
+		  --> ({ "ln": 2962, "cl": 24, "fl": "t_zset.c" }|False) 
+

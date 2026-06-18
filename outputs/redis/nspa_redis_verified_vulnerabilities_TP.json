@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "warning_count": 1326,
+    "confirmed_count": 3,
+    "unknown_count": 98,
+    "api_error_unknown_count": 20,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 3,
+    "source_output": "outputs/redis/nspa_redis_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "leak|NeverFree|listpack.c|1221|19|3|workspace__redis-bc__bc__src__listpack.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.8,
+      "rationale": "When len > 3, enc is heap-allocated via zmalloc at line 1169 and is only released at line 1254 (`if (enc != tmp) lp_free(enc)`) on the normal return. The early return at line 1221 (lp_realloc failure) returns NULL without freeing enc, leaking it. The same gap exists at the line 1211 overflow return. Additionally line 1221 uses the realloc anti-pattern `lp = lp_realloc(lp,...)`: on failure lp becomes NULL and the caller loses the reference to the original listpack buffer. Both paths are feasible since lp_realloc is explicitly NULL-checked.",
+      "evidence_lines": [
+        {
+          "file": "src/listpack.c",
+          "line": 1169,
+          "role": "allocation"
+        },
+        {
+          "file": "src/listpack.c",
+          "line": 1211,
+          "role": "return"
+        },
+        {
+          "file": "src/listpack.c",
+          "line": 1221,
+          "role": "condition"
+        },
+        {
+          "file": "src/listpack.c",
+          "line": 1221,
+          "role": "return"
+        },
+        {
+          "file": "src/listpack.c",
+          "line": 1254,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Free the heap-allocated enc before the early returns at lines 1211 and 1221 (e.g. `if (enc != tmp) lp_free(enc);` prior to `return NULL;`), and use a temporary pointer for lp_realloc so the original lp is not lost on failure.",
+      "warning": {
+        "id": "leak|NeverFree|listpack.c|1221|19|3|workspace__redis-bc__bc__src__listpack.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/redis/workspace__redis-bc__bc__src__listpack.leak.stderr.txt",
+        "bc_file": "workspace/redis-bc/bc/src/listpack.bc",
+        "primary": {
+          "file": "listpack.c",
+          "line": 1221,
+          "column": 19
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 1221, \"cl\": 19, \"fl\": \"listpack.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|listpack.c|1221|19|3|workspace__redis-bc__bc__src__listpack.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/redis/workspace__redis-bc__bc__src__listpack.leak.stderr.txt",
+          "bc_file": "workspace/redis-bc/bc/src/listpack.bc",
+          "primary": {
+            "file": "listpack.c",
+            "line": 1221,
+            "column": 19
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 1221, \"cl\": 19, \"fl\": \"listpack.c\" })"
+        },
+        "source_files": [
+          "src/listpack.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/listpack.c",
+            "start_line": 1148,
+            "end_line": 1257,
+            "important_lines": [
+              1221
+            ],
+            "text": "    1148: unsigned char *lpBatchInsert(unsigned char *lp, unsigned char *p, int where,\n    1149:                              listpackEntry *entries, unsigned int len,\n    1150:                              unsigned char **newp)\n    1151: {\n    1152:     assert(where == LP_BEFORE || where == LP_AFTER);\n    1153:     assert(entries != NULL && len > 0);\n    1154: \n    1155:     struct listpackInsertEntry {\n    1156:         int enctype;\n    1157:         uint64_t enclen;\n    1158:         unsigned char intenc[LP_MAX_INT_ENCODING_LEN];\n    1159:         unsigned char backlen[LP_MAX_BACKLEN_SIZE];\n    1160:         unsigned long backlen_size;\n    1161:     };\n    1162: \n    1163:     uint64_t addedlen = 0;       /* The encoded length of the added elements. */\n    1164:     struct listpackInsertEntry tmp[3];  /* Encoded entries */\n    1165:     struct listpackInsertEntry *enc = tmp;\n    1166: \n    1167:     if (len > sizeof(tmp) / sizeof(struct listpackInsertEntry)) {\n    1168:         /* If 'len' is larger than local buffer size, allocate on heap. */\n    1169:         enc = zmalloc(len * sizeof(struct listpackInsertEntry));\n    1170:     }\n    1171: \n    1172:     /* If we need to insert after the current element, we just jump to the\n    1173:      * next element (that could be the EOF one) and handle the case of\n    1174:      * inserting before. So the function will actually deal with just one\n    1175:      * case: LP_BEFORE. */\n    1176:     if (where == LP_AFTER) {\n    1177:         p = lpSkip(p);\n    1178:         where = LP_BEFORE;\n    1179:         ASSERT_INTEGRITY(lp, p);\n    1180:     }\n    1181: \n    1182:     for (unsigned int i = 0; i < len; i++) {\n    1183:         listpackEntry *e = &entries[i];\n    1184:         if (e->sval) {\n    1185:            /* Calling lpEncodeGetType() results into the encoded version of the\n    1186:             * element to be stored into 'intenc' in case it is representable as\n    1187:             * an integer: in that case, the function returns LP_ENCODING_INT.\n    1188:             * Otherwise, if LP_ENCODING_STR is returned, we'll have to call\n    1189:             * lpEncodeString() to actually write the encoded string on place\n    1190:             * later.\n    1191:             *\n    1192:             * Whatever the returned encoding is, 'enclen' is populated with the\n    1193:             * length of the encoded element. */\n    1194:             enc[i].enctype = lpEncodeGetType(e->sval, e->slen,\n    1195:                                              enc[i].intenc, &enc[i].enclen);\n    1196:         } else {\n    1197:             enc[i].enctype = LP_ENCODING_INT;\n    1198:             lpEncodeIntegerGetType(e->lval, enc[i].intenc, &enc[i].enclen);\n    1199:         }\n    1200:         addedlen += enc[i].enclen;\n    1201: \n    1202:         /* We need to also encode the backward-parsable length of the element\n    1203:          * and append it to the end: this allows to traverse the listpack from\n    1204:          * the end to the start. */\n    1205:         enc[i].backlen_size = lpEncodeBacklen(enc[i].backlen, enc[i].enclen);\n    1206:         addedlen += enc[i].backlen_size;\n    1207:     }\n    1208: \n    1209:     uint64_t old_listpack_bytes = lpGetTotalBytes(lp);\n    1210:     uint64_t new_listpack_bytes = old_listpack_bytes + addedlen;\n    1211:     if (new_listpack_bytes > UINT32_MAX) return NULL;\n    1212: \n    1213:     /* Store the offset of the element 'p', so that we can obtain its\n    1214:      * address again after a reallocation. */\n    1215:     unsigned long poff = p-lp;\n    1216:     unsigned char *dst = lp + poff; /* May be updated after reallocation. */\n    1217: \n    1218:     /* Realloc before: we need more room. */\n    1219:     if (new_listpack_bytes > old_listpack_bytes &&\n    1220:         new_listpack_bytes > lp_malloc_size(lp)) {\n>>  1221:         if ((lp = lp_realloc(lp,new_listpack_bytes)) == NULL) return NULL;\n    1222:         dst = lp + poff;\n    1223:     }\n    1224: \n    1225:     /* Setup the listpack relocating the elements to make the exact room\n    1226:      * we need to store the new ones. */\n    1227:     memmove(dst+addedlen,dst,old_listpack_bytes-poff);\n    1228: \n    1229:     for (unsigned int i = 0; i < len; i++) {\n    1230:         listpackEntry *ent = &entries[i];\n    1231: \n    1232:         if (newp)\n    1233:             *newp = dst;\n    1234: \n    1235:         if (enc[i].enctype == LP_ENCODING_INT)\n    1236:             memcpy(dst, enc[i].intenc, enc[i].enclen);\n    1237:         else\n    1238:             lpEncodeString(dst, ent->sval, ent->slen);\n    1239: \n    1240:         dst += enc[i].enclen;\n    1241:         memcpy(dst, enc[i].backlen, enc[i].backlen_size);\n    1242:         dst += enc[i].backlen_size;\n    1243:     }\n    1244: \n    1245:     /* Update header. */\n    1246:     uint32_t num_elements = lpGetNumElements(lp);\n    1247:     if (num_elements != LP_HDR_NUMELE_UNKNOWN) {\n    1248:         if ((int64_t) len > (int64_t) LP_HDR_NUMELE_UNKNOWN - (int64_t) num_elements)\n    1249:             lpSetNumElements(lp, LP_HDR_NUMELE_UNKNOWN);\n    1250:         else\n    1251:             lpSetNumElements(lp,num_elements + len);\n    1252:     }\n    1253:     lpSetTotalBytes(lp,new_listpack_bytes);\n    1254:     if (enc != tmp) lp_free(enc);\n    1255: \n    1256:     return lp;\n    1257: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|listpack.c|1221|19|3|workspace__redis-bc__bc__src__listpack.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "When len > 3, 'enc' is heap-allocated via zmalloc at line 1169. It is only freed at line 1254 (if enc != tmp) on the normal return path. The early returns at line 1211 (new_listpack_bytes > UINT32_MAX) and line 1221 (lp_realloc failure) skip this cleanup, leaking the 'enc' buffer. Both early-return paths are feasible for len > 3, so allocated memory is not released on those paths.",
+      "evidence_lines": [
+        {
+          "file": "src/listpack.c",
+          "line": 1169,
+          "role": "allocation"
+        },
+        {
+          "file": "src/listpack.c",
+          "line": 1211,
+          "role": "return"
+        },
+        {
+          "file": "src/listpack.c",
+          "line": 1221,
+          "role": "return"
+        },
+        {
+          "file": "src/listpack.c",
+          "line": 1254,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Free the heap-allocated 'enc' before each early return: add 'if (enc != tmp) lp_free(enc);' before 'return NULL;' at lines 1211 and 1221.",
+      "warning": {
+        "id": "null-deref|NeverFree|listpack.c|1221|19|3|workspace__redis-bc__bc__src__listpack.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/redis/workspace__redis-bc__bc__src__listpack.null-deref.stderr.txt",
+        "bc_file": "workspace/redis-bc/bc/src/listpack.bc",
+        "primary": {
+          "file": "listpack.c",
+          "line": 1221,
+          "column": 19
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 1221, \"cl\": 19, \"fl\": \"listpack.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|listpack.c|1221|19|3|workspace__redis-bc__bc__src__listpack.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/redis/workspace__redis-bc__bc__src__listpack.null-deref.stderr.txt",
+          "bc_file": "workspace/redis-bc/bc/src/listpack.bc",
+          "primary": {
+            "file": "listpack.c",
+            "line": 1221,
+            "column": 19
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 1221, \"cl\": 19, \"fl\": \"listpack.c\" })"
+        },
+        "source_files": [
+          "src/listpack.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/listpack.c",
+            "start_line": 1148,
+            "end_line": 1257,
+            "important_lines": [
+              1221
+            ],
+            "text": "    1148: unsigned char *lpBatchInsert(unsigned char *lp, unsigned char *p, int where,\n    1149:                              listpackEntry *entries, unsigned int len,\n    1150:                              unsigned char **newp)\n    1151: {\n    1152:     assert(where == LP_BEFORE || where == LP_AFTER);\n    1153:     assert(entries != NULL && len > 0);\n    1154: \n    1155:     struct listpackInsertEntry {\n    1156:         int enctype;\n    1157:         uint64_t enclen;\n    1158:         unsigned char intenc[LP_MAX_INT_ENCODING_LEN];\n    1159:         unsigned char backlen[LP_MAX_BACKLEN_SIZE];\n    1160:         unsigned long backlen_size;\n    1161:     };\n    1162: \n    1163:     uint64_t addedlen = 0;       /* The encoded length of the added elements. */\n    1164:     struct listpackInsertEntry tmp[3];  /* Encoded entries */\n    1165:     struct listpackInsertEntry *enc = tmp;\n    1166: \n    1167:     if (len > sizeof(tmp) / sizeof(struct listpackInsertEntry)) {\n    1168:         /* If 'len' is larger than local buffer size, allocate on heap. */\n    1169:         enc = zmalloc(len * sizeof(struct listpackInsertEntry));\n    1170:     }\n    1171: \n    1172:     /* If we need to insert after the current element, we just jump to the\n    1173:      * next element (that could be the EOF one) and handle the case of\n    1174:      * inserting before. So the function will actually deal with just one\n    1175:      * case: LP_BEFORE. */\n    1176:     if (where == LP_AFTER) {\n    1177:         p = lpSkip(p);\n    1178:         where = LP_BEFORE;\n    1179:         ASSERT_INTEGRITY(lp, p);\n    1180:     }\n    1181: \n    1182:     for (unsigned int i = 0; i < len; i++) {\n    1183:         listpackEntry *e = &entries[i];\n    1184:         if (e->sval) {\n    1185:            /* Calling lpEncodeGetType() results into the encoded version of the\n    1186:             * element to be stored into 'intenc' in case it is representable as\n    1187:             * an integer: in that case, the function returns LP_ENCODING_INT.\n    1188:             * Otherwise, if LP_ENCODING_STR is returned, we'll have to call\n    1189:             * lpEncodeString() to actually write the encoded string on place\n    1190:             * later.\n    1191:             *\n    1192:             * Whatever the returned encoding is, 'enclen' is populated with the\n    1193:             * length of the encoded element. */\n    1194:             enc[i].enctype = lpEncodeGetType(e->sval, e->slen,\n    1195:                                              enc[i].intenc, &enc[i].enclen);\n    1196:         } else {\n    1197:             enc[i].enctype = LP_ENCODING_INT;\n    1198:             lpEncodeIntegerGetType(e->lval, enc[i].intenc, &enc[i].enclen);\n    1199:         }\n    1200:         addedlen += enc[i].enclen;\n    1201: \n    1202:         /* We need to also encode the backward-parsable length of the element\n    1203:          * and append it to the end: this allows to traverse the listpack from\n    1204:          * the end to the start. */\n    1205:         enc[i].backlen_size = lpEncodeBacklen(enc[i].backlen, enc[i].enclen);\n    1206:         addedlen += enc[i].backlen_size;\n    1207:     }\n    1208: \n    1209:     uint64_t old_listpack_bytes = lpGetTotalBytes(lp);\n    1210:     uint64_t new_listpack_bytes = old_listpack_bytes + addedlen;\n    1211:     if (new_listpack_bytes > UINT32_MAX) return NULL;\n    1212: \n    1213:     /* Store the offset of the element 'p', so that we can obtain its\n    1214:      * address again after a reallocation. */\n    1215:     unsigned long poff = p-lp;\n    1216:     unsigned char *dst = lp + poff; /* May be updated after reallocation. */\n    1217: \n    1218:     /* Realloc before: we need more room. */\n    1219:     if (new_listpack_bytes > old_listpack_bytes &&\n    1220:         new_listpack_bytes > lp_malloc_size(lp)) {\n>>  1221:         if ((lp = lp_realloc(lp,new_listpack_bytes)) == NULL) return NULL;\n    1222:         dst = lp + poff;\n    1223:     }\n    1224: \n    1225:     /* Setup the listpack relocating the elements to make the exact room\n    1226:      * we need to store the new ones. */\n    1227:     memmove(dst+addedlen,dst,old_listpack_bytes-poff);\n    1228: \n    1229:     for (unsigned int i = 0; i < len; i++) {\n    1230:         listpackEntry *ent = &entries[i];\n    1231: \n    1232:         if (newp)\n    1233:             *newp = dst;\n    1234: \n    1235:         if (enc[i].enctype == LP_ENCODING_INT)\n    1236:             memcpy(dst, enc[i].intenc, enc[i].enclen);\n    1237:         else\n    1238:             lpEncodeString(dst, ent->sval, ent->slen);\n    1239: \n    1240:         dst += enc[i].enclen;\n    1241:         memcpy(dst, enc[i].backlen, enc[i].backlen_size);\n    1242:         dst += enc[i].backlen_size;\n    1243:     }\n    1244: \n    1245:     /* Update header. */\n    1246:     uint32_t num_elements = lpGetNumElements(lp);\n    1247:     if (num_elements != LP_HDR_NUMELE_UNKNOWN) {\n    1248:         if ((int64_t) len > (int64_t) LP_HDR_NUMELE_UNKNOWN - (int64_t) num_elements)\n    1249:             lpSetNumElements(lp, LP_HDR_NUMELE_UNKNOWN);\n    1250:         else\n    1251:             lpSetNumElements(lp,num_elements + len);\n    1252:     }\n    1253:     lpSetTotalBytes(lp,new_listpack_bytes);\n    1254:     if (enc != tmp) lp_free(enc);\n    1255: \n    1256:     return lp;\n    1257: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|NeverFree|rdb.c|2841|41|16|workspace__redis-bc__bc__src__rdb.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.6,
+      "rationale": "lp is allocated via lpNew(0) at line 2841 just before a loop that parses zipmap entries. In this rdb.c conversion routine the loop body contains corruption/OOM error paths that release dupSearchDict and the original object then 'return NULL', but the freshly allocated listpack 'lp' is not freed on those early-return paths, so it leaks. lp is only ever assigned to o->ptr after the loop completes successfully.",
+      "evidence_lines": [
+        {
+          "file": "src/rdb.c",
+          "line": 2841,
+          "role": "allocation"
+        },
+        {
+          "file": "src/rdb.c",
+          "line": 2846,
+          "role": "allocation"
+        },
+        {
+          "file": "src/rdb.c",
+          "line": 2848,
+          "role": "condition"
+        },
+        {
+          "file": "src/rdb.c",
+          "line": 2836,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Add lpFree(lp) (and lpSafeToAdd/error cleanup) on every error/return path inside the zipmap-to-listpack conversion loop before returning NULL.",
+      "warning": {
+        "id": "leak|NeverFree|rdb.c|2841|41|16|workspace__redis-bc__bc__src__rdb.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/redis/workspace__redis-bc__bc__src__rdb.leak.stderr.txt",
+        "bc_file": "workspace/redis-bc/bc/src/rdb.bc",
+        "primary": {
+          "file": "rdb.c",
+          "line": 2841,
+          "column": 41
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 2841, \"cl\": 41, \"fl\": \"rdb.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|rdb.c|2841|41|16|workspace__redis-bc__bc__src__rdb.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/redis/workspace__redis-bc__bc__src__rdb.leak.stderr.txt",
+          "bc_file": "workspace/redis-bc/bc/src/rdb.bc",
+          "primary": {
+            "file": "rdb.c",
+            "line": 2841,
+            "column": 41
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 2841, \"cl\": 41, \"fl\": \"rdb.c\" })"
+        },
+        "source_files": [
+          "src/rdb.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/rdb.c",
+            "start_line": 2833,
+            "end_line": 2849,
+            "important_lines": [
+              2841
+            ],
+            "text": "    2833:                     zfree(encoded);\n    2834:                     o->ptr = NULL;\n    2835:                     decrRefCount(o);\n    2836:                     return NULL;\n    2837:                 }\n    2838:                 /* Convert to ziplist encoded hash. This must be deprecated\n    2839:                  * when loading dumps created by Redis 2.4 gets deprecated. */\n    2840:                 {\n>>  2841:                     unsigned char *lp = lpNew(0);\n    2842:                     unsigned char *zi = zipmapRewind(o->ptr);\n    2843:                     unsigned char *fstr, *vstr;\n    2844:                     unsigned int flen, vlen;\n    2845:                     unsigned int maxlen = 0;\n    2846:                     dict *dupSearchDict = dictCreate(&hashDictType);\n    2847: \n    2848:                     while ((zi = zipmapNext(zi, &fstr, &flen, &vstr, &vlen)) != NULL) {\n    2849:                         if (flen > maxlen) maxlen = flen;"
+          }
+        ]
+      }
+    }
+  ]
+}

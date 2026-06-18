@@ -1,0 +1,17 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6635, "cl": 21, "fl": "module.c" })
+		 double free path: 
+		  --> ({ "ln": 6608, "cl": 5, "fl": "module.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 6600, "cl": 12, "fl": "module.c" })
+		 double free path: 
+		  --> ({ "ln": 6608, "cl": 5, "fl": "module.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 665, "cl": 29, "fl": "module.c" })
+		 double free path: 
+		  --> ({ "ln": 672, "cl": 5, "fl": "module.c" }|True) 
+		  --> ({ "ln": 844, "cl": 9, "fl": "module.c" }|True) 
+		  --> ({ "ln": 8822, "cl": 5, "fl": "module.c" }|True) 
+		  --> ({ "ln": 8839, "cl": 15, "fl": "module.c" }|True) 
+		  --> ({ "ln": 8839, "cl": 39, "fl": "module.c" }|True) 
+		  --> ({ "ln": 8839, "cl": 13, "fl": "module.c" }|True) 
+

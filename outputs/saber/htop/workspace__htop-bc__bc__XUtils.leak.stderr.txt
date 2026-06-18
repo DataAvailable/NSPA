@@ -1,0 +1,22 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 168, "cl": 18, "fl": "XUtils.c" })
+		 conditional free path: 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|False) 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|True) 
+		  --> ({ "ln": 113, "cl": 14, "fl": "XUtils.c" }|True) 
+		  --> ({ "ln": 204, "cl": 8, "fl": "XUtils.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 163, "cl": 25, "fl": "XUtils.c" })
+		 conditional free path: 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|False) 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|True) 
+		  --> ({ "ln": 113, "cl": 14, "fl": "XUtils.c" }|True) 
+		  --> ({ "ln": 220, "cl": 11, "fl": "XUtils.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 153, "cl": 17, "fl": "XUtils.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 159, "cl": 18, "fl": "XUtils.c" })
+		 conditional free path: 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|False) 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|True) 
+		  --> ({ "ln": 113, "cl": 14, "fl": "XUtils.c" }|True) 
+		  --> ({ "ln": 204, "cl": 8, "fl": "XUtils.c" }|False) 
+

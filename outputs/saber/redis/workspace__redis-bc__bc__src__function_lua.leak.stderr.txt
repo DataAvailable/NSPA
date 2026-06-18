@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 375, "cl": 17, "fl": "function_lua.c" })
+		 conditional free path: 
+		  --> ({ "ln": 412, "cl": 9, "fl": "function_lua.c" }|False) 
+		  --> ({ "ln": 417, "cl": 9, "fl": "function_lua.c" }|True) 
+

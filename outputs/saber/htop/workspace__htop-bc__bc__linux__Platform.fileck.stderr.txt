@@ -1,0 +1,2 @@
+[1;33m	 FileNeverClose :[1;0m file open location at : (CallICFGNode: { "ln": 773, "cl": 23, "fl": "linux/Platform.c" })
+[1;33m	 FileNeverClose :[1;0m file open location at : (CallICFGNode: { "ln": 857, "cl": 23, "fl": "linux/Platform.c" })

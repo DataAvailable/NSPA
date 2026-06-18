@@ -1,6 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 455, "cl": 18, "fl": "libavcodec/jpeg2000.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 324, "cl": 9, "fl": "libavcodec/jpeg2000.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 340, "cl": 18, "fl": "libavcodec/jpeg2000.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 383, "cl": 28, "fl": "libavcodec/jpeg2000.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 330, "cl": 9, "fl": "libavcodec/jpeg2000.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 63, "cl": 15, "fl": "libavcodec/jpeg2000.c" })

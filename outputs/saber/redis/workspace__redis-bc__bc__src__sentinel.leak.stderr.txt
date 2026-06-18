@@ -1,0 +1,15 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 351, "cl": 25, "fl": "sentinel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1749, "cl": 48, "fl": "sentinel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1747, "cl": 43, "fl": "sentinel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 710, "cl": 19, "fl": "sentinel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1748, "cl": 47, "fl": "sentinel.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 774, "cl": 16, "fl": "sentinel.c" })
+		 conditional free path: 
+		  --> ({ "ln": 782, "cl": 9, "fl": "sentinel.c" }|True) 
+		  --> ({ "ln": 787, "cl": 9, "fl": "sentinel.c" }|True) 
+		  --> ({ "ln": 790, "cl": 17, "fl": "sentinel.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 771, "cl": 10, "fl": "sentinel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 709, "cl": 19, "fl": "sentinel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1321, "cl": 10, "fl": "sentinel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1746, "cl": 30, "fl": "sentinel.c" })

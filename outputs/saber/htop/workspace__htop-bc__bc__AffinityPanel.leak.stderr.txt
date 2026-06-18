@@ -1,0 +1,3 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 113, "cl": 21, "fl": "AffinityPanel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 110, "cl": 17, "fl": "AffinityPanel.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 109, "cl": 21, "fl": "AffinityPanel.c" })

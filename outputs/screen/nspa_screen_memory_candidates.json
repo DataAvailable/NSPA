@@ -1,0 +1,3215 @@
+{
+  "metadata": {
+    "raw_candidate_count": 1251,
+    "filtered_candidate_count": 94,
+    "parser_mode": "tree_sitter",
+    "min_score": 2.0,
+    "min_confidence": 0.5
+  },
+  "candidates": [
+    {
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "GrowBitfield",
+      "entity_kind": "function_definition",
+      "signature": "static int GrowBitfield(AclBits * bfp, int len, int delta, int defaultbit)",
+      "return_type": "int",
+      "parameters": [
+        "AclBits * bfp",
+        "int len",
+        "int delta",
+        "int defaultbit"
+      ],
+      "direct_calls": [
+        "ACLBIT",
+        "ACLBYTE",
+        "calloc",
+        "free"
+      ],
+      "start_line": 91,
+      "end_line": 105,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "UserAdd",
+      "entity_kind": "function_definition",
+      "signature": "int UserAdd(char *name, struct acluser **up)",
+      "return_type": "int",
+      "parameters": [
+        "char *name",
+        "struct acluser **up"
+      ],
+      "direct_calls": [
+        "ACLBIT",
+        "ACLBYTE",
+        "AclSetPerm",
+        "FindUserPtr",
+        "GrowBitfield",
+        "calloc",
+        "free",
+        "strcmp",
+        "strncpy"
+      ],
+      "start_line": 142,
+      "end_line": 257,
+      "documentation": "be \"none\", as this represents the NULL-pointer when dealing with groups. He has default rights, determined by umask. Returns: 0 - on success 1 - he is already there -1 - he still does not exist (didn't get memory) =====================================================================",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:GrowBitfield"
+      ],
+      "score": 15.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "UserDel",
+      "entity_kind": "function_definition",
+      "signature": "int UserDel(char *name, struct acluser **up)",
+      "return_type": "int",
+      "parameters": [
+        "char *name",
+        "struct acluser **up"
+      ],
+      "direct_calls": [
+        "ACLBIT",
+        "ACLBYTE",
+        "AclSetPerm",
+        "Detach",
+        "FindUserPtr",
+        "Finit",
+        "UserFreeCopyBuffer",
+        "free"
+      ],
+      "start_line": 269,
+      "end_line": 318,
+      "documentation": "UserDel- Remove a user from the list. Destroy all his permissions and completely detach him from the session. Returns 0 - success -1 - he who does not exist cannot be removed =====================================================================",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:UserFreeCopyBuffer"
+      ],
+      "score": 11.0,
+      "confidence": 1.0,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "UserFreeCopyBuffer",
+      "entity_kind": "function_definition",
+      "signature": "int UserFreeCopyBuffer(struct acluser *u)",
+      "return_type": "int",
+      "parameters": [
+        "struct acluser *u"
+      ],
+      "direct_calls": [
+        "FreePaster",
+        "free"
+      ],
+      "start_line": 330,
+      "end_line": 343,
+      "documentation": "UserFreeCopyBuffer- frees user buffer Also removes any references into the users copybuffer Returns: 0 - if the copy buffer was really deleted. -1 - cannot remove something that does not exist =====================================================================",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreePaster"
+      ],
+      "score": 9.5,
+      "confidence": 0.95,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "NewWindowAcl",
+      "entity_kind": "function_definition",
+      "signature": "int NewWindowAcl(Window *w, struct acluser *u)",
+      "return_type": "int",
+      "parameters": [
+        "Window *w",
+        "struct acluser *u"
+      ],
+      "direct_calls": [
+        "ACLBIT",
+        "ACLBYTE",
+        "GrowBitfield",
+        "free"
+      ],
+      "start_line": 471,
+      "end_line": 490,
+      "documentation": "end of user managing code * This gives the users default rights to the new window w created by u",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:GrowBitfield"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "FreeWindowAcl",
+      "entity_kind": "function_definition",
+      "signature": "void FreeWindowAcl(Window *w)",
+      "return_type": "void",
+      "parameters": [
+        "Window *w"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 492,
+      "end_line": 498,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/ansi.c",
+      "name": "StringEnd",
+      "entity_kind": "function_definition",
+      "signature": "static int StringEnd(Window *win)",
+      "return_type": "int",
+      "parameters": [
+        "Window *win"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "AddStr",
+        "ChangeAKA",
+        "DoCommand",
+        "FindUserPtr",
+        "LAY_DISPLAYS",
+        "MakeStatus",
+        "Parse",
+        "Redisplay",
+        "SaveStr",
+        "SetXtermOSC",
+        "WindowChanged",
+        "atoi",
+        "free",
+        "memmove",
+        "strchr",
+        "strcmp",
+        "strlen",
+        "strncpy"
+      ],
+      "start_line": 1222,
+      "end_line": 1331,
+      "documentation": "Do string processing. Returns -1 if output should be suspended until status is gone.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "negative_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/ansi.c",
+      "name": "MFixLine",
+      "entity_kind": "function_definition",
+      "signature": "static void MFixLine(Window *win, int y, struct mchar *mc)",
+      "return_type": "void",
+      "parameters": [
+        "Window *win",
+        "int y",
+        "struct mchar *mc"
+      ],
+      "direct_calls": [
+        "WMsg",
+        "calloc"
+      ],
+      "start_line": 1908,
+      "end_line": 1941,
+      "documentation": "====================================================================* ====================================================================* Memory subsystem.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "memory_documentation"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/ansi.c",
+      "name": "MScrollV",
+      "entity_kind": "function_definition",
+      "signature": "static void MScrollV(Window *win, int n, int ys, int ye, int bce)",
+      "return_type": "void",
+      "parameters": [
+        "Window *win",
+        "int n",
+        "int ys",
+        "int ye",
+        "int bce"
+      ],
+      "direct_calls": [
+        "MBceLine",
+        "MFindUsedLine",
+        "MScrollV",
+        "Scroll",
+        "WAddLineToHist",
+        "free",
+        "memmove"
+      ],
+      "start_line": 1991,
+      "end_line": 2072,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:MScrollV,WAddLineToHist"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/ansi.c",
+      "name": "WAddLineToHist",
+      "entity_kind": "function_definition",
+      "signature": "static void WAddLineToHist(Window *win, struct mline *ml)",
+      "return_type": "void",
+      "parameters": [
+        "Window *win",
+        "struct mline *ml"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 2209,
+      "end_line": 2250,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/backtick.c",
+      "name": "setbacktick",
+      "entity_kind": "function_definition",
+      "signature": "void setbacktick(int num, int lifespan, int tick, char **cmdv)",
+      "return_type": "void",
+      "parameters": [
+        "int num",
+        "int lifespan",
+        "int tick",
+        "char **cmdv"
+      ],
+      "direct_calls": [
+        "Msg",
+        "close",
+        "evdeq",
+        "evenq",
+        "free",
+        "malloc",
+        "memset",
+        "readpipe",
+        "setbacktick"
+      ],
+      "start_line": 97,
+      "end_line": 155,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:setbacktick"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/canvas.c",
+      "name": "FreePerp",
+      "entity_kind": "function_definition",
+      "signature": "static void FreePerp(Canvas *pcv)",
+      "return_type": "void",
+      "parameters": [
+        "Canvas *pcv"
+      ],
+      "direct_calls": [
+        "LayerCleanupMemory",
+        "free"
+      ],
+      "start_line": 53,
+      "end_line": 79,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:LayerCleanupMemory"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/canvas.c",
+      "name": "FreeCanvas",
+      "entity_kind": "function_definition",
+      "signature": "void FreeCanvas(Canvas *cv)",
+      "return_type": "void",
+      "parameters": [
+        "Canvas *cv"
+      ],
+      "direct_calls": [
+        "FreeCanvas",
+        "Layer2Window",
+        "LayerCleanupMemory",
+        "SetCanvasWindow",
+        "WindowChanged",
+        "evdeq",
+        "free"
+      ],
+      "start_line": 81,
+      "end_line": 126,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreeCanvas,LayerCleanupMemory"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/canvas.c",
+      "name": "AddPerp",
+      "entity_kind": "function_definition",
+      "signature": "static Canvas *AddPerp(Canvas *cv)",
+      "return_type": "Canvas *",
+      "parameters": [
+        "Canvas *cv"
+      ],
+      "direct_calls": [
+        "CanvasInitBlank",
+        "calloc"
+      ],
+      "start_line": 535,
+      "end_line": 569,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "returns_pointer_or_reference"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/display.c",
+      "name": "MakeDisplay",
+      "entity_kind": "function_definition",
+      "signature": "Display *MakeDisplay(char *uname, char *utty, char *term, int fd, pid_t pid, struct mode *Mode)",
+      "return_type": "Display *",
+      "parameters": [
+        "char *uname",
+        "char *utty",
+        "char *term",
+        "int fd",
+        "pid_t pid",
+        "struct mode *Mode"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "FindUserPtr",
+        "Resize_obuf",
+        "UserAdd",
+        "calloc",
+        "evenq",
+        "strncpy"
+      ],
+      "start_line": 172,
+      "end_line": 239,
+      "documentation": "Generate new display, start with a blank layer. The termcap arrays are not initialised here. The new display is placed in the displays list.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "returns_pointer_or_reference",
+        "calls_project_memory_candidate",
+        "project_memory_calls:UserAdd"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/encoding.c",
+      "name": "recode_mline",
+      "entity_kind": "function_definition",
+      "signature": "struct mline *recode_mline(struct mline *ml, int w, int from, int to)",
+      "return_type": "struct mline *",
+      "parameters": [
+        "struct mline *ml",
+        "int w",
+        "int from",
+        "int to"
+      ],
+      "direct_calls": [
+        "malloc",
+        "realloc",
+        "recode_char_dw_to_encoding",
+        "recode_char_to_encoding",
+        "utf8_isdouble"
+      ],
+      "start_line": 476,
+      "end_line": 532,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "returns_pointer_or_reference",
+        "calls_project_memory_candidate",
+        "project_memory_calls:realloc"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/encoding.c",
+      "name": "utf8_handle_comb",
+      "entity_kind": "function_definition",
+      "signature": "void utf8_handle_comb(unsigned int c, struct mchar *mc)",
+      "return_type": "void",
+      "parameters": [
+        "unsigned int c",
+        "struct mchar *mc"
+      ],
+      "direct_calls": [
+        "calloc",
+        "comb_tofront",
+        "free",
+        "malloc",
+        "utf8_isdouble"
+      ],
+      "start_line": 1010,
+      "end_line": 1072,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/encoding.c",
+      "name": "LoadFontTranslation",
+      "entity_kind": "function_definition",
+      "signature": "int LoadFontTranslation(int font, char *file)",
+      "return_type": "int",
+      "parameters": [
+        "int font",
+        "char *file"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "fclose",
+        "free",
+        "getc",
+        "malloc",
+        "secfopen",
+        "sprintf",
+        "strlen"
+      ],
+      "start_line": 1485,
+      "end_line": 1564,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/fileio.c",
+      "name": "CatExtra",
+      "entity_kind": "function_definition",
+      "signature": "static char *CatExtra(char *str1, char *str2)",
+      "return_type": "char *",
+      "parameters": [
+        "char *str1",
+        "char *str2"
+      ],
+      "direct_calls": [
+        "Panic",
+        "malloc",
+        "memmove",
+        "realloc",
+        "strlen"
+      ],
+      "start_line": 56,
+      "end_line": 81,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "returns_pointer_or_reference",
+        "calls_project_memory_candidate",
+        "project_memory_calls:realloc"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/fileio.c",
+      "name": "ReadFile",
+      "entity_kind": "function_definition",
+      "signature": "char *ReadFile(char *filename, int *lenp)",
+      "return_type": "char *",
+      "parameters": [
+        "char *filename",
+        "int *lenp"
+      ],
+      "direct_calls": [
+        "Msg",
+        "fclose",
+        "fread",
+        "free",
+        "fseek",
+        "ftell",
+        "malloc",
+        "secfopen"
+      ],
+      "start_line": 479,
+      "end_line": 521,
+      "documentation": "returns an allocated buffer which holds a copy of the file named filename. lenp (if nonzero) points to a location, where the buffer size should be stored.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 12.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/input.c",
+      "name": "InpProcess",
+      "entity_kind": "function_definition",
+      "signature": "static void InpProcess(char **ppbuf, size_t *plen)",
+      "return_type": "void",
+      "parameters": [
+        "char **ppbuf",
+        "size_t *plen"
+      ],
+      "direct_calls": [
+        "InpAbort",
+        "LClearArea",
+        "LGotoPos",
+        "LPutChar",
+        "SaveStr",
+        "erase_chars",
+        "free",
+        "malloc",
+        "memmove",
+        "strcmp",
+        "strstr"
+      ],
+      "start_line": 176,
+      "end_line": 392,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/layer.c",
+      "name": "InitOverlayPage",
+      "entity_kind": "function_definition",
+      "signature": "int InitOverlayPage(int datasize, const struct LayFuncs *lf, int block)",
+      "return_type": "int",
+      "parameters": [
+        "int datasize",
+        "const struct LayFuncs *lf",
+        "int block"
+      ],
+      "direct_calls": [
+        "KillLayerChain",
+        "LAY_DISPLAYS",
+        "LayRestore",
+        "Layer2Window",
+        "Msg",
+        "RemoveStatus",
+        "calloc",
+        "free"
+      ],
+      "start_line": 789,
+      "end_line": 858,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/layer.c",
+      "name": "LayerCleanupMemory",
+      "entity_kind": "function_definition",
+      "signature": "void LayerCleanupMemory(Layer *layer)",
+      "return_type": "void",
+      "parameters": [
+        "Layer *layer"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 1052,
+      "end_line": 1058,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/layout.c",
+      "name": "FreeLayoutCv",
+      "entity_kind": "function_definition",
+      "signature": "void FreeLayoutCv(Canvas *cv)",
+      "return_type": "void",
+      "parameters": [
+        "Canvas *cv"
+      ],
+      "direct_calls": [
+        "FreeLayoutCv",
+        "free"
+      ],
+      "start_line": 48,
+      "end_line": 62,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreeLayoutCv"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/layout.c",
+      "name": "CreateLayout",
+      "entity_kind": "function_definition",
+      "signature": "Layout *CreateLayout(char *title, int startat)",
+      "return_type": "Layout *",
+      "parameters": [
+        "char *title",
+        "int startat"
+      ],
+      "direct_calls": [
+        "Msg",
+        "SaveStr",
+        "calloc"
+      ],
+      "start_line": 64,
+      "end_line": 93,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "returns_pointer_or_reference",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/layout.c",
+      "name": "RemoveLayout",
+      "entity_kind": "function_definition",
+      "signature": "void RemoveLayout(Layout *lay)",
+      "return_type": "void",
+      "parameters": [
+        "Layout *lay"
+      ],
+      "direct_calls": [
+        "Activate",
+        "FreeLayoutCv",
+        "LoadLayout",
+        "free"
+      ],
+      "start_line": 259,
+      "end_line": 283,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreeLayoutCv"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/layout.c",
+      "name": "RenameLayout",
+      "entity_kind": "function_definition",
+      "signature": "void RenameLayout(Layout *layout, const char *name)",
+      "return_type": "void",
+      "parameters": [
+        "Layout *layout",
+        "const char *name"
+      ],
+      "direct_calls": [
+        "SaveStr",
+        "free"
+      ],
+      "start_line": 334,
+      "end_line": 338,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/list_generic.c",
+      "name": "glist_add_row",
+      "entity_kind": "function_definition",
+      "signature": "ListRow *glist_add_row(ListData *ldata, void *data, ListRow *after)",
+      "return_type": "ListRow *",
+      "parameters": [
+        "ListData *ldata",
+        "void *data",
+        "ListRow *after"
+      ],
+      "direct_calls": [
+        "calloc"
+      ],
+      "start_line": 369,
+      "end_line": 388,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "returns_pointer_or_reference"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/list_generic.c",
+      "name": "glist_remove_rows",
+      "entity_kind": "function_definition",
+      "signature": "void glist_remove_rows(ListData *ldata)",
+      "return_type": "void",
+      "parameters": [
+        "ListData *ldata"
+      ],
+      "direct_calls": [
+        "free",
+        "gl_freerow"
+      ],
+      "start_line": 390,
+      "end_line": 399,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/list_license.c",
+      "name": "gl_License_row",
+      "entity_kind": "function_definition",
+      "signature": "static int gl_License_row(ListData *ldata, ListRow *lrow)",
+      "return_type": "int",
+      "parameters": [
+        "ListData *ldata",
+        "ListRow *lrow"
+      ],
+      "direct_calls": [
+        "calloc",
+        "free",
+        "leftline",
+        "strncpy"
+      ],
+      "start_line": 95,
+      "end_line": 119,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/list_window.c",
+      "name": "gl_Window_remove",
+      "entity_kind": "function_definition",
+      "signature": "static int gl_Window_remove(ListData *ldata, Window *p)",
+      "return_type": "int",
+      "parameters": [
+        "ListData *ldata",
+        "Window *p"
+      ],
+      "direct_calls": [
+        "free",
+        "gl_Window_findrow",
+        "gl_freerow"
+      ],
+      "start_line": 150,
+      "end_line": 173,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/list_window.c",
+      "name": "gl_Window_free",
+      "entity_kind": "function_definition",
+      "signature": "static int gl_Window_free(ListData *ldata)",
+      "return_type": "int",
+      "parameters": [
+        "ListData *ldata"
+      ],
+      "direct_calls": [
+        "Free"
+      ],
+      "start_line": 421,
+      "end_line": 425,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:Free"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/logfile.c",
+      "name": "logfopen",
+      "entity_kind": "function_definition",
+      "signature": "Log *logfopen(char *name, FILE * fp)",
+      "return_type": "Log *",
+      "parameters": [
+        "char *name",
+        "FILE * fp"
+      ],
+      "direct_calls": [
+        "SaveStr",
+        "calloc",
+        "changed_logfile",
+        "free",
+        "lookup_logfile"
+      ],
+      "start_line": 134,
+      "end_line": 166,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/logfile.c",
+      "name": "logfclose",
+      "entity_kind": "function_definition",
+      "signature": "int logfclose(Log *l)",
+      "return_type": "int",
+      "parameters": [
+        "Log *l"
+      ],
+      "direct_calls": [
+        "abort",
+        "fclose",
+        "free"
+      ],
+      "start_line": 175,
+      "end_line": 196,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/mark.c",
+      "name": "MarkProcess",
+      "entity_kind": "function_definition",
+      "signature": "static void MarkProcess(char **inbufp, size_t *inlenp)",
+      "return_type": "void",
+      "parameters": [
+        "char **inbufp",
+        "size_t *inlenp"
+      ],
+      "direct_calls": [
+        "D2W",
+        "ExitOverlayPage",
+        "ISearch",
+        "LAY_CALL_UP",
+        "LGotoPos",
+        "LMsg",
+        "LRefreshAll",
+        "LayProcessMouse",
+        "LayProcessMouseSwitch",
+        "MarkAbort",
+        "MarkScrollDownDisplay",
+        "MarkScrollUpDisplay",
+        "Redisplay",
+        "Search",
+        "UserFreeCopyBuffer",
+        "W2D",
+        "WindowChanged",
+        "WriteFile",
+        "isdigit",
+        "isgraph",
+        "lineend",
+        "linestart",
+        "malloc",
+        "nextchar",
+        "nextword",
+        "realloc",
+        "rem",
+        "revto",
+        "revto_line"
+      ],
+      "start_line": 449,
+      "end_line": 975,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:UserFreeCopyBuffer,realloc"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/mark.c",
+      "name": "FreePaster",
+      "entity_kind": "function_definition",
+      "signature": "void FreePaster(struct paster *pa)",
+      "return_type": "void",
+      "parameters": [
+        "struct paster *pa"
+      ],
+      "direct_calls": [
+        "evdeq",
+        "free"
+      ],
+      "start_line": 1260,
+      "end_line": 1269,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/misc.c",
+      "name": "SaveStr",
+      "entity_kind": "function_definition",
+      "signature": "char *SaveStr(const char *str)",
+      "return_type": "char *",
+      "parameters": [
+        "const char *str"
+      ],
+      "direct_calls": [
+        "Panic",
+        "strdup"
+      ],
+      "start_line": 43,
+      "end_line": 51,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:strdup",
+        "returns_pointer_or_reference"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/misc.c",
+      "name": "SaveStrn",
+      "entity_kind": "function_definition",
+      "signature": "char *SaveStrn(const char *str, size_t n)",
+      "return_type": "char *",
+      "parameters": [
+        "const char *str",
+        "size_t n"
+      ],
+      "direct_calls": [
+        "Panic",
+        "strndup"
+      ],
+      "start_line": 53,
+      "end_line": 61,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:strndup",
+        "returns_pointer_or_reference"
+      ],
+      "score": 5.5,
+      "confidence": 0.55,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "FindKtab",
+      "entity_kind": "function_definition",
+      "signature": "static struct action *FindKtab(char *class, int create)",
+      "return_type": "struct action *",
+      "parameters": [
+        "char *class",
+        "int create"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "Msg",
+        "SaveStr",
+        "malloc",
+        "strcmp",
+        "strlen"
+      ],
+      "start_line": 557,
+      "end_line": 590,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "returns_pointer_or_reference",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "ClearAction",
+      "entity_kind": "function_definition",
+      "signature": "static void ClearAction(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 592,
+      "end_line": 606,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandKill",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandKill(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "FreePseudowin",
+        "Input",
+        "KillWindow",
+        "OutputMsg",
+        "SaveStr",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 1093,
+      "end_line": 1120,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreePseudowin,SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandZmodem",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandZmodem(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "OutputMsg",
+        "SaveStr",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 1166,
+      "end_line": 1204,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandAt",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandAt(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "DoCommand",
+        "GetWindowByNumber",
+        "OutputMsg",
+        "SaveStr",
+        "WindowByNumber",
+        "free",
+        "strlen",
+        "strncmp"
+      ],
+      "start_line": 1250,
+      "end_line": 1395,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandReadreg",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandReadreg(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "FindEncoding",
+        "Input",
+        "OutputMsg",
+        "ReadFile",
+        "copy_reg_fn",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 1397,
+      "end_line": 1454,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ReadFile,copy_reg_fn"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandRegister",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandRegister(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "CheckArgNum",
+        "FindEncoding",
+        "OutputMsg",
+        "SaveStrn",
+        "UserFreeCopyBuffer",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 1456,
+      "end_line": 1500,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStrn,UserFreeCopyBuffer"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandWindowlist",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandWindowlist(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "CheckArgNum",
+        "OutputMsg",
+        "SaveStr",
+        "display_windows",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 2103,
+      "end_line": 2148,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandHistory",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandHistory(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "GetHistory",
+        "Input",
+        "MakePaster",
+        "OutputMsg",
+        "RecodeBuf",
+        "UserFreeCopyBuffer",
+        "free",
+        "malloc",
+        "memmove"
+      ],
+      "start_line": 2186,
+      "end_line": 2318,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:UserFreeCopyBuffer"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandPaste",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandPaste(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "Input",
+        "MakePaster",
+        "OutputMsg",
+        "RecodeBuf",
+        "UserFreeCopyBuffer",
+        "free",
+        "malloc",
+        "memmove"
+      ],
+      "start_line": 2320,
+      "end_line": 2438,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:UserFreeCopyBuffer"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandWritebuf",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandWritebuf(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "FindEncoding",
+        "OutputMsg",
+        "RecodeBuf",
+        "WriteFile",
+        "free",
+        "malloc",
+        "strcmp"
+      ],
+      "start_line": 2440,
+      "end_line": 2484,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandLogtstamp",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandLogtstamp(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "OutputMsg",
+        "ParseSwitch",
+        "SaveStr",
+        "atoi",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 2627,
+      "end_line": 2652,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandTerm",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandTerm(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "MakeTermcap",
+        "OutputMsg",
+        "ParseSaveStr",
+        "free",
+        "strlen",
+        "strncpy"
+      ],
+      "start_line": 2672,
+      "end_line": 2687,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ParseSaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandHardstatus",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandHardstatus(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "AddXChars",
+        "ChangeScreenSize",
+        "OutputMsg",
+        "ParseSwitch",
+        "RefreshHStatus",
+        "RemoveStatus",
+        "SaveStr",
+        "ShowHStatus",
+        "free",
+        "strcmp",
+        "strncmp"
+      ],
+      "start_line": 2898,
+      "end_line": 2967,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandCaption",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandCaption(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "AddXChars",
+        "ChangeScreenSize",
+        "OutputMsg",
+        "RedisplayDisplays",
+        "SaveStr",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 2997,
+      "end_line": 3034,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandSessionname",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandSessionname(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "MakeNewEnv",
+        "OutputMsg",
+        "ParseSaveStr",
+        "WindowChanged",
+        "access",
+        "free",
+        "getpid",
+        "rename",
+        "sprintf",
+        "strchr",
+        "strlen",
+        "strncpy"
+      ],
+      "start_line": 3293,
+      "end_line": 3325,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:MakeNewEnv,ParseSaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandBindkey",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandBindkey(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "CheckArgNum",
+        "ClearAction",
+        "FindCommnr",
+        "OutputMsg",
+        "SaveAction",
+        "SaveStrn",
+        "display_bindkey",
+        "free",
+        "memcmp",
+        "memset",
+        "remap",
+        "strcmp",
+        "xrealloc"
+      ],
+      "start_line": 3497,
+      "end_line": 3625,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ClearAction,SaveAction,SaveStrn,xrealloc"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandAclgrp",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandAclgrp(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "AclLinkUser",
+        "FindUserPtr",
+        "OutputMsg",
+        "free",
+        "sprintf",
+        "strcmp",
+        "strlen"
+      ],
+      "start_line": 3679,
+      "end_line": 3733,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandEncoding",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandEncoding(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "FindEncoding",
+        "LoadFontTranslation",
+        "OutputMsg",
+        "ResetCharsets",
+        "SaveStr",
+        "WinSwitchEncoding",
+        "free",
+        "strcmp"
+      ],
+      "start_line": 3836,
+      "end_line": 3877,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:LoadFontTranslation,SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandPrintcmd",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandPrintcmd(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "OutputMsg",
+        "SaveStr",
+        "free"
+      ],
+      "start_line": 3934,
+      "end_line": 3953,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandDefhstatus",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandDefhstatus(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "AddXChars",
+        "OutputMsg",
+        "ParseSaveStr",
+        "free"
+      ],
+      "start_line": 4000,
+      "end_line": 4016,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ParseSaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandHstatus",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandHstatus(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ParseSaveStr",
+        "WindowChanged",
+        "free"
+      ],
+      "start_line": 4018,
+      "end_line": 4026,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ParseSaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandDefcharset",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandDefcharset(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "AddXChars",
+        "OutputMsg",
+        "SaveStr",
+        "free",
+        "strlen"
+      ],
+      "start_line": 4028,
+      "end_line": 4053,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandEval",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandEval(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ColonFin",
+        "SaveArgs",
+        "free",
+        "strlen"
+      ],
+      "start_line": 4276,
+      "end_line": 4287,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveArgs"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "DoCommandBlankerprg",
+      "entity_kind": "function_definition",
+      "signature": "static void DoCommandBlankerprg(struct action *act)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "OutputMsg",
+        "SaveArgs",
+        "free",
+        "snprintf"
+      ],
+      "start_line": 4348,
+      "end_line": 4373,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveArgs"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "SaveAction",
+      "entity_kind": "function_definition",
+      "signature": "static void SaveAction(struct action *act, int nr, char **args, int *argl)",
+      "return_type": "void",
+      "parameters": [
+        "struct action *act",
+        "int nr",
+        "char **args",
+        "int *argl"
+      ],
+      "direct_calls": [
+        "Panic",
+        "SaveStrn",
+        "malloc",
+        "strlen"
+      ],
+      "start_line": 5321,
+      "end_line": 5348,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStrn"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "SaveArgs",
+      "entity_kind": "function_definition",
+      "signature": "static char **SaveArgs(char **args)",
+      "return_type": "char **",
+      "parameters": [
+        "char **args"
+      ],
+      "direct_calls": [
+        "Panic",
+        "SaveStr",
+        "malloc"
+      ],
+      "start_line": 5350,
+      "end_line": 5363,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 9.5,
+      "confidence": 0.95,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "ParseSaveStr",
+      "entity_kind": "function_definition",
+      "signature": "static int ParseSaveStr(struct action *act, char **var)",
+      "return_type": "int",
+      "parameters": [
+        "struct action *act",
+        "char **var"
+      ],
+      "direct_calls": [
+        "Msg",
+        "SaveStr",
+        "free"
+      ],
+      "start_line": 5594,
+      "end_line": 5605,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "copy_reg_fn",
+      "entity_kind": "function_definition",
+      "signature": "static void copy_reg_fn(char *buf, size_t len, void *data)",
+      "return_type": "void",
+      "parameters": [
+        "char *buf",
+        "size_t len",
+        "void *data"
+      ],
+      "direct_calls": [
+        "Msg",
+        "free",
+        "malloc",
+        "memmove",
+        "memset"
+      ],
+      "start_line": 6644,
+      "end_line": 6668,
+      "documentation": "Asynchronous input functions",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "weak_allocation_name",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "suFin",
+      "entity_kind": "function_definition",
+      "signature": "static void suFin(char *buf, size_t len, void *data)",
+      "return_type": "void",
+      "parameters": [
+        "char *buf",
+        "size_t len",
+        "void *data"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "DoSu",
+        "Input",
+        "Msg",
+        "free",
+        "strcpy",
+        "strncpy"
+      ],
+      "start_line": 6730,
+      "end_line": 6759,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 6.5,
+      "confidence": 0.65,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "InputSu",
+      "entity_kind": "function_definition",
+      "signature": "static int InputSu(struct acluser **up, char *name)",
+      "return_type": "int",
+      "parameters": [
+        "struct acluser **up",
+        "char *name"
+      ],
+      "direct_calls": [
+        "calloc",
+        "strlen",
+        "suFin"
+      ],
+      "start_line": 6761,
+      "end_line": 6774,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "has_output_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:suFin"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/resize.c",
+      "name": "FreeMline",
+      "entity_kind": "function_definition",
+      "signature": "static void FreeMline(struct mline *ml)",
+      "return_type": "void",
+      "parameters": [
+        "struct mline *ml"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 305,
+      "end_line": 318,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/resize.c",
+      "name": "xrealloc",
+      "entity_kind": "function_definition",
+      "signature": "void *xrealloc(void *mem, size_t len)",
+      "return_type": "void *",
+      "parameters": [
+        "void *mem",
+        "size_t len"
+      ],
+      "direct_calls": [
+        "free",
+        "malloc",
+        "realloc"
+      ],
+      "start_line": 434,
+      "end_line": 444,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc,realloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:realloc"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/resize.c",
+      "name": "ChangeWindowSize",
+      "entity_kind": "function_definition",
+      "signature": "int ChangeWindowSize(Window *p, int wi, int he, int hi)",
+      "return_type": "int",
+      "parameters": [
+        "Window *p",
+        "int wi",
+        "int he",
+        "int hi"
+      ],
+      "direct_calls": [
+        "AllocMline",
+        "BcopyMline",
+        "CheckMaxSize",
+        "FreeMline",
+        "KillWindow",
+        "MakeBlankLine",
+        "Msg",
+        "NEWWIN",
+        "OLDWIN",
+        "TelWindowSize",
+        "calloc",
+        "free",
+        "ioctl",
+        "xrealloc"
+      ],
+      "start_line": 458,
+      "end_line": 751,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreeMline,xrealloc"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/resize.c",
+      "name": "FreeAltScreen",
+      "entity_kind": "function_definition",
+      "signature": "void FreeAltScreen(Window *p)",
+      "return_type": "void",
+      "parameters": [
+        "Window *p"
+      ],
+      "direct_calls": [
+        "FreeMline",
+        "free"
+      ],
+      "start_line": 753,
+      "end_line": 773,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreeMline"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/screen.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(int argc, char **argv)",
+      "return_type": "int",
+      "parameters": [
+        "int argc",
+        "char **argv"
+      ],
+      "direct_calls": [
+        "ARRAY_SIZE",
+        "Attach",
+        "Attacher",
+        "CompileKeys",
+        "Ctrl",
+        "FindEncoding",
+        "FindSocket",
+        "FinishRc",
+        "Finit",
+        "GetTTY",
+        "InitBuiltinTabs",
+        "InitKeytab",
+        "InitTerm",
+        "InitTermcap",
+        "InitUtmp",
+        "Kill",
+        "MakeDefaultCanvas",
+        "MakeDisplay",
+        "MakeNewEnv",
+        "MakeServerSocket",
+        "MakeTermcap",
+        "MakeWindow",
+        "Msg",
+        "Panic",
+        "ParseEscape",
+        "RecodeBuf",
+        "RemoveLoginSlot",
+        "SET_GUID",
+        "S_ISDIR",
+        "SaveStr",
+        "SendCmdMessage",
+        "SendCreateMsg",
+        "SetMode",
+        "SetTTY",
+        "SetTtyname",
+        "StartRc",
+        "UserAdd",
+        "UserContext",
+        "UserReturn",
+        "UserStatus",
+        "access",
+        "atoi",
+        "brktty",
+        "chown",
+        "close",
+        "closeallfiles",
+        "display_license",
+        "dup",
+        "eexit",
+        "evenq",
+        "exit",
+        "exit_with_usage",
+        "fcntl",
+        "fork",
+        "free",
+        "freetty",
+        "freopen",
+        "getegid",
+        "getenv",
+        "geteuid",
+        "getgid",
+        "gethostname",
+        "getlogin",
+        "getpid",
+        "getppid",
+        "getpwbyname",
+        "getpwnam",
+        "getpwuid",
+        "getuid",
+        "locale_name",
+        "malloc",
+        "memcpy",
+        "mkdir",
+        "nl_langinfo",
+        "nwin_compose",
+        "poll",
+        "printf",
+        "sched",
+        "secopen",
+        "setlocale",
+        "snprintf",
+        "sprintf",
+        "stat",
+        "strchr",
+        "strcmp",
+        "stripdev",
+        "strlen",
+        "strncmp",
+        "strncpy",
+        "strstr",
+        "umask",
+        "xsignal"
+      ],
+      "start_line": 294,
+      "end_line": 1110,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FindSocket,MakeDisplay,MakeNewEnv,MakeWindow,SaveStr,UserAdd"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/screen.c",
+      "name": "MakeNewEnv",
+      "entity_kind": "function_definition",
+      "signature": "void MakeNewEnv(void)",
+      "return_type": "void",
+      "parameters": [],
+      "direct_calls": [
+        "IsSymbol",
+        "Panic",
+        "free",
+        "malloc",
+        "sprintf",
+        "strlen"
+      ],
+      "start_line": 1446,
+      "end_line": 1472,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/screen.h",
+      "name": "Free",
+      "entity_kind": "function_like_macro",
+      "signature": "#define Free(a)",
+      "return_type": "macro",
+      "parameters": [
+        "a"
+      ],
+      "direct_calls": [
+        "abort",
+        "free"
+      ],
+      "start_line": 40,
+      "end_line": 41,
+      "documentation": "here comes my own Free: jw.",
+      "macro_value": "{if ((a) == NULL) abort(); else free((void *)(a)); (a)=NULL;}",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "memory_documentation",
+        "macro_wraps_memory_primitive"
+      ],
+      "score": 10.0,
+      "confidence": 1.0,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/socket.c",
+      "name": "FindSocket",
+      "entity_kind": "function_definition",
+      "signature": "int FindSocket(int *fdp, int *nfoundp, int *notherp, char *match)",
+      "return_type": "int",
+      "parameters": [
+        "int *fdp",
+        "int *nfoundp",
+        "int *notherp",
+        "char *match"
+      ],
+      "direct_calls": [
+        "MakeClientSocket",
+        "Msg",
+        "Panic",
+        "SaveStr",
+        "close",
+        "closedir",
+        "free",
+        "malloc",
+        "opendir",
+        "printf",
+        "readdir",
+        "sprintf",
+        "stat",
+        "strcmp",
+        "strlen",
+        "strncmp",
+        "unlink",
+        "xsetegid",
+        "xseteuid"
+      ],
+      "start_line": 116,
+      "end_line": 343,
+      "documentation": "The first good socket is stored in fdp and its name is appended to SocketPath. If none exists or fdp is NULL SocketPath is not changed. Returns: number of good sockets.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:SaveStr"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/socket.c",
+      "name": "FinishAttach",
+      "entity_kind": "function_definition",
+      "signature": "static void FinishAttach(Message *m)",
+      "return_type": "void",
+      "parameters": [
+        "Message *m"
+      ],
+      "direct_calls": [
+        "AclCheckPermCmd",
+        "Activate",
+        "DoAction",
+        "FindNiceWindow",
+        "FinishDetach",
+        "FreeDisplay",
+        "GetWindowByNumber",
+        "InitTerm",
+        "InitTermcap",
+        "Kill",
+        "LoadLayout",
+        "MakeDefaultCanvas",
+        "Msg",
+        "RemoveLoginSlot",
+        "ResetIdle",
+        "SetCanvasWindow",
+        "SetForeWindow",
+        "SetUtmp",
+        "ShowWindows",
+        "StartRc",
+        "TtyGrabConsole",
+        "chsock",
+        "display_windows",
+        "free",
+        "strcmp",
+        "xsignal"
+      ],
+      "start_line": 957,
+      "end_line": 1067,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/socket.c",
+      "name": "AskPassword",
+      "entity_kind": "function_definition",
+      "signature": "static void AskPassword(Message *m)",
+      "return_type": "void",
+      "parameters": [
+        "Message *m"
+      ],
+      "direct_calls": [
+        "AddStr",
+        "Panic",
+        "calloc",
+        "free",
+        "snprintf",
+        "strchr",
+        "strndup"
+      ],
+      "start_line": 1116,
+      "end_line": 1144,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,strndup",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/socket.c",
+      "name": "PasswordProcessInput",
+      "entity_kind": "function_definition",
+      "signature": "static void PasswordProcessInput(char *ibuf, size_t ilen)",
+      "return_type": "void",
+      "parameters": [
+        "char *ibuf",
+        "size_t ilen"
+      ],
+      "direct_calls": [
+        "AddStr",
+        "CheckPassword",
+        "Ctrl",
+        "FinishAttach",
+        "FinishDetach",
+        "FreeDisplay",
+        "Kill",
+        "Msg",
+        "free",
+        "memset"
+      ],
+      "start_line": 1249,
+      "end_line": 1311,
+      "documentation": "#endif /* ENABLE_PAM",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FinishAttach"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/termcap.c",
+      "name": "CreateTransTable",
+      "entity_kind": "function_definition",
+      "signature": "int CreateTransTable(char *s)",
+      "return_type": "int",
+      "parameters": [
+        "char *s"
+      ],
+      "direct_calls": [
+        "FreeTransTable",
+        "Msg",
+        "QUOTES",
+        "calloc",
+        "copyarg",
+        "free",
+        "malloc"
+      ],
+      "start_line": 928,
+      "end_line": 1005,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc,malloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 9.0,
+      "confidence": 0.9,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/tests/mallocmock.c",
+      "name": "realloc",
+      "entity_kind": "function_definition",
+      "signature": "void *realloc(void *ptr, size_t size)",
+      "return_type": "void *",
+      "parameters": [
+        "void *ptr",
+        "size_t size"
+      ],
+      "direct_calls": [
+        "__libc_realloc"
+      ],
+      "start_line": 48,
+      "end_line": 55,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "has_output_pointer_parameter"
+      ],
+      "score": 6.0,
+      "confidence": 0.6,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/tests/test-winmsgbuf.c",
+      "name": "main",
+      "entity_kind": "function_definition",
+      "signature": "int main(void)",
+      "return_type": "int",
+      "parameters": [],
+      "direct_calls": [
+        "ASSERT",
+        "ASSERT_GCC",
+        "ASSERT_NOALLOC",
+        "FAILLOC",
+        "FAILLOC_VOID",
+        "STREQ",
+        "free",
+        "malloc",
+        "strcat",
+        "strcpy",
+        "strlen",
+        "wmb_contents",
+        "wmb_create",
+        "wmb_expand",
+        "wmb_free",
+        "wmb_reset",
+        "wmb_size",
+        "wmbc_bytesleft",
+        "wmbc_create",
+        "wmbc_fastfw0",
+        "wmbc_fastfw_end",
+        "wmbc_finish",
+        "wmbc_free",
+        "wmbc_mergewmb",
+        "wmbc_offset",
+        "wmbc_printf",
+        "wmbc_putchar",
+        "wmbc_rewind",
+        "wmbc_strcpy",
+        "wmbc_strncpy"
+      ],
+      "start_line": 49,
+      "end_line": 397,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/viewport.c",
+      "name": "RethinkDisplayViewports",
+      "entity_kind": "function_definition",
+      "signature": "int RethinkDisplayViewports(void)",
+      "return_type": "int",
+      "parameters": [],
+      "direct_calls": [
+        "free",
+        "malloc",
+        "memset"
+      ],
+      "start_line": 33,
+      "end_line": 70,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free"
+      ],
+      "score": 8.0,
+      "confidence": 0.8,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/window.c",
+      "name": "MakeWindow",
+      "entity_kind": "function_definition",
+      "signature": "int MakeWindow(struct NewWindow *newwin)",
+      "return_type": "int",
+      "parameters": [
+        "struct NewWindow *newwin"
+      ],
+      "direct_calls": [
+        "ACLBIT",
+        "ACLBYTE",
+        "ARRAY_SIZE",
+        "AclCheckPermWin",
+        "Activate",
+        "CarefulUtmp",
+        "ChangeWindowSize",
+        "ClosePTY",
+        "DoStartLog",
+        "Filename",
+        "ForkWindow",
+        "FreeWindow",
+        "Msg",
+        "NewWindowAcl",
+        "OpenDevice",
+        "ResetWindow",
+        "SaveStr",
+        "SetCharsets",
+        "SetForeWindow",
+        "SetTimeout",
+        "SetUtmp",
+        "TelOpenAndConnect",
+        "WindowChanged",
+        "WriteString",
+        "add_window_to_list",
+        "calloc",
+        "close",
+        "evenq",
+        "free",
+        "nwin_compose",
+        "strcmp",
+        "strlen",
+        "strncpy",
+        "strrchr"
+      ],
+      "start_line": 480,
+      "end_line": 725,
+      "documentation": "Umask & wlock are set for the user of the display, The display d (if specified) switches to that window.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ChangeWindowSize,FreeWindow,NewWindowAcl,SaveStr"
+      ],
+      "score": 11.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/window.c",
+      "name": "FreeWindow",
+      "entity_kind": "function_definition",
+      "signature": "void FreeWindow(Window *window)",
+      "return_type": "void",
+      "parameters": [
+        "Window *window"
+      ],
+      "direct_calls": [
+        "ChangeWindowSize",
+        "CloseDevice",
+        "FreePaster",
+        "FreePseudowin",
+        "FreeWindowAcl",
+        "KillLayerChain",
+        "LayerCleanupMemory",
+        "RemoveUtmp",
+        "RethinkViewportOffsets",
+        "TtyGrabConsole",
+        "evdeq",
+        "free",
+        "logfclose"
+      ],
+      "start_line": 828,
+      "end_line": 901,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:ChangeWindowSize,FreePaster,FreePseudowin,FreeWindowAcl,LayerCleanupMemory,logfclose"
+      ],
+      "score": 7.5,
+      "confidence": 0.75,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/window.c",
+      "name": "winexec",
+      "entity_kind": "function_definition",
+      "signature": "int winexec(char **av)",
+      "return_type": "int",
+      "parameters": [
+        "char **av"
+      ],
+      "direct_calls": [
+        "ForkWindow",
+        "FreePseudowin",
+        "Msg",
+        "OpenDevice",
+        "calloc",
+        "evdeq",
+        "evenq",
+        "free",
+        "ioctl",
+        "strncpy"
+      ],
+      "start_line": 1231,
+      "end_line": 1355,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "has_output_pointer_parameter",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:FreePseudowin"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/window.c",
+      "name": "FreePseudowin",
+      "entity_kind": "function_definition",
+      "signature": "void FreePseudowin(Window *w)",
+      "return_type": "void",
+      "parameters": [
+        "Window *w"
+      ],
+      "direct_calls": [
+        "ClosePTY",
+        "Msg",
+        "chmod",
+        "chown",
+        "close",
+        "evdeq",
+        "evenq",
+        "fcntl",
+        "free",
+        "ioctl"
+      ],
+      "start_line": 1357,
+      "end_line": 1386,
+      "documentation": "",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_like_object_pointer_parameter"
+      ],
+      "score": 5.0,
+      "confidence": 0.5,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/winmsg.c",
+      "name": "MakeWinMsgEv",
+      "entity_kind": "function_definition",
+      "signature": "char *MakeWinMsgEv(WinMsgBuf *winmsg, char *str, Window *win, int chesc, int padlen, Event *ev, int rec)",
+      "return_type": "char *",
+      "parameters": [
+        "WinMsgBuf *winmsg",
+        "char *str",
+        "Window *win",
+        "int chesc",
+        "int padlen",
+        "Event *ev",
+        "int rec"
+      ],
+      "direct_calls": [
+        "Panic",
+        "WinMsgDoEsc",
+        "WinMsgDoEscEx",
+        "__WinMsgEscEsc_DAY",
+        "__WinMsgEscEsc_HOUR",
+        "__WinMsgEscEsc_MONTH",
+        "__WinMsgEscEsc_TIME",
+        "__WinMsgEscEsc_YEAR",
+        "__WinMsgEscEsc_day",
+        "__WinMsgEscEsc_hour",
+        "__WinMsgEscEsc_month",
+        "__WinMsgEscEsc_time",
+        "__WinMsgEscEsc_year",
+        "calloc",
+        "evdeq",
+        "free",
+        "gettimeofday",
+        "localtime",
+        "pad_expand",
+        "wmb_create",
+        "wmb_reset",
+        "wmbc_create",
+        "wmbc_free",
+        "wmbc_offset",
+        "wmbc_putchar",
+        "wmc_deinit",
+        "wmc_end",
+        "wmc_is_active",
+        "wmc_is_set"
+      ],
+      "start_line": 623,
+      "end_line": 839,
+      "documentation": "TODO: const char *str for safety and reassurance",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:calloc",
+        "calls_standard_free:free",
+        "returns_pointer_or_reference",
+        "release_like_object_pointer_parameter",
+        "calls_project_memory_candidate",
+        "project_memory_calls:wmb_create,wmbc_create,wmbc_free"
+      ],
+      "score": 13.0,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmb_create",
+      "entity_kind": "function_definition",
+      "signature": "WinMsgBuf *wmb_create(void)",
+      "return_type": "WinMsgBuf *",
+      "parameters": [],
+      "direct_calls": [
+        "free",
+        "malloc",
+        "wmb_reset"
+      ],
+      "start_line": 34,
+      "end_line": 49,
+      "documentation": "Allocate and initialize to the empty string a new window message buffer. The return value must be freed using wmbc_free.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "calls_standard_free:free",
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "memory_documentation"
+      ],
+      "score": 14.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator_or_releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmb_expand",
+      "entity_kind": "function_definition",
+      "signature": "size_t wmb_expand(WinMsgBuf *wmb, size_t min)",
+      "return_type": "size_t",
+      "parameters": [
+        "WinMsgBuf *wmb",
+        "size_t min"
+      ],
+      "direct_calls": [
+        "realloc"
+      ],
+      "start_line": 54,
+      "end_line": 79,
+      "documentation": "Attempts to expand the buffer to hold at least MIN bytes. The new size of the buffer is returned, which may be unchanged from the original size if additional memory could not be allocated.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:realloc",
+        "memory_documentation",
+        "calls_project_memory_candidate",
+        "project_memory_calls:realloc"
+      ],
+      "score": 8.5,
+      "confidence": 0.85,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmb_free",
+      "entity_kind": "function_definition",
+      "signature": "void wmb_free(WinMsgBuf *w)",
+      "return_type": "void",
+      "parameters": [
+        "WinMsgBuf *w"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 116,
+      "end_line": 120,
+      "documentation": "Deinitialize and free memory allocated to the given window buffer",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 10.0,
+      "confidence": 1.0,
+      "llm_hint": "releaser"
+    },
+    {
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmbc_create",
+      "entity_kind": "function_definition",
+      "signature": "WinMsgBufContext *wmbc_create(WinMsgBuf *w)",
+      "return_type": "WinMsgBufContext *",
+      "parameters": [
+        "WinMsgBuf *w"
+      ],
+      "direct_calls": [
+        "malloc"
+      ],
+      "start_line": 125,
+      "end_line": 137,
+      "documentation": "Allocate and initialize a buffer context for the given buffer. The return value must be freed using wmbc_free.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_alloc:malloc",
+        "allocation_name",
+        "returns_pointer_or_reference",
+        "memory_documentation"
+      ],
+      "score": 10.5,
+      "confidence": 1.0,
+      "llm_hint": "allocator"
+    },
+    {
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmbc_free",
+      "entity_kind": "function_definition",
+      "signature": "void wmbc_free(WinMsgBufContext *c)",
+      "return_type": "void",
+      "parameters": [
+        "WinMsgBufContext *c"
+      ],
+      "direct_calls": [
+        "free"
+      ],
+      "start_line": 319,
+      "end_line": 322,
+      "documentation": "Deinitializes and frees previously allocated context. The contained buffer must be freed separately; this function will not do so for you.",
+      "macro_value": "",
+      "evidence": [
+        "calls_standard_free:free",
+        "release_name",
+        "release_like_object_pointer_parameter",
+        "memory_documentation"
+      ],
+      "score": 10.0,
+      "confidence": 1.0,
+      "llm_hint": "releaser"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 541, "cl": 23, "fl": "asm/parser.c" })
+		 double free path: 
+		  --> ({ "ln": 403, "cl": 5, "fl": "asm/parser.c" }|True) 
+		  --> ({ "ln": 407, "cl": 13, "fl": "asm/parser.c" }|False) 
+		  --> ({ "ln": 418, "cl": 13, "fl": "asm/parser.c" }|False) 
+		  --> ({ "ln": 421, "cl": 31, "fl": "asm/parser.c" }|True) 
+		  --> ({ "ln": 421, "cl": 20, "fl": "asm/parser.c" }|True) 
+		  --> ({ "ln": 425, "cl": 17, "fl": "asm/parser.c" }|False) 
+		  --> ({ "ln": 429, "cl": 17, "fl": "asm/parser.c" }|False) 
+		  --> ({ "ln": 432, "cl": 24, "fl": "asm/parser.c" }|True) 
+

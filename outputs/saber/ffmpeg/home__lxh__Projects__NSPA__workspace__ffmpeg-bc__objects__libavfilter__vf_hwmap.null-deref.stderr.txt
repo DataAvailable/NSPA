@@ -1,8 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 187, "cl": 33, "fl": "libavfilter/vf_hwmap.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 320, "cl": 11, "fl": "libavfilter/vf_hwmap.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 337, "cl": 32, "fl": "libavfilter/vf_hwmap.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 286, "cl": 15, "fl": "libavfilter/vf_hwmap.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 327, "cl": 26, "fl": "libavfilter/vf_hwmap.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 139, "cl": 33, "fl": "libavfilter/vf_hwmap.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 220, "cl": 29, "fl": "libavfilter/vf_hwmap.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 248, "cl": 27, "fl": "libavfilter/vf_hwmap.c" })

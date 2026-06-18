@@ -1,0 +1,51 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 396, "cl": 14, "fl": "rdb.c" })
+		 double free path: 
+		  --> ({ "ln": 396, "cl": 9, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 402, "cl": 9, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 410, "cl": 9, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 418, "cl": 9, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 419, "cl": 9, "fl": "rdb.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2739, "cl": 17, "fl": "rdb.c" })
+		 double free path: 
+		  --> ({ "ln": 2721, "cl": 9, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2725, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2740, "cl": 30, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2740, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2746, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2751, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2751, "cl": 17, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2754, "cl": 21, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2754, "cl": 21, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2762, "cl": 21, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2776, "cl": 17, "fl": "rdb.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 545, "cl": 19, "fl": "rdb.c" })
+		 double free path: 
+		  --> ({ "ln": 550, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 550, "cl": 17, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 550, "cl": 13, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2740, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2746, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2751, "cl": 17, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2754, "cl": 21, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 3108, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 3117, "cl": 17, "fl": "rdb.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2816, "cl": 13, "fl": "rdb.c" })
+		 double free path: 
+		  --> ({ "ln": 2827, "cl": 9, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2827, "cl": 9, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2827, "cl": 9, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2827, "cl": 9, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2977, "cl": 21, "fl": "rdb.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 311, "cl": 17, "fl": "rdb.c" })
+		 double free path: 
+		  --> ({ "ln": 2740, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2746, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 2751, "cl": 17, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 2754, "cl": 21, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 3108, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 3117, "cl": 17, "fl": "rdb.c" }|True) 
+

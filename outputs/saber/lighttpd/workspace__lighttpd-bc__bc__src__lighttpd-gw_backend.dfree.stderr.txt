@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 171, "cl": 21, "fl": "gw_backend.c" })
+		 double free path: 
+		  --> ({ "ln": 1705, "cl": 25, "fl": "gw_backend.c" }|False) 
+		  --> ({ "ln": 1711, "cl": 25, "fl": "gw_backend.c" }|True) 
+		  --> ({ "ln": 1710, "cl": 25, "fl": "gw_backend.c" }|True) 
+		  --> ({ "ln": 728, "cl": 9, "fl": "gw_backend.c" }|True) 
+

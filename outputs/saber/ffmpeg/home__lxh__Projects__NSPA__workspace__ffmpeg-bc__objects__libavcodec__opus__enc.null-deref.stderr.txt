@@ -1,7 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 617, "cl": 25, "fl": "libavcodec/opus/enc.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 536, "cl": 18, "fl": "libavcodec/opus/enc.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 705, "cl": 16, "fl": "libavcodec/opus/enc.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 671, "cl": 24, "fl": "libavcodec/opus/enc.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 567, "cl": 46, "fl": "libavcodec/opus/enc.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 681, "cl": 20, "fl": "libavcodec/opus/enc.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 708, "cl": 13, "fl": "libavcodec/opus/enc.c" })

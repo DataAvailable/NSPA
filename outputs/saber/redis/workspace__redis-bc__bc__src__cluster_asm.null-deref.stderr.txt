@@ -1,0 +1,19 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1381, "cl": 25, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3445, "cl": 30, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2911, "cl": 15, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 481, "cl": 15, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2440, "cl": 17, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 482, "cl": 15, "fl": "cluster_asm.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1420, "cl": 20, "fl": "cluster_asm.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1440, "cl": 5, "fl": "cluster_asm.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 483, "cl": 15, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2226, "cl": 38, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 480, "cl": 15, "fl": "cluster_asm.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1419, "cl": 19, "fl": "cluster_asm.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1440, "cl": 5, "fl": "cluster_asm.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 479, "cl": 15, "fl": "cluster_asm.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2910, "cl": 15, "fl": "cluster_asm.c" })

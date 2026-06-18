@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 88, "cl": 19, "fl": "sparkline.c" })
+		 conditional free path: 
+		  --> ({ "ln": 93, "cl": 9, "fl": "sparkline.c" }|True) 
+

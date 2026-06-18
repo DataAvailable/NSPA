@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 119, "cl": 12, "fl": "setproctitle.c" })
+		 conditional free path: 
+		  --> ({ "ln": 127, "cl": 6, "fl": "setproctitle.c" }|False) 
+		  --> ({ "ln": 127, "cl": 6, "fl": "setproctitle.c" }|True) 
+		  --> ({ "ln": 134, "cl": 2, "fl": "setproctitle.c" }|False) 
+

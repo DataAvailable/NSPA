@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "warning_count": 436,
+    "confirmed_count": 0,
+    "unknown_count": 16,
+    "api_error_unknown_count": 3,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 0,
+    "source_output": "outputs/lighttpd/nspa_lighttpd_verified_vulnerabilities.json"
+  },
+  "results": []
+}

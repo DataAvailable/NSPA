@@ -1,0 +1,99 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2077, "cl": 26, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 2087, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2095, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2095, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2110, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2110, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2160, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2171, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2171, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 182, "cl": 18, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 198, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2138, "cl": 13, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1159, "cl": 24, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1610, "cl": 24, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 1628, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 1650, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 1650, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 1705, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 906, "cl": 22, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 978, "cl": 33, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 198, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2138, "cl": 13, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2160, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2160, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2171, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2171, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2267, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 934, "cl": 28, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 198, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2138, "cl": 13, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 185, "cl": 17, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 923, "cl": 24, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 962, "cl": 24, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 198, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2138, "cl": 13, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2160, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2160, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2171, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2171, "cl": 19, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2267, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1170, "cl": 24, "fl": "../modules/vector-sets/hnsw.c" })
+		 double free path: 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+

@@ -1,0 +1,54 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2950, "cl": 41, "fl": "rdb.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2951, "cl": 25, "fl": "rdb.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2819, "cl": 13, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2394, "cl": 21, "fl": "rdb.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 371, "cl": 16, "fl": "rdb.c" })
+		 conditional free path: 
+		  --> ({ "ln": 371, "cl": 9, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 373, "cl": 9, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 373, "cl": 9, "fl": "rdb.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 906, "cl": 32, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 879, "cl": 34, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3931, "cl": 20, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2267, "cl": 27, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 868, "cl": 21, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3936, "cl": 15, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3083, "cl": 27, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3635, "cl": 27, "fl": "rdb.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2996, "cl": 41, "fl": "rdb.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2997, "cl": 25, "fl": "rdb.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3287, "cl": 29, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3899, "cl": 29, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2841, "cl": 41, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2364, "cl": 27, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4014, "cl": 34, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2447, "cl": 26, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2517, "cl": 29, "fl": "rdb.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3100, "cl": 17, "fl": "rdb.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3108, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 3108, "cl": 17, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 3117, "cl": 17, "fl": "rdb.c" }|False) 
+		  --> ({ "ln": 3117, "cl": 17, "fl": "rdb.c" }|True) 
+		  --> ({ "ln": 3132, "cl": 17, "fl": "rdb.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2623, "cl": 28, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1944, "cl": 23, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2521, "cl": 26, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2228, "cl": 24, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2442, "cl": 29, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3793, "cl": 27, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 893, "cl": 25, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2633, "cl": 26, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3195, "cl": 26, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3794, "cl": 27, "fl": "rdb.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2217, "cl": 18, "fl": "rdb.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2761, "cl": 22, "fl": "rdb.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2762, "cl": 21, "fl": "rdb.c" }|True) 
+

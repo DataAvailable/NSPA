@@ -1,0 +1,439 @@
+{
+  "metadata": {
+    "warning_count": 150,
+    "confirmed_count": 4,
+    "unknown_count": 7,
+    "api_error_unknown_count": 3,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 4,
+    "source_output": "outputs/screen/nspa_screen_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "null-deref|NeverFree|canvas.c|759|20|1|workspace__screen-bc__bc__canvas.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "null_deref",
+      "confidence": 0.6,
+      "rationale": "calloc() at line 759 is dereferenced immediately at lines 760-761 (cvt->c_slperp->c_slback and CanvasInitBlank) with no NULL check, so allocation failure leads to a null pointer dereference. The memory itself is not leaked: the pointer is stored into the long-lived c_slperp field of the canvas layout tree, so ownership is transferred and it is freed during canvas teardown, making the NeverFree interpretation a false positive. The genuine defect here is the unchecked allocation result.",
+      "evidence_lines": [
+        {
+          "file": "src/canvas.c",
+          "line": 759,
+          "role": "allocation"
+        },
+        {
+          "file": "src/canvas.c",
+          "line": 760,
+          "role": "condition"
+        },
+        {
+          "file": "src/canvas.c",
+          "line": 761,
+          "role": "condition"
+        }
+      ],
+      "fix_suggestion": "Check cvt->c_slperp != NULL after calloc before dereferencing; handle allocation failure gracefully.",
+      "warning": {
+        "id": "null-deref|NeverFree|canvas.c|759|20|1|workspace__screen-bc__bc__canvas.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/screen/workspace__screen-bc__bc__canvas.null-deref.stderr.txt",
+        "bc_file": "workspace/screen-bc/bc/canvas.bc",
+        "primary": {
+          "file": "canvas.c",
+          "line": 759,
+          "column": 20
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 759, \"cl\": 20, \"fl\": \"canvas.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|canvas.c|759|20|1|workspace__screen-bc__bc__canvas.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/screen/workspace__screen-bc__bc__canvas.null-deref.stderr.txt",
+          "bc_file": "workspace/screen-bc/bc/canvas.bc",
+          "primary": {
+            "file": "canvas.c",
+            "line": 759,
+            "column": 20
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 759, \"cl\": 20, \"fl\": \"canvas.c\" })"
+        },
+        "source_files": [
+          "src/canvas.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/canvas.c",
+            "start_line": 736,
+            "end_line": 773,
+            "important_lines": [
+              759
+            ],
+            "text": "     736: void DupLayoutCv(Canvas *cvf, Canvas *cvt, bool save)\n     737: {\n     738: \twhile (cvf) {\n     739: \t\tcvt->c_slorient = cvf->c_slorient;\n     740: \t\tcvt->c_slweight = cvf->c_slweight;\n     741: \t\tif (cvf == D_forecv)\n     742: \t\t\tD_forecv = cvt;\n     743: \t\tif (!save) {\n     744: \t\t\tcvt->c_display = display;\n     745: \t\t\tif (!cvf->c_slperp) {\n     746: \t\t\t\tcvt->c_captev.type = EV_TIMEOUT;\n     747: \t\t\t\tcvt->c_captev.data = (char *)cvt;\n     748: \t\t\t\tcvt->c_captev.handler = cv_winid_fn;\n     749: \t\t\t\tcvt->c_blank.l_cvlist = NULL;\n     750: \t\t\t\tcvt->c_blank.l_layfn = &BlankLf;\n     751: \t\t\t\tcvt->c_blank.l_bottom = &cvt->c_blank;\n     752: \t\t\t}\n     753: \t\t\tcvt->c_layer = cvf->c_layer;\n     754: \t\t} else {\n     755: \t\t\tWindow *p = cvf->c_layer ? Layer2Window(cvf->c_layer) : NULL;\n     756: \t\t\tcvt->c_layer = p ? &p->w_layer : NULL;\n     757: \t\t}\n     758: \t\tif (cvf->c_slperp) {\n>>   759: \t\t\tcvt->c_slperp = calloc(1, sizeof(Canvas));\n     760: \t\t\tcvt->c_slperp->c_slback = cvt;\n     761: \t\t\tCanvasInitBlank(cvt->c_slperp);\n     762: \t\t\tDupLayoutCv(cvf->c_slperp, cvt->c_slperp, save);\n     763: \t\t}\n     764: \t\tif (cvf->c_slnext) {\n     765: \t\t\tcvt->c_slnext = calloc(1, sizeof(Canvas));\n     766: \t\t\tcvt->c_slnext->c_slprev = cvt;\n     767: \t\t\tcvt->c_slnext->c_slback = cvt->c_slback;\n     768: \t\t\tCanvasInitBlank(cvt->c_slnext);\n     769: \t\t}\n     770: \t\tcvf = cvf->c_slnext;\n     771: \t\tcvt = cvt->c_slnext;\n     772: \t}\n     773: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|layout.c|82|19|0|workspace__screen-bc__bc__layout.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "null_deref",
+      "confidence": 0.78,
+      "rationale": "calloc at line 81 can return NULL on allocation failure, and line 82 immediately dereferences lay (lay->lay_title) with no NULL check, causing a potential null-pointer dereference. No guard exists between the allocation and the first use.",
+      "evidence_lines": [
+        {
+          "file": "src/layout.c",
+          "line": 81,
+          "role": "allocation"
+        },
+        {
+          "file": "src/layout.c",
+          "line": 82,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "After calloc, check if (!lay) and return NULL (or handle the failure) before dereferencing lay.",
+      "warning": {
+        "id": "null-deref|NeverFree|layout.c|82|19|0|workspace__screen-bc__bc__layout.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/screen/workspace__screen-bc__bc__layout.null-deref.stderr.txt",
+        "bc_file": "workspace/screen-bc/bc/layout.bc",
+        "primary": {
+          "file": "layout.c",
+          "line": 82,
+          "column": 19
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 82, \"cl\": 19, \"fl\": \"layout.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|layout.c|82|19|0|workspace__screen-bc__bc__layout.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/screen/workspace__screen-bc__bc__layout.null-deref.stderr.txt",
+          "bc_file": "workspace/screen-bc/bc/layout.bc",
+          "primary": {
+            "file": "layout.c",
+            "line": 82,
+            "column": 19
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 82, \"cl\": 19, \"fl\": \"layout.c\" })"
+        },
+        "source_files": [
+          "src/layout.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/layout.c",
+            "start_line": 64,
+            "end_line": 93,
+            "important_lines": [
+              82
+            ],
+            "text": "      64: Layout *CreateLayout(char *title, int startat)\n      65: {\n      66: \tLayout *lay, **pl;\n      67: \tint i;\n      68: \n      69: \tif (startat >= MAXLAY || startat < 0)\n      70: \t\tstartat = 0;\n      71: \tfor (i = startat;;) {\n      72: \t\tif (!laytab[i])\n      73: \t\t\tbreak;\n      74: \t\tif (++i == MAXLAY)\n      75: \t\t\ti = 0;\n      76: \t\tif (i == startat) {\n      77: \t\t\tMsg(0, \"No more layouts\\n\");\n      78: \t\t\treturn NULL;\n      79: \t\t}\n      80: \t}\n      81: \tlay = calloc(1, sizeof(Layout));\n>>    82: \tlay->lay_title = SaveStr(title);\n      83: \tlay->lay_autosave = 1;\n      84: \tlay->lay_number = i;\n      85: \tlaytab[i] = lay;\n      86: \tlay->lay_next = NULL;\n      87: \n      88: \tpl = &layouts;\n      89: \twhile (*pl)\n      90: \t\tpl = &(*pl)->lay_next;\n      91: \t*pl = lay;\n      92: \treturn lay;\n      93: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|resize.c|512|18|1|workspace__screen-bc__bc__resize.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.78,
+      "rationale": "nhlines is allocated at line 512 (calloc) and, on the nomem error path, is only freed at line 746 inside the `if (nmlines)` block opened at line 738. If the function reaches nomem while nmlines is NULL but nhlines was already successfully allocated (a typical case: nhlines is allocated at 512, then a later nmlines allocation fails and gotos nomem, or nmlines is otherwise NULL), the entire cleanup block is skipped and nhlines leaks. The nhlines free is incorrectly nested under the nmlines guard rather than standing on its own. KillWindow(p) only frees p->w_hlines, which is not equal to nhlines on this path, so the buffer is not reclaimed.",
+      "evidence_lines": [
+        {
+          "file": "src/resize.c",
+          "line": 512,
+          "role": "allocation"
+        },
+        {
+          "file": "src/resize.c",
+          "line": 738,
+          "role": "condition"
+        },
+        {
+          "file": "src/resize.c",
+          "line": 745,
+          "role": "condition"
+        },
+        {
+          "file": "src/resize.c",
+          "line": 746,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Move the `if (nhlines && p->w_hlines != nhlines) free(nhlines);` check outside the `if (nmlines)` block so nhlines is freed on the nomem path regardless of nmlines.",
+      "warning": {
+        "id": "leak|PartialLeak|resize.c|512|18|1|workspace__screen-bc__bc__resize.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/screen/workspace__screen-bc__bc__resize.leak.stderr.txt",
+        "bc_file": "workspace/screen-bc/bc/resize.bc",
+        "primary": {
+          "file": "resize.c",
+          "line": 512,
+          "column": 18
+        },
+        "path": [
+          {
+            "file": "resize.c",
+            "line": 738,
+            "column": 6,
+            "branch": "True"
+          },
+          {
+            "file": "resize.c",
+            "line": 739,
+            "column": 3,
+            "branch": "True"
+          },
+          {
+            "file": "resize.c",
+            "line": 740,
+            "column": 10,
+            "branch": "True"
+          },
+          {
+            "file": "resize.c",
+            "line": 745,
+            "column": 7,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 512, \"cl\": 18, \"fl\": \"resize.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 738, \"cl\": 6, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 739, \"cl\": 3, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 740, \"cl\": 10, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 745, \"cl\": 7, \"fl\": \"resize.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|resize.c|512|18|1|workspace__screen-bc__bc__resize.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/screen/workspace__screen-bc__bc__resize.leak.stderr.txt",
+          "bc_file": "workspace/screen-bc/bc/resize.bc",
+          "primary": {
+            "file": "resize.c",
+            "line": 512,
+            "column": 18
+          },
+          "path": [
+            {
+              "file": "resize.c",
+              "line": 738,
+              "column": 6,
+              "branch": "True"
+            },
+            {
+              "file": "resize.c",
+              "line": 739,
+              "column": 3,
+              "branch": "True"
+            },
+            {
+              "file": "resize.c",
+              "line": 740,
+              "column": 10,
+              "branch": "True"
+            },
+            {
+              "file": "resize.c",
+              "line": 745,
+              "column": 7,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 512, \"cl\": 18, \"fl\": \"resize.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 738, \"cl\": 6, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 739, \"cl\": 3, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 740, \"cl\": 10, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 745, \"cl\": 7, \"fl\": \"resize.c\" }|True)"
+        },
+        "source_files": [
+          "src/resize.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/resize.c",
+            "start_line": 504,
+            "end_line": 520,
+            "important_lines": [
+              512
+            ],
+            "text": "     504: \t\t\tfy -= he;\n     505: \t\t\tty -= he;\n     506: \t\t\tncx = p->w_x;\n     507: \t\t\tncy = p->w_y;\n     508: \t\t\tnaka = p->w_autoaka;\n     509: \t\t}\n     510: \t}\n     511: \tif (hi) {\n>>   512: \t\tif ((nhlines = calloc(hi, sizeof(struct mline))) == NULL) {\n     513: \t\t\tMsg(0, \"No memory for history buffer - turned off\");\n     514: \t\t\thi = 0;\n     515: \t\t\tty = he - 1;\n     516: \t\t}\n     517: \t}\n     518: \n     519: \t/* special case: cursor is at magic margin position */\n     520: \taddone = 0;"
+          },
+          {
+            "file": "src/resize.c",
+            "start_line": 730,
+            "end_line": 753,
+            "important_lines": [
+              738,
+              739,
+              740,
+              745
+            ],
+            "text": "     730: #ifdef ENABLE_TELNET\n     731: \tif (p->w_type == W_TYPE_TELNET)\n     732: \t\tTelWindowSize(p);\n     733: #endif\n     734: \n     735: \treturn 0;\n     736: \n     737: nomem:\n>>   738: \tif (nmlines) {\n>>   739: \t\tfor (ty = he + hi - 1; ty >= 0; ty--) {\n>>   740: \t\t\tmlt = NEWWIN(ty);\n     741: \t\t\tFreeMline(mlt);\n     742: \t\t}\n     743: \t\tif (nmlines && p->w_mlines != nmlines)\n     744: \t\t\tfree((char *)nmlines);\n>>   745: \t\tif (nhlines && p->w_hlines != nhlines)\n     746: \t\t\tfree((char *)nhlines);\n     747: \t}\n     748: \tKillWindow(p);\n     749: \tMsg(0, \"%s\", strnomem);\n     750: \treturn -1;\n     751: }\n     752: \n     753: void FreeAltScreen(Window *p)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|resize.c|512|18|1|workspace__screen-bc__bc__resize.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.62,
+      "rationale": "nhlines is allocated at line 512 via calloc. In the nomem cleanup block, the free of nhlines (line 745-746) is nested inside the `if (nmlines)` guard opened at line 738. On any feasible path where nmlines is NULL/0 but nhlines was successfully allocated, the entire cleanup block is skipped and nhlines is never freed, producing a partial leak. The two resources have independent lifetimes, so guarding nhlines cleanup on nmlines is incorrect.",
+      "evidence_lines": [
+        {
+          "file": "src/resize.c",
+          "line": 512,
+          "role": "allocation"
+        },
+        {
+          "file": "src/resize.c",
+          "line": 738,
+          "role": "condition"
+        },
+        {
+          "file": "src/resize.c",
+          "line": 745,
+          "role": "condition"
+        },
+        {
+          "file": "src/resize.c",
+          "line": 746,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Move the `if (nhlines && p->w_hlines != nhlines) free(nhlines);` cleanup outside the `if (nmlines)` block so nhlines is freed independently of nmlines.",
+      "warning": {
+        "id": "null-deref|PartialLeak|resize.c|512|18|1|workspace__screen-bc__bc__resize.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/screen/workspace__screen-bc__bc__resize.null-deref.stderr.txt",
+        "bc_file": "workspace/screen-bc/bc/resize.bc",
+        "primary": {
+          "file": "resize.c",
+          "line": 512,
+          "column": 18
+        },
+        "path": [
+          {
+            "file": "resize.c",
+            "line": 738,
+            "column": 6,
+            "branch": "True"
+          },
+          {
+            "file": "resize.c",
+            "line": 739,
+            "column": 3,
+            "branch": "True"
+          },
+          {
+            "file": "resize.c",
+            "line": 740,
+            "column": 10,
+            "branch": "True"
+          },
+          {
+            "file": "resize.c",
+            "line": 745,
+            "column": 7,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 512, \"cl\": 18, \"fl\": \"resize.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 738, \"cl\": 6, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 739, \"cl\": 3, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 740, \"cl\": 10, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 745, \"cl\": 7, \"fl\": \"resize.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|resize.c|512|18|1|workspace__screen-bc__bc__resize.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/screen/workspace__screen-bc__bc__resize.null-deref.stderr.txt",
+          "bc_file": "workspace/screen-bc/bc/resize.bc",
+          "primary": {
+            "file": "resize.c",
+            "line": 512,
+            "column": 18
+          },
+          "path": [
+            {
+              "file": "resize.c",
+              "line": 738,
+              "column": 6,
+              "branch": "True"
+            },
+            {
+              "file": "resize.c",
+              "line": 739,
+              "column": 3,
+              "branch": "True"
+            },
+            {
+              "file": "resize.c",
+              "line": 740,
+              "column": 10,
+              "branch": "True"
+            },
+            {
+              "file": "resize.c",
+              "line": 745,
+              "column": 7,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 512, \"cl\": 18, \"fl\": \"resize.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 738, \"cl\": 6, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 739, \"cl\": 3, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 740, \"cl\": 10, \"fl\": \"resize.c\" }|True) \n\t\t  --> ({ \"ln\": 745, \"cl\": 7, \"fl\": \"resize.c\" }|True)"
+        },
+        "source_files": [
+          "src/resize.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "src/resize.c",
+            "start_line": 504,
+            "end_line": 520,
+            "important_lines": [
+              512
+            ],
+            "text": "     504: \t\t\tfy -= he;\n     505: \t\t\tty -= he;\n     506: \t\t\tncx = p->w_x;\n     507: \t\t\tncy = p->w_y;\n     508: \t\t\tnaka = p->w_autoaka;\n     509: \t\t}\n     510: \t}\n     511: \tif (hi) {\n>>   512: \t\tif ((nhlines = calloc(hi, sizeof(struct mline))) == NULL) {\n     513: \t\t\tMsg(0, \"No memory for history buffer - turned off\");\n     514: \t\t\thi = 0;\n     515: \t\t\tty = he - 1;\n     516: \t\t}\n     517: \t}\n     518: \n     519: \t/* special case: cursor is at magic margin position */\n     520: \taddone = 0;"
+          },
+          {
+            "file": "src/resize.c",
+            "start_line": 730,
+            "end_line": 753,
+            "important_lines": [
+              738,
+              739,
+              740,
+              745
+            ],
+            "text": "     730: #ifdef ENABLE_TELNET\n     731: \tif (p->w_type == W_TYPE_TELNET)\n     732: \t\tTelWindowSize(p);\n     733: #endif\n     734: \n     735: \treturn 0;\n     736: \n     737: nomem:\n>>   738: \tif (nmlines) {\n>>   739: \t\tfor (ty = he + hi - 1; ty >= 0; ty--) {\n>>   740: \t\t\tmlt = NEWWIN(ty);\n     741: \t\t\tFreeMline(mlt);\n     742: \t\t}\n     743: \t\tif (nmlines && p->w_mlines != nmlines)\n     744: \t\t\tfree((char *)nmlines);\n>>   745: \t\tif (nhlines && p->w_hlines != nhlines)\n     746: \t\t\tfree((char *)nhlines);\n     747: \t}\n     748: \tKillWindow(p);\n     749: \tMsg(0, \"%s\", strnomem);\n     750: \treturn -1;\n     751: }\n     752: \n     753: void FreeAltScreen(Window *p)"
+          }
+        ]
+      }
+    }
+  ]
+}

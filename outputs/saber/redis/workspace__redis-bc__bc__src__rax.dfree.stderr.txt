@@ -1,0 +1,10 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 87, "cl": 31, "fl": "rax.c" })
+		 double free path: 
+		  --> ({ "ln": 1044, "cl": 9, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 119, "cl": 9, "fl": "rax.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 78, "cl": 25, "fl": "rax.c" })
+		 double free path: 
+		  --> ({ "ln": 1044, "cl": 9, "fl": "rax.c" }|True) 
+		  --> ({ "ln": 119, "cl": 9, "fl": "rax.c" }|True) 
+

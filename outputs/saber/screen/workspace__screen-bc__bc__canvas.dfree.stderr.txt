@@ -1,0 +1,3 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 539, "cl": 13, "fl": "canvas.c" })
+		 double free path: 
+

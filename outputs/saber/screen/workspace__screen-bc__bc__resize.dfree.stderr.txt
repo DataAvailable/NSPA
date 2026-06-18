@@ -1,0 +1,59 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 356, "cl": 23, "fl": "resize.c" })
+		 double free path: 
+		  --> ({ "ln": 738, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 311, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 315, "cl": 6, "fl": "resize.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 344, "cl": 20, "fl": "resize.c" })
+		 double free path: 
+		  --> ({ "ln": 738, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 311, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 315, "cl": 6, "fl": "resize.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 338, "cl": 20, "fl": "resize.c" })
+		 double free path: 
+		  --> ({ "ln": 738, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 311, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 315, "cl": 6, "fl": "resize.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 497, "cl": 19, "fl": "resize.c" })
+		 double free path: 
+		  --> ({ "ln": 497, "cl": 8, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 743, "cl": 7, "fl": "resize.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 512, "cl": 18, "fl": "resize.c" })
+		 double free path: 
+		  --> ({ "ln": 738, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 745, "cl": 7, "fl": "resize.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 350, "cl": 23, "fl": "resize.c" })
+		 double free path: 
+		  --> ({ "ln": 738, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 311, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 315, "cl": 6, "fl": "resize.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 385, "cl": 22, "fl": "resize.c" })
+		 double free path: 
+		  --> ({ "ln": 738, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 311, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 315, "cl": 6, "fl": "resize.c" }|True) 
+

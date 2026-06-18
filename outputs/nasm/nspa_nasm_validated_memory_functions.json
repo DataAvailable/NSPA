@@ -1,0 +1,3765 @@
+{
+  "metadata": {
+    "validated_count": 107,
+    "kept_count": 95,
+    "min_llm_confidence": 0.5,
+    "model": "claude-opus-4-8",
+    "base_url": "https://api.vveai.com/v1",
+    "checkpoint": "outputs/nasm/nspa_nasm_validated_memory_functions.json.checkpoint.jsonl"
+  },
+  "functions": [
+    {
+      "id": "nasm|asm/error.c|nasm_free_error|static void nasm_free_error(struct nasm_errtext *et)",
+      "project": "nasm",
+      "file": "asm/error.c",
+      "name": "nasm_free_error",
+      "signature": "static void nasm_free_error(struct nasm_errtext *et)",
+      "category": "releaser",
+      "confidence": 0.8,
+      "reason": "Frees error text struct passed in via nasm_free; releases caller-owned memory.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/error.c",
+        "name": "nasm_free_error",
+        "entity_kind": "function_definition",
+        "signature": "static void nasm_free_error(struct nasm_errtext *et)",
+        "return_type": "void",
+        "parameters": [
+          "struct nasm_errtext *et"
+        ],
+        "direct_calls": [
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/error.c|nasm_free_error|static void nasm_free_error(struct nasm_errtext *et)"
+      }
+    },
+    {
+      "id": "nasm|asm/labels.c|perm_copy|static char *perm_copy(const char *string)",
+      "project": "nasm",
+      "file": "asm/labels.c",
+      "name": "perm_copy",
+      "signature": "static char *perm_copy(const char *string)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates buffer via perm_alloc and returns copy of string to caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/labels.c",
+        "name": "perm_copy",
+        "entity_kind": "function_definition",
+        "signature": "static char *perm_copy(const char *string)",
+        "return_type": "char *",
+        "parameters": [
+          "const char *string"
+        ],
+        "direct_calls": [
+          "memcpy",
+          "perm_alloc",
+          "strlen"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:perm_alloc"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/labels.c|perm_copy|static char *perm_copy(const char *string)"
+      }
+    },
+    {
+      "id": "nasm|asm/labels.c|perm_alloc|static char * safe_alloc perm_alloc(size_t len)",
+      "project": "nasm",
+      "file": "asm/labels.c",
+      "name": "perm_alloc",
+      "signature": "static char * safe_alloc perm_alloc(size_t len)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocates memory via nasm_malloc and returns pointer; safe_alloc attribute.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/labels.c",
+        "name": "perm_alloc",
+        "entity_kind": "function_definition",
+        "signature": "static char * safe_alloc perm_alloc(size_t len)",
+        "return_type": "char *",
+        "parameters": [
+          "size_t len"
+        ],
+        "direct_calls": [
+          "nasm_malloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/labels.c|perm_alloc|static char * safe_alloc perm_alloc(size_t len)"
+      }
+    },
+    {
+      "id": "nasm|asm/nasm.c|nasm_quote_filename|static char *nasm_quote_filename(const char *fn)",
+      "project": "nasm",
+      "file": "asm/nasm.c",
+      "name": "nasm_quote_filename",
+      "signature": "static char *nasm_quote_filename(const char *fn)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Returns newly allocated buffer with quoted filename; doc confirms allocation.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/nasm.c",
+        "name": "nasm_quote_filename",
+        "entity_kind": "function_definition",
+        "signature": "static char *nasm_quote_filename(const char *fn)",
+        "return_type": "char *",
+        "parameters": [
+          "const char *fn"
+        ],
+        "direct_calls": [
+          "nasm_isquote",
+          "nasm_quote",
+          "nasm_strdup",
+          "strlen"
+        ],
+        "documentation": "It is considered necessary if any one of these is true: 1. The filename contains control characters; 2. The filename starts or ends with a space or quote mark; 3. The filename contains more than one space in a row; 4. The filename is empty. The filename is returned in a newly allocated buffer.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_quote"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/nasm.c|nasm_quote_filename|static char *nasm_quote_filename(const char *fn)"
+      }
+    },
+    {
+      "id": "nasm|asm/parser.c|free_eops|static void free_eops(extop *e)",
+      "project": "nasm",
+      "file": "asm/parser.c",
+      "name": "free_eops",
+      "signature": "static void free_eops(extop *e)",
+      "category": "releaser",
+      "confidence": 0.75,
+      "reason": "Recursively frees extop nodes via nasm_free; releases caller-owned list.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/parser.c",
+        "name": "free_eops",
+        "entity_kind": "function_definition",
+        "signature": "static void free_eops(extop *e)",
+        "return_type": "void",
+        "parameters": [
+          "extop *e"
+        ],
+        "direct_calls": [
+          "free_eops",
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/parser.c|free_eops|static void free_eops(extop *e)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_mmacro|static void free_mmacro(MMacro *m)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_mmacro",
+      "signature": "static void free_mmacro(MMacro *m)",
+      "category": "destroyer",
+      "confidence": 0.8,
+      "reason": "Ends lifetime of whole MMacro object, releasing nested lists/tokens via free_llist/free_tlist.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_mmacro",
+        "entity_kind": "function_definition",
+        "signature": "static void free_mmacro(MMacro *m)",
+        "return_type": "void",
+        "parameters": [
+          "MMacro *m"
+        ],
+        "direct_calls": [
+          "clear_mmacro",
+          "free_llist",
+          "free_tlist",
+          "nasm_assert",
+          "nasm_delete",
+          "nasm_free"
+        ],
+        "documentation": "Free an MMacro",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_llist,free_tlist,nasm_free"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_mmacro|static void free_mmacro(MMacro *m)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|dup_text|static char *dup_text(const struct Token *t)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "dup_text",
+      "signature": "static char *dup_text(const struct Token *t)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocates new buffer via nasm_malloc and returns copy of token text.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "dup_text",
+        "entity_kind": "function_definition",
+        "signature": "static char *dup_text(const struct Token *t)",
+        "return_type": "char *",
+        "parameters": [
+          "const struct Token *t"
+        ],
+        "direct_calls": [
+          "memcpy",
+          "nasm_malloc",
+          "tok_text"
+        ],
+        "documentation": "Allocate a new buffer containing a copy of the text field of the token.",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 9.0,
+        "filter_confidence": 0.9,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|dup_text|static char *dup_text(const struct Token *t)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|make_tok_num|static Token *make_tok_num(Token *next, int64_t val)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "make_tok_num",
+      "signature": "static Token *make_tok_num(Token *next, int64_t val)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Creates and returns new Token(s) via new_Token to caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "make_tok_num",
+        "entity_kind": "function_definition",
+        "signature": "static Token *make_tok_num(Token *next, int64_t val)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token *next",
+          "int64_t val"
+        ],
+        "direct_calls": [
+          "make_tok_char",
+          "new_Token",
+          "snprintf"
+        ],
+        "documentation": "Create a numeric token, with possible - token in front",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|make_tok_num|static Token *make_tok_num(Token *next, int64_t val)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|make_tok_num_radix|static Token * make_tok_num_radix(Token *next, int64_t val, char radix, bool uns)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "make_tok_num_radix",
+      "signature": "static Token * make_tok_num_radix(Token *next, int64_t val, char radix, bool uns)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Creates and returns new numeric Token via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "make_tok_num_radix",
+        "entity_kind": "function_definition",
+        "signature": "static Token * make_tok_num_radix(Token *next, int64_t val, char radix, bool uns)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token *next",
+          "int64_t val",
+          "char radix",
+          "bool uns"
+        ],
+        "direct_calls": [
+          "make_tok_char",
+          "new_Token",
+          "numstr",
+          "radix_letter"
+        ],
+        "documentation": "Create a numeric token with specified radix and signedness; prefix the number with 0<radix> if a radix letter is specified, otherwise generate a decimal constant without prefix.",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|make_tok_num_radix|static Token * make_tok_num_radix(Token *next, int64_t val, char radix, bool uns)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|make_tok_qstr_len|static Token *make_tok_qstr_len(Token *next, const char *str, size_t len)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "make_tok_qstr_len",
+      "signature": "static Token *make_tok_qstr_len(Token *next, const char *str, size_t len)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Creates and returns a new quoted-string Token via new_Token_free.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "make_tok_qstr_len",
+        "entity_kind": "function_definition",
+        "signature": "static Token *make_tok_qstr_len(Token *next, const char *str, size_t len)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token *next",
+          "const char *str",
+          "size_t len"
+        ],
+        "direct_calls": [
+          "nasm_quote",
+          "new_Token_free"
+        ],
+        "documentation": "Create a quoted string token",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token_free"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|make_tok_qstr_len|static Token *make_tok_qstr_len(Token *next, const char *str, size_t len)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|make_tok_char|static Token *make_tok_char(Token *next, char op)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "make_tok_char",
+      "signature": "static Token *make_tok_char(Token *next, char op)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Creates and returns a new single-char operator Token via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "make_tok_char",
+        "entity_kind": "function_definition",
+        "signature": "static Token *make_tok_char(Token *next, char op)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token *next",
+          "char op"
+        ],
+        "direct_calls": [
+          "new_Token"
+        ],
+        "documentation": "Create a single-character operator token",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|make_tok_char|static Token *make_tok_char(Token *next, char op)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|new_Token|static Token *new_Token(Token * next, enum token_type type, const char *text, size_t txtlen)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "new_Token",
+      "signature": "static Token *new_Token(Token * next, enum token_type type, const char *text, size_t txtlen)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocates a new Token via nasm_malloc/nasm_zalloc and returns it to caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "new_Token",
+        "entity_kind": "function_definition",
+        "signature": "static Token *new_Token(Token * next, enum token_type type, const char *text, size_t txtlen)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token * next",
+          "enum token_type type",
+          "const char *text",
+          "size_t txtlen"
+        ],
+        "direct_calls": [
+          "alloc_Token",
+          "memcpy",
+          "nasm_malloc",
+          "nasm_zalloc",
+          "tok_check_len",
+          "tok_strlen"
+        ],
+        "documentation": "this function creates a new Token and passes a pointer to it back to the caller. It sets the type, text, and next pointer elements.",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|new_Token|static Token *new_Token(Token * next, enum token_type type, const char *text, size_t txtlen)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|new_Token_free|static Token *new_Token_free(Token * next, enum token_type type, char *text, size_t txtlen)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "new_Token_free",
+      "signature": "static Token *new_Token_free(Token * next, enum token_type type, char *text, size_t txtlen)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Primary interface allocates and returns a new Token; it also takes over/frees the input text, but returning a new owned object dominates.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "new_Token_free",
+        "entity_kind": "function_definition",
+        "signature": "static Token *new_Token_free(Token * next, enum token_type type, char *text, size_t txtlen)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token * next",
+          "enum token_type type",
+          "char *text",
+          "size_t txtlen"
+        ],
+        "direct_calls": [
+          "alloc_Token",
+          "memcpy",
+          "nasm_free",
+          "tok_check_len"
+        ],
+        "documentation": "Same as new_Token(), but text belongs to the new token and is either taken over or freed. This function MUST be called with valid txt and txtlen, unlike new_Token().",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "release_name",
+          "returns_pointer_or_reference",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 13.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "nasm|asm/preproc.c|new_Token_free|static Token *new_Token_free(Token * next, enum token_type type, char *text, size_t txtlen)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|dup_Token|static Token *dup_Token(Token *next, const Token *src)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "dup_Token",
+      "signature": "static Token *dup_Token(Token *next, const Token *src)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates a new Token via alloc_Token/nasm_malloc and returns a duplicate.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "dup_Token",
+        "entity_kind": "function_definition",
+        "signature": "static Token *dup_Token(Token *next, const Token *src)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token *next",
+          "const Token *src"
+        ],
+        "direct_calls": [
+          "alloc_Token",
+          "memcpy",
+          "nasm_malloc",
+          "unlikely"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|dup_Token|static Token *dup_Token(Token *next, const Token *src)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_Token|static Token *free_Token(Token *t)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_Token",
+      "signature": "static Token *free_Token(Token *t)",
+      "category": "releaser",
+      "confidence": 0.9,
+      "reason": "Frees a single Token passed by the caller and returns its next pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_Token",
+        "entity_kind": "function_definition",
+        "signature": "static Token *free_Token(Token *t)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token *t"
+        ],
+        "direct_calls": [
+          "nasm_assert",
+          "nasm_zero"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "returns_pointer_or_reference",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_Token|static Token *free_Token(Token *t)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|do_delete_Token|static Token *do_delete_Token(Token **tp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "do_delete_Token",
+      "signature": "static Token *do_delete_Token(Token **tp)",
+      "category": "releaser",
+      "confidence": 0.9,
+      "reason": "Frees the Token via free_Token through an output pointer and nulls it.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "do_delete_Token",
+        "entity_kind": "function_definition",
+        "signature": "static Token *do_delete_Token(Token **tp)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token **tp"
+        ],
+        "direct_calls": [
+          "free_Token"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_Token"
+        ],
+        "filter_score": 9.5,
+        "filter_confidence": 0.95,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|do_delete_Token|static Token *do_delete_Token(Token **tp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|delete_Token|#define delete_Token(tp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "delete_Token",
+      "signature": "#define delete_Token(tp)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "Macro wrapper that delegates to do_delete_Token to release a Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "delete_Token",
+        "entity_kind": "function_like_macro",
+        "signature": "#define delete_Token(tp)",
+        "return_type": "macro",
+        "parameters": [
+          "tp"
+        ],
+        "direct_calls": [
+          "do_delete_Token"
+        ],
+        "documentation": "",
+        "macro_value": "do_delete_Token(&(tp))",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:do_delete_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|delete_Token|#define delete_Token(tp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_tlist|static void free_tlist(Token *list)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_tlist",
+      "signature": "static void free_tlist(Token *list)",
+      "category": "releaser",
+      "confidence": 0.92,
+      "reason": "Frees a caller-owned linked list of tokens.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_tlist",
+        "entity_kind": "function_definition",
+        "signature": "static void free_tlist(Token *list)",
+        "return_type": "void",
+        "parameters": [
+          "Token *list"
+        ],
+        "direct_calls": [
+          "free_Token"
+        ],
+        "documentation": "Free a linked list of tokens.",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_Token"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_tlist|static void free_tlist(Token *list)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|do_delete_tlist|static void do_delete_tlist(Token **listp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "do_delete_tlist",
+      "signature": "static void do_delete_tlist(Token **listp)",
+      "category": "releaser",
+      "confidence": 0.88,
+      "reason": "Frees the token list via free_tlist through an output pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "do_delete_tlist",
+        "entity_kind": "function_definition",
+        "signature": "static void do_delete_tlist(Token **listp)",
+        "return_type": "void",
+        "parameters": [
+          "Token **listp"
+        ],
+        "direct_calls": [
+          "free_tlist"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_tlist"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|do_delete_tlist|static void do_delete_tlist(Token **listp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|delete_tlist|#define delete_tlist(tp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "delete_tlist",
+      "signature": "#define delete_tlist(tp)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "Macro wrapper delegating to do_delete_tlist to release a token list.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "delete_tlist",
+        "entity_kind": "function_like_macro",
+        "signature": "#define delete_tlist(tp)",
+        "return_type": "macro",
+        "parameters": [
+          "tp"
+        ],
+        "direct_calls": [
+          "do_delete_tlist"
+        ],
+        "documentation": "",
+        "macro_value": "do_delete_tlist(&(tp))",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:do_delete_tlist"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|delete_tlist|#define delete_tlist(tp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_line|static void free_line(Line *l)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_line",
+      "signature": "static void free_line(Line *l)",
+      "category": "releaser",
+      "confidence": 0.75,
+      "reason": "Frees a Line node and its nested token list; acts as a free of a caller-owned object.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_line",
+        "entity_kind": "function_definition",
+        "signature": "static void free_line(Line *l)",
+        "return_type": "void",
+        "parameters": [
+          "Line *l"
+        ],
+        "direct_calls": [
+          "free_tlist",
+          "nasm_free",
+          "put_mmacro"
+        ],
+        "documentation": "Free a line",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_tlist,nasm_free"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_line|static void free_line(Line *l)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_llist|static void free_llist(Line *list)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_llist",
+      "signature": "static void free_llist(Line *list)",
+      "category": "releaser",
+      "confidence": 0.9,
+      "reason": "Frees a caller-owned linked list of Line objects.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_llist",
+        "entity_kind": "function_definition",
+        "signature": "static void free_llist(Line *list)",
+        "return_type": "void",
+        "parameters": [
+          "Line *list"
+        ],
+        "direct_calls": [
+          "free_line",
+          "list_for_each_safe"
+        ],
+        "documentation": "Free a linked list of lines.",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_line"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_llist|static void free_llist(Line *list)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_tlist_array|static void free_tlist_array(Token **array, size_t nlists)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_tlist_array",
+      "signature": "static void free_tlist_array(Token **array, size_t nlists)",
+      "category": "releaser",
+      "confidence": 0.92,
+      "reason": "Frees an array of token lists and the array itself.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_tlist_array",
+        "entity_kind": "function_definition",
+        "signature": "static void free_tlist_array(Token **array, size_t nlists)",
+        "return_type": "void",
+        "parameters": [
+          "Token **array",
+          "size_t nlists"
+        ],
+        "direct_calls": [
+          "free_tlist",
+          "nasm_free"
+        ],
+        "documentation": "Free an array of linked lists of tokens",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_tlist,nasm_free"
+        ],
+        "filter_score": 10.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_tlist_array|static void free_tlist_array(Token **array, size_t nlists)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|do_delete_tlist_array|static void do_delete_tlist_array(Token ***arrayp, size_t nlist)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "do_delete_tlist_array",
+      "signature": "static void do_delete_tlist_array(Token ***arrayp, size_t nlist)",
+      "category": "releaser",
+      "confidence": 0.88,
+      "reason": "Frees the token-list array via free_tlist_array through an output pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "do_delete_tlist_array",
+        "entity_kind": "function_definition",
+        "signature": "static void do_delete_tlist_array(Token ***arrayp, size_t nlist)",
+        "return_type": "void",
+        "parameters": [
+          "Token ***arrayp",
+          "size_t nlist"
+        ],
+        "direct_calls": [
+          "free_tlist_array"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_tlist_array"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|do_delete_tlist_array|static void do_delete_tlist_array(Token ***arrayp, size_t nlist)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|delete_tlist_array|#define delete_tlist_array(ap,nl)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "delete_tlist_array",
+      "signature": "#define delete_tlist_array(ap,nl)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "Macro wrapper delegating to do_delete_tlist_array to release the array.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "delete_tlist_array",
+        "entity_kind": "function_like_macro",
+        "signature": "#define delete_tlist_array(ap,nl)",
+        "return_type": "macro",
+        "parameters": [
+          "ap",
+          "nl"
+        ],
+        "direct_calls": [
+          "do_delete_tlist_array"
+        ],
+        "documentation": "",
+        "macro_value": "do_delete_tlist_array(&(ap),nl)",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:do_delete_tlist_array"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|delete_tlist_array|#define delete_tlist_array(ap,nl)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|dup_tlist|static Token *dup_tlist(const Token *list, Token ***tailp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "dup_tlist",
+      "signature": "static Token *dup_tlist(const Token *list, Token ***tailp)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocates a duplicate token list and returns it to the caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "dup_tlist",
+        "entity_kind": "function_definition",
+        "signature": "static Token *dup_tlist(const Token *list, Token ***tailp)",
+        "return_type": "Token *",
+        "parameters": [
+          "const Token *list",
+          "Token ***tailp"
+        ],
+        "direct_calls": [
+          "dup_Token",
+          "list_for_each"
+        ],
+        "documentation": "Duplicate a linked list of tokens.",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:dup_Token"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|dup_tlist|static Token *dup_tlist(const Token *list, Token ***tailp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|dup_tlistn|static Token *dup_tlistn(const Token *list, size_t cnt, Token ***tailp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "dup_tlistn",
+      "signature": "static Token *dup_tlistn(const Token *list, size_t cnt, Token ***tailp)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocates a bounded duplicate token list and returns it.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "dup_tlistn",
+        "entity_kind": "function_definition",
+        "signature": "static Token *dup_tlistn(const Token *list, size_t cnt, Token ***tailp)",
+        "return_type": "Token *",
+        "parameters": [
+          "const Token *list",
+          "size_t cnt",
+          "Token ***tailp"
+        ],
+        "direct_calls": [
+          "dup_Token",
+          "list_for_each"
+        ],
+        "documentation": "Duplicate a linked list of tokens with a maximum count",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:dup_Token"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|dup_tlistn|static Token *dup_tlistn(const Token *list, size_t cnt, Token ***tailp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|dup_tlist_reverse|static Token *dup_tlist_reverse(const Token *list, Token *tail)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "dup_tlist_reverse",
+      "signature": "static Token *dup_tlist_reverse(const Token *list, Token *tail)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates a reversed duplicate token list and returns it.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "dup_tlist_reverse",
+        "entity_kind": "function_definition",
+        "signature": "static Token *dup_tlist_reverse(const Token *list, Token *tail)",
+        "return_type": "Token *",
+        "parameters": [
+          "const Token *list",
+          "Token *tail"
+        ],
+        "direct_calls": [
+          "dup_Token",
+          "list_for_each"
+        ],
+        "documentation": "Duplicate a linked list of tokens in reverse order",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:dup_Token"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|dup_tlist_reverse|static Token *dup_tlist_reverse(const Token *list, Token *tail)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|new_mmacro|static MMacro *new_mmacro(void)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "new_mmacro",
+      "signature": "static MMacro *new_mmacro(void)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocates a new MMacro via nasm_new and returns the pointer to the caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "new_mmacro",
+        "entity_kind": "function_definition",
+        "signature": "static MMacro *new_mmacro(void)",
+        "return_type": "MMacro *",
+        "parameters": [],
+        "direct_calls": [
+          "nasm_new"
+        ],
+        "documentation": "Allocate a new MMacro. This does not claim a refcount; the appropriate get_mmacro() calls need to be added.",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "memory_documentation"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|new_mmacro|static MMacro *new_mmacro(void)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_mmacro_list|static void free_mmacro_list(MMacro **list_p)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_mmacro_list",
+      "signature": "static void free_mmacro_list(MMacro **list_p)",
+      "category": "destroyer",
+      "confidence": 0.6,
+      "reason": "Walks and frees an entire linked list of MMacro objects via free_mmacro; container/list destruction.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_mmacro_list",
+        "entity_kind": "function_definition",
+        "signature": "static void free_mmacro_list(MMacro **list_p)",
+        "return_type": "void",
+        "parameters": [
+          "MMacro **list_p"
+        ],
+        "direct_calls": [
+          "free_mmacro",
+          "list_for_each_safe",
+          "nasm_nonfatal"
+        ],
+        "documentation": "Unconditionally free a list of MMacros; used on final cleanup",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_mmacro"
+        ],
+        "filter_score": 10.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_mmacro_list|static void free_mmacro_list(MMacro **list_p)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_smacro_members|static void free_smacro_members(SMacro *s)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_smacro_members",
+      "signature": "static void free_smacro_members(SMacro *s)",
+      "category": "releaser",
+      "confidence": 0.8,
+      "reason": "Frees the internal fields/members of an SMacro without destroying the struct itself.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_smacro_members",
+        "entity_kind": "function_definition",
+        "signature": "static void free_smacro_members(SMacro *s)",
+        "return_type": "void",
+        "parameters": [
+          "SMacro *s"
+        ],
+        "direct_calls": [
+          "delete_tlist",
+          "free_tlist",
+          "nasm_free"
+        ],
+        "documentation": "Clear or free an SMacro",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_tlist,nasm_free"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_smacro_members|static void free_smacro_members(SMacro *s)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_smacro|static void free_smacro(SMacro *s)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_smacro",
+      "signature": "static void free_smacro(SMacro *s)",
+      "category": "destroyer",
+      "confidence": 0.6,
+      "reason": "Frees nested members then the whole SMacro object; interface is full object destruction.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_smacro",
+        "entity_kind": "function_definition",
+        "signature": "static void free_smacro(SMacro *s)",
+        "return_type": "void",
+        "parameters": [
+          "SMacro *s"
+        ],
+        "direct_calls": [
+          "free_smacro_members",
+          "nasm_free"
+        ],
+        "documentation": "Free an SMacro",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_smacro_members,nasm_free"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_smacro|static void free_smacro(SMacro *s)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_mmacro_table|static void free_mmacro_table(struct hash_table *mmt)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_mmacro_table",
+      "signature": "static void free_mmacro_table(struct hash_table *mmt)",
+      "category": "destroyer",
+      "confidence": 0.75,
+      "reason": "Destroys a hash table container, freeing all contained mmacro lists and the table itself.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_mmacro_table",
+        "entity_kind": "function_definition",
+        "signature": "static void free_mmacro_table(struct hash_table *mmt)",
+        "return_type": "void",
+        "parameters": [
+          "struct hash_table *mmt"
+        ],
+        "direct_calls": [
+          "free_mmacro_list",
+          "hash_for_each",
+          "hash_free",
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_mmacro_list,nasm_free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_mmacro_table|static void free_mmacro_table(struct hash_table *mmt)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_macros|static void free_macros(void)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_macros",
+      "signature": "static void free_macros(void)",
+      "category": "destroyer",
+      "confidence": 0.5,
+      "reason": "Tears down global macro tables (mmacro/smacro), destroying subsystem state on cleanup.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_macros",
+        "entity_kind": "function_definition",
+        "signature": "static void free_macros(void)",
+        "return_type": "void",
+        "parameters": [],
+        "direct_calls": [
+          "check_mmacro_refcounts",
+          "free_mmacro_table",
+          "free_smacro_table"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:free_mmacro_table"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_macros|static void free_macros(void)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_Blocks|static void free_Blocks(void)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_Blocks",
+      "signature": "static void free_Blocks(void)",
+      "category": "releaser",
+      "confidence": 0.55,
+      "reason": "Iterates a global block list and frees each block via nasm_free.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_Blocks",
+        "entity_kind": "function_definition",
+        "signature": "static void free_Blocks(void)",
+        "return_type": "void",
+        "parameters": [],
+        "direct_calls": [
+          "list_for_each_safe",
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_Blocks|static void free_Blocks(void)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|inc_fopen_search|static FILE *inc_fopen_search(const char *file, char **slpath, enum incopen_mode *omp, enum file_flags fmode)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "inc_fopen_search",
+      "signature": "static FILE *inc_fopen_search(const char *file, char **slpath, enum incopen_mode *omp, enum file_flags fmode)",
+      "category": "allocator",
+      "confidence": 0.55,
+      "reason": "Opens a file (returns owned FILE*) and allocates the resolved path string into the slpath output parameter.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "inc_fopen_search",
+        "entity_kind": "function_definition",
+        "signature": "static FILE *inc_fopen_search(const char *file, char **slpath, enum incopen_mode *omp, enum file_flags fmode)",
+        "return_type": "FILE *",
+        "parameters": [
+          "const char *file",
+          "char **slpath",
+          "enum incopen_mode *omp",
+          "enum file_flags fmode"
+        ],
+        "direct_calls": [
+          "nasm_catfile",
+          "nasm_file_exists",
+          "nasm_free",
+          "nasm_open_read",
+          "strlist_head"
+        ],
+        "documentation": "This is conducts a full pathname search",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|inc_fopen_search|static FILE *inc_fopen_search(const char *file, char **slpath, enum incopen_mode *omp, enum file_flags fmode)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|inc_fopen|static FILE *inc_fopen(const char *file, struct strlist *dhead, const struct file_hash_entry **found_fhe, enum incopen_mode omode, enum file_flags fmode)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "inc_fopen",
+      "signature": "static FILE *inc_fopen(const char *file, struct strlist *dhead, const struct file_hash_entry **found_fhe, enum incopen_mode omode, enum file_flags fmode)",
+      "category": "allocator",
+      "confidence": 0.5,
+      "reason": "Opens and returns a FILE* handle to the caller; internal nasm_free is temporary cleanup.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "inc_fopen",
+        "entity_kind": "function_definition",
+        "signature": "static FILE *inc_fopen(const char *file, struct strlist *dhead, const struct file_hash_entry **found_fhe, enum incopen_mode omode, enum file_flags fmode)",
+        "return_type": "FILE *",
+        "parameters": [
+          "const char *file",
+          "struct strlist *dhead",
+          "const struct file_hash_entry **found_fhe",
+          "enum incopen_mode omode",
+          "enum file_flags fmode"
+        ],
+        "direct_calls": [
+          "hash_add",
+          "hash_find",
+          "inc_fopen_search",
+          "nasm_free",
+          "nasm_new",
+          "nasm_nonfatal",
+          "nasm_open_read",
+          "nasm_realpath",
+          "nasm_strdup",
+          "pass_count",
+          "strcmp",
+          "strerror",
+          "strlist_add"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|inc_fopen|static FILE *inc_fopen(const char *file, struct strlist *dhead, const struct file_hash_entry **found_fhe, enum incopen_mode omode, enum file_flags fmode)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|tlist_filename|static Token *tlist_filename(Token **tp, Token **otp, const char *dname)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "tlist_filename",
+      "signature": "static Token *tlist_filename(Token **tp, Token **otp, const char *dname)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Creates and returns a new Token (via dup_Token) containing the filename string.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "tlist_filename",
+        "entity_kind": "function_definition",
+        "signature": "static Token *tlist_filename(Token **tp, Token **otp, const char *dname)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token **tp",
+          "Token **otp",
+          "const char *dname"
+        ],
+        "direct_calls": [
+          "dup_Token",
+          "expand_smacro_noreset",
+          "nasm_nonfatal",
+          "nasm_warn",
+          "skip_white",
+          "tok_string",
+          "unquote_token_cstr"
+        ],
+        "documentation": "Expand a token list that is expected to contain a filename string. Returns a new token containing a TOK_INTERNAL_STR with the given filename, or NULL on error. If the argument \"*otp\" is set, set that to point to the actual quoted string token.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:dup_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|tlist_filename|static Token *tlist_filename(Token **tp, Token **otp, const char *dname)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|pp_do_pathsearch|static Token *pp_do_pathsearch(Token **tp, const char *dname)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "pp_do_pathsearch",
+      "signature": "static Token *pp_do_pathsearch(Token **tp, const char *dname)",
+      "category": "allocator",
+      "confidence": 0.6,
+      "reason": "Returns a newly created token (make_tok_qstr/steal_Token); deletes are internal cleanup.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "pp_do_pathsearch",
+        "entity_kind": "function_definition",
+        "signature": "static Token *pp_do_pathsearch(Token **tp, const char *dname)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token **tp",
+          "const char *dname"
+        ],
+        "direct_calls": [
+          "delete_Token",
+          "inc_fopen",
+          "make_tok_qstr",
+          "steal_Token",
+          "tlist_filename",
+          "tok_text"
+        ],
+        "documentation": "This implements the %pathsearch directive and %pathsearch() function. Returns a new token.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:delete_Token,steal_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|pp_do_pathsearch|static Token *pp_do_pathsearch(Token **tp, const char *dname)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|pp_do_depend|static Token *pp_do_depend(Token **tp, const char *dname)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "pp_do_depend",
+      "signature": "static Token *pp_do_depend(Token **tp, const char *dname)",
+      "category": "allocator",
+      "confidence": 0.6,
+      "reason": "Returns a stolen/new token to the caller as documented.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "pp_do_depend",
+        "entity_kind": "function_definition",
+        "signature": "static Token *pp_do_depend(Token **tp, const char *dname)",
+        "return_type": "Token *",
+        "parameters": [
+          "Token **tp",
+          "const char *dname"
+        ],
+        "direct_calls": [
+          "steal_Token",
+          "strlist_add",
+          "tlist_filename",
+          "tok_text"
+        ],
+        "documentation": "This implements the %depend directive and the %depend() function. It returns a stolen copy of the original string token after skipping leading spaces, or NULL on error. Returns a new token.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:steal_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|pp_do_depend|static Token *pp_do_depend(Token **tp, const char *dname)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|count_mmac_params|static Token **count_mmac_params(Token *tline, int *nparamp, Token ***paramsp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "count_mmac_params",
+      "signature": "static Token **count_mmac_params(Token *tline, int *nparamp, Token ***paramsp)",
+      "category": "allocator",
+      "confidence": 0.65,
+      "reason": "Allocates the params array (nasm_newn/nasm_realloc) and returns it through the paramsp output parameter.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "count_mmac_params",
+        "entity_kind": "function_definition",
+        "signature": "static Token **count_mmac_params(Token *tline, int *nparamp, Token ***paramsp)",
+        "return_type": "Token **",
+        "parameters": [
+          "Token *tline",
+          "int *nparamp",
+          "Token ***paramsp"
+        ],
+        "direct_calls": [
+          "nasm_newn",
+          "nasm_nonfatal",
+          "nasm_realloc",
+          "skip_white",
+          "tok_is",
+          "tok_isnt",
+          "tok_white",
+          "unlikely"
+        ],
+        "documentation": "in a %macro definition line. Note that we need space in the params array for parameter 0 being a possible captured label as well as the final NULL. Returns a pointer to the pointer to a terminal comma if present; used to drop an empty terminal argument for legacy reasons.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_realloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|count_mmac_params|static Token **count_mmac_params(Token *tline, int *nparamp, Token ***paramsp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|smacro_expand_default|static Token * smacro_expand_default(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "smacro_expand_default",
+      "signature": "static Token * smacro_expand_default(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Returns a freshly duplicated copy of the expansion token list via dup_tlist.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "smacro_expand_default",
+        "entity_kind": "function_definition",
+        "signature": "static Token * smacro_expand_default(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "dup_tlist"
+        ],
+        "documentation": "Default smacro expansion routine: just returns a copy of the expansion list.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:dup_tlist"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|smacro_expand_default|static Token * smacro_expand_default(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|expand_smacro_with_params|static Token * expand_smacro_with_params(SMacro *m, Token *mstart, Token **params, int nparam, Token ***epp)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "expand_smacro_with_params",
+      "signature": "static Token * expand_smacro_with_params(SMacro *m, Token *mstart, Token **params, int nparam, Token ***epp)",
+      "category": "allocator",
+      "confidence": 0.65,
+      "reason": "Builds and returns a newly allocated expansion token list (dup_tlist/nasm_malloc) to the caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "expand_smacro_with_params",
+        "entity_kind": "function_definition",
+        "signature": "static Token * expand_smacro_with_params(SMacro *m, Token *mstart, Token **params, int nparam, Token ***epp)",
+        "return_type": "Token *",
+        "parameters": [
+          "SMacro *m",
+          "Token *mstart",
+          "Token **params",
+          "int nparam",
+          "Token ***epp"
+        ],
+        "direct_calls": [
+          "delete_Token",
+          "delete_tlist",
+          "dup_Token",
+          "dup_tlist",
+          "dup_tlist_reverse",
+          "evaluate",
+          "expand",
+          "expand_one_smacro",
+          "expand_smacro_noreset",
+          "expand_sparm_str",
+          "get_ctx",
+          "is_simple",
+          "is_smac_param",
+          "make_tok_char",
+          "make_tok_num_radix",
+          "mempcpy",
+          "nasm_assert",
+          "nasm_malloc",
+          "nasm_nonfatal",
+          "reloc_value",
+          "set_text_free",
+          "smac_nparam",
+          "strlen",
+          "tok_text",
+          "zap_white"
+        ],
+        "documentation": "Expand one single-line macro instance given a specific macro and a specific set of parameters. Returns a pointer to the expansion, and the pointer *epp pointing to the next pointer of the last token of the expansion; if the expansion is empty return NULL and *epp is unchanged. mstart is the token containing the token name *as invoked*.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:dup_tlist,nasm_malloc,set_text_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "nasm|asm/preproc.c|expand_smacro_with_params|static Token * expand_smacro_with_params(SMacro *m, Token *mstart, Token **params, int nparam, Token ***epp)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_debug_macro_addr_tree|static void free_debug_macro_addr_tree(struct rbtree *tree)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_debug_macro_addr_tree",
+      "signature": "static void free_debug_macro_addr_tree(struct rbtree *tree)",
+      "category": "destroyer",
+      "confidence": 0.8,
+      "reason": "Recursively frees an entire rbtree container including nested nodes; interface is destruction of a whole tree.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_debug_macro_addr_tree",
+        "entity_kind": "function_definition",
+        "signature": "static void free_debug_macro_addr_tree(struct rbtree *tree)",
+        "return_type": "void",
+        "parameters": [
+          "struct rbtree *tree"
+        ],
+        "direct_calls": [
+          "free_debug_macro_addr_tree",
+          "nasm_free",
+          "nasm_static_assert",
+          "rb_left",
+          "rb_right"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_debug_macro_addr_tree|static void free_debug_macro_addr_tree(struct rbtree *tree)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_debug_macro_inv_list|static void free_debug_macro_inv_list(struct debug_macro_inv *inv)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_debug_macro_inv_list",
+      "signature": "static void free_debug_macro_inv_list(struct debug_macro_inv *inv)",
+      "category": "destroyer",
+      "confidence": 0.8,
+      "reason": "Frees a whole list object and its nested address trees/tokens; object/container destruction.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_debug_macro_inv_list",
+        "entity_kind": "function_definition",
+        "signature": "static void free_debug_macro_inv_list(struct debug_macro_inv *inv)",
+        "return_type": "void",
+        "parameters": [
+          "struct debug_macro_inv *inv"
+        ],
+        "direct_calls": [
+          "free_debug_macro_addr_tree",
+          "free_debug_macro_inv_list",
+          "list_for_each_safe",
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_debug_macro_inv_list|static void free_debug_macro_inv_list(struct debug_macro_inv *inv)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|free_debug_macro_info|static void free_debug_macro_info(void)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "free_debug_macro_info",
+      "signature": "static void free_debug_macro_info(void)",
+      "category": "destroyer",
+      "confidence": 0.7,
+      "reason": "Tears down the global debug macro info structure, freeing nested lists and zeroing state; whole-object destruction.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "free_debug_macro_info",
+        "entity_kind": "function_definition",
+        "signature": "static void free_debug_macro_info(void)",
+        "return_type": "void",
+        "parameters": [],
+        "direct_calls": [
+          "free_debug_macro_inv_list",
+          "list_for_each_safe",
+          "nasm_free",
+          "nasm_zero"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/preproc.c|free_debug_macro_info|static void free_debug_macro_info(void)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_ptr|static Token * stdmac_ptr(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_ptr",
+      "signature": "static Token * stdmac_ptr(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Creates a new Token via new_Token and returns it to the caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_ptr",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_ptr(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "new_Token",
+          "panic"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|stdmac_ptr|static Token * stdmac_ptr(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_default|static Token * stdmac_default(const SMacro *s, Token **params, int nparam)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_default",
+      "signature": "static Token * stdmac_default(const SMacro *s, Token **params, int nparam)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Builds and returns newly allocated Token(s) via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_default",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_default(const SMacro *s, Token **params, int nparam)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparam"
+        ],
+        "direct_calls": [
+          "make_tok_char",
+          "new_Token"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|stdmac_default|static Token * stdmac_default(const SMacro *s, Token **params, int nparam)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_strcat|static Token * stdmac_strcat(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_strcat",
+      "signature": "static Token * stdmac_strcat(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.72,
+      "reason": "Produces and returns a newly allocated quoted-string Token; malloc/free is internal temporary buffer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_strcat",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_strcat(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "make_tok_qstr_len",
+          "mempcpy",
+          "nasm_free",
+          "nasm_malloc",
+          "tok_text",
+          "unquote_token"
+        ],
+        "documentation": "%strcat() function",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free,nasm_malloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "nasm|asm/preproc.c|stdmac_strcat|static Token * stdmac_strcat(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_hs2b|static Token * stdmac_hs2b(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_hs2b",
+      "signature": "static Token * stdmac_hs2b(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.72,
+      "reason": "Returns a newly created Token; nasm_malloc/free used for temporary conversion buffer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_hs2b",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_hs2b(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "make_tok_qstr_len",
+          "nasm_free",
+          "nasm_hexval",
+          "nasm_malloc",
+          "tok_text",
+          "unquote_token"
+        ],
+        "documentation": "%hs2b() function",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free,nasm_malloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "nasm|asm/preproc.c|stdmac_hs2b|static Token * stdmac_hs2b(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_b2hs|static Token * stdmac_b2hs(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_b2hs",
+      "signature": "static Token * stdmac_b2hs(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.72,
+      "reason": "Returns a newly created Token; internal malloc/free is temporary.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_b2hs",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_b2hs(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "make_tok_qstr_len",
+          "mempcpy",
+          "nasm_digit_chars",
+          "nasm_free",
+          "nasm_malloc",
+          "unquote_token"
+        ],
+        "documentation": "%b2hs() function",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free,nasm_malloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "nasm|asm/preproc.c|stdmac_b2hs|static Token * stdmac_b2hs(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_chr|static Token * stdmac_chr(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_chr",
+      "signature": "static Token * stdmac_chr(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.72,
+      "reason": "Allocates and returns a new Token; internal buffer malloc/free is temporary.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_chr",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_chr(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "get_tok_num",
+          "make_tok_qstr_len",
+          "nasm_free",
+          "nasm_malloc"
+        ],
+        "documentation": "%chr() function",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free,nasm_malloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "nasm|asm/preproc.c|stdmac_chr|static Token * stdmac_chr(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_sel|static Token * stdmac_sel(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_sel",
+      "signature": "static Token * stdmac_sel(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Creates and returns a new Token via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_sel",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_sel(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "get_tok_num",
+          "nasm_warn",
+          "new_Token",
+          "tok_smac_param",
+          "unlikely"
+        ],
+        "documentation": "%sel()",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|stdmac_sel|static Token * stdmac_sel(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_cond|static Token * stdmac_cond(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_cond",
+      "signature": "static Token * stdmac_cond(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Creates and returns a new Token via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_cond",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_cond(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "get_tok_num",
+          "new_Token",
+          "tok_smac_param"
+        ],
+        "documentation": "%cond()",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|stdmac_cond|static Token * stdmac_cond(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_selbits|static Token * stdmac_selbits(const SMacro *s, Token **params, int nparams)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_selbits",
+      "signature": "static Token * stdmac_selbits(const SMacro *s, Token **params, int nparams)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Creates and returns a new Token via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_selbits",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_selbits(const SMacro *s, Token **params, int nparams)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparams"
+        ],
+        "direct_calls": [
+          "ilog2_32",
+          "new_Token",
+          "tok_smac_param"
+        ],
+        "documentation": "%selbits()",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|stdmac_selbits|static Token * stdmac_selbits(const SMacro *s, Token **params, int nparams)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_num|static Token * stdmac_num(const SMacro *s, Token **params, int nparam)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_num",
+      "signature": "static Token * stdmac_num(const SMacro *s, Token **params, int nparam)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Creates and returns a new Token via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_num",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_num(const SMacro *s, Token **params, int nparam)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparam"
+        ],
+        "direct_calls": [
+          "ARRAY_SIZE",
+          "get_tok_num",
+          "nasm_nonfatal",
+          "new_Token",
+          "numstr"
+        ],
+        "documentation": "%num() function",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|stdmac_num|static Token * stdmac_num(const SMacro *s, Token **params, int nparam)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_abs|static Token * stdmac_abs(const SMacro *s, Token **params, int nparam)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_abs",
+      "signature": "static Token * stdmac_abs(const SMacro *s, Token **params, int nparam)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "Creates and returns a new Token via new_Token.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_abs",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_abs(const SMacro *s, Token **params, int nparam)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparam"
+        ],
+        "direct_calls": [
+          "get_tok_num",
+          "new_Token",
+          "snprintf"
+        ],
+        "documentation": "%abs() function",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:new_Token"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/preproc.c|stdmac_abs|static Token * stdmac_abs(const SMacro *s, Token **params, int nparam)"
+      }
+    },
+    {
+      "id": "nasm|asm/preproc.c|stdmac_map|static Token * stdmac_map(const SMacro *s, Token **params, int nparam)",
+      "project": "nasm",
+      "file": "asm/preproc.c",
+      "name": "stdmac_map",
+      "signature": "static Token * stdmac_map(const SMacro *s, Token **params, int nparam)",
+      "category": "allocator",
+      "confidence": 0.68,
+      "reason": "Builds and returns a new token list (dup_tlist/nasm_newn/make_tok_char); free calls are internal cleanup.",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/preproc.c",
+        "name": "stdmac_map",
+        "entity_kind": "function_definition",
+        "signature": "static Token * stdmac_map(const SMacro *s, Token **params, int nparam)",
+        "return_type": "Token *",
+        "parameters": [
+          "const SMacro *s",
+          "Token **params",
+          "int nparam"
+        ],
+        "direct_calls": [
+          "count_smacro_args",
+          "delete_tlist",
+          "dup_tlist",
+          "evaluate",
+          "expand_smacro_noreset",
+          "expand_smacro_with_params",
+          "get_ctx",
+          "get_id_noskip",
+          "is_simple",
+          "make_tok_char",
+          "nasm_free",
+          "nasm_newn",
+          "nasm_nonfatal",
+          "parse_smacro_args",
+          "reloc_value",
+          "reverse_tokens",
+          "skip_white",
+          "smacro_defined",
+          "steal_tlist",
+          "tok_is",
+          "unlikely",
+          "zap_white"
+        ],
+        "documentation": "%map() function",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:dup_tlist,nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "nasm|asm/preproc.c|stdmac_map|static Token * stdmac_map(const SMacro *s, Token **params, int nparam)"
+      }
+    },
+    {
+      "id": "nasm|asm/quote.c|nasm_quote|char *nasm_quote(const char *str, size_t *lenp)",
+      "project": "nasm",
+      "file": "asm/quote.c",
+      "name": "nasm_quote",
+      "signature": "char *nasm_quote(const char *str, size_t *lenp)",
+      "category": "allocator",
+      "confidence": 0.95,
+      "reason": "Documented to create quoted string in newly allocated memory via nasm_malloc and return it",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/quote.c",
+        "name": "nasm_quote",
+        "entity_kind": "function_definition",
+        "signature": "char *nasm_quote(const char *str, size_t *lenp)",
+        "return_type": "char *",
+        "parameters": [
+          "const char *str",
+          "size_t *lenp"
+        ],
+        "direct_calls": [
+          "memcpy",
+          "nasm_assert",
+          "nasm_malloc"
+        ],
+        "documentation": "Create a NASM quoted string in newly allocated memory. Update the *lenp parameter with the output length (sans final NUL).",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/quote.c|nasm_quote|char *nasm_quote(const char *str, size_t *lenp)"
+      }
+    },
+    {
+      "id": "nasm|asm/srcfile.c|src_free|void src_free(void)",
+      "project": "nasm",
+      "file": "asm/srcfile.c",
+      "name": "src_free",
+      "signature": "void src_free(void)",
+      "category": "releaser",
+      "confidence": 0.6,
+      "reason": "Frees global source-file hash state via hash_free_all; simple free-style cleanup of module state",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/srcfile.c",
+        "name": "src_free",
+        "entity_kind": "function_definition",
+        "signature": "void src_free(void)",
+        "return_type": "void",
+        "parameters": [],
+        "direct_calls": [
+          "hash_free_all"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:hash_free_all"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/srcfile.c|src_free|void src_free(void)"
+      }
+    },
+    {
+      "id": "nasm|asm/stdscan.c|stdscan_alloc|static void *stdscan_alloc(size_t bytes)",
+      "project": "nasm",
+      "file": "asm/stdscan.c",
+      "name": "stdscan_alloc",
+      "signature": "static void *stdscan_alloc(size_t bytes)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocation wrapper using nasm_malloc/nasm_realloc returning owned memory",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/stdscan.c",
+        "name": "stdscan_alloc",
+        "entity_kind": "function_definition",
+        "signature": "static void *stdscan_alloc(size_t bytes)",
+        "return_type": "void *",
+        "parameters": [
+          "size_t bytes"
+        ],
+        "direct_calls": [
+          "nasm_malloc",
+          "nasm_realloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc,nasm_realloc"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/stdscan.c|stdscan_alloc|static void *stdscan_alloc(size_t bytes)"
+      }
+    },
+    {
+      "id": "nasm|asm/stdscan.c|stdscan_copy|static char *stdscan_copy(const char *p, int len)",
+      "project": "nasm",
+      "file": "asm/stdscan.c",
+      "name": "stdscan_copy",
+      "signature": "static char *stdscan_copy(const char *p, int len)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates buffer via stdscan_alloc and returns owned copy of input",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/stdscan.c",
+        "name": "stdscan_copy",
+        "entity_kind": "function_definition",
+        "signature": "static char *stdscan_copy(const char *p, int len)",
+        "return_type": "char *",
+        "parameters": [
+          "const char *p",
+          "int len"
+        ],
+        "direct_calls": [
+          "memcpy",
+          "stdscan_alloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:stdscan_alloc"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/stdscan.c|stdscan_copy|static char *stdscan_copy(const char *p, int len)"
+      }
+    },
+    {
+      "id": "nasm|asm/strfunc.c|string_transform|size_t string_transform(char *str, size_t len, char **out, enum strfunc func)",
+      "project": "nasm",
+      "file": "asm/strfunc.c",
+      "name": "string_transform",
+      "signature": "size_t string_transform(char *str, size_t len, char **out, enum strfunc func)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates output buffer with nasm_malloc and returns it through *out output parameter",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/strfunc.c",
+        "name": "string_transform",
+        "entity_kind": "function_definition",
+        "signature": "size_t string_transform(char *str, size_t len, char **out, enum strfunc func)",
+        "return_type": "size_t",
+        "parameters": [
+          "char *str",
+          "size_t len",
+          "char **out",
+          "enum strfunc func"
+        ],
+        "direct_calls": [
+          "nasm_malloc",
+          "transform"
+        ],
+        "documentation": "Apply a specific string transform and return it in a nasm_malloc'd buffer, returning the length. On error, returns (size_t)-1 and no buffer is allocated.",
+        "macro_value": "",
+        "filter_evidence": [
+          "has_output_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/strfunc.c|string_transform|size_t string_transform(char *str, size_t len, char **out, enum strfunc func)"
+      }
+    },
+    {
+      "id": "nasm|asm/uncompress.c|nasm_z_alloc|static void *nasm_z_alloc(void *opaque, unsigned int items, unsigned int size)",
+      "project": "nasm",
+      "file": "asm/uncompress.c",
+      "name": "nasm_z_alloc",
+      "signature": "static void *nasm_z_alloc(void *opaque, unsigned int items, unsigned int size)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "zlib alloc callback calling nasm_calloc and returning allocated memory",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/uncompress.c",
+        "name": "nasm_z_alloc",
+        "entity_kind": "function_definition",
+        "signature": "static void *nasm_z_alloc(void *opaque, unsigned int items, unsigned int size)",
+        "return_type": "void *",
+        "parameters": [
+          "void *opaque",
+          "unsigned int items",
+          "unsigned int size"
+        ],
+        "direct_calls": [
+          "nasm_calloc"
+        ],
+        "documentation": "read line from standard macros set, if there no more left -- return NULL",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_calloc"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|asm/uncompress.c|nasm_z_alloc|static void *nasm_z_alloc(void *opaque, unsigned int items, unsigned int size)"
+      }
+    },
+    {
+      "id": "nasm|asm/uncompress.c|nasm_z_free|static void nasm_z_free(void *opaque, void *ptr)",
+      "project": "nasm",
+      "file": "asm/uncompress.c",
+      "name": "nasm_z_free",
+      "signature": "static void nasm_z_free(void *opaque, void *ptr)",
+      "category": "releaser",
+      "confidence": 0.9,
+      "reason": "zlib free callback releasing caller-passed ptr via nasm_free",
+      "cfr": {
+        "project": "nasm",
+        "file": "asm/uncompress.c",
+        "name": "nasm_z_free",
+        "entity_kind": "function_definition",
+        "signature": "static void nasm_z_free(void *opaque, void *ptr)",
+        "return_type": "void",
+        "parameters": [
+          "void *opaque",
+          "void *ptr"
+        ],
+        "direct_calls": [
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "releaser",
+        "id": "nasm|asm/uncompress.c|nasm_z_free|static void nasm_z_free(void *opaque, void *ptr)"
+      }
+    },
+    {
+      "id": "nasm|include/nasmlib.h|nasm_delete|#define nasm_delete(p)",
+      "project": "nasm",
+      "file": "include/nasmlib.h",
+      "name": "nasm_delete",
+      "signature": "#define nasm_delete(p)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "Frees pointer via nasm_free and nulls it; release wrapper",
+      "cfr": {
+        "project": "nasm",
+        "file": "include/nasmlib.h",
+        "name": "nasm_delete",
+        "entity_kind": "function_like_macro",
+        "signature": "#define nasm_delete(p)",
+        "return_type": "macro",
+        "parameters": [
+          "p"
+        ],
+        "direct_calls": [
+          "nasm_assert_pointer",
+          "nasm_free"
+        ],
+        "documentation": "This is broken on platforms where there are pointers which don't match void * in their internal layout. It unfortunately also loses any \"const\" part of the argument, although hopefully the compiler will warn in that case.",
+        "macro_value": "do { \\ void **_pp = (void **)&(p); \\ nasm_assert_pointer(p); \\ nasm_free(*_pp); \\ *_pp = NULL; \\ } while (0)",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|include/nasmlib.h|nasm_delete|#define nasm_delete(p)"
+      }
+    },
+    {
+      "id": "nasm|misc/omfdump.c|xmalloc|static void *xmalloc(size_t size)",
+      "project": "nasm",
+      "file": "misc/omfdump.c",
+      "name": "xmalloc",
+      "signature": "static void *xmalloc(size_t size)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "malloc wrapper returning allocated memory",
+      "cfr": {
+        "project": "nasm",
+        "file": "misc/omfdump.c",
+        "name": "xmalloc",
+        "entity_kind": "function_definition",
+        "signature": "static void *xmalloc(size_t size)",
+        "return_type": "void *",
+        "parameters": [
+          "size_t size"
+        ],
+        "direct_calls": [
+          "malloc",
+          "nulldie"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "returns_pointer_or_reference"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|misc/omfdump.c|xmalloc|static void *xmalloc(size_t size)"
+      }
+    },
+    {
+      "id": "nasm|misc/omfdump.c|xrealloc|static void *xrealloc(void *ptr, size_t size)",
+      "project": "nasm",
+      "file": "misc/omfdump.c",
+      "name": "xrealloc",
+      "signature": "static void *xrealloc(void *ptr, size_t size)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "realloc wrapper acquiring and returning resized memory",
+      "cfr": {
+        "project": "nasm",
+        "file": "misc/omfdump.c",
+        "name": "xrealloc",
+        "entity_kind": "function_definition",
+        "signature": "static void *xrealloc(void *ptr, size_t size)",
+        "return_type": "void *",
+        "parameters": [
+          "void *ptr",
+          "size_t size"
+        ],
+        "direct_calls": [
+          "nulldie",
+          "realloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:realloc",
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|misc/omfdump.c|xrealloc|static void *xrealloc(void *ptr, size_t size)"
+      }
+    },
+    {
+      "id": "nasm|misc/omfdump.c|expand_buffer|static void *expand_buffer(void *buf, size_t *bufsizep, size_t datasize, size_t elemsize)",
+      "project": "nasm",
+      "file": "misc/omfdump.c",
+      "name": "expand_buffer",
+      "signature": "static void *expand_buffer(void *buf, size_t *bufsizep, size_t datasize, size_t elemsize)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Grows buffer via xrealloc and returns owned (re)allocated buffer",
+      "cfr": {
+        "project": "nasm",
+        "file": "misc/omfdump.c",
+        "name": "expand_buffer",
+        "entity_kind": "function_definition",
+        "signature": "static void *expand_buffer(void *buf, size_t *bufsizep, size_t datasize, size_t elemsize)",
+        "return_type": "void *",
+        "parameters": [
+          "void *buf",
+          "size_t *bufsizep",
+          "size_t datasize",
+          "size_t elemsize"
+        ],
+        "direct_calls": [
+          "likely",
+          "xrealloc"
+        ],
+        "documentation": "Make sure there is enough space for at least one additional element",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:xrealloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|misc/omfdump.c|expand_buffer|static void *expand_buffer(void *buf, size_t *bufsizep, size_t datasize, size_t elemsize)"
+      }
+    },
+    {
+      "id": "nasm|misc/omfdump.c|copy_name|static uint8_t *copy_name(size_t len, const uint8_t *data)",
+      "project": "nasm",
+      "file": "misc/omfdump.c",
+      "name": "copy_name",
+      "signature": "static uint8_t *copy_name(size_t len, const uint8_t *data)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates with xmalloc and returns owned copy of data",
+      "cfr": {
+        "project": "nasm",
+        "file": "misc/omfdump.c",
+        "name": "copy_name",
+        "entity_kind": "function_definition",
+        "signature": "static uint8_t *copy_name(size_t len, const uint8_t *data)",
+        "return_type": "uint8_t *",
+        "parameters": [
+          "size_t len",
+          "const uint8_t *data"
+        ],
+        "direct_calls": [
+          "memcpy",
+          "xmalloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:xmalloc"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|misc/omfdump.c|copy_name|static uint8_t *copy_name(size_t len, const uint8_t *data)"
+      }
+    },
+    {
+      "id": "nasm|misc/omfdump.c|read_file|static uint8_t *read_file(FILE *f, size_t *sz)",
+      "project": "nasm",
+      "file": "misc/omfdump.c",
+      "name": "read_file",
+      "signature": "static uint8_t *read_file(FILE *f, size_t *sz)",
+      "category": "allocator",
+      "confidence": 0.7,
+      "reason": "Reads file into newly allocated buffer and returns it; free calls are internal error cleanup",
+      "cfr": {
+        "project": "nasm",
+        "file": "misc/omfdump.c",
+        "name": "read_file",
+        "entity_kind": "function_definition",
+        "signature": "static uint8_t *read_file(FILE *f, size_t *sz)",
+        "return_type": "uint8_t *",
+        "parameters": [
+          "FILE *f",
+          "size_t *sz"
+        ],
+        "direct_calls": [
+          "expand_buffer",
+          "feof",
+          "ferror",
+          "fread",
+          "free",
+          "fseek",
+          "ftell",
+          "rewind",
+          "xmalloc",
+          "xrealloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "returns_pointer_or_reference",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:xmalloc,xrealloc"
+        ],
+        "filter_score": 9.0,
+        "filter_confidence": 0.9,
+        "candidate_hint": "releaser",
+        "id": "nasm|misc/omfdump.c|read_file|static uint8_t *read_file(FILE *f, size_t *sz)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/alloc.c|nasm_malloc|void *nasm_malloc(size_t size)",
+      "project": "nasm",
+      "file": "nasmlib/alloc.c",
+      "name": "nasm_malloc",
+      "signature": "void *nasm_malloc(size_t size)",
+      "category": "allocator",
+      "confidence": 0.98,
+      "reason": "Wraps malloc and returns the allocated pointer to the caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/alloc.c",
+        "name": "nasm_malloc",
+        "entity_kind": "function_definition",
+        "signature": "void *nasm_malloc(size_t size)",
+        "return_type": "void *",
+        "parameters": [
+          "size_t size"
+        ],
+        "direct_calls": [
+          "malloc",
+          "nasm_alloc_failed",
+          "unlikely"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "allocation_name",
+          "returns_pointer_or_reference"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "allocator",
+        "id": "nasm|nasmlib/alloc.c|nasm_malloc|void *nasm_malloc(size_t size)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/alloc.c|nasm_calloc|void *nasm_calloc(size_t nelem, size_t size)",
+      "project": "nasm",
+      "file": "nasmlib/alloc.c",
+      "name": "nasm_calloc",
+      "signature": "void *nasm_calloc(size_t nelem, size_t size)",
+      "category": "allocator",
+      "confidence": 0.98,
+      "reason": "Wraps calloc and returns allocated zeroed memory.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/alloc.c",
+        "name": "nasm_calloc",
+        "entity_kind": "function_definition",
+        "signature": "void *nasm_calloc(size_t nelem, size_t size)",
+        "return_type": "void *",
+        "parameters": [
+          "size_t nelem",
+          "size_t size"
+        ],
+        "direct_calls": [
+          "calloc",
+          "nasm_alloc_failed",
+          "unlikely"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "allocation_name",
+          "returns_pointer_or_reference"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "allocator",
+        "id": "nasm|nasmlib/alloc.c|nasm_calloc|void *nasm_calloc(size_t nelem, size_t size)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/alloc.c|nasm_realloc|void *nasm_realloc(void *q, size_t size)",
+      "project": "nasm",
+      "file": "nasmlib/alloc.c",
+      "name": "nasm_realloc",
+      "signature": "void *nasm_realloc(void *q, size_t size)",
+      "category": "allocator",
+      "confidence": 0.97,
+      "reason": "Resizes/allocates memory and returns a guaranteed non-NULL pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/alloc.c",
+        "name": "nasm_realloc",
+        "entity_kind": "function_definition",
+        "signature": "void *nasm_realloc(void *q, size_t size)",
+        "return_type": "void *",
+        "parameters": [
+          "void *q",
+          "size_t size"
+        ],
+        "direct_calls": [
+          "malloc",
+          "realloc",
+          "unlikely",
+          "validate_ptr"
+        ],
+        "documentation": "Unlike the system realloc, we do *not* allow size == 0 to be the equivalent to free(); we guarantee returning a non-NULL pointer. The check for calling malloc() is theoretically redundant, but be paranoid about the system library...",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc,realloc",
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "memory_documentation"
+        ],
+        "filter_score": 10.5,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator",
+        "id": "nasm|nasmlib/alloc.c|nasm_realloc|void *nasm_realloc(void *q, size_t size)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/alloc.c|nasm_free|void nasm_free(void *q)",
+      "project": "nasm",
+      "file": "nasmlib/alloc.c",
+      "name": "nasm_free",
+      "signature": "void nasm_free(void *q)",
+      "category": "releaser",
+      "confidence": 0.95,
+      "reason": "Frees caller-supplied pointer via free().",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/alloc.c",
+        "name": "nasm_free",
+        "entity_kind": "function_definition",
+        "signature": "void nasm_free(void *q)",
+        "return_type": "void",
+        "parameters": [
+          "void *q"
+        ],
+        "direct_calls": [
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_name",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "releaser",
+        "id": "nasm|nasmlib/alloc.c|nasm_free|void nasm_free(void *q)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/asprintf.c|nasm_vaxprintf|void *nasm_vaxprintf(size_t extra, const char *fmt, va_list ap)",
+      "project": "nasm",
+      "file": "nasmlib/asprintf.c",
+      "name": "nasm_vaxprintf",
+      "signature": "void *nasm_vaxprintf(size_t extra, const char *fmt, va_list ap)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates a buffer via nasm_malloc and returns the pointer to the caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/asprintf.c",
+        "name": "nasm_vaxprintf",
+        "entity_kind": "function_definition",
+        "signature": "void *nasm_vaxprintf(size_t extra, const char *fmt, va_list ap)",
+        "return_type": "void *",
+        "parameters": [
+          "size_t extra",
+          "const char *fmt",
+          "va_list ap"
+        ],
+        "direct_calls": [
+          "memset",
+          "nasm_assert",
+          "nasm_malloc",
+          "va_copy",
+          "va_end",
+          "vsnprintf"
+        ],
+        "documentation": "The length of the string (with or without the final NUL) is available by calling nasm_last_string_{len,size}() afterwards. nasm_[v]axprintf() are similar, but allocates a user-defined amount of storage before the string, and returns a pointer to the allocated buffer. The size of that area is not included in the value returned by nasm_last_string_size().",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "nasm|nasmlib/asprintf.c|nasm_vaxprintf|void *nasm_vaxprintf(size_t extra, const char *fmt, va_list ap)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/file.c|os_free_filename|static inline void os_free_filename(os_filename filename)",
+      "project": "nasm",
+      "file": "nasmlib/file.c",
+      "name": "os_free_filename",
+      "signature": "static inline void os_free_filename(os_filename filename)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "Simple free wrapper releasing the passed filename handle.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/file.c",
+        "name": "os_free_filename",
+        "entity_kind": "function_definition",
+        "signature": "static inline void os_free_filename(os_filename filename)",
+        "return_type": "void",
+        "parameters": [
+          "os_filename filename"
+        ],
+        "direct_calls": [
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|nasmlib/file.c|os_free_filename|static inline void os_free_filename(os_filename filename)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/hashtbl.c|hash_free|void hash_free(struct hash_table *head)",
+      "project": "nasm",
+      "file": "nasmlib/hashtbl.c",
+      "name": "hash_free",
+      "signature": "void hash_free(struct hash_table *head)",
+      "category": "destroyer",
+      "confidence": 0.7,
+      "reason": "Ends the lifetime of the whole hash table container (frees internal array and struct).",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/hashtbl.c",
+        "name": "hash_free",
+        "entity_kind": "function_definition",
+        "signature": "void hash_free(struct hash_table *head)",
+        "return_type": "void",
+        "parameters": [
+          "struct hash_table *head"
+        ],
+        "direct_calls": [
+          "memset",
+          "nasm_free"
+        ],
+        "documentation": "Free the hash itself. Doesn't free the data elements; use hash_iterate() to do that first, if needed. This function is normally used when the hash data entries are either freed separately, or compound objects which can't be freed in a single operation.",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "negative_documentation",
+          "weak_non_memory_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "releaser",
+        "id": "nasm|nasmlib/hashtbl.c|hash_free|void hash_free(struct hash_table *head)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/hashtbl.c|hash_free_all|void hash_free_all(struct hash_table *head, bool free_keys)",
+      "project": "nasm",
+      "file": "nasmlib/hashtbl.c",
+      "name": "hash_free_all",
+      "signature": "void hash_free_all(struct hash_table *head, bool free_keys)",
+      "category": "destroyer",
+      "confidence": 0.8,
+      "reason": "Destroys the hash container and releases nested data elements/keys.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/hashtbl.c",
+        "name": "hash_free_all",
+        "entity_kind": "function_definition",
+        "signature": "void hash_free_all(struct hash_table *head, bool free_keys)",
+        "return_type": "void",
+        "parameters": [
+          "struct hash_table *head",
+          "bool free_keys"
+        ],
+        "direct_calls": [
+          "hash_for_each",
+          "hash_free",
+          "nasm_free"
+        ],
+        "documentation": "Frees the hash *and* all data elements. This is applicable only in the case where the data element is a single allocation. If the second argument is false, the key string is part of the data allocation or belongs to an allocation which will be freed separately, if it is true the keys are also freed.",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "negative_documentation",
+          "weak_non_memory_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "releaser",
+        "id": "nasm|nasmlib/hashtbl.c|hash_free_all|void hash_free_all(struct hash_table *head, bool free_keys)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/path.c|filename_set_extension|const char *filename_set_extension(const char *inname, const char *extension)",
+      "project": "nasm",
+      "file": "nasmlib/path.c",
+      "name": "filename_set_extension",
+      "signature": "const char *filename_set_extension(const char *inname, const char *extension)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Builds and returns a newly allocated string buffer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/path.c",
+        "name": "filename_set_extension",
+        "entity_kind": "function_definition",
+        "signature": "const char *filename_set_extension(const char *inname, const char *extension)",
+        "return_type": "char *",
+        "parameters": [
+          "const char *inname",
+          "const char *extension"
+        ],
+        "direct_calls": [
+          "ismatch",
+          "memcpy",
+          "mempcpy",
+          "nasm_malloc",
+          "strchr",
+          "strlen"
+        ],
+        "documentation": "Add/modify a filename extension. Returns a newly allocated string buffer. If the extension is not an empty string, the first character is replaced by the appropriate extsep for the filesystem.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "nasm|nasmlib/path.c|filename_set_extension|const char *filename_set_extension(const char *inname, const char *extension)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/raa.c|raa_free|void raa_free(struct RAA *r)",
+      "project": "nasm",
+      "file": "nasmlib/raa.c",
+      "name": "raa_free",
+      "signature": "void raa_free(struct RAA *r)",
+      "category": "destroyer",
+      "confidence": 0.8,
+      "reason": "Recursively frees the entire RAA tree structure, ending the container's lifetime.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/raa.c",
+        "name": "raa_free",
+        "entity_kind": "function_definition",
+        "signature": "void raa_free(struct RAA *r)",
+        "return_type": "void",
+        "parameters": [
+          "struct RAA *r"
+        ],
+        "direct_calls": [
+          "nasm_free",
+          "raa_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "nasm|nasmlib/raa.c|raa_free|void raa_free(struct RAA *r)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/saa.c|saa_free|void saa_free(struct SAA *s)",
+      "project": "nasm",
+      "file": "nasmlib/saa.c",
+      "name": "saa_free",
+      "signature": "void saa_free(struct SAA *s)",
+      "category": "destroyer",
+      "confidence": 0.78,
+      "reason": "Frees the whole SAA container and its internal allocations.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/saa.c",
+        "name": "saa_free",
+        "entity_kind": "function_definition",
+        "signature": "void saa_free(struct SAA *s)",
+        "return_type": "void",
+        "parameters": [
+          "struct SAA *s"
+        ],
+        "direct_calls": [
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "nasm|nasmlib/saa.c|saa_free|void saa_free(struct SAA *s)"
+      }
+    },
+    {
+      "id": "nasm|nasmlib/strlist.c|strlist_free|void strlist_free(struct strlist **listp)",
+      "project": "nasm",
+      "file": "nasmlib/strlist.c",
+      "name": "strlist_free",
+      "signature": "void strlist_free(struct strlist **listp)",
+      "category": "destroyer",
+      "confidence": 0.82,
+      "reason": "Frees the whole string list with nested entries and nulls the caller pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "nasmlib/strlist.c",
+        "name": "strlist_free",
+        "entity_kind": "function_definition",
+        "signature": "void strlist_free(struct strlist **listp)",
+        "return_type": "void",
+        "parameters": [
+          "struct strlist **listp"
+        ],
+        "direct_calls": [
+          "hash_free",
+          "list_for_each_safe",
+          "nasm_free"
+        ],
+        "documentation": "Free a string list. Sets the pointed to pointer to NULL.",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 10.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "releaser",
+        "id": "nasm|nasmlib/strlist.c|strlist_free|void strlist_free(struct strlist **listp)"
+      }
+    },
+    {
+      "id": "nasm|output/outelf.c|elf_make_section|static struct elf_section * elf_make_section(char *name, int type, int flags, uint64_t align)",
+      "project": "nasm",
+      "file": "output/outelf.c",
+      "name": "elf_make_section",
+      "signature": "static struct elf_section * elf_make_section(char *name, int type, int flags, uint64_t align)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Allocates and initializes a new elf_section object and returns it.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outelf.c",
+        "name": "elf_make_section",
+        "entity_kind": "function_definition",
+        "signature": "static struct elf_section * elf_make_section(char *name, int type, int flags, uint64_t align)",
+        "return_type": "struct elf_section *",
+        "parameters": [
+          "char *name",
+          "int type",
+          "int flags",
+          "uint64_t align"
+        ],
+        "direct_calls": [
+          "add_sectname",
+          "nasm_realloc",
+          "nasm_strdup",
+          "nasm_zalloc",
+          "saa_init",
+          "seg_alloc",
+          "strcmp"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "weak_allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_realloc"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outelf.c|elf_make_section|static struct elf_section * elf_make_section(char *name, int type, int flags, uint64_t align)"
+      }
+    },
+    {
+      "id": "nasm|output/outieee.c|ieee_data_new|static void ieee_data_new(struct ieeeSection *segto)",
+      "project": "nasm",
+      "file": "output/outieee.c",
+      "name": "ieee_data_new",
+      "signature": "static void ieee_data_new(struct ieeeSection *segto)",
+      "category": "allocator",
+      "confidence": 0.6,
+      "reason": "Allocates a new data block via nasm_malloc and attaches it to the section object.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outieee.c",
+        "name": "ieee_data_new",
+        "entity_kind": "function_definition",
+        "signature": "static void ieee_data_new(struct ieeeSection *segto)",
+        "return_type": "void",
+        "parameters": [
+          "struct ieeeSection *segto"
+        ],
+        "direct_calls": [
+          "nasm_malloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outieee.c|ieee_data_new|static void ieee_data_new(struct ieeeSection *segto)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.c|ol_free_symbols|static void ol_free_symbols(void)",
+      "project": "nasm",
+      "file": "output/outlib.c",
+      "name": "ol_free_symbols",
+      "signature": "static void ol_free_symbols(void)",
+      "category": "releaser",
+      "confidence": 0.55,
+      "reason": "Releases module-level symbol memory; no object passed, cleanup of internal state.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.c",
+        "name": "ol_free_symbols",
+        "entity_kind": "function_definition",
+        "signature": "static void ol_free_symbols(void)",
+        "return_type": "void",
+        "parameters": [],
+        "direct_calls": [
+          "hash_free",
+          "list_for_each_safe",
+          "nasm_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|output/outlib.c|ol_free_symbols|static void ol_free_symbols(void)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.c|ol_free_sections|static void ol_free_sections(void)",
+      "project": "nasm",
+      "file": "output/outlib.c",
+      "name": "ol_free_sections",
+      "signature": "static void ol_free_sections(void)",
+      "category": "releaser",
+      "confidence": 0.55,
+      "reason": "Releases module-level section memory via multiple free calls; internal cleanup.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.c",
+        "name": "ol_free_sections",
+        "entity_kind": "function_definition",
+        "signature": "static void ol_free_sections(void)",
+        "return_type": "void",
+        "parameters": [],
+        "direct_calls": [
+          "hash_free",
+          "list_for_each_safe",
+          "nasm_free",
+          "raa_free",
+          "saa_free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_free"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "releaser",
+        "id": "nasm|output/outlib.c|ol_free_sections|static void ol_free_sections(void)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.c|ol_seg_alloc|static uint32_t ol_seg_alloc(void *s, uint32_t ix)",
+      "project": "nasm",
+      "file": "output/outlib.c",
+      "name": "ol_seg_alloc",
+      "signature": "static uint32_t ol_seg_alloc(void *s, uint32_t ix)",
+      "category": "allocator",
+      "confidence": 0.6,
+      "reason": "Allocates a section index (via seg_alloc) and returns it to the caller.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.c",
+        "name": "ol_seg_alloc",
+        "entity_kind": "function_definition",
+        "signature": "static uint32_t ol_seg_alloc(void *s, uint32_t ix)",
+        "return_type": "uint32_t",
+        "parameters": [
+          "void *s",
+          "uint32_t ix"
+        ],
+        "direct_calls": [
+          "raa_write_ptr",
+          "seg_alloc"
+        ],
+        "documentation": "Allocate a section index and add a section, subsection, or external symbol to the section-by-index table. If the index provided is zero, allocate a new index via seg_alloc().",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "memory_documentation"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outlib.c|ol_seg_alloc|static uint32_t ol_seg_alloc(void *s, uint32_t ix)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.c|_ol_get_sect|struct ol_sect *_ol_get_sect(const char *name, size_t ssize, size_t rsize)",
+      "project": "nasm",
+      "file": "output/outlib.c",
+      "name": "_ol_get_sect",
+      "signature": "struct ol_sect *_ol_get_sect(const char *name, size_t ssize, size_t rsize)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Creates a new section struct via nasm_zalloc and returns the pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.c",
+        "name": "_ol_get_sect",
+        "entity_kind": "function_definition",
+        "signature": "struct ol_sect *_ol_get_sect(const char *name, size_t ssize, size_t rsize)",
+        "return_type": "struct ol_sect *",
+        "parameters": [
+          "const char *name",
+          "size_t ssize",
+          "size_t rsize"
+        ],
+        "direct_calls": [
+          "hash_add",
+          "hash_find",
+          "nasm_strdup",
+          "nasm_zalloc",
+          "ol_seg_alloc",
+          "saa_init"
+        ],
+        "documentation": "Find a section or create a new section structure if it does not exist and allocate it an index value via seg_alloc().",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:ol_seg_alloc"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outlib.c|_ol_get_sect|struct ol_sect *_ol_get_sect(const char *name, size_t ssize, size_t rsize)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.c|_ol_new_subsection|int32_t _ol_new_subsection(struct ol_sect *sect)",
+      "project": "nasm",
+      "file": "output/outlib.c",
+      "name": "_ol_new_subsection",
+      "signature": "int32_t _ol_new_subsection(struct ol_sect *sect)",
+      "category": "allocator",
+      "confidence": 0.5,
+      "reason": "Allocates a new subsection index via ol_seg_alloc and returns it; mainly state/index allocation.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.c",
+        "name": "_ol_new_subsection",
+        "entity_kind": "function_definition",
+        "signature": "int32_t _ol_new_subsection(struct ol_sect *sect)",
+        "return_type": "int32_t",
+        "parameters": [
+          "struct ol_sect *sect"
+        ],
+        "direct_calls": [
+          "ol_seg_alloc",
+          "unlikely"
+        ],
+        "documentation": "Start a new subsection for the given section. At the moment, once a subsection has been created, it is not possible to revert to an earlier subsection. ol_sect_by_index() will return the main section structure. Returns the new section index. This is used to prevent the front end from optimizing across subsection boundaries.",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:ol_seg_alloc"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outlib.c|_ol_new_subsection|int32_t _ol_new_subsection(struct ol_sect *sect)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.c|_ol_new_sym|struct ol_sym *_ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags, size_t size)",
+      "project": "nasm",
+      "file": "output/outlib.c",
+      "name": "_ol_new_sym",
+      "signature": "struct ol_sym *_ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags, size_t size)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates a new symbol via nasm_zalloc/strdup and returns the pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.c",
+        "name": "_ol_new_sym",
+        "entity_kind": "function_definition",
+        "signature": "struct ol_sym *_ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags, size_t size)",
+        "return_type": "struct ol_sym *",
+        "parameters": [
+          "const char *name",
+          "const struct ol_loc *v",
+          "uint32_t flags",
+          "size_t size"
+        ],
+        "direct_calls": [
+          "hash_add",
+          "hash_find",
+          "nasm_strdup",
+          "nasm_zalloc",
+          "ol_add_sym_to",
+          "ol_seg_alloc"
+        ],
+        "documentation": "If flags has OF_GLOBAL set, add it to the global symbol hash for the containing section if applicable. If flags has OF_IMPSEC set, allocate a segment index for it via seg_alloc() unless v->index is already set, and add it to the section by index list.",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "negative_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:ol_seg_alloc"
+        ],
+        "filter_score": 7.5,
+        "filter_confidence": 0.75,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outlib.c|_ol_new_sym|struct ol_sym *_ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags, size_t size)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.h|ol_new_subsection|static inline int32_t ol_new_subsection(O_Section *sect)",
+      "project": "nasm",
+      "file": "output/outlib.h",
+      "name": "ol_new_subsection",
+      "signature": "static inline int32_t ol_new_subsection(O_Section *sect)",
+      "category": "allocator",
+      "confidence": 0.5,
+      "reason": "Thin wrapper over _ol_new_subsection; returns newly allocated subsection index.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.h",
+        "name": "ol_new_subsection",
+        "entity_kind": "function_definition",
+        "signature": "static inline int32_t ol_new_subsection(O_Section *sect)",
+        "return_type": "int32_t",
+        "parameters": [
+          "O_Section *sect"
+        ],
+        "direct_calls": [
+          "_ol_new_subsection"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "calls_project_memory_candidate",
+          "project_memory_calls:_ol_new_subsection"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outlib.h|ol_new_subsection|static inline int32_t ol_new_subsection(O_Section *sect)"
+      }
+    },
+    {
+      "id": "nasm|output/outlib.h|ol_new_sym|static inline O_Symbol *ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags)",
+      "project": "nasm",
+      "file": "output/outlib.h",
+      "name": "ol_new_sym",
+      "signature": "static inline O_Symbol *ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Wrapper over _ol_new_sym; returns newly allocated symbol pointer.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outlib.h",
+        "name": "ol_new_sym",
+        "entity_kind": "function_definition",
+        "signature": "static inline O_Symbol *ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags)",
+        "return_type": "O_Symbol *",
+        "parameters": [
+          "const char *name",
+          "const struct ol_loc *v",
+          "uint32_t flags"
+        ],
+        "direct_calls": [
+          "_ol_new_sym"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:_ol_new_sym"
+        ],
+        "filter_score": 7.0,
+        "filter_confidence": 0.7,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outlib.h|ol_new_sym|static inline O_Symbol *ol_new_sym(const char *name, const struct ol_loc *v, uint32_t flags)"
+      }
+    },
+    {
+      "id": "nasm|output/outobj.c|obj_new|static ObjRecord *obj_new(void)",
+      "project": "nasm",
+      "file": "output/outobj.c",
+      "name": "obj_new",
+      "signature": "static ObjRecord *obj_new(void)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Allocates and clears a new ObjRecord via nasm_malloc and returns it.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outobj.c",
+        "name": "obj_new",
+        "entity_kind": "function_definition",
+        "signature": "static ObjRecord *obj_new(void)",
+        "return_type": "ObjRecord *",
+        "parameters": [],
+        "direct_calls": [
+          "nasm_malloc",
+          "obj_clear"
+        ],
+        "documentation": "Allocate and clear a new ObjRecord; Also sets .ori to ori_null",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:nasm_malloc"
+        ],
+        "filter_score": 9.0,
+        "filter_confidence": 0.9,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outobj.c|obj_new|static ObjRecord *obj_new(void)"
+      }
+    },
+    {
+      "id": "nasm|output/outobj.c|obj_bump|static ObjRecord *obj_bump(ObjRecord * orp)",
+      "project": "nasm",
+      "file": "output/outobj.c",
+      "name": "obj_bump",
+      "signature": "static ObjRecord *obj_bump(ObjRecord * orp)",
+      "category": "allocator",
+      "confidence": 0.55,
+      "reason": "Allocates a new ObjRecord (obj_new), moves data into it, and returns the new record.",
+      "cfr": {
+        "project": "nasm",
+        "file": "output/outobj.c",
+        "name": "obj_bump",
+        "entity_kind": "function_definition",
+        "signature": "static ObjRecord *obj_bump(ObjRecord * orp)",
+        "return_type": "ObjRecord *",
+        "parameters": [
+          "ObjRecord * orp"
+        ],
+        "direct_calls": [
+          "memcpy",
+          "obj_emit",
+          "obj_new",
+          "ori"
+        ],
+        "documentation": "Advance to the next record because the existing one is full or its x_size is incompatible. Any uncommitted data is moved into the next record.",
+        "macro_value": "",
+        "filter_evidence": [
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:obj_new"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "nasm|output/outobj.c|obj_bump|static ObjRecord *obj_bump(ObjRecord * orp)"
+      }
+    }
+  ]
+}

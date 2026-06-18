@@ -1,0 +1,22 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2010, "cl": 24, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 654, "cl": 14, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1876, "cl": 26, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3270, "cl": 20, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2447, "cl": 15, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2047, "cl": 31, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1879, "cl": 27, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2160, "cl": 23, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1901, "cl": 15, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2012, "cl": 25, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1926, "cl": 15, "fl": "t_stream.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3343, "cl": 32, "fl": "t_stream.c" })
+		 conditional free path: 
+		  --> ({ "ln": 3346, "cl": 9, "fl": "t_stream.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5587, "cl": 30, "fl": "t_stream.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 2424, "cl": 19, "fl": "t_stream.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3195, "cl": 24, "fl": "t_stream.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2202, "cl": 17, "fl": "t_stream.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3093, "cl": 18, "fl": "t_stream.c" })

@@ -1,0 +1,16 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 296, "cl": 7, "fl": "mod_accesslog.c" })
+		 double free path: 
+		  --> ({ "ln": 521, "cl": 4, "fl": "mod_accesslog.c" }|True) 
+		  --> ({ "ln": 523, "cl": 9, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 524, "cl": 9, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 562, "cl": 16, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 566, "cl": 16, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 585, "cl": 16, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 587, "cl": 16, "fl": "mod_accesslog.c" }|True) 
+		  --> ({ "ln": 589, "cl": 10, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 591, "cl": 15, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 593, "cl": 15, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 595, "cl": 15, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 611, "cl": 10, "fl": "mod_accesslog.c" }|False) 
+		  --> ({ "ln": 613, "cl": 15, "fl": "mod_accesslog.c" }|False) 
+

@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1789, "cl": 15, "fl": "bitops.c" })
+		 double free path: 
+		  --> ({ "ln": 1731, "cl": 5, "fl": "bitops.c" }|False) 
+		  --> ({ "ln": 1801, "cl": 9, "fl": "bitops.c" }|False) 
+		  --> ({ "ln": 1810, "cl": 13, "fl": "bitops.c" }|False) 
+		  --> ({ "ln": 1818, "cl": 13, "fl": "bitops.c" }|True) 
+

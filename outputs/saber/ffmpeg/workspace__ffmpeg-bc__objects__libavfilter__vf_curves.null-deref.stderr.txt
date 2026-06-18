@@ -1,0 +1,22 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 883, "cl": 32, "fl": "libavfilter/vf_curves.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 259, "cl": 9, "fl": "libavfilter/vf_curves.c" })
+		 conditional free path: 
+		  --> ({ "ln": 261, "cl": 17, "fl": "libavfilter/vf_curves.c" }|True) 
+		  --> ({ "ln": 261, "cl": 23, "fl": "libavfilter/vf_curves.c" }|True) 
+		  --> ({ "ln": 315, "cl": 5, "fl": "libavfilter/vf_curves.c" }|False) 
+		  --> ({ "ln": 316, "cl": 5, "fl": "libavfilter/vf_curves.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 257, "cl": 14, "fl": "libavfilter/vf_curves.c" })
+		 conditional free path: 
+		  --> ({ "ln": 261, "cl": 23, "fl": "libavfilter/vf_curves.c" }|True) 
+		  --> ({ "ln": 261, "cl": 9, "fl": "libavfilter/vf_curves.c" }|False) 
+		  --> ({ "ln": 315, "cl": 5, "fl": "libavfilter/vf_curves.c" }|False) 
+		  --> ({ "ln": 316, "cl": 5, "fl": "libavfilter/vf_curves.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 258, "cl": 9, "fl": "libavfilter/vf_curves.c" })
+		 conditional free path: 
+		  --> ({ "ln": 261, "cl": 17, "fl": "libavfilter/vf_curves.c" }|True) 
+		  --> ({ "ln": 261, "cl": 9, "fl": "libavfilter/vf_curves.c" }|False) 
+		  --> ({ "ln": 315, "cl": 5, "fl": "libavfilter/vf_curves.c" }|False) 
+		  --> ({ "ln": 316, "cl": 5, "fl": "libavfilter/vf_curves.c" }|False) 
+

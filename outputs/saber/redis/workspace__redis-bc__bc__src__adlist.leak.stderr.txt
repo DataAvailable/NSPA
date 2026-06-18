@@ -1,0 +1,20 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 26, "cl": 17, "fl": "adlist.c" })
+		 conditional free path: 
+		  --> ({ "ln": 26, "cl": 9, "fl": "adlist.c" }|False) 
+		  --> ({ "ln": 260, "cl": 9, "fl": "adlist.c" }|False) 
+		  --> ({ "ln": 266, "cl": 5, "fl": "adlist.c" }|True) 
+		  --> ({ "ln": 269, "cl": 13, "fl": "adlist.c" }|True) 
+		  --> ({ "ln": 271, "cl": 17, "fl": "adlist.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 113, "cl": 17, "fl": "adlist.c" })
+		 conditional free path: 
+		  --> ({ "ln": 44, "cl": 5, "fl": "adlist.c" }|True) 
+		  --> ({ "ln": 113, "cl": 9, "fl": "adlist.c" }|False) 
+		  --> ({ "ln": 124, "cl": 9, "fl": "adlist.c" }|False) 
+		  --> ({ "ln": 124, "cl": 9, "fl": "adlist.c" }|True) 
+		  --> ({ "ln": 266, "cl": 5, "fl": "adlist.c" }|True) 
+		  --> ({ "ln": 269, "cl": 13, "fl": "adlist.c" }|True) 
+		  --> ({ "ln": 271, "cl": 17, "fl": "adlist.c" }|True) 
+		  --> ({ "ln": 279, "cl": 13, "fl": "adlist.c" }|False) 
+		  --> ({ "ln": 279, "cl": 13, "fl": "adlist.c" }|True) 
+

@@ -1,0 +1,44 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 968, "cl": 39, "fl": "acl.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 898, "cl": 21, "fl": "acl.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 104, "cl": 28, "fl": "acl.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 378, "cl": 24, "fl": "acl.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2703, "cl": 30, "fl": "acl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2711, "cl": 9, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 2724, "cl": 26, "fl": "acl.c" }|False) 
+		  --> ({ "ln": 2724, "cl": 26, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 2748, "cl": 9, "fl": "acl.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1929, "cl": 22, "fl": "acl.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 328, "cl": 12, "fl": "acl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1105, "cl": 13, "fl": "acl.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 510, "cl": 22, "fl": "acl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1353, "cl": 16, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 1358, "cl": 9, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 1359, "cl": 9, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 2132, "cl": 5, "fl": "acl.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 949, "cl": 39, "fl": "acl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 784, "cl": 5, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 786, "cl": 5, "fl": "acl.c" }|False) 
+		  --> ({ "ln": 786, "cl": 5, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 788, "cl": 9, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 802, "cl": 9, "fl": "acl.c" }|False) 
+		  --> ({ "ln": 986, "cl": 5, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 987, "cl": 13, "fl": "acl.c" }|False) 
+		  --> ({ "ln": 987, "cl": 13, "fl": "acl.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 380, "cl": 21, "fl": "acl.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 381, "cl": 21, "fl": "acl.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 349, "cl": 29, "fl": "acl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 784, "cl": 5, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 786, "cl": 5, "fl": "acl.c" }|False) 
+		  --> ({ "ln": 802, "cl": 9, "fl": "acl.c" }|False) 
+		  --> ({ "ln": 986, "cl": 5, "fl": "acl.c" }|True) 
+		  --> ({ "ln": 987, "cl": 13, "fl": "acl.c" }|True) 
+

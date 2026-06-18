@@ -1,0 +1,8 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 248, "cl": 29, "fl": "mod_deflate.c" })
+		 double free path: 
+		  --> ({ "ln": 2213, "cl": 6, "fl": "mod_deflate.c" }|False) 
+		  --> ({ "ln": 2213, "cl": 6, "fl": "mod_deflate.c" }|True) 
+		  --> ({ "ln": 2236, "cl": 6, "fl": "mod_deflate.c" }|False) 
+		  --> ({ "ln": 2239, "cl": 7, "fl": "mod_deflate.c" }|False) 
+		  --> ({ "ln": 2239, "cl": 7, "fl": "mod_deflate.c" }|True) 
+

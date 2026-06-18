@@ -1,0 +1,4 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 791, "cl": 44, "fl": "./configparser.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 793, "cl": 24, "fl": "./configparser.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 471, "cl": 42, "fl": "./configparser.y" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 42, "cl": 9, "fl": "./configparser.y" })

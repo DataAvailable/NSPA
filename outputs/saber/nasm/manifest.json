@@ -1,0 +1,4828 @@
+{
+  "metadata": {
+    "run_count": 344,
+    "failed_count": 3,
+    "stage_elapsed_seconds": 397.256,
+    "stage_elapsed": "6m 37.256s",
+    "saber_elapsed_seconds": 397.252,
+    "saber_elapsed": "6m 37.252s"
+  },
+  "runs": [
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/assemble.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/assemble.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.314
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/assemble.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/assemble.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.223
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/assemble.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/assemble.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.264
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/assemble.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/assemble.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.265
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directbl.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.021
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directbl.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.013
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directbl.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directbl.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directiv.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directiv.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directiv.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directiv.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directiv.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directiv.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/directiv.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/directiv.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.035
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/error.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/error.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__error.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/error.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/error.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/error.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/error.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/error.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/error.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__error.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/eval.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/eval.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__eval.leak.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/eval.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/eval.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/eval.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/eval.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/eval.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/eval.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__eval.null-deref.stderr.txt",
+      "elapsed_seconds": 0.122
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprdump.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprdump.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.018
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprdump.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprdump.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprdump.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprdump.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprdump.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprdump.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprlib.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprlib.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprlib.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/exprlib.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/exprlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/floats.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/floats.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/floats.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/floats.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.069
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/floats.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/floats.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.07
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/floats.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/floats.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/getbool.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/getbool.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.013
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/getbool.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/getbool.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.017
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/getbool.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/getbool.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/getbool.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/getbool.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/labels.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/labels.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__labels.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/labels.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/labels.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/labels.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/labels.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.038
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/labels.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/labels.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__labels.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/listing.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/listing.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/listing.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/listing.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/listing.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/listing.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/listing.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/listing.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/nasm.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/nasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__nasm.leak.stderr.txt",
+      "elapsed_seconds": 0.165
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/nasm.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/nasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__nasm.dfree.stderr.txt",
+      "elapsed_seconds": 0.168
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/nasm.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/nasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/nasm.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/nasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__nasm.null-deref.stderr.txt",
+      "elapsed_seconds": 0.165
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/parser.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/parser.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.315
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/parser.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/parser.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__parser.dfree.stderr.txt",
+      "elapsed_seconds": 0.314
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/parser.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/parser.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/parser.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/parser.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.318
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pptok.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pptok.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pptok.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pptok.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pptok.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pptok.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pptok.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pptok.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pragma.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pragma.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pragma.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pragma.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pragma.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pragma.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/pragma.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/pragma.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/preproc.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/preproc.bc"
+      ],
+      "returncode": 124,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__preproc.leak.stderr.txt",
+      "elapsed_seconds": 120.003
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/preproc.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/preproc.bc"
+      ],
+      "returncode": 124,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__preproc.dfree.stderr.txt",
+      "elapsed_seconds": 120.004
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/preproc.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/preproc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.466
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/preproc.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/preproc.bc"
+      ],
+      "returncode": 124,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__preproc.null-deref.stderr.txt",
+      "elapsed_seconds": 120.004
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/quote.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/quote.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__quote.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/quote.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/quote.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/quote.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/quote.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/quote.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/quote.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__quote.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/rdstrnum.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/rdstrnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/rdstrnum.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/rdstrnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/rdstrnum.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/rdstrnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/rdstrnum.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/rdstrnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/segalloc.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/segalloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/segalloc.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/segalloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/segalloc.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/segalloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/segalloc.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/segalloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/srcfile.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/srcfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/srcfile.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/srcfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/srcfile.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/srcfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/srcfile.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/srcfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/stdscan.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/stdscan.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__stdscan.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/stdscan.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/stdscan.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/stdscan.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/stdscan.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/stdscan.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/stdscan.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__stdscan.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/strfunc.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/strfunc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/strfunc.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/strfunc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/strfunc.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/strfunc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/strfunc.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/strfunc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/tokhash.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/tokhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.365
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/tokhash.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/tokhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.365
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/tokhash.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/tokhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.367
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/tokhash.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/tokhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.365
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/uncompress.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/uncompress.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__uncompress.leak.stderr.txt",
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/uncompress.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/uncompress.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/uncompress.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/uncompress.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/uncompress.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/uncompress.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__uncompress.null-deref.stderr.txt",
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/warnings.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/warnings.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/warnings.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/warnings.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/warnings.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/warnings.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/asm/warnings.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/asm/warnings.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/common.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/common.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/common.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/common.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/common.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/common.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/common.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/common.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/errstubs.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/errstubs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/errstubs.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/errstubs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/errstubs.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/errstubs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/common/errstubs.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/common/errstubs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/disasm.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/disasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/disasm.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/disasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/disasm.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/disasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/disasm.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/disasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/diserror.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/diserror.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/diserror.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/diserror.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/diserror.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/diserror.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/diserror.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/diserror.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/ndisasm.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/ndisasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/ndisasm.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/ndisasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/ndisasm.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/ndisasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__disasm__ndisasm.fileck.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/ndisasm.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/ndisasm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/prefix.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/prefix.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/prefix.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/prefix.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/prefix.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/prefix.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/prefix.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/prefix.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/sync.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/sync.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/sync.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/sync.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/sync.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/sync.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/disasm/sync.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/disasm/sync.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/macros/macros.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/macros/macros.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/macros/macros.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/macros/macros.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/macros/macros.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/macros/macros.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/macros/macros.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/macros/macros.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/alloc.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/alloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/alloc.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/alloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/alloc.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/alloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/alloc.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/alloc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/asprintf.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/asprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/asprintf.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/asprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/asprintf.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/asprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/asprintf.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/asprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/badenum.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/badenum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/badenum.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/badenum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/badenum.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/badenum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/badenum.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/badenum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/bsi.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/bsi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/bsi.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/bsi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/bsi.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/bsi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/bsi.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/bsi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc32b.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc32b.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc32b.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc32b.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc32b.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc32b.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc32b.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc32b.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc64.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc64.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc64.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc64.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc64.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc64.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/crc64.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/crc64.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/file.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/file.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/file.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/file.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/file.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/file.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/file.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/file.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/fileio.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/fileio.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/fileio.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/fileio.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/hashtbl.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/hashtbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__nasmlib__hashtbl.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/hashtbl.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/hashtbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/hashtbl.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/hashtbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/hashtbl.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/hashtbl.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__nasmlib__hashtbl.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ilog2.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ilog2.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ilog2.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ilog2.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ilog2.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ilog2.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ilog2.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ilog2.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/md5c.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/md5c.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/md5c.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/md5c.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/md5c.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/md5c.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/md5c.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/md5c.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/mmap.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/mmap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/mmap.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/mmap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/mmap.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/mmap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/mmap.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/mmap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/nctype.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/nctype.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/nctype.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/nctype.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/nctype.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/nctype.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/nctype.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/nctype.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/numstr.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/numstr.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/numstr.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/numstr.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/numstr.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/numstr.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/numstr.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/numstr.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/path.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/path.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/path.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/path.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/path.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/path.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/path.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/path.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/perfhash.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/perfhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/perfhash.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/perfhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/perfhash.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/perfhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/perfhash.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/perfhash.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/raa.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/raa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/raa.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/raa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/raa.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/raa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/raa.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/raa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rbtree.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rbtree.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rbtree.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rbtree.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rbtree.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rbtree.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rbtree.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rbtree.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/readnum.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/readnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/readnum.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/readnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/readnum.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/readnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/readnum.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/readnum.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/realpath.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/realpath.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/realpath.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/realpath.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/realpath.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/realpath.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/realpath.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/realpath.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rlimit.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rlimit.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rlimit.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rlimit.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rlimit.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rlimit.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/rlimit.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/rlimit.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/saa.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/saa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__nasmlib__saa.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/saa.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/saa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/saa.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/saa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/saa.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/saa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__nasmlib__saa.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/string.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/string.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/string.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/string.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/string.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/string.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/string.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/string.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/strlist.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/strlist.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__nasmlib__strlist.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/strlist.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/strlist.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/strlist.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/strlist.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/strlist.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/strlist.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__nasmlib__strlist.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ver.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ver.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ver.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ver.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ver.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ver.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/ver.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/ver.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/zerobuf.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/zerobuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/zerobuf.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/zerobuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.018
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/zerobuf.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/zerobuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/nasmlib/zerobuf.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/nasmlib/zerobuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/codeview.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/codeview.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__codeview.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/codeview.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/codeview.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/codeview.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/codeview.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.039
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/codeview.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/codeview.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__codeview.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nulldbg.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nulldbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nulldbg.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nulldbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nulldbg.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nulldbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nulldbg.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nulldbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nullout.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nullout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nullout.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nullout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nullout.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nullout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/nullout.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/nullout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outaout.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outaout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outaout.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outaout.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outaout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outaout.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outaout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.069
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outaout.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outaout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outaout.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outas86.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outas86.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outas86.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outas86.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outas86.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outas86.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outas86.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.039
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outas86.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outas86.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outas86.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outbin.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outbin.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outbin.leak.stderr.txt",
+      "elapsed_seconds": 0.119
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outbin.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outbin.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.116
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outbin.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outbin.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outbin.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outbin.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outbin.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outcoff.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outcoff.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.122
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outcoff.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outcoff.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outdbg.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outdbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outdbg.leak.stderr.txt",
+      "elapsed_seconds": 0.068
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outdbg.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outdbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outdbg.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outdbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.04
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outdbg.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outdbg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outdbg.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outelf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outelf.leak.stderr.txt",
+      "elapsed_seconds": 0.214
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outelf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outelf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.168
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outelf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outelf.null-deref.stderr.txt",
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outform.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outform.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outform.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outform.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outform.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outform.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outform.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outform.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outieee.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outieee.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outieee.leak.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outieee.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outieee.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outieee.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outieee.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outieee.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outieee.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outieee.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outlib.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.037
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outlib.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outlib.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outlib.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outlib.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outmacho.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outmacho.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outmacho.leak.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outmacho.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outmacho.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outmacho.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outmacho.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.119
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outmacho.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outmacho.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outmacho.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outobj.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outobj.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outobj.leak.stderr.txt",
+      "elapsed_seconds": 4.327
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outobj.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outobj.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 4.326
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outobj.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outobj.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/output/outobj.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/output/outobj.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outobj.null-deref.stderr.txt",
+      "elapsed_seconds": 4.375
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/snprintf.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/snprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.018
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/snprintf.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/snprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/snprintf.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/snprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/snprintf.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/snprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strlcpy.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strlcpy.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strlcpy.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strlcpy.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strlcpy.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strnlen.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strnlen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strnlen.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strnlen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strnlen.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strnlen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/strnlen.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/strnlen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/vsnprintf.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/vsnprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/vsnprintf.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/vsnprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/vsnprintf.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/vsnprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/stdlib/vsnprintf.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/stdlib/vsnprintf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/iflag.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/iflag.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/iflag.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/iflag.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/iflag.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/iflag.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/iflag.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/iflag.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsa.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 1.268
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsa.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 1.268
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsa.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 1.225
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsa.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsa.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 1.218
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsb.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsb.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsb.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsb.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsb.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsb.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsb.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsb.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsd.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsd.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.666
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsd.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsd.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.666
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsd.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsd.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.716
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsd.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsd.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.674
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsn.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsn.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsn.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsn.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.165
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsn.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsn.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/insnsn.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/insnsn.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regdis.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regdis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.014
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regdis.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regdis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regdis.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regdis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regdis.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regdis.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regflags.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regflags.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regflags.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regflags.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regflags.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regflags.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regflags.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regflags.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regs.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regs.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regs.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regs.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regs.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regvals.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regvals.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regvals.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regvals.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regvals.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regvals.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/nasm-bc/bc/x86/regvals.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/nasm-bc/bc/x86/regvals.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    }
+  ]
+}

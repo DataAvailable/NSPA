@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 497, "cl": 19, "fl": "resize.c" })
+		 conditional free path: 
+		  --> ({ "ln": 497, "cl": 8, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|False) 
+		  --> ({ "ln": 743, "cl": 7, "fl": "resize.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 512, "cl": 18, "fl": "resize.c" })
+		 conditional free path: 
+		  --> ({ "ln": 738, "cl": 6, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 739, "cl": 3, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 740, "cl": 10, "fl": "resize.c" }|True) 
+		  --> ({ "ln": 745, "cl": 7, "fl": "resize.c" }|True) 
+

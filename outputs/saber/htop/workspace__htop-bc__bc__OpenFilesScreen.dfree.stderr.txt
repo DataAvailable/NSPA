@@ -1,0 +1,25 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 156, "cl": 44, "fl": "OpenFilesScreen.c" })
+		 double free path: 
+		  --> ({ "ln": 148, "cl": 11, "fl": "OpenFilesScreen.c" }|False) 
+		  --> ({ "ln": 153, "cl": 7, "fl": "OpenFilesScreen.c" }|True) 
+		  --> ({ "ln": 153, "cl": 7, "fl": "OpenFilesScreen.c" }|False) 
+		  --> ({ "ln": 153, "cl": 7, "fl": "OpenFilesScreen.c" }|True) 
+		  --> ({ "ln": 183, "cl": 17, "fl": "OpenFilesScreen.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 261, "cl": 35, "fl": "OpenFilesScreen.c" })
+		 double free path: 
+		  --> ({ "ln": 262, "cl": 8, "fl": "OpenFilesScreen.c" }|False) 
+		  --> ({ "ln": 264, "cl": 15, "fl": "OpenFilesScreen.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 147, "cl": 20, "fl": "OpenFilesScreen.c" })
+		 double free path: 
+		  --> ({ "ln": 153, "cl": 7, "fl": "OpenFilesScreen.c" }|True) 
+		  --> ({ "ln": 153, "cl": 7, "fl": "OpenFilesScreen.c" }|False) 
+		  --> ({ "ln": 153, "cl": 7, "fl": "OpenFilesScreen.c" }|True) 
+		  --> ({ "ln": 183, "cl": 17, "fl": "OpenFilesScreen.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 98, "cl": 35, "fl": "OpenFilesScreen.c" })
+		 double free path: 
+		  --> ({ "ln": 262, "cl": 8, "fl": "OpenFilesScreen.c" }|False) 
+		  --> ({ "ln": 264, "cl": 15, "fl": "OpenFilesScreen.c" }|False) 
+

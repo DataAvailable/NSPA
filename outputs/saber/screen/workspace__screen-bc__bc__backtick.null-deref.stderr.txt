@@ -1,0 +1,10 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 123, "cl": 8, "fl": "backtick.c" })
+		 conditional free path: 
+		  --> ({ "ln": 117, "cl": 6, "fl": "backtick.c" }|True) 
+		  --> ({ "ln": 141, "cl": 20, "fl": "backtick.c" }|True) 
+		  --> ({ "ln": 141, "cl": 6, "fl": "backtick.c" }|True) 
+		  --> ({ "ln": 143, "cl": 7, "fl": "backtick.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 142, "cl": 13, "fl": "backtick.c" })
+		 conditional free path: 
+

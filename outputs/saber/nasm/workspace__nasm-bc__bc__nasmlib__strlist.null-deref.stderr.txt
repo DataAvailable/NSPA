@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 84, "cl": 6, "fl": "nasmlib/strlist.c" })
+		 conditional free path: 
+		  --> ({ "ln": 87, "cl": 6, "fl": "nasmlib/strlist.c" }|True) 
+		  --> ({ "ln": 89, "cl": 7, "fl": "nasmlib/strlist.c" }|True) 
+

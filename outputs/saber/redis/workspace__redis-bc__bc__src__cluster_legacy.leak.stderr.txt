@@ -1,0 +1,76 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3532, "cl": 36, "fl": "cluster_legacy.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1332, "cl": 25, "fl": "cluster_legacy.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1644, "cl": 19, "fl": "cluster_legacy.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3277, "cl": 23, "fl": "cluster_legacy.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 5489, "cl": 42, "fl": "cluster_legacy.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1361, "cl": 26, "fl": "cluster_legacy.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1398, "cl": 10, "fl": "cluster_legacy.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4041, "cl": 37, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1161, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1162, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3933, "cl": 37, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1161, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1162, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4030, "cl": 37, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1161, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1162, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 2099, "cl": 33, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2084, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1490, "cl": 22, "fl": "cluster_legacy.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3737, "cl": 37, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1161, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1162, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 3808, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3911, "cl": 37, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1161, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1162, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 4015, "cl": 37, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1161, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1162, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 3894, "cl": 37, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1161, "cl": 5, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1162, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3275, "cl": 23, "fl": "cluster_legacy.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1169, "cl": 25, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1200, "cl": 9, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 1200, "cl": 9, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1201, "cl": 13, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 1201, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1202, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1204, "cl": 20, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 1204, "cl": 20, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 1205, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 4690, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 4698, "cl": 13, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 4698, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1171, "cl": 28, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4690, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 4698, "cl": 13, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 4698, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 3517, "cl": 32, "fl": "cluster_legacy.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1175, "cl": 20, "fl": "cluster_legacy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 4690, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+		  --> ({ "ln": 4698, "cl": 13, "fl": "cluster_legacy.c" }|False) 
+		  --> ({ "ln": 4698, "cl": 13, "fl": "cluster_legacy.c" }|True) 
+

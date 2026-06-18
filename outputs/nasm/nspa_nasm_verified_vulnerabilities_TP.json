@@ -1,0 +1,761 @@
+{
+  "metadata": {
+    "warning_count": 313,
+    "confirmed_count": 9,
+    "unknown_count": 38,
+    "api_error_unknown_count": 8,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 9,
+    "source_output": "outputs/nasm/nspa_nasm_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "null-deref|NeverFree|asm/nasm.c|666|19|3|workspace__nasm-bc__bc__asm__nasm.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.6,
+      "rationale": "filename_set_extension at line 666 returns heap-allocated memory assigned to outname. On the feasible path where the generated name equals inname (line 667), outname is reassigned to the string literal \"nasm.out\" at line 668 without freeing the previously allocated buffer, leaking it. The buffer is also not freed on the normal path within this slice, consistent with the NeverFree report.",
+      "evidence_lines": [
+        {
+          "file": "asm/nasm.c",
+          "line": 666,
+          "role": "allocation"
+        },
+        {
+          "file": "asm/nasm.c",
+          "line": 667,
+          "role": "condition"
+        },
+        {
+          "file": "asm/nasm.c",
+          "line": 668,
+          "role": "ownership"
+        }
+      ],
+      "fix_suggestion": "Before reassigning outname to \"nasm.out\", free the buffer returned by filename_set_extension (e.g. nasm_free(outname)), and ensure outname is freed at program teardown.",
+      "warning": {
+        "id": "null-deref|NeverFree|asm/nasm.c|666|19|3|workspace__nasm-bc__bc__asm__nasm.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__nasm.null-deref.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/asm/nasm.bc",
+        "primary": {
+          "file": "asm/nasm.c",
+          "line": 666,
+          "column": 19
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 666, \"cl\": 19, \"fl\": \"asm/nasm.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|asm/nasm.c|666|19|3|workspace__nasm-bc__bc__asm__nasm.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__asm__nasm.null-deref.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/asm/nasm.bc",
+          "primary": {
+            "file": "asm/nasm.c",
+            "line": 666,
+            "column": 19
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 666, \"cl\": 19, \"fl\": \"asm/nasm.c\" })"
+        },
+        "source_files": [
+          "asm/nasm.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "asm/nasm.c",
+            "start_line": 658,
+            "end_line": 674,
+            "important_lines": [
+              666
+            ],
+            "text": "     658:     }\n     659: \n     660:     /*\n     661:      * If no output file name provided and this\n     662:      * is preprocess mode, we're perfectly\n     663:      * fine to output into stdout.\n     664:      */\n     665:     if (!outname && !(operating_mode & OP_PREPROCESS)) {\n>>   666:         outname = filename_set_extension(inname, ofmt->extension);\n     667:         if (!strcmp(outname, inname)) {\n     668:             outname = \"nasm.out\";\n     669:             nasm_warn(WARN_OTHER, \"default output file same as input, using `%s' for output\\n\", outname);\n     670:         }\n     671:     }\n     672: \n     673:     depend_list = (operating_mode & OP_DEPEND) ? strlist_alloc(true) : NULL;\n     674: "
+          }
+        ]
+      }
+    },
+    {
+      "id": "fileck|PartialFileClose|disasm/ndisasm.c|255|14|0|workspace__nasm-bc__bc__disasm__ndisasm.fileck.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "file_leak",
+      "confidence": 0.88,
+      "rationale": "fp is opened with fopen at line 255 when filename != \"-\". On the path where skip() fails (line 270 condition true), the function returns 1 at line 271 without calling fclose(fp). The only fclose is at line 331, reached only when execution proceeds past the skip check. So the early-return leaks the opened file handle. The fclose at 330 is correctly guarded by fp != stdin, but that cleanup is bypassed on the EOF-before-header return path.",
+      "evidence_lines": [
+        {
+          "file": "disasm/ndisasm.c",
+          "line": 255,
+          "role": "allocation"
+        },
+        {
+          "file": "disasm/ndisasm.c",
+          "line": 270,
+          "role": "condition"
+        },
+        {
+          "file": "disasm/ndisasm.c",
+          "line": 271,
+          "role": "return"
+        },
+        {
+          "file": "disasm/ndisasm.c",
+          "line": 331,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Before returning 1 at line 271, close the file when it is not stdin: if (fp != stdin) fclose(fp); then return.",
+      "warning": {
+        "id": "fileck|PartialFileClose|disasm/ndisasm.c|255|14|0|workspace__nasm-bc__bc__disasm__ndisasm.fileck.stderr.txt",
+        "checker": "fileck",
+        "kind": "PartialFileClose",
+        "site_label": "file open",
+        "vulnerability_type": "file_leak",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__disasm__ndisasm.fileck.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/disasm/ndisasm.bc",
+        "primary": {
+          "file": "disasm/ndisasm.c",
+          "line": 255,
+          "column": 14
+        },
+        "path": [
+          {
+            "file": "disasm/ndisasm.c",
+            "line": 270,
+            "column": 9,
+            "branch": "False"
+          },
+          {
+            "file": "disasm/ndisasm.c",
+            "line": 330,
+            "column": 9,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 255, \"cl\": 14, \"fl\": \"disasm/ndisasm.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 270, \"cl\": 9, \"fl\": \"disasm/ndisasm.c\" }|False) \n\t\t  --> ({ \"ln\": 330, \"cl\": 9, \"fl\": \"disasm/ndisasm.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "fileck|PartialFileClose|disasm/ndisasm.c|255|14|0|workspace__nasm-bc__bc__disasm__ndisasm.fileck.stderr.txt",
+          "checker": "fileck",
+          "kind": "PartialFileClose",
+          "site_label": "file open",
+          "vulnerability_type": "file_leak",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__disasm__ndisasm.fileck.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/disasm/ndisasm.bc",
+          "primary": {
+            "file": "disasm/ndisasm.c",
+            "line": 255,
+            "column": 14
+          },
+          "path": [
+            {
+              "file": "disasm/ndisasm.c",
+              "line": 270,
+              "column": 9,
+              "branch": "False"
+            },
+            {
+              "file": "disasm/ndisasm.c",
+              "line": 330,
+              "column": 9,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialFileClose : file open location at : (CallICFGNode: { \"ln\": 255, \"cl\": 14, \"fl\": \"disasm/ndisasm.c\" })\n\t\t conditional file close path: \n\t\t  --> ({ \"ln\": 270, \"cl\": 9, \"fl\": \"disasm/ndisasm.c\" }|False) \n\t\t  --> ({ \"ln\": 330, \"cl\": 9, \"fl\": \"disasm/ndisasm.c\" }|True)"
+        },
+        "source_files": [
+          "disasm/ndisasm.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "disasm/ndisasm.c",
+            "start_line": 247,
+            "end_line": 278,
+            "important_lines": [
+              255,
+              270
+            ],
+            "text": "     247:     }\n     248: \n     249:     if (!filename) {\n     250:         usage();\n     251:         return 1;\n     252:     }\n     253: \n     254:     if (strcmp(filename, \"-\")) {\n>>   255:         fp = fopen(filename, \"rb\");\n     256:         if (!fp) {\n     257:             fprintf(stderr, \"%s: unable to open `%s': %s\\n\",\n     258:                     pname, filename, strerror(errno));\n     259:             return 1;\n     260:         }\n     261:     } else {\n     262:         nasm_set_binary_mode(stdin);\n     263:         fp = stdin;\n     264:     }\n     265: \n     266:     reset_global_defaults(bits);\n     267: \n     268:     fileoffs = 0;\n     269:     dataread = 0;\n>>   270:     if (!skip(&fileoffs, initskip, fp))\n     271:         return 1;               /* EOF before header */\n     272: \n     273:     /*\n     274:      * This main loop is really horrible, and wants rewriting with\n     275:      * an axe. It'll stay the way it is for a while though, until I\n     276:      * find the energy...\n     277:      */\n     278: "
+          },
+          {
+            "file": "disasm/ndisasm.c",
+            "start_line": 322,
+            "end_line": 338,
+            "important_lines": [
+              330
+            ],
+            "text": "     322:         if (q >= buffer + INSN_MAX) {\n     323:             int count = p - q;\n     324:             memmove(buffer, q, count);\n     325:             p -= (q - buffer);\n     326:             q = buffer;\n     327:         }\n     328:     }\n     329: \n>>   330:     if (fp != stdin)\n     331:         fclose(fp);\n     332: \n     333:     return 0;\n     334: }\n     335: \n     336: static void output_ins(uint64_t offset, const uint8_t *data,\n     337:                        int datalen, const char *insn)\n     338: {"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|output/outas86.c|104|21|1|workspace__nasm-bc__bc__output__outas86.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.6,
+      "rationale": "filename_set_extension() allocates a new string (nasm_strdup-style) and the result is passed directly to as86_add_string(), which in NASM copies the bytes into the 'strs' SAA table but does not free the passed buffer. No pointer is retained or freed, so the allocated string leaks. The provided slice does not include the callee bodies, so this rests partly on the typical NASM contract; it is a one-time init leak rather than a null deref.",
+      "evidence_lines": [
+        {
+          "file": "output/outas86.c",
+          "line": 104,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outas86.c",
+          "line": 104,
+          "role": "ownership"
+        }
+      ],
+      "fix_suggestion": "Capture the filename_set_extension() result in a temporary, pass it to as86_add_string(), then nasm_free() it after the call.",
+      "warning": {
+        "id": "null-deref|NeverFree|output/outas86.c|104|21|1|workspace__nasm-bc__bc__output__outas86.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outas86.null-deref.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/output/outas86.bc",
+        "primary": {
+          "file": "output/outas86.c",
+          "line": 104,
+          "column": 21
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 104, \"cl\": 21, \"fl\": \"output/outas86.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|output/outas86.c|104|21|1|workspace__nasm-bc__bc__output__outas86.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outas86.null-deref.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/output/outas86.bc",
+          "primary": {
+            "file": "output/outas86.c",
+            "line": 104,
+            "column": 21
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 104, \"cl\": 21, \"fl\": \"output/outas86.c\" })"
+        },
+        "source_files": [
+          "output/outas86.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "output/outas86.c",
+            "start_line": 81,
+            "end_line": 105,
+            "important_lines": [
+              104
+            ],
+            "text": "      81: static void as86_init(void)\n      82: {\n      83:     stext.data = saa_init(1L);\n      84:     stext.datalen = 0L;\n      85:     stext.head = stext.last = NULL;\n      86:     stext.tail = &stext.head;\n      87:     sdata.data = saa_init(1L);\n      88:     sdata.datalen = 0L;\n      89:     sdata.head = sdata.last = NULL;\n      90:     sdata.tail = &sdata.head;\n      91:     bsslen =\n      92:         stext.len = stext.datalen = stext.size =\n      93:         sdata.len = sdata.datalen = sdata.size = 0;\n      94:     stext.index = seg_alloc();\n      95:     sdata.index = seg_alloc();\n      96:     bssindex = seg_alloc();\n      97:     syms = saa_init((int32_t)sizeof(struct Symbol));\n      98:     nsyms = 0;\n      99:     bsym = raa_init();\n     100:     strs = saa_init(1L);\n     101:     strslen = 0;\n     102: \n     103:     /* as86 module name = input file minus extension */\n>>   104:     as86_add_string(filename_set_extension(inname, \"\"));\n     105: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|NeverFree|output/outcoff.c|901|28|0|workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "newS and newS->String are allocated (lines 898, 901) before the duplicate check. In the else branch, when an existing entry matches name, the function returns at line 919 without linking newS into the Exports list and without freeing it. On that path both allocations leak. On the other paths newS is linked into the global Exports list (ownership transfer), so those are fine, but the early-return path is a feasible leak.",
+      "evidence_lines": [
+        {
+          "file": "output/outcoff.c",
+          "line": 898,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 901,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 918,
+          "role": "condition"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 919,
+          "role": "return"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 922,
+          "role": "ownership"
+        }
+      ],
+      "fix_suggestion": "Perform the duplicate-name check before allocating newS, or free newS and newS->String before the early return at line 919.",
+      "warning": {
+        "id": "leak|NeverFree|output/outcoff.c|901|28|0|workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+        "primary": {
+          "file": "output/outcoff.c",
+          "line": 901,
+          "column": 28
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 901, \"cl\": 28, \"fl\": \"output/outcoff.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|output/outcoff.c|901|28|0|workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+          "primary": {
+            "file": "output/outcoff.c",
+            "line": 901,
+            "column": 28
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 901, \"cl\": 28, \"fl\": \"output/outcoff.c\" })"
+        },
+        "source_files": [
+          "output/outcoff.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "output/outcoff.c",
+            "start_line": 894,
+            "end_line": 924,
+            "important_lines": [
+              901
+            ],
+            "text": "     894: static void AddExport(char *name)\n     895: {\n     896:     STRING *rvp = Exports, *newS;\n     897: \n     898:     newS = (STRING *) nasm_malloc(sizeof(STRING));\n     899:     newS->len = strlen(name);\n     900:     newS->next = NULL;\n>>   901:     newS->String = (char *)nasm_malloc(newS->len + 1);\n     902:     strcpy(newS->String, name);\n     903:     if (rvp == NULL) {\n     904:         int i;\n     905: \n     906:         for (i = 0; i < coff_nsects; i++) {\n     907:             if (!strcmp(EXPORT_SECTION_NAME, coff_sects[i]->name))\n     908:                 break;\n     909:         }\n     910: \n     911:         if (i == coff_nsects)\n     912:             i = coff_make_section(EXPORT_SECTION_NAME, EXPORT_SECTION_FLAGS);\n     913: \n     914:         directive_sec = coff_sects[i];\n     915:         Exports = newS;\n     916:     } else {\n     917:         while (rvp->next) {\n     918:             if (!strcmp(rvp->String, name))\n     919:                 return;\n     920:             rvp = rvp->next;\n     921:         }\n     922:         rvp->next = newS;\n     923:     }\n     924: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|NeverFree|output/outcoff.c|898|23|5|workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.8,
+      "rationale": "newS (and newS->String) are allocated unconditionally at lines 898/901, but on the duplicate-name path the function returns at line 919 without linking newS into the Exports list or freeing it, leaking both allocations. On other paths newS is stored in the list (intentional ownership transfer), but the early return makes the leak feasible.",
+      "evidence_lines": [
+        {
+          "file": "output/outcoff.c",
+          "line": 898,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 901,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 918,
+          "role": "condition"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 919,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Check for an existing entry with the same name before allocating newS, or free newS and newS->String before the early return at line 919.",
+      "warning": {
+        "id": "leak|NeverFree|output/outcoff.c|898|23|5|workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+        "primary": {
+          "file": "output/outcoff.c",
+          "line": 898,
+          "column": 23
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 898, \"cl\": 23, \"fl\": \"output/outcoff.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|output/outcoff.c|898|23|5|workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.leak.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+          "primary": {
+            "file": "output/outcoff.c",
+            "line": 898,
+            "column": 23
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 898, \"cl\": 23, \"fl\": \"output/outcoff.c\" })"
+        },
+        "source_files": [
+          "output/outcoff.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "output/outcoff.c",
+            "start_line": 894,
+            "end_line": 924,
+            "important_lines": [
+              898
+            ],
+            "text": "     894: static void AddExport(char *name)\n     895: {\n     896:     STRING *rvp = Exports, *newS;\n     897: \n>>   898:     newS = (STRING *) nasm_malloc(sizeof(STRING));\n     899:     newS->len = strlen(name);\n     900:     newS->next = NULL;\n     901:     newS->String = (char *)nasm_malloc(newS->len + 1);\n     902:     strcpy(newS->String, name);\n     903:     if (rvp == NULL) {\n     904:         int i;\n     905: \n     906:         for (i = 0; i < coff_nsects; i++) {\n     907:             if (!strcmp(EXPORT_SECTION_NAME, coff_sects[i]->name))\n     908:                 break;\n     909:         }\n     910: \n     911:         if (i == coff_nsects)\n     912:             i = coff_make_section(EXPORT_SECTION_NAME, EXPORT_SECTION_FLAGS);\n     913: \n     914:         directive_sec = coff_sects[i];\n     915:         Exports = newS;\n     916:     } else {\n     917:         while (rvp->next) {\n     918:             if (!strcmp(rvp->String, name))\n     919:                 return;\n     920:             rvp = rvp->next;\n     921:         }\n     922:         rvp->next = newS;\n     923:     }\n     924: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|output/outcoff.c|901|28|0|workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.8,
+      "rationale": "newS and newS->String are allocated up front, but in the non-empty list branch the loop returns early on a duplicate name (line 919) without linking newS into the Exports list or freeing it. On that feasible path both allocations leak. Only the rvp==NULL branch and the final rvp->next=newS reliably transfer ownership.",
+      "evidence_lines": [
+        {
+          "file": "output/outcoff.c",
+          "line": 898,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 901,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 917,
+          "role": "condition"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 918,
+          "role": "condition"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 919,
+          "role": "return"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 922,
+          "role": "ownership"
+        }
+      ],
+      "fix_suggestion": "Before the early return on duplicate name, free newS->String and newS (e.g., nasm_free(newS->String); nasm_free(newS); return;), or check for duplicates before allocating.",
+      "warning": {
+        "id": "null-deref|NeverFree|output/outcoff.c|901|28|0|workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+        "primary": {
+          "file": "output/outcoff.c",
+          "line": 901,
+          "column": 28
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 901, \"cl\": 28, \"fl\": \"output/outcoff.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|output/outcoff.c|901|28|0|workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+          "primary": {
+            "file": "output/outcoff.c",
+            "line": 901,
+            "column": 28
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 901, \"cl\": 28, \"fl\": \"output/outcoff.c\" })"
+        },
+        "source_files": [
+          "output/outcoff.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "output/outcoff.c",
+            "start_line": 894,
+            "end_line": 924,
+            "important_lines": [
+              901
+            ],
+            "text": "     894: static void AddExport(char *name)\n     895: {\n     896:     STRING *rvp = Exports, *newS;\n     897: \n     898:     newS = (STRING *) nasm_malloc(sizeof(STRING));\n     899:     newS->len = strlen(name);\n     900:     newS->next = NULL;\n>>   901:     newS->String = (char *)nasm_malloc(newS->len + 1);\n     902:     strcpy(newS->String, name);\n     903:     if (rvp == NULL) {\n     904:         int i;\n     905: \n     906:         for (i = 0; i < coff_nsects; i++) {\n     907:             if (!strcmp(EXPORT_SECTION_NAME, coff_sects[i]->name))\n     908:                 break;\n     909:         }\n     910: \n     911:         if (i == coff_nsects)\n     912:             i = coff_make_section(EXPORT_SECTION_NAME, EXPORT_SECTION_FLAGS);\n     913: \n     914:         directive_sec = coff_sects[i];\n     915:         Exports = newS;\n     916:     } else {\n     917:         while (rvp->next) {\n     918:             if (!strcmp(rvp->String, name))\n     919:                 return;\n     920:             rvp = rvp->next;\n     921:         }\n     922:         rvp->next = newS;\n     923:     }\n     924: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|output/outcoff.c|898|23|5|workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.78,
+      "rationale": "newS (and newS->String) is allocated at lines 898/901 before the duplicate check. On the else branch, if an existing entry matches name, the function returns at line 919 without linking newS into the Exports list and without freeing it, leaking both allocations. On the other paths ownership is transferred to the global Exports list, but the early-return path is a feasible leak.",
+      "evidence_lines": [
+        {
+          "file": "output/outcoff.c",
+          "line": 898,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 901,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 918,
+          "role": "condition"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 919,
+          "role": "return"
+        },
+        {
+          "file": "output/outcoff.c",
+          "line": 915,
+          "role": "ownership"
+        }
+      ],
+      "fix_suggestion": "Perform the duplicate-name check before allocating newS, or free newS and newS->String before the early return at line 919.",
+      "warning": {
+        "id": "null-deref|NeverFree|output/outcoff.c|898|23|5|workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+        "primary": {
+          "file": "output/outcoff.c",
+          "line": 898,
+          "column": 23
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 898, \"cl\": 23, \"fl\": \"output/outcoff.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|output/outcoff.c|898|23|5|workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outcoff.null-deref.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/output/outcoff.bc",
+          "primary": {
+            "file": "output/outcoff.c",
+            "line": 898,
+            "column": 23
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 898, \"cl\": 23, \"fl\": \"output/outcoff.c\" })"
+        },
+        "source_files": [
+          "output/outcoff.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "output/outcoff.c",
+            "start_line": 894,
+            "end_line": 924,
+            "important_lines": [
+              898
+            ],
+            "text": "     894: static void AddExport(char *name)\n     895: {\n     896:     STRING *rvp = Exports, *newS;\n     897: \n>>   898:     newS = (STRING *) nasm_malloc(sizeof(STRING));\n     899:     newS->len = strlen(name);\n     900:     newS->next = NULL;\n     901:     newS->String = (char *)nasm_malloc(newS->len + 1);\n     902:     strcpy(newS->String, name);\n     903:     if (rvp == NULL) {\n     904:         int i;\n     905: \n     906:         for (i = 0; i < coff_nsects; i++) {\n     907:             if (!strcmp(EXPORT_SECTION_NAME, coff_sects[i]->name))\n     908:                 break;\n     909:         }\n     910: \n     911:         if (i == coff_nsects)\n     912:             i = coff_make_section(EXPORT_SECTION_NAME, EXPORT_SECTION_FLAGS);\n     913: \n     914:         directive_sec = coff_sects[i];\n     915:         Exports = newS;\n     916:     } else {\n     917:         while (rvp->next) {\n     918:             if (!strcmp(rvp->String, name))\n     919:                 return;\n     920:             rvp = rvp->next;\n     921:         }\n     922:         rvp->next = newS;\n     923:     }\n     924: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|NeverFree|output/outelf.c|2694|30|7|workspace__nasm-bc__bc__output__outelf.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "On line 2694 a new buffer is allocated via nasm_malloc and assigned to the static pointer stabs_filename, overwriting the previously allocated buffer without freeing it (the commented-out nasm_free on 2692 confirms the prior allocation is dropped). The developer comment explicitly acknowledges the leak. Each filename change leaks the prior allocation, so allocated memory is genuinely never released on this path. It is an intentional/benign leak in a one-shot program, but it is a real, feasible leak as reported.",
+      "evidence_lines": [
+        {
+          "file": "output/outelf.c",
+          "line": 2684,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outelf.c",
+          "line": 2692,
+          "role": "free"
+        },
+        {
+          "file": "output/outelf.c",
+          "line": 2694,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outelf.c",
+          "line": 2687,
+          "role": "condition"
+        }
+      ],
+      "fix_suggestion": "Free the old buffer before reassigning: uncomment nasm_free(stabs_filename) on line 2692 before the nasm_malloc on 2694, or realloc into the existing pointer.",
+      "warning": {
+        "id": "leak|NeverFree|output/outelf.c|2694|30|7|workspace__nasm-bc__bc__output__outelf.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outelf.leak.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+        "primary": {
+          "file": "output/outelf.c",
+          "line": 2694,
+          "column": 30
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 2694, \"cl\": 30, \"fl\": \"output/outelf.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|output/outelf.c|2694|30|7|workspace__nasm-bc__bc__output__outelf.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outelf.leak.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+          "primary": {
+            "file": "output/outelf.c",
+            "line": 2694,
+            "column": 30
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 2694, \"cl\": 30, \"fl\": \"output/outelf.c\" })"
+        },
+        "source_files": [
+          "output/outelf.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "output/outelf.c",
+            "start_line": 2680,
+            "end_line": 2700,
+            "important_lines": [
+              2694
+            ],
+            "text": "    2680: static void stabs_linenum(const char *filename, int32_t linenumber, int32_t segto)\n    2681: {\n    2682:     (void)segto;\n    2683:     if (!stabs_filename) {\n    2684:         stabs_filename = nasm_malloc(strlen(filename) + 1);\n    2685:         strcpy(stabs_filename, filename);\n    2686:     } else {\n    2687:         if (strcmp(stabs_filename, filename)) {\n    2688:             /* yep, a memory leak...this program is one-shot anyway, so who cares...\n    2689:                in fact, this leak comes in quite handy to maintain a list of files\n    2690:                encountered so far in the symbol lines... */\n    2691: \n    2692:             /* why not nasm_free(stabs_filename); we're done with the old one */\n    2693: \n>>  2694:             stabs_filename = nasm_malloc(strlen(filename) + 1);\n    2695:             strcpy(stabs_filename, filename);\n    2696:         }\n    2697:     }\n    2698:     debug_immcall = 1;\n    2699:     currentline = linenumber;\n    2700: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|output/outelf.c|2694|30|7|workspace__nasm-bc__bc__output__outelf.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.6,
+      "rationale": "At line 2694 stabs_filename is reassigned via nasm_malloc without freeing the previous allocation, so the prior buffer is leaked on every filename change. This is a genuine leak, though the developer comment explicitly marks it as intentional for this one-shot tool and uses it to retain a file list. Mechanically it is a real never-free; severity is low by design.",
+      "evidence_lines": [
+        {
+          "file": "output/outelf.c",
+          "line": 2684,
+          "role": "allocation"
+        },
+        {
+          "file": "output/outelf.c",
+          "line": 2687,
+          "role": "condition"
+        },
+        {
+          "file": "output/outelf.c",
+          "line": 2694,
+          "role": "allocation"
+        }
+      ],
+      "fix_suggestion": "If leak-free behavior is desired, call nasm_free(stabs_filename) before reassigning at line 2694; otherwise the existing comment documents it as intentional.",
+      "warning": {
+        "id": "null-deref|NeverFree|output/outelf.c|2694|30|7|workspace__nasm-bc__bc__output__outelf.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outelf.null-deref.stderr.txt",
+        "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+        "primary": {
+          "file": "output/outelf.c",
+          "line": 2694,
+          "column": 30
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 2694, \"cl\": 30, \"fl\": \"output/outelf.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|output/outelf.c|2694|30|7|workspace__nasm-bc__bc__output__outelf.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/nasm/workspace__nasm-bc__bc__output__outelf.null-deref.stderr.txt",
+          "bc_file": "workspace/nasm-bc/bc/output/outelf.bc",
+          "primary": {
+            "file": "output/outelf.c",
+            "line": 2694,
+            "column": 30
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 2694, \"cl\": 30, \"fl\": \"output/outelf.c\" })"
+        },
+        "source_files": [
+          "output/outelf.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "output/outelf.c",
+            "start_line": 2680,
+            "end_line": 2700,
+            "important_lines": [
+              2694
+            ],
+            "text": "    2680: static void stabs_linenum(const char *filename, int32_t linenumber, int32_t segto)\n    2681: {\n    2682:     (void)segto;\n    2683:     if (!stabs_filename) {\n    2684:         stabs_filename = nasm_malloc(strlen(filename) + 1);\n    2685:         strcpy(stabs_filename, filename);\n    2686:     } else {\n    2687:         if (strcmp(stabs_filename, filename)) {\n    2688:             /* yep, a memory leak...this program is one-shot anyway, so who cares...\n    2689:                in fact, this leak comes in quite handy to maintain a list of files\n    2690:                encountered so far in the symbol lines... */\n    2691: \n    2692:             /* why not nasm_free(stabs_filename); we're done with the old one */\n    2693: \n>>  2694:             stabs_filename = nasm_malloc(strlen(filename) + 1);\n    2695:             strcpy(stabs_filename, filename);\n    2696:         }\n    2697:     }\n    2698:     debug_immcall = 1;\n    2699:     currentline = linenumber;\n    2700: }"
+          }
+        ]
+      }
+    }
+  ]
+}

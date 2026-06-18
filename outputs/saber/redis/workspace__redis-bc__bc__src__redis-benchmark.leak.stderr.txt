@@ -1,0 +1,34 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 783, "cl": 26, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 771, "cl": 26, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 742, "cl": 26, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1205, "cl": 43, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1327, "cl": 35, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1027, "cl": 19, "fl": "redis-benchmark.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1072, "cl": 28, "fl": "redis-benchmark.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1241, "cl": 9, "fl": "redis-benchmark.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 786, "cl": 34, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1191, "cl": 29, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1850, "cl": 24, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 757, "cl": 34, "fl": "redis-benchmark.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 987, "cl": 31, "fl": "redis-benchmark.c" })
+		 conditional free path: 
+		  --> ({ "ln": 1838, "cl": 9, "fl": "redis-benchmark.c" }|True) 
+		  --> ({ "ln": 1845, "cl": 13, "fl": "redis-benchmark.c" }|False) 
+		  --> ({ "ln": 1879, "cl": 45, "fl": "redis-benchmark.c" }|False) 
+		  --> ({ "ln": 1879, "cl": 45, "fl": "redis-benchmark.c" }|True) 
+		  --> ({ "ln": 1879, "cl": 13, "fl": "redis-benchmark.c" }|True) 
+		  --> ({ "ln": 925, "cl": 9, "fl": "redis-benchmark.c" }|True) 
+		  --> ({ "ln": 965, "cl": 9, "fl": "redis-benchmark.c" }|True) 
+		  --> ({ "ln": 978, "cl": 9, "fl": "redis-benchmark.c" }|True) 
+		  --> ({ "ln": 1002, "cl": 5, "fl": "redis-benchmark.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1019, "cl": 25, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 820, "cl": 9, "fl": "redis-benchmark.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1844, "cl": 25, "fl": "redis-benchmark.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1723, "cl": 22, "fl": "redis-benchmark.c" })
+		 conditional free path: 
+		  --> ({ "ln": 361, "cl": 5, "fl": "redis-benchmark.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 754, "cl": 26, "fl": "redis-benchmark.c" })

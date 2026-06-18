@@ -1,0 +1,5 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 192, "cl": 29, "fl": "redis-check-rdb.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 192, "cl": 9, "fl": "redis-check-rdb.c" }|False) 
+		  --> ({ "ln": 390, "cl": 9, "fl": "redis-check-rdb.c" }|True) 
+

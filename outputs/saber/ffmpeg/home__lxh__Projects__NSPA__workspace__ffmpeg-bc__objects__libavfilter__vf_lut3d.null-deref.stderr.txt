@@ -1,4 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 623, "cl": 36, "fl": "libavfilter/vf_lut3d.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 937, "cl": 45, "fl": "libavfilter/vf_lut3d.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 615, "cl": 18, "fl": "libavfilter/vf_lut3d.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 938, "cl": 45, "fl": "libavfilter/vf_lut3d.c" })

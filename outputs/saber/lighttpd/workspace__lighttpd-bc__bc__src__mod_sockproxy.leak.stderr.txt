@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 124, "cl": 22, "fl": "mod_sockproxy.c" })
+		 conditional free path: 
+		  --> ({ "ln": 125, "cl": 21, "fl": "mod_sockproxy.c" }|True) 
+

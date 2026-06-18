@@ -1,0 +1,15 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1944, "cl": 17, "fl": "cluster.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 9, "fl": "cluster.c" }|False) 
+		  --> ({ "ln": 2169, "cl": 9, "fl": "cluster.c" }|True) 
+		  --> ({ "ln": 2178, "cl": 9, "fl": "cluster.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 402, "cl": 10, "fl": "cluster.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1720, "cl": 21, "fl": "cluster.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 727, "cl": 26, "fl": "cluster.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1964, "cl": 17, "fl": "cluster.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2169, "cl": 9, "fl": "cluster.c" }|False) 
+		  --> ({ "ln": 2169, "cl": 9, "fl": "cluster.c" }|True) 
+		  --> ({ "ln": 2178, "cl": 9, "fl": "cluster.c" }|True) 
+

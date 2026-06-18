@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 271, "cl": 27, "fl": "functions.c" })
+		 conditional free path: 
+		  --> ({ "ln": 998, "cl": 9, "fl": "functions.c" }|False) 
+		  --> ({ "ln": 998, "cl": 9, "fl": "functions.c" }|True) 
+		  --> ({ "ln": 1002, "cl": 9, "fl": "functions.c" }|False) 
+		  --> ({ "ln": 1002, "cl": 9, "fl": "functions.c" }|True) 
+		  --> ({ "ln": 1009, "cl": 5, "fl": "functions.c" }|True) 
+		  --> ({ "ln": 1011, "cl": 13, "fl": "functions.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 350, "cl": 42, "fl": "functions.c" })
+		 conditional free path: 
+		  --> ({ "ln": 391, "cl": 9, "fl": "functions.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 227, "cl": 42, "fl": "functions.c" })

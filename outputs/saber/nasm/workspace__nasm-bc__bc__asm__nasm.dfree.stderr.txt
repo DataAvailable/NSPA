@@ -1,0 +1,16 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 726, "cl": 40, "fl": "asm/nasm.c" })
+		 double free path: 
+		  --> ({ "ln": 716, "cl": 13, "fl": "asm/nasm.c" }|True) 
+		  --> ({ "ln": 721, "cl": 21, "fl": "asm/nasm.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 697, "cl": 38, "fl": "asm/nasm.c" })
+		 double free path: 
+		  --> ({ "ln": 716, "cl": 13, "fl": "asm/nasm.c" }|True) 
+		  --> ({ "ln": 721, "cl": 21, "fl": "asm/nasm.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 880, "cl": 14, "fl": "asm/nasm.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 958, "cl": 14, "fl": "asm/nasm.c" })
+		 double free path: 
+

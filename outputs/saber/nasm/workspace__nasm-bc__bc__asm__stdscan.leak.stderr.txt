@@ -1,0 +1,5 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 399, "cl": 29, "fl": "asm/stdscan.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 402, "cl": 17, "fl": "asm/stdscan.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 304, "cl": 21, "fl": "asm/stdscan.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 100, "cl": 31, "fl": "asm/stdscan.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 183, "cl": 27, "fl": "asm/stdscan.c" })

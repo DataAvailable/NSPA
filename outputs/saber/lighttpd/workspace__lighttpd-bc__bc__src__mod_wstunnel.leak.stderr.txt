@@ -1,0 +1,8 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 210, "cl": 30, "fl": "mod_wstunnel.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 311, "cl": 22, "fl": "mod_wstunnel.c" })
+		 conditional free path: 
+		  --> ({ "ln": 312, "cl": 21, "fl": "mod_wstunnel.c" }|False) 
+		  --> ({ "ln": 312, "cl": 21, "fl": "mod_wstunnel.c" }|True) 
+		  --> ({ "ln": 320, "cl": 35, "fl": "mod_wstunnel.c" }|True) 
+		  --> ({ "ln": 320, "cl": 21, "fl": "mod_wstunnel.c" }|True) 
+

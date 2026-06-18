@@ -1,8 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 158, "cl": 45, "fl": "libavfilter/vf_convolve.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 146, "cl": 37, "fl": "libavfilter/vf_convolve.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 152, "cl": 44, "fl": "libavfilter/vf_convolve.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 143, "cl": 36, "fl": "libavfilter/vf_convolve.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 137, "cl": 36, "fl": "libavfilter/vf_convolve.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 149, "cl": 44, "fl": "libavfilter/vf_convolve.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 155, "cl": 45, "fl": "libavfilter/vf_convolve.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 140, "cl": 37, "fl": "libavfilter/vf_convolve.c" })

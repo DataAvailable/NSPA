@@ -1,0 +1,7 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1525, "cl": 12, "fl": "encoding.c" })
+		 double free path: 
+		  --> ({ "ln": 1525, "cl": 7, "fl": "encoding.c" }|False) 
+		  --> ({ "ln": 1543, "cl": 9, "fl": "encoding.c" }|False) 
+		  --> ({ "ln": 1543, "cl": 9, "fl": "encoding.c" }|True) 
+		  --> ({ "ln": 1543, "cl": 7, "fl": "encoding.c" }|True) 
+

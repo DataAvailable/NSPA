@@ -1,0 +1,2140 @@
+{
+  "metadata": {
+    "run_count": 152,
+    "failed_count": 3,
+    "stage_elapsed_seconds": 473.532,
+    "stage_elapsed": "7m 53.532s",
+    "saber_elapsed_seconds": 473.53,
+    "saber_elapsed": "7m 53.530s"
+  },
+  "runs": [
+    {
+      "bc_file": "workspace/screen-bc/bc/acls.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/acls.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 3.222
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/acls.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/acls.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__acls.dfree.stderr.txt",
+      "elapsed_seconds": 3.172
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/acls.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/acls.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/acls.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/acls.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 3.171
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/ansi.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/ansi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__ansi.leak.stderr.txt",
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/ansi.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/ansi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.214
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/ansi.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/ansi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.214
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/ansi.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/ansi.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__ansi.null-deref.stderr.txt",
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/attacher.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/attacher.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.042
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/attacher.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/attacher.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/attacher.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/attacher.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/attacher.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/attacher.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/backtick.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/backtick.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__backtick.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/backtick.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/backtick.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.073
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/backtick.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/backtick.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.023
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/backtick.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/backtick.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__backtick.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/canvas.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/canvas.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__canvas.leak.stderr.txt",
+      "elapsed_seconds": 0.565
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/canvas.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/canvas.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__canvas.dfree.stderr.txt",
+      "elapsed_seconds": 0.615
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/canvas.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/canvas.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/canvas.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/canvas.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__canvas.null-deref.stderr.txt",
+      "elapsed_seconds": 0.615
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/comm.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/comm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/comm.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/comm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/comm.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/comm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/comm.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/comm.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/display.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 27.086
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/display.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__display.dfree.stderr.txt",
+      "elapsed_seconds": 27.037
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/display.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.366
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/display.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 27.989
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/encoding.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/encoding.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.665
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/encoding.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/encoding.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__encoding.dfree.stderr.txt",
+      "elapsed_seconds": 0.716
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/encoding.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/encoding.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/encoding.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/encoding.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.666
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/fileio.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__fileio.leak.stderr.txt",
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/fileio.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/fileio.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/fileio.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/fileio.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__fileio.null-deref.stderr.txt",
+      "elapsed_seconds": 0.215
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/help.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/help.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/help.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/help.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/help.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/help.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/help.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/help.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/input.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/input.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__input.leak.stderr.txt",
+      "elapsed_seconds": 0.067
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/input.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/input.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/input.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/input.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/input.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/input.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__input.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/kmapdef.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/kmapdef.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/kmapdef.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/kmapdef.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/kmapdef.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/kmapdef.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/kmapdef.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/kmapdef.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layer.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__layer.leak.stderr.txt",
+      "elapsed_seconds": 0.415
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layer.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__layer.dfree.stderr.txt",
+      "elapsed_seconds": 0.415
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layer.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.115
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layer.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layer.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__layer.null-deref.stderr.txt",
+      "elapsed_seconds": 0.415
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layout.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__layout.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layout.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layout.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/layout.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/layout.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__layout.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_display.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_display.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_display.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_display.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_display.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_display.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_display.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_generic.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_generic.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_generic.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_generic.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_generic.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_generic.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_generic.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_generic.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_generic.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_generic.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_license.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_license.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_license.leak.stderr.txt",
+      "elapsed_seconds": 0.035
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_license.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_license.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_license.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_license.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_license.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_license.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_license.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_window.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_window.leak.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_window.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_window.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.072
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/list_window.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/list_window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__list_window.null-deref.stderr.txt",
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/logfile.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/logfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/logfile.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/logfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/logfile.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/logfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/logfile.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/logfile.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/mark.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/mark.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__mark.leak.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/mark.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/mark.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/mark.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/mark.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/mark.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/mark.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__mark.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/misc.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/misc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/misc.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/misc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/misc.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/misc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/misc.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/misc.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/process.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/process.bc"
+      ],
+      "returncode": 124,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__process.leak.stderr.txt",
+      "elapsed_seconds": 120.004
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/process.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/process.bc"
+      ],
+      "returncode": 124,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__process.dfree.stderr.txt",
+      "elapsed_seconds": 120.003
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/process.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/process.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.616
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/process.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/process.bc"
+      ],
+      "returncode": 124,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__process.null-deref.stderr.txt",
+      "elapsed_seconds": 120.002
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/pty.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/pty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/pty.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/pty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/pty.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/pty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/pty.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/pty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/resize.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/resize.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__resize.leak.stderr.txt",
+      "elapsed_seconds": 1.768
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/resize.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/resize.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__resize.dfree.stderr.txt",
+      "elapsed_seconds": 1.774
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/resize.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/resize.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/resize.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/resize.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__resize.null-deref.stderr.txt",
+      "elapsed_seconds": 1.768
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/sched.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/sched.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/sched.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/sched.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/sched.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/sched.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/sched.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/sched.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/screen.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/screen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__screen.leak.stderr.txt",
+      "elapsed_seconds": 0.816
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/screen.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/screen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.866
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/screen.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/screen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/screen.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/screen.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__screen.null-deref.stderr.txt",
+      "elapsed_seconds": 0.816
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/search.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/search.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/search.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/search.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/search.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/search.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/search.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/search.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/socket.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/socket.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__socket.leak.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/socket.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/socket.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/socket.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/socket.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/socket.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/socket.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__socket.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/telnet.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/telnet.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/telnet.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/telnet.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/telnet.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/telnet.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/telnet.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/telnet.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/term.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/term.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/term.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/term.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/term.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/term.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/term.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/term.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/termcap.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/termcap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__termcap.leak.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/termcap.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/termcap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/termcap.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/termcap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/termcap.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/termcap.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__termcap.null-deref.stderr.txt",
+      "elapsed_seconds": 0.122
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/tty.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/tty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/tty.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/tty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/tty.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/tty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/tty.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/tty.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/utmp.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/utmp.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/utmp.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/utmp.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/utmp.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/utmp.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/utmp.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/utmp.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/viewport.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/viewport.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/viewport.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/viewport.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/viewport.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/viewport.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/viewport.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/viewport.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/window.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__window.leak.stderr.txt",
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/window.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/window.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/window.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/window.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__window.null-deref.stderr.txt",
+      "elapsed_seconds": 0.164
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsg.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__winmsg.leak.stderr.txt",
+      "elapsed_seconds": 0.119
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsg.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsg.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.064
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsg.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsg.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__winmsg.null-deref.stderr.txt",
+      "elapsed_seconds": 0.114
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgbuf.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgbuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__winmsgbuf.leak.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgbuf.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgbuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgbuf.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgbuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgbuf.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgbuf.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": "outputs/saber/screen/workspace__screen-bc__bc__winmsgbuf.null-deref.stderr.txt",
+      "elapsed_seconds": 0.032
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgcond.bc",
+      "checker": "leak",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-leak",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgcond.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgcond.bc",
+      "checker": "dfree",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-dfree",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgcond.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgcond.bc",
+      "checker": "fileck",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-fileck",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgcond.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    },
+    {
+      "bc_file": "workspace/screen-bc/bc/winmsgcond.bc",
+      "checker": "null-deref",
+      "command": [
+        "/home/lxh/Projects/NSPA/SVF/Release-build/bin/saber",
+        "-null-deref",
+        "-extapi=/home/lxh/Projects/NSPA/SVF/Release-build/lib/extapi.bc",
+        "workspace/screen-bc/bc/winmsgcond.bc"
+      ],
+      "returncode": 0,
+      "stdout_file": null,
+      "stderr_file": null,
+      "elapsed_seconds": 0.016
+    }
+  ]
+}

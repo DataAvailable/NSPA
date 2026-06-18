@@ -1,0 +1,34 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1170, "cl": 24, "fl": "../modules/vector-sets/hnsw.c" })
+		 conditional free path: 
+		  --> ({ "ln": 198, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 1190, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 185, "cl": 17, "fl": "../modules/vector-sets/hnsw.c" })
+		 conditional free path: 
+		  --> ({ "ln": 198, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 1159, "cl": 24, "fl": "../modules/vector-sets/hnsw.c" })
+		 conditional free path: 
+		  --> ({ "ln": 198, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 992, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 994, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 1169, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 1171, "cl": 13, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 1171, "cl": 13, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 1172, "cl": 17, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 1182, "cl": 13, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 1190, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2136, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|False) 
+		  --> ({ "ln": 2137, "cl": 5, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+		  --> ({ "ln": 2140, "cl": 9, "fl": "../modules/vector-sets/hnsw.c" }|True) 
+

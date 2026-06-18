@@ -1,0 +1,315 @@
+for dir in src; do make -C $dir all; done
+make[1]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/src'
+sh: 1: ./mkreleasehdr.sh: Permission denied
+    [34mCC[0m [33mMakefile.dep[0m
+sh: 1: ./mkreleasehdr.sh: Permission denied
+rm -rf redis-server redis-sentinel redis-cli redis-benchmark redis-check-rdb redis-check-aof *.o *.gcda *.gcno *.gcov redis.info lcov-html Makefile.dep *.so
+rm -f threads_mngr.d memory_prefetch.d adlist.d quicklist.d ae.d anet.d dict.d ebuckets.d eventnotifier.d iothread.d mstr.d entry.d kvstore.d fwtree.d estore.d server.d sds.d zmalloc.d lzf_c.d lzf_d.d pqsort.d zipmap.d sha1.d ziplist.d release.d networking.d util.d object.d db.d replication.d rdb.d t_string.d t_list.d t_set.d t_zset.d t_hash.d config.d aof.d pubsub.d multi.d debug.d sort.d intset.d syncio.d cluster.d cluster_asm.d cluster_legacy.d cluster_slot_stats.d crc16.d endianconv.d slowlog.d eval.d bio.d rio.d rand.d memtest.d syscheck.d crcspeed.d crccombine.d crc64.d bitops.d sentinel.d notify.d setproctitle.d blocked.d hyperloglog.d latency.d sparkline.d redis-check-rdb.d redis-check-aof.d geo.d lazyfree.d module.d evict.d expire.d geohash.d geohash_helper.d childinfo.d defrag.d siphash.d rax.d t_stream.d listpack.d localtime.d lolwut.d lolwut5.d lolwut6.d lolwut8.d acl.d tracking.d socket.d tls.d sha256.d timeout.d setcpuaffinity.d monotonic.d mt19937-64.d resp_parser.d call_reply.d script_lua.d script.d functions.d function_lua.d commands.d strl.d connection.d unix.d logreqres.d keymeta.d chk.d hotkeys.d hnsw.d vset.d vset_config.d anet.d adlist.d dict.d redis-cli.d zmalloc.d release.d ae.d redisassert.d crcspeed.d crccombine.d crc64.d siphash.d crc16.d monotonic.d cli_common.d mt19937-64.d strl.d cli_commands.d ae.d anet.d redis-benchmark.d adlist.d dict.d zmalloc.d redisassert.d release.d crcspeed.d crccombine.d crc64.d siphash.d crc16.d monotonic.d cli_common.d mt19937-64.d strl.d
+(cd ../tests/modules && make clean)
+make[2]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/tests/modules'
+rm -f commandfilter.so basics.so testrdb.so fork.so infotest.so propagate.so misc.so hooks.so blockonkeys.so blockonbackground.so scan.so datatype.so datatype2.so auth.so keyspace_events.so blockedclient.so getkeys.so getchannels.so test_lazyfree.so timer.so defragtest.so keyspecs.so hash.so zset.so stream.so mallocsize.so aclcheck.so list.so subcommands.so reply.so cmdintrospection.so eventloop.so moduleconfigs.so moduleconfigstwo.so publish.so usercall.so postnotifications.so moduleauthtwo.so rdbloadsave.so crash.so internalsecret.so configaccess.so test_keymeta.so atomicslotmigration.so commandfilter.xo basics.xo testrdb.xo fork.xo infotest.xo propagate.xo misc.xo hooks.xo blockonkeys.xo blockonbackground.xo scan.xo datatype.xo datatype2.xo auth.xo keyspace_events.xo blockedclient.xo getkeys.xo getchannels.xo test_lazyfree.xo timer.xo defragtest.xo keyspecs.xo hash.xo zset.xo stream.xo mallocsize.xo aclcheck.xo list.xo subcommands.xo reply.xo cmdintrospection.xo eventloop.xo moduleconfigs.xo moduleconfigstwo.xo publish.xo usercall.xo postnotifications.xo moduleauthtwo.xo rdbloadsave.xo crash.xo internalsecret.xo configaccess.xo test_keymeta.xo atomicslotmigration.xo
+make[2]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/tests/modules'
+(cd ../deps && make distclean)
+make[2]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps'
+(cd hiredis && make clean) > /dev/null || true
+(cd linenoise && make clean) > /dev/null || true
+(cd lua && make clean) > /dev/null || true
+(cd jemalloc && [ -f Makefile ] && make distclean) > /dev/null || true
+(cd hdr_histogram && make clean) > /dev/null || true
+(cd fpconv && make clean) > /dev/null || true
+(cd fast_float && make clean) > /dev/null || true
+(cd xxhash && make clean) > /dev/null || true
+make[4]: *** tests: No such file or directory.  Stop.
+make[3]: *** [Makefile:189: clean] Error 2
+(rm -f .make-*)
+make[2]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps'
+(cd modules && make clean)
+make[2]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/src/modules'
+rm -rf *.xo *.so
+make[2]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/src/modules'
+(cd ../tests/modules && make clean)
+make[2]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/tests/modules'
+rm -f commandfilter.so basics.so testrdb.so fork.so infotest.so propagate.so misc.so hooks.so blockonkeys.so blockonbackground.so scan.so datatype.so datatype2.so auth.so keyspace_events.so blockedclient.so getkeys.so getchannels.so test_lazyfree.so timer.so defragtest.so keyspecs.so hash.so zset.so stream.so mallocsize.so aclcheck.so list.so subcommands.so reply.so cmdintrospection.so eventloop.so moduleconfigs.so moduleconfigstwo.so publish.so usercall.so postnotifications.so moduleauthtwo.so rdbloadsave.so crash.so internalsecret.so configaccess.so test_keymeta.so atomicslotmigration.so commandfilter.xo basics.xo testrdb.xo fork.xo infotest.xo propagate.xo misc.xo hooks.xo blockonkeys.xo blockonbackground.xo scan.xo datatype.xo datatype2.xo auth.xo keyspace_events.xo blockedclient.xo getkeys.xo getchannels.xo test_lazyfree.xo timer.xo defragtest.xo keyspecs.xo hash.xo zset.xo stream.xo mallocsize.xo aclcheck.xo list.xo subcommands.xo reply.xo cmdintrospection.xo eventloop.xo moduleconfigs.xo moduleconfigstwo.xo publish.xo usercall.xo postnotifications.xo moduleauthtwo.xo rdbloadsave.xo crash.xo internalsecret.xo configaccess.xo test_keymeta.xo atomicslotmigration.xo
+make[2]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/tests/modules'
+(rm -f .make-*)
+echo STD=-pedantic -DREDIS_STATIC='' -Wno-c11-extensions -std=gnu11 >> .make-settings
+echo WARN=-Wall -W -Wno-missing-field-initializers -Werror=deprecated-declarations -Wstrict-prototypes >> .make-settings
+echo OPT=-O3 -flto -fno-omit-frame-pointer >> .make-settings
+echo MALLOC=libc >> .make-settings
+echo BUILD_TLS= >> .make-settings
+echo USE_SYSTEMD= >> .make-settings
+echo CFLAGS=-O0 -g >> .make-settings
+echo LDFLAGS= >> .make-settings
+echo REDIS_CFLAGS= >> .make-settings
+echo REDIS_LDFLAGS= >> .make-settings
+echo PREV_FINAL_CFLAGS=-pedantic -DREDIS_STATIC='' -Wno-c11-extensions -std=gnu11 -Wall -W -Wno-missing-field-initializers -Werror=deprecated-declarations -Wstrict-prototypes -O3 -flto -fno-omit-frame-pointer -g -ggdb -O0 -g  -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src -I../deps/hdr_histogram -I../deps/fpconv -I../deps/fast_float -I../deps/xxhash -DINCLUDE_VEC_SETS=1 >> .make-settings
+echo PREV_FINAL_LDFLAGS= -O3 -flto -fno-omit-frame-pointer  -g -ggdb -rdynamic >> .make-settings
+(cd ../deps && make hiredis linenoise lua hdr_histogram fpconv fast_float xxhash)
+make[2]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps'
+(cd hiredis && make clean) > /dev/null || true
+(cd linenoise && make clean) > /dev/null || true
+(cd lua && make clean) > /dev/null || true
+(cd jemalloc && [ -f Makefile ] && make distclean) > /dev/null || true
+(cd hdr_histogram && make clean) > /dev/null || true
+(cd fpconv && make clean) > /dev/null || true
+(cd fast_float && make clean) > /dev/null || true
+(cd xxhash && make clean) > /dev/null || true
+make[4]: *** tests: No such file or directory.  Stop.
+make[3]: *** [Makefile:189: clean] Error 2
+(rm -f .make-*)
+(echo "-O0 -g" > .make-cflags)
+(echo "" > .make-ldflags)
+[32;1mMAKE[0m [37;1mhiredis[0m
+[32;1mMAKE[0m [37;1mlinenoise[0m
+cd hiredis && make static  HIREDIS_CFLAGS="-O0 -g" HIREDIS_LDFLAGS=""
+[32;1mMAKE[0m [37;1mlua[0m
+cd linenoise && make CFLAGS="-O0 -g" LDFLAGS=""
+[32;1mMAKE[0m [37;1mhdr_histogram[0m
+cd lua/src && make all CFLAGS="-Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2 " MYLDFLAGS="" AR="llvm-ar rc"
+cd hdr_histogram && make CFLAGS="-O0 -g" LDFLAGS=""
+make[3]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/hiredis'
+[32;1mMAKE[0m [37;1mfpconv[0m
+make[3]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/linenoise'
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc  -Wall -Os -g -O0 -g -c linenoise.c
+cd fpconv && make CFLAGS="-O0 -g" LDFLAGS=""
+make[3]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/hdr_histogram'
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -Wall -Os -g -O0 -g -DHDR_MALLOC_INCLUDE=\"hdr_redis_malloc.h\" -c  hdr_histogram.c 
+make[3]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/lua/src'
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lapi.o lapi.c
+[32;1mMAKE[0m [37;1mfast_float[0m
+cd fast_float && make libfast_float CFLAGS="-O0 -g" LDFLAGS=""
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lcode.o lcode.c
+[32;1mMAKE[0m [37;1mxxhash[0m
+cd xxhash && make lib CFLAGS="-fPIC -O0 -g" LDFLAGS=""
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o ldebug.o ldebug.c
+make[3]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/fast_float'
+g++ -Wall -O3 -std=c++11 -DFASTFLOAT_ALLOWS_LEADING_PLUS -O0 -g -c fast_float_strtod.cpp 
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o ldo.o ldo.c
+make[3]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/xxhash'
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o ldump.o ldump.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lfunc.o lfunc.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lgc.o lgc.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -c -O3 -fPIC  -O0 -g -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers -g -ggdb  -O0 -g -pedantic alloc.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o llex.o llex.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -c -O3 -fPIC  -O0 -g -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers -g -ggdb  -O0 -g -pedantic net.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -c -O3 -fPIC  -O0 -g -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers -g -ggdb  -O0 -g -pedantic hiredis.c
+make[3]: Entering directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/fpconv'
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc  -Wall -Os -g -O0 -g -c  fpconv_dtoa.c 
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lmem.o lmem.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -c -O3 -fPIC  -O0 -g -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers -g -ggdb  -O0 -g -pedantic sds.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -c -O3 -fPIC  -O0 -g -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers -g -ggdb  -O0 -g -pedantic async.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lobject.o lobject.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -c -O3 -fPIC  -O0 -g -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers -g -ggdb  -O0 -g -pedantic read.c
+llvm-ar rcs libfpconv.a fpconv_dtoa.o
+llvm-ar: error: fpconv_dtoa.o: No such file or directory
+make[3]: *** [Makefile:16: libfpconv.a] Error 1
+make[3]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/fpconv'
+make[2]: *** [Makefile:94: fpconv] Error 2
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lopcodes.o lopcodes.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -std=c99 -c -O3 -fPIC  -O0 -g -Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers -g -ggdb  -O0 -g -pedantic sockcompat.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lparser.o lparser.c
+llvm-ar rcs libhdrhistogram.a hdr_histogram.o
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lstate.o lstate.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lstring.o lstring.c
+llvm-ar: error: hdr_histogram.o: No such file or directory
+make[3]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/linenoise'
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o ltable.o ltable.c
+make[3]: *** [Makefile:16: libhdrhistogram.a] Error 1
+make[3]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/hdr_histogram'
+make[2]: *** [Makefile:88: hdr_histogram] Error 2
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o ltm.o ltm.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lundump.o lundump.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lvm.o lvm.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lzio.o lzio.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o strbuf.o strbuf.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o fpconv.o fpconv.c
+CC cachedObjs/0bbdc0621dbfbc4b44459cfe5d87b08c/xxhash.o
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lauxlib.o lauxlib.c
+llvm-ar rcs libhiredis.a alloc.o net.o hiredis.o sds.o async.o read.o sockcompat.o
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lbaselib.o lbaselib.c
+llvm-ar: error: alloc.o: No such file or directory
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o ldblib.o ldblib.c
+make[3]: *** [Makefile:173: libhiredis.a] Error 1
+make[3]: Target 'static' not remade because of errors.
+make[3]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/hiredis'
+make[2]: *** [Makefile:76: hiredis] Error 2
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o liolib.o liolib.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lmathlib.o lmathlib.c
+CC cachedObjs/5eb6fa5e26c6b4007982c0a50fdb23c0/xxhash.o
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o loslib.o loslib.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o ltablib.o ltablib.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lstrlib.o lstrlib.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o loadlib.o loadlib.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o linit.o linit.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lua_cjson.o lua_cjson.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lua_struct.o lua_struct.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lua_cmsgpack.o lua_cmsgpack.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lua_bit.o lua_bit.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o lua.o lua.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o luac.o luac.c
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' -DLUA_USE_MKSTEMP -O0 -g -O2    -c -o print.o print.c
+AR cachedObjs/0bbdc0621dbfbc4b44459cfe5d87b08c/libxxhash.a
+LD cachedObjs/5eb6fa5e26c6b4007982c0a50fdb23c0/libxxhash.so.0.8.3
+cachedObjs/5eb6fa5e26c6b4007982c0a50fdb23c0/xxhash.o: file not recognized: file format not recognized
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[3]: *** [Makefile:151: cachedObjs/5eb6fa5e26c6b4007982c0a50fdb23c0/libxxhash.so.0.8.3] Error 1
+make[3]: Target 'lib' not remade because of errors.
+make[3]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/xxhash'
+make[2]: *** [Makefile:107: xxhash] Error 2
+llvm-ar rc liblua.a lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o strbuf.o fpconv.o lauxlib.o lbaselib.o ldblib.o liolib.o lmathlib.o loslib.o ltablib.o lstrlib.o loadlib.o linit.o lua_cjson.o lua_struct.o lua_cmsgpack.o lua_bit.o	# DLL needs all object files
+llvm-ranlib liblua.a
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -o lua  lua.o liblua.a -lm 
+/home/lxh/Projects/NSPA/workspace/redis-bc/wrappers/clang-bc -o luac  luac.o print.o liblua.a -lm 
+lua.o: file not recognized: file format not recognized
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+luac.o: file not recognized: file format not recognized
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[3]: *** [Makefile:56: lua] Error 1
+make[3]: *** [Makefile:59: luac] Error 1
+make[3]: Target 'all' not remade because of errors.
+make[3]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/lua/src'
+make[2]: *** [Makefile:135: lua] Error 2
+llvm-ar -r libfast_float.a fast_float_strtod.o
+llvm-ar: warning: creating libfast_float.a
+make[3]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps/fast_float'
+make[2]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/deps'
+make[1]: [Makefile:426: persist-settings] Error 2 (ignored)
+    [34mCC[0m [33mthreads_mngr.o[0m
+    [34mCC[0m [33mmemory_prefetch.o[0m
+    [34mCC[0m [33madlist.o[0m
+    [34mCC[0m [33mquicklist.o[0m
+    [34mCC[0m [33mae.o[0m
+    [34mCC[0m [33manet.o[0m
+    [34mCC[0m [33mdict.o[0m
+    [34mCC[0m [33mebuckets.o[0m
+    [34mCC[0m [33miothread.o[0m
+    [34mCC[0m [33meventnotifier.o[0m
+    [34mCC[0m [33mmstr.o[0m
+    [34mCC[0m [33mentry.o[0m
+    [34mCC[0m [33mkvstore.o[0m
+    [34mCC[0m [33mfwtree.o[0m
+    [34mCC[0m [33mestore.o[0m
+    [34mCC[0m [33mserver.o[0m
+    [34mCC[0m [33msds.o[0m
+    [34mCC[0m [33mzmalloc.o[0m
+    [34mCC[0m [33mlzf_c.o[0m
+    [34mCC[0m [33mlzf_d.o[0m
+    [34mCC[0m [33mpqsort.o[0m
+    [34mCC[0m [33mzipmap.o[0m
+    [34mCC[0m [33msha1.o[0m
+    [34mCC[0m [33mziplist.o[0m
+    [34mCC[0m [33mrelease.o[0m
+    [34mCC[0m [33mnetworking.o[0m
+    [34mCC[0m [33mutil.o[0m
+    [34mCC[0m [33mobject.o[0m
+    [34mCC[0m [33mdb.o[0m
+    [34mCC[0m [33mreplication.o[0m
+    [34mCC[0m [33mrdb.o[0m
+    [34mCC[0m [33mt_string.o[0m
+threads_mngr.c:27:37: warning: initializing '_Atomic(run_on_thread_cb)' with an expression of type 'void *' converts between void pointer and function pointer [-Wpedantic]
+static redisAtomic run_on_thread_cb g_callback = NULL;
+                                    ^            ~~~~
+threads_mngr.c:27:50: error: initializer element is not a compile-time constant
+static redisAtomic run_on_thread_cb g_callback = NULL;
+                                                 ^~~~
+/usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h:89:16: note: expanded from macro 'NULL'
+#  define NULL ((void*)0)
+               ^~~~~~~~~~
+1 warning and 1 error generated.
+make[1]: *** [Makefile:478: threads_mngr.o] Error 1
+    [34mCC[0m [33mt_list.o[0m
+    [34mCC[0m [33mt_set.o[0m
+    [34mCC[0m [33mt_zset.o[0m
+    [34mCC[0m [33mt_hash.o[0m
+    [34mCC[0m [33mconfig.o[0m
+    [34mCC[0m [33maof.o[0m
+    [34mCC[0m [33mpubsub.o[0m
+release.c:17:10: fatal error: 'release.h' file not found
+#include "release.h"
+         ^~~~~~~~~~~
+1 error generated.
+    [34mCC[0m [33mmulti.o[0m
+make[1]: *** [Makefile:478: release.o] Error 1
+    [34mCC[0m [33mdebug.o[0m
+    [34mCC[0m [33msort.o[0m
+    [34mCC[0m [33mintset.o[0m
+    [34mCC[0m [33msyncio.o[0m
+    [34mCC[0m [33mcluster.o[0m
+    [34mCC[0m [33mcluster_asm.o[0m
+    [34mCC[0m [33mcluster_legacy.o[0m
+    [34mCC[0m [33mcluster_slot_stats.o[0m
+    [34mCC[0m [33mcrc16.o[0m
+    [34mCC[0m [33mendianconv.o[0m
+    [34mCC[0m [33mslowlog.o[0m
+    [34mCC[0m [33meval.o[0m
+    [34mCC[0m [33mbio.o[0m
+    [34mCC[0m [33mrio.o[0m
+    [34mCC[0m [33mrand.o[0m
+    [34mCC[0m [33msyscheck.o[0m
+    [34mCC[0m [33mcrcspeed.o[0m
+    [34mCC[0m [33mmemtest.o[0m
+    [34mCC[0m [33mcrccombine.o[0m
+    [34mCC[0m [33mcrc64.o[0m
+    [34mCC[0m [33mbitops.o[0m
+    [34mCC[0m [33msentinel.o[0m
+    [34mCC[0m [33mnotify.o[0m
+    [34mCC[0m [33msetproctitle.o[0m
+    [34mCC[0m [33mblocked.o[0m
+    [34mCC[0m [33mhyperloglog.o[0m
+    [34mCC[0m [33mlatency.o[0m
+    [34mCC[0m [33msparkline.o[0m
+    [34mCC[0m [33mredis-check-rdb.o[0m
+    [34mCC[0m [33mredis-check-aof.o[0m
+    [34mCC[0m [33mgeo.o[0m
+    [34mCC[0m [33mlazyfree.o[0m
+    [34mCC[0m [33mmodule.o[0m
+    [34mCC[0m [33mevict.o[0m
+    [34mCC[0m [33mexpire.o[0m
+    [34mCC[0m [33mgeohash.o[0m
+    [34mCC[0m [33mgeohash_helper.o[0m
+    [34mCC[0m [33mchildinfo.o[0m
+    [34mCC[0m [33mdefrag.o[0m
+    [34mCC[0m [33msiphash.o[0m
+    [34mCC[0m [33mrax.o[0m
+    [34mCC[0m [33mt_stream.o[0m
+    [34mCC[0m [33mlistpack.o[0m
+    [34mCC[0m [33mlocaltime.o[0m
+    [34mCC[0m [33mlolwut.o[0m
+    [34mCC[0m [33mlolwut5.o[0m
+    [34mCC[0m [33mlolwut6.o[0m
+    [34mCC[0m [33mlolwut8.o[0m
+    [34mCC[0m [33macl.o[0m
+    [34mCC[0m [33mtracking.o[0m
+    [34mCC[0m [33msocket.o[0m
+    [34mCC[0m [33mtls.o[0m
+    [34mCC[0m [33msha256.o[0m
+    [34mCC[0m [33mtimeout.o[0m
+    [34mCC[0m [33msetcpuaffinity.o[0m
+    [34mCC[0m [33mmonotonic.o[0m
+    [34mCC[0m [33mmt19937-64.o[0m
+    [34mCC[0m [33mresp_parser.o[0m
+    [34mCC[0m [33mcall_reply.o[0m
+    [34mCC[0m [33mscript_lua.o[0m
+    [34mCC[0m [33mscript.o[0m
+    [34mCC[0m [33mfunctions.o[0m
+    [34mCC[0m [33mfunction_lua.o[0m
+    [34mCC[0m [33mcommands.o[0m
+    [34mCC[0m [33mstrl.o[0m
+    [34mCC[0m [33mconnection.o[0m
+    [34mCC[0m [33munix.o[0m
+    [34mCC[0m [33mlogreqres.o[0m
+    [34mCC[0m [33mkeymeta.o[0m
+    [34mCC[0m [33mchk.o[0m
+    [34mCC[0m [33mhotkeys.o[0m
+    [34mCC[0m [33mhnsw.o[0m
+    [34mCC[0m [33mvset.o[0m
+    [34mCC[0m [33mvset_config.o[0m
+    [34mCC[0m [33mredis-cli.o[0m
+    [34mCC[0m [33mredisassert.o[0m
+    [34mCC[0m [33mcli_common.o[0m
+    [34mCC[0m [33mcli_commands.o[0m
+    [34mCC[0m [33mredis-benchmark.o[0m
+make[1]: Target 'all' not remade because of errors.
+make[1]: Leaving directory '/home/lxh/Projects/NSPA/open-source-soft/redis-master/src'
+make: *** [Makefile:14: all] Error 2
+make: Target 'default' not remade because of errors.

@@ -1,0 +1,69 @@
+AWK=gawk srcdir=. sh ./term.sh
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g winmsgcond.c -o winmsgcond.o
+AWK=gawk CC="/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -O0 -g" srcdir=. sh ./comm.sh
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g kmapdef.c -o kmapdef.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g term.c -o term.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g screen.c -o screen.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g acls.c -o acls.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g ansi.c -o ansi.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g attacher.c -o attacher.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g backtick.c -o backtick.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g canvas.c -o canvas.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g comm.c -o comm.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g display.c -o display.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g encoding.c -o encoding.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g fileio.c -o fileio.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g help.c -o help.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g input.c -o input.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g layer.c -o layer.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g layout.c -o layout.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g list_display.c -o list_display.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g list_generic.c -o list_generic.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g list_license.c -o list_license.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g list_window.c -o list_window.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g logfile.c -o logfile.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g mark.c -o mark.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g misc.c -o misc.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g process.c -o process.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g pty.c -o pty.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g resize.c -o resize.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g sched.c -o sched.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g search.c -o search.o
+display.c:362:11: warning: converting the result of '<<' to a boolean always evaluates to true [-Wtautological-constant-compare]
+                SetFlow(FLOW_ON);
+                        ^
+./window.h:307:20: note: expanded from macro 'FLOW_ON'
+#define FLOW_ON         (1<<0)
+                          ^
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g socket.c -o socket.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g telnet.c -o telnet.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g termcap.c -o termcap.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g tty.c -o tty.o
+display.c:955:10: warning: converting the result of '<<' to a boolean always evaluates to true [-Wtautological-constant-compare]
+        SetFlow(FLOW_ON);
+                ^
+./window.h:307:20: note: expanded from macro 'FLOW_ON'
+#define FLOW_ON         (1<<0)
+                          ^
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g utmp.c -o utmp.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g viewport.c -o viewport.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g window.c -o window.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g winmsg.c -o winmsg.o
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc -c -iquote. -DSCREENENCODINGS='"/usr/local/share/screen/utf8encodings"' -DBUILD_DATE='"2026-06-16 22:06:20"' -O0 -g winmsgbuf.c -o winmsgbuf.o
+2 warnings generated.
+process.c:1992:50: warning: operator '?:' has lower precedence than '|'; '|' will be evaluated first [-Wbitwise-conditional-parentheses]
+                        fore->w_flow = (fore->w_flow & FLOW_AUTO) | b ? FLOW_ON : FLOW_OFF;
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+process.c:1992:50: note: place parentheses around the '|' expression to silence this warning
+                        fore->w_flow = (fore->w_flow & FLOW_AUTO) | b ? FLOW_ON : FLOW_OFF;
+                                                                      ^
+                                       (                             )
+process.c:1992:50: note: place parentheses around the '?:' expression to evaluate it first
+                        fore->w_flow = (fore->w_flow & FLOW_AUTO) | b ? FLOW_ON : FLOW_OFF;
+                                                                    ~~^~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+/home/lxh/Projects/NSPA/workspace/screen-bc/wrappers/clang-bc  -o screen screen.o acls.o ansi.o attacher.o backtick.o canvas.o comm.o display.o encoding.o fileio.o help.o input.o kmapdef.o layer.o layout.o list_display.o list_generic.o list_license.o list_window.o logfile.o mark.o misc.o process.o pty.o resize.o sched.o search.o socket.o telnet.o term.o termcap.o tty.o utmp.o viewport.o window.o winmsg.o winmsgbuf.o winmsgcond.o -lcrypt -lcurses 
+screen.o: file not recognized: file format not recognized
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:66: screen] Error 1
+make: Target 'all' not remade because of errors.

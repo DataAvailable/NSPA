@@ -1,8 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 277, "cl": 22, "fl": "libavfilter/af_amix.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 565, "cl": 18, "fl": "libavfilter/af_amix.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 259, "cl": 16, "fl": "libavfilter/af_amix.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 276, "cl": 22, "fl": "libavfilter/af_amix.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 265, "cl": 23, "fl": "libavfilter/af_amix.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 134, "cl": 23, "fl": "libavfilter/af_amix.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 270, "cl": 22, "fl": "libavfilter/af_amix.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 561, "cl": 15, "fl": "libavfilter/af_amix.c" })

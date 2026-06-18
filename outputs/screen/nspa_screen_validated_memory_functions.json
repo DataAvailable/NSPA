@@ -1,0 +1,1833 @@
+{
+  "metadata": {
+    "validated_count": 94,
+    "kept_count": 46,
+    "min_llm_confidence": 0.5,
+    "model": "claude-opus-4-8",
+    "base_url": "https://api.vveai.com/v1",
+    "checkpoint": "outputs/screen/nspa_screen_validated_memory_functions.json.checkpoint.jsonl"
+  },
+  "functions": [
+    {
+      "id": "screen|src/acls.c|GrowBitfield|static int GrowBitfield(AclBits * bfp, int len, int delta, int defaultbit)",
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "GrowBitfield",
+      "signature": "static int GrowBitfield(AclBits * bfp, int len, int delta, int defaultbit)",
+      "category": "allocator",
+      "confidence": 0.75,
+      "reason": "calloc-allocates a larger bitfield and transfers it back through the AclBits output parameter (realloc-style grow)",
+      "cfr": {
+        "project": "screen",
+        "file": "src/acls.c",
+        "name": "GrowBitfield",
+        "entity_kind": "function_definition",
+        "signature": "static int GrowBitfield(AclBits * bfp, int len, int delta, int defaultbit)",
+        "return_type": "int",
+        "parameters": [
+          "AclBits * bfp",
+          "int len",
+          "int delta",
+          "int defaultbit"
+        ],
+        "direct_calls": [
+          "ACLBIT",
+          "ACLBYTE",
+          "calloc",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 9.0,
+        "filter_confidence": 0.9,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/acls.c|GrowBitfield|static int GrowBitfield(AclBits * bfp, int len, int delta, int defaultbit)"
+      }
+    },
+    {
+      "id": "screen|src/acls.c|UserAdd|int UserAdd(char *name, struct acluser **up)",
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "UserAdd",
+      "signature": "int UserAdd(char *name, struct acluser **up)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "creates a new acluser via calloc and returns it through the **up output parameter",
+      "cfr": {
+        "project": "screen",
+        "file": "src/acls.c",
+        "name": "UserAdd",
+        "entity_kind": "function_definition",
+        "signature": "int UserAdd(char *name, struct acluser **up)",
+        "return_type": "int",
+        "parameters": [
+          "char *name",
+          "struct acluser **up"
+        ],
+        "direct_calls": [
+          "ACLBIT",
+          "ACLBYTE",
+          "AclSetPerm",
+          "FindUserPtr",
+          "GrowBitfield",
+          "calloc",
+          "free",
+          "strcmp",
+          "strncpy"
+        ],
+        "documentation": "be \"none\", as this represents the NULL-pointer when dealing with groups. He has default rights, determined by umask. Returns: 0 - on success 1 - he is already there -1 - he still does not exist (didn't get memory) =====================================================================",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "calls_standard_free:free",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:GrowBitfield"
+        ],
+        "filter_score": 15.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/acls.c|UserAdd|int UserAdd(char *name, struct acluser **up)"
+      }
+    },
+    {
+      "id": "screen|src/acls.c|UserDel|int UserDel(char *name, struct acluser **up)",
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "UserDel",
+      "signature": "int UserDel(char *name, struct acluser **up)",
+      "category": "destroyer",
+      "confidence": 0.85,
+      "reason": "doc says it destroys all the user's permissions and detaches him; ends lifetime of the whole user object",
+      "cfr": {
+        "project": "screen",
+        "file": "src/acls.c",
+        "name": "UserDel",
+        "entity_kind": "function_definition",
+        "signature": "int UserDel(char *name, struct acluser **up)",
+        "return_type": "int",
+        "parameters": [
+          "char *name",
+          "struct acluser **up"
+        ],
+        "direct_calls": [
+          "ACLBIT",
+          "ACLBYTE",
+          "AclSetPerm",
+          "Detach",
+          "FindUserPtr",
+          "Finit",
+          "UserFreeCopyBuffer",
+          "free"
+        ],
+        "documentation": "UserDel- Remove a user from the list. Destroy all his permissions and completely detach him from the session. Returns 0 - success -1 - he who does not exist cannot be removed =====================================================================",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "has_output_pointer_parameter",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:UserFreeCopyBuffer"
+        ],
+        "filter_score": 11.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "releaser",
+        "id": "screen|src/acls.c|UserDel|int UserDel(char *name, struct acluser **up)"
+      }
+    },
+    {
+      "id": "screen|src/acls.c|UserFreeCopyBuffer|int UserFreeCopyBuffer(struct acluser *u)",
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "UserFreeCopyBuffer",
+      "signature": "int UserFreeCopyBuffer(struct acluser *u)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "frees the user's copy buffer field and clears references; field-level release",
+      "cfr": {
+        "project": "screen",
+        "file": "src/acls.c",
+        "name": "UserFreeCopyBuffer",
+        "entity_kind": "function_definition",
+        "signature": "int UserFreeCopyBuffer(struct acluser *u)",
+        "return_type": "int",
+        "parameters": [
+          "struct acluser *u"
+        ],
+        "direct_calls": [
+          "FreePaster",
+          "free"
+        ],
+        "documentation": "UserFreeCopyBuffer- frees user buffer Also removes any references into the users copybuffer Returns: 0 - if the copy buffer was really deleted. -1 - cannot remove something that does not exist =====================================================================",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:FreePaster"
+        ],
+        "filter_score": 9.5,
+        "filter_confidence": 0.95,
+        "candidate_hint": "releaser",
+        "id": "screen|src/acls.c|UserFreeCopyBuffer|int UserFreeCopyBuffer(struct acluser *u)"
+      }
+    },
+    {
+      "id": "screen|src/acls.c|FreeWindowAcl|void FreeWindowAcl(Window *w)",
+      "project": "screen",
+      "file": "src/acls.c",
+      "name": "FreeWindowAcl",
+      "signature": "void FreeWindowAcl(Window *w)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "frees the window's ACL bitfield members",
+      "cfr": {
+        "project": "screen",
+        "file": "src/acls.c",
+        "name": "FreeWindowAcl",
+        "entity_kind": "function_definition",
+        "signature": "void FreeWindowAcl(Window *w)",
+        "return_type": "void",
+        "parameters": [
+          "Window *w"
+        ],
+        "direct_calls": [
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/acls.c|FreeWindowAcl|void FreeWindowAcl(Window *w)"
+      }
+    },
+    {
+      "id": "screen|src/ansi.c|MFixLine|static void MFixLine(Window *win, int y, struct mchar *mc)",
+      "project": "screen",
+      "file": "src/ansi.c",
+      "name": "MFixLine",
+      "signature": "static void MFixLine(Window *win, int y, struct mchar *mc)",
+      "category": "allocator",
+      "confidence": 0.6,
+      "reason": "part of memory subsystem; calloc-allocates line buffers into the window structure",
+      "cfr": {
+        "project": "screen",
+        "file": "src/ansi.c",
+        "name": "MFixLine",
+        "entity_kind": "function_definition",
+        "signature": "static void MFixLine(Window *win, int y, struct mchar *mc)",
+        "return_type": "void",
+        "parameters": [
+          "Window *win",
+          "int y",
+          "struct mchar *mc"
+        ],
+        "direct_calls": [
+          "WMsg",
+          "calloc"
+        ],
+        "documentation": "====================================================================* ====================================================================* Memory subsystem.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "memory_documentation"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "screen|src/ansi.c|MFixLine|static void MFixLine(Window *win, int y, struct mchar *mc)"
+      }
+    },
+    {
+      "id": "screen|src/canvas.c|FreePerp|static void FreePerp(Canvas *pcv)",
+      "project": "screen",
+      "file": "src/canvas.c",
+      "name": "FreePerp",
+      "signature": "static void FreePerp(Canvas *pcv)",
+      "category": "releaser",
+      "confidence": 0.65,
+      "reason": "frees a perpendicular canvas and its layer memory; targeted free",
+      "cfr": {
+        "project": "screen",
+        "file": "src/canvas.c",
+        "name": "FreePerp",
+        "entity_kind": "function_definition",
+        "signature": "static void FreePerp(Canvas *pcv)",
+        "return_type": "void",
+        "parameters": [
+          "Canvas *pcv"
+        ],
+        "direct_calls": [
+          "LayerCleanupMemory",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:LayerCleanupMemory"
+        ],
+        "filter_score": 7.5,
+        "filter_confidence": 0.75,
+        "candidate_hint": "releaser",
+        "id": "screen|src/canvas.c|FreePerp|static void FreePerp(Canvas *pcv)"
+      }
+    },
+    {
+      "id": "screen|src/canvas.c|FreeCanvas|void FreeCanvas(Canvas *cv)",
+      "project": "screen",
+      "file": "src/canvas.c",
+      "name": "FreeCanvas",
+      "signature": "void FreeCanvas(Canvas *cv)",
+      "category": "destroyer",
+      "confidence": 0.8,
+      "reason": "ends lifetime of a whole canvas object, cleaning up nested layer memory and detaching it",
+      "cfr": {
+        "project": "screen",
+        "file": "src/canvas.c",
+        "name": "FreeCanvas",
+        "entity_kind": "function_definition",
+        "signature": "void FreeCanvas(Canvas *cv)",
+        "return_type": "void",
+        "parameters": [
+          "Canvas *cv"
+        ],
+        "direct_calls": [
+          "FreeCanvas",
+          "Layer2Window",
+          "LayerCleanupMemory",
+          "SetCanvasWindow",
+          "WindowChanged",
+          "evdeq",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:FreeCanvas,LayerCleanupMemory"
+        ],
+        "filter_score": 7.5,
+        "filter_confidence": 0.75,
+        "candidate_hint": "releaser",
+        "id": "screen|src/canvas.c|FreeCanvas|void FreeCanvas(Canvas *cv)"
+      }
+    },
+    {
+      "id": "screen|src/canvas.c|AddPerp|static Canvas *AddPerp(Canvas *cv)",
+      "project": "screen",
+      "file": "src/canvas.c",
+      "name": "AddPerp",
+      "signature": "static Canvas *AddPerp(Canvas *cv)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "calloc-allocates a new Canvas and returns it",
+      "cfr": {
+        "project": "screen",
+        "file": "src/canvas.c",
+        "name": "AddPerp",
+        "entity_kind": "function_definition",
+        "signature": "static Canvas *AddPerp(Canvas *cv)",
+        "return_type": "Canvas *",
+        "parameters": [
+          "Canvas *cv"
+        ],
+        "direct_calls": [
+          "CanvasInitBlank",
+          "calloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "returns_pointer_or_reference"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "screen|src/canvas.c|AddPerp|static Canvas *AddPerp(Canvas *cv)"
+      }
+    },
+    {
+      "id": "screen|src/display.c|MakeDisplay|Display *MakeDisplay(char *uname, char *utty, char *term, int fd, pid_t pid, struct mode *Mode)",
+      "project": "screen",
+      "file": "src/display.c",
+      "name": "MakeDisplay",
+      "signature": "Display *MakeDisplay(char *uname, char *utty, char *term, int fd, pid_t pid, struct mode *Mode)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "generates a new Display via calloc and returns the pointer",
+      "cfr": {
+        "project": "screen",
+        "file": "src/display.c",
+        "name": "MakeDisplay",
+        "entity_kind": "function_definition",
+        "signature": "Display *MakeDisplay(char *uname, char *utty, char *term, int fd, pid_t pid, struct mode *Mode)",
+        "return_type": "Display *",
+        "parameters": [
+          "char *uname",
+          "char *utty",
+          "char *term",
+          "int fd",
+          "pid_t pid",
+          "struct mode *Mode"
+        ],
+        "direct_calls": [
+          "ARRAY_SIZE",
+          "FindUserPtr",
+          "Resize_obuf",
+          "UserAdd",
+          "calloc",
+          "evenq",
+          "strncpy"
+        ],
+        "documentation": "Generate new display, start with a blank layer. The termcap arrays are not initialised here. The new display is placed in the displays list.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:UserAdd"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "allocator",
+        "id": "screen|src/display.c|MakeDisplay|Display *MakeDisplay(char *uname, char *utty, char *term, int fd, pid_t pid, struct mode *Mode)"
+      }
+    },
+    {
+      "id": "screen|src/encoding.c|recode_mline|struct mline *recode_mline(struct mline *ml, int w, int from, int to)",
+      "project": "screen",
+      "file": "src/encoding.c",
+      "name": "recode_mline",
+      "signature": "struct mline *recode_mline(struct mline *ml, int w, int from, int to)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "malloc/realloc-allocates a recoded mline and returns the pointer",
+      "cfr": {
+        "project": "screen",
+        "file": "src/encoding.c",
+        "name": "recode_mline",
+        "entity_kind": "function_definition",
+        "signature": "struct mline *recode_mline(struct mline *ml, int w, int from, int to)",
+        "return_type": "struct mline *",
+        "parameters": [
+          "struct mline *ml",
+          "int w",
+          "int from",
+          "int to"
+        ],
+        "direct_calls": [
+          "malloc",
+          "realloc",
+          "recode_char_dw_to_encoding",
+          "recode_char_to_encoding",
+          "utf8_isdouble"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc,realloc",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:realloc"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "allocator",
+        "id": "screen|src/encoding.c|recode_mline|struct mline *recode_mline(struct mline *ml, int w, int from, int to)"
+      }
+    },
+    {
+      "id": "screen|src/fileio.c|CatExtra|static char *CatExtra(char *str1, char *str2)",
+      "project": "screen",
+      "file": "src/fileio.c",
+      "name": "CatExtra",
+      "signature": "static char *CatExtra(char *str1, char *str2)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates and returns a concatenated string buffer to caller",
+      "cfr": {
+        "project": "screen",
+        "file": "src/fileio.c",
+        "name": "CatExtra",
+        "entity_kind": "function_definition",
+        "signature": "static char *CatExtra(char *str1, char *str2)",
+        "return_type": "char *",
+        "parameters": [
+          "char *str1",
+          "char *str2"
+        ],
+        "direct_calls": [
+          "Panic",
+          "malloc",
+          "memmove",
+          "realloc",
+          "strlen"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc,realloc",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:realloc"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "allocator",
+        "id": "screen|src/fileio.c|CatExtra|static char *CatExtra(char *str1, char *str2)"
+      }
+    },
+    {
+      "id": "screen|src/fileio.c|ReadFile|char *ReadFile(char *filename, int *lenp)",
+      "project": "screen",
+      "file": "src/fileio.c",
+      "name": "ReadFile",
+      "signature": "char *ReadFile(char *filename, int *lenp)",
+      "category": "allocator",
+      "confidence": 0.97,
+      "reason": "Documented to return an allocated buffer holding file contents",
+      "cfr": {
+        "project": "screen",
+        "file": "src/fileio.c",
+        "name": "ReadFile",
+        "entity_kind": "function_definition",
+        "signature": "char *ReadFile(char *filename, int *lenp)",
+        "return_type": "char *",
+        "parameters": [
+          "char *filename",
+          "int *lenp"
+        ],
+        "direct_calls": [
+          "Msg",
+          "fclose",
+          "fread",
+          "free",
+          "fseek",
+          "ftell",
+          "malloc",
+          "secfopen"
+        ],
+        "documentation": "returns an allocated buffer which holds a copy of the file named filename. lenp (if nonzero) points to a location, where the buffer size should be stored.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "calls_standard_free:free",
+          "returns_pointer_or_reference",
+          "release_like_object_pointer_parameter",
+          "memory_documentation"
+        ],
+        "filter_score": 12.5,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/fileio.c|ReadFile|char *ReadFile(char *filename, int *lenp)"
+      }
+    },
+    {
+      "id": "screen|src/layer.c|InitOverlayPage|int InitOverlayPage(int datasize, const struct LayFuncs *lf, int block)",
+      "project": "screen",
+      "file": "src/layer.c",
+      "name": "InitOverlayPage",
+      "signature": "int InitOverlayPage(int datasize, const struct LayFuncs *lf, int block)",
+      "category": "allocator",
+      "confidence": 0.55,
+      "reason": "Allocates an overlay layer object of datasize and attaches it; creation interface",
+      "cfr": {
+        "project": "screen",
+        "file": "src/layer.c",
+        "name": "InitOverlayPage",
+        "entity_kind": "function_definition",
+        "signature": "int InitOverlayPage(int datasize, const struct LayFuncs *lf, int block)",
+        "return_type": "int",
+        "parameters": [
+          "int datasize",
+          "const struct LayFuncs *lf",
+          "int block"
+        ],
+        "direct_calls": [
+          "KillLayerChain",
+          "LAY_DISPLAYS",
+          "LayRestore",
+          "Layer2Window",
+          "Msg",
+          "RemoveStatus",
+          "calloc",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 9.0,
+        "filter_confidence": 0.9,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/layer.c|InitOverlayPage|int InitOverlayPage(int datasize, const struct LayFuncs *lf, int block)"
+      }
+    },
+    {
+      "id": "screen|src/layer.c|LayerCleanupMemory|void LayerCleanupMemory(Layer *layer)",
+      "project": "screen",
+      "file": "src/layer.c",
+      "name": "LayerCleanupMemory",
+      "signature": "void LayerCleanupMemory(Layer *layer)",
+      "category": "releaser",
+      "confidence": 0.75,
+      "reason": "Frees memory held by the passed layer's fields",
+      "cfr": {
+        "project": "screen",
+        "file": "src/layer.c",
+        "name": "LayerCleanupMemory",
+        "entity_kind": "function_definition",
+        "signature": "void LayerCleanupMemory(Layer *layer)",
+        "return_type": "void",
+        "parameters": [
+          "Layer *layer"
+        ],
+        "direct_calls": [
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/layer.c|LayerCleanupMemory|void LayerCleanupMemory(Layer *layer)"
+      }
+    },
+    {
+      "id": "screen|src/layout.c|FreeLayoutCv|void FreeLayoutCv(Canvas *cv)",
+      "project": "screen",
+      "file": "src/layout.c",
+      "name": "FreeLayoutCv",
+      "signature": "void FreeLayoutCv(Canvas *cv)",
+      "category": "releaser",
+      "confidence": 0.7,
+      "reason": "Recursively frees canvas memory of the passed canvas",
+      "cfr": {
+        "project": "screen",
+        "file": "src/layout.c",
+        "name": "FreeLayoutCv",
+        "entity_kind": "function_definition",
+        "signature": "void FreeLayoutCv(Canvas *cv)",
+        "return_type": "void",
+        "parameters": [
+          "Canvas *cv"
+        ],
+        "direct_calls": [
+          "FreeLayoutCv",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:FreeLayoutCv"
+        ],
+        "filter_score": 7.5,
+        "filter_confidence": 0.75,
+        "candidate_hint": "releaser",
+        "id": "screen|src/layout.c|FreeLayoutCv|void FreeLayoutCv(Canvas *cv)"
+      }
+    },
+    {
+      "id": "screen|src/layout.c|CreateLayout|Layout *CreateLayout(char *title, int startat)",
+      "project": "screen",
+      "file": "src/layout.c",
+      "name": "CreateLayout",
+      "signature": "Layout *CreateLayout(char *title, int startat)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates and returns a new Layout object",
+      "cfr": {
+        "project": "screen",
+        "file": "src/layout.c",
+        "name": "CreateLayout",
+        "entity_kind": "function_definition",
+        "signature": "Layout *CreateLayout(char *title, int startat)",
+        "return_type": "Layout *",
+        "parameters": [
+          "char *title",
+          "int startat"
+        ],
+        "direct_calls": [
+          "Msg",
+          "SaveStr",
+          "calloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:SaveStr"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "allocator",
+        "id": "screen|src/layout.c|CreateLayout|Layout *CreateLayout(char *title, int startat)"
+      }
+    },
+    {
+      "id": "screen|src/layout.c|RemoveLayout|void RemoveLayout(Layout *lay)",
+      "project": "screen",
+      "file": "src/layout.c",
+      "name": "RemoveLayout",
+      "signature": "void RemoveLayout(Layout *lay)",
+      "category": "destroyer",
+      "confidence": 0.65,
+      "reason": "Ends lifetime of a layout, freeing it and its nested canvases",
+      "cfr": {
+        "project": "screen",
+        "file": "src/layout.c",
+        "name": "RemoveLayout",
+        "entity_kind": "function_definition",
+        "signature": "void RemoveLayout(Layout *lay)",
+        "return_type": "void",
+        "parameters": [
+          "Layout *lay"
+        ],
+        "direct_calls": [
+          "Activate",
+          "FreeLayoutCv",
+          "LoadLayout",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:FreeLayoutCv"
+        ],
+        "filter_score": 7.5,
+        "filter_confidence": 0.75,
+        "candidate_hint": "releaser",
+        "id": "screen|src/layout.c|RemoveLayout|void RemoveLayout(Layout *lay)"
+      }
+    },
+    {
+      "id": "screen|src/list_generic.c|glist_add_row|ListRow *glist_add_row(ListData *ldata, void *data, ListRow *after)",
+      "project": "screen",
+      "file": "src/list_generic.c",
+      "name": "glist_add_row",
+      "signature": "ListRow *glist_add_row(ListData *ldata, void *data, ListRow *after)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Allocates and returns a new ListRow inserted into the list",
+      "cfr": {
+        "project": "screen",
+        "file": "src/list_generic.c",
+        "name": "glist_add_row",
+        "entity_kind": "function_definition",
+        "signature": "ListRow *glist_add_row(ListData *ldata, void *data, ListRow *after)",
+        "return_type": "ListRow *",
+        "parameters": [
+          "ListData *ldata",
+          "void *data",
+          "ListRow *after"
+        ],
+        "direct_calls": [
+          "calloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "returns_pointer_or_reference"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "screen|src/list_generic.c|glist_add_row|ListRow *glist_add_row(ListData *ldata, void *data, ListRow *after)"
+      }
+    },
+    {
+      "id": "screen|src/list_generic.c|glist_remove_rows|void glist_remove_rows(ListData *ldata)",
+      "project": "screen",
+      "file": "src/list_generic.c",
+      "name": "glist_remove_rows",
+      "signature": "void glist_remove_rows(ListData *ldata)",
+      "category": "releaser",
+      "confidence": 0.6,
+      "reason": "Frees all rows held in the list data",
+      "cfr": {
+        "project": "screen",
+        "file": "src/list_generic.c",
+        "name": "glist_remove_rows",
+        "entity_kind": "function_definition",
+        "signature": "void glist_remove_rows(ListData *ldata)",
+        "return_type": "void",
+        "parameters": [
+          "ListData *ldata"
+        ],
+        "direct_calls": [
+          "free",
+          "gl_freerow"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/list_generic.c|glist_remove_rows|void glist_remove_rows(ListData *ldata)"
+      }
+    },
+    {
+      "id": "screen|src/list_window.c|gl_Window_remove|static int gl_Window_remove(ListData *ldata, Window *p)",
+      "project": "screen",
+      "file": "src/list_window.c",
+      "name": "gl_Window_remove",
+      "signature": "static int gl_Window_remove(ListData *ldata, Window *p)",
+      "category": "releaser",
+      "confidence": 0.6,
+      "reason": "Removes and frees a window row from the list",
+      "cfr": {
+        "project": "screen",
+        "file": "src/list_window.c",
+        "name": "gl_Window_remove",
+        "entity_kind": "function_definition",
+        "signature": "static int gl_Window_remove(ListData *ldata, Window *p)",
+        "return_type": "int",
+        "parameters": [
+          "ListData *ldata",
+          "Window *p"
+        ],
+        "direct_calls": [
+          "free",
+          "gl_Window_findrow",
+          "gl_freerow"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/list_window.c|gl_Window_remove|static int gl_Window_remove(ListData *ldata, Window *p)"
+      }
+    },
+    {
+      "id": "screen|src/list_window.c|gl_Window_free|static int gl_Window_free(ListData *ldata)",
+      "project": "screen",
+      "file": "src/list_window.c",
+      "name": "gl_Window_free",
+      "signature": "static int gl_Window_free(ListData *ldata)",
+      "category": "releaser",
+      "confidence": 0.6,
+      "reason": "Frees the list data's allocated content",
+      "cfr": {
+        "project": "screen",
+        "file": "src/list_window.c",
+        "name": "gl_Window_free",
+        "entity_kind": "function_definition",
+        "signature": "static int gl_Window_free(ListData *ldata)",
+        "return_type": "int",
+        "parameters": [
+          "ListData *ldata"
+        ],
+        "direct_calls": [
+          "Free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:Free"
+        ],
+        "filter_score": 6.5,
+        "filter_confidence": 0.65,
+        "candidate_hint": "releaser",
+        "id": "screen|src/list_window.c|gl_Window_free|static int gl_Window_free(ListData *ldata)"
+      }
+    },
+    {
+      "id": "screen|src/logfile.c|logfopen|Log *logfopen(char *name, FILE * fp)",
+      "project": "screen",
+      "file": "src/logfile.c",
+      "name": "logfopen",
+      "signature": "Log *logfopen(char *name, FILE * fp)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "calloc-allocates a Log object and returns it to the caller",
+      "cfr": {
+        "project": "screen",
+        "file": "src/logfile.c",
+        "name": "logfopen",
+        "entity_kind": "function_definition",
+        "signature": "Log *logfopen(char *name, FILE * fp)",
+        "return_type": "Log *",
+        "parameters": [
+          "char *name",
+          "FILE * fp"
+        ],
+        "direct_calls": [
+          "SaveStr",
+          "calloc",
+          "changed_logfile",
+          "free",
+          "lookup_logfile"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "calls_standard_free:free",
+          "returns_pointer_or_reference",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:SaveStr"
+        ],
+        "filter_score": 13.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/logfile.c|logfopen|Log *logfopen(char *name, FILE * fp)"
+      }
+    },
+    {
+      "id": "screen|src/logfile.c|logfclose|int logfclose(Log *l)",
+      "project": "screen",
+      "file": "src/logfile.c",
+      "name": "logfclose",
+      "signature": "int logfclose(Log *l)",
+      "category": "destroyer",
+      "confidence": 0.7,
+      "reason": "closes the file resource and frees the whole Log object, ending its lifetime",
+      "cfr": {
+        "project": "screen",
+        "file": "src/logfile.c",
+        "name": "logfclose",
+        "entity_kind": "function_definition",
+        "signature": "int logfclose(Log *l)",
+        "return_type": "int",
+        "parameters": [
+          "Log *l"
+        ],
+        "direct_calls": [
+          "abort",
+          "fclose",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/logfile.c|logfclose|int logfclose(Log *l)"
+      }
+    },
+    {
+      "id": "screen|src/mark.c|FreePaster|void FreePaster(struct paster *pa)",
+      "project": "screen",
+      "file": "src/mark.c",
+      "name": "FreePaster",
+      "signature": "void FreePaster(struct paster *pa)",
+      "category": "releaser",
+      "confidence": 0.6,
+      "reason": "releases the paster's buffer and dequeues its event; frees caller-owned fields",
+      "cfr": {
+        "project": "screen",
+        "file": "src/mark.c",
+        "name": "FreePaster",
+        "entity_kind": "function_definition",
+        "signature": "void FreePaster(struct paster *pa)",
+        "return_type": "void",
+        "parameters": [
+          "struct paster *pa"
+        ],
+        "direct_calls": [
+          "evdeq",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/mark.c|FreePaster|void FreePaster(struct paster *pa)"
+      }
+    },
+    {
+      "id": "screen|src/misc.c|SaveStr|char *SaveStr(const char *str)",
+      "project": "screen",
+      "file": "src/misc.c",
+      "name": "SaveStr",
+      "signature": "char *SaveStr(const char *str)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "strdup wrapper returning newly allocated string",
+      "cfr": {
+        "project": "screen",
+        "file": "src/misc.c",
+        "name": "SaveStr",
+        "entity_kind": "function_definition",
+        "signature": "char *SaveStr(const char *str)",
+        "return_type": "char *",
+        "parameters": [
+          "const char *str"
+        ],
+        "direct_calls": [
+          "Panic",
+          "strdup"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:strdup",
+          "returns_pointer_or_reference"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "screen|src/misc.c|SaveStr|char *SaveStr(const char *str)"
+      }
+    },
+    {
+      "id": "screen|src/misc.c|SaveStrn|char *SaveStrn(const char *str, size_t n)",
+      "project": "screen",
+      "file": "src/misc.c",
+      "name": "SaveStrn",
+      "signature": "char *SaveStrn(const char *str, size_t n)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "strndup wrapper returning newly allocated string",
+      "cfr": {
+        "project": "screen",
+        "file": "src/misc.c",
+        "name": "SaveStrn",
+        "entity_kind": "function_definition",
+        "signature": "char *SaveStrn(const char *str, size_t n)",
+        "return_type": "char *",
+        "parameters": [
+          "const char *str",
+          "size_t n"
+        ],
+        "direct_calls": [
+          "Panic",
+          "strndup"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:strndup",
+          "returns_pointer_or_reference"
+        ],
+        "filter_score": 5.5,
+        "filter_confidence": 0.55,
+        "candidate_hint": "allocator",
+        "id": "screen|src/misc.c|SaveStrn|char *SaveStrn(const char *str, size_t n)"
+      }
+    },
+    {
+      "id": "screen|src/process.c|FindKtab|static struct action *FindKtab(char *class, int create)",
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "FindKtab",
+      "signature": "static struct action *FindKtab(char *class, int create)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "allocates a new action table via malloc/SaveStr and returns it when create is set",
+      "cfr": {
+        "project": "screen",
+        "file": "src/process.c",
+        "name": "FindKtab",
+        "entity_kind": "function_definition",
+        "signature": "static struct action *FindKtab(char *class, int create)",
+        "return_type": "struct action *",
+        "parameters": [
+          "char *class",
+          "int create"
+        ],
+        "direct_calls": [
+          "ARRAY_SIZE",
+          "Msg",
+          "SaveStr",
+          "malloc",
+          "strcmp",
+          "strlen"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "returns_pointer_or_reference",
+          "calls_project_memory_candidate",
+          "project_memory_calls:SaveStr"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "allocator",
+        "id": "screen|src/process.c|FindKtab|static struct action *FindKtab(char *class, int create)"
+      }
+    },
+    {
+      "id": "screen|src/process.c|ClearAction|static void ClearAction(struct action *act)",
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "ClearAction",
+      "signature": "static void ClearAction(struct action *act)",
+      "category": "releaser",
+      "confidence": 0.7,
+      "reason": "frees the action's owned fields",
+      "cfr": {
+        "project": "screen",
+        "file": "src/process.c",
+        "name": "ClearAction",
+        "entity_kind": "function_definition",
+        "signature": "static void ClearAction(struct action *act)",
+        "return_type": "void",
+        "parameters": [
+          "struct action *act"
+        ],
+        "direct_calls": [
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/process.c|ClearAction|static void ClearAction(struct action *act)"
+      }
+    },
+    {
+      "id": "screen|src/process.c|SaveAction|static void SaveAction(struct action *act, int nr, char **args, int *argl)",
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "SaveAction",
+      "signature": "static void SaveAction(struct action *act, int nr, char **args, int *argl)",
+      "category": "allocator",
+      "confidence": 0.8,
+      "reason": "Allocates arg arrays via malloc/SaveStrn and transfers ownership into the act struct output parameter",
+      "cfr": {
+        "project": "screen",
+        "file": "src/process.c",
+        "name": "SaveAction",
+        "entity_kind": "function_definition",
+        "signature": "static void SaveAction(struct action *act, int nr, char **args, int *argl)",
+        "return_type": "void",
+        "parameters": [
+          "struct action *act",
+          "int nr",
+          "char **args",
+          "int *argl"
+        ],
+        "direct_calls": [
+          "Panic",
+          "SaveStrn",
+          "malloc",
+          "strlen"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:SaveStrn"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "allocator",
+        "id": "screen|src/process.c|SaveAction|static void SaveAction(struct action *act, int nr, char **args, int *argl)"
+      }
+    },
+    {
+      "id": "screen|src/process.c|SaveArgs|static char **SaveArgs(char **args)",
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "SaveArgs",
+      "signature": "static char **SaveArgs(char **args)",
+      "category": "allocator",
+      "confidence": 0.92,
+      "reason": "Allocates new arg array via malloc/SaveStr and returns it to caller.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/process.c",
+        "name": "SaveArgs",
+        "entity_kind": "function_definition",
+        "signature": "static char **SaveArgs(char **args)",
+        "return_type": "char **",
+        "parameters": [
+          "char **args"
+        ],
+        "direct_calls": [
+          "Panic",
+          "SaveStr",
+          "malloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:SaveStr"
+        ],
+        "filter_score": 9.5,
+        "filter_confidence": 0.95,
+        "candidate_hint": "allocator",
+        "id": "screen|src/process.c|SaveArgs|static char **SaveArgs(char **args)"
+      }
+    },
+    {
+      "id": "screen|src/process.c|InputSu|static int InputSu(struct acluser **up, char *name)",
+      "project": "screen",
+      "file": "src/process.c",
+      "name": "InputSu",
+      "signature": "static int InputSu(struct acluser **up, char *name)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Allocates acluser via calloc and returns it through output parameter up.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/process.c",
+        "name": "InputSu",
+        "entity_kind": "function_definition",
+        "signature": "static int InputSu(struct acluser **up, char *name)",
+        "return_type": "int",
+        "parameters": [
+          "struct acluser **up",
+          "char *name"
+        ],
+        "direct_calls": [
+          "calloc",
+          "strlen",
+          "suFin"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "has_output_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:suFin"
+        ],
+        "filter_score": 8.0,
+        "filter_confidence": 0.8,
+        "candidate_hint": "allocator",
+        "id": "screen|src/process.c|InputSu|static int InputSu(struct acluser **up, char *name)"
+      }
+    },
+    {
+      "id": "screen|src/resize.c|FreeMline|static void FreeMline(struct mline *ml)",
+      "project": "screen",
+      "file": "src/resize.c",
+      "name": "FreeMline",
+      "signature": "static void FreeMline(struct mline *ml)",
+      "category": "releaser",
+      "confidence": 0.85,
+      "reason": "Releases the memory fields of a caller-owned mline.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/resize.c",
+        "name": "FreeMline",
+        "entity_kind": "function_definition",
+        "signature": "static void FreeMline(struct mline *ml)",
+        "return_type": "void",
+        "parameters": [
+          "struct mline *ml"
+        ],
+        "direct_calls": [
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/resize.c|FreeMline|static void FreeMline(struct mline *ml)"
+      }
+    },
+    {
+      "id": "screen|src/resize.c|xrealloc|void *xrealloc(void *mem, size_t len)",
+      "project": "screen",
+      "file": "src/resize.c",
+      "name": "xrealloc",
+      "signature": "void *xrealloc(void *mem, size_t len)",
+      "category": "allocator",
+      "confidence": 0.9,
+      "reason": "Reallocates memory and returns the (re)allocated pointer to caller.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/resize.c",
+        "name": "xrealloc",
+        "entity_kind": "function_definition",
+        "signature": "void *xrealloc(void *mem, size_t len)",
+        "return_type": "void *",
+        "parameters": [
+          "void *mem",
+          "size_t len"
+        ],
+        "direct_calls": [
+          "free",
+          "malloc",
+          "realloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc,realloc",
+          "calls_standard_free:free",
+          "returns_pointer_or_reference",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:realloc"
+        ],
+        "filter_score": 13.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/resize.c|xrealloc|void *xrealloc(void *mem, size_t len)"
+      }
+    },
+    {
+      "id": "screen|src/resize.c|FreeAltScreen|void FreeAltScreen(Window *p)",
+      "project": "screen",
+      "file": "src/resize.c",
+      "name": "FreeAltScreen",
+      "signature": "void FreeAltScreen(Window *p)",
+      "category": "releaser",
+      "confidence": 0.8,
+      "reason": "Frees the alternate-screen buffers held by a window, releasing nested fields not the window itself.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/resize.c",
+        "name": "FreeAltScreen",
+        "entity_kind": "function_definition",
+        "signature": "void FreeAltScreen(Window *p)",
+        "return_type": "void",
+        "parameters": [
+          "Window *p"
+        ],
+        "direct_calls": [
+          "FreeMline",
+          "free"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:FreeMline"
+        ],
+        "filter_score": 7.5,
+        "filter_confidence": 0.75,
+        "candidate_hint": "releaser",
+        "id": "screen|src/resize.c|FreeAltScreen|void FreeAltScreen(Window *p)"
+      }
+    },
+    {
+      "id": "screen|src/screen.h|Free|#define Free(a)",
+      "project": "screen",
+      "file": "src/screen.h",
+      "name": "Free",
+      "signature": "#define Free(a)",
+      "category": "releaser",
+      "confidence": 0.95,
+      "reason": "Macro that frees the pointer and nulls it; a deliberate free wrapper.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/screen.h",
+        "name": "Free",
+        "entity_kind": "function_like_macro",
+        "signature": "#define Free(a)",
+        "return_type": "macro",
+        "parameters": [
+          "a"
+        ],
+        "direct_calls": [
+          "abort",
+          "free"
+        ],
+        "documentation": "here comes my own Free: jw.",
+        "macro_value": "{if ((a) == NULL) abort(); else free((void *)(a)); (a)=NULL;}",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_name",
+          "memory_documentation",
+          "macro_wraps_memory_primitive"
+        ],
+        "filter_score": 10.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "releaser",
+        "id": "screen|src/screen.h|Free|#define Free(a)"
+      }
+    },
+    {
+      "id": "screen|src/termcap.c|CreateTransTable|int CreateTransTable(char *s)",
+      "project": "screen",
+      "file": "src/termcap.c",
+      "name": "CreateTransTable",
+      "signature": "int CreateTransTable(char *s)",
+      "category": "allocator",
+      "confidence": 0.5,
+      "reason": "Parses string and builds a translation table with calloc/malloc that persists; creates owned memory (FreeTransTable releases it). Returns int status, so allocator-leaning over non_memory.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/termcap.c",
+        "name": "CreateTransTable",
+        "entity_kind": "function_definition",
+        "signature": "int CreateTransTable(char *s)",
+        "return_type": "int",
+        "parameters": [
+          "char *s"
+        ],
+        "direct_calls": [
+          "FreeTransTable",
+          "Msg",
+          "QUOTES",
+          "calloc",
+          "copyarg",
+          "free",
+          "malloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc,malloc",
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 9.0,
+        "filter_confidence": 0.9,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/termcap.c|CreateTransTable|int CreateTransTable(char *s)"
+      }
+    },
+    {
+      "id": "screen|src/tests/mallocmock.c|realloc|void *realloc(void *ptr, size_t size)",
+      "project": "screen",
+      "file": "src/tests/mallocmock.c",
+      "name": "realloc",
+      "signature": "void *realloc(void *ptr, size_t size)",
+      "category": "allocator",
+      "confidence": 0.85,
+      "reason": "Reallocation wrapper returning a pointer to (re)allocated memory transferred to caller.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/tests/mallocmock.c",
+        "name": "realloc",
+        "entity_kind": "function_definition",
+        "signature": "void *realloc(void *ptr, size_t size)",
+        "return_type": "void *",
+        "parameters": [
+          "void *ptr",
+          "size_t size"
+        ],
+        "direct_calls": [
+          "__libc_realloc"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "has_output_pointer_parameter"
+        ],
+        "filter_score": 6.0,
+        "filter_confidence": 0.6,
+        "candidate_hint": "allocator",
+        "id": "screen|src/tests/mallocmock.c|realloc|void *realloc(void *ptr, size_t size)"
+      }
+    },
+    {
+      "id": "screen|src/window.c|MakeWindow|int MakeWindow(struct NewWindow *newwin)",
+      "project": "screen",
+      "file": "src/window.c",
+      "name": "MakeWindow",
+      "signature": "int MakeWindow(struct NewWindow *newwin)",
+      "category": "allocator",
+      "confidence": 0.6,
+      "reason": "Allocates a Window object (calloc), initializes it, adds to list and returns its identifier; creates an owned object.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/window.c",
+        "name": "MakeWindow",
+        "entity_kind": "function_definition",
+        "signature": "int MakeWindow(struct NewWindow *newwin)",
+        "return_type": "int",
+        "parameters": [
+          "struct NewWindow *newwin"
+        ],
+        "direct_calls": [
+          "ACLBIT",
+          "ACLBYTE",
+          "ARRAY_SIZE",
+          "AclCheckPermWin",
+          "Activate",
+          "CarefulUtmp",
+          "ChangeWindowSize",
+          "ClosePTY",
+          "DoStartLog",
+          "Filename",
+          "ForkWindow",
+          "FreeWindow",
+          "Msg",
+          "NewWindowAcl",
+          "OpenDevice",
+          "ResetWindow",
+          "SaveStr",
+          "SetCharsets",
+          "SetForeWindow",
+          "SetTimeout",
+          "SetUtmp",
+          "TelOpenAndConnect",
+          "WindowChanged",
+          "WriteString",
+          "add_window_to_list",
+          "calloc",
+          "close",
+          "evenq",
+          "free",
+          "nwin_compose",
+          "strcmp",
+          "strlen",
+          "strncpy",
+          "strrchr"
+        ],
+        "documentation": "Umask & wlock are set for the user of the display, The display d (if specified) switches to that window.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:calloc",
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:ChangeWindowSize,FreeWindow,NewWindowAcl,SaveStr"
+        ],
+        "filter_score": 11.5,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/window.c|MakeWindow|int MakeWindow(struct NewWindow *newwin)"
+      }
+    },
+    {
+      "id": "screen|src/window.c|FreeWindow|void FreeWindow(Window *window)",
+      "project": "screen",
+      "file": "src/window.c",
+      "name": "FreeWindow",
+      "signature": "void FreeWindow(Window *window)",
+      "category": "destroyer",
+      "confidence": 0.7,
+      "reason": "Ends lifetime of whole Window object, releasing many nested resources (paster, pseudowin, acl, layers); interface is object destruction.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/window.c",
+        "name": "FreeWindow",
+        "entity_kind": "function_definition",
+        "signature": "void FreeWindow(Window *window)",
+        "return_type": "void",
+        "parameters": [
+          "Window *window"
+        ],
+        "direct_calls": [
+          "ChangeWindowSize",
+          "CloseDevice",
+          "FreePaster",
+          "FreePseudowin",
+          "FreeWindowAcl",
+          "KillLayerChain",
+          "LayerCleanupMemory",
+          "RemoveUtmp",
+          "RethinkViewportOffsets",
+          "TtyGrabConsole",
+          "evdeq",
+          "free",
+          "logfclose"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter",
+          "calls_project_memory_candidate",
+          "project_memory_calls:ChangeWindowSize,FreePaster,FreePseudowin,FreeWindowAcl,LayerCleanupMemory,logfclose"
+        ],
+        "filter_score": 7.5,
+        "filter_confidence": 0.75,
+        "candidate_hint": "releaser",
+        "id": "screen|src/window.c|FreeWindow|void FreeWindow(Window *window)"
+      }
+    },
+    {
+      "id": "screen|src/window.c|FreePseudowin|void FreePseudowin(Window *w)",
+      "project": "screen",
+      "file": "src/window.c",
+      "name": "FreePseudowin",
+      "signature": "void FreePseudowin(Window *w)",
+      "category": "releaser",
+      "confidence": 0.55,
+      "reason": "Releases the pseudo-window resources/fields of the passed window object.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/window.c",
+        "name": "FreePseudowin",
+        "entity_kind": "function_definition",
+        "signature": "void FreePseudowin(Window *w)",
+        "return_type": "void",
+        "parameters": [
+          "Window *w"
+        ],
+        "direct_calls": [
+          "ClosePTY",
+          "Msg",
+          "chmod",
+          "chown",
+          "close",
+          "evdeq",
+          "evenq",
+          "fcntl",
+          "free",
+          "ioctl"
+        ],
+        "documentation": "",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_like_object_pointer_parameter"
+        ],
+        "filter_score": 5.0,
+        "filter_confidence": 0.5,
+        "candidate_hint": "releaser",
+        "id": "screen|src/window.c|FreePseudowin|void FreePseudowin(Window *w)"
+      }
+    },
+    {
+      "id": "screen|src/winmsgbuf.c|wmb_create|WinMsgBuf *wmb_create(void)",
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmb_create",
+      "signature": "WinMsgBuf *wmb_create(void)",
+      "category": "allocator",
+      "confidence": 0.97,
+      "reason": "Allocates and initializes a new WinMsgBuf and returns it to caller; documented as freed by wmb_free.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/winmsgbuf.c",
+        "name": "wmb_create",
+        "entity_kind": "function_definition",
+        "signature": "WinMsgBuf *wmb_create(void)",
+        "return_type": "WinMsgBuf *",
+        "parameters": [],
+        "direct_calls": [
+          "free",
+          "malloc",
+          "wmb_reset"
+        ],
+        "documentation": "Allocate and initialize to the empty string a new window message buffer. The return value must be freed using wmbc_free.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "calls_standard_free:free",
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "memory_documentation"
+        ],
+        "filter_score": 14.5,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator_or_releaser",
+        "id": "screen|src/winmsgbuf.c|wmb_create|WinMsgBuf *wmb_create(void)"
+      }
+    },
+    {
+      "id": "screen|src/winmsgbuf.c|wmb_expand|size_t wmb_expand(WinMsgBuf *wmb, size_t min)",
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmb_expand",
+      "signature": "size_t wmb_expand(WinMsgBuf *wmb, size_t min)",
+      "category": "allocator",
+      "confidence": 0.7,
+      "reason": "Grows the buffer's owned memory via realloc to hold at least min bytes; acquires/extends dynamic memory.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/winmsgbuf.c",
+        "name": "wmb_expand",
+        "entity_kind": "function_definition",
+        "signature": "size_t wmb_expand(WinMsgBuf *wmb, size_t min)",
+        "return_type": "size_t",
+        "parameters": [
+          "WinMsgBuf *wmb",
+          "size_t min"
+        ],
+        "direct_calls": [
+          "realloc"
+        ],
+        "documentation": "Attempts to expand the buffer to hold at least MIN bytes. The new size of the buffer is returned, which may be unchanged from the original size if additional memory could not be allocated.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:realloc",
+          "memory_documentation",
+          "calls_project_memory_candidate",
+          "project_memory_calls:realloc"
+        ],
+        "filter_score": 8.5,
+        "filter_confidence": 0.85,
+        "candidate_hint": "allocator",
+        "id": "screen|src/winmsgbuf.c|wmb_expand|size_t wmb_expand(WinMsgBuf *wmb, size_t min)"
+      }
+    },
+    {
+      "id": "screen|src/winmsgbuf.c|wmb_free|void wmb_free(WinMsgBuf *w)",
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmb_free",
+      "signature": "void wmb_free(WinMsgBuf *w)",
+      "category": "releaser",
+      "confidence": 0.6,
+      "reason": "Frees memory allocated to the given window buffer; a fairly direct free wrapper for the buffer object.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/winmsgbuf.c",
+        "name": "wmb_free",
+        "entity_kind": "function_definition",
+        "signature": "void wmb_free(WinMsgBuf *w)",
+        "return_type": "void",
+        "parameters": [
+          "WinMsgBuf *w"
+        ],
+        "direct_calls": [
+          "free"
+        ],
+        "documentation": "Deinitialize and free memory allocated to the given window buffer",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation"
+        ],
+        "filter_score": 10.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "releaser",
+        "id": "screen|src/winmsgbuf.c|wmb_free|void wmb_free(WinMsgBuf *w)"
+      }
+    },
+    {
+      "id": "screen|src/winmsgbuf.c|wmbc_create|WinMsgBufContext *wmbc_create(WinMsgBuf *w)",
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmbc_create",
+      "signature": "WinMsgBufContext *wmbc_create(WinMsgBuf *w)",
+      "category": "allocator",
+      "confidence": 0.95,
+      "reason": "Allocates and initializes a buffer context and returns it; documented as freed by wmbc_free.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/winmsgbuf.c",
+        "name": "wmbc_create",
+        "entity_kind": "function_definition",
+        "signature": "WinMsgBufContext *wmbc_create(WinMsgBuf *w)",
+        "return_type": "WinMsgBufContext *",
+        "parameters": [
+          "WinMsgBuf *w"
+        ],
+        "direct_calls": [
+          "malloc"
+        ],
+        "documentation": "Allocate and initialize a buffer context for the given buffer. The return value must be freed using wmbc_free.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_alloc:malloc",
+          "allocation_name",
+          "returns_pointer_or_reference",
+          "memory_documentation"
+        ],
+        "filter_score": 10.5,
+        "filter_confidence": 1.0,
+        "candidate_hint": "allocator",
+        "id": "screen|src/winmsgbuf.c|wmbc_create|WinMsgBufContext *wmbc_create(WinMsgBuf *w)"
+      }
+    },
+    {
+      "id": "screen|src/winmsgbuf.c|wmbc_free|void wmbc_free(WinMsgBufContext *c)",
+      "project": "screen",
+      "file": "src/winmsgbuf.c",
+      "name": "wmbc_free",
+      "signature": "void wmbc_free(WinMsgBufContext *c)",
+      "category": "releaser",
+      "confidence": 0.9,
+      "reason": "Deinitializes and frees a previously allocated context passed in by the caller.",
+      "cfr": {
+        "project": "screen",
+        "file": "src/winmsgbuf.c",
+        "name": "wmbc_free",
+        "entity_kind": "function_definition",
+        "signature": "void wmbc_free(WinMsgBufContext *c)",
+        "return_type": "void",
+        "parameters": [
+          "WinMsgBufContext *c"
+        ],
+        "direct_calls": [
+          "free"
+        ],
+        "documentation": "Deinitializes and frees previously allocated context. The contained buffer must be freed separately; this function will not do so for you.",
+        "macro_value": "",
+        "filter_evidence": [
+          "calls_standard_free:free",
+          "release_name",
+          "release_like_object_pointer_parameter",
+          "memory_documentation"
+        ],
+        "filter_score": 10.0,
+        "filter_confidence": 1.0,
+        "candidate_hint": "releaser",
+        "id": "screen|src/winmsgbuf.c|wmbc_free|void wmbc_free(WinMsgBufContext *c)"
+      }
+    }
+  ]
+}

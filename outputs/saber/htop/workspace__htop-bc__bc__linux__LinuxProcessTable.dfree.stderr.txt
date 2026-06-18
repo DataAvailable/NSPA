@@ -1,0 +1,14 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1100, "cl": 25, "fl": "linux/LinuxProcessTable.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1309, "cl": 16, "fl": "linux/LinuxProcessTable.c" })
+		 double free path: 
+		  --> ({ "ln": 1313, "cl": 8, "fl": "linux/LinuxProcessTable.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1301, "cl": 19, "fl": "linux/LinuxProcessTable.c" })
+		 double free path: 
+		  --> ({ "ln": 1313, "cl": 8, "fl": "linux/LinuxProcessTable.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1112, "cl": 28, "fl": "linux/LinuxProcessTable.c" })
+		 double free path: 
+

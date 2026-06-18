@@ -1,0 +1,9 @@
+[1;35m	 PartialFileClose :[1;0m file open location at : (CallICFGNode: { "ln": 377, "cl": 16, "fl": "redis-check-aof.c" })
+		 conditional file close path: 
+		  --> ({ "ln": 391, "cl": 9, "fl": "redis-check-aof.c" }|False) 
+		  --> ({ "ln": 391, "cl": 9, "fl": "redis-check-aof.c" }|True) 
+		  --> ({ "ln": 398, "cl": 13, "fl": "redis-check-aof.c" }|False) 
+		  --> ({ "ln": 398, "cl": 13, "fl": "redis-check-aof.c" }|True) 
+		  --> ({ "ln": 411, "cl": 13, "fl": "redis-check-aof.c" }|False) 
+		  --> ({ "ln": 413, "cl": 20, "fl": "redis-check-aof.c" }|False) 
+

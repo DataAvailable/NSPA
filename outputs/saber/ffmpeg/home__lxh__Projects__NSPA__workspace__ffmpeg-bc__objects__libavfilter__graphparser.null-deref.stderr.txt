@@ -1,4 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 303, "cl": 17, "fl": "libavfilter/graphparser.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 553, "cl": 25, "fl": "libavfilter/graphparser.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 353, "cl": 22, "fl": "libavfilter/graphparser.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 375, "cl": 16, "fl": "libavfilter/graphparser.c" })

@@ -1,0 +1,6 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 163, "cl": 25, "fl": "XUtils.c" })
+		 double free path: 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|False) 
+		  --> ({ "ln": 112, "cl": 7, "fl": "XUtils.c" }|True) 
+		  --> ({ "ln": 113, "cl": 14, "fl": "XUtils.c" }|True) 
+

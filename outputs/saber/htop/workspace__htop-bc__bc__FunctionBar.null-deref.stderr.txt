@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 41, "cl": 24, "fl": "FunctionBar.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 56, "cl": 31, "fl": "FunctionBar.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 42, "cl": 22, "fl": "FunctionBar.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 48, "cl": 28, "fl": "FunctionBar.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 52, "cl": 25, "fl": "FunctionBar.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 53, "cl": 22, "fl": "FunctionBar.c" })

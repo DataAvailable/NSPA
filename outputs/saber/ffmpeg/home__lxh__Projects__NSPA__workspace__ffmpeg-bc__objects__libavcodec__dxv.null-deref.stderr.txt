@@ -1,3 +1,0 @@
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1007, "cl": 15, "fl": "libavcodec/dxv.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 986, "cl": 17, "fl": "libavcodec/dxv.c" })
-[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 1016, "cl": 19, "fl": "libavcodec/dxv.c" })

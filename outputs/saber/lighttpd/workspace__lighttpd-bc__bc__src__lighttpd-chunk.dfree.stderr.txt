@@ -1,0 +1,18 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 362, "cl": 17, "fl": "chunk.c" })
+		 double free path: 
+		  --> ({ "ln": 387, "cl": 9, "fl": "chunk.c" }|False) 
+		  --> ({ "ln": 393, "cl": 13, "fl": "chunk.c" }|False) 
+		  --> ({ "ln": 397, "cl": 18, "fl": "chunk.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 372, "cl": 17, "fl": "chunk.c" })
+		 double free path: 
+		  --> ({ "ln": 387, "cl": 9, "fl": "chunk.c" }|False) 
+		  --> ({ "ln": 393, "cl": 13, "fl": "chunk.c" }|False) 
+		  --> ({ "ln": 397, "cl": 18, "fl": "chunk.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 571, "cl": 23, "fl": "chunk.c" })
+		 double free path: 
+		  --> ({ "ln": 456, "cl": 9, "fl": "chunk.c" }|False) 
+		  --> ({ "ln": 461, "cl": 14, "fl": "chunk.c" }|False) 
+		  --> ({ "ln": 465, "cl": 14, "fl": "chunk.c" }|False) 
+

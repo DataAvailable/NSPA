@@ -1,0 +1,13 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 293, "cl": 30, "fl": "mod_deflate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 383, "cl": 22, "fl": "mod_deflate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 664, "cl": 30, "fl": "mod_deflate.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 248, "cl": 29, "fl": "mod_deflate.c" })
+		 conditional free path: 
+		  --> ({ "ln": 2213, "cl": 6, "fl": "mod_deflate.c" }|False) 
+		  --> ({ "ln": 2213, "cl": 6, "fl": "mod_deflate.c" }|True) 
+		  --> ({ "ln": 2236, "cl": 6, "fl": "mod_deflate.c" }|False) 
+		  --> ({ "ln": 2239, "cl": 7, "fl": "mod_deflate.c" }|False) 
+		  --> ({ "ln": 2239, "cl": 7, "fl": "mod_deflate.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 701, "cl": 30, "fl": "mod_deflate.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 481, "cl": 31, "fl": "mod_deflate.c" })
