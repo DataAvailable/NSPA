@@ -46,8 +46,8 @@ python3 -m nspa.memory_function_detector \
 export OPENAI_API_KEY="你的API Key"
 
 python3 -m nspa.llm_semantic_validator \
-  --input ./outputs/nspa_vim_memory_candidates.jsonl \
-  --output ./outputs/nspa_vim_validated_memory_functions.json \
+  --input ./outputs/vim/nspa_vim_memory_candidates.jsonl \
+  --output ./outputs/vim/nspa_vim_validated_memory_functions.json \
   --model gpt-4o-mini \
   --batch-size 4 \
   --max-retries 6 \
@@ -138,10 +138,10 @@ bash scripts/build_ffmpeg_bc.sh
 
 ```bash
 bash scripts/rebuild_and_check_saber.sh \
-  /home/lxh/Projects/NSPA/ \
-  /home/lxh/Projects/NSPA/SVF/Release-build \
-  /home/lxh/Projects/NSPA/workspace/curl-bc \
-  /home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
+  /NSPA/ \
+  /NSPA/SVF/Release-build \
+  /NSPA/workspace/curl-bc \
+  /NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
 

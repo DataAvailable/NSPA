@@ -42,8 +42,8 @@ Example command:
 python3 -m nspa.memory_function_detector \
   --project-root ./open-source-soft/vim-master \
   --project-name vim \
-  --output ./outputs/nspa_vim_memory_candidates.json \
-  --llm-jsonl ./outputs/nspa_vim_memory_candidates.jsonl \
+  --output ./outputs/vim/nspa_vim_memory_candidates.json \
+  --llm-jsonl ./outputs/vim/nspa_vim_memory_candidates.jsonl \
   --summary \
   --min-confidence 0.5 \
   --exclude runtime \
@@ -81,8 +81,8 @@ This step reads the JSONL file generated in Step 1 and calls an OpenAI-compatibl
 export OPENAI_API_KEY="your_api_key"
 
 python3 -m nspa.llm_semantic_validator \
-  --input ./outputs/nspa_vim_memory_candidates.jsonl \
-  --output ./outputs/nspa_vim_validated_memory_functions.json \
+  --input ./outputs/vim/nspa_vim_memory_candidates.jsonl \
+  --output ./outputs/vim/nspa_vim_validated_memory_functions.json \
   --model gpt-4o-mini \
   --batch-size 4 \
   --max-retries 6 \
@@ -96,8 +96,8 @@ For other OpenAI-compatible services, specify `--base-url`, `--model`, and the A
 
 ```bash
 python3 -m nspa.llm_semantic_validator \
-  --input ./outputs/nspa_vim_memory_candidates.jsonl \
-  --output ./outputs/nspa_vim_validated_memory_functions.json \
+  --input ./outputs/vim/nspa_vim_memory_candidates.jsonl \
+  --output ./outputs/vim/nspa_vim_validated_memory_functions.json \
   --base-url https://your-service-endpoint/v1 \
   --model your-model-name \
   --api-key-env OPENAI_API_KEY \
@@ -176,7 +176,7 @@ To update the Saber source file only, without rebuilding or running Saber:
 
 ```bash
 python3 -m nspa.fine_grained_reachability \
-  --validated-json outputs/nspa_curl_validated_memory_functions.json \
+  --validated-json outputs/curl/nspa_curl_validated_memory_functions.json \
   --project curl \
   --saber-api-cpp SVF/svf/lib/SABER/SaberCheckerAPI.cpp \
   --skip-rebuild \
@@ -237,10 +237,10 @@ Rebuild and check Saber:
 
 ```bash
 bash scripts/rebuild_and_check_saber.sh \
-  /home/lxh/Projects/NSPA \
-  /home/lxh/Projects/NSPA/SVF/Release-build \
-  /home/lxh/Projects/NSPA/workspace/curl-bc \
-  /home/lxh/Projects/NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
+  /NSPA/ \
+  /NSPA/SVF/Release-build \
+  /NSPA/workspace/curl-bc \
+  /NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
 ---
@@ -373,7 +373,7 @@ export OPENAI_API_KEY="your_api_key"
 python3 -m nspa.vulnerability_verifier \
   --saber-output-dir outputs/saber/curl \
   --source-root open-source-soft/curl-master \
-  --output outputs/nspa_curl_verified_vulnerabilities.json \
+  --output outputs/curl/nspa_curl_verified_vulnerabilities.json \
   --base-url https://your-service-endpoint/v1 \
   --model your-model-name \
   --api-key-env OPENAI_API_KEY \
