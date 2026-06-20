@@ -474,4 +474,3 @@ Source slicing first tries to extract the complete function containing the warni
 * OpenAI-compatible APIs are supported in both semantic validation and vulnerability verification.
 * Checkpoint files are generated automatically for long-running LLM-based stages.
 * SVF/Saber must be installed and built before running the fine-grained analysis stage.
-* Large generated artifacts under `workspace/` may be expensive to store in Git. Consider using Git LFS or excluding unnecessary build artifacts when publishing the repository.
