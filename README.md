@@ -457,12 +457,6 @@ The LLM classification labels are:
 * `false_positive`: the slice shows that the resource is properly released, ownership is transferred, or the path is infeasible.
 * `unknown`: the slice is insufficient for confirmation and requires manual auditing.
 
-Source slicing first tries to extract the complete function containing the warning line. If the function is too large or cannot be identified, the verifier falls back to a context window around the warning line. Important lines are marked with:
-
-```text
->>
-```
-
 ---
 
 ## Notes
