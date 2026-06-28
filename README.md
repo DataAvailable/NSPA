@@ -2,7 +2,7 @@
 
 **Neuro-Symbolic Augmented Fine-Grained Pointer Analysis**
 
-NSPA is a neuro-symbolic static-analysis framework for improving fine-grained pointer and resource analysis in large-scale C/C++ projects. It combines lightweight static candidate extraction, LLM-based semantic validation, SVF/Saber integration, LLVM bitcode analysis, and LLM-assisted vulnerability verification.
+NSPA provides a C/C++ project scanner for constructing Candidate Function Records (CFRs), conservatively filtering potential custom memory allocation, release, and destruction functions, and exporting lightweight JSONL files that can be passed to an LLM for semantic validation.
 
 The workflow consists of three stages:
 
@@ -15,25 +15,17 @@ The workflow consists of three stages:
 3. **Vulnerability verification**
    Extract source-level slices from Saber reports and use an LLM to verify whether warnings correspond to real vulnerabilities.
 
----
+## Stage 1: Candidate Detection for Custom Memory Functions
 
-## Stage 1: Custom Memory-Function Candidate Detection
-
-NSPA provides a C/C++ project scanner that builds Candidate Function Records (CFRs), conservatively filters potential custom memory allocation/release/destruction functions, and exports compact JSONL records for LLM-based semantic validation.
-
-Install dependencies first for more accurate Tree-sitter parsing:
+It is recommended to install the dependencies before running the scanner to obtain more accurate Tree-sitter parsing:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-If Tree-sitter dependencies are not available in the current Python environment, the scanner automatically falls back to the dependency-free `regex_fallback` mode. The selected parser mode is reported in `--summary` and in the output JSON field `metadata.parser_mode`.
+If the current Python environment lacks Tree-sitter dependencies, the scanner will automatically fall back to the dependency-free `regex_fallback` mode and continue running. The parsing mode will be reported in `--summary` and in `metadata.parser_mode` of the output JSON.
 
----
-
-### Step 1: Build and Filter CFRs
-
-Example command:
+### Step 1: CFR Construction and Filtering
 
 ```bash
 python3 -m nspa.memory_function_detector \
@@ -47,35 +39,21 @@ python3 -m nspa.memory_function_detector \
   --exclude testdir
 ```
 
-The output JSON contains filtered CFRs, evidence lists, raw filtering scores (`score`), and normalized filtering confidence values (`confidence`). The JSONL file contains one compact CFR per line and can be used as the input to the LLM validation stage.
+The output JSON contains the filtered CFRs, evidence lists, the raw filtering score `score`, and the normalized filtering score `confidence`. Each line of the JSONL file is a compact CFR that can be used as input for the LLM validation stage.
 
-Two filtering thresholds are supported:
+There are two filtering thresholds:
 
-* `--min-score`: the raw weighted evidence score. The default value is `2.0`.
-* `--min-confidence`: the normalized filtering confidence in the range `[0, 1]`. For example, `--min-confidence 0.5` keeps candidates with `filter_confidence >= 0.5`.
+* `--min-score`: the raw evidence-weighted score. The default value is `2.0`.
+* `--min-confidence`: the normalized filtering score, ranging from `0` to `1`. For example, `--min-confidence 0.5` retains candidates whose `filter_confidence >= 0.5`.
 
-The field `macro_value` is meaningful only for function-like macros. It represents the macro body after the macro parameter list. For example, in:
+`macro_value` is meaningful only for function-like macros and denotes the macro body after the macro parameter list. For example, in `#define VIM_CLEAR(p) do { vim_free(p); (p) = NULL; } while (0)`, `macro_value` is `do { vim_free(p); (p) = NULL; } while (0)`. For ordinary functions, `macro_value` is an empty string.
 
-```c
-#define VIM_CLEAR(p) do { vim_free(p); (p) = NULL; } while (0)
-```
+### Step 2: CFR Semantic Validation
 
-the `macro_value` is:
-
-```c
-do { vim_free(p); (p) = NULL; } while (0)
-```
-
-For normal functions, `macro_value` is an empty string.
-
----
-
-### Step 2: Semantic Validation of CFRs
-
-This step reads the JSONL file generated in Step 1 and calls an OpenAI-compatible LLM API for semantic validation. By default, it only keeps functions that are finally identified as custom allocation, release, or destruction interfaces.
+Step 2 reads the JSONL file generated in Step 1 and invokes an OpenAI-compatible LLM API for semantic validation. By default, it only retains functions that are finally identified as custom allocation, release, or destruction interfaces.
 
 ```bash
-export OPENAI_API_KEY="your_api_key"
+export OPENAI_API_KEY="your API key"
 
 python3 -m nspa.llm_semantic_validator \
   --input ./outputs/vim/nspa_vim_memory_candidates.jsonl \
@@ -89,7 +67,7 @@ python3 -m nspa.llm_semantic_validator \
   --summary
 ```
 
-For other OpenAI-compatible services, specify `--base-url`, `--model`, and the API key environment variable:
+If you use another OpenAI-compatible service, specify the following options:
 
 ```bash
 python3 -m nspa.llm_semantic_validator \
@@ -105,71 +83,26 @@ python3 -m nspa.llm_semantic_validator \
   --summary
 ```
 
-By default, the request URL is:
+The default request endpoint is `{--base-url}/chat/completions`. For example, `--base-url https://api.gpt.ge/v1` sends requests to `https://api.gpt.ge/v1/chat/completions`. If the service provider uses a different path, it can be overridden with `--chat-path`. If a 404 error is returned, first check whether `--base-url`, `--chat-path`, and `--model` are consistent with the provider’s documentation.
 
-```text
-{--base-url}/chat/completions
-```
+The validator automatically creates `output_filename.checkpoint.jsonl` as a checkpoint file for resumable execution. If the task is interrupted, rerunning the same command skips CFRs that have already been validated.
 
-For example, `--base-url https://api.example.com/v1` sends requests to:
+During long validation runs, the remote gateway may occasionally disconnect. The validator automatically retries `RemoteDisconnected`, timeout, connection reset, 429, and 5xx errors. If a batch repeatedly fails, it is automatically split into smaller batches and validation continues. If the service provider is unstable, it is recommended to use a smaller `--batch-size`, increase `--max-retries`, and set `--request-delay`.
 
-```text
-https://api.example.com/v1/chat/completions
-```
+The output categories include:
 
-If your provider uses a different path, override it with `--chat-path`. If a `404` error occurs, first check whether `--base-url`, `--chat-path`, and `--model` are consistent with the service provider's documentation.
-
-The validator automatically creates a checkpoint file named:
-
-```text
-<output_file>.checkpoint.jsonl
-```
-
-If validation is interrupted, re-running the same command skips already validated CFRs.
-
-For long-running validation tasks, remote gateways may occasionally disconnect. The validator automatically retries `RemoteDisconnected`, timeout, connection reset, `429`, and `5xx` errors. If a batch repeatedly fails, it is automatically split into smaller batches. For unstable service providers, use a smaller `--batch-size`, increase `--max-retries`, and set a larger `--request-delay`.
-
-The output categories are:
-
-* `allocator`: returns or passes out newly allocated memory or ownership objects.
-* `releaser`: releases memory, fields, references, or handles passed by the caller.
-* `destroyer`: destroys an object, container, or resource lifecycle, usually including internal field release.
-* `non_memory`: not a custom memory-management interface.
-
-By default, `non_memory` results are filtered out. To audit all LLM decisions, add:
-
-```bash
---include-non-memory
-```
-
----
+* `allocator`: returns or passes newly allocated dynamic memory or owned objects to the caller.
+* `releaser`: releases memory, fields, references, or handles passed in by the caller.
 
 ## Stage 2: Fine-Grained Reachability Analysis
 
-Stage 2 integrates LLM-validated custom memory-management functions into SVF/Saber and runs fine-grained static checks on target-project LLVM bitcode.
-
----
+Stage 2 integrates the LLM-validated custom memory management functions into SVF/Saber and runs fine-grained checks on the target project bitcode.
 
 ### Step 1: Inject Custom Memory Functions
 
-The script reads validated memory functions, filters `allocator`, `releaser`, and `destroyer` entries, skips function-like macros, and inserts the results into `ei_pairs[]` in:
+The script reads `outputs/nspa_curl_validated_memory_functions.json`, filters `allocator/releaser/destroyer` entries, skips function-like macros, and inserts the results into `ei_pairs[]` in `SVF/svf/lib/SABER/SaberCheckerAPI.cpp`. `allocator` is mapped to `CK_ALLOC`, while `releaser/destroyer` is mapped to `CK_FREE`. The insertion preserves the type grouping required by Saber to avoid triggering `ei_pairs not grouped by type`.
 
-```text
-SVF/svf/lib/SABER/SaberCheckerAPI.cpp
-```
-
-The mapping is:
-
-* `allocator` -> `CK_ALLOC`
-* `releaser` / `destroyer` -> `CK_FREE`
-
-The insertion preserves Saber’s required type grouping to avoid the error:
-
-```text
-ei_pairs not grouped by type
-```
-
-To update the Saber source file only, without rebuilding or running Saber:
+Update only the Saber source code without compiling or running Saber:
 
 ```bash
 python3 -m nspa.fine_grained_reachability \
@@ -181,56 +114,30 @@ python3 -m nspa.fine_grained_reachability \
   --summary
 ```
 
----
+### Step 2: Compile Target Project Bitcode
 
-### Step 2: Build LLVM Bitcode for Target Projects
-
-The repository provides scripts for building LLVM bitcode:
-
-* `scripts/build_all_bc.sh`: build all supported projects.
-* `build_common.sh`: common clang/clang++ bitcode wrapper, collection, and `llvm-link` logic.
-* Per-project scripts: `bash`, `curl`, `ffmpeg`, `git`, `openssl`, `sqlite`, `tmux`, and `vim`.
-
-Build all projects:
+* `scripts/build_bc.sh`: one-click build for all projects.
+* `build_common.sh`: common clang/clang++ bitcode wrappers, collection logic, and llvm-link logic.
+* Single-project scripts: bash, curl, ffmpeg, git, openssl, sqlite, tmux, vim.
 
 ```bash
 bash scripts/build_all_bc.sh
-```
-
-Or build a single project:
-
-```bash
+# Or build and run a single project separately
 bash scripts/build_ffmpeg_bc.sh
 ```
 
-The output is stored under:
+All outputs are placed under `NSPA/workspace/<project>-bc/`. Each project directory contains:
 
-```text
-NSPA/workspace/<project>-bc/
-```
+* `objects/`: `.bc` files corresponding to each source file.
+* `project.bc`: complete LLVM bitcode of the project.
+* `manifest.tsv`: mapping from source files or archive members to bitcode files.
+* `logs/`: build logs.
 
-Each project directory contains:
-
-```text
-objects/       Per-source LLVM bitcode files
-project.bc     Linked whole-project LLVM bitcode
-manifest.tsv   Mapping from source/archive members to bitcode files
-logs/          Build logs
-```
-
-The build scripts use clang wrappers to generate LLVM bitcode objects, recursively collect bitcode from `.o` and `.bc` files, and extract bitcode members from libtool `.libs/*.a` static archives.
-
----
+The scripts use clang wrappers to generate LLVM bitcode objects, recursively collect bitcode from `.o/.bc` files, and extract bitcode members from libtool `.libs/*.a` static libraries.
 
 ### Step 3: Rebuild SVF/Saber
 
-NSPA is built on top of SVF/Saber. Before this step, install SVF according to the official SVF documentation:
-
-```text
-https://github.com/SVF-tools/SVF
-```
-
-Rebuild and check Saber:
+This project is built on SVF/Saber. Before performing this step, install SVF according to the official documentation: [SVF Installation](https://github.com/SVF-tools/SVF).
 
 ```bash
 bash scripts/rebuild_and_check_saber.sh \
@@ -240,11 +147,9 @@ bash scripts/rebuild_and_check_saber.sh \
   /NSPA/outputs/curl/nspa_curl_validated_memory_functions.json
 ```
 
----
+### Step 4: Run Saber on Bitcode
 
-### Step 4: Run Saber on LLVM Bitcode
-
-A full run executes the following Saber checks for each `.bc` file under `workspace/curl-bc`:
+A full run executes the following commands for each `.bc` file under `workspace/curl-bc`:
 
 ```bash
 saber -leak       -extapi="$SVF_EXTAPI" file.bc
@@ -268,200 +173,50 @@ python3 -m nspa.fine_grained_reachability \
   --summary
 ```
 
-During execution, the tool prints progress for each `.bc + checker` pair.
+During execution, the console prints the progress for each `.bc + checker` pair. By default, the output uses a sparse saving strategy: normal results with no stderr content and a return code of 0 do not generate per-run files. Results with stderr content or a non-zero return code save a `stderr` file. `stdout` is discarded by default. To save non-empty stdout, add `--save-stdout`. To disable progress printing, add `--quiet`.
 
-By default, the output uses a sparse-saving strategy:
+At the end of Stage 2, the tool reports `Stage 2: fine-grained reachability analysis runtime`. When `--summary` is used, the summary JSON also includes `stage_elapsed_seconds` and `stage_elapsed`.
 
-* If `stderr` is empty and the return code is `0`, no per-run file is saved.
-* If `stderr` is non-empty or the return code is non-zero, the `stderr` file is saved.
-* `stdout` is discarded by default.
+The output directory generates:
 
-To save non-empty stdout, add:
-
-```bash
---save-stdout
-```
-
-To disable progress printing, add:
-
-```bash
---quiet
-```
-
-At the end of Stage 2, the tool reports the elapsed time of the fine-grained reachability analysis. When `--summary` is enabled, the summary JSON also includes:
-
-```text
-stage_elapsed_seconds
-stage_elapsed
-```
-
-The output directory contains:
-
-```text
-manifest.json   Structured run results
-manifest.tsv    Tabular result index
-```
-
----
-
-### Batch Timing for All Projects
-
-To measure the Step 4 runtime of the enhanced SVF/Saber analysis across multiple projects:
-
-```bash
-python3 scripts/run_saber_timing_all_projects.py \
-  --projects bash,curl,ffmpeg,git,openssl,sqlite,tmux,vim \
-  --svf-build-dir SVF/Release-build \
-  --bc-scope objects \
-  --timeout 120
-```
-
-This script sequentially injects custom allocation/release functions from:
-
-```text
-outputs/<project>/nspa_<project>_validated_memory_functions.json
-```
-
-then rebuilds `saber` and runs Saber checks on the project bitcode.
-
-The summary results are written to:
-
-```text
-outputs/saber_timing_summary.json
-outputs/saber_timing_summary.csv
-```
-
-The Step 4 runtime fields are:
-
-```text
-saber_elapsed_seconds
-saber_elapsed
-```
-
-For a quick smoke test, use:
-
-```bash
---bc-limit 1 --checkers leak
-```
-
----
+* `manifest.json`: structured execution results.
+* `manifest.tsv`: result index for convenient table viewing.
 
 ## Stage 3: Vulnerability Verification
 
-Stage 3 reads Saber reports from Stage 2, extracts source-level program slices according to warning locations, and uses an LLM to determine whether each warning corresponds to a real vulnerability.
+Stage 3 reads the Saber reports generated in Stage 2. Based on the `memory allocation/file open` locations and the path line numbers of `conditional free/double free/conditional file close` in the alerts, it extracts program slices from the original source code and then invokes an LLM to determine whether each alert corresponds to a real vulnerability.
 
-The verifier uses the following information from Saber reports:
-
-* `memory allocation` / `file open` locations
-* `conditional free`
-* `double free`
-* `conditional file close`
-* path line numbers
-
-It then extracts source slices from the original project and asks the LLM to classify each warning.
-
----
-
-### Run LLM-Based Vulnerability Verification
+Invoke an OpenAI-compatible API for final verification:
 
 ```bash
-export OPENAI_API_KEY="your_api_key"
+export OPENAI_API_KEY="your API key"
 
-python3 -m nspa.vulnerability_verifier \
+python3 -m nspa.vulnerability_verifier_multi \
   --saber-output-dir outputs/saber/curl \
   --source-root open-source-soft/curl-master \
   --output outputs/curl/nspa_curl_verified_vulnerabilities.json \
-  --base-url https://your-service-endpoint/v1 \
+  --checkpoint-jsonl outputs/curl/nspa_curl_verified_vulnerabilities.json.checkpoint.json \
+  --workers 1 \
+  --parallel-backend thread \
   --model your-model-name \
+  --base-url https://your-service-endpoint/v1 \
   --api-key-env OPENAI_API_KEY \
-  --max-retries 8 \
-  --request-delay 0.5 \
+  --timeout 120 \
+  --max-retries 3 \
   --api-error-policy unknown \
-  --api-error-cooldown 10 \
   --progress \
   --summary
 ```
 
-If the service provider does not support JSON mode, add:
+Stage 3 also automatically creates `output_filename.checkpoint.jsonl` as a checkpoint file for resumable execution. During long validation runs, if the remote gateway still disconnects after all retries are exhausted, the default `--api-error-policy unknown` records the corresponding alert as `unknown` and continues verifying subsequent alerts, preventing the entire run from being aborted. If you want the process to fail immediately when an API error occurs, set `--api-error-policy stop`. To re-verify `unknown` entries caused by API failures later, delete the corresponding checkpoint lines or rerun with a new `--checkpoint-jsonl`.
 
-```bash
---no-json-mode
-```
+Stage 3 writes two result files:
 
-Stage 3 also creates a checkpoint file:
+* The full result file specified by `--output`, for example `outputs/nspa_curl_verified_vulnerabilities.json`: `results` contains the LLM verification result, original alert, and source-code slice for each Saber alert; `confirmed_vulnerabilities` contains the final vulnerabilities judged as `true_positive`.
+* An automatically generated TP-only file, for example `outputs/nspa_curl_verified_vulnerabilities_TP.json`: `results` contains only verification results whose judgment is `true_positive`. A different path can be specified with `--tp-output`.
 
-```text
-<output_file>.checkpoint.jsonl
-```
-
-If the remote gateway still disconnects after all retries, the default policy:
-
-```bash
---api-error-policy unknown
-```
-
-marks the corresponding warning as `unknown` and continues validating subsequent warnings. This prevents the entire run from being interrupted by a single API failure.
-
-To fail immediately on API errors, use:
-
-```bash
---api-error-policy stop
-```
-
-To re-validate `unknown` cases caused by API failures, delete the corresponding checkpoint lines or specify a new checkpoint file with:
-
-```bash
---checkpoint-jsonl
-```
-
----
-
-### Stage 3 Outputs
-
-Stage 3 writes two result files.
-
-The full output file specified by `--output`, for example:
-
-```text
-outputs/nspa_curl_verified_vulnerabilities.json
-```
-
-contains:
-
-```text
-results                     All Saber warnings with LLM verification results, raw warnings, and source slices
-confirmed_vulnerabilities   Warnings classified as true positives
-```
-
-A TP-only file is generated automatically, for example:
-
-```text
-outputs/nspa_curl_verified_vulnerabilities_TP.json
-```
-
-This file contains only results classified as:
-
-```text
-true_positive
-```
-
-A custom TP-only output path can be specified with:
-
-```bash
---tp-output
-```
-
-The LLM classification labels are:
+LLM judgment categories:
 
 * `true_positive`: the slice shows a feasible vulnerability path.
-* `false_positive`: the slice shows that the resource is properly released, ownership is transferred, or the path is infeasible.
-* `unknown`: the slice is insufficient for confirmation and requires manual auditing.
-
----
-
-## Notes
-
-* The framework is designed for C/C++ projects.
-* OpenAI-compatible APIs are supported in both semantic validation and vulnerability verification.
-* Checkpoint files are generated automatically for long-running LLM-based stages.
-* SVF/Saber must be installed and built before running the fine-grained analysis stage.
+* `false_positive`: the slice shows that the resource is correctly released, ownership has been transferred, or the path is infeasible.
+* `unknown`: the slice is insufficient for confirmation and requires manual audit.
