@@ -1,7 +1,5 @@
 # NSPA
 
-**Neuro-Symbolic Augmented Fine-Grained Pointer Analysis**
-
 NSPA provides a C/C++ project scanner for constructing Candidate Function Records (CFRs), conservatively filtering potential custom memory allocation, release, and destruction functions, and exporting lightweight JSONL files that can be passed to an LLM for semantic validation.
 
 The workflow consists of three stages:
