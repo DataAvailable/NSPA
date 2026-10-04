@@ -1,0 +1,6 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 326, "cl": 29, "fl": "crypto/bio/bss_acpt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 326, "cl": 21, "fl": "crypto/bio/bss_acpt.c" }|False) 
+		  --> ({ "ln": 328, "cl": 21, "fl": "crypto/bio/bss_acpt.c" }|False) 
+		  --> ({ "ln": 332, "cl": 17, "fl": "crypto/bio/bss_acpt.c" }|True) 
+

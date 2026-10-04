@@ -1,0 +1,23 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 160, "cl": 16, "fl": "providers/implementations/storemgmt/file_store.c" })
+		 conditional free path: 
+		  --> ({ "ln": 160, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 177, "cl": 16, "fl": "providers/implementations/storemgmt/file_store.c" })
+		 conditional free path: 
+		  --> ({ "ln": 806, "cl": 5, "fl": "providers/implementations/storemgmt/file_store.c" }|False) 
+		  --> ({ "ln": 806, "cl": 5, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+		  --> ({ "ln": 806, "cl": 5, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+		  --> ({ "ln": 177, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|False) 
+		  --> ({ "ln": 184, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+		  --> ({ "ln": 185, "cl": 13, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 270, "cl": 21, "fl": "providers/implementations/storemgmt/file_store.c" })
+		 conditional free path: 
+		  --> ({ "ln": 271, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|False) 
+		  --> ({ "ln": 271, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+		  --> ({ "ln": 270, "cl": 14, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 280, "cl": 20, "fl": "providers/implementations/storemgmt/file_store.c" })
+		 conditional free path: 
+		  --> ({ "ln": 286, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+

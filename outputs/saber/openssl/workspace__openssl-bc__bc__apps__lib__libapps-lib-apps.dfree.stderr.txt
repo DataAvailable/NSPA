@@ -1,0 +1,37 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3368, "cl": 15, "fl": "apps/lib/apps.c" })
+		 double free path: 
+		  --> ({ "ln": 491, "cl": 9, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 491, "cl": 9, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 493, "cl": 14, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 493, "cl": 14, "fl": "apps/lib/apps.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 221, "cl": 22, "fl": "apps/lib/apps.c" })
+		 double free path: 
+		  --> ({ "ln": 182, "cl": 13, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 187, "cl": 9, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 241, "cl": 25, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 249, "cl": 17, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 279, "cl": 9, "fl": "apps/lib/apps.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3357, "cl": 29, "fl": "apps/lib/apps.c" })
+		 double free path: 
+		  --> ({ "ln": 491, "cl": 9, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 491, "cl": 9, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 493, "cl": 14, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 493, "cl": 14, "fl": "apps/lib/apps.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3357, "cl": 50, "fl": "apps/lib/apps.c" })
+		 double free path: 
+		  --> ({ "ln": 491, "cl": 9, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 491, "cl": 9, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 493, "cl": 14, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 493, "cl": 14, "fl": "apps/lib/apps.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 259, "cl": 22, "fl": "apps/lib/apps.c" })
+		 double free path: 
+		  --> ({ "ln": 182, "cl": 13, "fl": "apps/lib/apps.c" }|False) 
+		  --> ({ "ln": 187, "cl": 9, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 241, "cl": 25, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 249, "cl": 17, "fl": "apps/lib/apps.c" }|True) 
+		  --> ({ "ln": 279, "cl": 9, "fl": "apps/lib/apps.c" }|True) 
+

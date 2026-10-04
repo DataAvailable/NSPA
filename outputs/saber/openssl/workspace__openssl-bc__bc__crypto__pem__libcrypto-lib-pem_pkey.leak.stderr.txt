@@ -1,0 +1,16 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 437, "cl": 14, "fl": "crypto/pem/pem_pkey.c" })
+		 conditional free path: 
+		  --> ({ "ln": 437, "cl": 9, "fl": "crypto/pem/pem_pkey.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 246, "cl": 23, "fl": "crypto/pem/pem_pkey.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 286, "cl": 14, "fl": "crypto/pem/pem_pkey.c" })
+		 conditional free path: 
+		  --> ({ "ln": 286, "cl": 9, "fl": "crypto/pem/pem_pkey.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 242, "cl": 11, "fl": "crypto/pem/pem_pkey.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 319, "cl": 5, "fl": "crypto/pem/pem_pkey.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 416, "cl": 14, "fl": "crypto/pem/pem_pkey.c" })
+		 conditional free path: 
+		  --> ({ "ln": 416, "cl": 9, "fl": "crypto/pem/pem_pkey.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 180, "cl": 15, "fl": "crypto/pem/pem_pkey.c" })

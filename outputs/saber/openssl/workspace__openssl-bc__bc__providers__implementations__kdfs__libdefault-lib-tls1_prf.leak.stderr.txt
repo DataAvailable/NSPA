@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 590, "cl": 20, "fl": "providers/implementations/kdfs/tls1_prf.c" })
+		 conditional free path: 
+		  --> ({ "ln": 590, "cl": 13, "fl": "providers/implementations/kdfs/tls1_prf.c" }|False) 
+		  --> ({ "ln": 593, "cl": 13, "fl": "providers/implementations/kdfs/tls1_prf.c" }|False) 
+		  --> ({ "ln": 593, "cl": 13, "fl": "providers/implementations/kdfs/tls1_prf.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 404, "cl": 35, "fl": "providers/implementations/kdfs/tls1_prf.c" })

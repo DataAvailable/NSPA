@@ -1,0 +1,13 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 160, "cl": 16, "fl": "providers/implementations/storemgmt/file_store.c" })
+		 double free path: 
+		  --> ({ "ln": 160, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 177, "cl": 16, "fl": "providers/implementations/storemgmt/file_store.c" })
+		 double free path: 
+		  --> ({ "ln": 806, "cl": 5, "fl": "providers/implementations/storemgmt/file_store.c" }|False) 
+		  --> ({ "ln": 806, "cl": 5, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+		  --> ({ "ln": 806, "cl": 5, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+		  --> ({ "ln": 177, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|False) 
+		  --> ({ "ln": 184, "cl": 9, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+		  --> ({ "ln": 185, "cl": 13, "fl": "providers/implementations/storemgmt/file_store.c" }|True) 
+

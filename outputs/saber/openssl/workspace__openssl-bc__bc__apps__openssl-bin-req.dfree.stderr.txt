@@ -1,0 +1,14 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1626, "cl": 16, "fl": "apps/req.c" })
+		 double free path: 
+		  --> ({ "ln": 1640, "cl": 9, "fl": "apps/req.c" }|False) 
+		  --> ({ "ln": 1648, "cl": 9, "fl": "apps/req.c" }|False) 
+		  --> ({ "ln": 1648, "cl": 9, "fl": "apps/req.c" }|True) 
+		  --> ({ "ln": 1653, "cl": 13, "fl": "apps/req.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 1631, "cl": 16, "fl": "apps/req.c" })
+		 double free path: 
+		  --> ({ "ln": 1640, "cl": 9, "fl": "apps/req.c" }|False) 
+		  --> ({ "ln": 1648, "cl": 9, "fl": "apps/req.c" }|False) 
+		  --> ({ "ln": 1648, "cl": 9, "fl": "apps/req.c" }|True) 
+		  --> ({ "ln": 1653, "cl": 13, "fl": "apps/req.c" }|False) 
+

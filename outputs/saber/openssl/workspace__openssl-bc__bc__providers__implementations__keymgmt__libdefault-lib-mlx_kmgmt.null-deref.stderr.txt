@@ -1,0 +1,22 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 804, "cl": 1, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 803, "cl": 1, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 92, "cl": 19, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 682, "cl": 9, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+		  --> ({ "ln": 685, "cl": 9, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+		  --> ({ "ln": 694, "cl": 27, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+		  --> ({ "ln": 694, "cl": 27, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|True) 
+		  --> ({ "ln": 694, "cl": 9, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+		  --> ({ "ln": 90, "cl": 9, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 800, "cl": 1, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 807, "cl": 1, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 801, "cl": 1, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 682, "cl": 16, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 682, "cl": 9, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+		  --> ({ "ln": 685, "cl": 9, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+		  --> ({ "ln": 694, "cl": 27, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+		  --> ({ "ln": 694, "cl": 27, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|True) 
+		  --> ({ "ln": 694, "cl": 9, "fl": "providers/implementations/keymgmt/mlx_kmgmt.c" }|False) 
+

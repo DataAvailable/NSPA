@@ -1,0 +1,10 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 283, "cl": 21, "fl": "crypto/cmp/cmp_client.c" })
+		 double free path: 
+		  --> ({ "ln": 283, "cl": 13, "fl": "crypto/cmp/cmp_client.c" }|False) 
+		  --> ({ "ln": 286, "cl": 13, "fl": "crypto/cmp/cmp_client.c" }|False) 
+		  --> ({ "ln": 291, "cl": 13, "fl": "crypto/cmp/cmp_client.c" }|False) 
+		  --> ({ "ln": 365, "cl": 13, "fl": "crypto/cmp/cmp_client.c" }|True) 
+		  --> ({ "ln": 364, "cl": 20, "fl": "crypto/cmp/cmp_client.c" }|False) 
+		  --> ({ "ln": 375, "cl": 17, "fl": "crypto/cmp/cmp_client.c" }|False) 
+		  --> ({ "ln": 380, "cl": 9, "fl": "crypto/cmp/cmp_client.c" }|False) 
+

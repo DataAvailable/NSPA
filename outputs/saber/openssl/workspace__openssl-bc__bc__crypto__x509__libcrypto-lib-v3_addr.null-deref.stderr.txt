@@ -1,0 +1,16 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 527, "cl": 61, "fl": "crypto/x509/v3_addr.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 455, "cl": 32, "fl": "crypto/x509/v3_addr.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 525, "cl": 14, "fl": "crypto/x509/v3_addr.c" })
+		 conditional free path: 
+		  --> ({ "ln": 525, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|False) 
+		  --> ({ "ln": 525, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|True) 
+		  --> ({ "ln": 527, "cl": 36, "fl": "crypto/x509/v3_addr.c" }|False) 
+		  --> ({ "ln": 527, "cl": 36, "fl": "crypto/x509/v3_addr.c" }|True) 
+		  --> ({ "ln": 527, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|False) 
+		  --> ({ "ln": 527, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|True) 
+		  --> ({ "ln": 529, "cl": 34, "fl": "crypto/x509/v3_addr.c" }|True) 
+		  --> ({ "ln": 529, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|True) 
+		  --> ({ "ln": 531, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|False) 
+		  --> ({ "ln": 531, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|True) 
+		  --> ({ "ln": 533, "cl": 9, "fl": "crypto/x509/v3_addr.c" }|True) 
+

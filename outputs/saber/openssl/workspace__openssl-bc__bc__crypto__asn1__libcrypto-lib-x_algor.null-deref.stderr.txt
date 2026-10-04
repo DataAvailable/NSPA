@@ -1,0 +1,12 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 59, "cl": 16, "fl": "crypto/asn1/x_algor.c" })
+		 conditional free path: 
+		  --> ({ "ln": 59, "cl": 9, "fl": "crypto/asn1/x_algor.c" }|False) 
+		  --> ({ "ln": 59, "cl": 9, "fl": "crypto/asn1/x_algor.c" }|True) 
+		  --> ({ "ln": 61, "cl": 9, "fl": "crypto/asn1/x_algor.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 149, "cl": 16, "fl": "crypto/asn1/x_algor.c" })
+		 conditional free path: 
+		  --> ({ "ln": 149, "cl": 9, "fl": "crypto/asn1/x_algor.c" }|False) 
+		  --> ({ "ln": 151, "cl": 9, "fl": "crypto/asn1/x_algor.c" }|False) 
+		  --> ({ "ln": 151, "cl": 9, "fl": "crypto/asn1/x_algor.c" }|True) 
+

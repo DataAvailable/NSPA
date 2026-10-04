@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 129, "cl": 27, "fl": "crypto/property/property_string.c" })
+		 conditional free path: 
+		  --> ({ "ln": 170, "cl": 13, "fl": "crypto/property/property_string.c" }|True) 
+		  --> ({ "ln": 175, "cl": 17, "fl": "crypto/property/property_string.c" }|False) 
+		  --> ({ "ln": 175, "cl": 17, "fl": "crypto/property/property_string.c" }|True) 
+		  --> ({ "ln": 182, "cl": 17, "fl": "crypto/property/property_string.c" }|True) 
+		  --> ({ "ln": 135, "cl": 13, "fl": "crypto/property/property_string.c" }|False) 
+		  --> ({ "ln": 135, "cl": 13, "fl": "crypto/property/property_string.c" }|True) 
+

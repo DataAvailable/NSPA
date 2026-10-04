@@ -1,0 +1,3 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 127, "cl": 15, "fl": "providers/implementations/encode_decode/decode_pvk2key.c" })
+		 double free path: 
+

@@ -1,0 +1,8 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 388, "cl": 18, "fl": "ssl/bio_ssl.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 497, "cl": 16, "fl": "ssl/bio_ssl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 497, "cl": 9, "fl": "ssl/bio_ssl.c" }|False) 
+		  --> ({ "ln": 497, "cl": 9, "fl": "ssl/bio_ssl.c" }|True) 
+		  --> ({ "ln": 499, "cl": 9, "fl": "ssl/bio_ssl.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 516, "cl": 16, "fl": "ssl/bio_ssl.c" })

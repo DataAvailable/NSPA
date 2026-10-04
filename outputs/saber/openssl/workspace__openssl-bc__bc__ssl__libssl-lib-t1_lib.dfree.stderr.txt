@@ -1,0 +1,10 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3390, "cl": 12, "fl": "ssl/t1_lib.c" })
+		 double free path: 
+		  --> ({ "ln": 3433, "cl": 9, "fl": "ssl/t1_lib.c" }|True) 
+		  --> ({ "ln": 3434, "cl": 13, "fl": "ssl/t1_lib.c" }|False) 
+		  --> ({ "ln": 3434, "cl": 13, "fl": "ssl/t1_lib.c" }|True) 
+		  --> ({ "ln": 3435, "cl": 13, "fl": "ssl/t1_lib.c" }|False) 
+		  --> ({ "ln": 3446, "cl": 9, "fl": "ssl/t1_lib.c" }|False) 
+		  --> ({ "ln": 3446, "cl": 9, "fl": "ssl/t1_lib.c" }|True) 
+		  --> ({ "ln": 3446, "cl": 9, "fl": "ssl/t1_lib.c" }|True) 
+

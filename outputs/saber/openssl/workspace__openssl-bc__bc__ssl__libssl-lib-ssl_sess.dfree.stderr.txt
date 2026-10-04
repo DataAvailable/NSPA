@@ -1,0 +1,5 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 139, "cl": 12, "fl": "ssl/ssl_sess.c" })
+		 double free path: 
+		  --> ({ "ln": 876, "cl": 9, "fl": "ssl/ssl_sess.c" }|False) 
+		  --> ({ "ln": 878, "cl": 5, "fl": "ssl/ssl_sess.c" }|False) 
+

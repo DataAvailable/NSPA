@@ -1,0 +1,6 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 128, "cl": 23, "fl": "crypto/asn1/a_sign.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 268, "cl": 15, "fl": "crypto/asn1/a_sign.c" })
+		 conditional free path: 
+		  --> ({ "ln": 269, "cl": 24, "fl": "crypto/asn1/a_sign.c" }|True) 
+		  --> ({ "ln": 274, "cl": 9, "fl": "crypto/asn1/a_sign.c" }|False) 
+

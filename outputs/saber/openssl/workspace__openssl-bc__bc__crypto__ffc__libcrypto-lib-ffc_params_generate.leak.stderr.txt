@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 657, "cl": 16, "fl": "crypto/ffc/ffc_params_generate.c" })
+		 conditional free path: 
+		  --> ({ "ln": 796, "cl": 9, "fl": "crypto/ffc/ffc_params_generate.c" }|True) 
+

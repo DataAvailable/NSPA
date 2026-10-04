@@ -1,0 +1,8 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 180, "cl": 24, "fl": "crypto/ex_data.c" })
+		 conditional free path: 
+		  --> ({ "ln": 190, "cl": 9, "fl": "crypto/ex_data.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 242, "cl": 23, "fl": "crypto/ex_data.c" })
+		 conditional free path: 
+		  --> ({ "ln": 258, "cl": 9, "fl": "crypto/ex_data.c" }|True) 
+

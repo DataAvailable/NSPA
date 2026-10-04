@@ -1,0 +1,6 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 36, "cl": 14, "fl": "crypto/ct/ct_b64.c" })
+		 double free path: 
+		  --> ({ "ln": 41, "cl": 9, "fl": "crypto/ct/ct_b64.c" }|False) 
+		  --> ({ "ln": 48, "cl": 5, "fl": "crypto/ct/ct_b64.c" }|False) 
+		  --> ({ "ln": 148, "cl": 9, "fl": "crypto/ct/ct_b64.c" }|False) 
+

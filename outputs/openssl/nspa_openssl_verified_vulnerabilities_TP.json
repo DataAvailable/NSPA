@@ -1,0 +1,1120 @@
+{
+  "metadata": {
+    "warning_count": 1104,
+    "confirmed_count": 10,
+    "unknown_count": 48,
+    "api_error_unknown_count": 0,
+    "model": "claude-opus-4-8",
+    "dry_run": false,
+    "result_count": 10,
+    "source_output": "outputs/openssl/nspa_openssl_verified_vulnerabilities.json"
+  },
+  "results": [
+    {
+      "id": "leak|PartialLeak|apps/s_server.c|4520|16|0|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.82,
+      "rationale": "con = SSL_new(ctx) at line 4520 succeeds and ownership is only transferred to ssl_bio at line 4552 (BIO_set_ssl with BIO_CLOSE, per comment at 4551). Several error exits between allocation and transfer explicitly call SSL_free(con) (4530 on context failure, 4543 on sbio==NULL), but the rpk_enable failure branch at 4535-4538 does `goto err` WITHOUT freeing con. The err: cleanup (4655-4657) only frees buf, ssl_bio, and io, never con. On that feasible path con is leaked. This matches Saber's PartialLeak finding (freed on some paths, leaked on another).",
+      "evidence_lines": [
+        {
+          "file": "apps/s_server.c",
+          "line": 4520,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4530,
+          "role": "free"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4538,
+          "role": "return"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4535,
+          "role": "condition"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4552,
+          "role": "ownership"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4655,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Add SSL_free(con); before the `goto err;` in the rpk_enable failure block at line 4538 (and verify any other pre-4552 error exits free con).",
+      "warning": {
+        "id": "leak|PartialLeak|apps/s_server.c|4520|16|0|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+        "primary": {
+          "file": "apps/s_server.c",
+          "line": 4520,
+          "column": 16
+        },
+        "path": [
+          {
+            "file": "apps/s_server.c",
+            "line": 4520,
+            "column": 9,
+            "branch": "False"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4528,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4527,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4542,
+            "column": 9,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 4520, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 4520, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4528, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4527, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4542, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|apps/s_server.c|4520|16|0|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+          "primary": {
+            "file": "apps/s_server.c",
+            "line": 4520,
+            "column": 16
+          },
+          "path": [
+            {
+              "file": "apps/s_server.c",
+              "line": 4520,
+              "column": 9,
+              "branch": "False"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4528,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4527,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4542,
+              "column": 9,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 4520, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 4520, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4528, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4527, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4542, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+        },
+        "source_files": [
+          "apps/s_server.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "apps/s_server.c",
+            "start_line": 4497,
+            "end_line": 4659,
+            "important_lines": [
+              4520,
+              4527,
+              4528,
+              4542
+            ],
+            "text": "    4497: static int rev_body(int s, int stype, int prot, unsigned char *context)\n    4498: {\n    4499:     char *buf = NULL;\n    4500:     int i;\n    4501:     int ret = 1;\n    4502:     SSL *con;\n    4503:     BIO *io, *ssl_bio, *sbio;\n    4504: #ifdef CHARSET_EBCDIC\n    4505:     BIO *filter;\n    4506: #endif\n    4507: \n    4508:     /* as we use BIO_gets(), and it always null terminates data, we need\n    4509:      * to allocate 1 byte longer buffer to fit the full 2^14 byte record */\n    4510:     buf = app_malloc(bufsize + 1, \"server rev buffer\");\n    4511:     io = BIO_new(BIO_f_buffer());\n    4512:     ssl_bio = BIO_new(BIO_f_ssl());\n    4513:     if ((io == NULL) || (ssl_bio == NULL))\n    4514:         goto err;\n    4515: \n    4516:     /* lets make the output buffer a reasonable size */\n    4517:     if (BIO_set_write_buffer_size(io, bufsize) <= 0)\n    4518:         goto err;\n    4519: \n>>  4520:     if ((con = SSL_new(ctx)) == NULL)\n    4521:         goto err;\n    4522: \n    4523:     if (s_tlsextdebug) {\n    4524:         SSL_set_tlsext_debug_callback(con, tlsext_cb);\n    4525:         SSL_set_tlsext_debug_arg(con, bio_s_out);\n    4526:     }\n>>  4527:     if (context != NULL\n>>  4528:         && !SSL_set_session_id_context(con, context,\n    4529:             (unsigned int)strlen((char *)context))) {\n    4530:         SSL_free(con);\n    4531:         ERR_print_errors(bio_err);\n    4532:         goto err;\n    4533:     }\n    4534: \n    4535:     if (rpk_files != NULL && !rpk_enable(con)) {\n    4536:         BIO_puts(bio_err, \"Error enabling client RPK verification\\n\");\n    4537:         ERR_print_errors(bio_err);\n    4538:         goto err;\n    4539:     }\n    4540: \n    4541:     sbio = BIO_new_socket(s, BIO_NOCLOSE);\n>>  4542:     if (sbio == NULL) {\n    4543:         SSL_free(con);\n    4544:         ERR_print_errors(bio_err);\n    4545:         goto err;\n    4546:     }\n    4547: \n    4548:     SSL_set_bio(con, sbio, sbio);\n    4549:     SSL_set_accept_state(con);\n    4550: \n    4551:     /* No need to free |con| after this. Done by BIO_free(ssl_bio) */\n    4552:     BIO_set_ssl(ssl_bio, con, BIO_CLOSE);\n    4553:     BIO_push(io, ssl_bio);\n    4554:     ssl_bio = NULL;\n    4555: #ifdef CHARSET_EBCDIC\n    4556:     filter = BIO_new(BIO_f_ebcdic_filter());\n    4557:     if (filter == NULL)\n    4558:         goto err;\n    4559: \n    4560:     io = BIO_push(filter, io);\n    4561: #endif\n    4562: \n    4563:     if (s_debug) {\n    4564:         BIO_set_callback_ex(SSL_get_rbio(con), bio_dump_callback);\n    4565:         BIO_set_callback_arg(SSL_get_rbio(con), (char *)bio_s_out);\n    4566:     }\n    4567:     if (s_msg) {\n    4568: #ifndef OPENSSL_NO_SSL_TRACE\n    4569:         if (s_msg == 2)\n    4570:             SSL_set_msg_callback(con, SSL_trace);\n    4571:         else\n    4572: #endif\n    4573:             SSL_set_msg_callback(con, msg_cb);\n    4574:         SSL_set_msg_callback_arg(con, bio_s_msg ? bio_s_msg : bio_s_out);\n    4575:     }\n    4576: \n    4577:     for (;;) {\n    4578:         i = BIO_do_handshake(io);\n    4579:         if (i > 0)\n    4580:             break;\n    4581:         if (!BIO_should_retry(io)) {\n    4582:             BIO_puts(bio_err, \"CONNECTION FAILURE\\n\");\n    4583:             ERR_print_errors(bio_err);\n    4584:             goto end;\n    4585:         }\n    4586: #ifndef OPENSSL_NO_SRP\n    4587:         if (BIO_should_io_special(io)\n    4588:             && BIO_get_retry_reason(io) == BIO_RR_SSL_X509_LOOKUP) {\n    4589:             BIO_puts(bio_s_out, \"LOOKUP renego during accept\\n\");\n    4590: \n    4591:             lookup_srp_user(&srp_callback_parm, bio_s_out);\n    4592: \n    4593:             continue;\n    4594:         }\n    4595: #endif\n    4596:     }\n    4597:     BIO_puts(bio_err, \"CONNECTION ESTABLISHED\\n\");\n    4598:     print_ssl_summary(con);\n    4599: \n    4600:     for (;;) {\n    4601:         i = BIO_gets(io, buf, bufsize + 1);\n    4602:         if (i < 0) { /* error */\n    4603:             if (!BIO_should_retry(io)) {\n    4604:                 if (!s_quiet)\n    4605:                     ERR_print_errors(bio_err);\n    4606:                 goto err;\n    4607:             } else {\n    4608:                 BIO_puts(bio_s_out, \"read R BLOCK\\n\");\n    4609: #ifndef OPENSSL_NO_SRP\n    4610:                 if (BIO_should_io_special(io)\n    4611:                     && BIO_get_retry_reason(io) == BIO_RR_SSL_X509_LOOKUP) {\n    4612:                     BIO_puts(bio_s_out, \"LOOKUP renego during read\\n\");\n    4613: \n    4614:                     lookup_srp_user(&srp_callback_parm, bio_s_out);\n    4615: \n    4616:                     continue;\n    4617:                 }\n    4618: #endif\n    4619:                 OSSL_sleep(1000);\n    4620:                 continue;\n    4621:             }\n    4622:         } else if (i == 0) { /* end of input */\n    4623:             ret = 1;\n    4624:             BIO_puts(bio_err, \"CONNECTION CLOSED\\n\");\n    4625:             goto end;\n    4626:         } else {\n    4627:             char *p = buf + i - 1;\n    4628:             while (i && (*p == '\\n' || *p == '\\r')) {\n    4629:                 p--;\n    4630:                 i--;\n    4631:             }\n    4632:             if (!s_ign_eof && i == 5 && HAS_PREFIX(buf, \"CLOSE\")) {\n    4633:                 ret = 1;\n    4634:                 BIO_puts(bio_err, \"CONNECTION CLOSED\\n\");\n    4635:                 goto end;\n    4636:             }\n    4637:             BUF_reverse((unsigned char *)buf, NULL, i);\n    4638:             buf[i] = '\\n';\n    4639:             BIO_write(io, buf, i + 1);\n    4640:             for (;;) {\n    4641:                 i = BIO_flush(io);\n    4642:                 if (i > 0)\n    4643:                     break;\n    4644:                 if (!BIO_should_retry(io))\n    4645:                     goto end;\n    4646:             }\n    4647:         }\n    4648:     }\n    4649: end:\n    4650:     /* make sure we reuse sessions */\n    4651:     do_ssl_shutdown(con);\n    4652: \n    4653: err:\n    4654: \n    4655:     OPENSSL_free(buf);\n    4656:     BIO_free(ssl_bio);\n    4657:     BIO_free_all(io);\n    4658:     return ret;\n    4659: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|apps/s_server.c|1630|22|5|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.9,
+      "rationale": "BIO_new_file at line 1630 succeeds (in != NULL) but the third OR clause OSSL_ECHSTORE_read_pem(...) != 1 evaluates true, entering the error block which does 'continue' at line 1633 without freeing 'in'. BIO_free_all(in) at line 1635 is skipped, leaking the BIO. The reported path (1631 True, 1629 False) exactly matches this case: r>=0, file opened successfully, but PEM read failed.",
+      "evidence_lines": [
+        {
+          "file": "apps/s_server.c",
+          "line": 1630,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 1631,
+          "role": "condition"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 1633,
+          "role": "return"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 1635,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Call BIO_free_all(in) before the 'continue' in the error block (line 1632-1633), or restructure to free 'in' on all paths when it was successfully allocated.",
+      "warning": {
+        "id": "leak|PartialLeak|apps/s_server.c|1630|22|5|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+        "primary": {
+          "file": "apps/s_server.c",
+          "line": 1630,
+          "column": 22
+        },
+        "path": [
+          {
+            "file": "apps/s_server.c",
+            "line": 1631,
+            "column": 13,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 1629,
+            "column": 13,
+            "branch": "False"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 1630, \"cl\": 22, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 1631, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 1629, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|False)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|apps/s_server.c|1630|22|5|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+          "primary": {
+            "file": "apps/s_server.c",
+            "line": 1630,
+            "column": 22
+          },
+          "path": [
+            {
+              "file": "apps/s_server.c",
+              "line": 1631,
+              "column": 13,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 1629,
+              "column": 13,
+              "branch": "False"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 1630, \"cl\": 22, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 1631, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 1629, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|False)"
+        },
+        "source_files": [
+          "apps/s_server.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "apps/s_server.c",
+            "start_line": 1621,
+            "end_line": 1639,
+            "important_lines": [
+              1629,
+              1630,
+              1631
+            ],
+            "text": "    1621: #else\n    1622:         r = BIO_snprintf(filepath, sizeof(filepath), \"%s/%s\", thedir, thisfile);\n    1623: #endif\n    1624:         if (app_isdir(filepath) > 0) {\n    1625:             if (s_debug)\n    1626:                 BIO_printf(bio_err, \"Skipping directory: %s\\n\", filepath);\n    1627:             continue;\n    1628:         }\n>>  1629:         if (r < 0\n>>  1630:             || (in = BIO_new_file(filepath, \"r\")) == NULL\n>>  1631:             || OSSL_ECHSTORE_read_pem(es, in, for_retry) != 1) {\n    1632:             BIO_printf(bio_err, \"Failed reading from: %s\\n\", filepath);\n    1633:             continue;\n    1634:         }\n    1635:         BIO_free_all(in);\n    1636:         if (bio_s_out != NULL)\n    1637:             BIO_printf(bio_s_out, \"Added ECH key pair from: %s\\n\", thisfile);\n    1638:         loaded++;\n    1639:     }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|PartialLeak|apps/s_server.c|3998|16|9|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.8,
+      "rationale": "con is allocated by SSL_new at line 3998. The code explicitly calls SSL_free(con) before goto err at lines 4009 and 4020, which strongly implies the err: label does NOT free con (otherwise those frees would be redundant/double-free). However, the rpk_files failure branch at lines 4013-4016 does goto err WITHOUT calling SSL_free(con), leaking the SSL object. This matches the PartialLeak signature: freed on some paths, leaked on at least one.",
+      "evidence_lines": [
+        {
+          "file": "apps/s_server.c",
+          "line": 3998,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4009,
+          "role": "free"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4020,
+          "role": "free"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4013,
+          "role": "condition"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4015,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "Add SSL_free(con) before goto err in the rpk_enable failure branch (line 4015), or ensure the err: label frees con.",
+      "warning": {
+        "id": "leak|PartialLeak|apps/s_server.c|3998|16|9|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+        "primary": {
+          "file": "apps/s_server.c",
+          "line": 3998,
+          "column": 16
+        },
+        "path": [
+          {
+            "file": "apps/s_server.c",
+            "line": 3998,
+            "column": 9,
+            "branch": "False"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4007,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4006,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4019,
+            "column": 9,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3998, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3998, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4007, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4006, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4019, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|PartialLeak|apps/s_server.c|3998|16|9|workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.leak.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+          "primary": {
+            "file": "apps/s_server.c",
+            "line": 3998,
+            "column": 16
+          },
+          "path": [
+            {
+              "file": "apps/s_server.c",
+              "line": 3998,
+              "column": 9,
+              "branch": "False"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4007,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4006,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4019,
+              "column": 9,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3998, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3998, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4007, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4006, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4019, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+        },
+        "source_files": [
+          "apps/s_server.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "apps/s_server.c",
+            "start_line": 3990,
+            "end_line": 4027,
+            "important_lines": [
+              3998,
+              4006,
+              4007,
+              4019
+            ],
+            "text": "    3990:         else if (!s_quiet)\n    3991:             BIO_puts(bio_err, \"Turned on non blocking io\\n\");\n    3992:     }\n    3993: \n    3994:     /* lets make the output buffer a reasonable size */\n    3995:     if (BIO_set_write_buffer_size(io, bufsize) <= 0)\n    3996:         goto err;\n    3997: \n>>  3998:     if ((con = SSL_new(ctx)) == NULL)\n    3999:         goto err;\n    4000: \n    4001:     if (s_tlsextdebug) {\n    4002:         SSL_set_tlsext_debug_callback(con, tlsext_cb);\n    4003:         SSL_set_tlsext_debug_arg(con, bio_s_out);\n    4004:     }\n    4005: \n>>  4006:     if (context != NULL\n>>  4007:         && !SSL_set_session_id_context(con, context,\n    4008:             (unsigned int)strlen((char *)context))) {\n    4009:         SSL_free(con);\n    4010:         goto err;\n    4011:     }\n    4012: \n    4013:     if (rpk_files != NULL && !rpk_enable(con)) {\n    4014:         BIO_puts(bio_err, \"Error enabling client RPK verification\\n\");\n    4015:         goto err;\n    4016:     }\n    4017: \n    4018:     sbio = BIO_new_socket(s, BIO_NOCLOSE);\n>>  4019:     if (sbio == NULL) {\n    4020:         SSL_free(con);\n    4021:         goto err;\n    4022:     }\n    4023: \n    4024:     if (s_nbio_test) {\n    4025:         BIO *test;\n    4026: \n    4027:         test = BIO_new(BIO_f_nbio_test());"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|apps/s_server.c|3998|16|1|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.78,
+      "rationale": "con (SSL_new) is explicitly freed before goto err at lines 4009 and 4020, indicating the err label does not free it. The rpk_enable failure path at lines 4013-4016 does goto err without SSL_free(con), leaking the SSL object. This is the inconsistent-free path the PartialLeak checker detected, though the exact branch sequence Saber printed is partly infeasible.",
+      "evidence_lines": [
+        {
+          "file": "apps/s_server.c",
+          "line": 3998,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4009,
+          "role": "free"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4013,
+          "role": "condition"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4015,
+          "role": "return"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4020,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Add SSL_free(con) before the goto err in the rpk_enable failure block (line 4015), or free con at the err label so all error paths release it.",
+      "warning": {
+        "id": "null-deref|PartialLeak|apps/s_server.c|3998|16|1|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+        "primary": {
+          "file": "apps/s_server.c",
+          "line": 3998,
+          "column": 16
+        },
+        "path": [
+          {
+            "file": "apps/s_server.c",
+            "line": 3998,
+            "column": 9,
+            "branch": "False"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4007,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4006,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4019,
+            "column": 9,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3998, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3998, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4007, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4006, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4019, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|apps/s_server.c|3998|16|1|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+          "primary": {
+            "file": "apps/s_server.c",
+            "line": 3998,
+            "column": 16
+          },
+          "path": [
+            {
+              "file": "apps/s_server.c",
+              "line": 3998,
+              "column": 9,
+              "branch": "False"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4007,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4006,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4019,
+              "column": 9,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3998, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 3998, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4007, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4006, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4019, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+        },
+        "source_files": [
+          "apps/s_server.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "apps/s_server.c",
+            "start_line": 3990,
+            "end_line": 4027,
+            "important_lines": [
+              3998,
+              4006,
+              4007,
+              4019
+            ],
+            "text": "    3990:         else if (!s_quiet)\n    3991:             BIO_puts(bio_err, \"Turned on non blocking io\\n\");\n    3992:     }\n    3993: \n    3994:     /* lets make the output buffer a reasonable size */\n    3995:     if (BIO_set_write_buffer_size(io, bufsize) <= 0)\n    3996:         goto err;\n    3997: \n>>  3998:     if ((con = SSL_new(ctx)) == NULL)\n    3999:         goto err;\n    4000: \n    4001:     if (s_tlsextdebug) {\n    4002:         SSL_set_tlsext_debug_callback(con, tlsext_cb);\n    4003:         SSL_set_tlsext_debug_arg(con, bio_s_out);\n    4004:     }\n    4005: \n>>  4006:     if (context != NULL\n>>  4007:         && !SSL_set_session_id_context(con, context,\n    4008:             (unsigned int)strlen((char *)context))) {\n    4009:         SSL_free(con);\n    4010:         goto err;\n    4011:     }\n    4012: \n    4013:     if (rpk_files != NULL && !rpk_enable(con)) {\n    4014:         BIO_puts(bio_err, \"Error enabling client RPK verification\\n\");\n    4015:         goto err;\n    4016:     }\n    4017: \n    4018:     sbio = BIO_new_socket(s, BIO_NOCLOSE);\n>>  4019:     if (sbio == NULL) {\n    4020:         SSL_free(con);\n    4021:         goto err;\n    4022:     }\n    4023: \n    4024:     if (s_nbio_test) {\n    4025:         BIO *test;\n    4026: \n    4027:         test = BIO_new(BIO_f_nbio_test());"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|apps/s_server.c|3982|15|6|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.6,
+      "rationale": "ssl_bio (and edio) are allocated at lines 3982-3983 but are only linked into io's BIO chain later via BIO_push after the sbio check. On the sbio==NULL branch at line 4019, control jumps to err before that push, so the err cleanup (which frees io via BIO_free_all) does not reclaim the standalone ssl_bio/edio BIOs, leaking them. The reported conditional path is feasible. Note: the err-label cleanup code was not included in the slice, so this rests on the standard www_body ordering where ssl_bio is pushed onto io only after this point.",
+      "evidence_lines": [
+        {
+          "file": "apps/s_server.c",
+          "line": 3982,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 3983,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4019,
+          "role": "condition"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4021,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "In the sbio==NULL branch (and ensure the err handler) free ssl_bio and edio before goto err, e.g. BIO_free(ssl_bio); BIO_free(edio); since they are not yet attached to io's chain.",
+      "warning": {
+        "id": "null-deref|PartialLeak|apps/s_server.c|3982|15|6|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+        "primary": {
+          "file": "apps/s_server.c",
+          "line": 3982,
+          "column": 15
+        },
+        "path": [
+          {
+            "file": "apps/s_server.c",
+            "line": 4019,
+            "column": 9,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3982, \"cl\": 15, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 4019, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|apps/s_server.c|3982|15|6|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+          "primary": {
+            "file": "apps/s_server.c",
+            "line": 3982,
+            "column": 15
+          },
+          "path": [
+            {
+              "file": "apps/s_server.c",
+              "line": 4019,
+              "column": 9,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 3982, \"cl\": 15, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 4019, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+        },
+        "source_files": [
+          "apps/s_server.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "apps/s_server.c",
+            "start_line": 3974,
+            "end_line": 3990,
+            "important_lines": [
+              3982
+            ],
+            "text": "    3974: \n    3975:     /* Set width for a select call if needed */\n    3976:     width = s + 1;\n    3977: \n    3978:     /* as we use BIO_gets(), and it always null terminates data, we need\n    3979:      * to allocate 1 byte longer buffer to fit the full 2^14 byte record */\n    3980:     p = buf = app_malloc(bufsize + 1, \"server www buffer\");\n    3981:     io = BIO_new(BIO_f_buffer());\n>>  3982:     ssl_bio = BIO_new(BIO_f_ssl());\n    3983:     edio = BIO_new(BIO_s_mem());\n    3984:     if ((io == NULL) || (ssl_bio == NULL) || (edio == NULL))\n    3985:         goto err;\n    3986: \n    3987:     if (s_nbio) {\n    3988:         if (!BIO_socket_nbio(s, 1))\n    3989:             ERR_print_errors(bio_err);\n    3990:         else if (!s_quiet)"
+          },
+          {
+            "file": "apps/s_server.c",
+            "start_line": 4011,
+            "end_line": 4027,
+            "important_lines": [
+              4019
+            ],
+            "text": "    4011:     }\n    4012: \n    4013:     if (rpk_files != NULL && !rpk_enable(con)) {\n    4014:         BIO_puts(bio_err, \"Error enabling client RPK verification\\n\");\n    4015:         goto err;\n    4016:     }\n    4017: \n    4018:     sbio = BIO_new_socket(s, BIO_NOCLOSE);\n>>  4019:     if (sbio == NULL) {\n    4020:         SSL_free(con);\n    4021:         goto err;\n    4022:     }\n    4023: \n    4024:     if (s_nbio_test) {\n    4025:         BIO *test;\n    4026: \n    4027:         test = BIO_new(BIO_f_nbio_test());"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|apps/s_server.c|1630|22|8|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "In the error block at lines 1631-1634, the short-circuit OR means that if r>=0 and BIO_new_file succeeds (in != NULL) but OSSL_ECHSTORE_read_pem returns != 1, the code prints an error and `continue`s at line 1633 without freeing `in`. The successful path frees it at line 1635 (BIO_free_all), but the read_pem-failure path leaks the allocated BIO. The path (1631 True, 1629 False) describes exactly this feasible case: r>=0, file opened, pem read failed.",
+      "evidence_lines": [
+        {
+          "file": "apps/s_server.c",
+          "line": 1630,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 1631,
+          "role": "condition"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 1633,
+          "role": "return"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 1635,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "In the error block (before the `continue` at line 1633) call BIO_free_all(in) and set in=NULL so the BIO allocated by BIO_new_file is released when OSSL_ECHSTORE_read_pem fails.",
+      "warning": {
+        "id": "null-deref|PartialLeak|apps/s_server.c|1630|22|8|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+        "primary": {
+          "file": "apps/s_server.c",
+          "line": 1630,
+          "column": 22
+        },
+        "path": [
+          {
+            "file": "apps/s_server.c",
+            "line": 1631,
+            "column": 13,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 1629,
+            "column": 13,
+            "branch": "False"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 1630, \"cl\": 22, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 1631, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 1629, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|False)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|apps/s_server.c|1630|22|8|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+          "primary": {
+            "file": "apps/s_server.c",
+            "line": 1630,
+            "column": 22
+          },
+          "path": [
+            {
+              "file": "apps/s_server.c",
+              "line": 1631,
+              "column": 13,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 1629,
+              "column": 13,
+              "branch": "False"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 1630, \"cl\": 22, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 1631, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 1629, \"cl\": 13, \"fl\": \"apps/s_server.c\" }|False)"
+        },
+        "source_files": [
+          "apps/s_server.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "apps/s_server.c",
+            "start_line": 1621,
+            "end_line": 1639,
+            "important_lines": [
+              1629,
+              1630,
+              1631
+            ],
+            "text": "    1621: #else\n    1622:         r = BIO_snprintf(filepath, sizeof(filepath), \"%s/%s\", thedir, thisfile);\n    1623: #endif\n    1624:         if (app_isdir(filepath) > 0) {\n    1625:             if (s_debug)\n    1626:                 BIO_printf(bio_err, \"Skipping directory: %s\\n\", filepath);\n    1627:             continue;\n    1628:         }\n>>  1629:         if (r < 0\n>>  1630:             || (in = BIO_new_file(filepath, \"r\")) == NULL\n>>  1631:             || OSSL_ECHSTORE_read_pem(es, in, for_retry) != 1) {\n    1632:             BIO_printf(bio_err, \"Failed reading from: %s\\n\", filepath);\n    1633:             continue;\n    1634:         }\n    1635:         BIO_free_all(in);\n    1636:         if (bio_s_out != NULL)\n    1637:             BIO_printf(bio_s_out, \"Added ECH key pair from: %s\\n\", thisfile);\n    1638:         loaded++;\n    1639:     }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|PartialLeak|apps/s_server.c|4520|16|9|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.82,
+      "rationale": "con is allocated at line 4520 via SSL_new. It is explicitly freed with SSL_free(con) on the session-id-context failure (4530) and sbio==NULL (4543) paths, and ownership is transferred to ssl_bio/io at BIO_set_ssl (4552) so later err/end paths free it via BIO_free_all(io). However, the rpk_files branch at 4535-4538 does 'goto err' when rpk_enable fails, before con is attached to any BIO. The err: label only frees buf, ssl_bio, and io, not con, so con leaks on that feasible path.",
+      "evidence_lines": [
+        {
+          "file": "apps/s_server.c",
+          "line": 4520,
+          "role": "allocation"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4535,
+          "role": "condition"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4538,
+          "role": "return"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4552,
+          "role": "ownership"
+        },
+        {
+          "file": "apps/s_server.c",
+          "line": 4655,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "Add SSL_free(con) before the 'goto err' in the rpk_files failure branch (after line 4537), matching the cleanup done on the other pre-transfer error paths.",
+      "warning": {
+        "id": "null-deref|PartialLeak|apps/s_server.c|4520|16|9|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "PartialLeak",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+        "primary": {
+          "file": "apps/s_server.c",
+          "line": 4520,
+          "column": 16
+        },
+        "path": [
+          {
+            "file": "apps/s_server.c",
+            "line": 4520,
+            "column": 9,
+            "branch": "False"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4528,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4527,
+            "column": 9,
+            "branch": "True"
+          },
+          {
+            "file": "apps/s_server.c",
+            "line": 4542,
+            "column": 9,
+            "branch": "True"
+          }
+        ],
+        "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 4520, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 4520, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4528, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4527, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4542, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|PartialLeak|apps/s_server.c|4520|16|9|workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "PartialLeak",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__apps__openssl-bin-s_server.null-deref.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/apps/openssl-bin-s_server.bc",
+          "primary": {
+            "file": "apps/s_server.c",
+            "line": 4520,
+            "column": 16
+          },
+          "path": [
+            {
+              "file": "apps/s_server.c",
+              "line": 4520,
+              "column": 9,
+              "branch": "False"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4528,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4527,
+              "column": 9,
+              "branch": "True"
+            },
+            {
+              "file": "apps/s_server.c",
+              "line": 4542,
+              "column": 9,
+              "branch": "True"
+            }
+          ],
+          "raw_text": "PartialLeak : memory allocation at : (CallICFGNode: { \"ln\": 4520, \"cl\": 16, \"fl\": \"apps/s_server.c\" })\n\t\t conditional free path: \n\t\t  --> ({ \"ln\": 4520, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|False) \n\t\t  --> ({ \"ln\": 4528, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4527, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True) \n\t\t  --> ({ \"ln\": 4542, \"cl\": 9, \"fl\": \"apps/s_server.c\" }|True)"
+        },
+        "source_files": [
+          "apps/s_server.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "apps/s_server.c",
+            "start_line": 4497,
+            "end_line": 4659,
+            "important_lines": [
+              4520,
+              4527,
+              4528,
+              4542
+            ],
+            "text": "    4497: static int rev_body(int s, int stype, int prot, unsigned char *context)\n    4498: {\n    4499:     char *buf = NULL;\n    4500:     int i;\n    4501:     int ret = 1;\n    4502:     SSL *con;\n    4503:     BIO *io, *ssl_bio, *sbio;\n    4504: #ifdef CHARSET_EBCDIC\n    4505:     BIO *filter;\n    4506: #endif\n    4507: \n    4508:     /* as we use BIO_gets(), and it always null terminates data, we need\n    4509:      * to allocate 1 byte longer buffer to fit the full 2^14 byte record */\n    4510:     buf = app_malloc(bufsize + 1, \"server rev buffer\");\n    4511:     io = BIO_new(BIO_f_buffer());\n    4512:     ssl_bio = BIO_new(BIO_f_ssl());\n    4513:     if ((io == NULL) || (ssl_bio == NULL))\n    4514:         goto err;\n    4515: \n    4516:     /* lets make the output buffer a reasonable size */\n    4517:     if (BIO_set_write_buffer_size(io, bufsize) <= 0)\n    4518:         goto err;\n    4519: \n>>  4520:     if ((con = SSL_new(ctx)) == NULL)\n    4521:         goto err;\n    4522: \n    4523:     if (s_tlsextdebug) {\n    4524:         SSL_set_tlsext_debug_callback(con, tlsext_cb);\n    4525:         SSL_set_tlsext_debug_arg(con, bio_s_out);\n    4526:     }\n>>  4527:     if (context != NULL\n>>  4528:         && !SSL_set_session_id_context(con, context,\n    4529:             (unsigned int)strlen((char *)context))) {\n    4530:         SSL_free(con);\n    4531:         ERR_print_errors(bio_err);\n    4532:         goto err;\n    4533:     }\n    4534: \n    4535:     if (rpk_files != NULL && !rpk_enable(con)) {\n    4536:         BIO_puts(bio_err, \"Error enabling client RPK verification\\n\");\n    4537:         ERR_print_errors(bio_err);\n    4538:         goto err;\n    4539:     }\n    4540: \n    4541:     sbio = BIO_new_socket(s, BIO_NOCLOSE);\n>>  4542:     if (sbio == NULL) {\n    4543:         SSL_free(con);\n    4544:         ERR_print_errors(bio_err);\n    4545:         goto err;\n    4546:     }\n    4547: \n    4548:     SSL_set_bio(con, sbio, sbio);\n    4549:     SSL_set_accept_state(con);\n    4550: \n    4551:     /* No need to free |con| after this. Done by BIO_free(ssl_bio) */\n    4552:     BIO_set_ssl(ssl_bio, con, BIO_CLOSE);\n    4553:     BIO_push(io, ssl_bio);\n    4554:     ssl_bio = NULL;\n    4555: #ifdef CHARSET_EBCDIC\n    4556:     filter = BIO_new(BIO_f_ebcdic_filter());\n    4557:     if (filter == NULL)\n    4558:         goto err;\n    4559: \n    4560:     io = BIO_push(filter, io);\n    4561: #endif\n    4562: \n    4563:     if (s_debug) {\n    4564:         BIO_set_callback_ex(SSL_get_rbio(con), bio_dump_callback);\n    4565:         BIO_set_callback_arg(SSL_get_rbio(con), (char *)bio_s_out);\n    4566:     }\n    4567:     if (s_msg) {\n    4568: #ifndef OPENSSL_NO_SSL_TRACE\n    4569:         if (s_msg == 2)\n    4570:             SSL_set_msg_callback(con, SSL_trace);\n    4571:         else\n    4572: #endif\n    4573:             SSL_set_msg_callback(con, msg_cb);\n    4574:         SSL_set_msg_callback_arg(con, bio_s_msg ? bio_s_msg : bio_s_out);\n    4575:     }\n    4576: \n    4577:     for (;;) {\n    4578:         i = BIO_do_handshake(io);\n    4579:         if (i > 0)\n    4580:             break;\n    4581:         if (!BIO_should_retry(io)) {\n    4582:             BIO_puts(bio_err, \"CONNECTION FAILURE\\n\");\n    4583:             ERR_print_errors(bio_err);\n    4584:             goto end;\n    4585:         }\n    4586: #ifndef OPENSSL_NO_SRP\n    4587:         if (BIO_should_io_special(io)\n    4588:             && BIO_get_retry_reason(io) == BIO_RR_SSL_X509_LOOKUP) {\n    4589:             BIO_puts(bio_s_out, \"LOOKUP renego during accept\\n\");\n    4590: \n    4591:             lookup_srp_user(&srp_callback_parm, bio_s_out);\n    4592: \n    4593:             continue;\n    4594:         }\n    4595: #endif\n    4596:     }\n    4597:     BIO_puts(bio_err, \"CONNECTION ESTABLISHED\\n\");\n    4598:     print_ssl_summary(con);\n    4599: \n    4600:     for (;;) {\n    4601:         i = BIO_gets(io, buf, bufsize + 1);\n    4602:         if (i < 0) { /* error */\n    4603:             if (!BIO_should_retry(io)) {\n    4604:                 if (!s_quiet)\n    4605:                     ERR_print_errors(bio_err);\n    4606:                 goto err;\n    4607:             } else {\n    4608:                 BIO_puts(bio_s_out, \"read R BLOCK\\n\");\n    4609: #ifndef OPENSSL_NO_SRP\n    4610:                 if (BIO_should_io_special(io)\n    4611:                     && BIO_get_retry_reason(io) == BIO_RR_SSL_X509_LOOKUP) {\n    4612:                     BIO_puts(bio_s_out, \"LOOKUP renego during read\\n\");\n    4613: \n    4614:                     lookup_srp_user(&srp_callback_parm, bio_s_out);\n    4615: \n    4616:                     continue;\n    4617:                 }\n    4618: #endif\n    4619:                 OSSL_sleep(1000);\n    4620:                 continue;\n    4621:             }\n    4622:         } else if (i == 0) { /* end of input */\n    4623:             ret = 1;\n    4624:             BIO_puts(bio_err, \"CONNECTION CLOSED\\n\");\n    4625:             goto end;\n    4626:         } else {\n    4627:             char *p = buf + i - 1;\n    4628:             while (i && (*p == '\\n' || *p == '\\r')) {\n    4629:                 p--;\n    4630:                 i--;\n    4631:             }\n    4632:             if (!s_ign_eof && i == 5 && HAS_PREFIX(buf, \"CLOSE\")) {\n    4633:                 ret = 1;\n    4634:                 BIO_puts(bio_err, \"CONNECTION CLOSED\\n\");\n    4635:                 goto end;\n    4636:             }\n    4637:             BUF_reverse((unsigned char *)buf, NULL, i);\n    4638:             buf[i] = '\\n';\n    4639:             BIO_write(io, buf, i + 1);\n    4640:             for (;;) {\n    4641:                 i = BIO_flush(io);\n    4642:                 if (i > 0)\n    4643:                     break;\n    4644:                 if (!BIO_should_retry(io))\n    4645:                     goto end;\n    4646:             }\n    4647:         }\n    4648:     }\n    4649: end:\n    4650:     /* make sure we reuse sessions */\n    4651:     do_ssl_shutdown(con);\n    4652: \n    4653: err:\n    4654: \n    4655:     OPENSSL_free(buf);\n    4656:     BIO_free(ssl_bio);\n    4657:     BIO_free_all(io);\n    4658:     return ret;\n    4659: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leak|NeverFree|crypto/x509/x509_lu.c|757|15|0|workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.leak.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "x509_object_dup allocates 'dup' at line 757. If sk_X509_OBJECT_push fails (returns 0) at line 760, 'dup' was never added to *sk, so the err handler's sk_X509_OBJECT_pop_free only frees objects already in *sk, leaking the just-allocated 'dup'. The successful path transfers ownership to *sk, but the push-failure path leaks.",
+      "evidence_lines": [
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 757,
+          "role": "allocation"
+        },
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 760,
+          "role": "condition"
+        },
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 761,
+          "role": "return"
+        },
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 767,
+          "role": "free"
+        }
+      ],
+      "fix_suggestion": "On push failure, free 'dup' before goto err (e.g., X509_OBJECT_free(dup)) since it was not added to the stack.",
+      "warning": {
+        "id": "leak|NeverFree|crypto/x509/x509_lu.c|757|15|0|workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.leak.stderr.txt",
+        "checker": "leak",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "memory_leak",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.leak.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/crypto/x509/libcrypto-lib-x509_lu.bc",
+        "primary": {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 757,
+          "column": 15
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 757, \"cl\": 15, \"fl\": \"crypto/x509/x509_lu.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "leak|NeverFree|crypto/x509/x509_lu.c|757|15|0|workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.leak.stderr.txt",
+          "checker": "leak",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "memory_leak",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.leak.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/crypto/x509/libcrypto-lib-x509_lu.bc",
+          "primary": {
+            "file": "crypto/x509/x509_lu.c",
+            "line": 757,
+            "column": 15
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 757, \"cl\": 15, \"fl\": \"crypto/x509/x509_lu.c\" })"
+        },
+        "source_files": [
+          "crypto/x509/x509_lu.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "crypto/x509/x509_lu.c",
+            "start_line": 748,
+            "end_line": 771,
+            "important_lines": [
+              757
+            ],
+            "text": "     748: static int obj_ht_foreach_object(HT_VALUE *v, void *arg)\n     749: {\n     750:     STACK_OF(X509_OBJECT) **sk = arg;\n     751:     STACK_OF(X509_OBJECT) *objs = v->value;\n     752:     X509_OBJECT *dup, *obj;\n     753:     int i;\n     754: \n     755:     for (i = 0; i < sk_X509_OBJECT_num(objs); i++) {\n     756:         obj = sk_X509_OBJECT_value(objs, i);\n>>   757:         dup = x509_object_dup(obj);\n     758:         if (dup == NULL)\n     759:             goto err;\n     760:         if (sk_X509_OBJECT_push(*sk, dup) == 0)\n     761:             goto err;\n     762:     }\n     763: \n     764:     return 1;\n     765: \n     766: err:\n     767:     sk_X509_OBJECT_pop_free(*sk, X509_OBJECT_free);\n     768:     *sk = NULL;\n     769: \n     770:     return 0;\n     771: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|crypto/x509/x509_lu.c|757|15|0|workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.85,
+      "rationale": "On line 757 x509_object_dup allocates 'dup'. If sk_X509_OBJECT_push fails at line 760, dup was successfully allocated but never added to *sk. The err path frees *sk and its contents via sk_X509_OBJECT_pop_free, but dup is not in that stack, so it is leaked on the push-failure branch.",
+      "evidence_lines": [
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 757,
+          "role": "allocation"
+        },
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 760,
+          "role": "condition"
+        },
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 767,
+          "role": "free"
+        },
+        {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 761,
+          "role": "return"
+        }
+      ],
+      "fix_suggestion": "In the push-failure branch, call X509_OBJECT_free(dup) before goto err so the un-pushed duplicate is released.",
+      "warning": {
+        "id": "null-deref|NeverFree|crypto/x509/x509_lu.c|757|15|0|workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.null-deref.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/crypto/x509/libcrypto-lib-x509_lu.bc",
+        "primary": {
+          "file": "crypto/x509/x509_lu.c",
+          "line": 757,
+          "column": 15
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 757, \"cl\": 15, \"fl\": \"crypto/x509/x509_lu.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|crypto/x509/x509_lu.c|757|15|0|workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__crypto__x509__libcrypto-lib-x509_lu.null-deref.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/crypto/x509/libcrypto-lib-x509_lu.bc",
+          "primary": {
+            "file": "crypto/x509/x509_lu.c",
+            "line": 757,
+            "column": 15
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 757, \"cl\": 15, \"fl\": \"crypto/x509/x509_lu.c\" })"
+        },
+        "source_files": [
+          "crypto/x509/x509_lu.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "crypto/x509/x509_lu.c",
+            "start_line": 748,
+            "end_line": 771,
+            "important_lines": [
+              757
+            ],
+            "text": "     748: static int obj_ht_foreach_object(HT_VALUE *v, void *arg)\n     749: {\n     750:     STACK_OF(X509_OBJECT) **sk = arg;\n     751:     STACK_OF(X509_OBJECT) *objs = v->value;\n     752:     X509_OBJECT *dup, *obj;\n     753:     int i;\n     754: \n     755:     for (i = 0; i < sk_X509_OBJECT_num(objs); i++) {\n     756:         obj = sk_X509_OBJECT_value(objs, i);\n>>   757:         dup = x509_object_dup(obj);\n     758:         if (dup == NULL)\n     759:             goto err;\n     760:         if (sk_X509_OBJECT_push(*sk, dup) == 0)\n     761:             goto err;\n     762:     }\n     763: \n     764:     return 1;\n     765: \n     766: err:\n     767:     sk_X509_OBJECT_pop_free(*sk, X509_OBJECT_free);\n     768:     *sk = NULL;\n     769: \n     770:     return 0;\n     771: }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "null-deref|NeverFree|providers/implementations/kem/ml_kem_kem.c|47|16|0|workspace__openssl-bc__bc__providers__implementations__kem__libdefault-lib-ml_kem_kem.null-deref.stderr.txt",
+      "verdict": "true_positive",
+      "vulnerability_type": "memory_leak",
+      "confidence": 0.7,
+      "rationale": "ml_kem_newctx is a constructor that transfers ownership of ctx to the caller (freed later via freectx), so the normal return at line 59 is fine. However, in FIPS_MODULE builds the self-test failure branch returns NULL at line 53 without freeing the just-allocated ctx, leaking it on that feasible path.",
+      "evidence_lines": [
+        {
+          "file": "providers/implementations/kem/ml_kem_kem.c",
+          "line": 47,
+          "role": "allocation"
+        },
+        {
+          "file": "providers/implementations/kem/ml_kem_kem.c",
+          "line": 51,
+          "role": "condition"
+        },
+        {
+          "file": "providers/implementations/kem/ml_kem_kem.c",
+          "line": 53,
+          "role": "return"
+        },
+        {
+          "file": "providers/implementations/kem/ml_kem_kem.c",
+          "line": 59,
+          "role": "ownership"
+        }
+      ],
+      "fix_suggestion": "In the FIPS_MODULE self-test failure branch, call OPENSSL_free(ctx) before returning NULL at line 53.",
+      "warning": {
+        "id": "null-deref|NeverFree|providers/implementations/kem/ml_kem_kem.c|47|16|0|workspace__openssl-bc__bc__providers__implementations__kem__libdefault-lib-ml_kem_kem.null-deref.stderr.txt",
+        "checker": "null-deref",
+        "kind": "NeverFree",
+        "site_label": "memory allocation",
+        "vulnerability_type": "null_deref",
+        "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__providers__implementations__kem__libdefault-lib-ml_kem_kem.null-deref.stderr.txt",
+        "bc_file": "workspace/openssl-bc/bc/providers/implementations/kem/libdefault-lib-ml_kem_kem.bc",
+        "primary": {
+          "file": "providers/implementations/kem/ml_kem_kem.c",
+          "line": 47,
+          "column": 16
+        },
+        "path": [],
+        "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 47, \"cl\": 16, \"fl\": \"providers/implementations/kem/ml_kem_kem.c\" })"
+      },
+      "slice": {
+        "warning": {
+          "id": "null-deref|NeverFree|providers/implementations/kem/ml_kem_kem.c|47|16|0|workspace__openssl-bc__bc__providers__implementations__kem__libdefault-lib-ml_kem_kem.null-deref.stderr.txt",
+          "checker": "null-deref",
+          "kind": "NeverFree",
+          "site_label": "memory allocation",
+          "vulnerability_type": "null_deref",
+          "report_file": "outputs/saber/openssl/workspace__openssl-bc__bc__providers__implementations__kem__libdefault-lib-ml_kem_kem.null-deref.stderr.txt",
+          "bc_file": "workspace/openssl-bc/bc/providers/implementations/kem/libdefault-lib-ml_kem_kem.bc",
+          "primary": {
+            "file": "providers/implementations/kem/ml_kem_kem.c",
+            "line": 47,
+            "column": 16
+          },
+          "path": [],
+          "raw_text": "NeverFree : memory allocation at : (CallICFGNode: { \"ln\": 47, \"cl\": 16, \"fl\": \"providers/implementations/kem/ml_kem_kem.c\" })"
+        },
+        "source_files": [
+          "providers/implementations/kem/ml_kem_kem.c"
+        ],
+        "missing_sources": [],
+        "snippets": [
+          {
+            "file": "providers/implementations/kem/ml_kem_kem.c",
+            "start_line": 43,
+            "end_line": 60,
+            "important_lines": [
+              47
+            ],
+            "text": "      43: static void *ml_kem_newctx(void *provctx)\n      44: {\n      45:     PROV_ML_KEM_CTX *ctx;\n      46: \n>>    47:     if ((ctx = OPENSSL_malloc(sizeof(*ctx))) == NULL)\n      48:         return NULL;\n      49: \n      50: #ifdef FIPS_MODULE\n      51:     if (!ossl_deferred_self_test(PROV_LIBCTX_OF(provctx),\n      52:             ST_ID_KEM_ML_KEM))\n      53:         return NULL;\n      54: #endif\n      55: \n      56:     ctx->key = NULL;\n      57:     ctx->entropy = NULL;\n      58:     ctx->op = 0;\n      59:     return ctx;\n      60: }"
+          }
+        ]
+      }
+    }
+  ]
+}

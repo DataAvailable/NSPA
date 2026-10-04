@@ -1,0 +1,41 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 592, "cl": 18, "fl": "crypto/pem/pvkfmt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 627, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 592, "cl": 13, "fl": "crypto/pem/pvkfmt.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 306, "cl": 15, "fl": "crypto/pem/pvkfmt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 84, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 360, "cl": 15, "fl": "crypto/pem/pvkfmt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 84, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 303, "cl": 15, "fl": "crypto/pem/pvkfmt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 84, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 357, "cl": 15, "fl": "crypto/pem/pvkfmt.c" })
+		 conditional free path: 
+		  --> ({ "ln": 84, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 89, "cl": 9, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|False) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+		  --> ({ "ln": 112, "cl": 5, "fl": "crypto/pem/pvkfmt.c" }|True) 
+

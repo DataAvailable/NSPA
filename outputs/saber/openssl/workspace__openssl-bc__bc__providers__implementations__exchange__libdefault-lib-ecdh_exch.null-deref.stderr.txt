@@ -1,0 +1,23 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 552, "cl": 17, "fl": "providers/implementations/exchange/ecdh_exch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 552, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 554, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 554, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|True) 
+		  --> ({ "ln": 558, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 558, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 484, "cl": 22, "fl": "providers/implementations/exchange/ecdh_exch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 484, "cl": 13, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 487, "cl": 13, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 487, "cl": 13, "fl": "providers/implementations/exchange/ecdh_exch.c" }|True) 
+		  --> ({ "ln": 528, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 604, "cl": 19, "fl": "providers/implementations/exchange/ecdh_exch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 604, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 608, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 608, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|True) 
+		  --> ({ "ln": 607, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|False) 
+		  --> ({ "ln": 607, "cl": 9, "fl": "providers/implementations/exchange/ecdh_exch.c" }|True) 
+

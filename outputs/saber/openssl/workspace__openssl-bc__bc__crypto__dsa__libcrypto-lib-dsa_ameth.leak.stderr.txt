@@ -1,0 +1,21 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 482, "cl": 16, "fl": "crypto/dsa/dsa_ameth.c" })
+		 conditional free path: 
+		  --> ({ "ln": 490, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|False) 
+		  --> ({ "ln": 490, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|True) 
+		  --> ({ "ln": 491, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|False) 
+		  --> ({ "ln": 491, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|True) 
+		  --> ({ "ln": 489, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 245, "cl": 24, "fl": "crypto/dsa/dsa_ameth.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 56, "cl": 20, "fl": "crypto/dsa/dsa_ameth.c" })
+		 conditional free path: 
+		  --> ({ "ln": 56, "cl": 13, "fl": "crypto/dsa/dsa_ameth.c" }|False) 
+		  --> ({ "ln": 56, "cl": 13, "fl": "crypto/dsa/dsa_ameth.c" }|True) 
+		  --> ({ "ln": 65, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|False) 
+		  --> ({ "ln": 65, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|True) 
+		  --> ({ "ln": 70, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 505, "cl": 18, "fl": "crypto/dsa/dsa_ameth.c" })
+		 conditional free path: 
+		  --> ({ "ln": 511, "cl": 9, "fl": "crypto/dsa/dsa_ameth.c" }|True) 
+

@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 101, "cl": 11, "fl": "apps/genpkey.c" })
+		 conditional free path: 
+		  --> ({ "ln": 105, "cl": 9, "fl": "apps/genpkey.c" }|False) 
+		  --> ({ "ln": 108, "cl": 9, "fl": "apps/genpkey.c" }|False) 
+

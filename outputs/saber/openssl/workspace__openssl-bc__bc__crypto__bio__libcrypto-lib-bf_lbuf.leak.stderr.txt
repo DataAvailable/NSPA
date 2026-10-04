@@ -1,0 +1,7 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 256, "cl": 17, "fl": "crypto/bio/bf_lbuf.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 60, "cl": 16, "fl": "crypto/bio/bf_lbuf.c" })
+		 conditional free path: 
+		  --> ({ "ln": 60, "cl": 9, "fl": "crypto/bio/bf_lbuf.c" }|False) 
+		  --> ({ "ln": 63, "cl": 9, "fl": "crypto/bio/bf_lbuf.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 62, "cl": 17, "fl": "crypto/bio/bf_lbuf.c" })

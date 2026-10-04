@@ -1,0 +1,23 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 533, "cl": 22, "fl": "crypto/conf/conf_def.c" })
+		 conditional free path: 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 115, "cl": 11, "fl": "crypto/conf/conf_def.c" })
+		 conditional free path: 
+		  --> ({ "ln": 117, "cl": 13, "fl": "crypto/conf/conf_def.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 872, "cl": 19, "fl": "crypto/conf/conf_def.c" })
+		 conditional free path: 
+		  --> ({ "ln": 507, "cl": 25, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 507, "cl": 25, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 508, "cl": 29, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 508, "cl": 29, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 514, "cl": 25, "fl": "crypto/conf/conf_def.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 495, "cl": 24, "fl": "crypto/conf/conf_def.c" })
+		 conditional free path: 
+		  --> ({ "ln": 507, "cl": 25, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 507, "cl": 25, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 508, "cl": 29, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 508, "cl": 29, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 514, "cl": 25, "fl": "crypto/conf/conf_def.c" }|True) 
+

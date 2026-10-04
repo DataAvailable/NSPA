@@ -1,0 +1,3 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 446, "cl": 21, "fl": "crypto/ts/ts_rsp_verify.c" })
+		 double free path: 
+

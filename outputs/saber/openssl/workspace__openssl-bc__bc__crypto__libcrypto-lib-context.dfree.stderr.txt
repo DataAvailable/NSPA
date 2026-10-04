@@ -1,0 +1,12 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 182, "cl": 20, "fl": "crypto/context.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 223, "cl": 20, "fl": "crypto/context.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 145, "cl": 17, "fl": "crypto/context.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 178, "cl": 33, "fl": "crypto/context.c" })
+		 double free path: 
+

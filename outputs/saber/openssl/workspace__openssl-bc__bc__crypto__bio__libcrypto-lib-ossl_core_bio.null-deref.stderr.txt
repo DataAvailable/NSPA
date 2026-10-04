@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 25, "cl": 25, "fl": "crypto/bio/ossl_core_bio.c" })
+		 conditional free path: 
+		  --> ({ "ln": 60, "cl": 9, "fl": "crypto/bio/ossl_core_bio.c" }|True) 
+

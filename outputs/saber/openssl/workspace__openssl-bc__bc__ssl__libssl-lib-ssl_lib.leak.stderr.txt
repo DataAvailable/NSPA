@@ -1,0 +1,12 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4462, "cl": 32, "fl": "ssl/ssl_lib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4327, "cl": 10, "fl": "ssl/ssl_lib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 231, "cl": 17, "fl": "ssl/ssl_lib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 322, "cl": 15, "fl": "ssl/ssl_lib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 885, "cl": 23, "fl": "ssl/ssl_lib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 4281, "cl": 23, "fl": "ssl/ssl_lib.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 776, "cl": 15, "fl": "ssl/ssl_lib.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 7218, "cl": 25, "fl": "ssl/ssl_lib.c" })
+		 conditional free path: 
+		  --> ({ "ln": 7218, "cl": 9, "fl": "ssl/ssl_lib.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 236, "cl": 17, "fl": "ssl/ssl_lib.c" })

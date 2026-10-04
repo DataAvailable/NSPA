@@ -1,0 +1,9 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 45, "cl": 19, "fl": "crypto/ec/ec_key.c" })
+		 conditional free path: 
+		  --> ({ "ln": 49, "cl": 9, "fl": "crypto/ec/ec_key.c" }|False) 
+		  --> ({ "ln": 49, "cl": 9, "fl": "crypto/ec/ec_key.c" }|True) 
+		  --> ({ "ln": 54, "cl": 9, "fl": "crypto/ec/ec_key.c" }|True) 
+		  --> ({ "ln": 53, "cl": 9, "fl": "crypto/ec/ec_key.c" }|True) 
+		  --> ({ "ln": 77, "cl": 9, "fl": "crypto/ec/ec_key.c" }|False) 
+		  --> ({ "ln": 79, "cl": 5, "fl": "crypto/ec/ec_key.c" }|False) 
+

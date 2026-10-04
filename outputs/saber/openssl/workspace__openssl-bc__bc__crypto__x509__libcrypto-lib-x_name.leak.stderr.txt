@@ -1,0 +1,7 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 344, "cl": 20, "fl": "crypto/x509/x_name.c" })
+		 conditional free path: 
+		  --> ({ "ln": 350, "cl": 13, "fl": "crypto/x509/x_name.c" }|False) 
+		  --> ({ "ln": 354, "cl": 13, "fl": "crypto/x509/x_name.c" }|False) 
+		  --> ({ "ln": 356, "cl": 13, "fl": "crypto/x509/x_name.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 369, "cl": 9, "fl": "crypto/x509/x_name.c" })

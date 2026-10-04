@@ -1,0 +1,14 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 57, "cl": 17, "fl": "crypto/x509/v3_utl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 57, "cl": 9, "fl": "crypto/x509/v3_utl.c" }|False) 
+		  --> ({ "ln": 57, "cl": 9, "fl": "crypto/x509/v3_utl.c" }|True) 
+		  --> ({ "ln": 59, "cl": 22, "fl": "crypto/x509/v3_utl.c" }|False) 
+		  --> ({ "ln": 59, "cl": 22, "fl": "crypto/x509/v3_utl.c" }|True) 
+		  --> ({ "ln": 59, "cl": 9, "fl": "crypto/x509/v3_utl.c" }|False) 
+		  --> ({ "ln": 59, "cl": 9, "fl": "crypto/x509/v3_utl.c" }|True) 
+		  --> ({ "ln": 66, "cl": 9, "fl": "crypto/x509/v3_utl.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 148, "cl": 11, "fl": "crypto/x509/v3_utl.c" })
+		 conditional free path: 
+		  --> ({ "ln": 259, "cl": 9, "fl": "crypto/x509/v3_utl.c" }|False) 
+

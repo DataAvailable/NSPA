@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 164, "cl": 16, "fl": "crypto/conf/conf_mod.c" })
+		 conditional free path: 
+		  --> ({ "ln": 192, "cl": 9, "fl": "crypto/conf/conf_mod.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 66, "cl": 24, "fl": "crypto/conf/conf_mod.c" })

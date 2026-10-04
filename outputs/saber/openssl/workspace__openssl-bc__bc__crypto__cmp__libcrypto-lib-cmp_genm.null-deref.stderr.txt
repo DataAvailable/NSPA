@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 280, "cl": 19, "fl": "crypto/cmp/cmp_genm.c" })
+		 conditional free path: 
+		  --> ({ "ln": 301, "cl": 9, "fl": "crypto/cmp/cmp_genm.c" }|True) 
+

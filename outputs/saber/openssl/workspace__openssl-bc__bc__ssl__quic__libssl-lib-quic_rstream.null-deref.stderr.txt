@@ -1,0 +1,4 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 244, "cl": 18, "fl": "include/internal/ring_buf.h" })
+		 conditional free path: 
+		  --> ({ "ln": 253, "cl": 13, "fl": "include/internal/ring_buf.h" }|True) 
+

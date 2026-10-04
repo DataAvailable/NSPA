@@ -1,0 +1,10 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 242, "cl": 17, "fl": "providers/implementations/exchange/dh_exch.c" })
+		 conditional free path: 
+		  --> ({ "ln": 242, "cl": 9, "fl": "providers/implementations/exchange/dh_exch.c" }|False) 
+		  --> ({ "ln": 244, "cl": 9, "fl": "providers/implementations/exchange/dh_exch.c" }|False) 
+		  --> ({ "ln": 244, "cl": 9, "fl": "providers/implementations/exchange/dh_exch.c" }|True) 
+		  --> ({ "ln": 248, "cl": 9, "fl": "providers/implementations/exchange/dh_exch.c" }|False) 
+		  --> ({ "ln": 248, "cl": 9, "fl": "providers/implementations/exchange/dh_exch.c" }|True) 
+		  --> ({ "ln": 249, "cl": 13, "fl": "providers/implementations/exchange/dh_exch.c" }|False) 
+		  --> ({ "ln": 249, "cl": 13, "fl": "providers/implementations/exchange/dh_exch.c" }|True) 
+

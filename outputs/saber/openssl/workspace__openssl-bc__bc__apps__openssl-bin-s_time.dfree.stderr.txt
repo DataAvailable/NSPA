@@ -1,0 +1,4 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 444, "cl": 21, "fl": "apps/s_time.c" })
+		 double free path: 
+		  --> ({ "ln": 468, "cl": 9, "fl": "apps/s_time.c" }|False) 
+

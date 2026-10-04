@@ -1,0 +1,13 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 544, "cl": 11, "fl": "ssl/statem/extensions_cust.c" })
+		 conditional free path: 
+		  --> ({ "ln": 549, "cl": 9, "fl": "ssl/statem/extensions_cust.c" }|False) 
+		  --> ({ "ln": 549, "cl": 9, "fl": "ssl/statem/extensions_cust.c" }|True) 
+		  --> ({ "ln": 569, "cl": 9, "fl": "ssl/statem/extensions_cust.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 514, "cl": 11, "fl": "ssl/statem/extensions_cust.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 546, "cl": 11, "fl": "ssl/statem/extensions_cust.c" })
+		 conditional free path: 
+		  --> ({ "ln": 549, "cl": 29, "fl": "ssl/statem/extensions_cust.c" }|False) 
+		  --> ({ "ln": 549, "cl": 29, "fl": "ssl/statem/extensions_cust.c" }|True) 
+		  --> ({ "ln": 569, "cl": 9, "fl": "ssl/statem/extensions_cust.c" }|True) 
+

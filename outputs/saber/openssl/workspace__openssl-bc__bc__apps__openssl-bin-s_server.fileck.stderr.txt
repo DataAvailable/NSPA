@@ -1,0 +1,3 @@
+[1;33m	 FileNeverClose :[1;0m file open location at : (CallICFGNode: { "ln": 3349, "cl": 16, "fl": "apps/s_server.c" })
+[1;33m	 FileNeverClose :[1;0m file open location at : (CallICFGNode: { "ln": 4541, "cl": 12, "fl": "apps/s_server.c" })
+[1;33m	 FileNeverClose :[1;0m file open location at : (CallICFGNode: { "ln": 4018, "cl": 12, "fl": "apps/s_server.c" })

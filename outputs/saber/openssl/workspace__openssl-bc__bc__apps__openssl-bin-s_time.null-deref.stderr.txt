@@ -1,0 +1,20 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 444, "cl": 21, "fl": "apps/s_time.c" })
+		 conditional free path: 
+		  --> ({ "ln": 468, "cl": 9, "fl": "apps/s_time.c" }|False) 
+		  --> ({ "ln": 468, "cl": 9, "fl": "apps/s_time.c" }|True) 
+		  --> ({ "ln": 470, "cl": 13, "fl": "apps/s_time.c" }|False) 
+		  --> ({ "ln": 470, "cl": 13, "fl": "apps/s_time.c" }|True) 
+		  --> ({ "ln": 475, "cl": 13, "fl": "apps/s_time.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 434, "cl": 17, "fl": "apps/s_time.c" })
+		 conditional free path: 
+		  --> ({ "ln": 434, "cl": 9, "fl": "apps/s_time.c" }|False) 
+		  --> ({ "ln": 438, "cl": 9, "fl": "apps/s_time.c" }|False) 
+		  --> ({ "ln": 438, "cl": 9, "fl": "apps/s_time.c" }|True) 
+		  --> ({ "ln": 437, "cl": 9, "fl": "apps/s_time.c" }|False) 
+		  --> ({ "ln": 437, "cl": 9, "fl": "apps/s_time.c" }|True) 
+		  --> ({ "ln": 443, "cl": 9, "fl": "apps/s_time.c" }|False) 
+		  --> ({ "ln": 443, "cl": 9, "fl": "apps/s_time.c" }|True) 
+		  --> ({ "ln": 445, "cl": 13, "fl": "apps/s_time.c" }|True) 
+		  --> ({ "ln": 456, "cl": 13, "fl": "apps/s_time.c" }|True) 
+

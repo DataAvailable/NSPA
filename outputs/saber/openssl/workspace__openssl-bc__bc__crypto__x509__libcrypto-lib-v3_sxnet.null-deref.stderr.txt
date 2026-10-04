@@ -1,0 +1,21 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 194, "cl": 15, "fl": "crypto/x509/v3_sxnet.c" })
+		 conditional free path: 
+		  --> ({ "ln": 194, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 194, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|True) 
+		  --> ({ "ln": 199, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 199, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|True) 
+		  --> ({ "ln": 203, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 177, "cl": 19, "fl": "crypto/x509/v3_sxnet.c" })
+		 conditional free path: 
+		  --> ({ "ln": 106, "cl": 13, "fl": "crypto/x509/v3_sxnet.c" }|True) 
+		  --> ({ "ln": 177, "cl": 13, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 181, "cl": 13, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 187, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 187, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|True) 
+		  --> ({ "ln": 189, "cl": 13, "fl": "crypto/x509/v3_sxnet.c" }|True) 
+		  --> ({ "ln": 194, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 199, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 203, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|False) 
+		  --> ({ "ln": 214, "cl": 9, "fl": "crypto/x509/v3_sxnet.c" }|True) 
+

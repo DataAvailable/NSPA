@@ -1,0 +1,14 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 331, "cl": 24, "fl": "crypto/ct/ct_oct.c" })
+		 double free path: 
+		  --> ({ "ln": 331, "cl": 17, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 339, "cl": 5, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 339, "cl": 5, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 340, "cl": 13, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 340, "cl": 13, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 343, "cl": 17, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 347, "cl": 17, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 353, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 365, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 397, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 401, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|True) 
+

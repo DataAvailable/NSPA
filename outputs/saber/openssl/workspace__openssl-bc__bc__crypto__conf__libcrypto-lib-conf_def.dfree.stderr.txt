@@ -1,0 +1,17 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 471, "cl": 36, "fl": "crypto/conf/conf_def.c" })
+		 double free path: 
+		  --> ({ "ln": 262, "cl": 24, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 262, "cl": 24, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 262, "cl": 13, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 279, "cl": 20, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 279, "cl": 13, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 285, "cl": 17, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 288, "cl": 21, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 487, "cl": 21, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 487, "cl": 21, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 486, "cl": 21, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 805, "cl": 9, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 811, "cl": 9, "fl": "crypto/conf/conf_def.c" }|True) 
+		  --> ({ "ln": 812, "cl": 13, "fl": "crypto/conf/conf_def.c" }|False) 
+		  --> ({ "ln": 818, "cl": 13, "fl": "crypto/conf/conf_def.c" }|True) 
+

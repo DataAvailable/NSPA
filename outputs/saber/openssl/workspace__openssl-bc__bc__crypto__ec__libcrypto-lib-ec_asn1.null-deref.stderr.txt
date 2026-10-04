@@ -1,0 +1,19 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 465, "cl": 20, "fl": "crypto/ec/ec_asn1.c" })
+		 conditional free path: 
+		  --> ({ "ln": 465, "cl": 13, "fl": "crypto/ec/ec_asn1.c" }|False) 
+		  --> ({ "ln": 477, "cl": 9, "fl": "crypto/ec/ec_asn1.c" }|False) 
+		  --> ({ "ln": 477, "cl": 9, "fl": "crypto/ec/ec_asn1.c" }|True) 
+		  --> ({ "ln": 482, "cl": 13, "fl": "crypto/ec/ec_asn1.c" }|False) 
+		  --> ({ "ln": 482, "cl": 13, "fl": "crypto/ec/ec_asn1.c" }|True) 
+		  --> ({ "ln": 485, "cl": 33, "fl": "crypto/ec/ec_asn1.c" }|False) 
+		  --> ({ "ln": 485, "cl": 33, "fl": "crypto/ec/ec_asn1.c" }|True) 
+		  --> ({ "ln": 485, "cl": 17, "fl": "crypto/ec/ec_asn1.c" }|False) 
+		  --> ({ "ln": 485, "cl": 17, "fl": "crypto/ec/ec_asn1.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 688, "cl": 26, "fl": "crypto/ec/ec_asn1.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 268, "cl": 35, "fl": "crypto/ec/ec_asn1.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 225, "cl": 29, "fl": "crypto/ec/ec_asn1.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 384, "cl": 20, "fl": "crypto/ec/ec_asn1.c" })
+		 conditional free path: 
+		  --> ({ "ln": 453, "cl": 9, "fl": "crypto/ec/ec_asn1.c" }|True) 
+

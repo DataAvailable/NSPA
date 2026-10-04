@@ -1,5 +1,0 @@
-LLVM
-SVF
-tree-sitter
-tree-sitter-c
-tree-sitter-cpp

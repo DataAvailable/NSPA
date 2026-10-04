@@ -1,0 +1,25 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 331, "cl": 24, "fl": "crypto/ct/ct_oct.c" })
+		 conditional free path: 
+		  --> ({ "ln": 331, "cl": 17, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 339, "cl": 5, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 339, "cl": 5, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 340, "cl": 13, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 340, "cl": 13, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 343, "cl": 17, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 347, "cl": 17, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 353, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 365, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 397, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 401, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 180, "cl": 26, "fl": "crypto/ct/ct_oct.c" })
+		 conditional free path: 
+		  --> ({ "ln": 181, "cl": 17, "fl": "crypto/ct/ct_oct.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 227, "cl": 22, "fl": "crypto/ct/ct_oct.c" })
+		 conditional free path: 
+		  --> ({ "ln": 228, "cl": 13, "fl": "crypto/ct/ct_oct.c" }|False) 
+		  --> ({ "ln": 228, "cl": 13, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 233, "cl": 9, "fl": "crypto/ct/ct_oct.c" }|True) 
+		  --> ({ "ln": 243, "cl": 13, "fl": "crypto/ct/ct_oct.c" }|True) 
+

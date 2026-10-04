@@ -1,0 +1,28 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 546, "cl": 18, "fl": "crypto/store/store_result.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 493, "cl": 22, "fl": "crypto/store/store_result.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 190, "cl": 22, "fl": "crypto/store/store_result.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 645, "cl": 39, "fl": "crypto/store/store_result.c" })
+		 conditional free path: 
+		  --> ({ "ln": 646, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+		  --> ({ "ln": 647, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+		  --> ({ "ln": 645, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 517, "cl": 18, "fl": "crypto/store/store_result.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 625, "cl": 41, "fl": "crypto/store/store_result.c" })
+		 conditional free path: 
+		  --> ({ "ln": 627, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+		  --> ({ "ln": 628, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+		  --> ({ "ln": 625, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 634, "cl": 41, "fl": "crypto/store/store_result.c" })
+		 conditional free path: 
+		  --> ({ "ln": 636, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+		  --> ({ "ln": 637, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+		  --> ({ "ln": 634, "cl": 29, "fl": "crypto/store/store_result.c" }|True) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 715, "cl": 14, "fl": "crypto/store/store_result.c" })
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 468, "cl": 18, "fl": "crypto/store/store_result.c" })
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 420, "cl": 18, "fl": "crypto/store/store_result.c" })
+		 conditional free path: 
+		  --> ({ "ln": 471, "cl": 13, "fl": "crypto/store/store_result.c" }|True) 
+

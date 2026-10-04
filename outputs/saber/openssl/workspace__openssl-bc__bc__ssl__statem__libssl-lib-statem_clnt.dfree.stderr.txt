@@ -1,0 +1,37 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3577, "cl": 12, "fl": "ssl/statem/statem_clnt.c" })
+		 double free path: 
+		  --> ({ "ln": 3579, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3578, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3584, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3583, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3915, "cl": 16, "fl": "ssl/statem/statem_clnt.c" })
+		 double free path: 
+		  --> ({ "ln": 3923, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3929, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3936, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3943, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3949, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3948, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3748, "cl": 16, "fl": "ssl/statem/statem_clnt.c" })
+		 double free path: 
+		  --> ({ "ln": 3764, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3772, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3769, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3782, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3783, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3786, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3789, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3781, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3795, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3806, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+		  --> ({ "ln": 3812, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3813, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 3811, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 2698, "cl": 12, "fl": "ssl/statem/statem_clnt.c" })
+		 double free path: 
+		  --> ({ "ln": 2704, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|True) 
+		  --> ({ "ln": 2703, "cl": 9, "fl": "ssl/statem/statem_clnt.c" }|False) 
+

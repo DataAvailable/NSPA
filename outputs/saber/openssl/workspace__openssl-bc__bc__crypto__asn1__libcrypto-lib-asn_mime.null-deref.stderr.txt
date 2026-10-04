@@ -1,0 +1,19 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 658, "cl": 25, "fl": "crypto/asn1/asn_mime.c" })
+		 conditional free path: 
+		  --> ({ "ln": 663, "cl": 17, "fl": "crypto/asn1/asn_mime.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 142, "cl": 16, "fl": "crypto/asn1/asn_mime.c" })
+		 conditional free path: 
+		  --> ({ "ln": 142, "cl": 9, "fl": "crypto/asn1/asn_mime.c" }|False) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 938, "cl": 14, "fl": "crypto/asn1/asn_mime.c" })
+		 conditional free path: 
+		  --> ({ "ln": 943, "cl": 9, "fl": "crypto/asn1/asn_mime.c" }|True) 
+
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 904, "cl": 12, "fl": "crypto/asn1/asn_mime.c" })
+		 conditional free path: 
+		  --> ({ "ln": 758, "cl": 25, "fl": "crypto/asn1/asn_mime.c" }|True) 
+		  --> ({ "ln": 815, "cl": 17, "fl": "crypto/asn1/asn_mime.c" }|True) 
+		  --> ({ "ln": 909, "cl": 9, "fl": "crypto/asn1/asn_mime.c" }|False) 
+		  --> ({ "ln": 909, "cl": 9, "fl": "crypto/asn1/asn_mime.c" }|True) 
+

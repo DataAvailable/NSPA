@@ -1,0 +1,14 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 4520, "cl": 16, "fl": "apps/s_server.c" })
+		 double free path: 
+		  --> ({ "ln": 4520, "cl": 9, "fl": "apps/s_server.c" }|False) 
+		  --> ({ "ln": 4528, "cl": 9, "fl": "apps/s_server.c" }|True) 
+		  --> ({ "ln": 4527, "cl": 9, "fl": "apps/s_server.c" }|True) 
+		  --> ({ "ln": 4542, "cl": 9, "fl": "apps/s_server.c" }|True) 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 3998, "cl": 16, "fl": "apps/s_server.c" })
+		 double free path: 
+		  --> ({ "ln": 3998, "cl": 9, "fl": "apps/s_server.c" }|False) 
+		  --> ({ "ln": 4007, "cl": 9, "fl": "apps/s_server.c" }|True) 
+		  --> ({ "ln": 4006, "cl": 9, "fl": "apps/s_server.c" }|True) 
+		  --> ({ "ln": 4019, "cl": 9, "fl": "apps/s_server.c" }|True) 
+

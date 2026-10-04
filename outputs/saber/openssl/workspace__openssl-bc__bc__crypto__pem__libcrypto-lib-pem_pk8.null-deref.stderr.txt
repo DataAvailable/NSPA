@@ -1,0 +1,5 @@
+[1;35m	 PartialLeak :[1;0m memory allocation at : (CallICFGNode: { "ln": 242, "cl": 15, "fl": "crypto/pem/pem_pk8.c" })
+		 conditional free path: 
+		  --> ({ "ln": 242, "cl": 9, "fl": "crypto/pem/pem_pk8.c" }|False) 
+
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 75, "cl": 29, "fl": "crypto/pem/pem_pk8.c" })

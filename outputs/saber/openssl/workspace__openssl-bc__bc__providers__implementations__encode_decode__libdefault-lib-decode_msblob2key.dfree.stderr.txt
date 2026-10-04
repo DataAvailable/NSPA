@@ -1,0 +1,6 @@
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 133, "cl": 11, "fl": "providers/implementations/encode_decode/decode_msblob2key.c" })
+		 double free path: 
+
+[1;35m	 Double Free :[1;0m memory allocation at : (CallICFGNode: { "ln": 98, "cl": 15, "fl": "providers/implementations/encode_decode/decode_msblob2key.c" })
+		 double free path: 
+

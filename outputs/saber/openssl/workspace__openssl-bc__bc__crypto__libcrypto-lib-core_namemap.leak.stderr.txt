@@ -1,0 +1,1 @@
+[1;33m	 NeverFree :[1;0m memory allocation at : (CallICFGNode: { "ln": 560, "cl": 32, "fl": "crypto/core_namemap.c" })
