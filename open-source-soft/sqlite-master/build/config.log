@@ -1,0 +1,70 @@
+Invoked as: ../configure --disable-shared --disable-readline --disable-amalgamation
+Tclsh: /home/lxh/anaconda3/bin/tclsh
+Failed: clang -c -O2 -g conftest__.c -o conftest__.o
+conftest__.c:3:15: error: '_x' declared as an array with a negative size
+static int _x[sizeof(off_t) == 4 ? 1 : -1] = { 1 };
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+child process exited abnormally
+============
+The failed code was:
+#include <sys/types.h>
+int main(void) {
+static int _x[sizeof(off_t) == 4 ? 1 : -1] = { 1 };
+return 0;
+}
+============
+Failed: clang -O2 -g conftest__.c -o conftest__
+/usr/bin/ld: /home/lxh/Projects/NSPA/workspace/sqlite-bc/tmp/conftest__-cafbef.o: in function `main':
+conftest__.c:(.text+0x2): undefined reference to `localtime_s'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+child process exited abnormally
+============
+The failed code was:
+extern void localtime_s(void);
+int main(void) {
+localtime_s();
+return 0;
+}
+============
+Failed: clang -O2 -g conftest__.c -o conftest__
+/usr/bin/ld: /home/lxh/Projects/NSPA/workspace/sqlite-bc/tmp/conftest__-fea2fd.o: in function `main':
+conftest__.c:(.text+0x2): undefined reference to `deflate'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+child process exited abnormally
+============
+The failed code was:
+extern void deflate(void);
+int main(void) {
+deflate();
+return 0;
+}
+============
+Failed: clang -c -fsanitize=bounds-strict -O2 -g conftest__.c -o conftest__.o
+clang: error: unsupported argument 'bounds-strict' to option 'fsanitize='
+child process exited abnormally
+============
+The failed code was:
+int main(void) {
+
+return 0;
+}
+============
+Failed: clang -O2 -g conftest__.c -o conftest__
+conftest__.c:1:13: warning: incompatible redeclaration of library function 'ceil' [-Wincompatible-library-redeclaration]
+extern void ceil(void);
+            ^
+conftest__.c:1:13: note: 'ceil' is a builtin with type 'double (double)'
+1 warning generated.
+/usr/bin/ld: /home/lxh/Projects/NSPA/workspace/sqlite-bc/tmp/conftest__-af4bd7.o: in function `main':
+conftest__.c:(.text+0x2): undefined reference to `ceil'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+child process exited abnormally
+============
+The failed code was:
+extern void ceil(void);
+int main(void) {
+ceil();
+return 0;
+}
+============
