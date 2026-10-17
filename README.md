@@ -4,6 +4,8 @@
 
 NSPA provides a C/C++ project scanner for constructing Candidate Function Records (CFRs), conservatively filtering potential custom memory allocation, release, and destruction functions, and exporting lightweight JSONL files that can be passed to an LLM for semantic validation.
 
+![NSPA security overview](docs/images/nspa-homepage.png)
+
 The workflow consists of three stages:
 
 1. **Custom memory-function candidate detection**
