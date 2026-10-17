@@ -92,7 +92,7 @@
       "file": "docs/examples/block_ip.c",
       "name": "free_connection_filter",
       "signature": "static void free_connection_filter(struct connection_filter *filter)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "ends lifetime of whole filter object including nested ip list",
       "cfr": {
@@ -383,7 +383,7 @@
       "file": "docs/examples/multi-event.c",
       "name": "destroy_curl_context",
       "signature": "static void destroy_curl_context(struct curl_context *context)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends lifetime of whole context object, freeing nested event and memory",
       "cfr": {
@@ -568,7 +568,7 @@
       "file": "lib/altsvc.c",
       "name": "Curl_altsvc_cleanup",
       "signature": "void Curl_altsvc_cleanup(struct altsvcinfo **asi)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole cache instance and all associated resources",
       "cfr": {
@@ -795,7 +795,7 @@
       "file": "lib/cf-capsule.c",
       "name": "capsule_cf_destroy",
       "signature": "static void capsule_cf_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys filter context object, freeing nested bufq and ctx memory.",
       "cfr": {
@@ -834,7 +834,7 @@
       "file": "lib/cf-h1-proxy.c",
       "name": "tunnel_free",
       "signature": "static void tunnel_free(struct h1_tunnel_state *ts, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends lifetime of tunnel state object, releasing nested dyn buffers and peer link.",
       "cfr": {
@@ -874,7 +874,7 @@
       "file": "lib/cf-h1-proxy.c",
       "name": "cf_tunnel_free",
       "signature": "static void cf_tunnel_free(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Tears down tunnel state via tunnel_free for the cfilter.",
       "cfr": {
@@ -912,7 +912,7 @@
       "file": "lib/cf-h1-proxy.c",
       "name": "cf_h1_proxy_destroy",
       "signature": "static void cf_h1_proxy_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroy callback ending cfilter lifetime, freeing tunnel and ctx.",
       "cfr": {
@@ -951,7 +951,7 @@
       "file": "lib/cf-h3-proxy.c",
       "name": "h3_proxy_stream_ctx_free",
       "signature": "static void h3_proxy_stream_ctx_free(struct h3_proxy_stream_ctx *stream)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Frees stream context object including nested bufq buffers.",
       "cfr": {
@@ -988,7 +988,7 @@
       "file": "lib/cf-h3-proxy.c",
       "name": "h3_proxy_stream_hash_free",
       "signature": "static void h3_proxy_stream_hash_free(unsigned int id, void *stream)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Hash destructor callback delegating to stream ctx free, ends object lifetime.",
       "cfr": {
@@ -1026,7 +1026,7 @@
       "file": "lib/cf-h3-proxy.c",
       "name": "cf_ngtcp2_proxy_ctx_free",
       "signature": "static void cf_ngtcp2_proxy_ctx_free(struct cf_ngtcp2_proxy_ctx *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Destroys ngtcp2 proxy ctx, cleaning up multiple nested resources and hashes.",
       "cfr": {
@@ -1068,7 +1068,7 @@
       "file": "lib/cf-h3-proxy.c",
       "name": "cf_h3_proxy_destroy",
       "signature": "static void cf_h3_proxy_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys cfilter object, closing and freeing nested ctx",
       "cfr": {
@@ -1145,7 +1145,7 @@
       "file": "lib/cf-haproxy.c",
       "name": "cf_haproxy_destroy",
       "signature": "static void cf_haproxy_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "cfilter destroy interface, frees ctx",
       "cfr": {
@@ -1223,7 +1223,7 @@
       "file": "lib/curl_gssapi.c",
       "name": "stub_gss_delete_sec_context",
       "signature": "static OM_uint32 stub_gss_delete_sec_context( OM_uint32 *min, struct stub_gss_ctx_id_t_desc **context, gss_buffer_t output_token)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "deletes/ends lifetime of gss security context object",
       "cfr": {
@@ -1260,7 +1260,7 @@
       "file": "lib/curl_gssapi.c",
       "name": "Curl_gss_delete_sec_context",
       "signature": "OM_uint32 Curl_gss_delete_sec_context(OM_uint32 *min, gss_ctx_id_t *context, gss_buffer_t output_token)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "deletes security context, ending its lifetime",
       "cfr": {
@@ -1300,7 +1300,7 @@
       "file": "lib/curl_share.c",
       "name": "share_destroy",
       "signature": "static void share_destroy(struct Curl_share *share)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "destroys share object and all nested resources",
       "cfr": {
@@ -1809,7 +1809,7 @@
       "file": "lib/easy.c",
       "name": "curl_easy_cleanup",
       "signature": "void curl_easy_cleanup(CURL *curl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "ends lifetime of the easy handle object via Curl_close",
       "cfr": {
@@ -1925,7 +1925,7 @@
       "file": "lib/formdata.c",
       "name": "free_formlist",
       "signature": "static void free_formlist(struct FormInfo *ptr)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "frees whole FormInfo list including nested bufref",
       "cfr": {
@@ -1962,7 +1962,7 @@
       "file": "lib/ftplistparser.c",
       "name": "Curl_ftp_parselist_data_free",
       "signature": "void Curl_ftp_parselist_data_free(struct ftp_parselist_data **parserp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "frees parser data object and nested fileinfo via double pointer",
       "cfr": {
@@ -2035,7 +2035,7 @@
       "file": "lib/http2.c",
       "name": "h2_stream_ctx_free",
       "signature": "static void h2_stream_ctx_free(struct h2_stream_ctx *stream)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "releases nested bufq/dynhds then frees the stream struct itself",
       "cfr": {
@@ -2113,7 +2113,7 @@
       "file": "lib/http2.c",
       "name": "cf_h2_ctx_free",
       "signature": "static void cf_h2_ctx_free(struct cf_h2_ctx *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "frees nested buffers/hash and the ctx struct itself, whole-object teardown",
       "cfr": {
@@ -2154,7 +2154,7 @@
       "file": "lib/http2.c",
       "name": "cf_h2_destroy",
       "signature": "static void cf_h2_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "filter destroy interface tearing down the h2 context",
       "cfr": {
@@ -2602,7 +2602,7 @@
       "file": "lib/mime.c",
       "name": "curl_mime_free",
       "signature": "void curl_mime_free(curl_mime *mime)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Recursively deletes a mime handle and its parts, object-level destruction",
       "cfr": {
@@ -2747,7 +2747,7 @@
       "file": "lib/request.c",
       "name": "Curl_req_free",
       "signature": "void Curl_req_free(struct SingleRequest *req, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees the SingleRequest object's nested buffers and resources",
       "cfr": {
@@ -2786,7 +2786,7 @@
       "file": "lib/socks.c",
       "name": "socks_proxy_ctx_free",
       "signature": "static void socks_proxy_ctx_free(struct socks_ctx *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Frees socks context object including nested bufq and unlinked refs",
       "cfr": {
@@ -2825,7 +2825,7 @@
       "file": "lib/socks.c",
       "name": "socks_proxy_cf_destroy",
       "signature": "static void socks_proxy_cf_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys connection filter by freeing its socks ctx",
       "cfr": {
@@ -2898,7 +2898,7 @@
       "file": "lib/url.c",
       "name": "Curl_close",
       "signature": "CURLcode Curl_close(struct Curl_easy **datap)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Cleans up and frees all resources of the session handle, ending object lifetime via output double pointer",
       "cfr": {
@@ -3875,7 +3875,7 @@
       "file": "lib/vquic/curl_ngtcp2.c",
       "name": "cf_ngtcp2_ctx_free",
       "signature": "static void cf_ngtcp2_ctx_free(struct cf_ngtcp2_ctx *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Tears down ctx object, releasing nested buffers, ssl peer, hashes then frees ctx",
       "cfr": {
@@ -3918,7 +3918,7 @@
       "file": "lib/vquic/curl_ngtcp2.c",
       "name": "h3_stream_ctx_free",
       "signature": "static void h3_stream_ctx_free(struct h3_stream_ctx *stream)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Frees stream object including nested bufq and parser, ends object lifetime",
       "cfr": {
@@ -3994,7 +3994,7 @@
       "file": "lib/vquic/curl_ngtcp2.c",
       "name": "cf_ngtcp2_destroy",
       "signature": "static void cf_ngtcp2_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Filter destroy interface closing connection and freeing ctx object",
       "cfr": {
@@ -4077,7 +4077,7 @@
       "file": "lib/vquic/curl_quiche.c",
       "name": "cf_quiche_ctx_free",
       "signature": "static void cf_quiche_ctx_free(struct cf_quiche_ctx *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Tears down whole quiche context, releasing many nested resources (bufq, peer, hash, tls).",
       "cfr": {
@@ -4119,7 +4119,7 @@
       "file": "lib/vquic/curl_quiche.c",
       "name": "h3_stream_ctx_free",
       "signature": "static void h3_stream_ctx_free(struct h3_stream_ctx *stream)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees stream object and its nested parser, ending the object's lifetime.",
       "cfr": {
@@ -4156,7 +4156,7 @@
       "file": "lib/vquic/curl_quiche.c",
       "name": "h3_stream_hash_free",
       "signature": "static void h3_stream_hash_free(unsigned int id, void *stream)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Hash-destroy callback delegating to h3_stream_ctx_free to destroy stream object.",
       "cfr": {
@@ -4194,7 +4194,7 @@
       "file": "lib/vquic/curl_quiche.c",
       "name": "cf_quiche_destroy",
       "signature": "static void cf_quiche_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Closes and frees the cfilter's quiche context, destroying the resource.",
       "cfr": {
@@ -4503,7 +4503,7 @@
       "file": "lib/vtls/vtls.c",
       "name": "cf_ctx_free",
       "signature": "static void cf_ctx_free(struct ssl_connect_data *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "frees nested buffers and the whole ctx object",
       "cfr": {
@@ -4541,7 +4541,7 @@
       "file": "lib/vtls/vtls.c",
       "name": "ssl_cf_destroy",
       "signature": "static void ssl_cf_destroy(struct Curl_cfilter *cf, struct Curl_easy *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "destroy callback ending filter lifetime, closes and frees ctx",
       "cfr": {
@@ -4880,7 +4880,7 @@
       "file": "projects/OS400/ccsidcurl.c",
       "name": "curl_certinfo_free_all",
       "signature": "void curl_certinfo_free_all(struct curl_certinfo *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the whole certinfo object including nested slist arrays",
       "cfr": {
@@ -5278,7 +5278,7 @@
       "file": "projects/OS400/os400sys.c",
       "name": "Curl_gss_delete_sec_context_a",
       "signature": "OM_uint32 Curl_gss_delete_sec_context_a(OM_uint32 *minor_status, gss_ctx_id_t *context_handle, gss_buffer_t output_token)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Ends lifetime of the GSS security context handle via gss_delete_sec_context.",
       "cfr": {
@@ -5793,7 +5793,7 @@
       "file": "src/tool_operate.c",
       "name": "del_per_transfer",
       "signature": "static struct per_transfer *del_per_transfer(struct per_transfer *per)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "ends lifetime of per_transfer object, cleans easy handle and frees it",
       "cfr": {

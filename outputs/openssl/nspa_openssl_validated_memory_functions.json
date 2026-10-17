@@ -14,7 +14,7 @@
       "file": "apps/cmp.c",
       "name": "save_free_certs",
       "signature": "static int save_free_certs(STACK_OF(X509) *certs, const char *file, const char *desc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Saves certs to file then frees the entire stack; ends lifetime of the certs container, not just a simple free wrapper.",
       "cfr": {
@@ -376,7 +376,7 @@
       "file": "apps/lib/apps.c",
       "name": "APP_HTTP_TLS_INFO_free",
       "signature": "void APP_HTTP_TLS_INFO_free(APP_HTTP_TLS_INFO *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees an APP_HTTP_TLS_INFO struct and its nested members (SSL_CTX, strings); ends lifetime of the whole object.",
       "cfr": {
@@ -630,7 +630,7 @@
       "file": "apps/lib/apps_ui.c",
       "name": "destroy_ui_method",
       "signature": "void destroy_ui_method(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys a module-level UI method object via UI_destroy_method; ends its lifetime rather than freeing a caller-passed pointer.",
       "cfr": {
@@ -663,7 +663,7 @@
       "file": "apps/lib/cmp_mock_srv.c",
       "name": "mock_srv_ctx_free",
       "signature": "static void mock_srv_ctx_free(mock_srv_ctx *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Frees a mock_srv_ctx and all its nested members; ends the lifetime of the whole context object.",
       "cfr": {
@@ -855,7 +855,7 @@
       "file": "apps/lib/cmp_mock_srv.c",
       "name": "ossl_cmp_mock_srv_free",
       "signature": "void ossl_cmp_mock_srv_free(OSSL_CMP_SRV_CTX *srv_ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees an OSSL_CMP_SRV_CTX and its custom context; ends the lifetime of the whole server context object.",
       "cfr": {
@@ -893,7 +893,7 @@
       "file": "apps/lib/s_cb.c",
       "name": "ssl_excert_free",
       "signature": "void ssl_excert_free(SSL_EXCERT *exc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees an SSL_EXCERT object and its nested members (EVP_PKEY, X509, etc.); whole-object destruction interface.",
       "cfr": {
@@ -1027,7 +1027,7 @@
       "file": "apps/openssl.c",
       "name": "tracedata_free",
       "signature": "static void tracedata_free(tracedata *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees a tracedata struct and its BIO member; whole-object destruction pattern.",
       "cfr": {
@@ -1957,7 +1957,7 @@
       "file": "crypto/asn1/asn1_local.h",
       "name": "ossl_asn1_item_embed_free",
       "signature": "void ossl_asn1_item_embed_free(ASN1_VALUE **pval, const ASN1_ITEM *it, int embed)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Recursively ends lifetime of an entire ASN1_VALUE item including nested members; interface is whole-object destruction.",
       "cfr": {
@@ -2575,7 +2575,7 @@
       "file": "crypto/asn1/tasn_fre.c",
       "name": "ASN1_item_free",
       "signature": "void ASN1_item_free(ASN1_VALUE *val, const ASN1_ITEM *it)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "ends the lifetime of an ASN1 structure including all nested fields; interface is object destruction not a simple free wrapper",
       "cfr": {
@@ -2613,7 +2613,7 @@
       "file": "crypto/asn1/tasn_fre.c",
       "name": "ASN1_item_ex_free",
       "signature": "void ASN1_item_ex_free(ASN1_VALUE **pval, const ASN1_ITEM *it)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "destroys a whole ASN1 item via pointer-to-pointer interface, nulling the pointer; full object destruction",
       "cfr": {
@@ -2651,7 +2651,7 @@
       "file": "crypto/asn1/tasn_fre.c",
       "name": "ossl_asn1_item_embed_free",
       "signature": "void ossl_asn1_item_embed_free(ASN1_VALUE **pval, const ASN1_ITEM *it, int embed)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "core recursive ASN1 destruction function handling all type cases including nested fields, callbacks, and encoding caches",
       "cfr": {
@@ -3193,7 +3193,7 @@
       "file": "crypto/asn1/x_info.c",
       "name": "X509_INFO_free",
       "signature": "void X509_INFO_free(X509_INFO *x)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "frees an X509_INFO container and all its nested members (X509, CRL, PKEY); whole-object destruction",
       "cfr": {
@@ -3383,7 +3383,7 @@
       "file": "crypto/asn1/x_pkey.c",
       "name": "X509_PKEY_free",
       "signature": "void X509_PKEY_free(X509_PKEY *x)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "frees an X509_PKEY and all nested members (ALGOR, OCTET_STRING, EVP_PKEY); whole-object destruction",
       "cfr": {
@@ -3422,7 +3422,7 @@
       "file": "crypto/async/async_wait.c",
       "name": "ASYNC_WAIT_CTX_free",
       "signature": "void ASYNC_WAIT_CTX_free(ASYNC_WAIT_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Public API that ends the lifetime of an ASYNC_WAIT_CTX object and frees its resources",
       "cfr": {
@@ -3539,7 +3539,7 @@
       "file": "crypto/bio/bio_lib.c",
       "name": "BIO_free",
       "signature": "int BIO_free(BIO *a)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Public API that decrements refcount and destroys a BIO when count reaches zero",
       "cfr": {
@@ -3583,7 +3583,7 @@
       "file": "crypto/bio/bio_lib.c",
       "name": "BIO_free_all",
       "signature": "void BIO_free_all(BIO *bio)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys an entire BIO chain",
       "cfr": {
@@ -3697,7 +3697,7 @@
       "file": "crypto/bio/bss_acpt.c",
       "name": "BIO_ACCEPT_free",
       "signature": "static void BIO_ACCEPT_free(BIO_ACCEPT *a)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Ends the lifetime of a BIO_ACCEPT struct and its nested resources",
       "cfr": {
@@ -4341,7 +4341,7 @@
       "file": "crypto/bio/ossl_core_bio.c",
       "name": "ossl_core_bio_free",
       "signature": "int ossl_core_bio_free(OSSL_CORE_BIO *cb)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Decrements refcount and destroys an OSSL_CORE_BIO when count reaches zero",
       "cfr": {
@@ -4532,7 +4532,7 @@
       "file": "crypto/buffer/buffer.c",
       "name": "BUF_MEM_free",
       "signature": "void BUF_MEM_free(BUF_MEM *a)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Frees the internal data buffer (with optional clearing) and then the BUF_MEM struct itself; full object destructor.",
       "cfr": {
@@ -4722,7 +4722,7 @@
       "file": "crypto/cmp/cmp_ctx.c",
       "name": "OSSL_CMP_CTX_free",
       "signature": "void OSSL_CMP_CTX_free(OSSL_CMP_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.99,
       "reason": "Releases all fields of OSSL_CMP_CTX (keys, certs, stores, strings, stacks) and frees the struct; canonical object destructor paired with OSSL_CMP_CTX_new.",
       "cfr": {
@@ -4816,7 +4816,7 @@
       "file": "crypto/cmp/cmp_msg.c",
       "name": "OSSL_CMP_MSG_free",
       "signature": "void OSSL_CMP_MSG_free(OSSL_CMP_MSG *msg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Frees the entire OSSL_CMP_MSG via ASN1_item_free; full object destructor paired with OSSL_CMP_MSG_new.",
       "cfr": {
@@ -5475,7 +5475,7 @@
       "file": "crypto/cmp/cmp_server.c",
       "name": "OSSL_CMP_SRV_CTX_free",
       "signature": "void OSSL_CMP_SRV_CTX_free(OSSL_CMP_SRV_CTX *srv_ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Frees the whole OSSL_CMP_SRV_CTX object including its nested CMP context via OSSL_CMP_CTX_free and the struct itself via OPENSSL_free; whole-object destruction.",
       "cfr": {
@@ -6398,7 +6398,7 @@
       "file": "crypto/conf/conf_lib.c",
       "name": "OPENSSL_INIT_free",
       "signature": "void OPENSSL_INIT_free(OPENSSL_INIT_SETTINGS *settings)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees the entire OPENSSL_INIT_SETTINGS object and its fields; whole object destruction",
       "cfr": {
@@ -6538,7 +6538,7 @@
       "file": "crypto/core_namemap.c",
       "name": "ossl_stored_namemap_free",
       "signature": "void ossl_stored_namemap_free(void *vnamemap)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees the stored namemap object by delegating to ossl_namemap_free; full object destruction via void* interface.",
       "cfr": {
@@ -6614,7 +6614,7 @@
       "file": "crypto/core_namemap.c",
       "name": "ossl_namemap_free",
       "signature": "void ossl_namemap_free(OSSL_NAMEMAP *namemap)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Releases all nested resources (lock, ht, stack, memory) of an OSSL_NAMEMAP; full object destruction.",
       "cfr": {
@@ -6802,7 +6802,7 @@
       "file": "crypto/ct/ct_local.h",
       "name": "SCT_CTX_free",
       "signature": "void SCT_CTX_free(SCT_CTX *sctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Documentation says it deletes an SCT verification context; ends lifetime of whole object.",
       "cfr": {
@@ -6956,7 +6956,7 @@
       "file": "crypto/ct/ct_log.c",
       "name": "CTLOG_free",
       "signature": "void CTLOG_free(CTLOG *log)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Documentation says 'Frees CT log and associated structures'; releases nested EVP_PKEY and name string.",
       "cfr": {
@@ -6995,7 +6995,7 @@
       "file": "crypto/ct/ct_sct_ctx.c",
       "name": "SCT_CTX_free",
       "signature": "void SCT_CTX_free(SCT_CTX *sctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees a whole SCT_CTX object including nested fields (EVP_PKEY, raw buffers); object-level destructor.",
       "cfr": {
@@ -7351,7 +7351,7 @@
       "file": "crypto/dh/dh_lib.c",
       "name": "DH_free",
       "signature": "void DH_free(DH *r)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ref-counted destructor for a full DH object; frees all nested fields and the struct itself.",
       "cfr": {
@@ -7706,7 +7706,7 @@
       "file": "crypto/dsa/dsa_lib.c",
       "name": "DSA_free",
       "signature": "void DSA_free(DSA *r)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ref-counted destructor for a full DSA object.",
       "cfr": {
@@ -8121,7 +8121,7 @@
       "file": "crypto/ec/ec_key.c",
       "name": "EC_KEY_free",
       "signature": "void EC_KEY_free(EC_KEY *r)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ref-counted destructor for a full EC_KEY object.",
       "cfr": {
@@ -8285,7 +8285,7 @@
       "file": "crypto/encode_decode/decoder_meth.c",
       "name": "OSSL_DECODER_CTX_free",
       "signature": "void OSSL_DECODER_CTX_free(OSSL_DECODER_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Destroys the full OSSL_DECODER_CTX including nested instance stack and passphrase data",
       "cfr": {
@@ -8541,7 +8541,7 @@
       "file": "crypto/err/err.c",
       "name": "OSSL_ERR_STATE_free",
       "signature": "void OSSL_ERR_STATE_free(ERR_STATE *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Clears all error entries then frees the ERR_STATE object",
       "cfr": {
@@ -8578,7 +8578,7 @@
       "file": "crypto/err/err.c",
       "name": "err_delete_thread_state",
       "signature": "static void err_delete_thread_state(void *unused)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Retrieves and destroys the thread-local ERR_STATE via OSSL_ERR_STATE_free",
       "cfr": {
@@ -9118,7 +9118,7 @@
       "file": "crypto/evp/p_lib.c",
       "name": "EVP_PKEY_free",
       "signature": "void EVP_PKEY_free(EVP_PKEY *x)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Decrements refcount and fully destroys an EVP_PKEY, freeing all owned resources and the struct itself",
       "cfr": {
@@ -9388,7 +9388,7 @@
       "file": "crypto/evp/pmeth_lib.c",
       "name": "EVP_PKEY_CTX_free",
       "signature": "void EVP_PKEY_CTX_free(EVP_PKEY_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the full lifetime of an EVP_PKEY_CTX: releases nested ops, cached data, keys, and frees the struct itself.",
       "cfr": {
@@ -9562,7 +9562,7 @@
       "file": "crypto/evp/s_lib.c",
       "name": "EVP_SKEY_free",
       "signature": "void EVP_SKEY_free(EVP_SKEY *skey)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Full lifetime end of EVP_SKEY: ref-counted, frees keydata via skeymgmt, releases lock and struct.",
       "cfr": {
@@ -9813,7 +9813,7 @@
       "file": "crypto/hashtable/hashtable.c",
       "name": "ossl_ht_free",
       "signature": "void ossl_ht_free(HT *h)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Ends the lifetime of a whole HT object: flushes entries, frees locks, RCU lock, and the struct itself.",
       "cfr": {
@@ -9905,7 +9905,7 @@
       "file": "crypto/hpke/hpke.c",
       "name": "OSSL_HPKE_CTX_free",
       "signature": "void OSSL_HPKE_CTX_free(OSSL_HPKE_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of a whole OSSL_HPKE_CTX: frees nested cipher, keys, and buffers, then the struct.",
       "cfr": {
@@ -9944,7 +9944,7 @@
       "file": "crypto/http/http_client.c",
       "name": "OSSL_HTTP_REQ_CTX_free",
       "signature": "void OSSL_HTTP_REQ_CTX_free(OSSL_HTTP_REQ_CTX *rctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Ends the lifetime of a whole OSSL_HTTP_REQ_CTX: frees nested BIOs, strings, and the struct itself.",
       "cfr": {
@@ -10215,7 +10215,7 @@
       "file": "crypto/lms/lms_key.c",
       "name": "ossl_lms_key_free",
       "signature": "void ossl_lms_key_free(LMS_KEY *lmskey)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Documented as 'Destroy a LMS_KEY object'; frees the whole object and its fields.",
       "cfr": {
@@ -10252,7 +10252,7 @@
       "file": "crypto/lms/lms_sig.c",
       "name": "ossl_lms_sig_free",
       "signature": "void ossl_lms_sig_free(LMS_SIG *sig)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Documented as 'Destroy an existing LMS_SIG object'; ends lifetime of the whole signature object.",
       "cfr": {
@@ -10770,7 +10770,7 @@
       "file": "crypto/ml_dsa/ml_dsa_key.c",
       "name": "ossl_ml_dsa_key_free",
       "signature": "void ossl_ml_dsa_key_free(ML_DSA_KEY *key)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys the whole ML_DSA_KEY object: resets nested fields and frees the struct itself; doc says 'Destroy an ML_DSA_KEY object'.",
       "cfr": {
@@ -12113,7 +12113,7 @@
       "file": "crypto/pkcs7/pk7_asn1.c",
       "name": "PKCS7_free",
       "signature": "void PKCS7_free(PKCS7 *p7)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of the entire PKCS7 object, freeing all nested ASN1 fields via ASN1_item_free.",
       "cfr": {
@@ -12191,7 +12191,7 @@
       "file": "crypto/property/property_string.c",
       "name": "property_table_free",
       "signature": "static void property_table_free(PROP_TABLE **pt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Iterates and frees all entries in the hash table then frees the table; destroys the whole container via output pointer.",
       "cfr": {
@@ -12227,7 +12227,7 @@
       "file": "crypto/property/property_string.c",
       "name": "ossl_property_string_data_free",
       "signature": "void ossl_property_string_data_free(void *vpropdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.87,
       "reason": "Frees all nested resources (lock, property tables, string stack) then the struct; full object destruction.",
       "cfr": {
@@ -12391,7 +12391,7 @@
       "file": "crypto/rand/rand_pool.c",
       "name": "ossl_rand_pool_free",
       "signature": "void ossl_rand_pool_free(RAND_POOL *pool)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Documented to free the pool and securely erase its buffer — destroys the whole RAND_POOL object.",
       "cfr": {
@@ -12862,7 +12862,7 @@
       "file": "crypto/rsa/rsa_lib.c",
       "name": "RSA_free",
       "signature": "void RSA_free(RSA *r)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Decrements refcount and, when zero, frees all RSA fields including BNs, prime info, PSS params, blinding, and ex_data — full object destruction.",
       "cfr": {
@@ -13041,7 +13041,7 @@
       "file": "crypto/slh_dsa/slh_dsa_hash_ctx.c",
       "name": "ossl_slh_dsa_hash_ctx_free",
       "signature": "void ossl_slh_dsa_hash_ctx_free(SLH_DSA_HASH_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys entire SLH_DSA_HASH_CTX object, freeing contained MAC contexts and the struct itself.",
       "cfr": {
@@ -13122,7 +13122,7 @@
       "file": "crypto/slh_dsa/slh_dsa_key.c",
       "name": "ossl_slh_dsa_key_free",
       "signature": "void ossl_slh_dsa_key_free(SLH_DSA_KEY *key)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys entire SLH_DSA_KEY object including cleansing key material and releasing nested resources.",
       "cfr": {
@@ -13725,7 +13725,7 @@
       "file": "crypto/store/store_lib.c",
       "name": "OSSL_STORE_INFO_free",
       "signature": "void OSSL_STORE_INFO_free(OSSL_STORE_INFO *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the OSSL_STORE_INFO struct and its nested owned objects (EVP_PKEY, X509, etc.); full object destruction.",
       "cfr": {
@@ -14100,7 +14100,7 @@
       "file": "crypto/thread/internal.c",
       "name": "ossl_threads_ctx_free",
       "signature": "void ossl_threads_ctx_free(void *vdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the whole threads context object including its nested mutex, condvar, and the struct itself.",
       "cfr": {
@@ -14184,7 +14184,7 @@
       "file": "crypto/threads_win.c",
       "name": "ossl_rcu_lock_free",
       "signature": "void ossl_rcu_lock_free(CRYPTO_RCU_LOCK *lock)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Destroys the whole RCU lock object including nested condvars, mutexes, and the struct itself.",
       "cfr": {
@@ -14223,7 +14223,7 @@
       "file": "crypto/ts/ts_rsp_sign.c",
       "name": "TS_RESP_CTX_free",
       "signature": "void TS_RESP_CTX_free(TS_RESP_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Destroys the entire TS_RESP_CTX: frees all nested fields (keys, certs, stacks) and the struct itself.",
       "cfr": {
@@ -14343,7 +14343,7 @@
       "file": "crypto/ui/ui_lib.c",
       "name": "UI_free",
       "signature": "void UI_free(UI *ui)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Ends the lifetime of a whole UI object: frees nested strings, ex_data, thread lock, and the struct itself.",
       "cfr": {
@@ -14383,7 +14383,7 @@
       "file": "crypto/ui/ui_lib.c",
       "name": "UI_destroy_method",
       "signature": "void UI_destroy_method(UI_METHOD *ui_method)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Destroys a whole UI_METHOD object, freeing ex_data, name, and the struct itself. Name and docs confirm full object destruction.",
       "cfr": {
@@ -14463,7 +14463,7 @@
       "file": "crypto/x509/by_dir.c",
       "name": "free_dir",
       "signature": "static void free_dir(X509_LOOKUP *lu)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees all nested resources of the dir lookup state (entries, hashes, lock, buf) attached to the X509_LOOKUP object.",
       "cfr": {
@@ -15122,7 +15122,7 @@
       "file": "crypto/x509/x509_lu.c",
       "name": "X509_STORE_free",
       "signature": "void X509_STORE_free(X509_STORE *xs)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends lifetime of entire X509_STORE: frees lookups, objects, ex_data, locks, verify params, and the struct itself.",
       "cfr": {
@@ -15834,7 +15834,7 @@
       "file": "crypto/x509/x_name.c",
       "name": "x509_name_ex_free",
       "signature": "static void x509_name_ex_free(ASN1_VALUE **val, const ASN1_ITEM *it)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Declaration only; signature matches an ASN1 ex_free callback that destroys an X509_NAME value.",
       "cfr": {
@@ -15868,7 +15868,7 @@
       "file": "crypto/x509/x_name.c",
       "name": "x509_name_ex_free",
       "signature": "static void x509_name_ex_free(ASN1_VALUE **pval, const ASN1_ITEM *it)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "ASN1 ex_free callback that frees BUF_MEM, OPENSSL allocations, and the entry stack; full X509_NAME object destruction.",
       "cfr": {
@@ -15908,7 +15908,7 @@
       "file": "crypto/x509/x_pubkey.c",
       "name": "ossl_X509_PUBKEY_INTERNAL_free",
       "signature": "void ossl_X509_PUBKEY_INTERNAL_free(X509_PUBKEY *xpub)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees an internally-created X509_PUBKEY via ASN1_item_free; destroys the whole pubkey object.",
       "cfr": {
@@ -15945,7 +15945,7 @@
       "file": "crypto/x509/x_pubkey.c",
       "name": "x509_pubkey_ex_free",
       "signature": "static void x509_pubkey_ex_free(ASN1_VALUE **pval, const ASN1_ITEM *it)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "ASN1 ex_free callback that releases all nested fields (bit string, EVP_PKEY, algor) and the struct itself; full X509_PUBKEY destruction.",
       "cfr": {
@@ -17160,7 +17160,7 @@
       "file": "demos/http3/ossl-nghttp3.c",
       "name": "h3_stream_free",
       "signature": "static void h3_stream_free(OSSL_DEMO_H3_STREAM *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends the lifetime of an H3_STREAM object, freeing its fields (SSL handle, buffer); _free suffix on a struct pointer signals object destruction.",
       "cfr": {
@@ -17197,7 +17197,7 @@
       "file": "demos/http3/ossl-nghttp3.c",
       "name": "OSSL_DEMO_H3_CONN_free",
       "signature": "void OSSL_DEMO_H3_CONN_free(OSSL_DEMO_H3_CONN *conn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of an H3_CONN object, releasing all nested resources (stream hash table, BIO, nghttp3 conn, and the conn struct itself).",
       "cfr": {
@@ -17426,7 +17426,7 @@
       "file": "demos/keyexch/ecdh.c",
       "name": "destroy_peer",
       "signature": "static void destroy_peer(PEER_DATA *peer)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Releases all resources inside a PEER_DATA object; named destroy_peer — this is object-level destruction of the peer's owned fields.",
       "cfr": {
@@ -17510,7 +17510,7 @@
       "file": "demos/quic/poll-server/quic-server-ssl-poll-http.c",
       "name": "destroy_poll_manager",
       "signature": "static void destroy_poll_manager(struct poll_manager *pm)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys a poll_manager and all its contained poll events, then frees the struct itself; full object destruction.",
       "cfr": {
@@ -17548,7 +17548,7 @@
       "file": "demos/quic/poll-server/quic-server-ssl-poll-http.c",
       "name": "destroy_pe",
       "signature": "static void destroy_pe(struct poll_event *pe)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys a poll_event and its associated SSL handle; full object destruction with callbacks invoked.",
       "cfr": {
@@ -17929,7 +17929,7 @@
       "file": "doc/designs/ddd/ddd-01-conn-blocking.c",
       "name": "teardown",
       "signature": "void teardown(BIO *bio)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Documented as closing connection and freeing bookkeeping; ends the lifetime of the BIO connection object via BIO_free_all.",
       "cfr": {
@@ -17966,7 +17966,7 @@
       "file": "doc/designs/ddd/ddd-01-conn-blocking.c",
       "name": "teardown_ctx",
       "signature": "void teardown_ctx(SSL_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Documented as freeing a previously created SSL_CTX; ends the lifetime of the context object.",
       "cfr": {
@@ -18094,7 +18094,7 @@
       "file": "doc/designs/ddd/ddd-02-conn-nonblocking-threads.c",
       "name": "teardown",
       "signature": "void teardown(APP_CONN *conn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Documented as closing connection and freeing bookkeeping; frees the APP_CONN struct and its nested BIO resources.",
       "cfr": {
@@ -18133,7 +18133,7 @@
       "file": "doc/designs/ddd/ddd-02-conn-nonblocking-threads.c",
       "name": "teardown_ctx",
       "signature": "void teardown_ctx(SSL_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends the lifetime of the SSL_CTX object; documented as freeing a previously created context.",
       "cfr": {
@@ -18261,7 +18261,7 @@
       "file": "doc/designs/ddd/ddd-02-conn-nonblocking.c",
       "name": "teardown",
       "signature": "void teardown(APP_CONN *conn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of APP_CONN, freeing nested BIO and the struct itself.",
       "cfr": {
@@ -18300,7 +18300,7 @@
       "file": "doc/designs/ddd/ddd-02-conn-nonblocking.c",
       "name": "teardown_ctx",
       "signature": "void teardown_ctx(SSL_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends the lifetime of the SSL_CTX object.",
       "cfr": {
@@ -18420,7 +18420,7 @@
       "file": "doc/designs/ddd/ddd-03-fd-blocking.c",
       "name": "teardown",
       "signature": "void teardown(SSL *ssl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Documented as closing connection and freeing bookkeeping; ends the lifetime of the SSL object.",
       "cfr": {
@@ -18457,7 +18457,7 @@
       "file": "doc/designs/ddd/ddd-03-fd-blocking.c",
       "name": "teardown_ctx",
       "signature": "void teardown_ctx(SSL_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends the lifetime of the SSL_CTX object.",
       "cfr": {
@@ -18582,7 +18582,7 @@
       "file": "doc/designs/ddd/ddd-04-fd-nonblocking.c",
       "name": "teardown",
       "signature": "void teardown(APP_CONN *conn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of APP_CONN, freeing nested SSL and the struct itself.",
       "cfr": {
@@ -18622,7 +18622,7 @@
       "file": "doc/designs/ddd/ddd-04-fd-nonblocking.c",
       "name": "teardown_ctx",
       "signature": "void teardown_ctx(SSL_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends the lifetime of the SSL_CTX object.",
       "cfr": {
@@ -18698,7 +18698,7 @@
       "file": "doc/designs/ddd/ddd-05-mem-nonblocking.c",
       "name": "teardown",
       "signature": "void teardown(APP_CONN *conn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of APP_CONN, freeing nested BIO and the struct itself.",
       "cfr": {
@@ -18737,7 +18737,7 @@
       "file": "doc/designs/ddd/ddd-05-mem-nonblocking.c",
       "name": "teardown_ctx",
       "signature": "void teardown_ctx(SSL_CTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends the lifetime of the SSL_CTX object.",
       "cfr": {
@@ -18931,7 +18931,7 @@
       "file": "doc/designs/ddd/ddd-06-mem-uv.c",
       "name": "teardown",
       "signature": "void teardown(APP_CONN *conn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Ends the lifetime of the whole APP_CONN object, freeing SSL and BIO resources; object destruction interface",
       "cfr": {
@@ -19471,7 +19471,7 @@
       "file": "include/openssl/buffer.h",
       "name": "BUF_MEM_free",
       "signature": "void BUF_MEM_free(BUF_MEM *a)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees the BUF_MEM struct and its internal data buffer — destroys the whole object.",
       "cfr": {
@@ -19574,7 +19574,7 @@
       "file": "include/openssl/ec.h",
       "name": "ECDSA_SIG_free",
       "signature": "void ECDSA_SIG_free(ECDSA_SIG *sig)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees a whole ECDSA_SIG structure including its contents",
       "cfr": {
@@ -19746,7 +19746,7 @@
       "file": "include/openssl/store.h",
       "name": "OSSL_STORE_INFO_free",
       "signature": "void OSSL_STORE_INFO_free(OSSL_STORE_INFO *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "frees the OSSL_STORE_INFO object and its owned nested data",
       "cfr": {
@@ -20443,7 +20443,7 @@
       "file": "providers/implementations/keymgmt/lms_kmgmt.c",
       "name": "lms_free_key",
       "signature": "static void lms_free_key(void *keydata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Ends lifetime of LMS key object by delegating to ossl_lms_key_free",
       "cfr": {
@@ -20522,7 +20522,7 @@
       "file": "providers/implementations/keymgmt/ml_dsa_kmgmt.c",
       "name": "ml_dsa_free_key",
       "signature": "static void ml_dsa_free_key(void *keydata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Destroys a whole ML-DSA key object via ossl_ml_dsa_key_free.",
       "cfr": {
@@ -20596,7 +20596,7 @@
       "file": "providers/implementations/keymgmt/mlx_kmgmt.c",
       "name": "mlx_kem_key_free",
       "signature": "static void mlx_kem_key_free(void *vkey)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees both an EVP_PKEY and the outer struct via EVP_PKEY_free+OPENSSL_free; full object destruction.",
       "cfr": {
@@ -20796,7 +20796,7 @@
       "file": "providers/implementations/keymgmt/slh_dsa_kmgmt.c",
       "name": "slh_dsa_free_key",
       "signature": "static void slh_dsa_free_key(void *keydata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Destroys a whole SLH-DSA key object via ossl_slh_dsa_key_free.",
       "cfr": {
@@ -20990,7 +20990,7 @@
       "file": "providers/implementations/storemgmt/file_store.c",
       "name": "free_file_ctx",
       "signature": "static void free_file_ctx(struct file_ctx_st *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Frees the entire file store context including decoder context and strings.",
       "cfr": {
@@ -21067,7 +21067,7 @@
       "file": "ssl/bio_ssl.c",
       "name": "ssl_free",
       "signature": "static int ssl_free(BIO *a)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Destroys the SSL BIO object, conditionally freeing the SSL object and associated memory.",
       "cfr": {
@@ -21277,7 +21277,7 @@
       "file": "ssl/d1_lib.c",
       "name": "dtls1_free",
       "signature": "void dtls1_free(SSL *ssl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends the lifetime of the DTLS-layer data of an SSL object, freeing queues, record layer, and delegating to ssl3_free; whole-object destruction rather than a simple free wrapper.",
       "cfr": {
@@ -21455,7 +21455,7 @@
       "file": "ssl/ech/ech_store.c",
       "name": "ossl_echstore_entry_free",
       "signature": "void ossl_echstore_entry_free(OSSL_ECHSTORE_ENTRY *ee)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees nested EVP_PKEY, extension stack, and OPENSSL_free on the entry itself; full object lifetime end.",
       "cfr": {
@@ -21598,7 +21598,7 @@
       "file": "ssl/quic/qlog.c",
       "name": "ossl_qlog_free",
       "signature": "void ossl_qlog_free(QLOG *qlog)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Flushes JSON, frees BIO chain, frees strings, and frees the QLOG struct itself; full object destruction.",
       "cfr": {
@@ -21711,7 +21711,7 @@
       "file": "ssl/quic/quic_channel.c",
       "name": "ch_cleanup",
       "signature": "static void ch_cleanup(QUIC_CHANNEL *ch)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Tears down the entire QUIC_CHANNEL object by freeing all nested resources (ackm, qtx, qrx, streams, etc.); this is object destruction logic, not a simple free wrapper.",
       "cfr": {
@@ -21768,7 +21768,7 @@
       "file": "ssl/quic/quic_channel.c",
       "name": "ossl_quic_channel_free",
       "signature": "void ossl_quic_channel_free(QUIC_CHANNEL *ch)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the whole QUIC_CHANNEL object via ch_cleanup then OPENSSL_free; ends the lifetime of the channel object passed in.",
       "cfr": {
@@ -21971,7 +21971,7 @@
       "file": "ssl/quic/quic_impl.c",
       "name": "quic_free_listener",
       "signature": "QUIC_TAKES_LOCK static void quic_free_listener(QCTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys the listener object by freeing the engine, port, mutex, and calling SSL_free; full object destruction path for a listener.",
       "cfr": {
@@ -22012,7 +22012,7 @@
       "file": "ssl/quic/quic_impl.c",
       "name": "quic_free_domain",
       "signature": "QUIC_TAKES_LOCK static void quic_free_domain(QCTX *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys the domain object by freeing the engine and mutex; full object destruction path for a domain.",
       "cfr": {
@@ -22049,7 +22049,7 @@
       "file": "ssl/quic/quic_impl.c",
       "name": "ossl_quic_free",
       "signature": "QUIC_TAKES_LOCK void ossl_quic_free(SSL *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Top-level SSL_free implementation for QUIC; dispatches to quic_free_listener, quic_free_domain, or qc_cleanup depending on object type — ends the lifetime of the entire SSL object.",
       "cfr": {
@@ -22325,7 +22325,7 @@
       "file": "ssl/quic/quic_impl.c",
       "name": "ossl_quic_free_token_store",
       "signature": "void ossl_quic_free_token_store(SSL_TOKEN_STORE *hdl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Tears down the whole SSL_TOKEN_STORE: ref-counts, mutex, hash table, and contained tokens",
       "cfr": {
@@ -22586,7 +22586,7 @@
       "file": "ssl/quic/quic_record_tx.c",
       "name": "ossl_qtx_free",
       "signature": "void ossl_qtx_free(OSSL_QTX *qtx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the entire OSSL_QTX: enc levels, TX lists, and the struct itself",
       "cfr": {
@@ -22901,7 +22901,7 @@
       "file": "ssl/quic/quic_tls.c",
       "name": "quic_free",
       "signature": "static int quic_free(OSSL_RECORD_LAYER *rl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys an OSSL_RECORD_LAYER by freeing BIOs and the struct itself — full object destruction matching quic_new_record_layer.",
       "cfr": {
@@ -22975,7 +22975,7 @@
       "file": "ssl/quic/quic_tls.c",
       "name": "ossl_quic_tls_free",
       "signature": "void ossl_quic_tls_free(QUIC_TLS *qtls)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys the QUIC_TLS object: frees error state, frees the struct — full object lifetime end.",
       "cfr": {
@@ -23070,7 +23070,7 @@
       "file": "ssl/quic/quic_tserver.c",
       "name": "ossl_quic_tserver_free",
       "signature": "void ossl_quic_tserver_free(QUIC_TSERVER *srv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Destroys the entire QUIC_TSERVER: frees channel, engine, port, SSL, SSL_CTX, mutex, BIOs, and the struct.",
       "cfr": {
@@ -23187,7 +23187,7 @@
       "file": "ssl/record/methods/dtls_meth.c",
       "name": "dtls_free",
       "signature": "static int dtls_free(OSSL_RECORD_LAYER *rl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys the DTLS record layer: drains and frees the priority queue, flushes BIO, then delegates remaining teardown to tls_free.",
       "cfr": {
@@ -23368,7 +23368,7 @@
       "file": "ssl/record/methods/tls_common.c",
       "name": "tls_int_free",
       "signature": "static void tls_int_free(OSSL_RECORD_LAYER *rl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees all nested resources of an OSSL_RECORD_LAYER (BIOs, cipher/MAC/MD contexts, compression, buffers, records) — full object teardown, not a simple free wrapper.",
       "cfr": {
@@ -23551,7 +23551,7 @@
       "file": "ssl/record/methods/tls_common.c",
       "name": "tls_free",
       "signature": "int tls_free(OSSL_RECORD_LAYER *rl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Flushes pending data then destroys the entire record layer by calling tls_int_free; ends the object's lifetime.",
       "cfr": {
@@ -23791,7 +23791,7 @@
       "file": "ssl/s3_lib.c",
       "name": "ssl3_free",
       "signature": "void ssl3_free(SSL *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Destroys all SSL3-level state within an SSL object — frees keys, digests, SRP context, and clears memory; full sub-object teardown.",
       "cfr": {
@@ -23985,7 +23985,7 @@
       "file": "ssl/ssl_cert.c",
       "name": "ssl_cert_free",
       "signature": "void ssl_cert_free(CERT *c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Decrements refcount and fully destroys a CERT object including all nested certificates, keys, and extensions.",
       "cfr": {
@@ -24093,7 +24093,7 @@
       "file": "ssl/ssl_lib.c",
       "name": "tlsa_free",
       "signature": "static void tlsa_free(danetls_record *t)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Releases nested EVP_PKEY and data fields of a danetls_record, destroying the whole record's resources.",
       "cfr": {
@@ -24224,7 +24224,7 @@
       "file": "ssl/ssl_lib.c",
       "name": "SSL_free",
       "signature": "void SSL_free(SSL *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Public API to end the lifetime of an SSL object; decrements refcount and frees the whole object and its nested resources.",
       "cfr": {
@@ -24268,7 +24268,7 @@
       "file": "ssl/ssl_lib.c",
       "name": "ossl_ssl_connection_free",
       "signature": "void ossl_ssl_connection_free(SSL *ssl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Releases all nested resources of an SSL_CONNECTION and the object itself; full object destruction.",
       "cfr": {
@@ -24452,7 +24452,7 @@
       "file": "ssl/ssl_lib.c",
       "name": "SSL_CTX_free",
       "signature": "void SSL_CTX_free(SSL_CTX *a)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Public API to destroy an SSL_CTX; decrements refcount and frees all nested resources and the object.",
       "cfr": {
@@ -24896,7 +24896,7 @@
       "file": "ssl/ssl_sess.c",
       "name": "SSL_SESSION_free",
       "signature": "void SSL_SESSION_free(SSL_SESSION *ss)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Public API to destroy an SSL_SESSION; decrements refcount and frees all nested resources and the struct.",
       "cfr": {
@@ -24983,7 +24983,7 @@
       "file": "ssl/t1_lib.c",
       "name": "tls1_free",
       "signature": "void tls1_free(SSL *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of TLS-layer data on an SSL object, freeing fields and delegating to ssl3_free; whole-object destruction interface",
       "cfr": {
@@ -25707,7 +25707,7 @@
       "file": "test/evp_test.c",
       "name": "free_key_list",
       "signature": "static void free_key_list(KEY_LIST *lst)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Walks and frees an entire KEY_LIST structure including EVP_PKEY members and the list nodes themselves; ends lifetime of the whole container.",
       "cfr": {
@@ -25744,7 +25744,7 @@
       "file": "test/exdatatest.c",
       "name": "MYOBJ_free",
       "signature": "static void MYOBJ_free(MYOBJ *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees ex_data and then the MYOBJ itself; ends the full lifetime of the object.",
       "cfr": {
@@ -25782,7 +25782,7 @@
       "file": "test/helpers/handshake.c",
       "name": "HANDSHAKE_RESULT_free",
       "signature": "void HANDSHAKE_RESULT_free(HANDSHAKE_RESULT *result)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Destroys a HANDSHAKE_RESULT object and its nested fields (OPENSSL_free, sk_X509_NAME_pop_free); whole-object destruction interface.",
       "cfr": {
@@ -26160,7 +26160,7 @@
       "file": "test/helpers/quictestlib.h",
       "name": "qtest_fault_free",
       "signature": "void qtest_fault_free(QTEST_FAULT *fault)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Declaration matching the definition; documented as 'Free up a Fault Injector instance' — whole-object destruction.",
       "cfr": {
@@ -26717,7 +26717,7 @@
       "file": "test/p_test.c",
       "name": "p_teardown",
       "signature": "static void p_teardown(void *provctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys a provider context: frees the lib ctx and the context struct itself — full teardown of the provider object.",
       "cfr": {
@@ -26942,7 +26942,7 @@
       "file": "test/quic_ackm_test.c",
       "name": "helper_destroy",
       "signature": "static void helper_destroy(struct helper *h)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Tears down entire helper object, freeing nested resources (ackm, statm, buffers); interface is whole-object destruction.",
       "cfr": {
@@ -27052,7 +27052,7 @@
       "file": "test/quic_txp_test.c",
       "name": "helper_cleanup",
       "signature": "static void helper_cleanup(struct helper *h)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Frees many nested sub-objects of helper (qtx, qrx, ackm, cfq, demux, sstream, etc.); interface is whole-object/container teardown.",
       "cfr": {
@@ -27374,7 +27374,7 @@
       "file": "test/radix/quic_bindings.c",
       "name": "RADIX_OBJ_free",
       "signature": "static void RADIX_OBJ_free(RADIX_OBJ *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Ends the lifetime of a RADIX_OBJ, releasing its nested SSL and name fields; whole-object destruction interface.",
       "cfr": {
@@ -27413,7 +27413,7 @@
       "file": "test/radix/quic_bindings.c",
       "name": "cleanup_one",
       "signature": "static void cleanup_one(RADIX_OBJ *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Delegates entirely to RADIX_OBJ_free, acting as a whole-object destruction callback wrapper.",
       "cfr": {
@@ -27450,7 +27450,7 @@
       "file": "test/radix/quic_bindings.c",
       "name": "RADIX_THREAD_free",
       "signature": "static void RADIX_THREAD_free(RADIX_THREAD *rt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Ends the lifetime of a RADIX_THREAD, releasing its mutex, BIOs, and the struct itself; whole-object destruction interface.",
       "cfr": {

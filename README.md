@@ -2,14 +2,14 @@
 
 **Neuro-Symbolic Augmented Fine-Grained Pointer Analysis**
 
-NSPA provides a C/C++ project scanner for constructing Candidate Function Records (CFRs), conservatively filtering potential custom memory allocation, release, and destruction functions, and exporting lightweight JSONL files that can be passed to an LLM for semantic validation.
+NSPA provides a C/C++ project scanner for constructing Candidate Function Records (CFRs), conservatively filtering potential custom memory allocation and release functions, and exporting lightweight JSONL files that can be passed to an LLM for semantic validation.
 
 ![NSPA security overview](docs/images/nspa-homepage.png)
 
 The workflow consists of three stages:
 
 1. **Custom memory-function candidate detection**
-   Detect candidate allocation, release, and destruction interfaces from C/C++ projects.
+   Detect candidate allocation and release interfaces from C/C++ projects.
 
 2. **Fine-grained reachability analysis**
    Inject validated custom memory functions into SVF/Saber and run enhanced static checks on LLVM bitcode.
@@ -52,7 +52,7 @@ There are two filtering thresholds:
 
 ### Step 2: CFR Semantic Validation
 
-Step 2 reads the JSONL file generated in Step 1 and invokes an OpenAI-compatible LLM API for semantic validation. By default, it only retains functions that are finally identified as custom allocation, release, or destruction interfaces.
+Step 2 reads the JSONL file generated in Step 1 and invokes an OpenAI-compatible LLM API for semantic validation. By default, it only retains functions that are finally identified as custom allocation or release interfaces.
 
 ```bash
 export OPENAI_API_KEY="your API key"
@@ -102,7 +102,7 @@ Stage 2 integrates the LLM-validated custom memory management functions into SVF
 
 ### Step 1: Inject Custom Memory Functions
 
-The script reads `outputs/nspa_curl_validated_memory_functions.json`, filters `allocator/releaser/destroyer` entries, skips function-like macros, and inserts the results into `ei_pairs[]` in `SVF/svf/lib/SABER/SaberCheckerAPI.cpp`. `allocator` is mapped to `CK_ALLOC`, while `releaser/destroyer` is mapped to `CK_FREE`. The insertion preserves the type grouping required by Saber to avoid triggering `ei_pairs not grouped by type`.
+The script reads `outputs/nspa_curl_validated_memory_functions.json`, filters `allocator/releaser` entries, skips function-like macros, and inserts the results into `ei_pairs[]` in `SVF/svf/lib/SABER/SaberCheckerAPI.cpp`. `allocator` is mapped to `CK_ALLOC`, while `releaser` is mapped to `CK_FREE`. The insertion preserves the type grouping required by Saber to avoid triggering `ei_pairs not grouped by type`.
 
 Update only the Saber source code without compiling or running Saber:
 

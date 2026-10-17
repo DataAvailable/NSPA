@@ -271,7 +271,7 @@
       "file": "ext/expert/sqlite3expert.c",
       "name": "sqlite3_expert_destroy",
       "signature": "void sqlite3_expert_destroy(sqlite3expert *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "ends lifetime of whole expert object, frees nested resources",
       "cfr": {
@@ -795,7 +795,7 @@
       "file": "ext/fts3/fts3_write.c",
       "name": "fts3NodeFree",
       "signature": "static void fts3NodeFree(SegmentNode *pTree)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "recursively frees whole segment tree object",
       "cfr": {
@@ -1273,7 +1273,7 @@
       "file": "ext/intck/sqlite3intck.c",
       "name": "sqlite3_intck_close",
       "signature": "void sqlite3_intck_close(sqlite3_intck *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "frees the whole integrity-check object",
       "cfr": {
@@ -1960,7 +1960,7 @@
       "file": "ext/jni/src/c/sqlite3-jni.c",
       "name": "S3JniUdf_free",
       "signature": "static void S3JniUdf_free(JNIEnv * const env, S3JniUdf * const s, int cacheIt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees all resources owned by s, clears state, then caches or frees the object",
       "cfr": {
@@ -2051,7 +2051,7 @@
       "file": "ext/jni/src/c/sqlite3-jni.c",
       "name": "Fts5JniAux_free",
       "signature": "static void Fts5JniAux_free(Fts5JniAux * const s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees all resources owned by s including nested refs, then frees the object",
       "cfr": {
@@ -2362,7 +2362,7 @@
       "file": "ext/misc/decimal.c",
       "name": "decimal_free",
       "signature": "static void decimal_free(Decimal *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole Decimal object, clearing fields then freeing it.",
       "cfr": {
@@ -2535,7 +2535,7 @@
       "file": "ext/misc/regexp.c",
       "name": "re_free",
       "signature": "static void re_free(ReCompiled *pRe)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees an entire compiled regex object, ending its lifetime.",
       "cfr": {
@@ -2572,7 +2572,7 @@
       "file": "ext/misc/regexp.c",
       "name": "re_free_voidptr",
       "signature": "static void re_free_voidptr(void *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "void* wrapper that destroys the ReCompiled object via re_free.",
       "cfr": {
@@ -3150,7 +3150,7 @@
       "file": "ext/rbu/sqlite3rbu.c",
       "name": "sqlite3rbu_close",
       "signature": "int sqlite3rbu_close(sqlite3rbu *p, char **pzErrmsg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Closes and frees the whole sqlite3rbu handle and its nested resources.",
       "cfr": {
@@ -3197,7 +3197,7 @@
       "file": "ext/rbu/sqlite3rbu.c",
       "name": "sqlite3rbu_destroy_vfs",
       "signature": "void sqlite3rbu_destroy_vfs(const char *zName)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Deregisters and destroys an RBU VFS object including its mutex and memory.",
       "cfr": {
@@ -3281,7 +3281,7 @@
       "file": "ext/rbu/sqlite3rbu.h",
       "name": "sqlite3rbu_close",
       "signature": "SQLITE_API int sqlite3rbu_close(sqlite3rbu *pRbu, char **pzErrmsg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "closes/ends lifetime of rbu handle object",
       "cfr": {
@@ -3316,7 +3316,7 @@
       "file": "ext/rbu/sqlite3rbu.h",
       "name": "sqlite3rbu_destroy_vfs",
       "signature": "SQLITE_API void sqlite3rbu_destroy_vfs(const char *zName)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "deregisters and destroys VFS object",
       "cfr": {
@@ -3633,7 +3633,7 @@
       "file": "ext/session/sqlite3session.c",
       "name": "sqlite3session_delete",
       "signature": "void sqlite3session_delete(sqlite3_session *pSession)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "deletes whole session object releasing nested memory",
       "cfr": {
@@ -3868,7 +3868,7 @@
       "file": "ext/session/sqlite3session.c",
       "name": "sqlite3changegroup_delete",
       "signature": "void sqlite3changegroup_delete(sqlite3_changegroup *pGrp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Deletes whole changegroup object, frees nested tables and the object itself",
       "cfr": {
@@ -3943,7 +3943,7 @@
       "file": "ext/session/sqlite3session.c",
       "name": "sqlite3rebaser_delete",
       "signature": "void sqlite3rebaser_delete(sqlite3_rebaser *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole rebaser object and associated resources",
       "cfr": {
@@ -3981,7 +3981,7 @@
       "file": "ext/session/sqlite3session.h",
       "name": "sqlite3session_delete",
       "signature": "void sqlite3session_delete(sqlite3_session *pSession)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Deletes whole session object, ending its lifetime",
       "cfr": {
@@ -4047,7 +4047,7 @@
       "file": "ext/session/sqlite3session.h",
       "name": "sqlite3changegroup_delete",
       "signature": "void sqlite3changegroup_delete(sqlite3_changegroup*)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Documented destructor for changegroup object",
       "cfr": {
@@ -4113,7 +4113,7 @@
       "file": "ext/session/sqlite3session.h",
       "name": "sqlite3rebaser_delete",
       "signature": "void sqlite3rebaser_delete(sqlite3_rebaser *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Deletes rebaser object and all associated resources",
       "cfr": {
@@ -5518,7 +5518,7 @@
       "file": "src/printf.c",
       "name": "sqlite3_str_free",
       "signature": "void sqlite3_str_free(sqlite3_str *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "Destroys whole str object and all its content in one call",
       "cfr": {
@@ -7469,7 +7469,7 @@
       "file": "tool/lemon.c",
       "name": "acttab_free",
       "signature": "void acttab_free(acttab *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees whole acttab object and its nested memory",
       "cfr": {

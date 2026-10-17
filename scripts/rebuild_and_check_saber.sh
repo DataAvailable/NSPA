@@ -73,10 +73,12 @@ for fn in data.get("functions", []):
     entity = fn.get("cfr", {}).get("entity_kind", "")
     conf = float(fn.get("confidence", 0.0) or 0.0)
     cat = fn.get("category", "")
+    if cat == "destroyer":  # Compatibility with earlier validated results.
+        cat = "releaser"
 
     if not name or name in skip_names:
         continue
-    if cat not in {"allocator", "releaser", "destroyer"}:
+    if cat not in {"allocator", "releaser"}:
         continue
     if entity == "function_like_macro":
         continue

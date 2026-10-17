@@ -50,7 +50,7 @@
       "file": "alias.c",
       "name": "delete_all_aliases",
       "signature": "void delete_all_aliases ()",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Disposes the entire alias hash table, ending lifetime of the whole container.",
       "cfr": {
@@ -121,7 +121,7 @@
       "file": "array.c",
       "name": "array_dispose",
       "signature": "void array_dispose(a) ARRAY *a;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of the whole ARRAY object, flushing and freeing nested elements.",
       "cfr": {
@@ -196,7 +196,7 @@
       "file": "assoc.c",
       "name": "assoc_dispose",
       "signature": "void assoc_dispose (hash) HASH_TABLE *hash;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends lifetime of whole hash table via hash_flush/hash_dispose.",
       "cfr": {
@@ -447,7 +447,7 @@
       "file": "builtins/getopt.c",
       "name": "sh_getopt_dispose_istate",
       "signature": "void sh_getopt_dispose_istate (gs) sh_getopt_state_t *gs;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "disposes internal getopt state object, likely releasing nested fields",
       "cfr": {
@@ -481,7 +481,7 @@
       "file": "builtins/mkbuiltins.c",
       "name": "array_free",
       "signature": "void array_free (array) ARRAY *array;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "frees ARRAY container including its element storage",
       "cfr": {
@@ -550,7 +550,7 @@
       "file": "builtins/mkbuiltins.c",
       "name": "free_builtin",
       "signature": "static void free_builtin (builtin) BUILTIN_DESC *builtin;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "destroys BUILTIN_DESC object, releasing nested fields via array_free/free_safely",
       "cfr": {
@@ -588,7 +588,7 @@
       "file": "builtins/mkbuiltins.c",
       "name": "free_defs",
       "signature": "void free_defs (defs) DEF_FILE *defs;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees DEF_FILE container and nested arrays/builtins, ending object lifetime.",
       "cfr": {
@@ -626,7 +626,7 @@
       "file": "dispose_cmd.c",
       "name": "dispose_command",
       "signature": "void dispose_command (command) COMMAND *command;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Disposes whole COMMAND structure with nested fields; object destruction interface.",
       "cfr": {
@@ -670,7 +670,7 @@
       "file": "dispose_cmd.c",
       "name": "dispose_cond_node",
       "signature": "void dispose_cond_node (cond) COND_COM *cond;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Recursively frees conditional command node and nested members; destroys object.",
       "cfr": {
@@ -746,7 +746,7 @@
       "file": "dispose_cmd.c",
       "name": "dispose_function_def",
       "signature": "void dispose_function_def (c) FUNCTION_DEF *c;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of FUNCTION_DEF object, freeing nested contents then the struct.",
       "cfr": {
@@ -783,7 +783,7 @@
       "file": "dispose_cmd.c",
       "name": "dispose_word",
       "signature": "void dispose_word (w) WORD_DESC *w;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys a WORD_DESC including its contained word, ending object lifetime.",
       "cfr": {
@@ -856,7 +856,7 @@
       "file": "dispose_cmd.c",
       "name": "dispose_words",
       "signature": "void dispose_words (list) WORD_LIST *list;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys a whole WORD_LIST container, freeing each node and its words.",
       "cfr": {
@@ -929,7 +929,7 @@
       "file": "dispose_cmd.c",
       "name": "dispose_redirects",
       "signature": "void dispose_redirects (list) REDIRECT *list;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Walks and ends lifetime of a whole REDIRECT list, releasing nested members via dispose_word/free.",
       "cfr": {
@@ -967,7 +967,7 @@
       "file": "execute_cmd.c",
       "name": "dispose_fd_bitmap",
       "signature": "void dispose_fd_bitmap (fdbp) struct fd_bitmap *fdbp;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees fd_bitmap struct and its nested bitmap, ending the whole object's lifetime",
       "cfr": {
@@ -1138,7 +1138,7 @@
       "file": "execute_cmd.c",
       "name": "coproc_dispose",
       "signature": "void coproc_dispose (cp) struct coproc *cp;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "ends coproc lifetime: closes, unsets vars, frees nested members",
       "cfr": {
@@ -1319,7 +1319,7 @@
       "file": "hashlib.c",
       "name": "hash_dispose",
       "signature": "void hash_dispose (table) HASH_TABLE *table;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of entire hash table including nested memory",
       "cfr": {
@@ -1392,7 +1392,7 @@
       "file": "include/ocache.h",
       "name": "ocache_destroy",
       "signature": "#define ocache_destroy(c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Tears down whole object cache: frees data, resets fields",
       "cfr": {
@@ -1505,7 +1505,7 @@
       "file": "input.c",
       "name": "free_buffered_stream",
       "signature": "void free_buffered_stream (bp) BUFFERED_STREAM *bp;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Deallocates whole buffered stream object and clears its slot",
       "cfr": {
@@ -1643,7 +1643,7 @@
       "file": "jobs.c",
       "name": "delete_old_job",
       "signature": "static void delete_old_job (pid) pid_t pid;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "Finds and deletes a whole job by pid, delegating to delete_job; ends a job object's lifetime.",
       "cfr": {
@@ -1683,7 +1683,7 @@
       "file": "jobs.c",
       "name": "delete_job",
       "signature": "void delete_job (job_index, dflags) int job_index, dflags;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Deletes a job at index, disposing its pipeline and command and freeing nested members; ends whole job lifetime.",
       "cfr": {
@@ -1732,7 +1732,7 @@
       "file": "jobs.c",
       "name": "discard_pipeline",
       "signature": "int discard_pipeline (chain) register PROCESS *chain;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Tears down an entire process chain data structure, freeing all nested members.",
       "cfr": {
@@ -2894,7 +2894,7 @@
       "file": "lib/readline/isearch.c",
       "name": "_rl_scxt_dispose",
       "signature": "void _rl_scxt_dispose (_rl_search_cxt *cxt, int flags)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Disposes whole search context object, freeing it and nested memory",
       "cfr": {
@@ -2966,7 +2966,7 @@
       "file": "lib/readline/keymaps.c",
       "name": "rl_discard_keymap",
       "signature": "void rl_discard_keymap (Keymap map)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Recursively frees nested keymap storage, ending the object's lifetime.",
       "cfr": {
@@ -3003,7 +3003,7 @@
       "file": "lib/readline/keymaps.c",
       "name": "rl_free_keymap",
       "signature": "void rl_free_keymap (Keymap map)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Discards then frees the whole keymap object including nested storage.",
       "cfr": {
@@ -3040,7 +3040,7 @@
       "file": "lib/readline/misc.c",
       "name": "_rl_free_history_entry",
       "signature": "void _rl_free_history_entry (HIST_ENTRY *entry)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees contents and the containing HIST_ENTRY structure, ending the whole object's lifetime",
       "cfr": {
@@ -3483,7 +3483,7 @@
       "file": "lib/readline/undo.c",
       "name": "_rl_free_undo_list",
       "signature": "void _rl_free_undo_list (UNDO_LIST *ul)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "frees an entire undo list including nested entries, object destruction interface",
       "cfr": {
@@ -3669,7 +3669,7 @@
       "file": "lib/readline/vi_mode.c",
       "name": "_rl_mvcxt_dispose",
       "signature": "static void _rl_mvcxt_dispose (_rl_vimotion_cxt *m)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Disposes whole motion context object, freeing it via xfree",
       "cfr": {
@@ -3807,7 +3807,7 @@
       "file": "lib/sh/stringlist.c",
       "name": "strlist_dispose",
       "signature": "void strlist_dispose (sl) STRINGLIST *sl;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends lifetime of whole STRINGLIST object, freeing nested vector and the struct",
       "cfr": {
@@ -4104,7 +4104,7 @@
       "file": "mailcheck.c",
       "name": "dispose_mail_file",
       "signature": "static void dispose_mail_file (mf) FILEINFO *mf;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees a FILEINFO object and its fields, ending the object's lifetime",
       "cfr": {
@@ -4353,7 +4353,7 @@
       "file": "pcomplib.c",
       "name": "compspec_dispose",
       "signature": "void compspec_dispose (cs) COMPSPEC *cs;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of a whole COMPSPEC object, freeing nested members",
       "cfr": {
@@ -4425,7 +4425,7 @@
       "file": "pcomplib.c",
       "name": "progcomp_dispose",
       "signature": "void progcomp_dispose ()",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Disposes the whole prog completion container via hash_dispose",
       "cfr": {
@@ -4794,7 +4794,7 @@
       "file": "support/man2html.c",
       "name": "clear_table",
       "signature": "static void clear_table(TABLEROW * table)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "frees table rows/nested memory, ending the container's lifetime",
       "cfr": {
@@ -5055,7 +5055,7 @@
       "file": "variables.c",
       "name": "dispose_variable",
       "signature": "void dispose_variable (var) SHELL_VAR *var;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of a SHELL_VAR object, freeing its nested value/exportstr fields",
       "cfr": {
@@ -5169,7 +5169,7 @@
       "file": "variables.c",
       "name": "delete_all_variables",
       "signature": "void delete_all_variables (hashed_vars) HASH_TABLE *hashed_vars;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Flushes entire hash table contents, ending lifetime of all contained variables",
       "cfr": {
@@ -5317,7 +5317,7 @@
       "file": "variables.c",
       "name": "dispose_var_context",
       "signature": "void dispose_var_context (vc) VAR_CONTEXT *vc;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of whole VAR_CONTEXT object including hash table and nested variables",
       "cfr": {
@@ -5358,7 +5358,7 @@
       "file": "variables.c",
       "name": "delete_all_contexts",
       "signature": "void delete_all_contexts (vcxt) VAR_CONTEXT *vcxt;",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys all VAR_CONTEXT objects and their hash tables in a chain",
       "cfr": {

@@ -367,7 +367,7 @@
       "file": "src/alloc.c",
       "name": "free_all_mem",
       "signature": "void free_all_mem(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Tears down all of Vim's global state by freeing every subsystem's memory. This is a whole-program destruction sweep, not a simple free wrapper.",
       "cfr": {
@@ -540,7 +540,7 @@
       "file": "src/alloc.c",
       "name": "ga_clear",
       "signature": "void ga_clear(garray_T *gap)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the internal buffer of a garray_T and resets it to an empty state; destroys the contents of the container without freeing the container struct itself.",
       "cfr": {
@@ -617,7 +617,7 @@
       "file": "src/arglist.c",
       "name": "alist_clear",
       "signature": "void alist_clear(alist_T *al)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees all file names within the argument list and resets it to zero entries; destroys the contents of the alist_T object.",
       "cfr": {
@@ -845,7 +845,7 @@
       "file": "src/autocmd.c",
       "name": "free_all_autocmds",
       "signature": "void free_all_autocmds(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees all autocmd groups and patterns globally; destroys the entire autocmd subsystem's allocated state.",
       "cfr": {
@@ -1095,7 +1095,7 @@
       "file": "src/blob.c",
       "name": "blob_free",
       "signature": "void blob_free(blob_T *b)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the blob's internal storage (ga_clear) and the blob struct itself (vim_free); ends the lifetime of the whole blob object.",
       "cfr": {
@@ -1132,7 +1132,7 @@
       "file": "src/blob.c",
       "name": "blob_unref",
       "signature": "void blob_unref(blob_T *b)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Decrements reference count and calls blob_free when it reaches zero; ends the blob object's lifetime via reference-counted destruction.",
       "cfr": {
@@ -1223,7 +1223,7 @@
       "file": "src/buffer.c",
       "name": "free_buffer",
       "signature": "static void free_buffer(buf_T *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Frees the buffer struct and all its owned resources including scripting bindings; documentation confirms it frees 'a buffer structure and the things it contains'.",
       "cfr": {
@@ -1365,7 +1365,7 @@
       "file": "src/buffer.c",
       "name": "free_wininfo",
       "signature": "void free_wininfo(wininfo_T *wip)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees a wininfo_T struct and all its contents (fold records, win options, the struct itself); ends the lifetime of the whole wininfo object.",
       "cfr": {
@@ -1788,7 +1788,7 @@
       "file": "src/channel.c",
       "name": "channel_free_channel",
       "signature": "static void channel_free_channel(channel_T *channel)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Unlinks the channel from the global list and frees the channel_T struct itself; ends the object's lifetime entirely.",
       "cfr": {
@@ -1825,7 +1825,7 @@
       "file": "src/channel.c",
       "name": "channel_free",
       "signature": "static void channel_free(channel_T *channel)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Calls both channel_free_contents and channel_free_channel, fully tearing down and deallocating the channel object.",
       "cfr": {
@@ -1862,7 +1862,7 @@
       "file": "src/channel.c",
       "name": "channel_may_free",
       "signature": "static int channel_may_free(channel_T *channel)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Conditionally destroys the full channel (calls channel_free) when no further use is possible; interface is object destruction gated on a condition.",
       "cfr": {
@@ -1900,7 +1900,7 @@
       "file": "src/channel.c",
       "name": "channel_unref",
       "signature": "int channel_unref(channel_T *channel)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Reference-counting destructor: decrements refcount and triggers full channel destruction via channel_may_free when it reaches zero.",
       "cfr": {
@@ -2482,7 +2482,7 @@
       "file": "src/clipboard.c",
       "name": "clip_wl_destroy_buffer_store",
       "signature": "static void clip_wl_destroy_buffer_store(clip_wl_buffer_store_T *store)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Destroys a buffer store object including nested Wayland resources and frees the struct itself; whole-object destruction interface.",
       "cfr": {
@@ -2567,7 +2567,7 @@
       "file": "src/clipboard.c",
       "name": "clip_wl_destroy_fs_surface",
       "signature": "static void clip_wl_destroy_fs_surface(clip_wl_fs_surface_T *store)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Destroys a focus-stealing surface object including nested Wayland keyboard/surface/xdg resources and frees the struct; whole-object destruction.",
       "cfr": {
@@ -2871,7 +2871,7 @@
       "file": "src/crypt.c",
       "name": "crypt_free_state",
       "signature": "void crypt_free_state(cryptstate_T *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the entire cryptstate object including its internal sodium/memory resources; destroys the whole object rather than just one field.",
       "cfr": {
@@ -3350,7 +3350,7 @@
       "file": "src/dict.c",
       "name": "dict_free",
       "signature": "static void dict_free(dict_T *d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys a complete dict_T by calling both dict_free_contents and dict_free_dict — full object lifetime end.",
       "cfr": {
@@ -3387,7 +3387,7 @@
       "file": "src/dict.c",
       "name": "dict_unref",
       "signature": "void dict_unref(dict_T *d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Reference-counted destruction: decrements refcount and calls dict_free when it reaches zero — the public object-lifetime interface.",
       "cfr": {
@@ -3502,7 +3502,7 @@
       "file": "src/dict.c",
       "name": "dictitem_free",
       "signature": "void dictitem_free(dictitem_T *item)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Clears the item's value (clear_tv) then frees the struct (vim_free) — full lifetime end of a dictitem_T.",
       "cfr": {
@@ -4396,7 +4396,7 @@
       "file": "src/eval.c",
       "name": "free_for_info",
       "signature": "void free_for_info(void *fi_void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the entire for-loop info structure including nested refs (list, blob, tuple); destroys the whole object.",
       "cfr": {
@@ -4437,7 +4437,7 @@
       "file": "src/eval.c",
       "name": "partial_free",
       "signature": "static void partial_free(partial_T *pt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Releases all fields of a partial_T and the object itself; full object destruction.",
       "cfr": {
@@ -4481,7 +4481,7 @@
       "file": "src/eval.c",
       "name": "partial_unref",
       "signature": "void partial_unref(partial_T *pt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Decrements refcount and calls partial_free when zero; reference-counted object destruction interface.",
       "cfr": {
@@ -5260,7 +5260,7 @@
       "file": "src/evalvars.c",
       "name": "evalvars_clear",
       "signature": "void evalvars_clear(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees all vim variables on exit — ends the lifetime of the global variables subsystem including nested structures; scope is whole-subsystem destruction rather than a simple free wrapper.",
       "cfr": {
@@ -5462,7 +5462,7 @@
       "file": "src/evalvars.c",
       "name": "vars_clear_ext",
       "signature": "void vars_clear_ext(hashtab_T *ht, int free_val)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Clears all variables in a hashtab, freeing values and reinitializing the table — whole container destruction, not a simple free wrapper.",
       "cfr": {
@@ -6014,9 +6014,9 @@
       "file": "src/ex_eval.c",
       "name": "free_msglist",
       "signature": "static void free_msglist(msglist_T *l)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
-      "reason": "Documented to free a msglist and all messages it contains — destroys the whole linked structure, fitting destroyer over simple releaser.",
+      "reason": "Documented to free a msglist and all messages it contains — destroys the whole linked structure, fitting the releaser category.",
       "cfr": {
         "project": "vim",
         "file": "src/ex_eval.c",
@@ -7147,7 +7147,7 @@
       "file": "src/findfile.c",
       "name": "ff_free_stack_element",
       "signature": "static void ff_free_stack_element(ff_stack_T *stack_ptr)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees all fields inside an ff_stack_T (wildcard array via FreeWild, strings via VIM_CLEAR_STRING/vim_free) and then frees the element itself — full object destruction.",
       "cfr": {
@@ -7812,7 +7812,7 @@
       "file": "src/gui_beval.c",
       "name": "gui_mch_destroy_beval_area",
       "signature": "void gui_mch_destroy_beval_area(BalloonEval *beval)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Destroys a BalloonEval object including its widgets and frees associated memory; interface is whole-object destruction.",
       "cfr": {
@@ -7853,7 +7853,7 @@
       "file": "src/gui_gtk.c",
       "name": "gui_mch_destroy_menu",
       "signature": "void gui_mch_destroy_menu(vimmenu_T *menu)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys the GTK widget associated with a menu item via gtk_widget_destroy; whole-object destruction interface.",
       "cfr": {
@@ -8367,7 +8367,7 @@
       "file": "src/gui_haiku.cc",
       "name": "gui_mch_destroy_menu",
       "signature": "void gui_mch_destroy_menu( vimmenu_T *menu)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys the machine-specific menu widget object; documentation says 'destroy the machine specific menu widget'.",
       "cfr": {
@@ -8455,7 +8455,7 @@
       "file": "src/gui_motif.c",
       "name": "gui_mch_destroy_menu",
       "signature": "void gui_mch_destroy_menu(vimmenu_T *menu)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Destroys the menu widget via XtDestroyWidget and releases associated resources including beval area; whole-object destruction.",
       "cfr": {
@@ -8758,7 +8758,7 @@
       "file": "src/gui_w32.c",
       "name": "gui_mch_destroy_menu",
       "signature": "void gui_mch_destroy_menu(vimmenu_T *menu)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys the Win32 menu widget via DestroyMenu/DestroyWindow; whole-object destruction per documentation.",
       "cfr": {
@@ -8799,7 +8799,7 @@
       "file": "src/gui_w32.c",
       "name": "gui_mch_destroy_sign",
       "signature": "void gui_mch_destroy_sign(void *sign)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Closes sign icon image and frees the sign object via vim_free; ends lifetime of the sign object.",
       "cfr": {
@@ -8836,7 +8836,7 @@
       "file": "src/gui_w32.c",
       "name": "gui_mch_destroy_beval_area",
       "signature": "void gui_mch_destroy_beval_area(BalloonEval *beval)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys a BalloonEval area by freeing its internals via vim_free; name 'destroy' and object-pointer parameter indicate whole-object destruction rather than a simple free wrapper.",
       "cfr": {
@@ -9242,7 +9242,7 @@
       "file": "src/if_cscope.c",
       "name": "cs_release_csp",
       "signature": "static void cs_release_csp(int i, int freefnpp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Terminates a cscope process (kill/TerminateProcess), closes handles/files, and frees associated memory — full object lifetime end, not a simple free wrapper.",
       "cfr": {
@@ -10167,7 +10167,7 @@
       "file": "src/insexpand.c",
       "name": "ins_compl_item_free",
       "signature": "static void ins_compl_item_free(compl_T *match)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees all fields of a compl_T item (strings, typval) and the item itself; destroys the whole completion object, not just one field.",
       "cfr": {
@@ -10438,7 +10438,7 @@
       "file": "src/job.c",
       "name": "job_free",
       "signature": "static void job_free(job_T *job)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys a complete job object by calling both job_free_contents (fields) and job_free_job (struct); full object destruction interface.",
       "cfr": {
@@ -10509,7 +10509,7 @@
       "file": "src/job.c",
       "name": "job_free_all",
       "signature": "void job_free_all(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Tears down all jobs and terminals globally; high-level shutdown that destroys the entire job subsystem state.",
       "cfr": {
@@ -10872,7 +10872,7 @@
       "file": "src/libvterm/include/vterm.h",
       "name": "vterm_free",
       "signature": "void vterm_free(VTerm* vt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees the entire VTerm object and all its nested data; whole-object destruction interface.",
       "cfr": {
@@ -10948,7 +10948,7 @@
       "file": "src/libvterm/src/screen.c",
       "name": "vterm_screen_free",
       "signature": "INTERNAL void vterm_screen_free(VTermScreen *screen)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Frees the screen object and its nested buffers; whole-object destruction of VTermScreen.",
       "cfr": {
@@ -10984,7 +10984,7 @@
       "file": "src/libvterm/src/state.c",
       "name": "vterm_state_free",
       "signature": "INTERNAL void vterm_state_free(VTermState *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Frees the state object and its nested data; whole-object destruction of VTermState.",
       "cfr": {
@@ -11094,7 +11094,7 @@
       "file": "src/libvterm/src/vterm.c",
       "name": "vterm_free",
       "signature": "void vterm_free(VTerm *vt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees the whole VTerm object including screen, state, and allocator; whole-object destruction.",
       "cfr": {
@@ -11401,7 +11401,7 @@
       "file": "src/list.c",
       "name": "list_unref",
       "signature": "void list_unref(list_T *l)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Decrements refcount and frees the whole list when it hits zero; object lifetime management, not a simple free wrapper",
       "cfr": {
@@ -11584,7 +11584,7 @@
       "file": "src/list.c",
       "name": "list_free",
       "signature": "void list_free(list_T *l)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees both contents and the list struct itself; ends full object lifetime",
       "cfr": {
@@ -11942,7 +11942,7 @@
       "file": "src/map.c",
       "name": "map_free",
       "signature": "static void map_free(mapblock_T **mpp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Deletes a mapblock entry, freeing its fields via vim_free and unlinking it from the list; destroys a whole map object rather than a simple free.",
       "cfr": {
@@ -12214,7 +12214,7 @@
       "file": "src/match.c",
       "name": "match_delete",
       "signature": "static int match_delete(win_T *wp, int id, int perr)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Finds and destroys a specific match object by ID, freeing its memory and regex; destroys a whole match entry.",
       "cfr": {
@@ -12259,7 +12259,7 @@
       "file": "src/match.c",
       "name": "clear_matches",
       "signature": "void clear_matches(win_T *wp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.87,
       "reason": "Deletes all match objects in a window's match list, freeing each; destroys a collection of match objects.",
       "cfr": {
@@ -12687,7 +12687,7 @@
       "file": "src/memfile.c",
       "name": "mf_close",
       "signature": "void mf_close(memfile_T *mfp, int del_file)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of the whole memfile object: frees all blocks, hash structures, and the mfp itself; interface is object destruction not a simple free.",
       "cfr": {
@@ -13051,9 +13051,9 @@
       "file": "src/memfile.c",
       "name": "mf_hash_free_all",
       "signature": "static void mf_hash_free_all(mf_hashtab_T *mht)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
-      "reason": "Frees both the bucket array and all contained items — ends the lifetime of the hash table's full contents, making it a destroyer rather than a simple field releaser.",
+      "reason": "Frees both the bucket array and all contained items — ends the lifetime of the hash table's full contents, making it a releaser.",
       "cfr": {
         "project": "vim",
         "file": "src/memfile.c",
@@ -13090,7 +13090,7 @@
       "file": "src/memline.c",
       "name": "ml_close",
       "signature": "void ml_close(buf_T *buf, int del_file)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Closes and tears down the entire memline for a buffer, freeing nested memfile and associated memory — full object destruction, not a simple releaser.",
       "cfr": {
@@ -13131,7 +13131,7 @@
       "file": "src/memline.c",
       "name": "ml_close_all",
       "signature": "void ml_close_all(int del_file)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Closes all memlines/memfiles on exit, destroying all associated resources. Broader scope than a single releaser.",
       "cfr": {
@@ -13210,7 +13210,7 @@
       "file": "src/memline.c",
       "name": "ml_delete_int",
       "signature": "static int ml_delete_int(buf_T *buf, linenr_T lnum, int flags)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Deletes a line from the buffer, freeing its associated block memory and updating internal structures — destroys the line's lifetime including nested resources.",
       "cfr": {
@@ -13267,7 +13267,7 @@
       "file": "src/memline.c",
       "name": "ml_delete",
       "signature": "int ml_delete(linenr_T lnum)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Public interface to delete a line and release its storage; delegates to ml_delete_int which performs full destruction.",
       "cfr": {
@@ -13303,7 +13303,7 @@
       "file": "src/memline.c",
       "name": "ml_delete_flags",
       "signature": "int ml_delete_flags(linenr_T lnum, int flags)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Variant of ml_delete with flags; same destruction semantics via ml_delete_int.",
       "cfr": {
@@ -13677,7 +13677,7 @@
       "file": "src/menu.c",
       "name": "free_menu",
       "signature": "static void free_menu(vimmenu_T **menup)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the whole menu structure including nested strings and GUI resources, and removes it from the linked list — full object destruction.",
       "cfr": {
@@ -13839,7 +13839,7 @@
       "file": "src/menu.c",
       "name": "gui_destroy_tearoffs_recurse",
       "signature": "static void gui_destroy_tearoffs_recurse(vimmenu_T *menu)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Recursively destroys tearoff menu items; interface is object destruction of a subtree, not a simple free wrapper.",
       "cfr": {
@@ -15387,7 +15387,7 @@
       "file": "src/os_unix.c",
       "name": "mch_free_mem",
       "signature": "void mch_free_mem(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Releases multiple global/display resources (X display, widgets, clipboard, vim_free on globals) — whole-subsystem teardown, not a simple free wrapper.",
       "cfr": {
@@ -15672,7 +15672,7 @@
       "file": "src/os_unix.c",
       "name": "xsmp_close",
       "signature": "void xsmp_close(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Shuts down XSMP session management connection (SmcCloseConnection) and frees associated state — session subsystem teardown, not a simple memory releaser.",
       "cfr": {
@@ -16181,7 +16181,7 @@
       "file": "src/popupwin.c",
       "name": "popup_close_and_callback",
       "signature": "static void popup_close_and_callback(win_T *wp, typval_T *arg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Closes the popup window and invokes its close callback, freeing the callback; ends the lifetime of the whole popup object rather than freeing a single field.",
       "cfr": {
@@ -16225,9 +16225,9 @@
       "file": "src/popupwin.c",
       "name": "popup_free",
       "signature": "static void popup_free(win_T *wp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
-      "reason": "Frees the entire popup window object via win_free_popup; ends lifetime of the whole popup, fitting destroyer over simple releaser.",
+      "reason": "Frees the entire popup window object via win_free_popup; ends lifetime of the whole popup, fitting the releaser category.",
       "cfr": {
         "project": "vim",
         "file": "src/popupwin.c",
@@ -16452,7 +16452,7 @@
       "file": "src/quickfix.c",
       "name": "qf_free_lists",
       "signature": "static void qf_free_lists(qf_info_T *qi)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees all list stack items and then frees the qf_info_T struct itself (vim_free), ending the lifetime of the entire object.",
       "cfr": {
@@ -16490,7 +16490,7 @@
       "file": "src/quickfix.c",
       "name": "ll_free_all",
       "signature": "static void ll_free_all(qf_info_T **pqi)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Frees the entire location list stack via qf_free_lists and nulls the caller's pointer; destroys the whole object including nested resources.",
       "cfr": {
@@ -16530,7 +16530,7 @@
       "file": "src/quickfix.c",
       "name": "qf_free_all",
       "signature": "void qf_free_all(win_T *wp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees all quickfix and location lists for a window; ends the lifetime of all list stack objects associated with the window.",
       "cfr": {
@@ -16799,7 +16799,7 @@
       "signature": "static void qf_free_items(qf_list_T *qfl)",
       "category": "releaser",
       "confidence": 0.92,
-      "reason": "Frees all entries in a quickfix list passed by pointer; explicitly documented as not freeing the container itself, so it's a partial releaser not a destroyer.",
+      "reason": "Frees all entries in a quickfix list passed by pointer; explicitly documented as not freeing the container itself, so it's a partial releaser.",
       "cfr": {
         "project": "vim",
         "file": "src/quickfix.c",
@@ -16836,9 +16836,9 @@
       "file": "src/quickfix.c",
       "name": "qf_free",
       "signature": "static void qf_free(qf_list_T *qfl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
-      "reason": "Frees all entries plus associated context and title of the list — fully ends the lifetime of the qf_list_T's contents, making it a whole-object destroyer rather than a simple free wrapper.",
+      "reason": "Frees all entries plus associated context and title of the list — fully ends the lifetime of the qf_list_T's contents, making it a whole-object releaser rather than a simple free wrapper.",
       "cfr": {
         "project": "vim",
         "file": "src/quickfix.c",
@@ -17018,7 +17018,7 @@
       "file": "src/quickfix.c",
       "name": "qf_free_stack",
       "signature": "static void qf_free_stack(win_T *wp, qf_info_T *qi)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.87,
       "reason": "Frees the entire quickfix/location list stack including all nested lists and clears associated UI; ends the lifetime of the whole stack structure.",
       "cfr": {
@@ -17065,7 +17065,7 @@
       "file": "src/quickfix.c",
       "name": "free_quickfix",
       "signature": "void free_quickfix(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Frees all quickfix data globally (all tabs/windows) via qf_free_all and clears grow arrays; ends the lifetime of the entire quickfix subsystem state.",
       "cfr": {
@@ -17683,7 +17683,7 @@
       "file": "src/scriptfile.c",
       "name": "free_scriptnames",
       "signature": "void free_scriptnames(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees all script name entries including nested fields (imports, string options, vim_free); destroys the whole scriptnames collection.",
       "cfr": {
@@ -18025,7 +18025,7 @@
       "file": "src/sign.c",
       "name": "free_signs",
       "signature": "void free_signs(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees all globally defined signs via sign_undefine; tears down the entire sign subsystem rather than a single caller-passed object",
       "cfr": {
@@ -18057,7 +18057,7 @@
       "file": "src/sound.c",
       "name": "delete_sound_callback",
       "signature": "void delete_sound_callback(soundcb_T *soundcb)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Removes soundcb from the pending list and frees its internal fields and the structure itself; whole-object destruction",
       "cfr": {
@@ -18095,7 +18095,7 @@
       "file": "src/sound.c",
       "name": "sound_free",
       "signature": "void sound_free(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Tears down the entire sound subsystem: destroys context, frees all callbacks and global state",
       "cfr": {
@@ -18170,7 +18170,7 @@
       "file": "src/spell.c",
       "name": "slang_free",
       "signature": "void slang_free(slang_T *lp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees all contents of the slang_T (via slang_clear) then frees the structure itself; full object destruction",
       "cfr": {
@@ -18208,7 +18208,7 @@
       "file": "src/spell.c",
       "name": "spell_delete_wordlist",
       "signature": "void spell_delete_wordlist(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Clears the internal wordlist pointer and removes its .spl file; destroys the global wordlist resource",
       "cfr": {
@@ -18242,7 +18242,7 @@
       "file": "src/spell.c",
       "name": "spell_free_all",
       "signature": "void spell_free_all(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees all loaded spell languages and the wordlist; tears down the entire spell subsystem",
       "cfr": {
@@ -18314,7 +18314,7 @@
       "file": "src/spell.c",
       "name": "close_spellbuf",
       "signature": "void close_spellbuf(buf_T *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Closes the memory layer and frees the buf_T passed in; full object destruction paired with open_spellbuf",
       "cfr": {
@@ -18582,7 +18582,7 @@
       "file": "src/spellfile.c",
       "name": "spell_free_aff",
       "signature": "static void spell_free_aff(afffile_T *aff)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the entire afffile_T structure and its nested contents (hash table items, regex, etc.) — object destruction rather than a simple free wrapper",
       "cfr": {
@@ -20126,7 +20126,7 @@
       "file": "src/terminal.c",
       "name": "term_close_buffer",
       "signature": "static void term_close_buffer(buf_T *buf, buf_T *old_curbuf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Closes a terminal buffer and window, calling free_terminal to end the resource lifetime",
       "cfr": {
@@ -20287,7 +20287,7 @@
       "file": "src/terminal.c",
       "name": "free_terminal",
       "signature": "void free_terminal(buf_T *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends the terminal object lifetime, stops/unrefs job and frees everything it refers to",
       "cfr": {
@@ -20326,7 +20326,7 @@
       "file": "src/terminal.c",
       "name": "free_unused_terminals",
       "signature": "void free_unused_terminals(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys deferred terminal structures, freeing scrollback, vterm, and the structs themselves",
       "cfr": {
@@ -20363,7 +20363,7 @@
       "file": "src/terminal.c",
       "name": "cleanup_vterm",
       "signature": "static void cleanup_vterm(term_T *term)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Moves vterm contents to scrollback buffer then frees vterm — object teardown beyond a simple free wrapper",
       "cfr": {
@@ -20899,7 +20899,7 @@
       "file": "src/textprop.c",
       "name": "f_prop_type_delete",
       "signature": "void f_prop_type_delete(typval_T *argvars, typval_T *rettv UNUSED)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Removes a named property type from a hash table and frees it; destroys a named object by interface, not just a free wrapper",
       "cfr": {
@@ -21065,7 +21065,7 @@
       "file": "src/time.c",
       "name": "free_timer",
       "signature": "static void free_timer(timer_T *timer)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the timer object itself (vim_free) and its nested callback (free_callback); ends the lifetime of the whole timer_T object.",
       "cfr": {
@@ -21142,7 +21142,7 @@
       "file": "src/time.c",
       "name": "timer_free_all",
       "signature": "void timer_free_all(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Iterates and destroys all timers via free_timer; bulk destruction of all timer objects, not a simple free wrapper.",
       "cfr": {
@@ -21327,7 +21327,7 @@
       "file": "src/tuple.c",
       "name": "tuple_unref",
       "signature": "void tuple_unref(tuple_T *tuple)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Decrements refcount and calls tuple_free when zero; manages object lifetime via reference counting — object destruction interface.",
       "cfr": {
@@ -21512,7 +21512,7 @@
       "file": "src/tuple.c",
       "name": "tuple_free",
       "signature": "void tuple_free(tuple_T *tuple)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees both contents (tuple_free_contents) and the struct itself (tuple_free_list); ends the full lifetime of a tuple_T object.",
       "cfr": {
@@ -21760,7 +21760,7 @@
       "file": "src/typval.c",
       "name": "free_tv",
       "signature": "void free_tv(typval_T *varp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees the full typval_T including all nested references (blobs, dicts, lists, partials, etc.) and then the struct itself — object destruction, not a simple free wrapper.",
       "cfr": {
@@ -22195,7 +22195,7 @@
       "file": "src/undo.c",
       "name": "u_free_uhp",
       "signature": "static void u_free_uhp(u_header_T *uhp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees the uhp object and its entry list via u_freeentry/vim_free; destroys the whole undo header object.",
       "cfr": {
@@ -22365,7 +22365,7 @@
       "file": "src/undo.c",
       "name": "u_freeheader",
       "signature": "static void u_freeheader( buf_T *buf, u_header_T *uhp, u_header_T **uhpp) // if not NULL reset when freeing this header",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees a header and its entire entry list; documentation says 'uhp' is fully freed, making this object destruction.",
       "cfr": {
@@ -22404,7 +22404,7 @@
       "file": "src/undo.c",
       "name": "u_freebranch",
       "signature": "static void u_freebranch( buf_T *buf, u_header_T *uhp, u_header_T **uhpp) // if not NULL reset when freeing this header",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.87,
       "reason": "Recursively frees an alternate branch chain and all contained entries; destroys a subgraph of the undo tree.",
       "cfr": {
@@ -22444,7 +22444,7 @@
       "file": "src/undo.c",
       "name": "u_freeentries",
       "signature": "static void u_freeentries( buf_T *buf, u_header_T *uhp, u_header_T **uhpp) // if not NULL reset when freeing this header",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Documentation states uhp is invalid on return; frees all entries and the header itself — full object destruction.",
       "cfr": {
@@ -22483,7 +22483,7 @@
       "file": "src/undo.c",
       "name": "u_clearallandblockfree",
       "signature": "void u_clearallandblockfree(buf_T *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees all undo memory blocks for a buffer and invalidates its undo state; destroys the undo subsystem of the buffer.",
       "cfr": {
@@ -22743,7 +22743,7 @@
       "file": "src/userfunc.c",
       "name": "free_funccal",
       "signature": "static void free_funccal(funccall_T *fc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Documented as freeing 'fc' itself along with its contents (ga_clear, func_ptr_unref, vim_free); destroys the whole funccall object.",
       "cfr": {
@@ -22782,7 +22782,7 @@
       "file": "src/userfunc.c",
       "name": "free_funccal_contents",
       "signature": "static void free_funccal_contents(funccall_T *fc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Documented to free fc and everything it contains including nested vars and lists; full object destruction.",
       "cfr": {
@@ -22866,7 +22866,7 @@
       "file": "src/userfunc.c",
       "name": "funccal_unref",
       "signature": "static void funccal_unref(funccall_T *fc, ufunc_T *fp, int force)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Decrements refcount and frees the funccall_T when it reaches zero; manages object lifetime via reference counting.",
       "cfr": {
@@ -22986,7 +22986,7 @@
       "file": "src/userfunc.c",
       "name": "func_clear_free",
       "signature": "void func_clear_free(ufunc_T *fp, int force)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Combines func_clear and func_free to end the full lifetime of a function object including all nested resources; canonical destroy interface.",
       "cfr": {
@@ -23066,7 +23066,7 @@
       "file": "src/userfunc.c",
       "name": "free_all_functions",
       "signature": "void free_all_functions(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Destroys the entire global function table, freeing all functions and clearing the hashtable; ends lifetime of the whole functions container.",
       "cfr": {
@@ -23395,7 +23395,7 @@
       "file": "src/userfunc.c",
       "name": "func_unref",
       "signature": "void func_unref(char_u *name)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Decrements refcount by name and frees the function when it hits zero; manages object lifetime via reference counting.",
       "cfr": {
@@ -23436,7 +23436,7 @@
       "file": "src/userfunc.c",
       "name": "func_ptr_unref",
       "signature": "void func_ptr_unref(ufunc_T *fp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Decrements refcount of ufunc_T and calls func_clear_free when zero; reference-counted destruction interface for the whole function object.",
       "cfr": {
@@ -24141,7 +24141,7 @@
       "file": "src/vim9class.c",
       "name": "class_free",
       "signature": "static void class_free(class_T *cl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees an entire class_T and all its contents (methods, members, type lists, strings) — whole-object destruction, not a simple free wrapper",
       "cfr": {
@@ -24338,7 +24338,7 @@
       "file": "src/vim9class.c",
       "name": "object_free",
       "signature": "static void object_free(object_T *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Combines object_free_contents and object_free_object to fully destroy an object — whole-object destruction interface",
       "cfr": {
@@ -25729,7 +25729,7 @@
       "file": "src/wayland.c",
       "name": "vwl_seat_destroy",
       "signature": "static void vwl_seat_destroy(vwl_seat_T *self)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of a vwl_seat_T object, releasing its wayland proxy and freeing the struct; object destruction interface.",
       "cfr": {
@@ -25769,7 +25769,7 @@
       "file": "src/wayland.c",
       "name": "vwl_connection_destroy",
       "signature": "static void vwl_connection_destroy(vwl_connection_T *self)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Disconnects display and frees all resources including nested objects (seats, globals); whole-object destruction interface per documentation.",
       "cfr": {
@@ -25852,7 +25852,7 @@
       "file": "src/wayland.c",
       "name": "VWL_FUNC_DATA_PROXY_DESTROY",
       "signature": "#define VWL_FUNC_DATA_PROXY_DESTROY(type)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Macro that expands to a destroy function: releases the wayland proxy and frees the struct; whole-object destruction pattern.",
       "cfr": {
@@ -25890,7 +25890,7 @@
       "file": "src/wayland.c",
       "name": "VWL_FUNC_DATA_PROXY_DESTROY",
       "signature": "VWL_FUNC_DATA_PROXY_DESTROY(device) VWL_FUNC_DATA_PROXY_DESTROY(source) void vwl_data_offer_destroy(vwl_data_offer_T *self)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "vwl_data_offer_destroy ends the lifetime of a data offer object, releasing its proxy and clearing string arrays; object destruction interface.",
       "cfr": {
@@ -26306,7 +26306,7 @@
       "file": "src/window.c",
       "name": "win_free_mem",
       "signature": "static win_T * win_free_mem( win_T *win, int *dirp, // set to 'v' or 'h' for direction if 'ea' tabpage_T *tp) // tab page \"win\" is in, NULL for current",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends the lifetime of a whole window object by calling win_free; return value is the adjacent window that gained space, not a new allocation",
       "cfr": {
@@ -26348,7 +26348,7 @@
       "file": "src/window.c",
       "name": "win_free_all",
       "signature": "void win_free_all(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Iterates and destroys all windows/tabpages; object-destruction interface rather than a simple free wrapper",
       "cfr": {
@@ -26571,7 +26571,7 @@
       "file": "src/window.c",
       "name": "free_tabpage",
       "signature": "void free_tabpage(tabpage_T *tp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Releases all nested resources of a tabpage (vars, diffs, snapshots, scripting refs) then frees the struct itself; full object destruction",
       "cfr": {
@@ -26665,7 +26665,7 @@
       "file": "src/window.c",
       "name": "win_free",
       "signature": "static void win_free( win_T *wp, tabpage_T *tp) // tab page \"win\" is in, NULL for current",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Releases all nested resources of a window (jumplist, folds, options, scripting refs, lsize) and frees the struct; full object destruction",
       "cfr": {
@@ -26733,7 +26733,7 @@
       "file": "src/window.c",
       "name": "win_free_popup",
       "signature": "void win_free_popup(win_T *win)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Closes buffer and frees all popup window resources via win_free; full object destruction for popup windows",
       "cfr": {

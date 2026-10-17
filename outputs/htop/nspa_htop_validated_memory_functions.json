@@ -50,7 +50,7 @@
       "file": "Affinity.c",
       "name": "Affinity_delete",
       "signature": "void Affinity_delete(Affinity* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends lifetime of the whole Affinity object passed in, freeing it and its fields",
       "cfr": {
@@ -85,7 +85,7 @@
       "file": "AffinityPanel.c",
       "name": "MaskItem_delete",
       "signature": "static void MaskItem_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Object destructor that ends the MaskItem lifetime, releasing nested resources (Vector_delete, hwloc_bitmap_free) before freeing",
       "cfr": {
@@ -126,7 +126,7 @@
       "file": "AffinityPanel.c",
       "name": "AffinityPanel_delete",
       "signature": "static void AffinityPanel_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of whole panel object, releasing nested members (MaskItem_delete, Vector_delete, Panel_done, hwloc_bitmap_free) plus free of the object itself",
       "cfr": {
@@ -225,7 +225,7 @@
       "file": "AvailableColumnsPanel.c",
       "name": "AvailableColumnsPanel_delete",
       "signature": "static void AvailableColumnsPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Object destruction interface taking Object*; tears down panel via Panel_done and frees the object",
       "cfr": {
@@ -306,7 +306,7 @@
       "file": "AvailableMetersPanel.c",
       "name": "AvailableMetersPanel_delete",
       "signature": "static void AvailableMetersPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends Panel object lifetime via Panel_done then frees object",
       "cfr": {
@@ -394,7 +394,7 @@
       "file": "BacktraceScreen.c",
       "name": "BacktraceFrameData_delete",
       "signature": "void BacktraceFrameData_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys frame data object, frees nested fields and object itself",
       "cfr": {
@@ -474,7 +474,7 @@
       "file": "BacktraceScreen.c",
       "name": "BacktracePanel_delete",
       "signature": "void BacktracePanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys panel, releasing nested Panel and Vector resources",
       "cfr": {
@@ -512,7 +512,7 @@
       "file": "BacktraceScreen.c",
       "name": "BacktracePanelRow_delete",
       "signature": "void BacktracePanelRow_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys row object, releasing nested frame data and itself",
       "cfr": {
@@ -589,7 +589,7 @@
       "file": "CategoriesPanel.c",
       "name": "CategoriesPanel_delete",
       "signature": "static void CategoriesPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys panel via Panel_done then frees object",
       "cfr": {
@@ -675,7 +675,7 @@
       "file": "ColorsPanel.c",
       "name": "ColorsPanel_delete",
       "signature": "static void ColorsPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys panel via Panel_done then frees object",
       "cfr": {
@@ -760,7 +760,7 @@
       "file": "ColumnsPanel.c",
       "name": "ColumnsPanel_delete",
       "signature": "static void ColumnsPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys panel via Panel_done then frees object",
       "cfr": {
@@ -842,7 +842,7 @@
       "file": "CommandScreen.c",
       "name": "CommandScreen_delete",
       "signature": "void CommandScreen_delete(Object* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys screen via InfoScreen_done then frees object",
       "cfr": {
@@ -916,7 +916,7 @@
       "file": "DisplayOptionsPanel.c",
       "name": "DisplayOptionsPanel_delete",
       "signature": "static void DisplayOptionsPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys panel, releasing FunctionBar and Panel internals then frees object",
       "cfr": {
@@ -1037,7 +1037,7 @@
       "file": "DynamicColumn.c",
       "name": "DynamicColumns_delete",
       "signature": "void DynamicColumns_delete(Hashtable* dynamics)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys the dynamic columns Hashtable container",
       "cfr": {
@@ -1108,7 +1108,7 @@
       "file": "DynamicMeter.c",
       "name": "DynamicMeters_delete",
       "signature": "void DynamicMeters_delete(Hashtable* dynamics)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys the dynamic meters Hashtable container",
       "cfr": {
@@ -1145,7 +1145,7 @@
       "file": "DynamicScreen.c",
       "name": "DynamicScreens_delete",
       "signature": "void DynamicScreens_delete(Hashtable* screens)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys the dynamic screens Hashtable container",
       "cfr": {
@@ -1255,7 +1255,7 @@
       "file": "EnvScreen.c",
       "name": "EnvScreen_delete",
       "signature": "void EnvScreen_delete(Object* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys screen via InfoScreen_done then frees object",
       "cfr": {
@@ -1332,7 +1332,7 @@
       "file": "FunctionBar.c",
       "name": "FunctionBar_delete",
       "signature": "void FunctionBar_delete(FunctionBar* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of whole FunctionBar object including frees; object destruction interface.",
       "cfr": {
@@ -1409,7 +1409,7 @@
       "file": "Hashtable.c",
       "name": "Hashtable_delete",
       "signature": "void Hashtable_delete(Hashtable* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Clears contents and frees the whole Hashtable; object destruction interface.",
       "cfr": {
@@ -1569,7 +1569,7 @@
       "file": "Header.c",
       "name": "Header_delete",
       "signature": "void Header_delete(Header* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Header, releasing nested Vectors then freeing object.",
       "cfr": {
@@ -1608,7 +1608,7 @@
       "file": "HeaderOptionsPanel.c",
       "name": "HeaderOptionsPanel_delete",
       "signature": "static void HeaderOptionsPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Panel destructor finalizing and freeing the whole object.",
       "cfr": {
@@ -1730,7 +1730,7 @@
       "file": "History.c",
       "name": "History_delete",
       "signature": "void History_delete(History* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of whole History object via free; destruction interface.",
       "cfr": {
@@ -1803,7 +1803,7 @@
       "file": "IncSet.c",
       "name": "IncSet_delete",
       "signature": "void IncSet_delete(IncSet* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole IncSet, releasing nested History/IncMode then freeing.",
       "cfr": {
@@ -1842,7 +1842,7 @@
       "file": "ListItem.c",
       "name": "ListItem_delete",
       "signature": "void ListItem_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Object destructor freeing the whole ListItem.",
       "cfr": {
@@ -1878,7 +1878,7 @@
       "file": "Machine.c",
       "name": "Machine_done",
       "signature": "void Machine_done(Machine* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Finalizer releasing nested resources and destroying topology; object teardown interface.",
       "cfr": {
@@ -1956,7 +1956,7 @@
       "file": "MainPanel.c",
       "name": "MainPanel_delete",
       "signature": "void MainPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Object destructor releasing nested objects then freeing the whole panel.",
       "cfr": {
@@ -1998,7 +1998,7 @@
       "file": "MemorySwapMeter.c",
       "name": "MemorySwapMeter_done",
       "signature": "static void MemorySwapMeter_done(Meter* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Finalizer destroying nested meters; object teardown interface.",
       "cfr": {
@@ -2079,7 +2079,7 @@
       "file": "Meter.c",
       "name": "Meter_delete",
       "signature": "void Meter_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Object destructor finalizing then freeing the whole Meter.",
       "cfr": {
@@ -2117,7 +2117,7 @@
       "file": "MetersPanel.c",
       "name": "MetersPanel_delete",
       "signature": "static void MetersPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Object destructor finalizing then freeing the whole panel.",
       "cfr": {
@@ -2245,7 +2245,7 @@
       "file": "OpenFilesScreen.c",
       "name": "OpenFilesScreen_delete",
       "signature": "void OpenFilesScreen_delete(Object* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Object destructor finalizing then freeing the whole screen.",
       "cfr": {
@@ -2376,7 +2376,7 @@
       "file": "OptionItem.c",
       "name": "OptionItem_delete",
       "signature": "static void OptionItem_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys an OptionItem object via cast Object*, frees its text and the object itself",
       "cfr": {
@@ -2450,7 +2450,7 @@
       "file": "Panel.c",
       "name": "Panel_delete",
       "signature": "void Panel_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Panel object: calls Panel_done then frees the object",
       "cfr": {
@@ -2606,7 +2606,7 @@
       "file": "ProcessLocksScreen.c",
       "name": "ProcessLocksScreen_delete",
       "signature": "void ProcessLocksScreen_delete(Object* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys the whole screen object: calls InfoScreen_done then frees object",
       "cfr": {
@@ -2713,7 +2713,7 @@
       "file": "ScreenManager.c",
       "name": "ScreenManager_delete",
       "signature": "void ScreenManager_delete(ScreenManager* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole ScreenManager: deletes Vector then frees the object",
       "cfr": {
@@ -2751,7 +2751,7 @@
       "file": "ScreenTabsPanel.c",
       "name": "ScreenTabsPanel_delete",
       "signature": "static void ScreenTabsPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole panel object: Panel_done then frees object",
       "cfr": {
@@ -2835,7 +2835,7 @@
       "file": "ScreenTabsPanel.c",
       "name": "ScreenNamesPanel_delete",
       "signature": "static void ScreenNamesPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole panel object: Panel_done then frees object",
       "cfr": {
@@ -2919,7 +2919,7 @@
       "file": "ScreensPanel.c",
       "name": "ScreenListItem_delete",
       "signature": "static void ScreenListItem_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys a ScreenListItem object, delegating to ListItem_delete and ScreenSettings_delete",
       "cfr": {
@@ -2957,7 +2957,7 @@
       "file": "ScreensPanel.c",
       "name": "ScreensPanel_delete",
       "signature": "static void ScreensPanel_delete(Object* object)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole panel object via Panel_delete and cleanup",
       "cfr": {
@@ -3119,7 +3119,7 @@
       "file": "Settings.c",
       "name": "Settings_delete",
       "signature": "void Settings_delete(Settings* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends Settings object lifetime, frees nested columns/screens then frees object",
       "cfr": {
@@ -3195,7 +3195,7 @@
       "file": "Settings.c",
       "name": "ScreenSettings_delete",
       "signature": "void ScreenSettings_delete(ScreenSettings* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys ScreenSettings object, frees fields and the object itself",
       "cfr": {
@@ -3369,7 +3369,7 @@
       "file": "Table.c",
       "name": "Table_delete",
       "signature": "static void Table_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys Table, calls Table_done then frees the object",
       "cfr": {
@@ -3447,7 +3447,7 @@
       "file": "TraceScreen.c",
       "name": "TraceScreen_delete",
       "signature": "void TraceScreen_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends TraceScreen lifetime, releases resources and frees object",
       "cfr": {
@@ -3523,7 +3523,7 @@
       "file": "UsersTable.c",
       "name": "UsersTable_delete",
       "signature": "void UsersTable_delete(UsersTable* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys UsersTable, deletes nested Hashtable then frees object",
       "cfr": {
@@ -3602,7 +3602,7 @@
       "file": "Vector.c",
       "name": "Vector_delete",
       "signature": "void Vector_delete(Vector* this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys Vector container, deletes contained objects then frees it",
       "cfr": {
@@ -4063,7 +4063,7 @@
       "file": "darwin/DarwinMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys Machine, releases resources via Machine_done then frees",
       "cfr": {
@@ -4142,7 +4142,7 @@
       "file": "darwin/DarwinProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys Process, calls Process_done then frees object",
       "cfr": {
@@ -4221,7 +4221,7 @@
       "file": "darwin/DarwinProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole ProcessTable object: calls ProcessTable_done then frees the object.",
       "cfr": {
@@ -4344,7 +4344,7 @@
       "file": "dragonflybsd/DragonFlyBSDMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Machine object including nested resources, then frees it.",
       "cfr": {
@@ -4423,7 +4423,7 @@
       "file": "dragonflybsd/DragonFlyBSDProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Process object: Process_done then free.",
       "cfr": {
@@ -4502,7 +4502,7 @@
       "file": "dragonflybsd/DragonFlyBSDProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole ProcessTable object then frees it.",
       "cfr": {
@@ -4586,7 +4586,7 @@
       "file": "freebsd/FreeBSDMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Machine object including nested resources, then frees it.",
       "cfr": {
@@ -4664,7 +4664,7 @@
       "file": "freebsd/FreeBSDProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Process object: Process_done then free.",
       "cfr": {
@@ -4744,7 +4744,7 @@
       "file": "freebsd/FreeBSDProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole ProcessTable object then frees it.",
       "cfr": {
@@ -5033,7 +5033,7 @@
       "file": "linux/LinuxMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends lifetime of Machine object, calls Machine_done then frees it.",
       "cfr": {
@@ -5110,7 +5110,7 @@
       "file": "linux/LinuxProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys Process object, calls Process_done then frees it.",
       "cfr": {
@@ -5192,7 +5192,7 @@
       "file": "linux/LinuxProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys ProcessTable, releases netlink socket, calls done and frees.",
       "cfr": {
@@ -5477,7 +5477,7 @@
       "file": "netbsd/NetBSDMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys Machine, closes kvm, calls done and frees.",
       "cfr": {
@@ -5555,7 +5555,7 @@
       "file": "netbsd/NetBSDProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys Process object, calls Process_done then frees.",
       "cfr": {
@@ -5634,7 +5634,7 @@
       "file": "netbsd/NetBSDProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys ProcessTable, calls done and frees.",
       "cfr": {
@@ -5758,7 +5758,7 @@
       "file": "openbsd/OpenBSDMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of Machine object: calls Machine_done, closes kvm, frees the object.",
       "cfr": {
@@ -5836,7 +5836,7 @@
       "file": "openbsd/OpenBSDProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys Process object: calls Process_done then frees it.",
       "cfr": {
@@ -5915,7 +5915,7 @@
       "file": "openbsd/OpenBSDProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys ProcessTable object: calls ProcessTable_done then frees.",
       "cfr": {
@@ -6037,7 +6037,7 @@
       "file": "pcp/InDomTable.c",
       "name": "InDomTable_delete",
       "signature": "static void InDomTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys InDomTable object: calls InDomTable_done then frees.",
       "cfr": {
@@ -6149,7 +6149,7 @@
       "file": "pcp/Instance.c",
       "name": "Instance_delete",
       "signature": "static void Instance_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys Instance object: calls Instance_done then frees it.",
       "cfr": {
@@ -6419,7 +6419,7 @@
       "file": "pcp/PCPDynamicScreen.c",
       "name": "PCPDynamicScreen_done",
       "signature": "static void PCPDynamicScreen_done(PCPDynamicScreen* ds)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Tears down a screen object including nested DynamicScreen and frees it",
       "cfr": {
@@ -6538,7 +6538,7 @@
       "file": "pcp/PCPMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Machine object via Machine_done then frees it",
       "cfr": {
@@ -6615,7 +6615,7 @@
       "file": "pcp/PCPProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Process object via Process_done then frees it",
       "cfr": {
@@ -6694,7 +6694,7 @@
       "file": "pcp/PCPProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole ProcessTable via ProcessTable_done then frees it",
       "cfr": {
@@ -6773,7 +6773,7 @@
       "file": "solaris/SolarisMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole Machine object via Machine_done then frees it",
       "cfr": {
@@ -6851,7 +6851,7 @@
       "file": "solaris/SolarisProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Calls Process_done to release nested fields then frees whole object; object destruction interface",
       "cfr": {
@@ -6930,7 +6930,7 @@
       "file": "solaris/SolarisProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Calls ProcessTable_done then frees the whole object; object destruction interface",
       "cfr": {
@@ -7005,7 +7005,7 @@
       "file": "unsupported/UnsupportedMachine.c",
       "name": "Machine_delete",
       "signature": "void Machine_delete(Machine* super)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Calls Machine_done to release nested resources then frees the object; destruction interface",
       "cfr": {
@@ -7082,7 +7082,7 @@
       "file": "unsupported/UnsupportedProcess.c",
       "name": "Process_delete",
       "signature": "void Process_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Calls Process_done then frees the whole object; object destruction interface",
       "cfr": {
@@ -7161,7 +7161,7 @@
       "file": "unsupported/UnsupportedProcessTable.c",
       "name": "ProcessTable_delete",
       "signature": "void ProcessTable_delete(Object* cast)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Calls ProcessTable_done then frees the whole object; object destruction interface",
       "cfr": {

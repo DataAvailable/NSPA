@@ -265,7 +265,7 @@
       "file": "arguments.c",
       "name": "args_free",
       "signature": "void args_free(struct args *args)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ends the full lifetime of an args object: removes all tree/list entries, frees nested values and the struct itself.",
       "cfr": {
@@ -573,7 +573,7 @@
       "file": "arguments.c",
       "name": "args_make_commands_free",
       "signature": "void args_make_commands_free(struct args_command_state *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ends the lifetime of an args_command_state: releases nested resources (cmd_list, client ref, strings) and frees the struct itself.",
       "cfr": {
@@ -1294,7 +1294,7 @@
       "file": "cmd-queue.c",
       "name": "cmdq_free",
       "signature": "void cmdq_free(struct cmdq_list *queue)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of a whole cmdq_list object, verifying it's empty before freeing the container.",
       "cfr": {
@@ -1411,7 +1411,7 @@
       "file": "cmd-queue.c",
       "name": "cmdq_free_state",
       "signature": "void cmdq_free_state(struct cmdq_state *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Releases all resources of a cmdq_state (format tree and the struct itself), ending its lifetime.",
       "cfr": {
@@ -1450,7 +1450,7 @@
       "file": "cmd-queue.c",
       "name": "cmdq_remove",
       "signature": "static void cmdq_remove(struct cmdq_item *item)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Removes and fully destroys a cmdq_item, releasing its cmd_list, state, and the item struct itself.",
       "cfr": {
@@ -1669,7 +1669,7 @@
       "file": "cmd-wait-for.c",
       "name": "cmd_wait_for_remove",
       "signature": "static void cmd_wait_for_remove(struct wait_channel *wc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Removes and frees a wait_channel object from the global RB tree and releases it; ends the lifetime of the whole wait_channel object.",
       "cfr": {
@@ -1876,7 +1876,7 @@
       "file": "cmd.c",
       "name": "cmd_free",
       "signature": "void cmd_free(struct cmd *cmd)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the entire cmd object including its args; destroys the whole object lifetime, not just a single field.",
       "cfr": {
@@ -2031,7 +2031,7 @@
       "file": "cmd.c",
       "name": "cmd_list_free",
       "signature": "void cmd_list_free(struct cmd_list *cmdlist)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Iterates and frees all commands in the list, then frees the list itself; destroys the whole container and its contents.",
       "cfr": {
@@ -2201,7 +2201,7 @@
       "signature": "void colour_palette_free(struct colour_palette *p)",
       "category": "releaser",
       "confidence": 0.85,
-      "reason": "Frees the internal array of an embedded (stack/caller-owned) palette struct; does not free the struct itself, so it's a field releaser rather than a full destroyer.",
+      "reason": "Frees the internal array of an embedded (stack/caller-owned) palette struct; does not free the struct itself, so it's a field releaser.",
       "cfr": {
         "project": "tmux",
         "file": "colour.c",
@@ -2545,7 +2545,7 @@
       "file": "compat/imsg-buffer.c",
       "name": "ibuf_free",
       "signature": "void ibuf_free(struct ibuf *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the ibuf's internal buffer and the ibuf struct itself, closing any associated fd; destroys the whole object.",
       "cfr": {
@@ -2663,7 +2663,7 @@
       "file": "compat/imsg-buffer.c",
       "name": "msgbuf_free",
       "signature": "void msgbuf_free(struct msgbuf *msgbuf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Clears all queued ibufs and frees the msgbuf struct itself; destroys the whole object.",
       "cfr": {
@@ -2733,7 +2733,7 @@
       "file": "compat/imsg-buffer.c",
       "name": "ibufq_free",
       "signature": "void ibufq_free(struct ibufqueue *bufq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Flushes and frees the whole ibufqueue object, ending its lifetime",
       "cfr": {
@@ -3127,7 +3127,7 @@
       "file": "control.c",
       "name": "control_stop",
       "signature": "void control_stop(struct client *c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Tears down all control mode state for a client, releasing blocks, subs, and the bufferevent — full object destruction",
       "cfr": {
@@ -3206,7 +3206,7 @@
       "file": "environ.c",
       "name": "environ_free",
       "signature": "void environ_free(struct environ *env)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Frees all entries and the environ container itself, ending its lifetime",
       "cfr": {
@@ -3372,7 +3372,7 @@
       "file": "file.c",
       "name": "file_free",
       "signature": "void file_free(struct client_file *cf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Destroys a whole client_file object: removes from tree, frees evbuffer, unrefs client, and frees the struct itself.",
       "cfr": {
@@ -3680,7 +3680,7 @@
       "file": "format.c",
       "name": "format_free",
       "signature": "void format_free(struct format_tree *ft)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Destroys a whole format_tree: frees all entries in the tree and the struct itself; paired with format_create.",
       "cfr": {
@@ -4886,7 +4886,7 @@
       "file": "grid.c",
       "name": "grid_destroy",
       "signature": "void grid_destroy(struct grid *gd)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys the whole grid object: frees all nested lines via grid_free_lines then frees the grid struct itself; documented 'Destroy grid.'",
       "cfr": {
@@ -5052,7 +5052,7 @@
       "file": "hyperlinks.c",
       "name": "hyperlinks_free",
       "signature": "void hyperlinks_free(struct hyperlinks *hl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the entire hyperlink set and its contents via hyperlinks_reset then frees the container; whole-object destruction.",
       "cfr": {
@@ -5135,7 +5135,7 @@
       "file": "image-sixel.c",
       "name": "sixel_free",
       "signature": "void sixel_free(struct sixel_image *si)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the sixel_image struct and its internal data; whole-object destruction of the image resource.",
       "cfr": {
@@ -5255,7 +5255,7 @@
       "file": "image.c",
       "name": "image_free_all",
       "signature": "int image_free_all(struct screen *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Iterates and frees all images on a screen; ends lifetime of the whole image collection rather than a single owned pointer.",
       "cfr": {
@@ -5383,7 +5383,7 @@
       "file": "input.c",
       "name": "input_free",
       "signature": "void input_free(struct input_ctx *ictx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Documented 'Destroy input parser'; tears down the entire input_ctx including nested resources — object destruction interface.",
       "cfr": {
@@ -5641,7 +5641,7 @@
       "file": "job.c",
       "name": "job_transfer",
       "signature": "int job_transfer(struct job *job, pid_t *pid, char *tty, size_t ttylen)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Documentation says 'Take job's file descriptor and free the job'; ends the job object's lifetime while transferring its fd — object destruction with transfer semantics.",
       "cfr": {
@@ -5684,7 +5684,7 @@
       "file": "job.c",
       "name": "job_free",
       "signature": "void job_free(struct job *job)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Documented 'Kill and free an individual job'; kills the process, frees resources, and destroys the job object — full object destruction.",
       "cfr": {
@@ -5764,7 +5764,7 @@
       "file": "key-bindings.c",
       "name": "key_bindings_unref_table",
       "signature": "void key_bindings_unref_table(struct key_table *table)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Removes all bindings from the table and frees the table itself; ends lifetime of the entire key_table object.",
       "cfr": {
@@ -5924,7 +5924,7 @@
       "file": "layout.c",
       "name": "layout_destroy_cell",
       "signature": "void layout_destroy_cell(struct window *w, struct layout_cell *lc, struct layout_cell **lcroot)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Documented 'Destroy a cell and redistribute the space'; ends cell lifetime and restructures the layout tree — object destruction interface.",
       "cfr": {
@@ -5970,7 +5970,7 @@
       "file": "layout.c",
       "name": "layout_free",
       "signature": "void layout_free(struct window *w)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Frees the entire layout structure of a window by calling layout_free_cell recursively; ends the lifetime of the window's layout, not just a simple free wrapper.",
       "cfr": {
@@ -6006,7 +6006,7 @@
       "file": "layout.c",
       "name": "layout_close_pane",
       "signature": "void layout_close_pane(struct window_pane *wp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Documentation says 'Destroy the cell associated with a pane'; calls layout_destroy_cell and re-fixes offsets/panes — object destruction interface, not a plain releaser.",
       "cfr": {
@@ -6363,7 +6363,7 @@
       "file": "mode-tree.c",
       "name": "mode_tree_free",
       "signature": "void mode_tree_free(struct mode_tree_data *mtd)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Ends the lifetime of the entire mode_tree_data object: frees lines, items, screen, and removes ref; full object destruction interface.",
       "cfr": {
@@ -6641,9 +6641,9 @@
       "file": "options.c",
       "name": "options_free",
       "signature": "void options_free(struct options *oo)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
-      "reason": "Removes all entries and frees the options container itself; ends the lifetime of the whole options object, making it a destroyer.",
+      "reason": "Removes all entries and frees the options container itself; ends the lifetime of the whole options object, making it a releaser.",
       "cfr": {
         "project": "tmux",
         "file": "options.c",
@@ -6680,7 +6680,7 @@
       "file": "options.c",
       "name": "options_remove",
       "signature": "static void options_remove(struct options_entry *o)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Removes the entry from the RB tree, clears array contents, frees the value and the entry itself — ends the lifetime of the whole options_entry object.",
       "cfr": {
@@ -7464,7 +7464,7 @@
       "file": "paste.c",
       "name": "paste_free",
       "signature": "void paste_free(struct paste_buffer *pb)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Removes buffer from store, frees its data and the struct itself — full object destruction.",
       "cfr": {
@@ -7577,7 +7577,7 @@
       "file": "popup.c",
       "name": "popup_free",
       "signature": "static void popup_free(struct popup_data *pd)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys a popup_data object by releasing all nested resources (colour_palette, input, job, screen) and freeing the object itself.",
       "cfr": {
@@ -7619,7 +7619,7 @@
       "file": "popup.c",
       "name": "popup_editor_free",
       "signature": "static void popup_editor_free(struct popup_editor *pe)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys a popup_editor by unlinking its temp file and freeing the object and its fields.",
       "cfr": {
@@ -7706,7 +7706,7 @@
       "file": "proc.c",
       "name": "proc_remove_peer",
       "signature": "void proc_remove_peer(struct tmuxpeer *peer)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Removes a peer from the list, closes its fd, clears its imsgbuf, and frees the peer object — full object destruction.",
       "cfr": {
@@ -7820,7 +7820,7 @@
       "file": "screen.c",
       "name": "screen_free",
       "signature": "void screen_free(struct screen *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.98,
       "reason": "Documented as 'Destroy a screen'; releases all nested resources (grid, hyperlinks, titles, write list, images) of the screen object.",
       "cfr": {
@@ -7949,7 +7949,7 @@
       "file": "server-client.c",
       "name": "server_client_lost",
       "signature": "void server_client_lost(struct client *c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Handles full client teardown — stops control, frees environ, status, tty, key table refs, and schedules final free; destroys the client lifetime.",
       "cfr": {
@@ -8012,7 +8012,7 @@
       "file": "server-client.c",
       "name": "server_client_free",
       "signature": "static void server_client_free(__unused int fd, __unused short events, void *arg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Documented as 'Free dead client'; frees the cmdq and the client struct itself — final destruction step.",
       "cfr": {
@@ -8091,7 +8091,7 @@
       "file": "server-fn.c",
       "name": "server_destroy_pane",
       "signature": "void server_destroy_pane(struct window_pane *wp, int notify)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of a window pane: closes fd, frees buffers, removes from window, kills process. Full object destruction interface.",
       "cfr": {
@@ -8157,7 +8157,7 @@
       "file": "server-fn.c",
       "name": "server_destroy_session_group",
       "signature": "static void server_destroy_session_group(struct session *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Destroys all sessions in a group by calling session_destroy on each; object-level destruction interface for a session group.",
       "cfr": {
@@ -8296,7 +8296,7 @@
       "file": "session.c",
       "name": "session_destroy",
       "signature": "void session_destroy(struct session *s, int notify, const char *from)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ends session lifetime: removes all winlinks, removes from global tree, schedules session_free. Full object destruction interface.",
       "cfr": {
@@ -8635,7 +8635,7 @@
       "file": "status.c",
       "name": "status_free",
       "signature": "void status_free(struct client *c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Frees all status line resources for a client (screens, style ranges, timers). Full sub-object destruction interface.",
       "cfr": {
@@ -9263,7 +9263,7 @@
       "file": "tty-keys.c",
       "name": "tty_keys_free",
       "signature": "void tty_keys_free(struct tty *tty)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees the entire key tree rooted in the tty struct by recursively calling tty_keys_free1. Destroys a whole nested data structure.",
       "cfr": {
@@ -9302,7 +9302,7 @@
       "signature": "static void tty_keys_free1(struct tty_key *tk)",
       "category": "releaser",
       "confidence": 0.92,
-      "reason": "Recursively frees a tty_key node and its children; acts as the per-node free worker called by the destroyer.",
+      "reason": "Recursively frees a tty_key node and its children; acts as the per-node free worker called by the object releaser.",
       "cfr": {
         "project": "tmux",
         "file": "tty-keys.c",
@@ -9407,7 +9407,7 @@
       "file": "tty-term.c",
       "name": "tty_term_free",
       "signature": "void tty_term_free(struct tty_term *term)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Removes term from global list and frees all its fields and the struct itself. Ends the full lifetime of a tty_term object.",
       "cfr": {
@@ -9482,7 +9482,7 @@
       "file": "tty.c",
       "name": "tty_free",
       "signature": "void tty_free(struct tty *tty)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Closes and frees a tty object's resources (calls tty_close then frees fields). Ends lifetime of the tty.",
       "cfr": {
@@ -9831,7 +9831,7 @@
       "file": "window-buffer.c",
       "name": "window_buffer_free",
       "signature": "static void window_buffer_free(struct window_mode_entry *wme)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Destroys the window_buffer mode entry: frees the mode tree, cleans up all items, and frees the modedata struct.",
       "cfr": {
@@ -9940,7 +9940,7 @@
       "file": "window-client.c",
       "name": "window_client_free",
       "signature": "static void window_client_free(struct window_mode_entry *wme)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Destroys the window_client mode entry: frees mode tree, all items, and modedata.",
       "cfr": {
@@ -9979,7 +9979,7 @@
       "file": "window-clock.c",
       "name": "window_clock_free",
       "signature": "static void window_clock_free(struct window_mode_entry *wme)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Destroys the clock mode entry: deletes timer, frees screen, frees modedata.",
       "cfr": {
@@ -10018,7 +10018,7 @@
       "file": "window-copy.c",
       "name": "window_copy_free",
       "signature": "static void window_copy_free(struct window_mode_entry *)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Declaration of the function that destroys a window_copy mode entry (confirmed by the definition below).",
       "cfr": {
@@ -10237,7 +10237,7 @@
       "file": "window-copy.c",
       "name": "window_copy_free",
       "signature": "static void window_copy_free(struct window_mode_entry *wme)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Destroys copy mode entry: cancels timer, frees screen, input parser, all string fields, and modedata.",
       "cfr": {
@@ -10730,7 +10730,7 @@
       "file": "window-customize.c",
       "name": "window_customize_destroy",
       "signature": "static void window_customize_destroy(struct window_customize_modedata *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Named 'destroy'; frees all items in the data structure and then frees the data object itself — full object lifetime termination.",
       "cfr": {
@@ -10768,7 +10768,7 @@
       "file": "window-customize.c",
       "name": "window_customize_free",
       "signature": "static void window_customize_free(struct window_mode_entry *wme)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the mode tree and destroys the whole customize mode object; interface is object destruction, not a simple free wrapper.",
       "cfr": {
@@ -10805,7 +10805,7 @@
       "file": "window-customize.c",
       "name": "window_customize_free_callback",
       "signature": "static void window_customize_free_callback(void *modedata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Callback that destroys the full modedata object via window_customize_destroy; object destruction interface.",
       "cfr": {
@@ -10841,7 +10841,7 @@
       "file": "window-customize.c",
       "name": "window_customize_free_item_callback",
       "signature": "static void window_customize_free_item_callback(void *itemdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Callback that destroys an item and its containing object; ends lifetime of the item/container.",
       "cfr": {
@@ -10913,7 +10913,7 @@
       "file": "window-tree.c",
       "name": "window_tree_destroy",
       "signature": "static void window_tree_destroy(struct window_tree_modedata *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Ends the lifetime of the full window_tree_modedata object, freeing all nested items and the struct itself.",
       "cfr": {
@@ -10951,7 +10951,7 @@
       "file": "window-tree.c",
       "name": "window_tree_free",
       "signature": "static void window_tree_free(struct window_mode_entry *wme)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees the mode tree and destroys the whole tree mode object; object destruction interface.",
       "cfr": {
@@ -10988,7 +10988,7 @@
       "file": "window-tree.c",
       "name": "window_tree_command_free",
       "signature": "static void window_tree_command_free(void *modedata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Callback to destroy the modedata object after a command completes; object destruction interface.",
       "cfr": {
@@ -11110,7 +11110,7 @@
       "file": "window.c",
       "name": "window_destroy",
       "signature": "static void window_destroy(struct window *w)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ends the full lifetime of a window, freeing all nested resources including panes, layout, and options.",
       "cfr": {
@@ -11246,7 +11246,7 @@
       "file": "window.c",
       "name": "window_pane_destroy",
       "signature": "static void window_pane_destroy(struct window_pane *wp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Ends the full lifetime of a window pane, freeing all nested resources including screen, input, colours, and options.",
       "cfr": {

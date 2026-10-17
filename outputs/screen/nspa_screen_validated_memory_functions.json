@@ -103,7 +103,7 @@
       "file": "src/acls.c",
       "name": "UserDel",
       "signature": "int UserDel(char *name, struct acluser **up)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "doc says it destroys all the user's permissions and detaches him; ends lifetime of the whole user object",
       "cfr": {
@@ -295,7 +295,7 @@
       "file": "src/canvas.c",
       "name": "FreeCanvas",
       "signature": "void FreeCanvas(Canvas *cv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "ends lifetime of a whole canvas object, cleaning up nested layer memory and detaching it",
       "cfr": {
@@ -702,7 +702,7 @@
       "file": "src/layout.c",
       "name": "RemoveLayout",
       "signature": "void RemoveLayout(Layout *lay)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "Ends lifetime of a layout, freeing it and its nested canvases",
       "cfr": {
@@ -928,7 +928,7 @@
       "file": "src/logfile.c",
       "name": "logfclose",
       "signature": "int logfclose(Log *l)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "closes the file resource and frees the whole Log object, ending its lifetime",
       "cfr": {
@@ -1562,7 +1562,7 @@
       "file": "src/window.c",
       "name": "FreeWindow",
       "signature": "void FreeWindow(Window *window)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Ends lifetime of whole Window object, releasing many nested resources (paster, pseudowin, acl, layers); interface is object destruction.",
       "cfr": {

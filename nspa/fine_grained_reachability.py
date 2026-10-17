@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 
-MEMORY_CATEGORIES = {"allocator", "releaser", "destroyer"}
+MEMORY_CATEGORIES = {"allocator", "releaser"}
 DEFAULT_CHECKERS = ("leak", "dfree", "fileck", "null-deref")
 OLD_BLOCK_RE = re.compile(
     r"^[ \t]*/\* NSPA_AUTO_[A-Z0-9_]*EI_PAIRS_BEGIN \*/.*?^[ \t]*/\* NSPA_AUTO_[A-Z0-9_]*EI_PAIRS_END \*/[ \t]*\n?",
@@ -85,6 +85,8 @@ def load_validated_memory_functions(
     for item in data.get("functions", []):
         name = str(item.get("name", "")).strip()
         category = str(item.get("category", "")).strip()
+        if category == "destroyer":  # Compatibility with earlier validated results.
+            category = "releaser"
         confidence = float(item.get("confidence", 0.0) or 0.0)
         cfr = item.get("cfr", {}) if isinstance(item.get("cfr", {}), dict) else {}
         entity_kind = str(cfr.get("entity_kind", ""))
@@ -122,9 +124,11 @@ def load_validated_memory_functions(
 
 
 def category_to_checker_type(category: str) -> str:
+    if category == "destroyer":  # Compatibility with earlier callers.
+        category = "releaser"
     if category == "allocator":
         return "CK_ALLOC"
-    if category in {"releaser", "destroyer"}:
+    if category == "releaser":
         return "CK_FREE"
     raise ValueError(f"Unsupported memory category for Saber: {category}")
 

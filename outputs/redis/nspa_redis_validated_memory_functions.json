@@ -1132,7 +1132,7 @@
       "file": "deps/jemalloc/src/ctl.c",
       "name": "arena_i_destroy_ctl",
       "signature": "static int arena_i_destroy_ctl(tsd_t *tsd, const size_t *mib, size_t miblen, void *oldp, size_t *oldlenp, void *newp, size_t newlen)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "CTL entry that ends the lifetime of an arena via arena_destroy; object/resource destruction interface.",
       "cfr": {
@@ -3700,7 +3700,7 @@
       "file": "deps/lua/src/ltable.c",
       "name": "luaH_free",
       "signature": "void luaH_free (lua_State *L, Table *t)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of whole Table, freeing node array via luaM_freearray and the table struct via luaM_free",
       "cfr": {
@@ -3739,7 +3739,7 @@
       "file": "deps/lua/src/lua_cjson.c",
       "name": "json_destroy_config",
       "signature": "static int json_destroy_config(lua_State *l)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "GC destructor for config userdata, releases nested strbuf via strbuf_free; interface is object destruction",
       "cfr": {
@@ -3776,7 +3776,7 @@
       "file": "deps/lua/src/lua_cmsgpack.c",
       "name": "mp_buf_free",
       "signature": "void mp_buf_free(lua_State *L, mp_buf *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees mp_buf container including its internal buffer via mp_realloc; whole-object destruction",
       "cfr": {
@@ -3884,7 +3884,7 @@
       "file": "deps/lua/src/strbuf.c",
       "name": "strbuf_free",
       "signature": "void strbuf_free(strbuf_t *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees strbuf container and its internal buffer; ends lifetime of whole strbuf object",
       "cfr": {
@@ -3960,7 +3960,7 @@
       "file": "deps/lua/src/strbuf.h",
       "name": "strbuf_free",
       "signature": "extern void strbuf_free(strbuf_t *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Declaration of strbuf object destruction; frees container and internal buffer",
       "cfr": {
@@ -4139,7 +4139,7 @@
       "file": "modules/vector-sets/hnsw.c",
       "name": "pq_free",
       "signature": "void pq_free(pqueue *pq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Ends lifetime of whole priority queue object via hfree",
       "cfr": {
@@ -4174,7 +4174,7 @@
       "file": "modules/vector-sets/hnsw.c",
       "name": "hnsw_node_free",
       "signature": "void hnsw_node_free(hnswNode *node)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Ends lifetime of whole hnswNode object via hfree",
       "cfr": {
@@ -4209,7 +4209,7 @@
       "file": "modules/vector-sets/hnsw.c",
       "name": "hnsw_free",
       "signature": "void hnsw_free(HNSW *index,void(*free_value)(void*value))",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the entire index object and all nested resources (nodes, locks).",
       "cfr": {
@@ -4287,7 +4287,7 @@
       "file": "modules/vector-sets/hnsw.c",
       "name": "hnsw_delete_node",
       "signature": "int hnsw_delete_node(HNSW *index, hnswNode *node, void(*free_value)(void*value))",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Unlinks and ends the lifetime of a whole node, freeing it and its value.",
       "cfr": {
@@ -4381,7 +4381,7 @@
       "file": "modules/vector-sets/hnsw.c",
       "name": "hnsw_free_insert_context",
       "signature": "void hnsw_free_insert_context(InsertContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees the insert context object and all nested resources (nodes, pq).",
       "cfr": {
@@ -4455,7 +4455,7 @@
       "file": "modules/vector-sets/hnsw.c",
       "name": "hnsw_cursor_free",
       "signature": "void hnsw_cursor_free(hnswCursor *cursor)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Ends the lifetime of the cursor object, freeing it and releasing its lock.",
       "cfr": {

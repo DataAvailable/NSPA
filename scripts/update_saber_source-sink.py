@@ -31,7 +31,7 @@ def main() -> int:
     print(f"[+] Patched: {cpp_path}")
     print(f"[+] Loaded memory functions: {len(functions)}")
     print(f"[+] Injected allocators: {alloc_count}")
-    print(f"[+] Injected releasers/destroyers: {free_count}")
+    print(f"[+] Injected releasers: {free_count}")
     return 0
 
 

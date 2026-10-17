@@ -16,7 +16,7 @@
       "signature": "static void add_p_state_clear(struct add_p_state *s)",
       "category": "releaser",
       "confidence": 0.95,
-      "reason": "Releases fields of an add_p_state passed by the caller (free + strbuf_release + interactive_config_clear). Classic field-release pattern; does not free the struct itself, so releaser rather than destroyer.",
+      "reason": "Releases fields of an add_p_state passed by the caller (free + strbuf_release + interactive_config_clear). Classic field-release pattern; does not free the struct itself, so it is a releaser.",
       "cfr": {
         "project": "git",
         "file": "add-patch.c",
@@ -87,7 +87,7 @@
       "file": "alloc.c",
       "name": "alloc_state_free_and_null",
       "signature": "void alloc_state_free_and_null(struct alloc_state **s_)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Frees the alloc_state and nulls the caller's pointer via FREE_AND_NULL. Ends the lifetime of the whole object.",
       "cfr": {
@@ -347,7 +347,7 @@
       "file": "apply.c",
       "name": "free_fragment_list",
       "signature": "static void free_fragment_list(struct fragment *list)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Iterates and frees an entire linked list of fragments including each node. Ends lifetime of the whole list structure.",
       "cfr": {
@@ -420,7 +420,7 @@
       "file": "apply.c",
       "name": "free_patch",
       "signature": "static void free_patch(struct patch *patch)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Calls release_patch to free fields, then frees the patch struct itself. Full object destruction.",
       "cfr": {
@@ -458,7 +458,7 @@
       "file": "apply.c",
       "name": "free_patch_list",
       "signature": "static void free_patch_list(struct patch *list)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Iterates and destroys an entire linked list of patches via free_patch. Ends lifetime of the whole list.",
       "cfr": {
@@ -853,7 +853,7 @@
       "file": "attr.c",
       "name": "attr_stack_free",
       "signature": "static void attr_stack_free(struct attr_stack *e)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Frees the attr_stack struct and its nested contents (origin, attrs array). Ends the lifetime of the whole object.",
       "cfr": {
@@ -960,7 +960,7 @@
       "file": "attr.c",
       "name": "attr_check_free",
       "signature": "void attr_check_free(struct attr_check *check)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Clears internal fields via attr_check_clear, removes from global vector, and frees the struct itself. Ends the full lifetime of the object.",
       "cfr": {
@@ -1256,7 +1256,7 @@
       "file": "blame.c",
       "name": "blame_origin_decref",
       "signature": "void blame_origin_decref(struct blame_origin *o)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Reference-counted destructor: decrements refcount and, when it reaches zero, frees all fields and the object itself; classic object destruction pattern.",
       "cfr": {
@@ -1636,7 +1636,7 @@
       "file": "blame.c",
       "name": "cleanup_scoreboard",
       "signature": "void cleanup_scoreboard(struct blame_scoreboard *sb)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Releases all resources held by a scoreboard (entries, sets, queues) via FREE_AND_NULL, free, clear_prio_queue, oidset_clear; destroys the scoreboard's internal state.",
       "cfr": {
@@ -1752,7 +1752,7 @@
       "file": "bloom.c",
       "name": "bloom_keyvec_free",
       "signature": "void bloom_keyvec_free(struct bloom_keyvec *vec)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Named *_free, clears internal bloom keys and frees the struct itself; destroys the full keyvec object.",
       "cfr": {
@@ -1827,7 +1827,7 @@
       "file": "builtin/am.c",
       "name": "am_destroy",
       "signature": "static void am_destroy(const struct am_state *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Documented as 'forcefully terminating the current am session' by removing its directory; destroys the am session's persistent state, not just freeing fields.",
       "cfr": {
@@ -1865,7 +1865,7 @@
       "file": "builtin/am.c",
       "name": "am_abort",
       "signature": "static void am_abort(struct am_state *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Aborts the am session by cleaning state and deleting refs; ends the lifetime of the am session rather than simply freeing fields.",
       "cfr": {
@@ -3576,7 +3576,7 @@
       "file": "builtin/fsmonitor--daemon.c",
       "name": "fsmonitor_batch__free_list",
       "signature": "void fsmonitor_batch__free_list(struct fsmonitor_batch *batch)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Named *__free_list, walks a linked list of fsmonitor_batch objects freeing each node and its contents. Destroys the entire batch list structure.",
       "cfr": {
@@ -3611,7 +3611,7 @@
       "file": "builtin/fsmonitor--daemon.c",
       "name": "fsmonitor_free_token_data",
       "signature": "static void fsmonitor_free_token_data(struct fsmonitor_token_data *token)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Named *_free_*, releases nested memory (batch list via fsmonitor_batch__free_list, strbufs) and then frees the token struct itself. Ends the lifetime of the whole token_data object.",
       "cfr": {
@@ -4997,7 +4997,7 @@
       "file": "builtin/pack-redundant.c",
       "name": "llist_free",
       "signature": "static void llist_free(struct llist *list)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees all nodes in a linked list and the list struct itself; destroys the whole list object.",
       "cfr": {
@@ -5071,7 +5071,7 @@
       "file": "builtin/pack-redundant.c",
       "name": "pack_list_free",
       "signature": "static void pack_list_free(struct pack_list *pl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Iterates and frees all nodes in a pack_list; destroys the whole list structure.",
       "cfr": {
@@ -5272,7 +5272,7 @@
       "file": "builtin/receive-pack.c",
       "name": "receive_hook_feed_state_free",
       "signature": "static void receive_hook_feed_state_free(void *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Named _free, releases both the internal strbuf field and the struct itself; destroys the whole object passed in.",
       "cfr": {
@@ -5351,7 +5351,7 @@
       "file": "builtin/receive-pack.c",
       "name": "free_commands",
       "signature": "static void free_commands(struct command *commands)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Named free_commands, walks and frees an entire linked list of command structs including nested resources; destroys a whole container/list.",
       "cfr": {
@@ -6658,7 +6658,7 @@
       "file": "builtin/worktree.c",
       "name": "delete_git_work_tree",
       "signature": "static int delete_git_work_tree(struct worktree *wt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Removes a worktree's working directory recursively and releases associated resources; ends lifetime of the worktree's on-disk state rather than just freeing a field.",
       "cfr": {
@@ -6774,7 +6774,7 @@
       "file": "cache-tree.c",
       "name": "cache_tree_free",
       "signature": "void cache_tree_free(struct cache_tree **it_p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Recursively frees the entire cache_tree structure and nulls the pointer; canonical whole-object destruction pattern with double-pointer parameter.",
       "cfr": {
@@ -6976,7 +6976,7 @@
       "file": "chunk-format.c",
       "name": "free_chunkfile",
       "signature": "void free_chunkfile(struct chunkfile *cf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees a chunkfile struct and its contents; ends the lifetime of the entire chunkfile object.",
       "cfr": {
@@ -7502,7 +7502,7 @@
       "file": "commit-graph.c",
       "name": "close_commit_graph",
       "signature": "void close_commit_graph(struct object_database *o)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Ends the lifetime of the commit graph on an object_database, clearing slabs and bloom filters and freeing the graph; object-level destruction interface.",
       "cfr": {
@@ -7706,7 +7706,7 @@
       "file": "commit.c",
       "name": "free_commit_buffer_slab",
       "signature": "void free_commit_buffer_slab(struct buffer_slab *bs)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Clears the buffer slab contents and frees the slab struct itself; destroys the entire buffer_slab object.",
       "cfr": {
@@ -8299,7 +8299,7 @@
       "file": "compat/fsmonitor/fsm-listen-win32.c",
       "name": "destroy_watch",
       "signature": "static void destroy_watch(struct one_watch *watch)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Closes handles, releases the embedded strbuf, and frees the whole one_watch struct; destroys the entire object rather than just releasing a field.",
       "cfr": {
@@ -8711,7 +8711,7 @@
       "file": "compat/precompose_utf8.c",
       "name": "precompose_utf8_closedir",
       "signature": "int precompose_utf8_closedir(PREC_DIR *prec_dir)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Closes the dir handle (closedir), closes iconv, frees the PREC_DIR struct fields and the struct itself — ends the full lifetime of the PREC_DIR object.",
       "cfr": {
@@ -9255,7 +9255,7 @@
       "file": "compat/regex/regex_internal.c",
       "name": "free_state",
       "signature": "static void free_state (re_dfastate_t *state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the node set and internal arrays of a dfastate, then frees the state pointer itself via re_free; ends the full lifetime of the object.",
       "cfr": {
@@ -9642,7 +9642,7 @@
       "file": "compat/simple-ipc/ipc-unix-socket.c",
       "name": "ipc_client_close_connection",
       "signature": "void ipc_client_close_connection(struct ipc_client_connection *connection)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Closes the socket fd and frees the connection struct itself; ends the full lifetime of the ipc_client_connection object.",
       "cfr": {
@@ -9719,7 +9719,7 @@
       "file": "compat/simple-ipc/ipc-unix-socket.c",
       "name": "ipc_server_free",
       "signature": "void ipc_server_free(struct ipc_server_data *server_data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees whole server object including nested fields, mutexes, strbufs; object destruction",
       "cfr": {
@@ -9762,7 +9762,7 @@
       "file": "compat/simple-ipc/ipc-win32.c",
       "name": "ipc_client_close_connection",
       "signature": "void ipc_client_close_connection(struct ipc_client_connection *connection)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Closes handle and frees connection object; ends object lifetime",
       "cfr": {
@@ -9853,7 +9853,7 @@
       "file": "compat/simple-ipc/ipc-win32.c",
       "name": "ipc_server_free",
       "signature": "void ipc_server_free(struct ipc_server_data *server_data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees whole server object plus handles, mutexes, strbufs; object destruction",
       "cfr": {
@@ -9930,7 +9930,7 @@
       "file": "compat/win32/dirent.c",
       "name": "closedir",
       "signature": "int closedir(DIR *dir)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Closes directory handle and frees DIR object; ends resource lifetime",
       "cfr": {
@@ -10412,7 +10412,7 @@
       "file": "connect.c",
       "name": "finish_connect",
       "signature": "int finish_connect(struct child_process *conn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Finalizes and destroys the child_process connection object passed in (calls finish_command which tears down the process), then frees it. This is the designated destructor paired with git_connect().",
       "cfr": {
@@ -10555,7 +10555,7 @@
       "file": "contrib/libgit-sys/public_symbol_export.c",
       "name": "libgit_configset_free",
       "signature": "void libgit_configset_free(struct libgit_config_set *cs)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Name ends in _free, clears nested config set contents via git_configset_clear then frees the object itself. This is a full object destructor, not just a field releaser.",
       "cfr": {
@@ -10628,7 +10628,7 @@
       "file": "convert.c",
       "name": "cascade_free_fn",
       "signature": "static void cascade_free_fn(struct stream_filter *filter)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys a cascade stream_filter by recursively freeing nested sub-filters via free_stream_filter then freeing the object itself. Full object destruction, not a simple free wrapper.",
       "cfr": {
@@ -10666,7 +10666,7 @@
       "file": "convert.c",
       "name": "ident_free_fn",
       "signature": "static void ident_free_fn(struct stream_filter *filter)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys an ident stream_filter by releasing its embedded strbuf (nested resource) then freeing the object. Full object destruction with nested resource cleanup.",
       "cfr": {
@@ -10743,7 +10743,7 @@
       "file": "convert.c",
       "name": "free_stream_filter",
       "signature": "void free_stream_filter(struct stream_filter *filter)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Public destructor for stream_filter objects; dispatches to the filter's vtable free_fn (which handles nested resources) then the base free(). Ends the lifetime of the whole filter object.",
       "cfr": {
@@ -11002,7 +11002,7 @@
       "file": "delta-islands.c",
       "name": "free_remote_islands",
       "signature": "static void free_remote_islands(kh_str_t *remote_islands)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Iterates the hash map, frees all entries, then destroys the map container itself via kh_destroy_str; this ends the lifetime of the whole container.",
       "cfr": {
@@ -11040,7 +11040,7 @@
       "file": "delta-islands.c",
       "name": "free_island_marks",
       "signature": "void free_island_marks(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees all island bitmap values and destroys the global oid map; ends lifetime of the global island marks structure.",
       "cfr": {
@@ -11465,7 +11465,7 @@
       "file": "diff.c",
       "name": "free_filespec",
       "signature": "void free_filespec(struct diff_filespec *spec)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.92,
       "reason": "Frees both internal data and the struct itself (calls diff_free_filespec_data then free(spec)), ending the object's lifetime.",
       "cfr": {
@@ -11576,7 +11576,7 @@
       "file": "diff.c",
       "name": "diff_free_filepair",
       "signature": "void diff_free_filepair(struct diff_filepair *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.93,
       "reason": "Frees both the filespecs inside and the filepair struct itself, fully ending the object's lifetime.",
       "cfr": {
@@ -12038,7 +12038,7 @@
       "file": "dir-iterator.c",
       "name": "dir_iterator_free",
       "signature": "void dir_iterator_free(struct dir_iterator *dir_iterator)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.97,
       "reason": "Explicitly named _free, closes open dirhandles, releases all internal buffers and string lists, and frees the iterator object itself — full object destruction",
       "cfr": {
@@ -12356,7 +12356,7 @@
       "file": "dir.c",
       "name": "free_untracked",
       "signature": "static void free_untracked(struct untracked_cache_dir *ucd)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Recursively frees an untracked_cache_dir and its nested contents; object destruction rather than a simple free wrapper.",
       "cfr": {
@@ -12394,7 +12394,7 @@
       "file": "dir.c",
       "name": "free_untracked_cache",
       "signature": "void free_untracked_cache(struct untracked_cache *uc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees the entire untracked_cache including nested dirs via free_untracked; whole-object destruction.",
       "cfr": {
@@ -12632,7 +12632,7 @@
       "file": "ewah/bitmap.c",
       "name": "bitmap_free",
       "signature": "void bitmap_free(struct bitmap *bitmap)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the bitmap struct and its internal word array; destroys the whole bitmap object.",
       "cfr": {
@@ -12703,7 +12703,7 @@
       "file": "ewah/ewah_bitmap.c",
       "name": "ewah_free",
       "signature": "void ewah_free(struct ewah_bitmap *self)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees the ewah_bitmap and its internal buffers; whole-object destruction.",
       "cfr": {
@@ -12807,7 +12807,7 @@
       "file": "ewah/ewah_bitmap.c",
       "name": "ewah_pool_free",
       "signature": "void ewah_pool_free(struct ewah_bitmap *self)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.88,
       "reason": "Returns or destroys a pooled ewah_bitmap; ends the object's lifetime from the caller's perspective.",
       "cfr": {
@@ -13805,7 +13805,7 @@
       "file": "graph.c",
       "name": "graph_clear",
       "signature": "void graph_clear(struct git_graph *graph)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Ends lifetime of a git_graph object, freeing it and its nested resources",
       "cfr": {
@@ -14112,7 +14112,7 @@
       "file": "grep.c",
       "name": "free_pattern_expr",
       "signature": "static void free_pattern_expr(struct grep_expr *x)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.98,
       "reason": "Recursively destroys a grep_expr tree, freeing all nodes",
       "cfr": {
@@ -14150,7 +14150,7 @@
       "file": "grep.c",
       "name": "free_grep_pat",
       "signature": "static void free_grep_pat(struct grep_pat *pattern)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys a grep_pat and all its nested resources",
       "cfr": {
@@ -14295,7 +14295,7 @@
       "file": "hash.c",
       "name": "git_hash_free",
       "signature": "void git_hash_free(struct git_hash_ctx *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Frees a git_hash_ctx, ending its lifetime",
       "cfr": {
@@ -14405,7 +14405,7 @@
       "file": "hashmap.h",
       "name": "hashmap_clear_and_free",
       "signature": "#define hashmap_clear_and_free(map, type, member)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Clears the hashmap and frees all entries, ending their lifetimes",
       "cfr": {
@@ -14442,7 +14442,7 @@
       "file": "hashmap.h",
       "name": "hashmap_partial_clear_and_free",
       "signature": "#define hashmap_partial_clear_and_free(map, type, member)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Partially clears the hashmap and frees associated entries",
       "cfr": {
@@ -14551,7 +14551,7 @@
       "file": "hook.c",
       "name": "hook_cache_clear",
       "signature": "void hook_cache_clear(struct strmap *cache)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys all entries in the hook config cache and clears the map",
       "cfr": {
@@ -14757,7 +14757,7 @@
       "file": "http-push.c",
       "name": "release_request",
       "signature": "static void release_request(struct transfer_request *request)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys a transfer_request and all its owned resources",
       "cfr": {
@@ -14949,7 +14949,7 @@
       "file": "http-walker.c",
       "name": "release_object_request",
       "signature": "static void release_object_request(struct object_request *obj_req)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.95,
       "reason": "Destroys an object_request and releases its resources",
       "cfr": {
@@ -14987,7 +14987,7 @@
       "file": "http-walker.c",
       "name": "cleanup",
       "signature": "static void cleanup(struct walker *walker)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Cleans up and frees a walker's internal state",
       "cfr": {
@@ -15158,7 +15158,7 @@
       "file": "http.c",
       "name": "release_http_pack_request",
       "signature": "void release_http_pack_request(struct http_pack_request *preq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Releases whole pack request object including nested resources",
       "cfr": {
@@ -15361,7 +15361,7 @@
       "file": "http.c",
       "name": "release_http_object_request",
       "signature": "void release_http_object_request(struct http_object_request **freq_p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Releases whole object request and nested resources via output param",
       "cfr": {
@@ -15456,7 +15456,7 @@
       "file": "imap-send.c",
       "name": "imap_close_server",
       "signature": "static void imap_close_server(struct imap_store *ictx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "shuts down and frees imap_store server resources",
       "cfr": {
@@ -15493,7 +15493,7 @@
       "file": "imap-send.c",
       "name": "imap_close_store",
       "signature": "static void imap_close_store(struct imap_store *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "closes/destroys whole imap_store object",
       "cfr": {
@@ -15779,7 +15779,7 @@
       "file": "kwset.c",
       "name": "kwsfree",
       "signature": "void kwsfree (kwset_t kws)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "frees all components of keyword set object",
       "cfr": {
@@ -15928,7 +15928,7 @@
       "file": "line-log.c",
       "name": "free_line_log_data",
       "signature": "static void free_line_log_data(struct line_log_data *r)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "clears and frees the line_log_data object itself",
       "cfr": {
@@ -16142,7 +16142,7 @@
       "file": "line-log.c",
       "name": "free_void_line_log_data",
       "signature": "static void free_void_line_log_data(void *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "void-typed wrapper destroying line_log_data object",
       "cfr": {
@@ -16829,7 +16829,7 @@
       "file": "merge-ort.c",
       "name": "clear_or_reinit_internal_opts",
       "signature": "static void clear_or_reinit_internal_opts(struct merge_options_internal *opti, int reinitialize)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "clears whole internal options object, releasing nested members",
       "cfr": {
@@ -16917,7 +16917,7 @@
       "file": "merge-ort.c",
       "name": "free_collisions",
       "signature": "static void free_collisions(struct strmap *collisions)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees collisions map and nested contents",
       "cfr": {
@@ -17098,7 +17098,7 @@
       "file": "midx.c",
       "name": "close_midx",
       "signature": "void close_midx(struct multi_pack_index *m)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "closes and frees the whole midx object and chain",
       "cfr": {
@@ -17209,7 +17209,7 @@
       "file": "name-hash.c",
       "name": "free_name_hash",
       "signature": "void free_name_hash(struct index_state *istate)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "clears and frees name hash structures of the index object",
       "cfr": {
@@ -17246,7 +17246,7 @@
       "file": "negotiator/default.c",
       "name": "release",
       "signature": "static void release(struct fetch_negotiator *n)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "releases negotiator state, frees internal data and queue",
       "cfr": {
@@ -17283,7 +17283,7 @@
       "file": "negotiator/skipping.c",
       "name": "release",
       "signature": "static void release(struct fetch_negotiator *n)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "releases negotiator object, frees internal data and queue",
       "cfr": {
@@ -17422,7 +17422,7 @@
       "file": "notes-utils.c",
       "name": "finish_copy_notes_for_rewrite",
       "signature": "void finish_copy_notes_for_rewrite(struct repository *r, struct notes_rewrite_cfg *c, const char *msg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "finalizes and frees the rewrite cfg object",
       "cfr": {
@@ -17551,7 +17551,7 @@
       "file": "notes.c",
       "name": "note_tree_free",
       "signature": "static void note_tree_free(struct int_node *tree)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "recursively frees entire notes tree",
       "cfr": {
@@ -17628,7 +17628,7 @@
       "file": "notes.c",
       "name": "free_notes",
       "signature": "void free_notes(struct notes_tree *t)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "frees entire notes tree contents and resets struct",
       "cfr": {
@@ -17800,7 +17800,7 @@
       "file": "object-file.c",
       "name": "odb_source_loose_free",
       "signature": "void odb_source_loose_free(struct odb_source_loose *loose)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees the whole loose struct plus nested caches",
       "cfr": {
@@ -18224,7 +18224,7 @@
       "file": "odb/source-files.c",
       "name": "odb_source_files_free",
       "signature": "static void odb_source_files_free(struct odb_source *source)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole source, releasing nested resources",
       "cfr": {
@@ -18348,7 +18348,7 @@
       "file": "odb/source-inmemory.c",
       "name": "odb_source_inmemory_free",
       "signature": "static void odb_source_inmemory_free(struct odb_source *source)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees object and clears nested oidtree containers, ending object lifetime",
       "cfr": {
@@ -18463,7 +18463,7 @@
       "file": "odb/source.c",
       "name": "odb_source_free",
       "signature": "void odb_source_free(struct odb_source *source)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees the whole source object",
       "cfr": {
@@ -18568,7 +18568,7 @@
       "file": "odb/streaming.c",
       "name": "odb_read_stream_close",
       "signature": "int odb_read_stream_close(struct odb_read_stream *st)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "closes and destroys read stream resource",
       "cfr": {
@@ -18680,7 +18680,7 @@
       "file": "odb/transaction.c",
       "name": "odb_transaction_commit",
       "signature": "void odb_transaction_commit(struct odb_transaction *transaction)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.55,
       "reason": "commits and frees the transaction object ending its lifetime",
       "cfr": {
@@ -18982,7 +18982,7 @@
       "file": "odb.c",
       "name": "odb_free",
       "signature": "void odb_free(struct object_database *o)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "destroys whole object_database and nested resources",
       "cfr": {
@@ -19025,7 +19025,7 @@
       "file": "pack-bitmap-write.c",
       "name": "free_pseudo_merge_commit_idx",
       "signature": "static void free_pseudo_merge_commit_idx(struct pseudo_merge_commit_idx *idx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "frees the whole idx structure",
       "cfr": {
@@ -19060,7 +19060,7 @@
       "file": "pack-bitmap-write.c",
       "name": "pseudo_merge_group_release_cb",
       "signature": "static void pseudo_merge_group_release_cb(void *payload, const char *name UNUSED)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "callback that releases and frees the group payload",
       "cfr": {
@@ -19099,7 +19099,7 @@
       "file": "pack-bitmap-write.c",
       "name": "bitmap_writer_free",
       "signature": "void bitmap_writer_free(struct bitmap_writer *writer)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees writer with nested ewah, maps, idx",
       "cfr": {
@@ -19387,7 +19387,7 @@
       "file": "pack-bitmap.c",
       "name": "free_bitmap_index",
       "signature": "void free_bitmap_index(struct bitmap_index *b)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "destroys whole bitmap_index object and nested resources",
       "cfr": {
@@ -19434,7 +19434,7 @@
       "file": "pack-objects.c",
       "name": "clear_packing_data",
       "signature": "void clear_packing_data(struct packing_data *pdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "clears/frees contents of packing_data container",
       "cfr": {
@@ -19672,7 +19672,7 @@
       "file": "packfile.c",
       "name": "packfile_list_clear",
       "signature": "void packfile_list_clear(struct packfile_list *list)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "clears/frees contents of packfile_list container",
       "cfr": {
@@ -20185,7 +20185,7 @@
       "file": "packfile.c",
       "name": "packfile_store_free",
       "signature": "void packfile_store_free(struct packfile_store *store)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys store, clearing nested lists and maps, then frees object",
       "cfr": {
@@ -20387,7 +20387,7 @@
       "file": "patch-ids.c",
       "name": "free_patch_ids",
       "signature": "int free_patch_ids(struct patch_ids *ids)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Clears and frees patch_ids hashmap contents",
       "cfr": {
@@ -20465,7 +20465,7 @@
       "file": "path-walk.c",
       "name": "path_walk_info_clear",
       "signature": "void path_walk_info_clear(struct path_walk_info *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Clears path_walk_info structure freeing nested resources",
       "cfr": {
@@ -20746,7 +20746,7 @@
       "file": "progress.c",
       "name": "stop_progress_msg",
       "signature": "void stop_progress_msg(struct progress **p_progress, const char *msg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the whole progress object and nulls the pointer",
       "cfr": {
@@ -20908,7 +20908,7 @@
       "file": "promisor-remote.c",
       "name": "promisor_info_free",
       "signature": "static void promisor_info_free(struct promisor_info *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees whole promisor_info object",
       "cfr": {
@@ -21029,7 +21029,7 @@
       "file": "promisor-remote.c",
       "name": "store_info_free",
       "signature": "static void store_info_free(struct store_info *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole store_info object and nested list",
       "cfr": {
@@ -21142,7 +21142,7 @@
       "file": "pseudo-merge.c",
       "name": "free_pseudo_merge_map",
       "signature": "void free_pseudo_merge_map(struct pseudo_merge_map *pm)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the pseudo_merge_map object and its nested members.",
       "cfr": {
@@ -21479,7 +21479,7 @@
       "file": "read-cache.c",
       "name": "release_index",
       "signature": "void release_index(struct index_state *istate)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Releases all nested fields/resources of an index_state object.",
       "cfr": {
@@ -21606,7 +21606,7 @@
       "file": "ref-filter.c",
       "name": "pop_stack_element",
       "signature": "static void pop_stack_element(struct ref_formatting_stack **stack)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Pops and frees a stack element including its strbuf.",
       "cfr": {
@@ -21807,7 +21807,7 @@
       "file": "ref-filter.c",
       "name": "free_array_item",
       "signature": "static void free_array_item(struct ref_array_item *item)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees a whole ref_array_item including nested fields",
       "cfr": {
@@ -21843,7 +21843,7 @@
       "file": "ref-filter.c",
       "name": "ref_array_clear",
       "signature": "void ref_array_clear(struct ref_array *array)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees entire ref_array contents and nested resources",
       "cfr": {
@@ -21888,7 +21888,7 @@
       "file": "ref-filter.c",
       "name": "ref_sorting_release",
       "signature": "void ref_sorting_release(struct ref_sorting *sorting)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Releases ref_sorting object and its contents",
       "cfr": {
@@ -21923,7 +21923,7 @@
       "file": "reflog-walk.c",
       "name": "free_complete_reflog",
       "signature": "static void free_complete_reflog(struct complete_reflogs *array)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees complete_reflogs object and nested entries",
       "cfr": {
@@ -22001,7 +22001,7 @@
       "file": "reflog-walk.c",
       "name": "reflog_walk_info_release",
       "signature": "void reflog_walk_info_release(struct reflog_walk_info *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Releases reflog_walk_info and its contained structures",
       "cfr": {
@@ -22150,7 +22150,7 @@
       "file": "refs/files-backend.c",
       "name": "files_ref_store_release",
       "signature": "static void files_ref_store_release(struct ref_store *ref_store)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Releases files ref_store including cache and base",
       "cfr": {
@@ -22190,7 +22190,7 @@
       "file": "refs/files-backend.c",
       "name": "unlock_ref",
       "signature": "static void unlock_ref(struct ref_lock *lock)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Rolls back lock and frees the ref_lock object",
       "cfr": {
@@ -22425,7 +22425,7 @@
       "file": "refs/iterator.c",
       "name": "ref_iterator_free",
       "signature": "void ref_iterator_free(struct ref_iterator *ref_iterator)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees whole iterator object via vtable release then free",
       "cfr": {
@@ -22575,7 +22575,7 @@
       "file": "refs/packed-backend.c",
       "name": "release_snapshot",
       "signature": "static int release_snapshot(struct snapshot *snapshot)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Refcount-based destruction freeing the snapshot object",
       "cfr": {
@@ -22956,7 +22956,7 @@
       "file": "refs/ref-cache.c",
       "name": "free_ref_entry",
       "signature": "static void free_ref_entry(struct ref_entry *entry)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys ref_entry including nested dir contents",
       "cfr": {
@@ -22994,7 +22994,7 @@
       "file": "refs/ref-cache.c",
       "name": "free_ref_cache",
       "signature": "void free_ref_cache(struct ref_cache *cache)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole ref_cache and nested entries",
       "cfr": {
@@ -23606,7 +23606,7 @@
       "file": "refs.c",
       "name": "ref_transaction_free",
       "signature": "void ref_transaction_free(struct ref_transaction *transaction)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees the whole transaction object and nested members.",
       "cfr": {
@@ -24548,7 +24548,7 @@
       "file": "reftable/iter.c",
       "name": "reftable_iterator_destroy",
       "signature": "void reftable_iterator_destroy(struct reftable_iterator *it)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "ends lifetime of iterator object",
       "cfr": {
@@ -24627,7 +24627,7 @@
       "file": "reftable/merged.c",
       "name": "reftable_merged_table_free",
       "signature": "void reftable_merged_table_free(struct reftable_merged_table *mt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "frees whole merged table object and nested memory",
       "cfr": {
@@ -24958,7 +24958,7 @@
       "file": "reftable/stack.c",
       "name": "reftable_stack_destroy",
       "signature": "void reftable_stack_destroy(struct reftable_stack *st)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Closes and frees whole stack with nested resources",
       "cfr": {
@@ -25088,7 +25088,7 @@
       "file": "reftable/stack.c",
       "name": "reftable_addition_destroy",
       "signature": "void reftable_addition_destroy(struct reftable_addition *add)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Closes and frees whole addition object",
       "cfr": {
@@ -25363,7 +25363,7 @@
       "file": "reftable/tree.c",
       "name": "tree_free",
       "signature": "void tree_free(struct tree_node *t)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Recursively frees entire tree container",
       "cfr": {
@@ -25484,7 +25484,7 @@
       "file": "reftable/writer.c",
       "name": "reftable_writer_free",
       "signature": "void reftable_writer_free(struct reftable_writer *w)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Releases internals then frees whole writer object",
       "cfr": {
@@ -25560,7 +25560,7 @@
       "file": "remote-curl.c",
       "name": "free_discovery",
       "signature": "static void free_discovery(struct discovery *d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees discovery object and nested refs",
       "cfr": {
@@ -26104,7 +26104,7 @@
       "file": "remote.c",
       "name": "free_one_ref",
       "signature": "void free_one_ref(struct ref *ref)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees a ref object including nested fields/reports",
       "cfr": {
@@ -26143,7 +26143,7 @@
       "file": "remote.c",
       "name": "free_refs",
       "signature": "void free_refs(struct ref *ref)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "frees entire ref list via free_one_ref",
       "cfr": {
@@ -26472,7 +26472,7 @@
       "file": "remote.c",
       "name": "remote_state_clear",
       "signature": "void remote_state_clear(struct remote_state *remote_state)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "clears entire remote_state, releasing nested members",
       "cfr": {
@@ -28925,7 +28925,7 @@
       "file": "submodule-config.c",
       "name": "free_one_config",
       "signature": "static void free_one_config(struct submodule_entry *entry)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees a whole submodule config object and its nested fields",
       "cfr": {
@@ -28963,7 +28963,7 @@
       "file": "submodule-config.c",
       "name": "submodule_cache_free",
       "signature": "void submodule_cache_free(struct submodule_cache *cache)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Clears and frees the entire cache object",
       "cfr": {
@@ -29269,7 +29269,7 @@
       "file": "submodule.c",
       "name": "fetch_task_free",
       "signature": "static void fetch_task_free(struct fetch_task *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees the whole fetch_task object and its nested resources",
       "cfr": {
@@ -29591,7 +29591,7 @@
       "file": "t/t4256/1/mailinfo.c",
       "name": "clear_mailinfo",
       "signature": "void clear_mailinfo(struct mailinfo *mi)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Clears/destroys mailinfo object releasing nested fields",
       "cfr": {
@@ -29705,7 +29705,7 @@
       "file": "t/unit-tests/clar/clar/summary.h",
       "name": "clar_summary_shutdown",
       "signature": "int clar_summary_shutdown(struct clar_summary *summary)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Closes file and frees the summary object, ending its lifetime",
       "cfr": {
@@ -30396,7 +30396,7 @@
       "file": "tmp-objdir.c",
       "name": "tmp_objdir_destroy",
       "signature": "int tmp_objdir_destroy(struct tmp_objdir *t)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Ends lifetime of tmp_objdir, removes dirs and frees object",
       "cfr": {
@@ -30696,7 +30696,7 @@
       "file": "trace2/tr2_tls.c",
       "name": "tr2tls_key_destructor",
       "signature": "static void tr2tls_key_destructor(void *payload)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "TLS destructor ending lifetime of payload object",
       "cfr": {
@@ -31316,7 +31316,7 @@
       "file": "transport.c",
       "name": "transport_disconnect",
       "signature": "int transport_disconnect(struct transport *transport)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends transport object lifetime, frees nested resources and the transport itself",
       "cfr": {
@@ -31707,7 +31707,7 @@
       "file": "unix-stream-server.c",
       "name": "unix_ss_free",
       "signature": "void unix_ss_free(struct unix_ss_socket *server_socket)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Closes socket, unlinks, and frees the whole server socket object",
       "cfr": {
@@ -32101,7 +32101,7 @@
       "file": "walker.c",
       "name": "walker_free",
       "signature": "void walker_free(struct walker *walker)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys whole walker object including cleanup and free",
       "cfr": {
@@ -32139,7 +32139,7 @@
       "file": "worktree.c",
       "name": "free_worktree",
       "signature": "void free_worktree(struct worktree *worktree)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees a worktree object and its fields",
       "cfr": {
@@ -32174,7 +32174,7 @@
       "file": "worktree.c",
       "name": "free_worktrees",
       "signature": "void free_worktrees(struct worktree **worktrees)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Destroys array of worktrees, freeing each and the array",
       "cfr": {

@@ -156,7 +156,7 @@
       "file": "src/array.c",
       "name": "array_data_string_free",
       "signature": "static void array_data_string_free(data_unset *du)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys data_unset object, freeing fields and the object itself.",
       "cfr": {
@@ -191,7 +191,7 @@
       "file": "src/array.c",
       "name": "array_data_integer_free",
       "signature": "static void array_data_integer_free(data_unset *du)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys data_unset integer object and frees it.",
       "cfr": {
@@ -226,7 +226,7 @@
       "file": "src/array.c",
       "name": "array_data_array_free",
       "signature": "static void array_data_array_free(data_unset *du)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys data_unset array object, releasing nested array data.",
       "cfr": {
@@ -299,7 +299,7 @@
       "file": "src/array.c",
       "name": "array_free",
       "signature": "void array_free(array * const a)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees array data and the array object itself, full object destruction.",
       "cfr": {
@@ -373,7 +373,7 @@
       "file": "src/buffer.c",
       "name": "buffer_free",
       "signature": "void buffer_free(buffer *b)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees buffer contents and the buffer object itself.",
       "cfr": {
@@ -445,7 +445,7 @@
       "file": "src/chunk.c",
       "name": "chunk_file_view_release",
       "signature": "static chunk_file_view * chunk_file_view_release (chunk_file_view *cfv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Releases chunk_file_view, munmaps and frees the object.",
       "cfr": {
@@ -482,7 +482,7 @@
       "file": "src/chunk.c",
       "name": "chunk_free",
       "signature": "static void chunk_free(chunk *c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Frees chunk's nested buffer and the chunk object itself.",
       "cfr": {
@@ -672,7 +672,7 @@
       "file": "src/chunk.c",
       "name": "chunkqueue_free",
       "signature": "void chunkqueue_free(chunkqueue *cq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Releases chunks then frees the chunkqueue object.",
       "cfr": {
@@ -859,7 +859,7 @@
       "file": "src/configfile.c",
       "name": "config_free",
       "signature": "void config_free(server *srv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Tears down server config releasing arrays and match data.",
       "cfr": {
@@ -932,7 +932,7 @@
       "file": "src/configfile.c",
       "name": "context_free",
       "signature": "static void context_free(config_t *context)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees context's nested buffers and the context itself.",
       "cfr": {
@@ -970,7 +970,7 @@
       "file": "src/connections.c",
       "name": "connection_free",
       "signature": "static void connection_free(connection * const con)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.9,
       "reason": "Tears down a connection object freeing nested resources and itself.",
       "cfr": {
@@ -1010,7 +1010,7 @@
       "file": "src/connections.c",
       "name": "connections_free",
       "signature": "void connections_free(server *srv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees all connection objects held by the server.",
       "cfr": {
@@ -1046,7 +1046,7 @@
       "file": "src/data_config.c",
       "name": "data_config_free",
       "signature": "__attribute_cold__ static void data_config_free(data_unset *d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys data_config object freeing nested arrays/regex and itself.",
       "cfr": {
@@ -1088,7 +1088,7 @@
       "file": "src/fdevent_fdnode.c",
       "name": "fdnode_free",
       "signature": "static void fdnode_free (fdnode *fdn)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees the fdnode object.",
       "cfr": {
@@ -1172,7 +1172,7 @@
       "file": "src/fdevent_impl.c",
       "name": "fdevent_free",
       "signature": "void fdevent_free (fdevents *ev)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees the fdevents object.",
       "cfr": {
@@ -1207,7 +1207,7 @@
       "file": "src/fdevent_impl.c",
       "name": "fdevent_linux_sysepoll_free",
       "signature": "__attribute_cold__ static void fdevent_linux_sysepoll_free (fdevents *ev)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Closes epoll fd and frees the fdevents backend object.",
       "cfr": {
@@ -1243,7 +1243,7 @@
       "file": "src/fdevent_impl.c",
       "name": "fdevent_freebsd_kqueue_free",
       "signature": "__attribute_cold__ static void fdevent_freebsd_kqueue_free (fdevents *ev)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Closes kqueue and frees the fdevents backend object.",
       "cfr": {
@@ -1279,7 +1279,7 @@
       "file": "src/fdevent_impl.c",
       "name": "fdevent_solaris_port_free",
       "signature": "__attribute_cold__ static void fdevent_solaris_port_free (fdevents *ev)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Closes port and frees the fdevents backend object.",
       "cfr": {
@@ -1315,7 +1315,7 @@
       "file": "src/fdevent_impl.c",
       "name": "fdevent_solaris_devpoll_free",
       "signature": "__attribute_cold__ static void fdevent_solaris_devpoll_free (fdevents *ev)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Closes devpoll and frees the fdevents backend object.",
       "cfr": {
@@ -1351,7 +1351,7 @@
       "file": "src/fdevent_impl.c",
       "name": "fdevent_poll_free",
       "signature": "__attribute_cold__ static void fdevent_poll_free (fdevents *ev)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees poll backend data of the fdevents object.",
       "cfr": {
@@ -1420,7 +1420,7 @@
       "file": "src/fdlog.c",
       "name": "fdlog_free",
       "signature": "void fdlog_free (fdlog_st * const fdlog)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Closes fd and frees the fdlog object.",
       "cfr": {
@@ -1536,7 +1536,7 @@
       "file": "src/gw_backend.c",
       "name": "gw_proc_free",
       "signature": "static void gw_proc_free(gw_proc *proc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Recursively frees gw_proc list nodes and nested buffers.",
       "cfr": {
@@ -1575,7 +1575,7 @@
       "file": "src/gw_backend.c",
       "name": "gw_host_free",
       "signature": "static void gw_host_free(gw_host *h)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees gw_host and its nested proc list.",
       "cfr": {
@@ -1613,7 +1613,7 @@
       "file": "src/gw_backend.c",
       "name": "gw_extensions_free",
       "signature": "static void gw_extensions_free(gw_exts *f)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees gw_exts and nested host objects.",
       "cfr": {
@@ -1651,7 +1651,7 @@
       "file": "src/gw_backend.c",
       "name": "handler_ctx_free",
       "signature": "static void handler_ctx_free(gw_handler_ctx *hctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees handler context with nested queues/buffers and itself.",
       "cfr": {
@@ -1692,7 +1692,7 @@
       "file": "src/gw_backend.c",
       "name": "gw_plugin_config_free",
       "signature": "void gw_plugin_config_free(gw_plugin_config *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees gw plugin config and nested extensions.",
       "cfr": {
@@ -1732,7 +1732,7 @@
       "file": "src/gw_backend.c",
       "name": "gw_free",
       "signature": "void gw_free(void *p_d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees the plugin data via gw_plugin_config_free.",
       "cfr": {
@@ -1844,7 +1844,7 @@
       "file": "src/keyvalue.c",
       "name": "pcre_keyvalue_buffer_free",
       "signature": "void pcre_keyvalue_buffer_free(pcre_keyvalue_buffer *kvb)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees whole pcre_keyvalue_buffer container including nested pcre resources.",
       "cfr": {
@@ -1919,7 +1919,7 @@
       "file": "src/lemon.c",
       "name": "acttab_free",
       "signature": "PRIVATE void acttab_free(acttab *p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees all memory associated with the acttab object, full destruction.",
       "cfr": {
@@ -2650,7 +2650,7 @@
       "file": "src/ls-hpack/lshpack.c",
       "name": "lshpack_enc_cleanup",
       "signature": "void lshpack_enc_cleanup (struct lshpack_enc *enc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Cleans up encoder object releasing its internal resources.",
       "cfr": {
@@ -2725,7 +2725,7 @@
       "file": "src/ls-hpack/lshpack.c",
       "name": "lshpack_dec_cleanup",
       "signature": "void lshpack_dec_cleanup (struct lshpack_dec *dec)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Cleans up decoder object releasing nested arrays and entries.",
       "cfr": {
@@ -2904,7 +2904,7 @@
       "file": "src/mod_auth.c",
       "name": "http_auth_cache_free",
       "signature": "static void http_auth_cache_free (http_auth_cache *ac)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole auth cache including all nested entries via tree walk.",
       "cfr": {
@@ -3020,7 +3020,7 @@
       "file": "src/mod_auth.c",
       "name": "data_auth_free",
       "signature": "static void data_auth_free(data_unset *d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destructor for data_auth object freeing nested require structure.",
       "cfr": {
@@ -3058,7 +3058,7 @@
       "file": "src/mod_auth_api.c",
       "name": "http_auth_require_free",
       "signature": "void http_auth_require_free (http_auth_require_t * const require)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole require object including nested array data.",
       "cfr": {
@@ -3096,7 +3096,7 @@
       "file": "src/mod_authn_dbi.c",
       "name": "mod_authn_dbi_dbconf_free",
       "signature": "static void mod_authn_dbi_dbconf_free (void *vdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Frees dbconf object, closing DB connection and releasing nested resources.",
       "cfr": {
@@ -3283,7 +3283,7 @@
       "file": "src/mod_boringssl.c",
       "name": "mod_openssl_kp_free",
       "signature": "__attribute_cold__ static void mod_openssl_kp_free (mod_openssl_kp *kp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees keypair object including nested SSL credential resources.",
       "cfr": {
@@ -3321,7 +3321,7 @@
       "file": "src/mod_boringssl.c",
       "name": "handler_ctx_free",
       "signature": "static void handler_ctx_free (handler_ctx *hctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees handler context object including SSL and keypair resources.",
       "cfr": {
@@ -3529,7 +3529,7 @@
       "file": "src/mod_boringssl.c",
       "name": "mod_openssl_free_plugin_ssl_ctx",
       "signature": "static void mod_openssl_free_plugin_ssl_ctx (plugin_ssl_ctx * const s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys whole plugin_ssl_ctx object, releasing nested SSL_CTX and key pairs then the struct",
       "cfr": {
@@ -4811,7 +4811,7 @@
       "file": "src/mod_magnet_cache.c",
       "name": "script_free",
       "signature": "__attribute_cold__ static void script_free(script *sc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of whole script object (lua_close plus free of struct).",
       "cfr": {
@@ -5092,7 +5092,7 @@
       "file": "src/mod_mbedtls.c",
       "name": "mod_mbedtls_kp_free",
       "signature": "__attribute_cold__ static void mod_mbedtls_kp_free (mod_mbedtls_kp *kp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees keypair object and its nested pk/x509 fields.",
       "cfr": {
@@ -5129,7 +5129,7 @@
       "file": "src/mod_mbedtls.c",
       "name": "mod_mbedtls_x509_crl_free",
       "signature": "__attribute_cold__ static void mod_mbedtls_x509_crl_free (mod_mbedtls_x509_crl *ca_crl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees crl wrapper object and its nested mbedtls crl.",
       "cfr": {
@@ -5165,7 +5165,7 @@
       "file": "src/mod_mbedtls.c",
       "name": "handler_ctx_free",
       "signature": "static void handler_ctx_free (handler_ctx *hctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends lifetime of handler context, freeing ssl state and releasing nested kp/crl.",
       "cfr": {
@@ -5240,7 +5240,7 @@
       "file": "src/mod_mbedtls.c",
       "name": "mod_mbedtls_free_plugin_ssl_ctx",
       "signature": "static void mod_mbedtls_free_plugin_ssl_ctx (plugin_ssl_ctx * const s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys plugin_ssl_ctx object, freeing ssl config and nested keypair.",
       "cfr": {
@@ -6193,7 +6193,7 @@
       "file": "src/mod_proxy.c",
       "name": "mod_proxy_free",
       "signature": "FREE_FUNC(mod_proxy_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Module FREE_FUNC tearing down whole plugin instance including nested config.",
       "cfr": {
@@ -6227,7 +6227,7 @@
       "file": "src/mod_redirect.c",
       "name": "mod_redirect_free",
       "signature": "FREE_FUNC(mod_redirect_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Module FREE_FUNC destroying plugin data and pcre keyvalue buffers.",
       "cfr": {
@@ -6260,7 +6260,7 @@
       "file": "src/mod_rewrite.c",
       "name": "mod_rewrite_free",
       "signature": "FREE_FUNC(mod_rewrite_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Module FREE_FUNC destroying plugin data and pcre keyvalue buffers.",
       "cfr": {
@@ -6328,7 +6328,7 @@
       "file": "src/mod_rrdtool.c",
       "name": "mod_rrd_free",
       "signature": "FREE_FUNC(mod_rrd_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Module FREE_FUNC closing fds/reaping child and freeing whole plugin config.",
       "cfr": {
@@ -6398,7 +6398,7 @@
       "file": "src/mod_simple_vhost.c",
       "name": "mod_simple_vhost_free",
       "signature": "FREE_FUNC(mod_simple_vhost_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Module FREE_FUNC destroying plugin data including buffer fields.",
       "cfr": {
@@ -6502,7 +6502,7 @@
       "file": "src/mod_ssi.c",
       "name": "mod_ssi_free",
       "signature": "FREE_FUNC(mod_ssi_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Module FREE_FUNC destroying plugin data including array fields.",
       "cfr": {
@@ -6537,7 +6537,7 @@
       "file": "src/mod_userdir.c",
       "name": "mod_userdir_free",
       "signature": "FREE_FUNC(mod_userdir_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.72,
       "reason": "Module FREE_FUNC tearing down plugin instance data.",
       "cfr": {
@@ -6643,7 +6643,7 @@
       "file": "src/mod_vhostdb.c",
       "name": "vhostdb_cache_free",
       "signature": "static void vhostdb_cache_free (vhostdb_cache *vc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "tears down whole cache container, freeing nested entries via splaytree and entry_free",
       "cfr": {
@@ -6682,7 +6682,7 @@
       "file": "src/mod_vhostdb.c",
       "name": "mod_vhostdb_free",
       "signature": "FREE_FUNC(mod_vhostdb_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "module FREE_FUNC tearing down plugin data including cache",
       "cfr": {
@@ -6758,7 +6758,7 @@
       "file": "src/mod_vhostdb_dbi.c",
       "name": "mod_vhostdb_dbconf_free",
       "signature": "static void mod_vhostdb_dbconf_free (void *vdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.72,
       "reason": "closes dbi connection, shuts down dbi, and frees config object",
       "cfr": {
@@ -6795,7 +6795,7 @@
       "file": "src/mod_vhostdb_ldap.c",
       "name": "mod_vhostdb_dbconf_free",
       "signature": "static void mod_vhostdb_dbconf_free (void *vdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.72,
       "reason": "unbinds ldap connection and frees config object",
       "cfr": {
@@ -6831,7 +6831,7 @@
       "file": "src/mod_vhostdb_mysql.c",
       "name": "mod_vhostdb_dbconf_free",
       "signature": "static void mod_vhostdb_dbconf_free (void *vdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.72,
       "reason": "closes mysql connection and frees config object",
       "cfr": {
@@ -6867,7 +6867,7 @@
       "file": "src/mod_vhostdb_pgsql.c",
       "name": "mod_vhostdb_dbconf_free",
       "signature": "static void mod_vhostdb_dbconf_free (void *vdata)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.72,
       "reason": "finishes pgsql connection and frees config object",
       "cfr": {
@@ -6903,7 +6903,7 @@
       "file": "src/mod_webdav.c",
       "name": "mod_webdav_free",
       "signature": "FREE_FUNC(mod_webdav_free)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.72,
       "reason": "module FREE_FUNC closing sqlite handles and freeing plugin data",
       "cfr": {
@@ -7777,7 +7777,7 @@
       "file": "src/server.c",
       "name": "server_free",
       "signature": "static void server_free(server *srv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Tears down the whole server object, releasing many nested resources and fields.",
       "cfr": {
@@ -7917,7 +7917,7 @@
       "file": "src/stat_cache.c",
       "name": "stat_cache_free_fam",
       "signature": "static void stat_cache_free_fam(stat_cache_fam *scf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Ends lifetime of stat_cache_fam object, closing FAM connection and freeing nested entries.",
       "cfr": {
@@ -8032,7 +8032,7 @@
       "file": "src/stat_cache.c",
       "name": "stat_cache_free",
       "signature": "void stat_cache_free(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Tears down the global stat cache subsystem, freeing the tree and FAM resources.",
       "cfr": {

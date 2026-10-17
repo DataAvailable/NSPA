@@ -21,13 +21,11 @@ from typing import Any, Iterable, Iterator, Sequence
 VALID_CATEGORIES = {
     "allocator",
     "releaser",
-    "destroyer",
     "non_memory",
 }
 MEMORY_CATEGORIES = {
     "allocator",
     "releaser",
-    "destroyer",
 }
 DEFAULT_BASE_URL = "https://api.openai.com/v1"
 DEFAULT_MODEL = "gpt-4o-mini"
@@ -49,12 +47,11 @@ SYSTEM_PROMPT = """You are validating C/C++ project-specific memory operation fu
 
 Classify each Candidate Function Record (CFR) into exactly one category:
 - allocator: creates/acquires dynamic memory or an owned object and returns/transfers it to the caller through a return value or output parameter.
-- releaser: releases/deallocates caller-owned memory, object fields, references, or handles passed to the function.
-- destroyer: ends the lifetime of a whole object/container/resource and may release nested memory; use this when the function's interface is object destruction rather than a simple free wrapper.
+- releaser: releases/deallocates caller-owned memory, object fields, references, or handles passed to the function, including interfaces that end the lifetime of a whole object/container/resource and may release nested memory.
 - non_memory: not a custom allocation/release/destroy interface. This includes functions that only allocate temporary memory internally and release it before returning.
 
 Return JSON only, with this schema:
-{"results":[{"id":"...","category":"allocator|releaser|destroyer|non_memory","confidence":0.0-1.0,"reason":"short reason"}]}"""
+{"results":[{"id":"...","category":"allocator|releaser|non_memory","confidence":0.0-1.0,"reason":"short reason"}]}"""
 
 
 @dataclass(slots=True)
@@ -192,7 +189,7 @@ def classify_heuristically(cfr: dict[str, Any]) -> tuple[str, float, str]:
     ):
         return "allocator", 0.82, "Allocation evidence in calls, hint, or filter evidence."
     if any(token in name for token in ("destroy", "delete", "dispose", "teardown")):
-        return "destroyer", 0.78, "Name indicates object lifetime destruction."
+        return "releaser", 0.78, "Name indicates object lifetime destruction."
     if "calls_standard_free" in evidence or hint == "releaser" or "release_name" in evidence:
         return "releaser", 0.78, "Release evidence in calls, hint, or filter evidence."
     return "non_memory", 0.55, "Insufficient ownership-transfer or lifecycle evidence."
@@ -324,8 +321,9 @@ def normalize_category(value: Any) -> str:
         "free": "releaser",
         "release": "releaser",
         "deallocator": "releaser",
-        "destructor": "destroyer",
-        "destroy": "destroyer",
+        "destructor": "releaser",
+        "destroy": "releaser",
+        "destroyer": "releaser",  # Compatibility with earlier results/checkpoints.
         "none": "non_memory",
         "non-memory": "non_memory",
         "not_memory": "non_memory",

@@ -139,7 +139,7 @@
       "file": "doc/examples/mux.c",
       "name": "close_stream",
       "signature": "static void close_stream(AVFormatContext *oc, OutputStream *ost)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees multiple nested resources of OutputStream object",
       "cfr": {
@@ -302,7 +302,7 @@
       "file": "fftools/ffmpeg_dec.c",
       "name": "dec_free",
       "signature": "void dec_free(Decoder **pdec)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole Decoder object and nested resources, nulls pointer",
       "cfr": {
@@ -517,7 +517,7 @@
       "file": "fftools/ffmpeg_demux.c",
       "name": "ist_free",
       "signature": "static void ist_free(InputStream **pist)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole InputStream object and nested resources, nulls pointer",
       "cfr": {
@@ -560,7 +560,7 @@
       "file": "fftools/ffmpeg_demux.c",
       "name": "istg_free",
       "signature": "static void istg_free(InputStreamGroup **pistg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "frees whole InputStreamGroup object, nulls pointer",
       "cfr": {
@@ -597,7 +597,7 @@
       "file": "fftools/ffmpeg_demux.c",
       "name": "ifile_close",
       "signature": "void ifile_close(InputFile **pf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "closes/frees whole InputFile and nested streams",
       "cfr": {
@@ -640,7 +640,7 @@
       "file": "fftools/ffmpeg_enc.c",
       "name": "enc_free",
       "signature": "void enc_free(Encoder **penc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole Encoder object and context, nulls pointer",
       "cfr": {
@@ -798,7 +798,7 @@
       "file": "fftools/ffmpeg_filter.c",
       "name": "fg_free",
       "signature": "void fg_free(FilterGraph **pfg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole FilterGraph and nested filters, nulls pointer",
       "cfr": {
@@ -985,7 +985,7 @@
       "file": "fftools/ffmpeg_mux.c",
       "name": "ost_free",
       "signature": "static void ost_free(OutputStream **post)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole OutputStream object and nested resources, nulls pointer",
       "cfr": {
@@ -1034,7 +1034,7 @@
       "file": "fftools/ffmpeg_mux.c",
       "name": "fc_close",
       "signature": "static void fc_close(AVFormatContext **pfc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees format context and avio, nulls pointer",
       "cfr": {
@@ -1072,7 +1072,7 @@
       "file": "fftools/ffmpeg_mux.c",
       "name": "of_free",
       "signature": "void of_free(OutputFile **pof)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole OutputFile and nested streams, nulls pointer",
       "cfr": {
@@ -1156,7 +1156,7 @@
       "file": "fftools/ffmpeg_sched.c",
       "name": "sch_free",
       "signature": "void sch_free(Scheduler **psch)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys whole Scheduler object and nested resources, nulls pointer",
       "cfr": {
@@ -1282,7 +1282,7 @@
       "file": "fftools/ffplay.c",
       "name": "decoder_destroy",
       "signature": "static void decoder_destroy(Decoder *d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Destroys Decoder, freeing packet and codec context",
       "cfr": {
@@ -1319,7 +1319,7 @@
       "file": "fftools/ffplay.c",
       "name": "frame_queue_destroy",
       "signature": "static void frame_queue_destroy(FrameQueue *f)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys FrameQueue, frees frames and sync primitives",
       "cfr": {
@@ -1593,7 +1593,7 @@
       "file": "fftools/ffplay_renderer.c",
       "name": "destroy",
       "signature": "static void destroy(VkRenderer *renderer)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys VkRenderer and all nested resources",
       "cfr": {
@@ -1678,7 +1678,7 @@
       "file": "fftools/ffplay_renderer.c",
       "name": "vk_renderer_destroy",
       "signature": "void vk_renderer_destroy(VkRenderer *renderer)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Public wrapper destroying renderer",
       "cfr": {
@@ -1752,7 +1752,7 @@
       "file": "fftools/sync_queue.c",
       "name": "sq_free",
       "signature": "void sq_free(SyncQueue **psq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys whole SyncQueue and nested fifo, nulls pointer",
       "cfr": {
@@ -1790,7 +1790,7 @@
       "file": "fftools/textformat/avtextformat.c",
       "name": "avtext_context_close",
       "signature": "int avtext_context_close(AVTextFormatContext **ptctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Closes/destroys whole text format context",
       "cfr": {
@@ -1832,7 +1832,7 @@
       "file": "fftools/textformat/avtextformat.c",
       "name": "avtextwriter_context_close",
       "signature": "int avtextwriter_context_close(AVTextWriterContext **pwctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Closes/destroys whole writer context",
       "cfr": {
@@ -1872,7 +1872,7 @@
       "file": "fftools/thread_queue.c",
       "name": "tq_free",
       "signature": "void tq_free(ThreadQueue **ptq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys whole ThreadQueue with nested fifos and mutexes",
       "cfr": {
@@ -2188,7 +2188,7 @@
       "file": "libavcodec/ass_split.c",
       "name": "ff_ass_free_dialog",
       "signature": "void ff_ass_free_dialog(ASSDialog **dialogp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees whole ASSDialog object and nulls pointer",
       "cfr": {
@@ -2268,7 +2268,7 @@
       "file": "libavcodec/ass_split.c",
       "name": "ff_ass_split_free",
       "signature": "av_cold void ff_ass_split_free(ASSSplitContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees whole ASSSplitContext and nested sections",
       "cfr": {
@@ -2351,7 +2351,7 @@
       "file": "libavcodec/av1dec.c",
       "name": "av1_decode_free",
       "signature": "static av_cold int av1_decode_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Tears down decoder context releasing many nested resources",
       "cfr": {
@@ -2436,7 +2436,7 @@
       "file": "libavcodec/avcodec.c",
       "name": "avsubtitle_free",
       "signature": "void avsubtitle_free(AVSubtitle *sub)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees subtitle rects and contents of whole object",
       "cfr": {
@@ -2705,7 +2705,7 @@
       "file": "libavcodec/bsf/vp9_raw_reorder.c",
       "name": "vp9_raw_reorder_frame_free",
       "signature": "static void vp9_raw_reorder_frame_free(VP9RawReorderFrame **frame)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees whole frame object and nested packet, nulls pointer",
       "cfr": {
@@ -2789,7 +2789,7 @@
       "file": "libavcodec/bsf.c",
       "name": "av_bsf_free",
       "signature": "void av_bsf_free(AVBSFContext **pctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole BSF context and nested resources, nulls pointer",
       "cfr": {
@@ -2909,7 +2909,7 @@
       "file": "libavcodec/bsf.c",
       "name": "av_bsf_list_free",
       "signature": "void av_bsf_list_free(AVBSFList **lst)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole list and nested filters, nulls pointer",
       "cfr": {
@@ -3410,7 +3410,7 @@
       "file": "libavcodec/cbs_lcevc.c",
       "name": "ff_cbs_lcevc_free_process_block_list",
       "signature": "void ff_cbs_lcevc_free_process_block_list(LCEVCRawProcessBlockList *list)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "Frees whole process block list and nested entries",
       "cfr": {
@@ -3907,7 +3907,7 @@
       "file": "libavcodec/codec_par.c",
       "name": "avcodec_parameters_free",
       "signature": "void avcodec_parameters_free(AVCodecParameters **ppar)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Resets nested fields and frees whole AVCodecParameters object, nulls pointer",
       "cfr": {
@@ -5486,7 +5486,7 @@
       "file": "libavcodec/executor.c",
       "name": "executor_free",
       "signature": "static av_cold void executor_free(FFExecutor *e, const int has_lock, const int has_cond)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "tears down whole executor: joins threads, destroys mutex/cond, frees object",
       "cfr": {
@@ -5960,7 +5960,7 @@
       "file": "libavcodec/frame_thread_encoder.c",
       "name": "ff_frame_thread_encoder_free",
       "signature": "av_cold void ff_frame_thread_encoder_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "tears down encoder threads and nested resources",
       "cfr": {
@@ -6004,7 +6004,7 @@
       "file": "libavcodec/g2meet.c",
       "name": "jpg_free_context",
       "signature": "static av_cold void jpg_free_context(JPGContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "frees whole context including vlc tables",
       "cfr": {
@@ -6078,7 +6078,7 @@
       "file": "libavcodec/get_buffer.c",
       "name": "frame_pool_free",
       "signature": "static void frame_pool_free(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "refstruct free callback uninitializing pool object",
       "cfr": {
@@ -6160,7 +6160,7 @@
       "file": "libavcodec/h264_ps.c",
       "name": "pps_free",
       "signature": "static void pps_free(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "refstruct free callback for pps object",
       "cfr": {
@@ -6325,7 +6325,7 @@
       "file": "libavcodec/h264dec.c",
       "name": "h264_free_pic",
       "signature": "static void h264_free_pic(H264Context *h, H264Picture *pic)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "frees and unrefs whole picture",
       "cfr": {
@@ -6363,7 +6363,7 @@
       "file": "libavcodec/hap.c",
       "name": "ff_hap_free_context",
       "signature": "av_cold void ff_hap_free_context(HapContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "frees whole hap context",
       "cfr": {
@@ -6482,7 +6482,7 @@
       "file": "libavcodec/hevc/hevcdec.c",
       "name": "hevc_decode_free",
       "signature": "static av_cold int hevc_decode_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "tears down whole decoder context",
       "cfr": {
@@ -6530,7 +6530,7 @@
       "file": "libavcodec/hevc/ps.c",
       "name": "hevc_vps_free",
       "signature": "static void hevc_vps_free(AVRefStructOpaque opaque, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "refstruct free callback for vps object",
       "cfr": {
@@ -6568,7 +6568,7 @@
       "file": "libavcodec/hevc/ps.c",
       "name": "hevc_sps_free",
       "signature": "static void hevc_sps_free(AVRefStructOpaque opaque, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "refstruct free callback for sps object",
       "cfr": {
@@ -6607,7 +6607,7 @@
       "file": "libavcodec/hevc/ps.c",
       "name": "hevc_pps_free",
       "signature": "static void hevc_pps_free(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "refstruct free callback for pps object",
       "cfr": {
@@ -6739,7 +6739,7 @@
       "file": "libavcodec/hw_base_encode.c",
       "name": "base_encode_pic_free",
       "signature": "static int base_encode_pic_free(FFHWBaseEncodePicture *pic)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "frees whole encode picture and nested fields",
       "cfr": {
@@ -6931,7 +6931,7 @@
       "file": "libavcodec/jpeg2000dwt.c",
       "name": "ff_dwt_destroy",
       "signature": "void ff_dwt_destroy(DWTContext *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "destroys DWT context freeing buffers",
       "cfr": {
@@ -6967,7 +6967,7 @@
       "file": "libavcodec/lcevcdec.c",
       "name": "lcevc_free",
       "signature": "static void lcevc_free(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "refstruct free callback tearing down lcevc context",
       "cfr": {
@@ -7165,7 +7165,7 @@
       "file": "libavcodec/libaomenc.c",
       "name": "aom_free",
       "signature": "static av_cold int aom_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "closes codec, frees nested resources and context fields",
       "cfr": {
@@ -7403,7 +7403,7 @@
       "file": "libavcodec/liboapvenc.c",
       "name": "liboapve_close",
       "signature": "static av_cold int liboapve_close(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys encoder and releases all resources",
       "cfr": {
@@ -7627,7 +7627,7 @@
       "file": "libavcodec/libvpxenc.c",
       "name": "vpx_free",
       "signature": "static av_cold int vpx_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys codec and frees all context resources",
       "cfr": {
@@ -7787,7 +7787,7 @@
       "file": "libavcodec/libxevd.c",
       "name": "libxevd_close",
       "signature": "static av_cold int libxevd_close(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys decoder and frees resources",
       "cfr": {
@@ -7825,7 +7825,7 @@
       "file": "libavcodec/libxeve.c",
       "name": "libxeve_close",
       "signature": "static av_cold int libxeve_close(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys encoder and releases resources",
       "cfr": {
@@ -7863,7 +7863,7 @@
       "file": "libavcodec/libxvid.c",
       "name": "xvid_ff_2pass_destroy",
       "signature": "static int xvid_ff_2pass_destroy(struct xvid_context *ref, xvid_plg_destroy_t *param)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "destroys two-pass plugin context",
       "cfr": {
@@ -7974,7 +7974,7 @@
       "file": "libavcodec/lzw.c",
       "name": "ff_lzw_decode_close",
       "signature": "av_cold void ff_lzw_decode_close(LZWState **p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "closes/frees LZW state via output pointer",
       "cfr": {
@@ -8205,7 +8205,7 @@
       "file": "libavcodec/mediacodec_wrapper.c",
       "name": "mediaformat_jni_delete",
       "signature": "static int mediaformat_jni_delete(FFAMediaFormat* ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "deletes format object and frees refs",
       "cfr": {
@@ -8331,7 +8331,7 @@
       "file": "libavcodec/mediacodec_wrapper.c",
       "name": "mediacodec_jni_delete",
       "signature": "static int mediacodec_jni_delete(FFAMediaCodec* ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends codec object lifetime, releases JNI refs and frees ctx.",
       "cfr": {
@@ -8446,7 +8446,7 @@
       "file": "libavcodec/mediacodec_wrapper.c",
       "name": "mediaformat_ndk_delete",
       "signature": "static int mediaformat_ndk_delete(FFAMediaFormat* ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys format object and frees it.",
       "cfr": {
@@ -8567,7 +8567,7 @@
       "file": "libavcodec/mediacodec_wrapper.c",
       "name": "mediacodec_ndk_delete",
       "signature": "static int mediacodec_ndk_delete(FFAMediaCodec* ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys codec object and frees it.",
       "cfr": {
@@ -8840,7 +8840,7 @@
       "file": "libavcodec/mpegpicture.c",
       "name": "mpv_pic_free",
       "signature": "static void av_cold mpv_pic_free(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Object destruction callback freeing nested frames and progress.",
       "cfr": {
@@ -9311,7 +9311,7 @@
       "file": "libavcodec/nvdec.c",
       "name": "nvdec_decoder_free",
       "signature": "static void nvdec_decoder_free(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys decoder object, destroying CUVID decoder and freeing functions.",
       "cfr": {
@@ -9752,7 +9752,7 @@
       "file": "libavcodec/options.c",
       "name": "avcodec_free_context",
       "signature": "void avcodec_free_context(AVCodecContext **pavctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "tears down whole AVCodecContext object and nullifies pointer",
       "cfr": {
@@ -9791,7 +9791,7 @@
       "file": "libavcodec/opus/dec_celt.c",
       "name": "ff_celt_free",
       "signature": "void ff_celt_free(CeltFrame **f)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "frees whole CeltFrame object with nested resources",
       "cfr": {
@@ -9903,7 +9903,7 @@
       "file": "libavcodec/packet.c",
       "name": "av_packet_free",
       "signature": "void av_packet_free(AVPacket **pkt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "unrefs and frees whole AVPacket object",
       "cfr": {
@@ -10131,7 +10131,7 @@
       "file": "libavcodec/packet.c",
       "name": "avpriv_packet_list_free",
       "signature": "void avpriv_packet_list_free(PacketList *pkt_buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "frees entire packet list container",
       "cfr": {
@@ -10554,7 +10554,7 @@
       "file": "libavcodec/pthread_frame.c",
       "name": "decoded_frames_free",
       "signature": "static void decoded_frames_free(DecodedFrames *df)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "frees frame array and container fields",
       "cfr": {
@@ -11063,7 +11063,7 @@
       "file": "libavcodec/rkmppdec.c",
       "name": "rkmpp_release_decoder",
       "signature": "static void rkmpp_release_decoder(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "ends decoder object lifetime, mpp_destroy",
       "cfr": {
@@ -11438,7 +11438,7 @@
       "file": "libavcodec/snow_dwt.c",
       "name": "ff_slice_buffer_destroy",
       "signature": "void ff_slice_buffer_destroy(slice_buffer *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys slice buffer container",
       "cfr": {
@@ -11476,7 +11476,7 @@
       "file": "libavcodec/threadprogress.c",
       "name": "ff_thread_progress_destroy",
       "signature": "av_cold void ff_thread_progress_destroy(ThreadProgress *pro)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys ThreadProgress object",
       "cfr": {
@@ -11790,7 +11790,7 @@
       "file": "libavcodec/v4l2_m2m.c",
       "name": "v4l2_m2m_destroy_context",
       "signature": "static void v4l2_m2m_destroy_context(AVRefStructOpaque unused, void *context)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys m2m context object",
       "cfr": {
@@ -12516,7 +12516,7 @@
       "file": "libavcodec/videotoolboxenc.c",
       "name": "vtenc_free_buf_node",
       "signature": "static void vtenc_free_buf_node(BufNode *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees node object including nested refs and the node itself",
       "cfr": {
@@ -12745,7 +12745,7 @@
       "file": "libavcodec/vorbis_parser.c",
       "name": "av_vorbis_parse_free",
       "signature": "void av_vorbis_parse_free(AVVorbisParseContext **s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole parser context via double pointer and nulls it",
       "cfr": {
@@ -12782,7 +12782,7 @@
       "file": "libavcodec/vorbisdec.c",
       "name": "vorbis_free",
       "signature": "static void vorbis_free(vorbis_context *vc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees all allocated memory of vorbis context including nested resources",
       "cfr": {
@@ -12985,7 +12985,7 @@
       "file": "libavcodec/vp5.c",
       "name": "vp56_free",
       "signature": "static av_cold int vp56_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Tears down VP56 context resources",
       "cfr": {
@@ -13021,7 +13021,7 @@
       "file": "libavcodec/vp56.c",
       "name": "ff_vp56_free_context",
       "signature": "av_cold int ff_vp56_free_context(VP56Context *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees frames and fields of VP56 context",
       "cfr": {
@@ -13059,7 +13059,7 @@
       "file": "libavcodec/vp6.c",
       "name": "vp6_decode_free_context",
       "signature": "static av_cold void vp6_decode_free_context(VP56Context *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees VLC tables and VP56 context resources",
       "cfr": {
@@ -13096,7 +13096,7 @@
       "file": "libavcodec/vp6.c",
       "name": "vp6_decode_free",
       "signature": "static av_cold int vp6_decode_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees decoder context via vp6_decode_free_context",
       "cfr": {
@@ -13402,7 +13402,7 @@
       "file": "libavcodec/vp9.c",
       "name": "vp9_decode_free",
       "signature": "static av_cold int vp9_decode_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "tears down whole decoder context",
       "cfr": {
@@ -13601,7 +13601,7 @@
       "file": "libavcodec/vulkan_decode.c",
       "name": "free_common",
       "signature": "static void free_common(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "uninitializes whole shared context",
       "cfr": {
@@ -14496,7 +14496,7 @@
       "file": "libavcodec/vvc/dec.c",
       "name": "frame_context_free",
       "signature": "static av_cold void frame_context_free(VVCFrameContext *fc)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Tears down whole frame context, freeing nested resources",
       "cfr": {
@@ -14540,7 +14540,7 @@
       "file": "libavcodec/vvc/dec.c",
       "name": "vvc_decode_free",
       "signature": "static av_cold int vvc_decode_free(AVCodecContext *avctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Full decoder teardown releasing many subsystems",
       "cfr": {
@@ -14583,7 +14583,7 @@
       "file": "libavcodec/vvc/ps.c",
       "name": "sps_free",
       "signature": "static void sps_free(AVRefStructOpaque opaque, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Refstruct destructor callback for SPS object lifetime end",
       "cfr": {
@@ -14661,7 +14661,7 @@
       "file": "libavcodec/vvc/ps.c",
       "name": "pps_free",
       "signature": "static void pps_free(AVRefStructOpaque opaque, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Refstruct destructor for PPS, frees nested fields",
       "cfr": {
@@ -14777,7 +14777,7 @@
       "file": "libavcodec/vvc/ps.c",
       "name": "alf_free",
       "signature": "static void alf_free(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.65,
       "reason": "Refstruct destructor callback for ALF object",
       "cfr": {
@@ -14815,7 +14815,7 @@
       "file": "libavcodec/vvc/refs.c",
       "name": "free_progress",
       "signature": "static void free_progress(AVRefStructOpaque unused, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys progress object cond/mutex at lifetime end",
       "cfr": {
@@ -15016,7 +15016,7 @@
       "file": "libavcodec/vvc/thread.c",
       "name": "ff_vvc_executor_free",
       "signature": "av_cold void ff_vvc_executor_free(FFExecutor **e)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees executor object via double pointer, ends lifetime",
       "cfr": {
@@ -15127,7 +15127,7 @@
       "file": "libavcodec/wavpack.c",
       "name": "progress_pool_free_entry_cb",
       "signature": "static av_cold void progress_pool_free_entry_cb(AVRefStructOpaque opaque, void *obj)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Pool entry destructor destroying thread progress",
       "cfr": {
@@ -15165,7 +15165,7 @@
       "file": "libavcodec/webp.c",
       "name": "image_ctx_free",
       "signature": "static void image_ctx_free(ImageContext *img)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Tears down image context freeing frame/vlc and resets",
       "cfr": {
@@ -15364,7 +15364,7 @@
       "file": "libavdevice/avdevice.c",
       "name": "avdevice_free_list_devices",
       "signature": "void avdevice_free_list_devices(AVDeviceInfoList **device_list)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees whole device list and nulls pointer",
       "cfr": {
@@ -15747,7 +15747,7 @@
       "file": "libavdevice/dshow_pin.c",
       "name": "ff_dshow_pin_Free",
       "signature": "static void ff_dshow_pin_Free(DShowPin *this)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees the DShowPin object and its members; object destruction interface",
       "cfr": {
@@ -15823,7 +15823,7 @@
       "file": "libavdevice/jack.c",
       "name": "free_pkt_fifo",
       "signature": "static void free_pkt_fifo(AVFifo **fifop)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Drains and frees the whole AVFifo container via output pointer",
       "cfr": {
@@ -16086,7 +16086,7 @@
       "file": "libavdevice/timefilter.c",
       "name": "ff_timefilter_destroy",
       "signature": "void ff_timefilter_destroy(TimeFilter *self)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Destroys the whole TimeFilter object",
       "cfr": {
@@ -16353,7 +16353,7 @@
       "file": "libavfilter/af_arnndn.c",
       "name": "rnnoise_model_free",
       "signature": "static void rnnoise_model_free(RNNModel *model)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees the whole RNNModel object and nested layers",
       "cfr": {
@@ -16650,7 +16650,7 @@
       "file": "libavfilter/af_dynaudnorm.c",
       "name": "cqueue_free",
       "signature": "static void cqueue_free(cqueue *q)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys cqueue object, frees nested data",
       "cfr": {
@@ -16686,7 +16686,7 @@
       "file": "libavfilter/af_lv2.c",
       "name": "uri_table_destroy",
       "signature": "static void uri_table_destroy(URITable *table)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys URITable object",
       "cfr": {
@@ -16848,7 +16848,7 @@
       "file": "libavfilter/avfilter.c",
       "name": "link_free",
       "signature": "static void link_free(AVFilterLink **link)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys link object and nested resources, nulls pointer",
       "cfr": {
@@ -16975,7 +16975,7 @@
       "file": "libavfilter/avfilter.c",
       "name": "avfilter_free",
       "signature": "void avfilter_free(AVFilterContext *filter)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys whole filter context",
       "cfr": {
@@ -17057,7 +17057,7 @@
       "file": "libavfilter/avfiltergraph.c",
       "name": "avfilter_graph_free",
       "signature": "void avfilter_graph_free(AVFilterGraph **graphp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys whole graph, nulls pointer",
       "cfr": {
@@ -17175,7 +17175,7 @@
       "file": "libavfilter/dnn/dnn_backend_openvino.c",
       "name": "dnn_free_model_ov",
       "signature": "static void dnn_free_model_ov(DNNModel **model)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole DNN model and nested resources",
       "cfr": {
@@ -17230,7 +17230,7 @@
       "file": "libavfilter/dnn/dnn_backend_tf.c",
       "name": "destroy_request_item",
       "signature": "static inline void destroy_request_item(TFRequestItem **arg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Frees request item completely, nulls pointer",
       "cfr": {
@@ -17381,7 +17381,7 @@
       "file": "libavfilter/dnn/dnn_backend_tf.c",
       "name": "dnn_free_model_tf",
       "signature": "static void dnn_free_model_tf(DNNModel **model)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole DNN model and resources",
       "cfr": {
@@ -17430,7 +17430,7 @@
       "file": "libavfilter/dnn/dnn_backend_torch.cpp",
       "name": "destroy_request_item",
       "signature": "static inline void destroy_request_item(THRequestItem **arg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys whole request item, nulls pointer",
       "cfr": {
@@ -17469,7 +17469,7 @@
       "file": "libavfilter/dnn/dnn_backend_torch.cpp",
       "name": "dnn_free_model_th",
       "signature": "static void dnn_free_model_th(DNNModel **model)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole DNN model and resources",
       "cfr": {
@@ -17617,7 +17617,7 @@
       "file": "libavfilter/dnn/queue.c",
       "name": "ff_queue_destroy",
       "signature": "void ff_queue_destroy(Queue *q)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Ends lifetime of whole Queue object and nested entries",
       "cfr": {
@@ -17691,7 +17691,7 @@
       "file": "libavfilter/dnn/safe_queue.c",
       "name": "ff_safe_queue_destroy",
       "signature": "void ff_safe_queue_destroy(SafeQueue *sq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole SafeQueue including mutex/cond/queue",
       "cfr": {
@@ -17730,7 +17730,7 @@
       "file": "libavfilter/ebur128.c",
       "name": "ff_ebur128_destroy",
       "signature": "void ff_ebur128_destroy(FFEBUR128State ** st)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Destroys whole state object via double pointer",
       "cfr": {
@@ -18184,7 +18184,7 @@
       "file": "libavfilter/ocio_wrapper.hpp",
       "name": "ocio_destroy_processor",
       "signature": "void ocio_destroy_processor(AVFilterContext *ctx, OCIOHandle handle)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys OCIO processor handle/object",
       "cfr": {
@@ -19863,7 +19863,7 @@
       "file": "libavformat/avformat.c",
       "name": "ff_free_stream",
       "signature": "void ff_free_stream(AVStream **pst)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "tears down whole AVStream object with nested allocations and nulls pointer",
       "cfr": {
@@ -19908,7 +19908,7 @@
       "file": "libavformat/avformat.c",
       "name": "ff_free_stream_group",
       "signature": "void ff_free_stream_group(AVStreamGroup **pstg)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys whole stream group and nested resources",
       "cfr": {
@@ -19950,7 +19950,7 @@
       "file": "libavformat/avformat.c",
       "name": "avformat_free_context",
       "signature": "void avformat_free_context(AVFormatContext *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "destroys entire format context, freeing nested streams/groups",
       "cfr": {
@@ -20550,7 +20550,7 @@
       "file": "libavformat/dashdec.c",
       "name": "free_representation",
       "signature": "static void free_representation(struct representation *pls)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "tears down whole representation with nested lists and resources",
       "cfr": {
@@ -20702,7 +20702,7 @@
       "file": "libavformat/dashenc.c",
       "name": "dash_free",
       "signature": "static void dash_free(AVFormatContext *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "tears down whole DASH muxer context and nested resources",
       "cfr": {
@@ -20786,7 +20786,7 @@
       "file": "libavformat/demux.c",
       "name": "avformat_close_input",
       "signature": "void avformat_close_input(AVFormatContext **ps)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "Closes and frees whole AVFormatContext object via avformat_free_context, nulls output param",
       "cfr": {
@@ -20982,7 +20982,7 @@
       "file": "libavformat/hdsenc.c",
       "name": "hds_free",
       "signature": "static void hds_free(AVFormatContext *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Tears down HDS context, frees stream contexts and nested resources",
       "cfr": {
@@ -21446,7 +21446,7 @@
       "file": "libavformat/iamf.c",
       "name": "ff_iamf_free_audio_element",
       "signature": "void ff_iamf_free_audio_element(IAMFAudioElement **paudio_element)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole audio element and nested resources, nulls output pointer",
       "cfr": {
@@ -21486,7 +21486,7 @@
       "file": "libavformat/iamf.c",
       "name": "ff_iamf_free_mix_presentation",
       "signature": "void ff_iamf_free_mix_presentation(IAMFMixPresentation **pmix_presentation)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole mix presentation object via double pointer, releasing nested memory",
       "cfr": {
@@ -21727,7 +21727,7 @@
       "file": "libavformat/id3v2.c",
       "name": "ff_id3v2_free_extra_meta",
       "signature": "void ff_id3v2_free_extra_meta(ID3v2ExtraMeta **extra_meta)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Frees whole extra_meta list object via double pointer with nested frees",
       "cfr": {
@@ -21952,7 +21952,7 @@
       "file": "libavformat/imf_cpl.c",
       "name": "ff_imf_cpl_free",
       "signature": "void ff_imf_cpl_free(FFIMFCPL *cpl)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees whole CPL object including nested virtual tracks",
       "cfr": {
@@ -22152,7 +22152,7 @@
       "file": "libavformat/mov.c",
       "name": "mov_free_encryption_index",
       "signature": "static void mov_free_encryption_index(MOVEncryptionIndex **index)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees whole encryption index object via double pointer",
       "cfr": {
@@ -22485,7 +22485,7 @@
       "file": "libavformat/mxfdec.c",
       "name": "mxf_free_metadataset",
       "signature": "static void mxf_free_metadataset(MXFMetadataSet **ctx, enum MXFMetadataSetType type)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.72,
       "reason": "Frees whole metadata set object via double pointer",
       "cfr": {
@@ -23147,7 +23147,7 @@
       "file": "libavformat/rtmpdh.c",
       "name": "ff_dh_free",
       "signature": "void ff_dh_free(FF_DH *dh)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "destroys whole DH object including nested bignum",
       "cfr": {
@@ -23264,7 +23264,7 @@
       "file": "libavformat/rtmppkt.c",
       "name": "ff_rtmp_packet_destroy",
       "signature": "void ff_rtmp_packet_destroy(RTMPPacket *pkt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "destroys packet, frees its data",
       "cfr": {
@@ -24246,7 +24246,7 @@
       "file": "libavutil/audio_fifo.c",
       "name": "av_audio_fifo_free",
       "signature": "void av_audio_fifo_free(AVAudioFifo *af)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys whole AVAudioFifo including nested buffers",
       "cfr": {
@@ -24839,7 +24839,7 @@
       "file": "libavutil/buffer.c",
       "name": "buffer_pool_free",
       "signature": "static void buffer_pool_free(AVBufferPool *pool)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "tears down whole pool, mutex destroy and freeing nested resources",
       "cfr": {
@@ -25103,7 +25103,7 @@
       "file": "libavutil/container_fifo.c",
       "name": "av_container_fifo_free",
       "signature": "void av_container_fifo_free(AVContainerFifo **pcf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys whole fifo container, frees nested resources and nulls pointer",
       "cfr": {
@@ -25367,7 +25367,7 @@
       "file": "libavutil/dict.c",
       "name": "av_dict_free",
       "signature": "void av_dict_free(AVDictionary **pm)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees entire dictionary and nulls pointer",
       "cfr": {
@@ -25553,7 +25553,7 @@
       "file": "libavutil/encryption_info.c",
       "name": "av_encryption_info_free",
       "signature": "void av_encryption_info_free(AVEncryptionInfo *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "frees entire encryption info object and nested fields",
       "cfr": {
@@ -25628,7 +25628,7 @@
       "file": "libavutil/encryption_info.c",
       "name": "av_encryption_init_info_free",
       "signature": "void av_encryption_init_info_free(AVEncryptionInitInfo *info)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "recursively frees whole init info object",
       "cfr": {
@@ -25665,7 +25665,7 @@
       "file": "libavutil/eval.c",
       "name": "av_expr_free",
       "signature": "void av_expr_free(AVExpr *e)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "recursively frees whole expression tree",
       "cfr": {
@@ -25742,7 +25742,7 @@
       "file": "libavutil/executor.c",
       "name": "executor_free",
       "signature": "static void executor_free(AVExecutor *e, const int has_lock, const int has_cond)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "destroys executor, joins threads, destroys mutex/cond and frees",
       "cfr": {
@@ -25829,7 +25829,7 @@
       "file": "libavutil/executor.c",
       "name": "av_executor_free",
       "signature": "void av_executor_free(AVExecutor **executor)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys whole executor and nulls pointer",
       "cfr": {
@@ -26103,7 +26103,7 @@
       "file": "libavutil/frame.c",
       "name": "av_frame_free",
       "signature": "void av_frame_free(AVFrame **frame)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "unrefs and frees whole frame object via output pointer",
       "cfr": {
@@ -26521,7 +26521,7 @@
       "file": "libavutil/hmac.c",
       "name": "av_hmac_free",
       "signature": "void av_hmac_free(AVHMAC *c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees whole HMAC object and its fields",
       "cfr": {
@@ -26558,7 +26558,7 @@
       "file": "libavutil/hwcontext.c",
       "name": "hwdevice_ctx_free",
       "signature": "static void hwdevice_ctx_free(void *opaque, uint8_t *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "uninits device and frees whole context",
       "cfr": {
@@ -26637,7 +26637,7 @@
       "file": "libavutil/hwcontext.c",
       "name": "hwframe_ctx_free",
       "signature": "static void hwframe_ctx_free(void *opaque, uint8_t *data)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "uninits frames and frees whole context",
       "cfr": {
@@ -26800,7 +26800,7 @@
       "file": "libavutil/hwcontext.c",
       "name": "av_hwframe_constraints_free",
       "signature": "void av_hwframe_constraints_free(AVHWFramesConstraints **constraints)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees whole constraints object via output pointer",
       "cfr": {
@@ -27412,7 +27412,7 @@
       "file": "libavutil/hwcontext_d3d12va.c",
       "name": "d3d12va_device_free",
       "signature": "static void d3d12va_device_free(AVHWDeviceContext *hwdev)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees device context, releasing objects and library handle",
       "cfr": {
@@ -27520,7 +27520,7 @@
       "file": "libavutil/hwcontext_dxva2.c",
       "name": "dxva2_device_free",
       "signature": "static void dxva2_device_free(AVHWDeviceContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "tears down device context releasing multiple resources",
       "cfr": {
@@ -27801,7 +27801,7 @@
       "file": "libavutil/hwcontext_qsv.c",
       "name": "qsv_device_free",
       "signature": "static void qsv_device_free(AVHWDeviceContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "closes session and frees device context resources",
       "cfr": {
@@ -27882,7 +27882,7 @@
       "file": "libavutil/hwcontext_vaapi.c",
       "name": "vaapi_device_free",
       "signature": "static void vaapi_device_free(AVHWDeviceContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "terminates display and frees device context",
       "cfr": {
@@ -27961,7 +27961,7 @@
       "file": "libavutil/hwcontext_vdpau.c",
       "name": "vdpau_device_free",
       "signature": "static void vdpau_device_free(AVHWDeviceContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys device and frees context",
       "cfr": {
@@ -28123,7 +28123,7 @@
       "file": "libavutil/hwcontext_vulkan.c",
       "name": "vulkan_device_free",
       "signature": "static void vulkan_device_free(AVHWDeviceContext *ctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys device, instance, debug messenger; full object teardown",
       "cfr": {
@@ -28301,7 +28301,7 @@
       "file": "libavutil/hwcontext_vulkan.c",
       "name": "vulkan_frame_free",
       "signature": "static void vulkan_frame_free(AVHWFramesContext *hwfc, AVVkFrame *f)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys whole frame object including images, semaphores, memory",
       "cfr": {
@@ -28591,7 +28591,7 @@
       "file": "libavutil/iamf.c",
       "name": "av_iamf_audio_element_free",
       "signature": "void av_iamf_audio_element_free(AVIAMFAudioElement **paudio_element)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees whole audio element object and nested fields via double pointer",
       "cfr": {
@@ -28665,7 +28665,7 @@
       "file": "libavutil/iamf.c",
       "name": "av_iamf_mix_presentation_free",
       "signature": "void av_iamf_mix_presentation_free(AVIAMFMixPresentation **pmix_presentation)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Frees whole mix presentation object and nested fields",
       "cfr": {
@@ -29733,7 +29733,7 @@
       "file": "libavutil/pca.c",
       "name": "ff_pca_free",
       "signature": "void ff_pca_free(PCA *pca)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys whole PCA object including nested buffers.",
       "cfr": {
@@ -29844,7 +29844,7 @@
       "file": "libavutil/refstruct.c",
       "name": "pool_free",
       "signature": "static void pool_free(AVRefStructPool *pool)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys whole pool object and its mutex/resources.",
       "cfr": {
@@ -29959,7 +29959,7 @@
       "file": "libavutil/refstruct.h",
       "name": "av_refstruct_pool_uninit",
       "signature": "static inline void av_refstruct_pool_uninit(AVRefStructPool **poolp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Uninitializes/destroys the pool and clears the pointer.",
       "cfr": {
@@ -30097,7 +30097,7 @@
       "file": "libavutil/side_data.c",
       "name": "free_side_data_entry",
       "signature": "static void free_side_data_entry(AVFrameSideData **ptr_sd)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees a side data entry object and nested members, clears pointer.",
       "cfr": {
@@ -30136,7 +30136,7 @@
       "file": "libavutil/side_data.c",
       "name": "av_frame_side_data_free",
       "signature": "void av_frame_side_data_free(AVFrameSideData ***sd, int *nb_sd)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys whole side data array and resets count.",
       "cfr": {
@@ -30175,7 +30175,7 @@
       "file": "libavutil/slicethread.c",
       "name": "avpriv_slicethread_free",
       "signature": "av_cold void avpriv_slicethread_free(AVSliceThread **pctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "frees whole slicethread context and nested fields via av_freep, mutex/cond destroy",
       "cfr": {
@@ -30218,7 +30218,7 @@
       "file": "libavutil/slicethread.c",
       "name": "avpriv_slicethread_free",
       "signature": "void avpriv_slicethread_free(AVSliceThread **pctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "stub variant of slicethread free; ends context lifetime",
       "cfr": {
@@ -30664,7 +30664,7 @@
       "file": "libavutil/threadmessage.c",
       "name": "av_thread_message_queue_free",
       "signature": "void av_thread_message_queue_free(AVThreadMessageQueue **mq)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys whole queue, frees nested fifo and primitives",
       "cfr": {
@@ -30776,7 +30776,7 @@
       "file": "libavutil/tree.c",
       "name": "av_tree_destroy",
       "signature": "void av_tree_destroy(AVTreeNode *t)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "recursively destroys tree freeing all nodes",
       "cfr": {
@@ -31007,7 +31007,7 @@
       "file": "libavutil/vulkan.c",
       "name": "ff_vk_exec_pool_free",
       "signature": "void ff_vk_exec_pool_free(FFVulkanContext *s, FFVkExecPool *pool)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "destroys exec pool, freeing nested command/descriptor pools and memory",
       "cfr": {
@@ -31130,7 +31130,7 @@
       "file": "libavutil/vulkan.c",
       "name": "ff_vk_free_buf",
       "signature": "void ff_vk_free_buf(FFVulkanContext *s, FFVkBuffer *buf)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "destroys vulkan buffer, frees memory and unmaps",
       "cfr": {
@@ -31676,7 +31676,7 @@
       "file": "libswresample/soxr_resample.c",
       "name": "destroy",
       "signature": "static void destroy(struct ResampleContext * *c)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "ends lifetime of soxr resampler via soxr_delete",
       "cfr": {
@@ -31798,7 +31798,7 @@
       "file": "libswresample/swresample.c",
       "name": "swr_free",
       "signature": "av_cold void swr_free(SwrContext **ss)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.85,
       "reason": "tears down whole SwrContext incl nested cleanup and uninit",
       "cfr": {
@@ -32164,7 +32164,7 @@
       "file": "libswscale/aarch64/rasm.c",
       "name": "rasm_free",
       "signature": "void rasm_free(RasmContext **prctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "frees whole RasmContext and nested members",
       "cfr": {
@@ -32485,7 +32485,7 @@
       "file": "libswscale/graph.c",
       "name": "pass_free",
       "signature": "static void pass_free(SwsPass *pass)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "tears down SwsPass object and nested resources",
       "cfr": {
@@ -32610,7 +32610,7 @@
       "file": "libswscale/graph.c",
       "name": "free_lut3d",
       "signature": "static void free_lut3d(void *priv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Callback destroying whole lut3d object via ff_sws_lut3d_free",
       "cfr": {
@@ -32723,7 +32723,7 @@
       "file": "libswscale/graph.c",
       "name": "ff_sws_graph_free",
       "signature": "void ff_sws_graph_free(SwsGraph **pgraph)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Uninits and frees whole graph object, nulls pointer",
       "cfr": {
@@ -32795,7 +32795,7 @@
       "file": "libswscale/lut3d.c",
       "name": "ff_sws_lut3d_free",
       "signature": "void ff_sws_lut3d_free(SwsLut3D **plut3d)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole lut3d object and nulls pointer",
       "cfr": {
@@ -32867,7 +32867,7 @@
       "file": "libswscale/ops.c",
       "name": "ff_sws_op_list_free",
       "signature": "void ff_sws_op_list_free(SwsOpList **p_ops)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees whole op list and nested ops",
       "cfr": {
@@ -32940,7 +32940,7 @@
       "file": "libswscale/ops_chain.c",
       "name": "ff_sws_op_chain_free_cb",
       "signature": "void ff_sws_op_chain_free_cb(void *ptr)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Callback freeing whole op chain object",
       "cfr": {
@@ -32978,7 +32978,7 @@
       "file": "libswscale/ops_chain.h",
       "name": "ff_sws_op_chain_free",
       "signature": "static inline void ff_sws_op_chain_free(SwsOpChain *chain)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Destroys whole op chain via free_cb",
       "cfr": {
@@ -33085,7 +33085,7 @@
       "file": "libswscale/ops_dispatch.c",
       "name": "op_pass_free",
       "signature": "static void op_pass_free(void *ptr)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Callback destroying whole pass object and nested resources",
       "cfr": {
@@ -33518,7 +33518,7 @@
       "file": "libswscale/utils.c",
       "name": "sws_free_context",
       "signature": "void sws_free_context(SwsContext **pctx)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Frees whole context via sws_freeContext, nulls pointer",
       "cfr": {
@@ -33603,7 +33603,7 @@
       "file": "libswscale/vulkan/ops.c",
       "name": "free_fn",
       "signature": "static void free_fn(void *priv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Callback destroying priv object and nested vulkan resources",
       "cfr": {
@@ -33901,7 +33901,7 @@
       "file": "tests/checkasm/checkasm.c",
       "name": "destroy_func_tree",
       "signature": "static void destroy_func_tree(CheckasmFunc *f)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Recursively destroys function tree, freeing nested nodes",
       "cfr": {

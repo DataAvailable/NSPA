@@ -200,7 +200,7 @@
       "file": "asm/preproc.c",
       "name": "free_mmacro",
       "signature": "static void free_mmacro(MMacro *m)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Ends lifetime of whole MMacro object, releasing nested lists/tokens via free_llist/free_tlist.",
       "cfr": {
@@ -1126,7 +1126,7 @@
       "file": "asm/preproc.c",
       "name": "free_mmacro_list",
       "signature": "static void free_mmacro_list(MMacro **list_p)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "Walks and frees an entire linked list of MMacro objects via free_mmacro; container/list destruction.",
       "cfr": {
@@ -1205,7 +1205,7 @@
       "file": "asm/preproc.c",
       "name": "free_smacro",
       "signature": "static void free_smacro(SMacro *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.6,
       "reason": "Frees nested members then the whole SMacro object; interface is full object destruction.",
       "cfr": {
@@ -1243,7 +1243,7 @@
       "file": "asm/preproc.c",
       "name": "free_mmacro_table",
       "signature": "static void free_mmacro_table(struct hash_table *mmt)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.75,
       "reason": "Destroys a hash table container, freeing all contained mmacro lists and the table itself.",
       "cfr": {
@@ -1282,7 +1282,7 @@
       "file": "asm/preproc.c",
       "name": "free_macros",
       "signature": "static void free_macros(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.5,
       "reason": "Tears down global macro tables (mmacro/smacro), destroying subsystem state on cleanup.",
       "cfr": {
@@ -1719,7 +1719,7 @@
       "file": "asm/preproc.c",
       "name": "free_debug_macro_addr_tree",
       "signature": "static void free_debug_macro_addr_tree(struct rbtree *tree)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Recursively frees an entire rbtree container including nested nodes; interface is destruction of a whole tree.",
       "cfr": {
@@ -1759,7 +1759,7 @@
       "file": "asm/preproc.c",
       "name": "free_debug_macro_inv_list",
       "signature": "static void free_debug_macro_inv_list(struct debug_macro_inv *inv)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Frees a whole list object and its nested address trees/tokens; object/container destruction.",
       "cfr": {
@@ -1798,7 +1798,7 @@
       "file": "asm/preproc.c",
       "name": "free_debug_macro_info",
       "signature": "static void free_debug_macro_info(void)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Tears down the global debug macro info structure, freeing nested lists and zeroing state; whole-object destruction.",
       "cfr": {
@@ -3069,7 +3069,7 @@
       "file": "nasmlib/hashtbl.c",
       "name": "hash_free",
       "signature": "void hash_free(struct hash_table *head)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.7,
       "reason": "Ends the lifetime of the whole hash table container (frees internal array and struct).",
       "cfr": {
@@ -3109,7 +3109,7 @@
       "file": "nasmlib/hashtbl.c",
       "name": "hash_free_all",
       "signature": "void hash_free_all(struct hash_table *head, bool free_keys)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Destroys the hash container and releases nested data elements/keys.",
       "cfr": {
@@ -3193,7 +3193,7 @@
       "file": "nasmlib/raa.c",
       "name": "raa_free",
       "signature": "void raa_free(struct RAA *r)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.8,
       "reason": "Recursively frees the entire RAA tree structure, ending the container's lifetime.",
       "cfr": {
@@ -3230,7 +3230,7 @@
       "file": "nasmlib/saa.c",
       "name": "saa_free",
       "signature": "void saa_free(struct SAA *s)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.78,
       "reason": "Frees the whole SAA container and its internal allocations.",
       "cfr": {
@@ -3266,7 +3266,7 @@
       "file": "nasmlib/strlist.c",
       "name": "strlist_free",
       "signature": "void strlist_free(struct strlist **listp)",
-      "category": "destroyer",
+      "category": "releaser",
       "confidence": 0.82,
       "reason": "Frees the whole string list with nested entries and nulls the caller pointer.",
       "cfr": {
